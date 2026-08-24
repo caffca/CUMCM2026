@@ -1,0 +1,91 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+.venv-*/
+venv/
+.venvs/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*Zone.Identifier*
+
+# Temporary
+tmp/
+*.tmp
+*.swp
+*~
+
+# Logs / experiment trackers
+*.log
+wandb/
+mlruns/
+lightning_logs/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# LaTeX intermediates
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.toc
+*.out
+*.lof
+*.lot
+
+# Data and local caches
+# Official/raw attachments are usually kept local; preserve hashes/manifests in Git.
+data/raw/
+data/processed/
+data/cache/
+
+# Large binary/model artifacts
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.bin
+*.onnx
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+
+# Per-run artifacts: keep only lightweight reproducibility records by default
+outputs/runs/**/*
+!outputs/runs/**/
+!outputs/runs/**/manifest.yaml
+!outputs/runs/**/metrics.json
+!outputs/runs/**/summary.md
+
+# Optional large report formats
+outputs/reports/**/*.parquet
+outputs/reports/**/*.feather
+
+# Local reference-paper PDFs can be large; analysis notes are tracked instead.
+references/papers/*.pdf
