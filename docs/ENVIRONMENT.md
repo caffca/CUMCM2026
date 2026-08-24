@@ -1,7 +1,7 @@
 # Environment
 
 Last verified: 2026-08-25
-Status: **CUMCM core environment READY**
+Status: **CUMCM core environment READY; attachment compatibility READY; CTeX NOT READY**
 
 ## Canonical runtime
 
@@ -38,6 +38,8 @@ Conda 24.9.2 at `E:\anaconda` with unrelated environments; none is the project d
 
 - XGBoost 3.4.1 and LightGBM 4.7.0: installed and importable; no training run performed.
 - Excel I/O: openpyxl 3.1.5 and XlsxWriter 3.2.9; Chinese-column CSV/XLSX round trip passed.
+- Attachment compatibility: xlrd 2.0.2 for legacy `.xls` reading; h5py 3.16.0 for HDF5/
+  MATLAB v7.3-compatible data; python-docx 1.2.0 for DOCX reading/writing.
 - Pillow 12.3.0, PyYAML 6.0.3 and tqdm 4.70.0 installed.
 - Matplotlib generated non-empty PNG and PDF smoke figures successfully.
 - Confirmed useful fonts: SimHei, SimSun, Noto Sans SC, SimKai and FangSong families.
@@ -49,7 +51,7 @@ Conda 24.9.2 at `E:\anaconda` with unrelated environments; none is the project d
 | Git | READY | 2.45.1.windows.1 |
 | WSL | AVAILABLE | Ubuntu-24.04 and Debian listed |
 | XeLaTeX / PDFLaTeX / latexmk | AVAILABLE | MiKTeX 25.12 / MiKTeX-XeTeX 4.16 |
-| CTeX lookup | UNVERIFIED | `kpsewhich ctex.sty` did not return promptly; no changes made |
+| CTeX end-to-end compile | NOT READY | MiKTeX could not build `xelatex.fmt`; no changes made |
 | MATLAB | NOT FOUND | not installed / not on PATH |
 | R / Rscript | NOT FOUND | not installed / not on PATH |
 | Gurobi / CPLEX | NOT FOUND | no executable or Python binding found |
@@ -75,9 +77,20 @@ These are not blockers. Install only if a future problem specifically requires t
 - Graph: NetworkX shortest path passed.
 - Optimization: CVXPY/CLARABEL, PuLP/CBC and OR-Tools/GLOP small LPs passed.
 - Plotting: Matplotlib PNG/PDF export passed.
+- Attachment compatibility: xlrd import/version, h5py HDF5 round trip and python-docx Chinese DOCX round trip passed.
+- CTeX: minimal Chinese document compile failed during MiKTeX `xelatex.fmt` generation; XeLaTeX executable remains available.
 - `python -m pip check`: passed — no broken requirements found.
 
 Test artifacts were removed after the smoke suite. `.venv/` is local and ignored by Git.
+
+## Competition Environment Freeze
+
+The core CUMCM environment is prepared and frozen for normal competition use.
+
+Do not proactively install additional packages during the competition.
+
+New dependencies may be added only when the selected problem requires a capability
+that is not reasonably available from the current stack.
 
 ## Safety
 
