@@ -1,43 +1,86 @@
 # Environment
 
-Last updated: 2026-08-24
-Status: bootstrap / partially verified
+Last verified: 2026-08-25
+Status: **CUMCM core environment READY**
 
-## Supported Environments
+## Canonical runtime
 
-| Name | Machine | OS | Python / MATLAB / R | Solver | Environment path | Status |
-|---|---|---|---|---|---|---|
-| primary | `legend_zyy` local host | Windows 11 家庭中文版, 10.0.22631 / build 22631 / 64-bit | Python 3.12.6 at `C:\Program Files\Python312\python.exe`; MATLAB `NOT_FOUND`; R/Rscript `NOT_FOUND` | Checked `gurobi_cl`, `cplex`, `glpsol`, `cbc`, `highs`, `scip`: all `NOT_FOUND` | system interpreter; `VIRTUAL_ENV` and `CONDA_PREFIX` unset | partially verified |
+- Default runtime: `E:\CUMCM2026\.venv`
+- Activation: `.\.venv\Scripts\Activate.ps1`
+- Python executable: `E:\CUMCM2026\.venv\Scripts\python.exe`
+- Python version: 3.12.6
+- System Python and existing Conda environments were not modified.
 
-## Installation / Activation
+Use the repository `.venv` by default during the competition. The machine also has
+Conda 24.9.2 at `E:\anaconda` with unrelated environments; none is the project default.
 
-```bash
-# No project activation command has been verified; `VIRTUAL_ENV` and
-# `CONDA_PREFIX` were unset during bootstrap.
-```
+## Core scientific packages — READY
+
+| Package | Version |
+|---|---:|
+| NumPy | 2.5.2 |
+| Pandas | 3.0.5 |
+| SciPy | 1.18.1 |
+| Matplotlib | 3.11.1 |
+| scikit-learn | 1.9.0 |
+| statsmodels | 0.14.6 |
+| SymPy | 1.14.0 |
+| NetworkX | 3.6.1 |
+
+## Optimization — READY
+
+- CVXPY 1.9.2; available backends include CLARABEL, HIGHS, OSQP and SCS.
+- HiGHS Python bindings 1.15.1; a small LP solved successfully through CVXPY.
+- PuLP 3.3.2 with its bundled CBC executable; a small LP solved successfully.
+- OR-Tools 9.15.6755; GLOP small LP solved successfully.
+
+## ML / Excel / plotting — READY
+
+- XGBoost 3.4.1 and LightGBM 4.7.0: installed and importable; no training run performed.
+- Excel I/O: openpyxl 3.1.5 and XlsxWriter 3.2.9; Chinese-column CSV/XLSX round trip passed.
+- Pillow 12.3.0, PyYAML 6.0.3 and tqdm 4.70.0 installed.
+- Matplotlib generated non-empty PNG and PDF smoke figures successfully.
+- Confirmed useful fonts: SimHei, SimSun, Noto Sans SC, SimKai and FangSong families.
+
+## External tools
+
+| Capability | Status | Version / backend |
+|---|---|---|
+| Git | READY | 2.45.1.windows.1 |
+| WSL | AVAILABLE | Ubuntu-24.04 and Debian listed |
+| XeLaTeX / PDFLaTeX / latexmk | AVAILABLE | MiKTeX 25.12 / MiKTeX-XeTeX 4.16 |
+| CTeX lookup | UNVERIFIED | `kpsewhich ctex.sty` did not return promptly; no changes made |
+| MATLAB | NOT FOUND | not installed / not on PATH |
+| R / Rscript | NOT FOUND | not installed / not on PATH |
+| Gurobi / CPLEX | NOT FOUND | no executable or Python binding found |
+| SCIP / GLPK / standalone CBC | NOT FOUND | no executable found; PuLP CBC is usable |
+| Graphviz / Pandoc / Excel application | NOT FOUND | Python I/O and NetworkX remain available |
+
+## Tier C — optional, on demand
+
+Not prepared because they are not needed for the core competition environment:
+
+- PyTorch, TensorFlow, OpenCV, scikit-image;
+- GeoPandas, Shapely, Prophet, CatBoost;
+- gurobipy and docplex;
+- GPU/CUDA stack, MATLAB, R, commercial solvers and extra GIS tooling.
+
+These are not blockers. Install only if a future problem specifically requires them.
 
 ## Verification
 
-```bash
-python --version  # verified: Python 3.12.6
-python -c "from src.visualization.style import apply_competition_style; apply_competition_style()"
-# smoke check: failed because matplotlib is not installed in this interpreter
-```
+- Numerical: NumPy matrix operation, SciPy optimization and SymPy equation solve passed.
+- Data: CSV/XLSX write/read with Chinese columns passed.
+- Statistics/ML: sklearn linear/logistic regression and statsmodels OLS passed.
+- Graph: NetworkX shortest path passed.
+- Optimization: CVXPY/CLARABEL, PuLP/CBC and OR-Tools/GLOP small LPs passed.
+- Plotting: Matplotlib PNG/PDF export passed.
+- `python -m pip check`: passed — no broken requirements found.
 
-## Key Dependencies
-
-| Package / tool | Version | Purpose | Verified |
-|---|---|---|---|
-| NumPy | TBD | numerical computing | no |
-| Pandas | TBD | tabular data | no |
-| SciPy | TBD | statistics / optimization | no |
-| Matplotlib | not installed in verified Python interpreter | figures | yes (import failure observed) |
-| scikit-learn | TBD | ML / CV | no |
-| statsmodels | TBD | statistics / time series | no |
-| solver | no checked solver CLI found | optimization | yes (PATH check observed) |
+Test artifacts were removed after the smoke suite. `.venv/` is local and ignored by Git.
 
 ## Safety
 
-- 不修改共享环境，除非明确授权。
-- 不自动升级核心依赖。
-- 正式结果应记录实际环境与依赖版本。
+- Activate only `E:\CUMCM2026\.venv` for this repository.
+- No system Python, Conda environment, PATH, CUDA, MATLAB, R, TeX or commercial solver was modified.
+- Do not commit `.venv/`, pip cache, smoke files or temporary logs.
