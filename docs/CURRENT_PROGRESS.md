@@ -75,6 +75,6 @@ TBD
 ## 12. Git Milestone
 
 - Current branch: main
-- Current HEAD: TBD until the initial local bootstrap commit is created
-- Worktree: bootstrap changes pending local commit
-- Last meaningful commit: none; repository initialized from supplied template
+- Current HEAD: initial bootstrap commit `5f4a29d`; final closure-record commit is documentation-only
+- Worktree: clean after local bootstrap commit before closure record
+- Last meaningful commit: `5f4a29d` — `chore: bootstrap CUMCM 2026 modeling repository`

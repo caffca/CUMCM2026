@@ -56,4 +56,4 @@
 - [ ] `$paper-review` 可用。
 - [ ] `scripts/governance_check.py` 运行通过。
 - [x] 自动 local commit 策略已接受并按本轮指令执行。
-- [ ] 初始 template/bootstrap commit 已创建。
+- [x] 初始 template/bootstrap commit 已创建：`5f4a29d`。
