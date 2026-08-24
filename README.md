@@ -39,6 +39,27 @@ outputs/qX/
 图表和遗留问题。然后更新 `docs/CURRENT_PROGRESS.md`，做最低成本检查并创建 local
 milestone commit。默认不 push。
 
+## Optional Dual-Window Mode
+
+```text
+Builder:
+E:\CUMCM2026
+main
+
+Reviewer:
+E:\CUMCM2026-review
+detached milestone → review/* when needed
+```
+
+一次性创建 Reviewer worktree：
+
+```powershell
+git worktree add --detach E:\CUMCM2026-review HEAD
+```
+
+Builder 可以继续推进 Q2，同时 Reviewer 审计已经提交的 Q1 milestone。Reviewer 只消费
+frozen milestone，不跟踪 Builder 的实时脏工作树；被接受的修改由 Builder 显式 cherry-pick。
+
 ## 目录
 
 | Path | 用途 |

@@ -43,6 +43,35 @@
 - 大范围、可能破坏环境的 CUDA / PyTorch / 核心依赖修改；
 - 明显改变用户已确认的题意或整体建模方向。
 
+## 2A. Dual-Window Mode
+
+需要两个 Codex 窗口时，主仓库 `E:\CUMCM2026` 的 `main` 由 Builder / Controller
+负责整合。Builder 推进题意、数据、主模型、Q1→Q2→Q3、论文整合、
+`CURRENT_PROGRESS.md`、`DECISIONS.md` 和 milestone commit，不必等待 Reviewer。
+
+Reviewer 必须使用独立 worktree，例如：
+
+```powershell
+git worktree add --detach E:\CUMCM2026-review HEAD
+```
+
+Reviewer 只审明确的 frozen milestone SHA，不直接修改 main。可检查题意契合、假设、
+公式、单位、边界、关键结果、复杂度和图表/局部论文措辞；每轮优先指出 1–3 个真正
+可能改变结论或失分的问题。Reviewer 不维护 `CURRENT_PROGRESS.md` / `DECISIONS.md`，
+不静默更换主模型，不重构 Builder 正在推进的下一问。
+
+Reviewer 需要采用修改时，在 clean worktree 中创建 `review/*` 分支和独立 commit；
+例如：
+
+```powershell
+git switch --detach <MILESTONE_SHA>
+git switch -c review/<scope>-<shortsha>
+```
+
+由用户或 Builder 决定是否以 `git cherry-pick <review_commit>` 进入 main。禁止自动
+merge、rebase 或 push。新的 milestone 到来后，Reviewer 先保持 clean，再执行
+`git switch --detach <NEW_MILESTONE_SHA>`。
+
 ## 3. 两种工作模式
 
 ### explore
@@ -89,6 +118,14 @@ outputs/q2/
 
 验证只针对可能改变结论的风险：预测题重泛化误差，优化题重约束和解质量，
 评价题重权重/参数敏感性，机制题重核心假设。不机械完成固定的全套检查表。
+
+## 4A. 时间纪律
+
+比赛前期允许快速探索；各问已有可用闭环后，优先补关键验证、正式图表和论文，
+不为了“可能更高级”无限增加模型。如果当前方法已充分回答题目，不因复杂算法存在
+而自动替换。milestone 后只有重大错误、明显性能不足或题目要求未满足，才重新打开
+核心模型。比赛后半程新增模型必须解决明确的 P0/P1 问题。最终优先保证每问有答案、
+数字和单位正确、图表可读、摘要覆盖全部问题、PDF 完整。
 
 ## 5. 数据与结果
 
@@ -149,7 +186,7 @@ Git 采用 milestone commit，而不是 prompt commit：
 ## 11. Skill routing
 
 - `.agents/skills/modeling-workflow/SKILL.md`：正式比赛中的 `explore` / `milestone` 工作流。
-- `.agents/skills/paper-review/SKILL.md`：按 `structure`、`figure`、`final` 模式审查论文。
+- `.agents/skills/paper-review/SKILL.md`：按 `structure`、`figure`、`final`、`milestone` 模式审查论文。
 - `.agents/skills/handoff/SKILL.md`：仅在用户明确要求跨会话、跨机器或跨人员交接时使用。
 
 Skill 用于减少重复劳动，不把比赛流程变成额外审计流程。

@@ -9,9 +9,62 @@
 - `structure`：摘要、章节比例、逐问闭环、重复内容和模型选择。
 - `figure`：图表类型、视觉统一、caption、页面成本和可读性。
 - `final`：数字、公式、答案、图表和最终 PDF 的整体检查。
+- `milestone`：基于 frozen milestone commit 对单个问题做轻量独立审查。
 
 按任务读取 `docs/PAPER_WRITING_GUIDE.md`、`docs/FIGURE_STYLE_GUIDE.md`、论文源文件
 或最终 PDF；不强制读取 submission、evidence 或全局 provenance 文件。
+
+## Milestone mode
+
+输入必须是一个明确的 milestone commit SHA 和一个问题编号 `QX`。Reviewer 在独立
+worktree 中审查该 frozen SHA，不跟踪 Builder 的 dirty worktree，也不直接修改 main。
+
+### A. Question fit
+
+- 是否真正回答该问题；
+- 是否遗漏题面硬约束；
+- 上一问输入是否正确传递；
+- 是否把额外假设写成题面事实。
+
+若存在 `docs/PROBLEM_BRIEF.md`，以其中对应问题为快速核对入口。
+
+### B. Model audit
+
+只找最关键风险：模型匹配性、是否有更简单充分方法、单位/边界/目标函数、算法条件、
+参数或数据使用。不要机械执行完整 checklist，优先给出 1–3 个真正重要问题。
+
+### C. Result audit
+
+确认核心程序有实际输出、关键数字与保存结果一致、主要约束满足，并指出值得 Builder
+停下来检查的异常。只有可能改变结论时才要求补实验。
+
+### D. Paper / figure polish
+
+检查应保留的公式、冗余文字、图表选型和风格、caption、表图重复以及是否有更有信息
+价值的主图。Reviewer 可以在自己的 worktree 修改 plotting script、正式图或局部论文。
+
+### Verdict
+
+每轮最后只给一个 verdict：
+
+```text
+ACCEPT
+ACCEPT WITH MINOR FIX
+REVISE
+BLOCK
+```
+
+随后只报告：
+
+```text
+P0 — 必须立即处理，否则该问可能错误
+P1 — 建议进入最终论文前处理
+Polish — 可选视觉/语言改善
+```
+
+如需交给外部网页 GPT，可在 `tmp/` 生成未跟踪的
+`review_packet_<QX>_<shortsha>.md`，只包含问题要求、模型概述、关键假设/公式、结果、
+正式图表、核心风险和 2–4 个外部审查问题，不复制整个仓库或完整日志。
 
 ## Structure Audit
 
