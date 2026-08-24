@@ -3,7 +3,7 @@
 Version: v0.1
 Status: internal production contract
 
-本文件不是官方格式说明。官方硬规则只写入 `SUBMISSION_SPEC.md`。
+本文件是内部写作指南，不预设当届官方格式或提交要求。
 
 ## 1. Core Writing Spine
 
@@ -15,7 +15,7 @@ Status: internal production contract
 
 ## 2. Default Structure
 
-除官方模板另有要求外：
+如用户后续提供官方模板，以实际模板为准：
 
 ```text
 Title
@@ -141,7 +141,7 @@ Observation
 
 ## 10. Figures and Tables
 
-遵守 `FIGURE_STYLE_GUIDE.md` 和 `FIGURE_TABLE_INDEX.md`。
+遵守 `FIGURE_STYLE_GUIDE.md`。正式图表在对应问题的 `outputs/qX/summary.md` 中说明来源。
 
 同一结果的表和图若共存，必须分别承担 exact values 与 pattern/uncertainty 等不同职责。
 
@@ -177,7 +177,7 @@ Observation
 3. 官方数据/标准；
 4. 高质量同行评审资料。
 
-AI 工具引用/声明只按当届官方规则执行。
+不要在未收到具体要求前预设 AI 工具声明或附件格式。
 
 ## 14. Appendix / Supporting Material
 
@@ -187,14 +187,8 @@ AI 工具引用/声明只按当届官方规则执行。
 
 提交要求需要完整源码时，支撑材料中的源码必须可运行并与论文结果对应。
 
-## 15. Final Paper Gates
+## 15. Final Paper Check
 
-```text
-P0 Structure Complete
-P1 Numerical Provenance Passed
-P2 Modeling Consistency Passed
-P3 Figure/Table QA Passed
-P4 Official Format Compliance Passed
-P5 Independent Reviewer Audit Passed
-P6 Final PDF Visual Inspection Passed
-```
+完整初稿前检查：各问答案明确、数字/公式/符号/单位一致、图表可读、摘要覆盖全部
+问题、重要结果能回到 `outputs/qX/` 和脚本、最终 PDF 无溢出或乱码。官方格式检查
+在用户提供当届材料并明确要求时再做。

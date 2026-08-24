@@ -8,7 +8,7 @@ Status: internal convention, not official competition format
 1. 高教杯国一等奖样文的竞赛阅读语法：逐问闭环、图表紧跟求解、结果可快速定位。
 2. 中青杯国一等奖样文的视觉与证据表达：白底、二维图、统一风格、热图/条形图/误差图服务于具体分析。
 
-官方论文模板若与本规范冲突，以 `SUBMISSION_SPEC.md` 为准。
+这是内部视觉约定；用户提供官方模板后再按实际模板调整。
 
 ## 1. Core Principles
 
@@ -21,7 +21,7 @@ Status: internal convention, not official competition format
 
 ## 2. Default Visual Language
 
-建议配色（可在官方模板核验后微调）：
+建议配色（可按题型和论文需要微调）：
 
 - Primary / main method: `#4C78A8`
 - Secondary / alternative: `#7A7A7A`
@@ -112,7 +112,7 @@ Figure = pattern / comparison / uncertainty / spatial structure
 - 优先 PDF / SVG / vector-compatible output。
 - raster 图至少保证最终 PDF 中清晰，不使用压缩截图替代正式导出。
 - 图文件名稳定，例如：`fig_q2_model_comparison.pdf`。
-- 正式图必须登记到 `FIGURE_TABLE_INDEX.md`。
+- 正式图在对应问题的 `outputs/qX/summary.md` 中注明用途、脚本和来源。
 
 ## 9. Shared Plotting Layer
 

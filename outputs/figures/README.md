@@ -6,6 +6,6 @@
 
 - 来自脚本或可重复的绘图流程；
 - 遵守 `docs/FIGURE_STYLE_GUIDE.md`；
-- 登记到 `docs/FIGURE_TABLE_INDEX.md`；
+- 在对应问题的 `outputs/qX/summary.md` 中注明脚本、来源和用途；
 - 优先 vector；
 - 不把截图作为最终正式图。

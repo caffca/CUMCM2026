@@ -6,20 +6,12 @@
 
 ## Modes
 
-- `structure`：摘要、章节比例、逐问闭环、重复内容。
-- `evidence`：所有数字、结论、表格和图是否可追溯。
+- `structure`：摘要、章节比例、逐问闭环、重复内容和模型选择。
 - `figure`：图表类型、视觉统一、caption、页面成本和可读性。
-- `format`：对照 `SUBMISSION_SPEC.md` 审查官方硬规则。
-- `final`：P0–P6 完整最终审查。
+- `final`：数字、公式、答案、图表和最终 PDF 的整体检查。
 
-## Required Reads
-
-- `docs/SUBMISSION_SPEC.md`
-- `docs/PAPER_WRITING_GUIDE.md`
-- `docs/FIGURE_STYLE_GUIDE.md`
-- `docs/RESULTS_EVIDENCE_MATRIX.md`
-- `docs/FIGURE_TABLE_INDEX.md`
-- 论文源文件 / 最终 PDF
+按任务读取 `docs/PAPER_WRITING_GUIDE.md`、`docs/FIGURE_STYLE_GUIDE.md`、论文源文件
+或最终 PDF；不强制读取 submission、evidence 或全局 provenance 文件。
 
 ## Structure Audit
 
@@ -32,12 +24,11 @@
 - 是否存在过长背景和重复结论；
 - 摘要是否给定量结果。
 
-## Evidence Audit
+## Result and consistency check
 
 - 摘要、正文、图、表数字一致；
-- claim 对应 evidence matrix；
+- 重要结果能回到 `outputs/qX/` 和对应脚本；
 - negative / mixed result 未被包装；
-- 未出现手工无法追溯数字；
 - 结论没有超出当前证据边界。
 
 ## Figure Audit
@@ -50,22 +41,15 @@
 - 3D / rainbow / radar 等是否真的必要；
 - 最终 PDF 100% 缩放可读。
 
-## Format Audit
+## Final mode
 
-只依据 `SUBMISSION_SPEC.md` 中已核验官方规则。
+检查：
 
-遇到 `UNVERIFIED` 规则必须报告，不能猜。
+- 各问答案是否明确；
+- 公式、符号、单位和数字是否一致；
+- 图表是否可读且服务于结论；
+- 摘要是否覆盖全部问题；
+- 最终 PDF 是否存在溢出、裁切、乱码或不可读内容。
 
-## Final Gate
-
-```text
-P0 Structure Complete
-P1 Numerical Provenance Passed
-P2 Modeling Consistency Passed
-P3 Figure/Table QA Passed
-P4 Official Format Compliance Passed
-P5 Independent Reviewer Audit Passed
-P6 Final PDF Visual Inspection Passed
-```
-
-必须明确给出每个 gate 的 PASS / FAIL / BLOCKED 和原因。
+当用户明确提供当届官方规则并要求格式审查时，再按实际材料补充检查；没有材料时
+不猜测官方要求。
