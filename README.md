@@ -51,14 +51,23 @@ E:\CUMCM2026-review
 detached milestone → review/* when needed
 ```
 
-一次性创建 Reviewer worktree：
+首次真实建模 milestone 提交后，用其明确 SHA 创建或切换 Reviewer worktree：
 
 ```powershell
-git worktree add --detach E:\CUMCM2026-review HEAD
+scripts/prepare-review-worktree.ps1 <MILESTONE_SHA>
 ```
 
 Builder 可以继续推进 Q2，同时 Reviewer 审计已经提交的 Q1 milestone。Reviewer 只消费
 frozen milestone，不跟踪 Builder 的实时脏工作树；被接受的修改由 Builder 显式 cherry-pick。
+Builder 是完整初稿生产责任人：在 Review 介入前完成真实求解、必要验证、可读正式图表、
+逐问正文、完整源稿和实际多页 PDF。Reviewer/Web 窗口只做冻结后的独立验收与精修。
+
+基础设施测试只用隔离临时仓库，不制造建模 milestone。当前编排以 `AGENTS.md`、
+`.codex/config.toml`、`.codex/agents/` 和对应 skill 为准；V1 设计长文仅作历史参考。
+绘图运行入口见 `docs/FIGURE_STYLE_GUIDE.md`，设计先验入口见
+`references/design_priors/INDEX.md`。本轮升级证据见 `docs/DESIGN_UPGRADE_V2_REPORT.md`。
+跨窗口接手只需先读 `docs/WINDOW_HANDOFF_GUIDE.md`；当前状态包用
+`scripts/export_window_handoff.py` 按需导出，不手工维护第二份进度板。
 
 ## 目录
 
@@ -82,6 +91,9 @@ frozen milestone，不跟踪 Builder 的实时脏工作树；被接受的修改�
 论文按逐问闭环组织：建模思路 → 模型 → 求解 → 必要验证 → 结果 → 小结。
 使用 `docs/PAPER_WRITING_GUIDE.md` 和 `docs/FIGURE_STYLE_GUIDE.md` 的内部约定。
 图表应由脚本生成，采用稳定文件名，并在对应问题的 `summary.md` 中说明来源。
+各问主解和必要验证完成后继续全文整合；只交代码、数值或提纲不算完成。只有完整逐问
+正文和源稿、对应的可读表图、实际生成并逐页检查的多页 PDF、以及明确局限均具备，才算
+工作流正常完成。终审和提交由用户手工执行。
 
 官方提交格式、AI 使用规定和支撑材料要求不在日常 active workflow 中预维护；
 用户明确要求最终提交检查且提供当届材料后，再按实际要求处理。

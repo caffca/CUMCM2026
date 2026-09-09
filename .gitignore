@@ -88,4 +88,4 @@ outputs/reports/**/*.parquet
 outputs/reports/**/*.feather
 
 # Local reference-paper PDFs can be large; analysis notes are tracked instead.
-references/papers/*.pdf
+references/papers/

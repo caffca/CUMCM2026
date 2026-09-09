@@ -1,6 +1,6 @@
 # Figure Style Guide
 
-Version: v0.1
+Version: v0.2 (2026-09-09 incremental figure upgrade)
 Status: internal convention, not official competition format
 
 本规范综合两类参考：
@@ -109,7 +109,7 @@ Figure = pattern / comparison / uncertainty / spatial structure
 
 ## 8. Export
 
-- 优先 PDF / SVG / vector-compatible output。
+- 默认 PDF 矢量 + PNG 实际预览；仅明确需要编辑时生成 SVG，并处理字体可移植性。
 - raster 图至少保证最终 PDF 中清晰，不使用压缩截图替代正式导出。
 - 图文件名稳定，例如：`fig_q2_model_comparison.pdf`。
 - 正式图在对应问题的 `outputs/qX/summary.md` 中注明用途、脚本和来源。
@@ -132,3 +132,52 @@ Agent 不应为每张图随意重新定义 palette、font size、grid 和 line w
 - Redundant title removed?
 - Caption independent?
 - Final PDF readable?
+
+## 11. Frozen figure execution
+
+重要图使用 8–12 行 brief：figure_id、question、purpose、supported_claim、source、
+unit_and_population、uncertainty、required_comparison、final_width_mm、language、
+forbidden_inference；有聚合时补 aggregation。探索图不强制 brief。
+
+Builder 保留 `outputs/qX/results.*`、`plot_data/<figure_id>.*`、`figure_briefs.md`，并负责
+可复现 plotting script、可读正式 `figures/` 及其论文嵌入；冻结小型绘图输入可显式加入
+milestone，完整 raw data 无需入 Git。Review Lane 只在 `review/*` 中拥有可选精修版本，
+其纯绘图脚本可放 `scripts/figures/`，PDF/PNG 可放 `outputs/figures/`。
+忽略文件只能从明确只读且身份可核实的冻结导出读取，缺失 BLOCKED；变化 STALE。
+在现有 summary 记录 base_sha、来源身份、用途、版本和实际检查，不另建实验 registry。
+
+`apply_competition_style()` 保持无参兼容。默认 155×90mm，也可传 width_mm/height_mm；
+75/155mm、9–10.5pt 是内部常用规格，最终按用户模板调整。导出保持真实画布尺寸，
+不以 tight 裁切后再猜插入宽度。字体按 Noto Sans SC → Microsoft YaHei → SimHei →
+SimSun 的实际覆盖选择；缺字失败，不静默翻译。数学排版可用 Matplotlib mathtext。
+baseline/main/reference/warning 使用固定颜色并搭配方形/圆形/三角/叉及线型。
+
+最小可运行示例：`tests/figures/fixture.json`，四类结构为模型比较、网格敏感性、
+预测与已有残差、依赖框架，均为 SYNTHETIC TEST。CLI 只消费输入，不拟合、平滑、
+插值、再聚合或新增区间。区间由源提供，图注必须明确 SD/SE/CI/情景范围/none；
+候选网格最好不等于全局最优，可行/不可行需明确。不得用生成式图像制造数值证据。
+
+```powershell
+.\.venv\Scripts\python.exe scripts/figures/render_figure.py --source <FROZEN_JSON> --sha256 <INPUT_SHA256> --brief <BRIEF_JSON> --output-dir <ISOLATED_FIGURES_DIR> --base-sha <FULL_MILESTONE_SHA>
+```
+
+CLI 验证输入身份和图形数据，不自动证明 source 属于指定 commit。调用它的 Builder 或
+Review Root 在自己的授权工作区核对 `git rev-parse HEAD`、输入及允许输出路径，执行前后
+核对 tracked/untracked 和重要 ignored 输入。单图单 writer；共享 style 由集成者修改。
+当前 designer 只读回退，由调用它的 root 执行，不将 workspace-write 当文件白名单。
+
+正确性 → PNG 像素 → 中文 PDF 实际页面依次验收。未看像素标
+NOT_VISUALLY_VERIFIED；机器 PASS 不等于人工确认。图注简述对象/口径、图元/区间、
+观察和边界。通常最多两版、一轮正常修订，达到正确可读即停。
+R0/非关键 R1 不打断 Builder；涉及核心数值/单位/结论的错误显眼交 Human 裁决。
+
+### 数值输入与比较对象（pilot小修）
+
+数值图默认拒绝NaN/Inf、空数组及形状不一致。敏感性线图的y缺测仅在冻结源和brief
+同时声明 `missing_data_policy: gap` 且brief有 `missing_data_note` 时允许，保留断线，
+不补零、不插值；无穷值、全缺测和x缺测仍拒绝。其他图型遇缺测先返回Builder。
+`required_comparison` 使用对象ID列表，如 `["series:baseline", "series:main"]` 或
+`["reference:identity", "reference:zero"]`；确实不需要时明确 `none`。原来的自由文字
+应转换为这些明确对象，不能只靠字段非空通过；绘制前和实际创建对象后都检查。
+`supported_claim`成员检查仅保证与Builder批准文字一致，不自动证明科学命题；
+解释仍需对照数据及人工科学核验，不建设自然语言证明引擎。

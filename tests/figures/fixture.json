@@ -1,0 +1,24 @@
+{
+  "synthetic": true,
+  "comparison": {
+    "kind": "comparison", "unit_and_population": "单个合成情景；成本（元）", "aggregation": "给定情景代表值，不重新聚合",
+    "uncertainty": "给定情景范围，非置信区间", "supported_claims": ["主方案的给定代表成本低于基线，范围存在重叠"],
+    "x_label": "成本（元）", "x_limits": [0, 18],
+    "values": [{"label":"基线", "role":"baseline", "value":12, "lower":9, "upper":16}, {"label":"主方案", "role":"main", "value":10, "lower":8, "upper":13}, {"label":"参考方案", "role":"reference", "value":11, "lower":8, "upper":15}]
+  },
+  "sensitivity": {
+    "kind":"sensitivity", "unit_and_population":"合成参数网格；资源量（件）", "aggregation":"逐网格原值，不插值", "uncertainty":"none", "supported_claims":["主方案的资源量随给定参数网格变化"],
+    "x":[-2,-1,0,1,2], "x_label":"参数 α（无量纲）", "y_label":"资源量（件）",
+    "series":[{"label":"基线", "role":"baseline", "y":[4,4,4,4,4]}, {"label":"主方案", "role":"main", "y":[2,3,4,6,7]}]
+  },
+  "prediction": {
+    "kind":"prediction", "unit_and_population":"合成样本；观测、预测与残差（米）", "aggregation":"逐样本原值", "uncertainty":"none", "supported_claims":["给定预测同时存在正、负残差"],
+    "observed":[-2,-1,0,1,2,3], "predicted":[-1.5,-1.2,0.2,0.8,2.4,2.7], "residual":[0.5,-0.2,0.2,-0.2,0.4,-0.3],
+    "limits":[-2.5,3.5], "observed_label":"观测值（米）", "predicted_label":"预测值（米）", "residual_label":"预测 − 观测（米）"
+  },
+  "framework": {
+    "kind":"framework", "unit_and_population":"合成问题依赖；非定量示意", "aggregation":"none", "uncertainty":"none", "supported_claims":["示例依赖由输入经诊断传递到决策"],
+    "nodes":[{"id":"in", "label":"输入\n题面与附件", "position":[0.16,0.5]}, {"id":"q1", "label":"Q1\n状态诊断", "position":[0.5,0.5]}, {"id":"q2", "label":"Q2\n约束下决策", "position":[0.84,0.5]}],
+    "edges":[{"from":"in","to":"q1","label":"可用信息"}, {"from":"q1","to":"q2","label":"状态量"}]
+  }
+}

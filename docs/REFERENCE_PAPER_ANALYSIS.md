@@ -2,9 +2,18 @@
 
 Status: internal reference, not official rule
 
-本文件总结两篇获奖论文对当前仓库的参考价值。它们用于学习“竞赛论文阅读语法”和“有效视觉/证据表达”，不构成官方格式要求。
+本文件保留两篇历史参考摘要。它们用于学习竞赛表达，不构成官方格式要求；
+新库入口为 `references/design_priors/INDEX.md`，逐篇来源/阅读状态只维护在新库。
+2026-09-09：用户已确认所提供的种子批次为 2025 CUMCM 国一，接受
+`provenance=user_confirmed`，不复核获奖证明。本次交接包已提供原件，已接入
+`references/papers/CUMCM2025_USER_MINE/paper.pdf`（32页；原SHA256见metadata和corpus）。
+完整正文与代表页已重新阅读，以新库卡片为准，不把其他参考自动纳入确认批次。
+可信官方展示可做设计阅读；其国一身份计数仍须独立证据，二者不再混为门槛。
 
-## Reference A — 2026 高教杯国一等奖论文（矿井多源突水）
+## Reference A — 2025 高教杯国一等奖论文（矿井多源突水）
+
+原“2026”年份为历史笔误，按用户确认更正；全文对应 `CUMCM2025_USER_MINE`。
+下方是既有参考摘要，不替代本轮记录的图名错配、目标口径与版式局部问题。
 
 ### 可借鉴
 
@@ -30,6 +39,11 @@ Status: internal reference, not official rule
 ---
 
 ## Reference B — 中青杯国一等奖论文（脑电情绪识别）
+
+赛事为中青杯，不在 2024–2025 CUMCM 国一 50 篇计数范围内；不因用户对种子批次的
+确认而将其改标为 CUMCM。本轮交接原件在
+`references/papers/handoff-20260909/CUMCM2024_2025_reference_pack/supplemental/ZHONGQING2026_EEG/`；
+未重新阅读全文，不计入本轮CUMCM全文/设计阅读或国一数量。
 
 ### 可借鉴
 

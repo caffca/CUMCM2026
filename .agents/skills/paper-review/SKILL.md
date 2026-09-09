@@ -1,8 +1,15 @@
+---
+name: "paper-review"
+description: "Use for structure, figure, final, and frozen-milestone review of CUMCM2026 paper-facing artifacts, results, formulas, and figures."
+---
+
 # Skill: paper-review
 
 ## Purpose
 
 对数学建模竞赛论文执行结构、证据、图表、格式和最终 PDF 审查。
+本 skill 消费 Builder 已经生成的完整初稿和实际 PDF；Reviewer/Web 窗口负责独立验收与
+精修，不是正式图表、主要写作或 PDF 首次生成的生产依赖。
 
 ## Modes
 
@@ -42,6 +49,8 @@ worktree 中审查该 frozen SHA，不跟踪 Builder 的 dirty worktree，也不
 
 检查应保留的公式、冗余文字、图表选型和风格、caption、表图重复以及是否有更有信息
 价值的主图。Reviewer 可以在自己的 worktree 修改 plotting script、正式图或局部论文。
+这些是 frozen 初稿后的可选精修，不能替代 Builder 在 milestone 前生成可读图表、逐问
+完整正文和可生成 PDF 的责任。
 
 ### Verdict
 
@@ -62,9 +71,9 @@ P1 — 建议进入最终论文前处理
 Polish — 可选视觉/语言改善
 ```
 
-如需交给外部网页 GPT，可在 `tmp/` 生成未跟踪的
-`review_packet_<QX>_<shortsha>.md`，只包含问题要求、模型概述、关键假设/公式、结果、
-正式图表、核心风险和 2–4 个外部审查问题，不复制整个仓库或完整日志。
+如需交给外部网页 GPT，使用 `scripts/export_window_handoff.py` 生成未跟踪的有界包，
+从已有进度、决定和对应 `outputs/qX/summary.md` 提取问题要求、模型概述、关键假设/公式、
+结果与核心风险，并显式附带关键结果文件和正式图；不能只给本机路径，也不另建手工日志。
 
 ## Structure Audit
 
@@ -86,6 +95,11 @@ Polish — 可选视觉/语言改善
 
 ## Figure Audit
 
+- 对照 frozen source/base_sha/输入身份、brief、caption，逐项检查数值、单位、分母、
+  聚合与区间语义；不得用 SD 替 CI，不从 PNG 反推数值。缺源 BLOCKED，过期 STALE。
+- 重要图确认实际插入宽度、文字和语义颜色；打开 PNG，再看嵌入中文 PDF 后的实际页面。
+  无像素检查标 NOT_VISUALLY_VERIFIED。机器检查、Agent 审阅、人工确认分别记录。
+- 图暴露科学错误按严重性升级 R1/R2/R3，不因发生在图中自动归为 R0。
 - 每图目的明确；
 - chart type 与数据职责匹配；
 - style 一致；
@@ -96,6 +110,8 @@ Polish — 可选视觉/语言改善
 
 ## Final mode
 
+Final mode 是对 Builder 完整交付物的验收，不负责从代码/提纲代替 Builder 生产全文。
+
 检查：
 
 - 各问答案是否明确；
@@ -103,6 +119,7 @@ Polish — 可选视觉/语言改善
 - 图表是否可读且服务于结论；
 - 摘要是否覆盖全部问题；
 - 最终 PDF 是否存在溢出、裁切、乱码或不可读内容。
+- 检查实际 PDF 页面中的图、公式和中文，不用原始 PNG 代替页面验收。
 
 当用户明确提供当届官方规则并要求格式审查时，再按实际材料补充检查；没有材料时
 不猜测官方要求。
