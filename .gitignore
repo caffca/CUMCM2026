@@ -1,3 +1,7 @@
+# Claude 本地记忆（不上传 GitHub）
+CLAUDE.md
+.claude/
+
 # Secrets
 .env
 .env.*
