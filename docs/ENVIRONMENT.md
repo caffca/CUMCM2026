@@ -1,5 +1,13 @@
 # Environment
 
+## Current workspace override — 2026-09-10
+
+- Actual repository: `C:\Users\ysw\Desktop\CUMCM2026`.
+- The historical verification notes below contain older `E:\CUMCM2026` paths; they are evidence
+  of earlier checks, not current paths.
+- The repository `.venv\pyvenv.cfg` currently points to missing
+  `C:\Program Files\Python312\python.exe`; re-check or repair the environment before using it.
+
 Last verified: 2026-09-09 (four-page synthetic publication chain; earlier core inventory retained)
 Status: **Core environment retained; Windows plot + multi-page Chinese PDF VERIFIED; CTeX NOT READY**
 

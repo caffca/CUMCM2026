@@ -3,6 +3,9 @@
 面向数学建模竞赛的 Agent-first 工作仓库。目标是让 Agent 尽快完成题意理解、
 数据检查、建模、运行、验证、图表和论文，而不是维护一套繁重的审计手续。
 
+当前唯一工作区：`C:\Users\ysw\Desktop\CUMCM2026`。
+Git/GitHub 接入和题目附件整理约定见 [`docs/WORKSPACE_SETUP.md`](docs/WORKSPACE_SETUP.md)。
+
 ## 比赛当天怎么开始
 
 直接提供：
@@ -43,11 +46,11 @@ milestone commit。默认不 push。
 
 ```text
 Builder:
-E:\CUMCM2026
+C:\Users\ysw\Desktop\CUMCM2026
 main
 
 Reviewer:
-E:\CUMCM2026-review
+C:\Users\ysw\Desktop\CUMCM2026-review
 detached milestone → review/* when needed
 ```
 

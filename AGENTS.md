@@ -45,8 +45,8 @@
 
 ## 2A. Continuous Builder + Asynchronous Shadow Review
 
-需要两个 Codex 窗口时，主仓库 `E:\CUMCM2026` 的 `main` 是 Continuous Builder /
-Controller 的 Production Lane；`E:\CUMCM2026-review` 是 Asynchronous Shadow
+需要两个 Codex 窗口时，主仓库 `C:\Users\ysw\Desktop\CUMCM2026` 的 `main` 是 Continuous Builder /
+Controller 的 Production Lane；`C:\Users\ysw\Desktop\CUMCM2026-review` 是 Asynchronous Shadow
 Review Lane。Reviewer 消费已经冻结的 milestone SHA，不跟踪 Builder 当前 dirty
 state，也不属于 Builder 的 critical path。
 
@@ -77,7 +77,7 @@ Reviewer 可以检查题意契合、假设、公式、单位、边界、关键�
 main，不维护 Builder 的 `CURRENT_PROGRESS.md` / `DECISIONS.md`，不静默更换主模型，
 不重构 Builder 正在推进的下一问，不自动 merge/rebase/cherry-pick/push。
 
-首次真实 modeling milestone 之前，不创建 `E:\CUMCM2026-review`。创建或切换 review
+首次真实 modeling milestone 之前，不创建 `C:\Users\ysw\Desktop\CUMCM2026-review`。创建或切换 review
 worktree 必须使用 `scripts/prepare-review-worktree.ps1 <MILESTONE_SHA>` 的 deterministic
 Git checkout 逻辑；禁止 migration agent、sync agent、copy agent 或让 LLM 决定复制哪些文件。
 

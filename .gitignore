@@ -29,6 +29,7 @@ Thumbs.db
 
 # Temporary
 tmp/
+output/
 *.tmp
 *.swp
 *~

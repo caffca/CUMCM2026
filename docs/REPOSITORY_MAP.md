@@ -1,15 +1,15 @@
 # Repository and Storage Map
 
-Last updated: 2026-08-24
+Last updated: 2026-09-10
 
 ## Repository Identity
 
 - Project name: CUMCM2026 (暂定)
-- Canonical repository: `E:\CUMCM2026`
+- Canonical repository: `C:\Users\ysw\Desktop\CUMCM2026`
 - Canonical branch: main
-- Remote URL: none configured (verified 2026-08-24)
-- Local working copy: `E:\CUMCM2026`
-- WSL path, if any: `/mnt/e/CUMCM2026` (verified accessible)
+- Remote URL: none configured (verified 2026-09-10)
+- Local working copy: `C:\Users\ysw\Desktop\CUMCM2026`
+- WSL path, if any: not configured
 - Remote machine / mirror, if any: none configured
 
 ## Directory Responsibilities
@@ -35,8 +35,8 @@ Last updated: 2026-08-24
 
 - Official problem statement: TBD
 - Official attachments: TBD
-- Raw data root: `E:\CUMCM2026\data\raw`
-- Processed data root: `E:\CUMCM2026\data\processed`
+- Raw data root: `C:\Users\ysw\Desktop\CUMCM2026\data\raw`
+- Processed data root: `C:\Users\ysw\Desktop\CUMCM2026\data\processed`
 - Main source entry: TBD
 - Main run output root: `outputs/runs/`
 - Main report root: `outputs/reports/`

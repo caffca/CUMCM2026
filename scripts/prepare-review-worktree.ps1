@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $BuilderRepo = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
-$ReviewWorktree = 'E:\CUMCM2026-review'
+$ReviewWorktree = Join-Path (Split-Path $BuilderRepo -Parent) ((Split-Path $BuilderRepo -Leaf) + '-review')
 
 function Invoke-Git {
     param(

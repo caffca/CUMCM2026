@@ -12,9 +12,9 @@
 
 ### 固定路径与真实状态
 
-- Builder / Production Lane：`E:\CUMCM2026`，通常为 `main`。
+- Builder / Production Lane：`C:\Users\ysw\Desktop\CUMCM2026`，通常为 `main`。
 - Reviewer / Review Lane：首次真实 milestone 后才创建的同仓库独立 worktree，通常为
-  `E:\CUMCM2026-review`。
+  `C:\Users\ysw\Desktop\CUMCM2026-review`。
 - 当前事实先读：`docs/CURRENT_PROGRESS.md`。
 - 跨问题长期决定：`docs/DECISIONS.md`。
 - 每问可恢复状态：`outputs/qX/summary.md`。
@@ -23,7 +23,7 @@
 进入任何窗口先运行：
 
 ```powershell
-Set-Location E:\CUMCM2026
+Set-Location C:\Users\ysw\Desktop\CUMCM2026
 git status --short
 Get-Content docs\CURRENT_PROGRESS.md
 ```
@@ -124,11 +124,11 @@ Reviewer 如保留 presentation-only 修改，只能在自己的 `review/*` 分�
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\export_window_handoff.py `
-  --repo E:\CUMCM2026 `
+  --repo C:\Users\ysw\Desktop\CUMCM2026 `
   --mode status `
   --attach outputs\q1\results.json `
   --attach outputs\q1\figures\main.png `
-  --out E:\CUMCM2026\tmp\handoff\WINDOW_PACKET.md
+  --out C:\Users\ysw\Desktop\CUMCM2026\tmp\handoff\WINDOW_PACKET.md
 ```
 
 没有正式题目时省略不存在的 `--attach`，并保留 PARTIAL/无赛题说明。状态包会明确标记
@@ -140,7 +140,7 @@ Reviewer 如保留 presentation-only 修改，只能在自己的 `review/*` 分�
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\export_window_handoff.py `
-  --repo E:\CUMCM2026 `
+  --repo C:\Users\ysw\Desktop\CUMCM2026 `
   --mode frozen `
   --base-sha <FULL_MILESTONE_SHA> `
   --question q1 `
@@ -148,7 +148,7 @@ Reviewer 如保留 presentation-only 修改，只能在自己的 `review/*` 分�
   --attach outputs\q1\plot_data\main.json `
   --attach outputs\q1\figures\main.png `
   --attach paper\submission_draft.pdf `
-  --out E:\CUMCM2026\tmp\handoff\Q1_<SHORT_SHA>.md
+  --out C:\Users\ysw\Desktop\CUMCM2026\tmp\handoff\Q1_<SHORT_SHA>.md
 ```
 
 导出器自动尝试内嵌该 SHA 中的 progress、decisions、问题 summary/results/brief，并生成同名
