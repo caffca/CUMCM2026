@@ -8,8 +8,9 @@ All current work is performed in:
 C:\Users\ysw\Desktop\CUMCM2026
 ```
 
-The repository is currently on `main`, with no configured GitHub remote. The
-official problem and attachments have not yet been copied into the repository.
+The repository is currently on `main`, with `origin` configured as
+`git@github.com:caffca/CUMCM2026.git`. No local content has been pushed yet.
+The official problem and attachments have not yet been copied into the repository.
 
 ## Data placement
 
@@ -42,12 +43,12 @@ use `git reset --hard`, `git clean -fd`, force push, rebase or automatic merge.
 
 ## GitHub connection
 
-The remote cannot be configured until the exact GitHub repository URL is known.
-After the URL is confirmed, add it explicitly and verify before pushing:
+The remote is already configured. After SSH authentication is installed, verify
+it before the first push:
 
 ```powershell
-git remote add origin https://github.com/<owner>/<repository>.git
 git remote -v
+git ls-remote origin
 git push -u origin main
 ```
 

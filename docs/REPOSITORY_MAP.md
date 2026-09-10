@@ -7,7 +7,7 @@ Last updated: 2026-09-10
 - Project name: CUMCM2026 (暂定)
 - Canonical repository: `C:\Users\ysw\Desktop\CUMCM2026`
 - Canonical branch: main
-- Remote URL: none configured (verified 2026-09-10)
+- Remote URL: `git@github.com:caffca/CUMCM2026.git` (configured 2026-09-10; no push performed)
 - Local working copy: `C:\Users\ysw\Desktop\CUMCM2026`
 - WSL path, if any: not configured
 - Remote machine / mirror, if any: none configured
