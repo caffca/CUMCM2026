@@ -1,0 +1,67 @@
+{
+  "question": "D-Q2",
+  "time_domain_scenarios": [
+    {
+      "H": 638,
+      "status": "MINIMUM_REVOCATIONS_PROVED_WITH_WITNESS",
+      "candidate_count": 4528,
+      "objective_value_revocations": 6,
+      "counts_by_category": {
+        "A": {"保留数量": 1, "调整数量": 18, "撤销数量": 1},
+        "B": {"保留数量": 0, "调整数量": 36, "撤销数量": 4},
+        "C": {"保留数量": 1, "调整数量": 88, "撤销数量": 1}
+      },
+      "validation": "PASS",
+      "minimum_revocations": {
+        "lower_bound": 6,
+        "upper_bound": 6,
+        "status": "PROVED",
+        "lower_bound_evidence": "proof/cp_sat_H638_Rle5.json",
+        "witness_evidence": "tmp/q2_cp_sat_feas6_H638_repair_hint_validation.json"
+      },
+      "note": "H=643候选的 C083、C088 越界；采用合法时移 -5 的六撤销修复见证。"
+    },
+    {
+      "H": 643,
+      "status": "MINIMUM_REVOCATIONS_PROVED",
+      "candidate_count": 4582,
+      "objective_value_revocations": 6,
+      "counts_by_category": {
+        "A": {"保留数量": 4, "调整数量": 16, "撤销数量": 0},
+        "B": {"保留数量": 2, "调整数量": 34, "撤销数量": 4},
+        "C": {"保留数量": 12, "调整数量": 76, "撤销数量": 2}
+      },
+      "validation": "PASS",
+      "minimum_revocations": {
+        "lower_bound": 6,
+        "upper_bound": 6,
+        "status": "PROVED",
+        "evidence": "revocation_bound.json"
+      },
+      "note": "正文基准时间域；优先级前缀证明见 results.json 与 q2_proof_matrix.csv。"
+    },
+    {
+      "H": 648,
+      "status": "MINIMUM_REVOCATIONS_PROVED_WITH_H643_WITNESS",
+      "candidate_count": 4589,
+      "objective_value_revocations": 6,
+      "counts_by_category": {
+        "A": {"保留数量": 4, "调整数量": 16, "撤销数量": 0},
+        "B": {"保留数量": 2, "调整数量": 34, "撤销数量": 4},
+        "C": {"保留数量": 12, "调整数量": 76, "撤销数量": 2}
+      },
+      "validation": "PASS",
+      "minimum_revocations": {
+        "lower_bound": 6,
+        "upper_bound": 6,
+        "status": "PROVED",
+        "lower_bound_evidence": "proof/cp_sat_H648_Rle5.json",
+        "witness_evidence": "tmp/q2_review_formal_H648_validation.json"
+      },
+      "note": "H=643优先保护候选在宽域 H=648 下仍可行；R<=5 已独立证明不可行。"
+    }
+  ],
+  "minimum_revocations_proved_for_all_scenarios": true,
+  "global_lexicographic_optimality_proved": false,
+  "interpretation": "三个情景均使用正确的边界筛选规则；三者的最小撤销数均为6并已闭合，Q2末级归一化平移量仍仅保留当前可行上界。"
+}

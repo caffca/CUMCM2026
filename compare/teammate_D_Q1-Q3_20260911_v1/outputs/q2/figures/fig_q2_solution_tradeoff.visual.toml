@@ -1,0 +1,50 @@
+visual_id = "fig_q2_solution_tradeoff"
+kind = "chart"
+schema_version = 1
+contract_mode = "descriptive"
+status = "MILESTONE_QA_PASS"
+purpose = "展示六撤销方案的类别构成和精炼方案 B 字典序前缀的上下界证书"
+claim = "总撤销 6 和 A 类撤销 0 已证明；B 类撤销 4 与调整数 126 仅为当前上界"
+
+[evidence]
+files = ["outputs/q2/results.json", "outputs/q2/revocation_bound.json", "outputs/q2/priority_prefix_run.json", "outputs/q2/validation.json"]
+fields = ["counts_by_category", "bounds", "objective_values"]
+filters = "每个计划按保留、调整或撤销恰计一次；每层上下界按字典序条件解释"
+units = "计划数量：条"
+
+[meaning]
+chart_family = "horizontal stacked composition + bound certificate table"
+x = "计划数量"
+y = "装备类别"
+aggregation = "按类别和状态计数；右侧列出逐层 LB/UB"
+uncertainty = "R and conditional RA proved; RB and later objectives not proved"
+scale = "linear"
+
+[appearance]
+width_mm = 155
+height_mm = 92
+palette_profile = "project:VISUAL_STYLE_PROFILE.toml"
+keep_color = "#9AABB5"
+adjust_color = "#2A8278"
+revoke_color = "#B95C50"
+variant_encoding = "explicit bound-status labels"
+grid = "x_only_light"
+direct_labels = true
+grayscale_redundancy = "status shades plus explicit labels and values"
+
+[labels]
+xlabel = "计划数量（条）"
+ylabel = "装备类别"
+caption = "左图给出六撤销方案的类别构成；右图列出字典序前缀的上下界，未证明层只报告当前上界。"
+
+[delivery]
+source = "scripts/plot_q2_tradeoff.py"
+formats = ["pdf", "svg", "png"]
+png_dpi = 400
+svg_text = "text-elements"
+paper_width_mm = 155
+
+[[revision.changes]]
+version = 3
+type = "visual-redesign"
+summary = "以六撤销正式方案替换旧 19 撤销对照；右面板改为 LB/UB 证书表，明确后续层未证明。"

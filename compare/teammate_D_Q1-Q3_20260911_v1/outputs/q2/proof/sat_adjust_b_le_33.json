@@ -1,0 +1,28 @@
+{
+  "question": "D-Q2",
+  "probe": "adjust_b_le_33",
+  "horizon": 643,
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "optimality": "PROVED_INFEASIBLE",
+  "build_seconds": 1.487339500003145,
+  "solve_seconds": 531.8288873999991,
+  "formula": {
+    "description": "R=6, A类撤销=0, B类撤销=4, M<=126, A类调整<=16, B类调整<=33",
+    "candidate_count": 4582,
+    "plan_count": 150,
+    "resource_cell_count": 54691,
+    "resource_cell_constraint_count": 52939,
+    "base_variable_count": 4582,
+    "encoded_variable_count": 489695,
+    "candidate_cells_nonzero_count": 4432,
+    "clause_count": 1396131
+  },
+  "solver_stats": {
+    "restarts": 96055,
+    "conflicts": 2796996,
+    "decisions": 9983218,
+    "propagations": 4644126125
+  },
+  "source_run": "tmp/q2_proof_sat_adjust_b_le_33.json"
+}

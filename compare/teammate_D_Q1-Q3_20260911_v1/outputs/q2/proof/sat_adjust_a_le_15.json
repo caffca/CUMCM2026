@@ -1,0 +1,28 @@
+{
+  "question": "D-Q2",
+  "probe": "adjust_a_le_15",
+  "horizon": 643,
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "optimality": "PROVED_INFEASIBLE",
+  "build_seconds": 1.3127788999991026,
+  "solve_seconds": 548.9513215000043,
+  "formula": {
+    "description": "R=6, A类撤销=0, B类撤销=4, M<=126, A类调整<=15",
+    "candidate_count": 4582,
+    "plan_count": 150,
+    "resource_cell_count": 54691,
+    "resource_cell_constraint_count": 52939,
+    "base_variable_count": 4582,
+    "encoded_variable_count": 453209,
+    "candidate_cells_nonzero_count": 4432,
+    "clause_count": 1322105
+  },
+  "solver_stats": {
+    "restarts": 99040,
+    "conflicts": 3038933,
+    "decisions": 10378712,
+    "propagations": 4730623036
+  },
+  "source_run": "tmp/q2_proof_sat_adjust_a_le_15.json"
+}

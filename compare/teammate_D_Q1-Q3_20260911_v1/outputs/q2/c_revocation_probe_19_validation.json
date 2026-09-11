@@ -1,0 +1,42 @@
+{
+  "question": "D-Q2",
+  "status": "PASS",
+  "result_status": "FEASIBLE_INCUMBENT",
+  "result_optimality": "NOT_PROVED",
+  "horizon": 643,
+  "errors": [],
+  "counts_by_category": {
+    "A": {
+      "保留数量": 3,
+      "调整数量": 15,
+      "撤销数量": 2
+    },
+    "B": {
+      "保留数量": 0,
+      "调整数量": 24,
+      "撤销数量": 16
+    },
+    "C": {
+      "保留数量": 11,
+      "调整数量": 78,
+      "撤销数量": 1
+    }
+  },
+  "checks": {
+    "active_plan_count": 131,
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "boundary_errors": [],
+    "occupied_cell_count": 13428,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1,
+    "weighted_occupied_cell_count": 13428
+  },
+  "claims_supported": {
+    "all_plans_have_one_action_or_keep": true,
+    "all_active_events_in_resource_domain": true,
+    "continuous_conflict_free": true,
+    "independent_discrete_check_matches": true,
+    "optimality_proved": false
+  }
+}

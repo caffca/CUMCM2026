@@ -1,0 +1,43 @@
+{
+  "question": "D-Q2",
+  "status": "PASS",
+  "result_status": "PRIMARY_OPTIMAL_SECONDARY_INCUMBENT",
+  "result_optimality": "PRIMARY_OBJECTIVE_PROVED",
+  "horizon": 643,
+  "errors": [],
+  "counts_by_category": {
+    "A": {
+      "保留数量": 4,
+      "调整数量": 16,
+      "撤销数量": 0
+    },
+    "B": {
+      "保留数量": 2,
+      "调整数量": 34,
+      "撤销数量": 4
+    },
+    "C": {
+      "保留数量": 12,
+      "调整数量": 76,
+      "撤销数量": 2
+    }
+  },
+  "checks": {
+    "active_plan_count": 144,
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "boundary_errors": [],
+    "occupied_cell_count": 15816,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1,
+    "weighted_occupied_cell_count": 15816
+  },
+  "claims_supported": {
+    "all_plans_have_one_action_or_keep": true,
+    "all_active_events_in_resource_domain": true,
+    "continuous_conflict_free": true,
+    "independent_discrete_check_matches": true,
+    "primary_objective_optimality_proved": true,
+    "full_lexicographic_optimality_proved": false
+  }
+}
