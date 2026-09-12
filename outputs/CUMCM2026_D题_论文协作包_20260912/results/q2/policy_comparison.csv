@@ -1,0 +1,4 @@
+方案,policy,前缀/预算,proven_optimal,C,M,P_A,C_A,P_B,C_B,P_C,C_C,M_A,M_B,M_C,S_sum,S_max,SumAbsDf,SumAbsDt,MaxAbsDf,MaxAbsDt,canonical_conflicts,用途
+T_C6_M120_incumbent,T,"C=6; M=120 (M未证)",false,6,120,15,1,38,5,73,0,14,33,73,847,10,619,114,10,5,0,主方案当前可行前缀
+P_priority_optimal_verified,P,无,true,78,30,0,0,20,3,88,75,0,17,13,192,10,82,55,10,5,0,优先保护对照
+E_dc1_dm1_incumbent,P,"C<=7; M<=121",false,7,121,13,1,38,6,77,0,12,32,77,846,10,636,105,10,5,0,epsilon探索情景

@@ -1,0 +1,12 @@
+{
+  "q2_input": "outputs/q2/Q2-T-incumbent-v1.json",
+  "horizon": 643,
+  "candidate_count": 2452,
+  "pairwise_conflict_edge_count": 89989,
+  "solver": "CP-SAT",
+  "status": "OPTIMAL",
+  "objective_value": 138,
+  "best_bound": 138.0,
+  "time_limit_seconds": 30,
+  "purpose": "独立的逐候选冲突边表达；与资源单元团表达得到相同最优值"
+}

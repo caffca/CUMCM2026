@@ -1,0 +1,4 @@
+方案,C,M,P_A,P_B,S_sum,SumAbsDf,SumAbsDt,MaxAbsDf,MaxAbsDt,canonical_conflicts,status
+T_C6_M120_incumbent,6,120,15,38,847,619,114,10,5,0,FEASIBLE_prefix
+P_priority_optimal_verified,78,30,0,20,192,82,55,10,5,0,OPTIMAL
+E_dc1_dm1_incumbent,7,121,13,38,846,636,105,10,5,0,FEASIBLE_prefix

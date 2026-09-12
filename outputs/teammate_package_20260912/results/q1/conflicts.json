@@ -1,0 +1,4165 @@
+{
+  "plan_count": 150,
+  "occurrence_count": 1300,
+  "conflict_count": 297,
+  "pairs": [
+    {
+      "plan_i": "A001",
+      "plan_j": "B001",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        80,
+        90
+      ],
+      "t_overlap": [
+        101,
+        104
+      ]
+    },
+    {
+      "plan_i": "A001",
+      "plan_j": "C002",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        82,
+        85
+      ],
+      "t_overlap": [
+        37,
+        39
+      ]
+    },
+    {
+      "plan_i": "A001",
+      "plan_j": "C012",
+      "occurrence_i": 2,
+      "occurrence_j": 10,
+      "f_overlap": [
+        83,
+        86
+      ],
+      "t_overlap": [
+        165,
+        167
+      ]
+    },
+    {
+      "plan_i": "A001",
+      "plan_j": "C022",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        167,
+        169
+      ]
+    },
+    {
+      "plan_i": "A002",
+      "plan_j": "B010",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        5,
+        15
+      ],
+      "t_overlap": [
+        110,
+        113
+      ]
+    },
+    {
+      "plan_i": "A002",
+      "plan_j": "C009",
+      "occurrence_i": 1,
+      "occurrence_j": 8,
+      "f_overlap": [
+        13,
+        15
+      ],
+      "t_overlap": [
+        111,
+        113
+      ]
+    },
+    {
+      "plan_i": "A002",
+      "plan_j": "C010",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        5,
+        7
+      ],
+      "t_overlap": [
+        48,
+        50
+      ]
+    },
+    {
+      "plan_i": "A002",
+      "plan_j": "C019",
+      "occurrence_i": 2,
+      "occurrence_j": 9,
+      "f_overlap": [
+        12,
+        15
+      ],
+      "t_overlap": [
+        176,
+        178
+      ]
+    },
+    {
+      "plan_i": "A002",
+      "plan_j": "C029",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        11,
+        14
+      ],
+      "t_overlap": [
+        177,
+        179
+      ]
+    },
+    {
+      "plan_i": "A003",
+      "plan_j": "B009",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        22,
+        30
+      ],
+      "t_overlap": [
+        77,
+        80
+      ]
+    },
+    {
+      "plan_i": "A003",
+      "plan_j": "C008",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        20,
+        23
+      ],
+      "t_overlap": [
+        79,
+        80
+      ]
+    },
+    {
+      "plan_i": "A003",
+      "plan_j": "C018",
+      "occurrence_i": 2,
+      "occurrence_j": 10,
+      "f_overlap": [
+        20,
+        23
+      ],
+      "t_overlap": [
+        207,
+        209
+      ]
+    },
+    {
+      "plan_i": "A003",
+      "plan_j": "C028",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        24,
+        27
+      ],
+      "t_overlap": [
+        208,
+        210
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "B009",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        35,
+        37
+      ],
+      "t_overlap": [
+        163,
+        165
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "B014",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        35,
+        45
+      ],
+      "t_overlap": [
+        228,
+        230
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "B018",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        40,
+        45
+      ],
+      "t_overlap": [
+        225,
+        228
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "C016",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        98,
+        100
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "C017",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        36,
+        39
+      ],
+      "t_overlap": [
+        95,
+        97
+      ]
+    },
+    {
+      "plan_i": "A004",
+      "plan_j": "C027",
+      "occurrence_i": 2,
+      "occurrence_j": 6,
+      "f_overlap": [
+        35,
+        36
+      ],
+      "t_overlap": [
+        225,
+        227
+      ]
+    },
+    {
+      "plan_i": "A005",
+      "plan_j": "B007",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        60,
+        70
+      ],
+      "t_overlap": [
+        191,
+        194
+      ]
+    },
+    {
+      "plan_i": "A005",
+      "plan_j": "B012",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        60,
+        70
+      ],
+      "t_overlap": [
+        255,
+        256
+      ]
+    },
+    {
+      "plan_i": "A005",
+      "plan_j": "C014",
+      "occurrence_i": 1,
+      "occurrence_j": 10,
+      "f_overlap": [
+        65,
+        68
+      ],
+      "t_overlap": [
+        192,
+        194
+      ]
+    },
+    {
+      "plan_i": "A005",
+      "plan_j": "C024",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        190,
+        192
+      ]
+    },
+    {
+      "plan_i": "A005",
+      "plan_j": "C054",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        64,
+        67
+      ],
+      "t_overlap": [
+        258,
+        260
+      ]
+    },
+    {
+      "plan_i": "A006",
+      "plan_j": "B004",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        40,
+        45
+      ],
+      "t_overlap": [
+        131,
+        134
+      ]
+    },
+    {
+      "plan_i": "A006",
+      "plan_j": "B008",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        40,
+        50
+      ],
+      "t_overlap": [
+        130,
+        131
+      ]
+    },
+    {
+      "plan_i": "A006",
+      "plan_j": "C006",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        47,
+        50
+      ],
+      "t_overlap": [
+        65,
+        67
+      ]
+    },
+    {
+      "plan_i": "A007",
+      "plan_j": "B011",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        73,
+        83
+      ],
+      "t_overlap": [
+        241,
+        244
+      ]
+    },
+    {
+      "plan_i": "A007",
+      "plan_j": "B022",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        73,
+        80
+      ],
+      "t_overlap": [
+        307,
+        310
+      ]
+    },
+    {
+      "plan_i": "A007",
+      "plan_j": "C023",
+      "occurrence_i": 1,
+      "occurrence_j": 7,
+      "f_overlap": [
+        76,
+        79
+      ],
+      "t_overlap": [
+        241,
+        243
+      ]
+    },
+    {
+      "plan_i": "A007",
+      "plan_j": "C053",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        73,
+        74
+      ],
+      "t_overlap": [
+        243,
+        245
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C028",
+      "occurrence_i": 1,
+      "occurrence_j": 11,
+      "f_overlap": [
+        24,
+        25
+      ],
+      "t_overlap": [
+        278,
+        280
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C038",
+      "occurrence_i": 2,
+      "occurrence_j": 6,
+      "f_overlap": [
+        22,
+        25
+      ],
+      "t_overlap": [
+        345,
+        346
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C039",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        16,
+        19
+      ],
+      "t_overlap": [
+        344,
+        346
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C049",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        343,
+        345
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C058",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        24,
+        25
+      ],
+      "t_overlap": [
+        278,
+        280
+      ]
+    },
+    {
+      "plan_i": "A008",
+      "plan_j": "C059",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        16,
+        19
+      ],
+      "t_overlap": [
+        211,
+        213
+      ]
+    },
+    {
+      "plan_i": "A009",
+      "plan_j": "B012",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        65,
+        70
+      ],
+      "t_overlap": [
+        296,
+        298
+      ]
+    },
+    {
+      "plan_i": "A009",
+      "plan_j": "C033",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        74,
+        75
+      ],
+      "t_overlap": [
+        293,
+        294
+      ]
+    },
+    {
+      "plan_i": "A009",
+      "plan_j": "C043",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        72,
+        75
+      ],
+      "t_overlap": [
+        293,
+        295
+      ]
+    },
+    {
+      "plan_i": "A009",
+      "plan_j": "C053",
+      "occurrence_i": 1,
+      "occurrence_j": 8,
+      "f_overlap": [
+        71,
+        74
+      ],
+      "t_overlap": [
+        293,
+        295
+      ]
+    },
+    {
+      "plan_i": "A009",
+      "plan_j": "C054",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        65,
+        67
+      ],
+      "t_overlap": [
+        228,
+        230
+      ]
+    },
+    {
+      "plan_i": "A010",
+      "plan_j": "C027",
+      "occurrence_i": 0,
+      "occurrence_j": 10,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        265,
+        267
+      ]
+    },
+    {
+      "plan_i": "A010",
+      "plan_j": "C037",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        330,
+        332
+      ]
+    },
+    {
+      "plan_i": "A010",
+      "plan_j": "C057",
+      "occurrence_i": 0,
+      "occurrence_j": 8,
+      "f_overlap": [
+        32,
+        35
+      ],
+      "t_overlap": [
+        265,
+        267
+      ]
+    },
+    {
+      "plan_i": "A011",
+      "plan_j": "B027",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        65,
+        70
+      ],
+      "t_overlap": [
+        342,
+        343
+      ]
+    },
+    {
+      "plan_i": "A011",
+      "plan_j": "C034",
+      "occurrence_i": 2,
+      "occurrence_j": 11,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        404,
+        406
+      ]
+    },
+    {
+      "plan_i": "A011",
+      "plan_j": "C044",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        66,
+        69
+      ],
+      "t_overlap": [
+        404,
+        406
+      ]
+    },
+    {
+      "plan_i": "A011",
+      "plan_j": "C074",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        64,
+        67
+      ],
+      "t_overlap": [
+        406,
+        408
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "B024",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        40,
+        45
+      ],
+      "t_overlap": [
+        434,
+        435
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "B028",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        45,
+        50
+      ],
+      "t_overlap": [
+        365,
+        368
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "C036",
+      "occurrence_i": 1,
+      "occurrence_j": 10,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        366,
+        368
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "C046",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        367,
+        369
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "C056",
+      "occurrence_i": 0,
+      "occurrence_j": 10,
+      "f_overlap": [
+        41,
+        44
+      ],
+      "t_overlap": [
+        302,
+        304
+      ]
+    },
+    {
+      "plan_i": "A012",
+      "plan_j": "C076",
+      "occurrence_i": 2,
+      "occurrence_j": 5,
+      "f_overlap": [
+        43,
+        46
+      ],
+      "t_overlap": [
+        434,
+        435
+      ]
+    },
+    {
+      "plan_i": "A013",
+      "plan_j": "B016",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        85,
+        92
+      ],
+      "t_overlap": [
+        321,
+        324
+      ]
+    },
+    {
+      "plan_i": "A013",
+      "plan_j": "C022",
+      "occurrence_i": 1,
+      "occurrence_j": 11,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        257,
+        259
+      ]
+    },
+    {
+      "plan_i": "A013",
+      "plan_j": "C032",
+      "occurrence_i": 1,
+      "occurrence_j": 1,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        256,
+        258
+      ]
+    },
+    {
+      "plan_i": "A013",
+      "plan_j": "C041",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        90,
+        92
+      ],
+      "t_overlap": [
+        323,
+        325
+      ]
+    },
+    {
+      "plan_i": "A013",
+      "plan_j": "C052",
+      "occurrence_i": 1,
+      "occurrence_j": 5,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        255,
+        256
+      ]
+    },
+    {
+      "plan_i": "A014",
+      "plan_j": "C040",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        5,
+        8
+      ],
+      "t_overlap": [
+        352,
+        353
+      ]
+    },
+    {
+      "plan_i": "A014",
+      "plan_j": "C050",
+      "occurrence_i": 1,
+      "occurrence_j": 11,
+      "f_overlap": [
+        5,
+        8
+      ],
+      "t_overlap": [
+        416,
+        418
+      ]
+    },
+    {
+      "plan_i": "A014",
+      "plan_j": "C070",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        415,
+        417
+      ]
+    },
+    {
+      "plan_i": "A014",
+      "plan_j": "C080",
+      "occurrence_i": 2,
+      "occurrence_j": 11,
+      "f_overlap": [
+        2,
+        3
+      ],
+      "t_overlap": [
+        478,
+        480
+      ]
+    },
+    {
+      "plan_i": "A014",
+      "plan_j": "C090",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        3,
+        6
+      ],
+      "t_overlap": [
+        482,
+        483
+      ]
+    },
+    {
+      "plan_i": "A015",
+      "plan_j": "B030",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        25,
+        30
+      ],
+      "t_overlap": [
+        385,
+        387
+      ]
+    },
+    {
+      "plan_i": "A015",
+      "plan_j": "C067",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        33,
+        35
+      ],
+      "t_overlap": [
+        451,
+        453
+      ]
+    },
+    {
+      "plan_i": "A015",
+      "plan_j": "C077",
+      "occurrence_i": 1,
+      "occurrence_j": 9,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        451,
+        453
+      ]
+    },
+    {
+      "plan_i": "A015",
+      "plan_j": "C078",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        26,
+        29
+      ],
+      "t_overlap": [
+        389,
+        390
+      ]
+    },
+    {
+      "plan_i": "A016",
+      "plan_j": "C067",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        481,
+        483
+      ]
+    },
+    {
+      "plan_i": "A016",
+      "plan_j": "C087",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        37,
+        40
+      ],
+      "t_overlap": [
+        545,
+        547
+      ]
+    },
+    {
+      "plan_i": "A017",
+      "plan_j": "B033",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        52,
+        60
+      ],
+      "t_overlap": [
+        432,
+        433
+      ]
+    },
+    {
+      "plan_i": "A017",
+      "plan_j": "C065",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        54,
+        57
+      ],
+      "t_overlap": [
+        498,
+        500
+      ]
+    },
+    {
+      "plan_i": "A017",
+      "plan_j": "C075",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        57,
+        60
+      ],
+      "t_overlap": [
+        432,
+        433
+      ]
+    },
+    {
+      "plan_i": "A017",
+      "plan_j": "C085",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        51,
+        54
+      ],
+      "t_overlap": [
+        562,
+        564
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "B028",
+      "occurrence_i": 0,
+      "occurrence_j": 2,
+      "f_overlap": [
+        45,
+        55
+      ],
+      "t_overlap": [
+        451,
+        454
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "B033",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        52,
+        55
+      ],
+      "t_overlap": [
+        516,
+        519
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "C065",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        54,
+        55
+      ],
+      "t_overlap": [
+        518,
+        520
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "C066",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        45,
+        48
+      ],
+      "t_overlap": [
+        452,
+        454
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "C076",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        45,
+        46
+      ],
+      "t_overlap": [
+        454,
+        456
+      ]
+    },
+    {
+      "plan_i": "A018",
+      "plan_j": "C085",
+      "occurrence_i": 2,
+      "occurrence_j": 9,
+      "f_overlap": [
+        51,
+        54
+      ],
+      "t_overlap": [
+        582,
+        584
+      ]
+    },
+    {
+      "plan_i": "A019",
+      "plan_j": "C073",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        77,
+        80
+      ],
+      "t_overlap": [
+        488,
+        490
+      ]
+    },
+    {
+      "plan_i": "A019",
+      "plan_j": "C082",
+      "occurrence_i": 2,
+      "occurrence_j": 11,
+      "f_overlap": [
+        82,
+        85
+      ],
+      "t_overlap": [
+        617,
+        619
+      ]
+    },
+    {
+      "plan_i": "A020",
+      "plan_j": "C039",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        16,
+        19
+      ],
+      "t_overlap": [
+        375,
+        376
+      ]
+    },
+    {
+      "plan_i": "A020",
+      "plan_j": "C069",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        441,
+        443
+      ]
+    },
+    {
+      "plan_i": "A020",
+      "plan_j": "C079",
+      "occurrence_i": 1,
+      "occurrence_j": 5,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        441,
+        443
+      ]
+    },
+    {
+      "plan_i": "A020",
+      "plan_j": "C089",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        507,
+        509
+      ]
+    },
+    {
+      "plan_i": "B001",
+      "plan_j": "C001",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        60,
+        61
+      ]
+    },
+    {
+      "plan_i": "B001",
+      "plan_j": "C002",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        82,
+        85
+      ],
+      "t_overlap": [
+        58,
+        59
+      ]
+    },
+    {
+      "plan_i": "B001",
+      "plan_j": "C012",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        83,
+        86
+      ],
+      "t_overlap": [
+        145,
+        147
+      ]
+    },
+    {
+      "plan_i": "B002",
+      "plan_j": "B011",
+      "occurrence_i": 3,
+      "occurrence_j": 0,
+      "f_overlap": [
+        70,
+        80
+      ],
+      "t_overlap": [
+        156,
+        158
+      ]
+    },
+    {
+      "plan_i": "B002",
+      "plan_j": "C003",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        75,
+        78
+      ],
+      "t_overlap": [
+        29,
+        30
+      ]
+    },
+    {
+      "plan_i": "B002",
+      "plan_j": "C013",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        70,
+        73
+      ],
+      "t_overlap": [
+        115,
+        116
+      ]
+    },
+    {
+      "plan_i": "B002",
+      "plan_j": "C014",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        65,
+        68
+      ],
+      "t_overlap": [
+        113,
+        114
+      ]
+    },
+    {
+      "plan_i": "B003",
+      "plan_j": "C004",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        60,
+        63
+      ],
+      "t_overlap": [
+        31,
+        33
+      ]
+    },
+    {
+      "plan_i": "B003",
+      "plan_j": "C005",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        55,
+        58
+      ],
+      "t_overlap": [
+        73,
+        75
+      ]
+    },
+    {
+      "plan_i": "B003",
+      "plan_j": "C015",
+      "occurrence_i": 3,
+      "occurrence_j": 5,
+      "f_overlap": [
+        50,
+        53
+      ],
+      "t_overlap": [
+        160,
+        162
+      ]
+    },
+    {
+      "plan_i": "B003",
+      "plan_j": "C024",
+      "occurrence_i": 3,
+      "occurrence_j": 1,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        160,
+        162
+      ]
+    },
+    {
+      "plan_i": "B004",
+      "plan_j": "C016",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        88,
+        90
+      ]
+    },
+    {
+      "plan_i": "B004",
+      "plan_j": "C017",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        36,
+        39
+      ],
+      "t_overlap": [
+        175,
+        177
+      ]
+    },
+    {
+      "plan_i": "B004",
+      "plan_j": "C027",
+      "occurrence_i": 3,
+      "occurrence_j": 1,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        175,
+        177
+      ]
+    },
+    {
+      "plan_i": "B005",
+      "plan_j": "C009",
+      "occurrence_i": 1,
+      "occurrence_j": 7,
+      "f_overlap": [
+        13,
+        16
+      ],
+      "t_overlap": [
+        101,
+        103
+      ]
+    },
+    {
+      "plan_i": "B005",
+      "plan_j": "C010",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        5,
+        7
+      ],
+      "t_overlap": [
+        58,
+        60
+      ]
+    },
+    {
+      "plan_i": "B005",
+      "plan_j": "C019",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        12,
+        15
+      ],
+      "t_overlap": [
+        186,
+        188
+      ]
+    },
+    {
+      "plan_i": "B005",
+      "plan_j": "C029",
+      "occurrence_i": 3,
+      "occurrence_j": 5,
+      "f_overlap": [
+        11,
+        14
+      ],
+      "t_overlap": [
+        187,
+        189
+      ]
+    },
+    {
+      "plan_i": "B005",
+      "plan_j": "C030",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        143,
+        144
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C001",
+      "occurrence_i": 1,
+      "occurrence_j": 10,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        140,
+        141
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C011",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        96,
+        99
+      ],
+      "t_overlap": [
+        140,
+        141
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C012",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        85,
+        86
+      ],
+      "t_overlap": [
+        95,
+        97
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C021",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        95,
+        98
+      ],
+      "t_overlap": [
+        225,
+        227
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C051",
+      "occurrence_i": 3,
+      "occurrence_j": 0,
+      "f_overlap": [
+        94,
+        97
+      ],
+      "t_overlap": [
+        225,
+        227
+      ]
+    },
+    {
+      "plan_i": "B006",
+      "plan_j": "C052",
+      "occurrence_i": 3,
+      "occurrence_j": 2,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        224,
+        226
+      ]
+    },
+    {
+      "plan_i": "B007",
+      "plan_j": "C004",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        60,
+        63
+      ],
+      "t_overlap": [
+        62,
+        63
+      ]
+    },
+    {
+      "plan_i": "B007",
+      "plan_j": "C013",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        70,
+        73
+      ],
+      "t_overlap": [
+        105,
+        107
+      ]
+    },
+    {
+      "plan_i": "B007",
+      "plan_j": "C014",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        65,
+        68
+      ],
+      "t_overlap": [
+        192,
+        194
+      ]
+    },
+    {
+      "plan_i": "B007",
+      "plan_j": "C024",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        150,
+        151
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C006",
+      "occurrence_i": 0,
+      "occurrence_j": 6,
+      "f_overlap": [
+        47,
+        50
+      ],
+      "t_overlap": [
+        85,
+        87
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C015",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        50,
+        53
+      ],
+      "t_overlap": [
+        130,
+        131
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C016",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        128,
+        130
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C025",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        54,
+        55
+      ],
+      "t_overlap": [
+        172,
+        174
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C026",
+      "occurrence_i": 3,
+      "occurrence_j": 7,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        215,
+        217
+      ]
+    },
+    {
+      "plan_i": "B008",
+      "plan_j": "C055",
+      "occurrence_i": 3,
+      "occurrence_j": 0,
+      "f_overlap": [
+        52,
+        55
+      ],
+      "t_overlap": [
+        214,
+        215
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C008",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        22,
+        23
+      ],
+      "t_overlap": [
+        79,
+        80
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C017",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        36,
+        37
+      ],
+      "t_overlap": [
+        165,
+        166
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C018",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        22,
+        23
+      ],
+      "t_overlap": [
+        207,
+        209
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C027",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        165,
+        166
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C028",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        24,
+        27
+      ],
+      "t_overlap": [
+        208,
+        209
+      ]
+    },
+    {
+      "plan_i": "B009",
+      "plan_j": "C057",
+      "occurrence_i": 3,
+      "occurrence_j": 2,
+      "f_overlap": [
+        32,
+        35
+      ],
+      "t_overlap": [
+        206,
+        207
+      ]
+    },
+    {
+      "plan_i": "B010",
+      "plan_j": "C009",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        13,
+        16
+      ],
+      "t_overlap": [
+        111,
+        113
+      ]
+    },
+    {
+      "plan_i": "B010",
+      "plan_j": "C010",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        5,
+        7
+      ],
+      "t_overlap": [
+        68,
+        70
+      ]
+    },
+    {
+      "plan_i": "B010",
+      "plan_j": "C030",
+      "occurrence_i": 3,
+      "occurrence_j": 3,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        153,
+        154
+      ]
+    },
+    {
+      "plan_i": "B011",
+      "plan_j": "C012",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        83,
+        85
+      ],
+      "t_overlap": [
+        155,
+        157
+      ]
+    },
+    {
+      "plan_i": "B011",
+      "plan_j": "C013",
+      "occurrence_i": 0,
+      "occurrence_j": 8,
+      "f_overlap": [
+        70,
+        73
+      ],
+      "t_overlap": [
+        155,
+        157
+      ]
+    },
+    {
+      "plan_i": "B011",
+      "plan_j": "C023",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        76,
+        79
+      ],
+      "t_overlap": [
+        241,
+        243
+      ]
+    },
+    {
+      "plan_i": "B011",
+      "plan_j": "C043",
+      "occurrence_i": 3,
+      "occurrence_j": 3,
+      "f_overlap": [
+        72,
+        75
+      ],
+      "t_overlap": [
+        284,
+        285
+      ]
+    },
+    {
+      "plan_i": "B011",
+      "plan_j": "C053",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        71,
+        74
+      ],
+      "t_overlap": [
+        243,
+        244
+      ]
+    },
+    {
+      "plan_i": "B012",
+      "plan_j": "C024",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        210,
+        212
+      ]
+    },
+    {
+      "plan_i": "B012",
+      "plan_j": "C025",
+      "occurrence_i": 1,
+      "occurrence_j": 8,
+      "f_overlap": [
+        55,
+        57
+      ],
+      "t_overlap": [
+        212,
+        213
+      ]
+    },
+    {
+      "plan_i": "B012",
+      "plan_j": "C054",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        64,
+        67
+      ],
+      "t_overlap": [
+        298,
+        299
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "B018",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        45,
+        55
+      ],
+      "t_overlap": [
+        225,
+        226
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "B023",
+      "occurrence_i": 3,
+      "occurrence_j": 0,
+      "f_overlap": [
+        50,
+        60
+      ],
+      "t_overlap": [
+        310,
+        312
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "C015",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        50,
+        53
+      ],
+      "t_overlap": [
+        180,
+        182
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "C025",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        54,
+        57
+      ],
+      "t_overlap": [
+        182,
+        183
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "C026",
+      "occurrence_i": 1,
+      "occurrence_j": 8,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        225,
+        226
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "C036",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        266,
+        268
+      ]
+    },
+    {
+      "plan_i": "B013",
+      "plan_j": "C055",
+      "occurrence_i": 1,
+      "occurrence_j": 1,
+      "f_overlap": [
+        52,
+        55
+      ],
+      "t_overlap": [
+        223,
+        225
+      ]
+    },
+    {
+      "plan_i": "B014",
+      "plan_j": "C017",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        36,
+        39
+      ],
+      "t_overlap": [
+        185,
+        187
+      ]
+    },
+    {
+      "plan_i": "B014",
+      "plan_j": "C027",
+      "occurrence_i": 0,
+      "occurrence_j": 2,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        185,
+        187
+      ]
+    },
+    {
+      "plan_i": "B014",
+      "plan_j": "C037",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        271,
+        272
+      ]
+    },
+    {
+      "plan_i": "B014",
+      "plan_j": "C056",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        41,
+        44
+      ],
+      "t_overlap": [
+        272,
+        274
+      ]
+    },
+    {
+      "plan_i": "B014",
+      "plan_j": "C057",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        32,
+        35
+      ],
+      "t_overlap": [
+        185,
+        187
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C018",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        20,
+        23
+      ],
+      "t_overlap": [
+        197,
+        199
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C028",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        24,
+        27
+      ],
+      "t_overlap": [
+        198,
+        200
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C038",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        22,
+        25
+      ],
+      "t_overlap": [
+        285,
+        286
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C039",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        16,
+        19
+      ],
+      "t_overlap": [
+        284,
+        286
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C058",
+      "occurrence_i": 3,
+      "occurrence_j": 11,
+      "f_overlap": [
+        24,
+        27
+      ],
+      "t_overlap": [
+        328,
+        329
+      ]
+    },
+    {
+      "plan_i": "B015",
+      "plan_j": "C059",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        16,
+        19
+      ],
+      "t_overlap": [
+        241,
+        243
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C021",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        95,
+        98
+      ],
+      "t_overlap": [
+        235,
+        237
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C022",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        237,
+        238
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C031",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        94,
+        97
+      ],
+      "t_overlap": [
+        365,
+        367
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C041",
+      "occurrence_i": 2,
+      "occurrence_j": 2,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        323,
+        324
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C042",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        85,
+        86
+      ],
+      "t_overlap": [
+        366,
+        367
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C051",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        94,
+        97
+      ],
+      "t_overlap": [
+        235,
+        237
+      ]
+    },
+    {
+      "plan_i": "B016",
+      "plan_j": "C052",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        235,
+        236
+      ]
+    },
+    {
+      "plan_i": "B017",
+      "plan_j": "C014",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        65,
+        68
+      ],
+      "t_overlap": [
+        202,
+        204
+      ]
+    },
+    {
+      "plan_i": "B017",
+      "plan_j": "C033",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        74,
+        75
+      ],
+      "t_overlap": [
+        332,
+        334
+      ]
+    },
+    {
+      "plan_i": "B017",
+      "plan_j": "C043",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        72,
+        75
+      ],
+      "t_overlap": [
+        333,
+        334
+      ]
+    },
+    {
+      "plan_i": "B017",
+      "plan_j": "C054",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        64,
+        67
+      ],
+      "t_overlap": [
+        288,
+        290
+      ]
+    },
+    {
+      "plan_i": "B018",
+      "plan_j": "B023",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        50,
+        55
+      ],
+      "t_overlap": [
+        311,
+        313
+      ]
+    },
+    {
+      "plan_i": "B018",
+      "plan_j": "C026",
+      "occurrence_i": 0,
+      "occurrence_j": 8,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        225,
+        227
+      ]
+    },
+    {
+      "plan_i": "B018",
+      "plan_j": "C036",
+      "occurrence_i": 3,
+      "occurrence_j": 9,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        356,
+        357
+      ]
+    },
+    {
+      "plan_i": "B018",
+      "plan_j": "C055",
+      "occurrence_i": 2,
+      "occurrence_j": 10,
+      "f_overlap": [
+        52,
+        55
+      ],
+      "t_overlap": [
+        313,
+        314
+      ]
+    },
+    {
+      "plan_i": "B018",
+      "plan_j": "C056",
+      "occurrence_i": 2,
+      "occurrence_j": 11,
+      "f_overlap": [
+        41,
+        44
+      ],
+      "t_overlap": [
+        312,
+        314
+      ]
+    },
+    {
+      "plan_i": "B019",
+      "plan_j": "B024",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        30,
+        40
+      ],
+      "t_overlap": [
+        305,
+        306
+      ]
+    },
+    {
+      "plan_i": "B019",
+      "plan_j": "C028",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        25,
+        27
+      ],
+      "t_overlap": [
+        218,
+        220
+      ]
+    },
+    {
+      "plan_i": "B019",
+      "plan_j": "C058",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        25,
+        27
+      ],
+      "t_overlap": [
+        218,
+        220
+      ]
+    },
+    {
+      "plan_i": "B020",
+      "plan_j": "C019",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        12,
+        15
+      ],
+      "t_overlap": [
+        126,
+        127
+      ]
+    },
+    {
+      "plan_i": "B020",
+      "plan_j": "C020",
+      "occurrence_i": 0,
+      "occurrence_j": 6,
+      "f_overlap": [
+        2,
+        5
+      ],
+      "t_overlap": [
+        125,
+        127
+      ]
+    },
+    {
+      "plan_i": "B020",
+      "plan_j": "C029",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        11,
+        14
+      ],
+      "t_overlap": [
+        167,
+        169
+      ]
+    },
+    {
+      "plan_i": "B020",
+      "plan_j": "C030",
+      "occurrence_i": 2,
+      "occurrence_j": 9,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        212,
+        213
+      ]
+    },
+    {
+      "plan_i": "B020",
+      "plan_j": "C040",
+      "occurrence_i": 3,
+      "occurrence_j": 1,
+      "f_overlap": [
+        5,
+        8
+      ],
+      "t_overlap": [
+        253,
+        254
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C031",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        94,
+        95
+      ],
+      "t_overlap": [
+        295,
+        297
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C032",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        296,
+        298
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C041",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        383,
+        384
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C042",
+      "occurrence_i": 3,
+      "occurrence_j": 10,
+      "f_overlap": [
+        83,
+        86
+      ],
+      "t_overlap": [
+        426,
+        427
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C051",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        94,
+        95
+      ],
+      "t_overlap": [
+        295,
+        297
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C052",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        295,
+        296
+      ]
+    },
+    {
+      "plan_i": "B021",
+      "plan_j": "C072",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        426,
+        427
+      ]
+    },
+    {
+      "plan_i": "B022",
+      "plan_j": "C033",
+      "occurrence_i": 1,
+      "occurrence_j": 10,
+      "f_overlap": [
+        74,
+        77
+      ],
+      "t_overlap": [
+        352,
+        353
+      ]
+    },
+    {
+      "plan_i": "B022",
+      "plan_j": "C044",
+      "occurrence_i": 2,
+      "occurrence_j": 6,
+      "f_overlap": [
+        66,
+        69
+      ],
+      "t_overlap": [
+        394,
+        396
+      ]
+    },
+    {
+      "plan_i": "B022",
+      "plan_j": "C054",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        65,
+        67
+      ],
+      "t_overlap": [
+        308,
+        310
+      ]
+    },
+    {
+      "plan_i": "B022",
+      "plan_j": "C073",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        77,
+        80
+      ],
+      "t_overlap": [
+        438,
+        439
+      ]
+    },
+    {
+      "plan_i": "B022",
+      "plan_j": "C074",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        65,
+        67
+      ],
+      "t_overlap": [
+        436,
+        438
+      ]
+    },
+    {
+      "plan_i": "B023",
+      "plan_j": "C034",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        62,
+        65
+      ],
+      "t_overlap": [
+        354,
+        356
+      ]
+    },
+    {
+      "plan_i": "B023",
+      "plan_j": "C035",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        57,
+        60
+      ],
+      "t_overlap": [
+        312,
+        313
+      ]
+    },
+    {
+      "plan_i": "B023",
+      "plan_j": "C045",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        53,
+        56
+      ],
+      "t_overlap": [
+        397,
+        399
+      ]
+    },
+    {
+      "plan_i": "B023",
+      "plan_j": "C074",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        64,
+        65
+      ],
+      "t_overlap": [
+        396,
+        398
+      ]
+    },
+    {
+      "plan_i": "B023",
+      "plan_j": "C075",
+      "occurrence_i": 3,
+      "occurrence_j": 5,
+      "f_overlap": [
+        57,
+        60
+      ],
+      "t_overlap": [
+        441,
+        442
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C037",
+      "occurrence_i": 1,
+      "occurrence_j": 8,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        350,
+        351
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C046",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        348,
+        349
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C047",
+      "occurrence_i": 2,
+      "occurrence_j": 5,
+      "f_overlap": [
+        36,
+        39
+      ],
+      "t_overlap": [
+        391,
+        393
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C076",
+      "occurrence_i": 3,
+      "occurrence_j": 5,
+      "f_overlap": [
+        43,
+        45
+      ],
+      "t_overlap": [
+        434,
+        436
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C077",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        391,
+        393
+      ]
+    },
+    {
+      "plan_i": "B024",
+      "plan_j": "C086",
+      "occurrence_i": 3,
+      "occurrence_j": 3,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        435,
+        437
+      ]
+    },
+    {
+      "plan_i": "B025",
+      "plan_j": "B040",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        15,
+        20
+      ],
+      "t_overlap": [
+        424,
+        426
+      ]
+    },
+    {
+      "plan_i": "B025",
+      "plan_j": "C049",
+      "occurrence_i": 2,
+      "occurrence_j": 11,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        423,
+        425
+      ]
+    },
+    {
+      "plan_i": "B026",
+      "plan_j": "C031",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        94,
+        95
+      ],
+      "t_overlap": [
+        375,
+        377
+      ]
+    },
+    {
+      "plan_i": "B026",
+      "plan_j": "C042",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        83,
+        86
+      ],
+      "t_overlap": [
+        376,
+        378
+      ]
+    },
+    {
+      "plan_i": "B026",
+      "plan_j": "C061",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        461,
+        462
+      ]
+    },
+    {
+      "plan_i": "B026",
+      "plan_j": "C062",
+      "occurrence_i": 1,
+      "occurrence_j": 0,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        420,
+        421
+      ]
+    },
+    {
+      "plan_i": "B026",
+      "plan_j": "C071",
+      "occurrence_i": 1,
+      "occurrence_j": 3,
+      "f_overlap": [
+        92,
+        95
+      ],
+      "t_overlap": [
+        420,
+        421
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "B032",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        67,
+        80
+      ],
+      "t_overlap": [
+        428,
+        430
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "B033",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        65,
+        67
+      ],
+      "t_overlap": [
+        430,
+        431
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "C033",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        74,
+        77
+      ],
+      "t_overlap": [
+        342,
+        344
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "C043",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        72,
+        75
+      ],
+      "t_overlap": [
+        343,
+        345
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "C044",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        66,
+        69
+      ],
+      "t_overlap": [
+        344,
+        345
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "C063",
+      "occurrence_i": 3,
+      "occurrence_j": 4,
+      "f_overlap": [
+        73,
+        76
+      ],
+      "t_overlap": [
+        473,
+        474
+      ]
+    },
+    {
+      "plan_i": "B027",
+      "plan_j": "C073",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        77,
+        80
+      ],
+      "t_overlap": [
+        428,
+        430
+      ]
+    },
+    {
+      "plan_i": "B028",
+      "plan_j": "C036",
+      "occurrence_i": 0,
+      "occurrence_j": 10,
+      "f_overlap": [
+        46,
+        49
+      ],
+      "t_overlap": [
+        366,
+        368
+      ]
+    },
+    {
+      "plan_i": "B028",
+      "plan_j": "C045",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        53,
+        56
+      ],
+      "t_overlap": [
+        367,
+        368
+      ]
+    },
+    {
+      "plan_i": "B028",
+      "plan_j": "C066",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        45,
+        48
+      ],
+      "t_overlap": [
+        452,
+        454
+      ]
+    },
+    {
+      "plan_i": "B028",
+      "plan_j": "C075",
+      "occurrence_i": 2,
+      "occurrence_j": 6,
+      "f_overlap": [
+        57,
+        60
+      ],
+      "t_overlap": [
+        451,
+        453
+      ]
+    },
+    {
+      "plan_i": "B028",
+      "plan_j": "C076",
+      "occurrence_i": 3,
+      "occurrence_j": 11,
+      "f_overlap": [
+        45,
+        46
+      ],
+      "t_overlap": [
+        494,
+        496
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "B034",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        30,
+        45
+      ],
+      "t_overlap": [
+        445,
+        446
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "B038",
+      "occurrence_i": 3,
+      "occurrence_j": 0,
+      "f_overlap": [
+        40,
+        45
+      ],
+      "t_overlap": [
+        486,
+        488
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "C046",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        357,
+        359
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "C047",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        36,
+        39
+      ],
+      "t_overlap": [
+        401,
+        403
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "C076",
+      "occurrence_i": 2,
+      "occurrence_j": 6,
+      "f_overlap": [
+        43,
+        45
+      ],
+      "t_overlap": [
+        444,
+        446
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "C077",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        401,
+        403
+      ]
+    },
+    {
+      "plan_i": "B029",
+      "plan_j": "C086",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        445,
+        446
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C038",
+      "occurrence_i": 0,
+      "occurrence_j": 10,
+      "f_overlap": [
+        22,
+        25
+      ],
+      "t_overlap": [
+        385,
+        387
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C048",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        21,
+        24
+      ],
+      "t_overlap": [
+        386,
+        387
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C049",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        384,
+        385
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C068",
+      "occurrence_i": 2,
+      "occurrence_j": 1,
+      "f_overlap": [
+        27,
+        30
+      ],
+      "t_overlap": [
+        471,
+        473
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C069",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        471,
+        473
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C078",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        26,
+        29
+      ],
+      "t_overlap": [
+        429,
+        430
+      ]
+    },
+    {
+      "plan_i": "B030",
+      "plan_j": "C079",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        471,
+        473
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C042",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        83,
+        86
+      ],
+      "t_overlap": [
+        416,
+        418
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C061",
+      "occurrence_i": 1,
+      "occurrence_j": 1,
+      "f_overlap": [
+        90,
+        93
+      ],
+      "t_overlap": [
+        460,
+        461
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C062",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        460,
+        461
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C071",
+      "occurrence_i": 1,
+      "occurrence_j": 7,
+      "f_overlap": [
+        92,
+        95
+      ],
+      "t_overlap": [
+        460,
+        461
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C072",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        416,
+        418
+      ]
+    },
+    {
+      "plan_i": "B031",
+      "plan_j": "C081",
+      "occurrence_i": 3,
+      "occurrence_j": 6,
+      "f_overlap": [
+        95,
+        98
+      ],
+      "t_overlap": [
+        545,
+        547
+      ]
+    },
+    {
+      "plan_i": "B032",
+      "plan_j": "C063",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        73,
+        76
+      ],
+      "t_overlap": [
+        513,
+        515
+      ]
+    },
+    {
+      "plan_i": "B032",
+      "plan_j": "C073",
+      "occurrence_i": 0,
+      "occurrence_j": 3,
+      "f_overlap": [
+        77,
+        80
+      ],
+      "t_overlap": [
+        428,
+        430
+      ]
+    },
+    {
+      "plan_i": "B033",
+      "plan_j": "C064",
+      "occurrence_i": 1,
+      "occurrence_j": 2,
+      "f_overlap": [
+        61,
+        64
+      ],
+      "t_overlap": [
+        475,
+        476
+      ]
+    },
+    {
+      "plan_i": "B033",
+      "plan_j": "C065",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        54,
+        57
+      ],
+      "t_overlap": [
+        518,
+        519
+      ]
+    },
+    {
+      "plan_i": "B033",
+      "plan_j": "C075",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        57,
+        60
+      ],
+      "t_overlap": [
+        431,
+        433
+      ]
+    },
+    {
+      "plan_i": "B034",
+      "plan_j": "C067",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        33,
+        36
+      ],
+      "t_overlap": [
+        531,
+        533
+      ]
+    },
+    {
+      "plan_i": "B034",
+      "plan_j": "C076",
+      "occurrence_i": 0,
+      "occurrence_j": 6,
+      "f_overlap": [
+        43,
+        45
+      ],
+      "t_overlap": [
+        445,
+        446
+      ]
+    },
+    {
+      "plan_i": "B034",
+      "plan_j": "C086",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        445,
+        447
+      ]
+    },
+    {
+      "plan_i": "B034",
+      "plan_j": "C087",
+      "occurrence_i": 3,
+      "occurrence_j": 5,
+      "f_overlap": [
+        37,
+        40
+      ],
+      "t_overlap": [
+        575,
+        577
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C048",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        21,
+        24
+      ],
+      "t_overlap": [
+        457,
+        458
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C068",
+      "occurrence_i": 1,
+      "occurrence_j": 4,
+      "f_overlap": [
+        27,
+        30
+      ],
+      "t_overlap": [
+        501,
+        503
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C069",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        501,
+        503
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C078",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        26,
+        29
+      ],
+      "t_overlap": [
+        459,
+        460
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C079",
+      "occurrence_i": 1,
+      "occurrence_j": 11,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        501,
+        503
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C088",
+      "occurrence_i": 3,
+      "occurrence_j": 6,
+      "f_overlap": [
+        21,
+        24
+      ],
+      "t_overlap": [
+        588,
+        589
+      ]
+    },
+    {
+      "plan_i": "B035",
+      "plan_j": "C089",
+      "occurrence_i": 3,
+      "occurrence_j": 9,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        587,
+        589
+      ]
+    },
+    {
+      "plan_i": "B036",
+      "plan_j": "C070",
+      "occurrence_i": 0,
+      "occurrence_j": 8,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        495,
+        497
+      ]
+    },
+    {
+      "plan_i": "B036",
+      "plan_j": "C090",
+      "occurrence_i": 2,
+      "occurrence_j": 10,
+      "f_overlap": [
+        3,
+        6
+      ],
+      "t_overlap": [
+        582,
+        584
+      ]
+    },
+    {
+      "plan_i": "B037",
+      "plan_j": "C064",
+      "occurrence_i": 1,
+      "occurrence_j": 5,
+      "f_overlap": [
+        61,
+        64
+      ],
+      "t_overlap": [
+        505,
+        507
+      ]
+    },
+    {
+      "plan_i": "B037",
+      "plan_j": "C074",
+      "occurrence_i": 1,
+      "occurrence_j": 11,
+      "f_overlap": [
+        64,
+        67
+      ],
+      "t_overlap": [
+        506,
+        508
+      ]
+    },
+    {
+      "plan_i": "B037",
+      "plan_j": "C075",
+      "occurrence_i": 0,
+      "occurrence_j": 7,
+      "f_overlap": [
+        58,
+        60
+      ],
+      "t_overlap": [
+        462,
+        463
+      ]
+    },
+    {
+      "plan_i": "B037",
+      "plan_j": "C083",
+      "occurrence_i": 3,
+      "occurrence_j": 6,
+      "f_overlap": [
+        71,
+        73
+      ],
+      "t_overlap": [
+        591,
+        593
+      ]
+    },
+    {
+      "plan_i": "B037",
+      "plan_j": "C084",
+      "occurrence_i": 2,
+      "occurrence_j": 4,
+      "f_overlap": [
+        67,
+        70
+      ],
+      "t_overlap": [
+        550,
+        551
+      ]
+    },
+    {
+      "plan_i": "B038",
+      "plan_j": "C065",
+      "occurrence_i": 1,
+      "occurrence_j": 5,
+      "f_overlap": [
+        54,
+        55
+      ],
+      "t_overlap": [
+        528,
+        530
+      ]
+    },
+    {
+      "plan_i": "B038",
+      "plan_j": "C076",
+      "occurrence_i": 0,
+      "occurrence_j": 10,
+      "f_overlap": [
+        43,
+        46
+      ],
+      "t_overlap": [
+        485,
+        486
+      ]
+    },
+    {
+      "plan_i": "B038",
+      "plan_j": "C085",
+      "occurrence_i": 2,
+      "occurrence_j": 8,
+      "f_overlap": [
+        51,
+        54
+      ],
+      "t_overlap": [
+        572,
+        574
+      ]
+    },
+    {
+      "plan_i": "B038",
+      "plan_j": "C086",
+      "occurrence_i": 0,
+      "occurrence_j": 8,
+      "f_overlap": [
+        42,
+        45
+      ],
+      "t_overlap": [
+        485,
+        487
+      ]
+    },
+    {
+      "plan_i": "B039",
+      "plan_j": "C067",
+      "occurrence_i": 1,
+      "occurrence_j": 7,
+      "f_overlap": [
+        33,
+        35
+      ],
+      "t_overlap": [
+        521,
+        523
+      ]
+    },
+    {
+      "plan_i": "B039",
+      "plan_j": "C068",
+      "occurrence_i": 1,
+      "occurrence_j": 6,
+      "f_overlap": [
+        27,
+        30
+      ],
+      "t_overlap": [
+        521,
+        523
+      ]
+    },
+    {
+      "plan_i": "B039",
+      "plan_j": "C078",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        26,
+        29
+      ],
+      "t_overlap": [
+        479,
+        480
+      ]
+    },
+    {
+      "plan_i": "B039",
+      "plan_j": "C088",
+      "occurrence_i": 3,
+      "occurrence_j": 8,
+      "f_overlap": [
+        21,
+        24
+      ],
+      "t_overlap": [
+        608,
+        609
+      ]
+    },
+    {
+      "plan_i": "B040",
+      "plan_j": "C049",
+      "occurrence_i": 0,
+      "occurrence_j": 11,
+      "f_overlap": [
+        17,
+        20
+      ],
+      "t_overlap": [
+        424,
+        425
+      ]
+    },
+    {
+      "plan_i": "B040",
+      "plan_j": "C069",
+      "occurrence_i": 2,
+      "occurrence_j": 7,
+      "f_overlap": [
+        15,
+        18
+      ],
+      "t_overlap": [
+        511,
+        513
+      ]
+    },
+    {
+      "plan_i": "B040",
+      "plan_j": "C070",
+      "occurrence_i": 0,
+      "occurrence_j": 1,
+      "f_overlap": [
+        6,
+        9
+      ],
+      "t_overlap": [
+        425,
+        427
+      ]
+    },
+    {
+      "plan_i": "B040",
+      "plan_j": "C090",
+      "occurrence_i": 2,
+      "occurrence_j": 3,
+      "f_overlap": [
+        5,
+        6
+      ],
+      "t_overlap": [
+        512,
+        513
+      ]
+    },
+    {
+      "plan_i": "C005",
+      "plan_j": "C025",
+      "occurrence_i": 10,
+      "occurrence_j": 0,
+      "f_overlap": [
+        55,
+        57
+      ],
+      "t_overlap": [
+        133,
+        134
+      ]
+    },
+    {
+      "plan_i": "C019",
+      "plan_j": "C029",
+      "occurrence_i": 5,
+      "occurrence_j": 0,
+      "f_overlap": [
+        12,
+        14
+      ],
+      "t_overlap": [
+        137,
+        138
+      ]
+    },
+    {
+      "plan_i": "C021",
+      "plan_j": "C051",
+      "occurrence_i": 10,
+      "occurrence_j": 0,
+      "f_overlap": [
+        95,
+        97
+      ],
+      "t_overlap": [
+        225,
+        227
+      ]
+    },
+    {
+      "plan_i": "C022",
+      "plan_j": "C032",
+      "occurrence_i": 10,
+      "occurrence_j": 0,
+      "f_overlap": [
+        86,
+        89
+      ],
+      "t_overlap": [
+        247,
+        248
+      ]
+    },
+    {
+      "plan_i": "C023",
+      "plan_j": "C033",
+      "occurrence_i": 8,
+      "occurrence_j": 0,
+      "f_overlap": [
+        76,
+        77
+      ],
+      "t_overlap": [
+        252,
+        253
+      ]
+    },
+    {
+      "plan_i": "C025",
+      "plan_j": "C055",
+      "occurrence_i": 8,
+      "occurrence_j": 0,
+      "f_overlap": [
+        54,
+        55
+      ],
+      "t_overlap": [
+        213,
+        214
+      ]
+    },
+    {
+      "plan_i": "C027",
+      "plan_j": "C057",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        33,
+        35
+      ],
+      "t_overlap": [
+        185,
+        187
+      ]
+    },
+    {
+      "plan_i": "C028",
+      "plan_j": "C058",
+      "occurrence_i": 5,
+      "occurrence_j": 0,
+      "f_overlap": [
+        24,
+        27
+      ],
+      "t_overlap": [
+        218,
+        220
+      ]
+    },
+    {
+      "plan_i": "C031",
+      "plan_j": "C051",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        94,
+        97
+      ],
+      "t_overlap": [
+        265,
+        267
+      ]
+    },
+    {
+      "plan_i": "C033",
+      "plan_j": "C043",
+      "occurrence_i": 0,
+      "occurrence_j": 0,
+      "f_overlap": [
+        74,
+        75
+      ],
+      "t_overlap": [
+        253,
+        254
+      ]
+    },
+    {
+      "plan_i": "C037",
+      "plan_j": "C077",
+      "occurrence_i": 9,
+      "occurrence_j": 0,
+      "f_overlap": [
+        31,
+        34
+      ],
+      "t_overlap": [
+        361,
+        362
+      ]
+    },
+    {
+      "plan_i": "C038",
+      "plan_j": "C048",
+      "occurrence_i": 6,
+      "occurrence_j": 0,
+      "f_overlap": [
+        22,
+        24
+      ],
+      "t_overlap": [
+        346,
+        347
+      ]
+    },
+    {
+      "plan_i": "C039",
+      "plan_j": "C049",
+      "occurrence_i": 5,
+      "occurrence_j": 0,
+      "f_overlap": [
+        17,
+        19
+      ],
+      "t_overlap": [
+        314,
+        315
+      ]
+    },
+    {
+      "plan_i": "C043",
+      "plan_j": "C053",
+      "occurrence_i": 0,
+      "occurrence_j": 4,
+      "f_overlap": [
+        72,
+        74
+      ],
+      "t_overlap": [
+        253,
+        255
+      ]
+    },
+    {
+      "plan_i": "C050",
+      "plan_j": "C070",
+      "occurrence_i": 11,
+      "occurrence_j": 0,
+      "f_overlap": [
+        6,
+        8
+      ],
+      "t_overlap": [
+        416,
+        417
+      ]
+    },
+    {
+      "plan_i": "C061",
+      "plan_j": "C071",
+      "occurrence_i": 0,
+      "occurrence_j": 6,
+      "f_overlap": [
+        92,
+        93
+      ],
+      "t_overlap": [
+        450,
+        452
+      ]
+    },
+    {
+      "plan_i": "C067",
+      "plan_j": "C077",
+      "occurrence_i": 0,
+      "occurrence_j": 9,
+      "f_overlap": [
+        33,
+        34
+      ],
+      "t_overlap": [
+        451,
+        453
+      ]
+    },
+    {
+      "plan_i": "C069",
+      "plan_j": "C079",
+      "occurrence_i": 0,
+      "occurrence_j": 5,
+      "f_overlap": [
+        17,
+        18
+      ],
+      "t_overlap": [
+        441,
+        443
+      ]
+    },
+    {
+      "plan_i": "C076",
+      "plan_j": "C086",
+      "occurrence_i": 2,
+      "occurrence_j": 0,
+      "f_overlap": [
+        43,
+        45
+      ],
+      "t_overlap": [
+        405,
+        406
+      ]
+    }
+  ]
+}

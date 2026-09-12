@@ -1,0 +1,138 @@
+{
+  "policy": "P",
+  "mode": "full",
+  "horizon": 643,
+  "budgets": {},
+  "fixed_initial": {},
+  "objective_names": [
+    "P_A",
+    "C_A",
+    "P_B",
+    "C_B",
+    "C",
+    "M",
+    "S_sum",
+    "S_max"
+  ],
+  "solver_config": {
+    "time_limit_seconds_per_layer": 120.0,
+    "num_search_workers": 16,
+    "random_seed": 20260911
+  },
+  "metrics": {
+    "C": 78,
+    "M": 30,
+    "P_A": 0,
+    "C_A": 0,
+    "P_B": 20,
+    "C_B": 3,
+    "P_C": 88,
+    "C_C": 75,
+    "M_A": 0,
+    "M_B": 17,
+    "M_C": 13,
+    "S_sum": 192,
+    "S_max": 10,
+    "P_total": 108
+  },
+  "edge_count": 270626,
+  "cut_count": 0,
+  "iterations": 8,
+  "proven_optimal": true,
+  "layers": [
+    {
+      "name": "P_A",
+      "status": "OPTIMAL",
+      "objective_value": 0,
+      "best_bound": 0.0,
+      "gap": 0.0,
+      "seconds": 0.24362500000279397,
+      "cuts_added": 0,
+      "num_conflicts": 0,
+      "num_branches": 0
+    },
+    {
+      "name": "C_A",
+      "status": "OPTIMAL",
+      "objective_value": 0,
+      "best_bound": 0.0,
+      "gap": 0.0,
+      "seconds": 0.20790980001038406,
+      "cuts_added": 0,
+      "num_conflicts": 0,
+      "num_branches": 0
+    },
+    {
+      "name": "P_B",
+      "status": "OPTIMAL",
+      "objective_value": 20,
+      "best_bound": 20.0,
+      "gap": 0.0,
+      "seconds": 0.2437367000093218,
+      "cuts_added": 0,
+      "num_conflicts": 0,
+      "num_branches": 0
+    },
+    {
+      "name": "C_B",
+      "status": "OPTIMAL",
+      "objective_value": 3,
+      "best_bound": 3.0,
+      "gap": 0.0,
+      "seconds": 0.3038656999997329,
+      "cuts_added": 0,
+      "num_conflicts": 119,
+      "num_branches": 564
+    },
+    {
+      "name": "C",
+      "status": "OPTIMAL",
+      "objective_value": 78,
+      "best_bound": 78.0,
+      "gap": 0.0,
+      "seconds": 0.7825471000105608,
+      "cuts_added": 0,
+      "num_conflicts": 50,
+      "num_branches": 2689
+    },
+    {
+      "name": "M",
+      "status": "OPTIMAL",
+      "objective_value": 30,
+      "best_bound": 30.0,
+      "gap": 0.0,
+      "seconds": 0.7837084000057075,
+      "cuts_added": 0,
+      "num_conflicts": 263,
+      "num_branches": 8919
+    },
+    {
+      "name": "S_sum",
+      "status": "OPTIMAL",
+      "objective_value": 192,
+      "best_bound": 192.0,
+      "gap": 0.0,
+      "seconds": 1.2153537000122014,
+      "cuts_added": 0,
+      "num_conflicts": 10,
+      "num_branches": 3395
+    },
+    {
+      "name": "S_max",
+      "status": "OPTIMAL",
+      "objective_value": 10,
+      "best_bound": 10.0,
+      "gap": 0.0,
+      "seconds": 1.388442399998894,
+      "cuts_added": 0,
+      "num_conflicts": 66,
+      "num_branches": 4309
+    }
+  ],
+  "canonical_validation": {
+    "plan_count": 150,
+    "occurrence_count": 388,
+    "conflict_count": 0,
+    "ok": true
+  }
+}

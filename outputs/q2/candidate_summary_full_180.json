@@ -1,0 +1,10 @@
+{
+  "plan_count": 150,
+  "candidate_state_count": 4582,
+  "candidate_min": 22,
+  "candidate_max": 32,
+  "horizon": 643,
+  "state_conflict_edges": 270626,
+  "mask_canonical_sample_checked": 1000,
+  "mode": "full"
+}

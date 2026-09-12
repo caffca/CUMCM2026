@@ -1,0 +1,1088 @@
+{
+  "purpose": "small-instance exhaustive cross-check; not full-instance optimality proof",
+  "horizon": 643,
+  "objective": [
+    "C",
+    "M",
+    "P_A",
+    "C_A",
+    "P_B",
+    "C_B",
+    "S_sum",
+    "S_max"
+  ],
+  "subsets": [
+    {
+      "plans": [
+        "A001",
+        "B001",
+        "C001",
+        "C002"
+      ],
+      "candidate_counts": [
+        32,
+        27,
+        29,
+        32
+      ],
+      "candidate_product": 801792,
+      "state_conflict_edges": 2561,
+      "cell_cliques": 2297,
+      "mask_sample_checked": 500,
+      "brute_force": {
+        "objective_vector": [
+          0,
+          3,
+          0,
+          0,
+          1,
+          0,
+          18,
+          8
+        ],
+        "feasible_leaves": 16445,
+        "visited_nodes": 18806,
+        "canonical_conflicts": 0,
+        "canonical_ok": true
+      },
+      "solvers": {
+        "edge": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            18,
+            8
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.034446700010448694,
+              "cuts_added": 0,
+              "num_conflicts": 1,
+              "num_branches": 180
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.043273799994494766,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 140
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.04370399999606889,
+              "cuts_added": 0,
+              "num_conflicts": 1,
+              "num_branches": 153
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.0274615999951493,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.026129499994567595,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.027671800009557046,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 18,
+              "best_bound": 18.0,
+              "gap": 0.0,
+              "seconds": 0.027648200004477985,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 8,
+              "best_bound": 8.0,
+              "gap": 0.0,
+              "seconds": 0.028902699996251613,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "cell": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            18,
+            8
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.0313492999994196,
+              "cuts_added": 0,
+              "num_conflicts": 5,
+              "num_branches": 163
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.03494759999739472,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 114
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.033493700000690296,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 106
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.019780899994657375,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.01905879999685567,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.01729390000400599,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 18,
+              "best_bound": 18.0,
+              "gap": 0.0,
+              "seconds": 0.017745799996191636,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 8,
+              "best_bound": 8.0,
+              "gap": 0.0,
+              "seconds": 0.01753840000310447,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "lazy": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            18,
+            8
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.011451099999248981,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.011348800006089732,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 28
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.010970699993777089,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 32
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.011350399989169091,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.011339599994244054,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.009782499997527339,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 18,
+              "best_bound": 18.0,
+              "gap": 0.0,
+              "seconds": 0.008740699995541945,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 8,
+              "best_bound": 8.0,
+              "gap": 0.0,
+              "seconds": 0.008579400004236959,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        }
+      },
+      "all_solver_vectors_match_brute": true,
+      "all_solver_valid": true,
+      "seconds": 1.8830793000088306
+    },
+    {
+      "plans": [
+        "B009",
+        "C028",
+        "A003",
+        "C018"
+      ],
+      "candidate_counts": [
+        32,
+        32,
+        32,
+        32
+      ],
+      "candidate_product": 1048576,
+      "state_conflict_edges": 2712,
+      "cell_cliques": 2392,
+      "mask_sample_checked": 500,
+      "brute_force": {
+        "objective_vector": [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          15,
+          10
+        ],
+        "feasible_leaves": 35809,
+        "visited_nodes": 40775,
+        "canonical_conflicts": 0,
+        "canonical_ok": true
+      },
+      "solvers": {
+        "edge": {
+          "vector": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            15,
+            10
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.03757749999931548,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 241
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 2,
+              "best_bound": 2.0,
+              "gap": 0.0,
+              "seconds": 0.04338780000398401,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 186
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.041947799996705726,
+              "cuts_added": 0,
+              "num_conflicts": 36,
+              "num_branches": 385
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.02563699999882374,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.027199600008316338,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.027036500003305264,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 15,
+              "best_bound": 15.0,
+              "gap": 0.0,
+              "seconds": 0.02646019999519922,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 10,
+              "best_bound": 10.0,
+              "gap": 0.0,
+              "seconds": 0.02551790000870824,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "cell": {
+          "vector": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            15,
+            10
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.03285620000679046,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 201
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 2,
+              "best_bound": 2.0,
+              "gap": 0.0,
+              "seconds": 0.03298970000469126,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 183
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.0452301999903284,
+              "cuts_added": 0,
+              "num_conflicts": 28,
+              "num_branches": 232
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.0324156000133371,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.03373209999699611,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.03249359999608714,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 15,
+              "best_bound": 15.0,
+              "gap": 0.0,
+              "seconds": 0.03241149999666959,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 10,
+              "best_bound": 10.0,
+              "gap": 0.0,
+              "seconds": 0.03178420000767801,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "lazy": {
+          "vector": [
+            0,
+            2,
+            1,
+            0,
+            1,
+            0,
+            15,
+            10
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.02420709999569226,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 201
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 2,
+              "best_bound": 2.0,
+              "gap": 0.0,
+              "seconds": 0.02507750000222586,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 160
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.026188900010311045,
+              "cuts_added": 0,
+              "num_conflicts": 38,
+              "num_branches": 322
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.024972500003059395,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.023828100005630404,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.009264100008294918,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 15,
+              "best_bound": 15.0,
+              "gap": 0.0,
+              "seconds": 0.023777399997925386,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 10,
+              "best_bound": 10.0,
+              "gap": 0.0,
+              "seconds": 0.023378099998808466,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        }
+      },
+      "all_solver_vectors_match_brute": true,
+      "all_solver_valid": true,
+      "seconds": 3.3086394000129076
+    },
+    {
+      "plans": [
+        "B016",
+        "C051",
+        "C031",
+        "B021"
+      ],
+      "candidate_counts": [
+        22,
+        25,
+        25,
+        27
+      ],
+      "candidate_product": 371250,
+      "state_conflict_edges": 1578,
+      "cell_cliques": 2144,
+      "mask_sample_checked": 500,
+      "brute_force": {
+        "objective_vector": [
+          0,
+          3,
+          0,
+          0,
+          1,
+          0,
+          11,
+          6
+        ],
+        "feasible_leaves": 19661,
+        "visited_nodes": 21440,
+        "canonical_conflicts": 0,
+        "canonical_ok": true
+      },
+      "solvers": {
+        "edge": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            11,
+            6
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.026097299996763468,
+              "cuts_added": 0,
+              "num_conflicts": 2,
+              "num_branches": 143
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.01974309999786783,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 58
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.018515599993406795,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.018677699990803376,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.017930799993337132,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.017842700006440282,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 11,
+              "best_bound": 11.0,
+              "gap": 0.0,
+              "seconds": 0.01903209999727551,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 24
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 6,
+              "best_bound": 6.0,
+              "gap": 0.0,
+              "seconds": 0.01726000000780914,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "cell": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            11,
+            6
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.01979409999330528,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 58
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.02033720001054462,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 59
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.020143300003837794,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.021182799988309853,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.02005710000230465,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.020537400007015094,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 11,
+              "best_bound": 11.0,
+              "gap": 0.0,
+              "seconds": 0.018170800001826137,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 6,
+              "best_bound": 6.0,
+              "gap": 0.0,
+              "seconds": 0.019622699997853488,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        },
+        "lazy": {
+          "vector": [
+            0,
+            3,
+            0,
+            0,
+            1,
+            0,
+            11,
+            6
+          ],
+          "proven_optimal": true,
+          "layers": [
+            {
+              "name": "C",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.011882300008437596,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "M",
+              "status": "OPTIMAL",
+              "objective_value": 3,
+              "best_bound": 3.0,
+              "gap": 0.0,
+              "seconds": 0.010951800009934232,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.01142690000415314,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_A",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.011807700007921085,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "P_B",
+              "status": "OPTIMAL",
+              "objective_value": 1,
+              "best_bound": 1.0,
+              "gap": 0.0,
+              "seconds": 0.010665099995094351,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "C_B",
+              "status": "OPTIMAL",
+              "objective_value": 0,
+              "best_bound": 0.0,
+              "gap": 0.0,
+              "seconds": 0.011531100011779927,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_sum",
+              "status": "OPTIMAL",
+              "objective_value": 11,
+              "best_bound": 11.0,
+              "gap": 0.0,
+              "seconds": 0.010564600001089275,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            },
+            {
+              "name": "S_max",
+              "status": "OPTIMAL",
+              "objective_value": 6,
+              "best_bound": 6.0,
+              "gap": 0.0,
+              "seconds": 0.009658800001488999,
+              "cuts_added": 0,
+              "num_conflicts": 0,
+              "num_branches": 0
+            }
+          ],
+          "pairwise_conflicts": 0,
+          "canonical_conflicts": 0,
+          "canonical_ok": true
+        }
+      },
+      "all_solver_vectors_match_brute": true,
+      "all_solver_valid": true,
+      "seconds": 1.3494421000068542
+    }
+  ],
+  "all_subsets_pass": true
+}

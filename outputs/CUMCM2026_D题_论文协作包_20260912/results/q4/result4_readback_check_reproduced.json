@@ -1,0 +1,18 @@
+{
+  "workbook": "results\\q4\\result4.xlsx",
+  "selected": "results\\q4\\selected_T.json",
+  "headers": [
+    "用频装备编号",
+    "调整后频段范围",
+    "调整后时间区间",
+    "调整后间隔时长",
+    "是否撤销用频计划"
+  ],
+  "nonempty_rows": 121,
+  "expected_changed_rows": 121,
+  "seen_plan_count": 121,
+  "cancelled_rows": 6,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "ok": true
+}
