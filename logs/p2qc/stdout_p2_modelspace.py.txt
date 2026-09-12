@@ -1,0 +1,120 @@
+{
+ "Q2": {
+  "options_total_mine": 4582,
+  "options_total_auth": 4582,
+  "options_equal": true,
+  "gstar_mine": 1693,
+  "gstar_auth": 1693,
+  "gstar_equal": true,
+  "forced_edges_auth": 0,
+  "dg_dropped_gap_mine": 0,
+  "dg_dropped_horizon_mine": 0,
+  "dg_dropped_total_mine": 0,
+  "dg_dropped_auth_label_field": null
+ },
+ "Q4": {
+  "options_total_mine": 6013,
+  "options_total_auth": 6013,
+  "options_equal": true,
+  "gstar_mine": 2117,
+  "gstar_auth": 2117,
+  "gstar_equal": true,
+  "forced_edges_auth": null,
+  "dg_dropped_gap_mine": 270,
+  "dg_dropped_horizon_mine": 99,
+  "dg_dropped_total_mine": 369,
+  "dg_dropped_auth_label_field": 369
+ },
+ "horizon_truncation_examples_first3": [
+  {
+   "id": "C061",
+   "dg": 8,
+   "g": 8,
+   "g_prime": 16,
+   "t0": 450,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    648,
+    650
+   ],
+   "formula": "450 + 11*(16+2) + 2 = 650 > 643"
+  },
+  {
+   "id": "C061",
+   "dg": 9,
+   "g": 8,
+   "g_prime": 17,
+   "t0": 450,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    659,
+    661
+   ],
+   "formula": "450 + 11*(17+2) + 2 = 661 > 643"
+  },
+  {
+   "id": "C061",
+   "dg": 10,
+   "g": 8,
+   "g_prime": 18,
+   "t0": 450,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    670,
+    672
+   ],
+   "formula": "450 + 11*(18+2) + 2 = 672 > 643"
+  }
+ ],
+ "horizon_truncation_examples_last3": [
+  {
+   "id": "C090",
+   "dg": 8,
+   "g": 8,
+   "g_prime": 16,
+   "t0": 482,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    680,
+    682
+   ],
+   "formula": "482 + 11*(16+2) + 2 = 682 > 643"
+  },
+  {
+   "id": "C090",
+   "dg": 9,
+   "g": 8,
+   "g_prime": 17,
+   "t0": 482,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    691,
+    693
+   ],
+   "formula": "482 + 11*(17+2) + 2 = 693 > 643"
+  },
+  {
+   "id": "C090",
+   "dg": 10,
+   "g": 8,
+   "g_prime": 18,
+   "t0": 482,
+   "n": 12,
+   "d": 2,
+   "last_slot": [
+    702,
+    704
+   ],
+   "formula": "482 + 11*(18+2) + 2 = 704 > 643"
+  }
+ ],
+ "n_horizon_examples": 99,
+ "n_gap_examples": 270,
+ "note": "生产字段 dg_options_dropped_by_horizon 同时计入了 g+dg<=0 的非法间隔选项，字段名与实际口径不符（数值可复算，语义命名瑕疵）。",
+ "verdict": "PASS"
+}

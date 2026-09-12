@@ -1,0 +1,56 @@
+{
+ "idea_id": "Q4-R22",
+ "question_id": "Q4",
+ "route_source": "routes/CH-02.route.json（idea_id_suggested=Q4-R22，编号逐字一致，直接采用）",
+ "protocol_ref": "TP-D2026-01",
+ "adjudication_ref": "ADJ-CS-20260911T071520-D2026-01 (R3/R4/R6/R7)",
+ "evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "paradigm": "解析构造（数论同余重定时闭式消元 + 保持不动的最小修补贪心），全程确定性",
+ "determinism": "deterministic；开发跑与生产跑元组逐字一致 [66,43,1111,144]（协议 replicates_deterministic=1，双跑仅作复现证据）",
+ "construction": {
+  "stage_I_CC_congruence": {
+   "mod10_rule_full_audit": {
+    "description": "等周期完整梳判据：C-C 冲突 ⇔ 频段交叠 ∧ (Δt1 mod 10)∈{0,±1} ∧ |Δt1|≤111",
+    "pairs_checked": 4005, "true_conflicts": 19, "rule_mismatches": 0,
+    "conclusion": "CH-02 的同余相位互斥结构在全部 90×89/2 个 C 对上零反例——机理性结论成立（含视界截断修正）"
+   },
+   "strip_matrix": "19 条 CC 边各给出 (t1,g') 平面 {none,dg}×{none,dg} 可行性矩阵（r22_log.json.cc_strip_matrix，含 gi_feasible_if_gj_none 闭式条带列表）",
+   "empty_strip_edge": "C033|C043：无任何 (g'_i,g'_j) 组合（含双方 g' 同改）可消解——闭式可判定该边必入残余层（R3 视界截断所致），这是模构造的结构性极限，非实现失败",
+   "components": 14, "components_resolved_by_retiming_only": 13,
+   "cc_edges_resolved_at_stage_I": "16/19（失败分量 {C023,C033,C043,C053} 含 3 边，含空条带边）",
+   "component_costs": "改 g' 计划数与 Σ|dg| 见 r22_log.json.cc_components（如 [C005,C025,C055]→2 改/Σ5）"
+  },
+  "stage_II_min_repair": {
+   "rule": "残留冲突按词典序取最小边；端点按类权 C(1)<B(10)<A(100) 先动低优先端点（=『A/B 保持不动』倾向）；候选 {none,df,dt,dg} 按 (类型,|v|,v) 升序；要求消解该边且不与他方新冲突；无解→撤销低优先端点（保证收敛）",
+   "steps": 113, "adjustments": 47, "revokes": 66,
+   "post_repair_shrink": "确定性收缩（冗余动作回退 + 幅度降级，保持零冲突）已执行",
+   "class_breakdown_evaluator": {"A": {"rev": 0, "adj": 6}, "B": {"rev": 17, "adj": 4}, "C": {"rev": 49, "adj": 33}}
+  }
+ },
+ "metrics": {
+  "feasible": true,
+  "objective_tuple": [66, 43, 1111, 144],
+  "objective_scalar": 66004311110144,
+  "runtime_seconds": 29.2,
+  "stability": "确定性双跑一致",
+  "gap": "撤销层 66 ≫ R11 的 [2,8] 与 SA 的 10..16：贪心修补以撤销收敛，第一级严重劣势（如实报告：解析构造的消解力集中在 CC 边（19/297=6.4%），对 247 条不等周期 AC/BC 边无闭式武器）；幅度层 144 与调整数 43 为三候选最低（构造解『动得少』）——元组层间权衡的教科书样本"
+ },
+ "special_checks_from_route": {
+  "模规则全量核对": "通过（4005 对全量零反例，未用随机抽样替代）",
+  "禁止密度近似当界": "遵守——占空比/摊薄论证未进入任何判定路径，消解判定一律 int 位图精确交叠",
+  "残余边规模": "阶段 I 后残留边与修补步数 113 记录于 r22_log.json",
+  "与 R21 同层对照": "本组未侦察 CH-02 的 R21（读白名单外）；以 R11/R41 代替三方对照",
+  "跨度-视界耦合": "所有 g' 选项经 evaluator 边界判据生成（99/1530 个 dg 选项被 R3 截断剔除），无『改 g' 后越界』动作进入解（evaluator n_violations=0）"
+ },
+ "failure_conditions_realized": [
+  "CH-02 预登记判据『若跨度约束与模指派冲突比例高→构造退化』部分应验：空条带边 1 条 + 失败分量 1 个；且阶段 I 重定时会新产生 AC/BC 冲突（修补 113 步中大量源于此），构造仅清 16/19 CC 边但总撤销 66 —— 该路线作为独立『机理论证』价值成立，作为主求解器不成立"
+ ],
+ "deviations": [
+  "CH-02 原计划残余层交给 R21 受限 CSP——任务书冻结口径改为『保持不动的最小修补（贪心，修不动则撤销）』，按任务书实现",
+  "撤销修复顺序规则（C 先于 B 先于 A、同权 id 大先）为任务书贪心口径的确定性化选择，已登记"
+ ],
+ "failure_mode": null,
+ "status": "completed",
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/solution_actions.json",
+ "eval_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/eval_q4.json"
+}

@@ -1,0 +1,403 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(roadmap.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/standalone\stan
+dalone.cls
+Document Class: standalone 2025/02/22 v1.5a Class to compile TeX sub-files stan
+dalone
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.
+sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluate
+x.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.s
+ty))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval
+.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyv
+al.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvut
+ils.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyva
+l.tex))))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/standalone\stan
+dalone.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cl
+s
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlay
+er\tikz.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\
+pgf.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\p
+gfrcs.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfutil-common.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfutil-latex.def)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfrcs.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revis
+ion.tex)))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\
+pgfcore.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cx.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cs.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.s
+ty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gr
+aphics.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xe
+tex.def)))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer
+\pgfsys.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsys.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfkeys.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfkeyslibraryfiltered.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgf.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsys-xetex.def
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsys-dvipdfmx.def
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsys-common-pdf.def))))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsyssoftpath.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlay
+er\pgfsysprotocol.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.s
+ty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\co
+lor.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathco
+lor.ltx))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcore.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+ath.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athutil.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athparser.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.basic.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.trigonometric.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.random.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.comparison.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.base.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.round.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.misc.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfunctions.integerarithmetics.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athcalc.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+athfloat.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfi
+nt.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorepoints.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorepathconstruct.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorepathusage.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorescopes.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoregraphicstate.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoretransformations.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorequick.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoreobjects.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorepathprocessing.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorearrows.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoreshade.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoreimage.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoreexternal.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorelayers.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcoretransparency.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorepatterns.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclaye
+r\pgfcorerdf.code.tex)))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
+gfmoduleshapes.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
+gfmoduleplot.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibili
+ty\pgfcomp-version-0-65.sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibili
+ty\pgfcomp-version-1-18.sty))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\p
+gffor.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\p
+gfkeys.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgfkeys.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmat
+h.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfm
+ath.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities
+\pgffor.code.tex))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
+ayer/tikz\tikz.code.tex
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries
+\pgflibraryplothandlers.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\p
+gfmodulematrix.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
+ayer/tikz/libraries\tikzlibrarytopaths.code.tex))))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctex.sty
+
+LaTeX Warning: You have requested release `2026/06/01' of LaTeX,
+               but only release `2025-11-01' is available.
+
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.
+sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
+kend-xetex.def))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexhook.s
+ty
+
+LaTeX Warning: You have requested release `2026/06/01' of LaTeX,
+               but only release `2025-11-01' is available.
+
+)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexpatch.
+sty
+
+LaTeX Warning: You have requested release `2026/06/01' of LaTeX,
+               but only release `2025-11-01' is available.
+
+)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def
+))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\cte
+xopts.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/engine\cte
+x-engine-xetex.def
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.s
+ty
+
+LaTeX Warning: You have requested release `2026/06/01' of LaTeX,
+               but only release `2025-11-01' is available.
+
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtem
+plate\xtemplate.sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontsp
+ec.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xpar
+se\xparse.sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontsp
+ec-xetex.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.st
+y)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontsp
+ec.cfg)))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.c
+fg)))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/zhnumber\zhnumb
+er.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/zhnumber\zhnumb
+er-utf8.cfg))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/scheme\cte
+x-scheme-chinese.def
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\cte
+x-name-utf8.cfg))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfir
+st.sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctex-c5siz
+e.clo)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/fontset\ct
+ex-fontset-windows.def))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\cte
+x.cfg)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath
+.sty
+For additional information on amsmath, use the `?' option.
+
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext
+.sty
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.
+sty))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.
+sty)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.
+sty))
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries
+\pgflibraryarrows.meta.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
+ayer/tikz/libraries\tikzlibrarypositioning.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
+ayer/tikz/libraries\tikzlibraryfit.code.tex)
+(C:\Users\Administrator\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendl
+ayer/tikz/libraries\tikzlibrarybackgrounds.code.tex) (roadmap.aux)
+! Use of \tikz@fig@scan@options doesn't match its definition.
+\pgfutil@ifnextchar ...1\def \pgfutil@reserved@a {
+                                                  #2}\def \pgfutil@reserved@...
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Argument of \tikz@path@overlayed has an extra }.
+<inserted text> 
+                \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+Runaway argument?
+{node}
+! Paragraph ended before \tikz@path@overlayed was complete.
+<to be read again> 
+                   \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Argument of \tikz@fig@scan@options has an extra }.
+<inserted text> 
+                \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+Runaway argument?
+head
+! Paragraph ended before \tikz@fig@scan@options was complete.
+<to be read again> 
+                   \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+Runaway argument?
+box {赛题计划参数\\（A/B/C 三类 150 个计划，时频离散\ETC.
+! Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+Runaway argument?
+box {赛题计划参数\\（A/B/C 三类 150 个计划，时频离散\ETC.
+! Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+
+! Package pgf Error: No shape named `data' is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15   \node[head, below=0.9cm of data]
+                                        (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+
+! Package pgf Error: No shape named `data' is known.
+
+See the pgf package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ... of data] (q1) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+                                                  
+! Argument of \tikz@swap@args has an extra }.
+<inserted text> 
+                \par 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+Runaway argument?
+draw]{\tikz@check@earg }\def \pgfutil@reserved@b {\pgfutil@ifnextchar \ETC.
+! Paragraph ended before \tikz@swap@args was complete.
+<to be read again> 
+                   \par 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+Runaway argument?
+arr -- (q1); \let \tikz@signal@path =\tikz@signal@path \let \pgfutil@reserved@d
+ \ETC.
+! Paragraph ended before \pgfkeys@addpath was complete.
+<to be read again> 
+                   \par 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+! Missing \endcsname inserted.
+<to be read again> 
+                   \let 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+Runaway argument?
+arr -- (q1); \let \tikz@signal@path =\tikz@signal@path \let \pgfutil@reserved@d
+ \ETC.
+! Paragraph ended before \pgfkeys@splitter was complete.
+<to be read again> 
+                   \par 
+l.27   \draw[arr]
+                  (q1) -- (r1);
+Missing character: There is no / in font nullfont!
+Missing character: There is no / in font nullfont!
+miktex-dvipdfmx: major issue: So far, you have not checked for MiKTeX updates.
+[1] (roadmap.aux) )
+(see the transcript file for additional information)
+Output written on roadmap.pdf (1 page).
+Transcript written on roadmap.log.
+xelatex: major issue: So far, you have not checked for MiKTeX updates.

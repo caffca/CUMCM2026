@@ -1,0 +1,225 @@
+{
+ "check": "冗余性/支配性 + 证书口径",
+ "Q2": {
+  "auth_tuple": [
+   6,
+   121,
+   1996,
+   661
+  ],
+  "mine_tuple": [
+   6,
+   121,
+   1996,
+   661
+  ],
+  "single_revert_redundant": [],
+  "n_single_revert_redundant": 0,
+  "fixpoint_reverted_ids": [],
+  "fixpoint_tuple": [
+   6,
+   121,
+   1996,
+   661
+  ],
+  "fixpoint_conflicts": 0,
+  "fixpoint_dominates_auth": false,
+  "layers": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "min": "R",
+    "cap_R": null,
+    "objective": 6.0,
+    "best_bound": 5.0,
+    "solution_tuple": [
+     6,
+     129,
+     2301,
+     751
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "min": null,
+    "cap_R": 0,
+    "objective": null,
+    "best_bound": null,
+    "solution_tuple": null
+   },
+   {
+    "layer": "ladder_Rle5",
+    "status": "UNKNOWN",
+    "min": "R",
+    "cap_R": 5,
+    "objective": null,
+    "best_bound": null,
+    "solution_tuple": null
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "min": "A",
+    "cap_R": null,
+    "objective": 121.0,
+    "best_bound": 22.0,
+    "solution_tuple": [
+     6,
+     121,
+     2176,
+     739
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "FEASIBLE",
+    "min": "PL",
+    "cap_R": null,
+    "objective": 1996.0,
+    "best_bound": 699.0,
+    "solution_tuple": [
+     6,
+     121,
+     1996,
+     735
+    ]
+   },
+   {
+    "layer": "L4_minMG",
+    "status": "FEASIBLE",
+    "min": "MG",
+    "cap_R": null,
+    "objective": 661.0,
+    "best_bound": 174.0,
+    "solution_tuple": [
+     6,
+     121,
+     1996,
+     661
+    ]
+   }
+  ],
+  "revocation_cert": {
+   "upper_incumbent": 6,
+   "proven_lb": 5,
+   "lb_closed": false,
+   "certificates": [
+    {
+     "cap": null,
+     "source": "cpsat_bound_L1",
+     "status": "FEASIBLE",
+     "lb": 5
+    },
+    {
+     "cap": 0,
+     "status": "INFEASIBLE",
+     "source": "infeasibility_probe"
+    },
+    {
+     "cap": 5,
+     "status": "UNKNOWN",
+     "source": "probe_timeout"
+    }
+   ]
+  }
+ },
+ "Q4": {
+  "auth_tuple": [
+   6,
+   118,
+   1894,
+   661
+  ],
+  "mine_tuple": [
+   6,
+   118,
+   1894,
+   661
+  ],
+  "single_revert_redundant": [],
+  "n_single_revert_redundant": 0,
+  "fixpoint_reverted_ids": [],
+  "fixpoint_tuple": [
+   6,
+   118,
+   1894,
+   661
+  ],
+  "fixpoint_conflicts": 0,
+  "fixpoint_dominates_auth": false,
+  "layers": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "min": "R",
+    "cap_R": null,
+    "objective": 6.0,
+    "best_bound": 3.0,
+    "solution_tuple": [
+     6,
+     120,
+     1995,
+     660
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "min": null,
+    "cap_R": 0,
+    "objective": null,
+    "best_bound": null,
+    "solution_tuple": null
+   },
+   {
+    "layer": "ladder_desc",
+    "status": "UNKNOWN",
+    "min": "R",
+    "cap_R": 5,
+    "objective": null,
+    "best_bound": null,
+    "solution_tuple": null
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "min": "A",
+    "cap_R": null,
+    "objective": 118.0,
+    "best_bound": 21.0,
+    "solution_tuple": [
+     6,
+     118,
+     1894,
+     661
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "UNKNOWN",
+    "min": "PL",
+    "cap_R": null,
+    "objective": null,
+    "best_bound": null,
+    "solution_tuple": null
+   }
+  ],
+  "revocation_cert": {
+   "upper_incumbent": 6,
+   "proven_lb": 3,
+   "lb_closed": false,
+   "certificates": [
+    {
+     "cap": 0,
+     "status": "INFEASIBLE"
+    },
+    {
+     "cap": 5,
+     "status": "UNKNOWN"
+    }
+   ]
+  }
+ },
+ "verdict": "PASS"
+}

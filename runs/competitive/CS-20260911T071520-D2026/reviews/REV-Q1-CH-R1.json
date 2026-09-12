@@ -1,0 +1,95 @@
+{
+  "review_id": "REV-Q1-01",
+  "reviewer_child_run_id": "CH-REV-A",
+  "question_id": "Q1",
+  "input_artifact_sha256s": [
+    {"path": "runs/competitive/CS-20260911T071520-D2026/common_input.json", "sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/TOURNAMENT_PROTOCOL.json", "sha256": "a8f30bd6473b545d3ac165c316fb9a5573f5d380e76e25e6b3b8056e980f5c97"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json", "sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py", "sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-02.route.json", "sha256": "03eb60f390b47e02a966e59ef125d52de81f1c35b0862facf6b4d4a6e07edf19"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-04.route.json", "sha256": "210ce17cd247307243d660adcd0ddecf3938c2d76177f5ac2279cab9fcd3ad5a"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-05.route.json", "sha256": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685"},
+    {"path": "data/canonical_plans.csv（workspace 根；canonical_evaluator.load_plans 同文件）", "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/result.json", "sha256": "5c473bd34eaee112c7b69ed4070cbae52025582772f49f6b0bf246452fba2f0f"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/scout.json", "sha256": "469f57653db4804de476776133396a4e74b0a1c66e09a0b4720a6692ee07ac88"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/eval.json", "sha256": "a96bd58b07da626abfaa743a1ed410e05b75166c419a04340b492c4d8c224d7f"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/solution_q1_r21.json", "sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/detect_meta.json", "sha256": "0afc7abaf1977db1ff43a14a2997ee9f14dbfeeae7079f163eca2d4f8ad407f8"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/result.json", "sha256": "19878daffe64333a18841c461139ca39e6e6dff763e65d197164f2dcfe80c048"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/scout.json", "sha256": "b59b29b70ebcedd921a9993c2d6d043e7f20631605105f5263de9f886f7a9f7c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/eval.json", "sha256": "a96bd58b07da626abfaa743a1ed410e05b75166c419a04340b492c4d8c224d7f"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/solution_q1_r52.json", "sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/detect_meta.json", "sha256": "3fe9a07bbecd5471683b15046fcea7c96d6db261e276785acdc272b1133493bf"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/result.json", "sha256": "1eaf8f2ec5c35faef7aed82133f6202dd8f2247856ee2aa6823ed1740d1c25f5"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/scout.json", "sha256": "17203db6676d043a84f49198f3a4ef402e807bb25779d662989005501d72d41e"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/eval.json", "sha256": "a96bd58b07da626abfaa743a1ed410e05b75166c419a04340b492c4d8c224d7f"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/solution_q1_r41.json", "sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/detect_meta.json", "sha256": "46bc1ac1dc40941d91a47f3b38c7c707a7b1f1f1deecdc55100762c001a98fa8"}
+  ],
+  "attacks_by_idea": [
+    {
+      "idea_id": "Q1-R21",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "对照 route CH-02 Q1-R21 定义与 Q1-C1 验收规则（双实现一致+独立checker），问是否存在给出同等证据的更简模型。", "finding": "R21 本身就是三条候选中最简形态（11175 个计划对上的闭合谓词求值，双实现 A=逐时段对枚举/B=区间并压缩+两指针）；双实现冗余是契约（Q1-C1 acceptance_rule）要求而非过度设计。无更简且满足验收的替代。"},
+        {"type": "identifiability", "severity": "info", "test": "评审独立重算真值：用与 evaluator 和 scout 均不同的两套实现（占用单元位图 AND；合并区间两指针扫描）从 common_input.plans_table_compact 重算冲突边集，并核对 621/643 视界敏感性。", "finding": "两套独立实现均给出 |E|=297、分层 AB21/AC66/BC181/BB10/CC19、触及计划 148，与候选声明逐项一致；候选已按 ADJUDICATION R1 绑定 T_MAX=643（detect_meta.horizon.T_MAX=643，all_slots_within_horizon=true）。答案在该冻结口径下唯一可识别；未发现 621 口径残留。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "检查是否对官方附件数据引入了题面之外的生成假设。", "finding": "输入=附件1 的 150 行确定参数（data_profile missing=0/duplicates=0），谓词逐字对应 F-005/F-006/F-023；无生成性假设。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "核对 objective=0 是否为该度量的自然最小且解唯一（集合层面）。", "finding": "symdiff_vs_canonical_truth=0 即与真值边集全等，297 行无重复（n_unique=297），目标不可能更优；不存在退化空间。"},
+        {"type": "sample_dimension", "severity": "info", "test": "检查是否存在抽样冒充全量。", "finding": "pairs_evaluated=11175= C(150,2) 全量（detect_meta 与 result.json 一致，代码 q1_r21_pairwise.py 确认全对循环）；无抽样。"},
+        {"type": "task_mismatch", "severity": "info", "test": "对照 question_contract.Q1（只检测、禁止调整/撤销决策、result1 每行一对）。", "finding": "输出纯冲突对集合 [id1,id2]×297，无决策字段；每对至多计一次（R7），行语义与模板自洽。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "运行时与预算核对（600s/候选/重复）。", "finding": "确定性枚举无需求解器；runtime=0.0165s，预算占用 0.003%，无 mismatch。"},
+        {"type": "bound_invalid", "severity": "info", "test": "核对其 lower_bound=upper_bound=0 的声明是否平凡成立。", "finding": "完全枚举下 gap=0 平凡成立，且被我的独立全量重算与 evaluator 复跑（objective=[0], missing=0, spurious=0）双重证实。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查3：solution 文件磁盘 SHA vs result.json 声明 vs 兄弟候选；冻结 evaluator 原样复跑核对 eval.json 未被篡改。", "finding": "磁盘 SHA=1a08941b766de6bf…c92b20 与声明一致；三候选 solution 逐字节同一（同一真值边集的收敛输出，代码范式各异，属预期而非复制）；evaluator 复跑与 eval.json（SHA a96bd58b…，三候选相同）一致。无不公平评估。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q1-R21/solution_q1_r21.json (sha256 1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20)",
+        "scouts/Q1-R21/eval.json + 评审复跑输出（canonical_evaluator --question Q1，objective=[0]）",
+        "reviews/CH-REV-A_verify_report.txt（独立双实现真值重算 297/分层/148 与 symdiff=0）",
+        "scouts/Q1-R21/detect_meta.json（boundary 用例 5/5、csv≡compact 等价、band 候选对 1352）"
+      ]
+    },
+    {
+      "idea_id": "Q1-R52",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "对照其『分析范式』定位问：闭式是否真的替代了枚举，还是叠加在枚举之上。", "finding": "闭式判据只覆盖同组（类内）4975 对；跨类 6200 对回退逐对枚举——『闭式』是证书层而非性能层，detect_meta 与 PROTOTYPE_NOTES 已如实写明（『作为替代全枚举的性能路线不成立』）。作为独立第三实现+可手算证据链的定位成立，非虚报。"},
+        {"type": "identifiability", "severity": "info", "test": "复核其闭式依赖的类内 (g,d,n) 齐次假设是否在数据上为真、断言是否在代码内。", "finding": "我从 compact 独立复核：A 全部 (60,5,3)/P=65，B 全部 (40,3,4)/P=43，C 全部 (8,2,12)/P=10，齐次成立且 2(d-1)<P 全类成立 ⇒ 残差判据适用；代码内 assert 存在，不齐次即 status=failed。判定结果与两套掩码/扫描实现零差异。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "检查闭式引入的额外结构假设是否超出题面。", "finding": "仅使用 F-005 周期占用结构（半开、窗序可达 |k-k'|≤n-1、视界截断），未引入题面外机制；『末窗越界』特例检查按 643 绑定，实测无截断（all_slots_within_horizon=true）。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "同 R21：objective=0 的退化性检查。", "finding": "与 evaluator 真值全等，297/297，无重复。"},
+        {"type": "sample_dimension", "severity": "info", "test": "time_predicate_pairs_checked 是否覆盖全部同组对（不是抽样）。", "finding": "4975=C(20,2)+C(40,2)+C(90,2) 全量同组对；加 6200 跨类回退=11175 全查；mismatches=0 由 evaluator 复跑与我的独立重算双重证实。"},
+        {"type": "task_mismatch", "severity": "info", "test": "同 R21 对契约核对。", "finding": "输出为纯冲突对集合，与 Q1-C1/C2 语义一致。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "运行时与实现风险。", "finding": "0.28s，远低于预算；解析式 vs 枚举不一致门为 0（路线 failure_conditions[1] 未触发）。"},
+        {"type": "bound_invalid", "severity": "minor", "test": "重算其类内界 LB=8 / UB=92 与类内枚举真值 29 的夹逼有效性，并检查界是否被冒用。", "finding": "界有效（8≤29≤92，我的独立重算复核）但松 3.2 倍；scout 自己声明『只作错误探测』，未用于任何结论——无违规冒用，但正式建模若引用须带『审计界』限定词。另 result.json 的 plans_touched=null 与兄弟候选(148)不一致，属装配瑕疵（信息性）。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查3：SHA/声明一致性 + evaluator 复跑。", "finding": "solution 磁盘 SHA 与声明一致（与 R21/R41 逐字节同一）；eval.json 复跑一致；evaluator SHA=8c4db98f…与冻结件一致。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q1-R52/solution_q1_r52.json (sha256 1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20)",
+        "scouts/Q1-R52/detect_meta.json（齐次断言、残差直方图、界自检）",
+        "reviews/CH-REV-A_verify_report.txt（独立重算证实 297/symdiff=0）",
+        "正式建模阶段引用类内界时须附『LB=8/UB=92 为错误探测界』限定（minor 条款）"
+      ]
+    },
+    {
+      "idea_id": "Q1-R41",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "位图/倒排+植入压力测试相对 R21 的增量价值是否成立（route CH-04 的 evidence_against_minimal 条款）。", "finding": "增量价值=表示层独立性（D1 倒排 join/D2 位并行 AND/D3 区间 oracle 三实现两两 symdiff=0）+召回率证据；运行时余量条款（600s 内全查）成立。route 预登记的最小性反证未被触发（三条对称差全 0 而非『无法产出』）。"},
+        {"type": "identifiability", "severity": "info", "test": "阶段B（植入/删除扰动改变占用集合）是否会污染对真实实例的答案识别。", "finding": "阶段A（真实实例，确定性）与阶段B（mutant 实例，随机化）在 result.json 中字段隔离（internal_consistency 分组 + stress_* 前缀），主指标 objective 只来自阶段A+evaluator；真值边集与 R21/R52 逐字节同一。无污染。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "植入块（宽≤3×时长≤2 矩形）是否符合『诊断用合成扰动』定位，未被叙述为真实数据生成机制。", "finding": "PROTOTYPE_NOTES 明确『植入测试给的是随机化完全性证据，最终完全性仍需 D3 全查+evaluator 对称差=0』；定位正确。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "objective=0 唯一性。", "finding": "与真值全等（297/297），无退化。"},
+        {"type": "sample_dimension", "severity": "minor", "test": "996 轮植入测试的统计宣称强度：497 注入/499 删除、18 次全局全查是否足以支撑『召回=1.0』。", "finding": "recall=1.0 的置信区间在 n≈500 事件下约 ±4%（若真实漏检率 0.6% 仍可通过）——它只是敏感性诊断，主结论不依赖它（evaluator 全量对称差=0 才是确定性论证）；scout 未做超宣称。登记：论文若引用植入测试数字，须按『随机化诊断证据』措辞，不得写成完全性证明。"},
+        {"type": "task_mismatch", "severity": "info", "test": "契约核对 + failure_conditions『记成时段对』检查。", "finding": "输出 297 计划对（非时段对）；8 个边界用例含 t=642 可达/t=643 裁除，语义正确。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "阶段B 使用冻结种子集 [11,29,47]（协议 seed_policy），主指标确定性 replicates=1 是否合规。", "finding": "合规：主指标为确定性阶段A；阶段B 是附加证据且三种子各自 symdiff=0 落盘（stress_seed_replicates）。12.9s 预算内。"},
+        {"type": "bound_invalid", "severity": "info", "test": "LB=UB=0 声明 + 错误口径诊断（g 当周期→237 对）是否被误用。", "finding": "237 对仅以 wrong_g_as_period_pairs_diagnostic 字段登记为诊断，未进入主链；界声明平凡成立并被独立复算证实。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查3+4：SHA 一致性；distinct/multiplicity 口径混用扫描。", "finding": "solution SHA 与声明一致（三候选同一文件）；evaluator 复跑一致。口径扫描：detect_meta 同时出现 distinct_cells=14698 与 incidence_sum=16680，但字段名显式区分且 PROTOTYPE_NOTES 按 ADJ R2 用 distinct 口径推 Q3 自由单元（64300-14698），未发现混用；无 621 残留。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q1-R41/solution_q1_r41.json (sha256 1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20)",
+        "scouts/Q1-R41/detect_meta.json（phaseA 三实现 symdiff=0；phaseB 996 轮召回=1.0；边界 8/8）",
+        "reviews/CH-REV-A_verify_report.txt（独立重算 symdiff=0 + evaluator 复跑一致）",
+        "论文引用植入压力测试结果时按『随机化诊断证据』措辞（minor 条款）"
+      ]
+    }
+  ]
+}

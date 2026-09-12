@@ -1,0 +1,39 @@
+% =============================================================================
+% style_tokens.tex — CUMCM Style Layer（v4.5 模板 v2 §3.2）
+% 所有视觉参数唯一来源：字号/行距/段距/标题上下间距/图宽档/表内边距。
+% 本文件不改合规规则（见 compliance.tex）；Compile 时由 main.tex \input。
+% =============================================================================
+
+% ---------- 字号（正文基准 12pt；标题由 titlesec 引用本处 token） ----------
+\newcommand{\BodyFontSize}{12pt}
+\newcommand{\BodyLineSpread}{1.25}          % 行距比 ≈1.50（官方实证中位 1.30-1.42 与舒适度之间）
+\newcommand{\SectionFontSize}{17.3pt}
+\newcommand{\SectionLineHeight}{20.8pt}
+\newcommand{\SubsectionFontSize}{14.45pt}
+\newcommand{\SubsectionLineHeight}{17.4pt}
+\newcommand{\SubsubsectionFontSize}{12.05pt}
+\newcommand{\SubsubsectionLineHeight}{14.5pt}
+\newcommand{\CaptionFontSize}{10.5pt}
+\newcommand{\CaptionLineHeight}{12.6pt}
+\newcommand{\TitleFontSize}{17.3pt}
+\newcommand{\AbstractTitleFontSize}{14pt}
+
+% ---------- 段落 ----------
+\newcommand{\ParagraphIndent}{2em}
+\newcommand{\SectionAbove}{1.25em}
+\newcommand{\SectionBelow}{0.82em}
+\newcommand{\SubsectionAbove}{1.15em}
+\newcommand{\SubsectionBelow}{0.55em}
+\newcommand{\TextFloatSep}{10pt plus 2pt minus 2pt}
+
+% ---------- 图宽度语义档（由 FigureSpec 视觉优先级决定，禁止每张图硬写 0.85） ----------
+\newcommand{\figsmall}{0.65\textwidth}
+\newcommand{\figmedium}{0.82\textwidth}
+\newcommand{\figwide}{0.95\textwidth}
+\newcommand{\figfull}{\textwidth}
+\newcommand{\FigureDefaultWidth}{0.86\textwidth}   % 兜底默认
+
+% ---------- 表格 ----------
+\newcommand{\TableFontSize}{10pt}
+% TPL-L03：符号表列定义——longtable 不支持 X 列，统一 p{} 固定宽度（不超 \textwidth）
+\newcommand{\SymbolTableCols}{@{}l p{8.6cm} p{2.4cm}@{}}

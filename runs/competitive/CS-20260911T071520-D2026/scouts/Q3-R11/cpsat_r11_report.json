@@ -1,0 +1,60 @@
+{
+ "idea_id": "Q3-R11",
+ "question_id": "Q3",
+ "n_candidates_base_free": 2123,
+ "n_edges": 62071,
+ "edge_equivalence_audit": {
+  "pairs_with_band_overlap_checked": 131254,
+  "analytic_vs_bitmap_vs_inverted_mismatches": 0
+ },
+ "model_A": {
+  "model": "A_pairwise_clauses",
+  "status": "OPTIMAL",
+  "wall_s": 1.1,
+  "n_vars": 2123,
+  "n_constraints": 62071,
+  "has_incumbent": true,
+  "num_conflicts": 0,
+  "num_branches": 52,
+  "cp_wall_s": 1.1,
+  "incumbent": 139,
+  "best_bound": 139
+ },
+ "model_B": {
+  "model": "B_cell_capacity",
+  "status": "OPTIMAL",
+  "wall_s": 0.4,
+  "n_vars": 2123,
+  "n_constraints": 13822,
+  "has_incumbent": true,
+  "num_conflicts": 0,
+  "num_branches": 52,
+  "cp_wall_s": 0.4,
+  "incumbent": 139,
+  "best_bound": 139
+ },
+ "incumbent_used": "A_pairwise_clauses",
+ "final_count": 139,
+ "external_verify": {
+  "ok": true,
+  "msg": "ok"
+ },
+ "evaluator": {
+  "feasible": true,
+  "objective": [
+   139
+  ],
+  "n_violations": 0
+ },
+ "hint_from": "F:\\2026 数模\\D题重跑\\D题\\runs\\competitive\\CS-20260911T071520-D2026\\scouts\\Q3-R23\\solution_newc.json",
+ "solver_params": {
+  "random_seed": 0,
+  "num_search_workers": 8,
+  "budget_A_s": 340.0,
+  "budget_B_s": 170.0
+ },
+ "equivalence_note": "整数可行集：A（干扰边 x_i+x_j≤1）≡ B（每格 Σx≤1），因两者都精确表达『无两放置共享时频单元』；LP 松弛：B 的多面体 ⊆ A（同格任意对被 B 的格行强制），故 B 的 CP-SAT best_bound ≥ A（界更紧）；边数=6.2e4 未爆炸 ⇒ 按协议以 A 为主模型，B 为对照。",
+ "runtime_seconds_total": 4.3,
+ "protocol_wall_limit_s": 600,
+ "replicates": 1
+}

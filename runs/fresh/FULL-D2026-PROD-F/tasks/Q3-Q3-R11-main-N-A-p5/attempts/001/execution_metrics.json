@@ -1,0 +1,14 @@
+{
+ "elapsed_seconds": 0.585,
+ "status": "completed",
+ "stopping_reason": "full_recheck",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "base": "@Q2MAIN",
+  "solution": "@Q3MAIN",
+  "variant": "check"
+ }
+}

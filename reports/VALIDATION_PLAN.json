@@ -1,0 +1,1315 @@
+{
+ "schema_version": 2,
+ "plan_revision": 8,
+ "frozen_at": "2026-09-12T11:55:20+08:00",
+ "problem_id": "D2026",
+ "search_id": "CS-20260911T071520Z-1A9D30",
+ "frozen_before_production_runs": true,
+ "model_decision_binding": {
+  "schema_version": 1,
+  "authority_scope": "explanatory_projection_only",
+  "decision_record": {
+   "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+   "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658"
+  },
+  "selection_validation": {
+   "path": "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+   "sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f"
+  },
+  "problem_id": "D2026",
+  "profile_id": "PROFILE-8ADA7763202B25BA",
+  "strategy_matching_id": "MATCH-1504A0480D6D591A",
+  "question_bindings": {
+   "Q1": {
+    "question_id": "Q1",
+    "decision_status": "pending_proposal",
+    "selected_strategy_id": null,
+    "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+    "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+   },
+   "Q2": {
+    "question_id": "Q2",
+    "decision_status": "pending_proposal",
+    "selected_strategy_id": null,
+    "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+    "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+   },
+   "Q3": {
+    "question_id": "Q3",
+    "decision_status": "pending_proposal",
+    "selected_strategy_id": null,
+    "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+    "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+   },
+   "Q4": {
+    "question_id": "Q4",
+    "decision_status": "pending_proposal",
+    "selected_strategy_id": null,
+    "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+    "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+   }
+  }
+ },
+ "evidence_contract": {
+  "registry_required": true,
+  "execution_metadata_required": true,
+  "decision_binding_required": true,
+  "result_evidence_required": true,
+  "independent_reproduction_required": true,
+  "independent_reproduction": {
+   "pairs": [
+    {
+     "pair_id": "IR-Q1",
+     "question_id": "Q1",
+     "primary_file": "results/Q1_detect.json",
+     "reproduction_file": "results/Q1_verify.json",
+     "compare_paths": [
+      "counts.edges",
+      "counts.AB",
+      "counts.AC",
+      "counts.BC",
+      "counts.BB",
+      "counts.CC"
+     ],
+     "tolerance": 0,
+     "evidence_refs": [
+      "code/q1_detect.py",
+      "code/q1_verify.py"
+     ]
+    },
+    {
+     "pair_id": "IR-Q2",
+     "question_id": "Q2",
+     "primary_file": "results/Q2_solution.json",
+     "reproduction_file": "results/Q2_check.json",
+     "compare_paths": [
+      "objective_scalar",
+      "residual_pairs",
+      "revoked",
+      "adjusted"
+     ],
+     "tolerance": 0,
+     "evidence_refs": [
+      "code/q2_solve.py",
+      "code/check_q2.py"
+     ]
+    },
+    {
+     "pair_id": "IR-Q3",
+     "question_id": "Q3",
+     "primary_file": "results/Q3_solution.json",
+     "reproduction_file": "results/Q3_check.json",
+     "compare_paths": [
+      "phi",
+      "conflicts_vs_base",
+      "conflicts_internal",
+      "rows"
+     ],
+     "tolerance": 0,
+     "evidence_refs": [
+      "code/q3_pack.py",
+      "code/check_q3.py"
+     ]
+    },
+    {
+     "pair_id": "IR-Q4",
+     "question_id": "Q4",
+     "primary_file": "results/Q4_solution.json",
+     "reproduction_file": "results/Q4_check.json",
+     "compare_paths": [
+      "objective_scalar",
+      "residual_pairs",
+      "violations"
+     ],
+     "tolerance": 0,
+     "evidence_refs": [
+      "code/q4_solve.py",
+      "code/check_q4.py"
+     ]
+    }
+   ]
+  }
+ },
+ "notes_v7": {
+  "rebuild_from": [
+   "结果文件",
+   "_meta 执行 metadata",
+   "输入/输出 SHA",
+   "formulation_sha256 绑定 FMS"
+  ],
+  "pairs_generator_rule": "reproduction 文件必须由独立代码路径（不 import 主实现）生成"
+ },
+ "global_freezes": {
+  "T_MAX": 643,
+  "horizon_ruling": "ADJUDICATION R1（621 为 stale 字段）",
+  "evaluator_frozen_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "fms_path_sha": {
+   "path": "reports/FINAL_MODEL_SPEC.json",
+   "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+  },
+  "lex_scalar": "1e12*rev+1e8*adj+1e4*ploss+mag",
+  "budget_note": "生产两级预算 D-BUDGET-001：Q2/Q4 ≤7200s 分层长跑；Q3 在 Q2 生产解上重算重证；侦察数值不作 production evidence"
+ },
+ "validations": [
+  {
+   "validation_id": "V-Q1-01",
+   "claim_id": "Q1-C1",
+   "question_id": "Q1",
+   "type": "independent_reproduction",
+   "metric": "三实现对称差对",
+   "success_rule": "主实现(区间算术) vs canonical evaluator 基准 symdiff=0",
+   "failure_rule": "symdiff>0 ⇒ 检测实现错误，回 coding 修",
+   "priority": "must",
+   "result_keys": [
+    "symdiff_vs_evaluator"
+   ],
+   "evidence_files": [
+    "results/Q1_detect.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_detect.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:symdiff_vs_evaluator",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "三实现共享同一隐蔽 bug（要求 checker 为不 import 主实现的第二代码路径）",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q1-02",
+   "claim_id": "Q1-C1",
+   "question_id": "Q1",
+   "type": "independent_reproduction",
+   "metric": "位图/闭式 vs 区间算术",
+   "success_rule": "bitmap⊕interval 与 congruence(同组子集)⊕interval 均为空",
+   "failure_rule": "任一非空 ⇒ 口径漂移，BLOCK",
+   "priority": "must",
+   "result_keys": [
+    "three_way_max_symdiff"
+   ],
+   "evidence_files": [
+    "results/Q1_detect.json",
+    "results/Q1_verify.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_detect.json",
+    "results/Q1_verify.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:three_way_max_symdiff",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q1-03",
+   "claim_id": "Q1-C1",
+   "question_id": "Q1",
+   "type": "feasibility",
+   "metric": "边界用例",
+   "success_rule": "半开相接不判冲突/交叠必判（含 A001 三次窗）≥8 用例全过",
+   "failure_rule": "任一失败 ⇒ 判定式错误",
+   "priority": "must",
+   "result_keys": [
+    "boundary_cases_failed"
+   ],
+   "evidence_files": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:boundary_cases_failed",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q1-04",
+   "claim_id": "Q1-C2",
+   "question_id": "Q1",
+   "type": "feasibility",
+   "metric": "result1 行一致性",
+   "success_rule": "submission/result1.xlsx 行集 == results/Q1_detect.json 边集（排序后）",
+   "failure_rule": "行数或内容不等 ⇒ 提交工件不忠实",
+   "priority": "must",
+   "result_keys": [
+    "result1_edge_symdiff"
+   ],
+   "evidence_files": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:result1_edge_symdiff",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q1-05",
+   "claim_id": "Q1-C3",
+   "question_id": "Q1",
+   "type": "uncertainty",
+   "metric": "类对计数闭合",
+   "success_rule": "Σ类对 = |E| 且 AA=0（若出现 AA 立即疑口径）",
+   "failure_rule": "不等 ⇒ 统计口径错",
+   "priority": "must",
+   "result_keys": [
+    "classpair_sum_minus_total"
+   ],
+   "evidence_files": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:classpair_sum_minus_total",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q1-06",
+   "claim_id": "Q1-C1",
+   "question_id": "Q1",
+   "type": "robustness",
+   "metric": "植入压力测试召回",
+   "success_rule": "注入召回≥0.99 且删除消失率≥0.99（诊断证据，措辞限定 ±4%）",
+   "failure_rule": "低于 ⇒ 检测漏报风险未排除",
+   "priority": "recommended",
+   "result_keys": [
+    "stress_min_recall"
+   ],
+   "evidence_files": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "evidence_refs": [
+    "results/Q1_stats.json",
+    "results/Q1_detect.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:stress_min_recall",
+    "threshold": 0.99
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "model_invalid",
+    "resolution_mode": "drop_claim",
+    "return_to": "methodology_review"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=不阻断；论文删除该证据或重做; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-01",
+   "claim_id": "Q2-C1",
+   "question_id": "Q2",
+   "type": "feasibility",
+   "metric": "零冲突",
+   "success_rule": "调整后全计划重跑 Q1 独立检测=0 对（evaluator+第二实现双复验）",
+   "failure_rule": "任一>0 ⇒ 方案无效，回 coding",
+   "priority": "must",
+   "result_keys": [
+    "residual_pairs_second_impl"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json",
+    "results/Q2_check.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json",
+    "results/Q2_check.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:residual_pairs_second_impl",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "checker 与被检实现同源（要求：checker 不得 import 求解代码，独立区间算术）",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-02",
+   "claim_id": "Q2-C2",
+   "question_id": "Q2",
+   "type": "feasibility",
+   "metric": "合规断言",
+   "success_rule": "单参数/幅度≤10,5/次数间隔不变/域[0,100)×[0,643)/撤销语义 全部违例=0",
+   "failure_rule": "任一违例 ⇒ 违反题面规则",
+   "priority": "must",
+   "result_keys": [
+    "compliance_violations"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json",
+    "results/Q2_check.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json",
+    "results/Q2_check.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:compliance_violations",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-03",
+   "claim_id": "Q2-C3",
+   "question_id": "Q2",
+   "type": "convergence",
+   "metric": "撤销数下界证书",
+   "success_rule": "阶梯 Σr≤0 INFEASIBLE 已证（LB≥1）且证书工件可复跑",
+   "failure_rule": "未证任何 LB ⇒ Q2-C3 未满足，撤销层只写『未认证』",
+   "priority": "must",
+   "result_keys": [
+    "ladder_proven_revoke_lb"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:ladder_proven_revoke_lb",
+    "threshold": 1
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-04",
+   "claim_id": "Q2-C3",
+   "question_id": "Q2",
+   "type": "degeneracy",
+   "metric": "三角退化",
+   "success_rule": "(constraint_only−full)/constraint_only ≥ 0.05（目标不起决定作用则本问塌缩为平凡）",
+   "failure_rule": "<0.05 ⇒ 词典序目标为装饰，重写问题叙事",
+   "priority": "must",
+   "result_keys": [
+    "degeneracy_ratio"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:degeneracy_ratio",
+    "threshold": 0.05
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-05",
+   "claim_id": "Q2-C3",
+   "question_id": "Q2",
+   "type": "independent_reproduction",
+   "metric": "复现性",
+   "success_rule": "权威解四级元组经独立 checker 第二实现全量重算逐位一致（rev4/EV-CRIT-001）",
+   "failure_rule": "不一致 ⇒ 以 workers=1 值为准重出全部下游",
+   "priority": "must",
+   "result_keys": [
+    "tuple_matches_second_impl"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:tuple_matches_second_impl",
+    "rhs": 1,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "plan_revision=4（EV-CRIT-001 criterion_invalid）：复现判据从 worker 交叉 run 元组一致改为『权威解经独立 checker 第二实现全量重算逐位一致』（解级可复现语义）；w1/w4 交叉差异保留为诊断字段；机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-06",
+   "claim_id": "Q2-C3",
+   "question_id": "Q2",
+   "type": "baseline_comparison",
+   "metric": "优于启发式对照",
+   "success_rule": "精确解撤销 ≤ GRASP 三 seed 中位撤销",
+   "failure_rule": "大于 ⇒ 求解实现可疑，回查",
+   "priority": "recommended",
+   "result_keys": [
+    "revoke",
+    "grasp_revoke_median"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json",
+    "results/Q2_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json",
+    "results/Q2_solution.json"
+   ],
+   "criterion": {
+    "operator": "absolute_improvement_gte",
+    "lhs": "results:revoke",
+    "rhs": "results:grasp_revoke_median",
+    "threshold": 0,
+    "direction": "lower_is_better"
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-07",
+   "claim_id": "Q2-C4",
+   "question_id": "Q2",
+   "type": "feasibility",
+   "metric": "表1 闭合",
+   "success_rule": "按类 kept+adjusted+revoked=类总数 且 Σ=150 且与 result2 行逐一对应",
+   "failure_rule": "不等 ⇒ 统计或工件错误",
+   "priority": "must",
+   "result_keys": [
+    "table_closure_diff"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json",
+    "results/Q2_table1.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json",
+    "results/Q2_table1.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:table_closure_diff",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q2-08",
+   "claim_id": "Q2-C3",
+   "question_id": "Q2",
+   "type": "uncertainty",
+   "metric": "界闭合（理想）",
+   "success_rule": "撤销层 UB=LB（gap_revoke=0 ⇒ 可写『最优』）",
+   "failure_rule": "gap>0 ⇒ 论文写区间 [LB,UB]（预期态，不阻断）",
+   "priority": "recommended",
+   "result_keys": [
+    "gap_revoke"
+   ],
+   "evidence_files": [
+    "results/Q2_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q2_solution.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:gap_revoke",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "model_invalid",
+    "resolution_mode": "drop_claim",
+    "return_to": "methodology_review"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=降级为区间表述并登记（不阻断）; on_unknown=登记 UNKNOWN 并区间表述; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-01",
+   "claim_id": "Q3-C1",
+   "question_id": "Q3",
+   "type": "feasibility",
+   "metric": "加装零冲突",
+   "success_rule": "新 C 集合 vs 生产 Q2 基座 且 内部 双复验 0 冲突（第二实现 checker）",
+   "failure_rule": ">0 ⇒ 方案无效",
+   "priority": "must",
+   "result_keys": [
+    "conflict_total_second_impl"
+   ],
+   "evidence_files": [
+    "results/Q3_solution.json",
+    "results/Q3_check.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_solution.json",
+    "results/Q3_check.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:conflict_total_second_impl",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-02",
+   "claim_id": "Q3-C1",
+   "question_id": "Q3",
+   "type": "independent_reproduction",
+   "metric": "候选集完备",
+   "success_rule": "第二实现重算候选放置数 == 求解输入候选数",
+   "failure_rule": "不等 ⇒ 预筛漏/多候选，最优宣称失效",
+   "priority": "must",
+   "result_keys": [
+    "cand_count_second_impl_minus_solver"
+   ],
+   "evidence_files": [
+    "results/Q3_bound.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_bound.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:cand_count_second_impl_minus_solver",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-03",
+   "claim_id": "Q3-C2",
+   "question_id": "Q3",
+   "type": "convergence",
+   "metric": "界链有效",
+   "success_rule": "min(UB 各腿) ≥ LB(构造=提交行数)（界合法性自检门，CH-05 警示#3）",
+   "failure_rule": "UB<LB ⇒ 界代码有 bug，BLOCK",
+   "priority": "must",
+   "result_keys": [
+    "ub_min_minus_lb"
+   ],
+   "evidence_files": [
+    "results/Q3_bound.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_bound.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:ub_min_minus_lb",
+    "threshold": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-04",
+   "claim_id": "Q3-C2",
+   "question_id": "Q3",
+   "type": "convergence",
+   "metric": "三腿会合（认证态）",
+   "success_rule": "CP-SAT OPTIMAL 且 LP=incumbent（gap=0 ⇒ 写『最大=Φ，附可检查上界』）",
+   "failure_rule": "gap>0 ⇒ 论文写『至少 Φ 至多 UB』并解释松因（预期可能态）",
+   "priority": "recommended",
+   "result_keys": [
+    "gap_certified"
+   ],
+   "evidence_files": [
+    "results/Q3_bound.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_bound.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:gap_certified",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "model_invalid",
+    "resolution_mode": "drop_claim",
+    "return_to": "methodology_review"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=降级区间表述（不阻断），登记 result_review; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-05",
+   "claim_id": "Q3-C3",
+   "question_id": "Q3",
+   "type": "feasibility",
+   "metric": "行数闭合",
+   "success_rule": "result3.xlsx 新增行数 == Φ == results 计数",
+   "failure_rule": "不等 ⇒ 工件不忠实",
+   "priority": "must",
+   "result_keys": [
+    "result3_rows_minus_phi"
+   ],
+   "evidence_files": [
+    "results/Q3_solution.json",
+    "results/Q3_submission_check.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_solution.json",
+    "results/Q3_submission_check.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:result3_rows_minus_phi",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-06",
+   "claim_id": "Q3-C1",
+   "question_id": "Q3",
+   "type": "independent_reproduction",
+   "metric": "基座绑定",
+   "success_rule": "results/_meta.model_spec_sha256==当前 FMS 且 base 指向生产 Q2 解（非侦察解）",
+   "failure_rule": "绑定错位 ⇒ 全部 Q3 结果作废重跑",
+   "priority": "must",
+   "result_keys": [
+    "base_is_production_q2"
+   ],
+   "evidence_files": [
+    "results/Q3_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_solution.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:base_is_production_q2",
+    "rhs": 1,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q3-07",
+   "claim_id": "Q3-C2",
+   "question_id": "Q3",
+   "type": "sensitivity",
+   "metric": "口径 2B（可重排基座）",
+   "success_rule": "备查口径下重跑一遍界与构造，双口径数字并表",
+   "failure_rule": "未做 ⇒ 灵敏度缺项（论文降级）",
+   "priority": "optional",
+   "result_keys": [
+    "alt2B_ran"
+   ],
+   "evidence_files": [
+    "results/Q3_solution.json",
+    "results/Q3_sensitivity.json"
+   ],
+   "evidence_refs": [
+    "results/Q3_solution.json",
+    "results/Q3_sensitivity.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:alt2B_ran",
+    "threshold": 1
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "model_invalid",
+    "resolution_mode": "drop_claim",
+    "return_to": "methodology_review"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=论文删除该灵敏度声明（记 SKIPPED）; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-01",
+   "claim_id": "Q4-C1",
+   "question_id": "Q4",
+   "type": "feasibility",
+   "metric": "零冲突+间隔合规",
+   "success_rule": "evaluator Q4 复算 feasible=true；第二实现复验含 g'≥1/|dg|≤10/仅C/单参数 全断言",
+   "failure_rule": "任一失败 ⇒ 无效",
+   "priority": "must",
+   "result_keys": [
+    "violations_second_impl"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json",
+    "results/Q4_check.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json",
+    "results/Q4_check.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:violations_second_impl",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-02",
+   "claim_id": "Q4-C1",
+   "question_id": "Q4",
+   "type": "feasibility",
+   "metric": "热启动可行",
+   "success_rule": "生产 Q2 解逐字植入 Q4 域（Q2 动作 ⊆ Q4 动作）复算 feasible（支配界机器化）",
+   "failure_rule": "植入不可行 ⇒ 域构造 bug",
+   "priority": "must",
+   "result_keys": [
+    "planted_q2_feasible"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:planted_q2_feasible",
+    "rhs": 1,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-03",
+   "claim_id": "Q4-C2",
+   "question_id": "Q4",
+   "type": "baseline_comparison",
+   "metric": "不劣于 Q2",
+   "success_rule": "Φ_4 ≤ Φ_2（同一 evaluator 标量）且各层级不劣（词典序逐位 ≤）",
+   "failure_rule": "存在更劣层 ⇒ 锚定约束未生效，回查求解",
+   "priority": "must",
+   "result_keys": [
+    "scalar"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json"
+   ],
+   "criterion": {
+    "operator": "absolute_improvement_gte",
+    "lhs": "results:scalar",
+    "rhs": "results:scalar_q2_ref",
+    "threshold": 0,
+    "direction": "lower_is_better"
+   },
+   "anti_claim": "『不劣于』只是域包含的构造性必然 ⇒ 必须另报严格改善量（见 V-Q4-04），不得把构造必然包装成发现",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-04",
+   "claim_id": "Q4-C2",
+   "question_id": "Q4",
+   "type": "sensitivity",
+   "metric": "改善量（收益判定）",
+   "success_rule": "rev_Q2 − rev_Q4 ≥ 1 ⇒ 间隔自由度有可报收益；=0 ⇒ 如实写『本数据上无撤销收益』并看低层级",
+   "failure_rule": "非二选一表述 ⇒ 违规",
+   "priority": "recommended",
+   "result_keys": [
+    "revoke_gain_vs_q2"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json"
+   ],
+   "criterion": {
+    "operator": "threshold_gte",
+    "lhs": "results:revoke_gain_vs_q2",
+    "threshold": 1
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "model_invalid",
+    "resolution_mode": "drop_claim",
+    "return_to": "methodology_review"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=不阻断；收益叙事改为 0 并转低层级改善对比（如实）; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-05",
+   "claim_id": "Q4-C1",
+   "question_id": "Q4",
+   "type": "independent_reproduction",
+   "metric": "复现性",
+   "success_rule": "Q4 权威解元组经第二实现重算一致（解级复现，rev4/EV-CRIT-001）",
+   "failure_rule": "不一致 ⇒ BLOCK",
+   "priority": "must",
+   "result_keys": [
+    "tuple_matches_second_impl"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:tuple_matches_second_impl",
+    "rhs": 1,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "plan_revision=4 同 Q2 口径（EV-CRIT-001）；机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  },
+  {
+   "validation_id": "V-Q4-06",
+   "claim_id": "Q4-C2",
+   "question_id": "Q4",
+   "type": "feasibility",
+   "metric": "表4 闭合",
+   "success_rule": "表1 口径闭合（同 V-Q2-07）+ result4 含调整后间隔列非空",
+   "failure_rule": "不等 ⇒ 工件错误",
+   "priority": "must",
+   "result_keys": [
+    "table_closure_diff"
+   ],
+   "evidence_files": [
+    "results/Q4_solution.json",
+    "results/Q4_table1.json"
+   ],
+   "evidence_refs": [
+    "results/Q4_solution.json",
+    "results/Q4_table1.json"
+   ],
+   "criterion": {
+    "operator": "equals",
+    "lhs": "results:table_closure_diff",
+    "rhs": 0,
+    "tolerance": 0
+   },
+   "anti_claim": "",
+   "on_fail": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "on_unknown": {
+    "failure_class": "missing_evidence",
+    "resolution_mode": "run_missing_evidence",
+    "return_to": "coding_visual"
+   },
+   "on_error": {
+    "failure_class": "implementation_error",
+    "resolution_mode": "repair_code",
+    "return_to": "coding_visual"
+   },
+   "notes": "机器路由=transition 三元组；人读处置：on_fail=BLOCK：修复实现后重跑；判据不得回改; on_unknown=BLOCK（UNKNOWN 视同未验证）; on_error=BLOCK（求值异常登记 failure_event）"
+  }
+ ],
+ "discipline": "先冻结后跑：跑结果不改判据；改动须回 methodology_review 记 failure_event。must 全过才进 result_review。"
+}

@@ -1,0 +1,277 @@
+{
+ "question_id": "Q2",
+ "idea_id": "Q2-R32",
+ "status": "completed",
+ "feasible": true,
+ "objective": 6012322050762,
+ "objective_tuple": [
+  6,
+  123,
+  2205,
+  762
+ ],
+ "objective_unit": "weighted_lexicographic_scalar",
+ "objective_scalar_formula": "1e12*revoke + 1e8*adjusted + 1e4*priority_loss + magnitude_sum",
+ "runtime_seconds": 391.07,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q2 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/solution_actions.json --out runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/eval.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "确定性配置（无随机；固定迭代序与破平键=计划编号）；replicates=1",
+ "replicates": 1,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/solution_actions.json",
+ "solution_sha256": "59a0e2a6f1fb448ad842c2253dd7e651d586435863a99b7ed269dc855b4fd66a",
+ "failure_mode": null,
+ "adjudication_binding": {
+  "T_MAX": 643,
+  "half_open_intervals": true,
+  "lex_levels": [
+   "revoke",
+   "adjusted",
+   "priority_loss",
+   "magnitude_sum"
+  ],
+  "revoke_priority_double": true,
+  "reference": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+ },
+ "budget": {
+  "scout_wall_seconds_per_candidate_per_replicate": 600,
+  "replicate_wall_seconds": 391.07,
+  "protocol_limit_check": true
+ },
+ "finished_at": "2026-09-11T18:34:38+0800",
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+ "lower_bound": null,
+ "upper_bound": null,
+ "relative_gap": null,
+ "bound_detail": {
+  "kind": "异范式启发式（route 明确 proof_possible=false）⇒ null",
+  "note": "去撤销阶梯（局部自由集上的 Σr≤k-1 判定）不是全局证书：最后一轮 {\"try_global_revoke_max\": 5, \"status\": \"UNKNOWN\", \"wall_s\": 60.04, \"free\": 147, \"fixed_revokes\": 0}；自由集覆盖 147/150 计划，虽接近全量但不构成证明。",
+  "local_ladder": [
+   {
+    "try_global_revoke_max": 27,
+    "status": "FEASIBLE",
+    "wall_s": 60.41,
+    "free": 147,
+    "fixed_revokes": 0
+   },
+   {
+    "try_global_revoke_max": 9,
+    "status": "FEASIBLE",
+    "wall_s": 60.08,
+    "free": 147,
+    "fixed_revokes": 0
+   },
+   {
+    "try_global_revoke_max": 5,
+    "status": "UNKNOWN",
+    "wall_s": 60.04,
+    "free": 147,
+    "fixed_revokes": 0
+   }
+  ],
+  "certificate_LB_if_any": null
+ },
+ "replicate_values": [
+  6012322050762
+ ],
+ "field_diagnostics": {
+  "params": {
+   "lambda": 2.0,
+   "iters_cap": 2000,
+   "step0": 2.0
+  },
+  "iterations_run": 1409,
+  "Phi_start": 2124.0,
+  "Phi_final": 672.18,
+  "F_final": 744.972,
+  "amp_final": 36.396,
+  "F_monotone_by_construction": true,
+  "Phi_upward_steps": 10,
+  "Phi_max_upward_jump": 0.0015,
+  "stop_reason": "deadline",
+  "grad_inf_norm_max": 43.0,
+  "fractional_df": 124,
+  "fractional_dt": 143,
+  "box_saturation_rate": 0.0,
+  "trajectory": [
+   {
+    "it": 0,
+    "F": 2124.0,
+    "Phi": 2124.0,
+    "amp": 0.0
+   },
+   {
+    "it": 200,
+    "F": 745.436,
+    "Phi": 672.672,
+    "amp": 36.382,
+    "step": 0.0012
+   },
+   {
+    "it": 400,
+    "F": 744.999,
+    "Phi": 672.209,
+    "amp": 36.395,
+    "step": 0.001
+   },
+   {
+    "it": 600,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 800,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1000,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1200,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1400,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.0005
+   }
+  ]
+ },
+ "rounding": {
+  "mode_hist": {
+   "keep": 23,
+   "df": 62,
+   "dt": 65
+  },
+  "violated_after_round": 175,
+  "violated_at_all_keep": 297,
+  "guide_reduction": 122
+ },
+ "repair": {
+  "rounds": 1,
+  "n_subproblems": 4,
+  "subproblems_last40": [
+   {
+    "round": 1,
+    "component": 130,
+    "free": 150,
+    "clauses": 270626,
+    "status": "FEASIBLE",
+    "wall_s": 30.11,
+    "viol_before": 175
+   },
+   {
+    "round": 1,
+    "component": 5,
+    "free": 21,
+    "clauses": 24961,
+    "status": "OPTIMAL",
+    "wall_s": 0.23,
+    "viol_before": 0
+   },
+   {
+    "round": 1,
+    "component": 3,
+    "free": 21,
+    "clauses": 23879,
+    "status": "OPTIMAL",
+    "wall_s": 0.27,
+    "viol_before": 0
+   },
+   {
+    "round": 1,
+    "component": 2,
+    "free": 14,
+    "clauses": 14362,
+    "status": "OPTIMAL",
+    "wall_s": 0.03,
+    "viol_before": 0
+   }
+  ],
+  "plans_touched": 150,
+  "touch_fraction": 1.0,
+  "violated_after_repair": 0
+ },
+ "derevoke_ladder": [
+  {
+   "try_global_revoke_max": 27,
+   "status": "FEASIBLE",
+   "wall_s": 60.41,
+   "free": 147,
+   "fixed_revokes": 0
+  },
+  {
+   "try_global_revoke_max": 9,
+   "status": "FEASIBLE",
+   "wall_s": 60.08,
+   "free": 147,
+   "fixed_revokes": 0
+  },
+  {
+   "try_global_revoke_max": 5,
+   "status": "UNKNOWN",
+   "wall_s": 60.04,
+   "free": 147,
+   "fixed_revokes": 0
+  }
+ ],
+ "internal_vs_evaluator": {
+  "internal_tuple": [
+   6,
+   123,
+   2205,
+   762
+  ],
+  "evaluator_tuple": [
+   6,
+   123,
+   2205,
+   762
+  ],
+  "match": true
+ },
+ "feasibility_gates": {
+  "mask_full_recheck_residual": 0,
+  "violated_after_repair": 0,
+  "evaluator_n_violations": 0,
+  "phi_monotone_sentinel_ok": true,
+  "repair_degenerate_to_global": true
+ },
+ "internal_residual": 0,
+ "route_failure_flags_triggered": [
+  {
+   "flag": "取整后修复退化为全量重解 ⇒ 连续层贡献为零",
+   "route_source": "CH-03 Q2-R32 failure_conditions[1] 与 special_checks'修复触发规模>50%降级'",
+   "evidence": "最大残留冲突连通分量含 130/150 计划 ⇒ 首个子问题 free=150、clauses=270626（等于完整 G* 模型），touch_fraction=1.0",
+   "consequence": "该路线最终解的实际质量来自 CP-SAT 全局重解而非连续引导；连续层的可度量贡献仅剩'取整前把残留冲突从 297 降到 175'（reduction=122）"
+  },
+  {
+   "flag": "无任何最优性/可行性证明贡献",
+   "route_source": "CH-03 Q2-R32 bound_plan.proof_possible=false",
+   "evidence": "Φ_final=672.18 > 0（连续松弛都未降到 0），去撤销阶梯在 free=147 上Σr≤5 仅 UNKNOWN，不构成证书",
+   "consequence": "lower/upper_bound 依任务书填 null"
+  }
+ ],
+ "route_gates_passed": [
+  "Φ_λ 沿迭代单调不升（回溯接受检验，F_monotone_by_construction=True；纯 Φ 上升步数=10、最大上升 0.0015 已如实计数）",
+  "取整前/后冲突对数直方图已记录（297 → 175）",
+  "修复后方案必过精确谓词：violated_after_repair=0 且掩码全量复核 residual=0，再经 evaluator 复算 feasible=True",
+  "盒边界饱和率=0.0（无 A 类饱和退化迹象）",
+  "解析次梯度 vs 数值差分哨兵：最大不一致 0.0（code/test_sentinels.py）",
+  "Φ=0 ⇔ 谓词零冲突 双向小用例 + 半开区间端点相接负例通过（sentinel_tests.json）"
+ ]
+}

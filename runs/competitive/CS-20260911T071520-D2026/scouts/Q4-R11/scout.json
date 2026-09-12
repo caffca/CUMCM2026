@@ -1,0 +1,91 @@
+{
+ "idea_id": "Q4-R11",
+ "question_id": "Q4",
+ "route_source": "routes/CH-01.route.json (idea_id_suggested=Q4-R11)",
+ "protocol_ref": "TP-D2026-01",
+ "adjudication_ref": "ADJ-CS-20260911T071520-D2026-01 (R3/R4/R6/R7)",
+ "evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "paradigm": "扩域差分 CSP / CP-SAT（部分列表着色 + 撤销选项，全势边成对不相容子句，词典序四层逐级固定再优化）",
+ "determinism": "deterministic（CP-SAT random_seed=7 固定；num_workers=4 下搜索路径非位级可复现，按协议 replicates_deterministic=1 单跑）",
+ "model_statics": {
+  "vars_Q4": 6013, "avg_domain_Q4": 40.09, "edges_G_star_Q4": 2117, "forbidden_pairs_Q4": 437962,
+  "vars_Q2reduction": 4582, "avg_domain_Q2": 30.55, "edges_G_star_Q2": 1693, "forbidden_pairs_Q2": 270626,
+  "build_seconds": 2.4, "model_build_seconds": 5.8,
+  "note_vs_CH01_static": "CH-01 自报 1693→2117 边（与本人复算逐字一致）；禁元组自报 269994→443002 vs 本人 270626→437962，差异源于 R3 冻结口径下越界选项剔除（本人域生成直接复用 evaluator.mask_of 边界判据）"
+ },
+ "r3_truncation_stats": {
+  "C_dg_options_valid": 1431, "C_dg_options_potential": 1530, "pruned_by_horizon": 99,
+  "extreme_check_g18": "最晚 C 计划 C083(t1=531) 仅 g'∈[1,7] 可行（正 dg 全越界）；最早 C007(t1=2) g'∈[1,18] 全可行；g'=1 与 g'=18 极值态分别验证通过",
+  "note": "任务口径：dg>0 使末窗右移 11·dg，643 视界截断使大量正 dg 动作无效——已按选项域剔除，属 R3 约束"
+ },
+ "solver_run": {
+  "wall_seconds_total": 547.3, "budget_per_replicate": 600, "within_budget": true,
+  "hint_used": true, "hint_source": "Q4-R41/run/solution_seed47.json（本组自产 SA 最优，读白名单内）",
+  "layers": [
+   {"layer": "revoke", "status": "FEASIBLE", "lb": 2, "ub": 8, "closed": false, "cap_s": 230},
+   {"layer": "adjusted", "status": "FEASIBLE", "lb": 11, "ub": 113, "closed": false, "cap_s": 120,
+    "note": "条件界：在 revoke≤8 前缀下 adj∈[11,113]"},
+   {"layer": "priority_loss", "status": "UNKNOWN", "cap_s": 100,
+    "note": "在前两层 incumbent 区间内 100s 未找到新可行点；解快照回退至 adjusted 层 incumbent"},
+   {"layer": "magnitude", "status": "UNKNOWN", "cap_s": 90}
+  ],
+  "ladder_certificate": {
+   "revoke_lb": 2, "revoke_ub": 8, "revoke_closed": false,
+   "meaning": "撤销层 CP-SAT 对偶界已证 rev≥2（rev=0/1 不可能）；230s 内未能把 UB 继续下压至 LB（未闭合）；层间以 ≤incumbent 固定传递。锚定重跑后该层报告区间更新为 [2,6]（UB=6 来自植入锚）",
+   "layers_closed": []
+  }
+ },
+ "metrics": {
+  "feasible": true, "objective_tuple": [6, 121, 1996, 663],
+  "objective_scalar": 6012119960663,
+  "objective_source": "planted_from_Q2-R51（评审 REV-Q4-01 TF-1 锚定；自跑 [8,113,2289,719] 降为历史记录 previous_objective_prior_to_anchor）",
+  "upper_bound": {"tuple": [6, 121, 1996, 663], "scalar": 6012119960663, "anchored": true,
+   "provenance": "Q2-R51 侦察解植入（evaluator Q4 复算逐字一致 + 掩码合法 + residual=0，机器工件 run_anchor/q2_planted_inclusion_check.json）"},
+  "runtime_seconds": 547.3,
+  "stability": "单跑（deterministic 档）；开发期 12s 小预算跑曾得 ub=54，仅证预算敏感非随机失稳",
+  "gap": "撤销层界 [2,6]（LB=2 锚定重跑 w8；UB=6 植入锚；未闭合）。叙述修正（REV-Q4-01）：旧『8<14⇒自由度有收益』作废——Q2 侧真实支配界锚=Q2-R51 植入解 rev=6（自跑退化模型 14 只是欠闭合 incumbent，不构成 Q2 参照系）；Q4 自跑 8 未支配植入锚；改善宣称冻结至生产热启动结果"
+ },
+ "inclusion_check_Q2": {
+  "method": "同一构建器 allow_gap=False ⇒ 域不含 dg，逐字退回 Q2 差分模型（同 evaluator 语义）",
+  "domain_verbatim_subset": "Q2 域序列 = Q4 域序列删去 dg 选项，逐项(kind,v,mask,ploss,mag)全等：通过",
+  "edge_subset": "G*_Q2(1693) ⊆ G*_Q4(2117)：通过",
+  "clause_subset": "Q2 禁元组在 Q4 表中零缺失：通过",
+  "shared_solution_dual_eval": "Q2 退化模型解 [14,96,2383,638] 在 evaluator --question Q2 与 --question Q4 下元组逐字一致且 feasible=true：通过",
+  "objective_ordering": "R11(Q4 自跑) [8,113,2289,719] ≤ R11(Q2退化自跑) [14,96,2383,638]：通过——仅证明同一构建器扩大域下 incumbent 单调不差（自洽性检查），不再作为『自由度收益』证据（见 review_closure.TF1_anchor_recompute.narrative_correction）",
+  "planted_anchor_check": "Q2-R51 解 127 条目 ∈ R11 Q4 域（actions_subset ✓）；掩码全合法（mask_legal ✓）；evaluator --question Q4 复算 feasible=true 且元组逐字 [6,121,1996,663]（✓）；内部位图残留冲突=0（✓）——机器工件 run_anchor/q2_planted_inclusion_check.json"
+ },
+ "review_closure": {
+  "ref": "REV-Q4-01（评审闭环追加任务；只写 scouts/Q4-R11，新建 run_anchor/）",
+  "TF1_anchor_recompute": {
+   "planted_solution": "scouts/Q4-R11/run_anchor/solution_planted_q2r51.json（源 scouts/Q2-R51/solution_actions.json）",
+   "inclusion_artifact": "scouts/Q4-R11/run_anchor/q2_planted_inclusion_check.json",
+   "layer1_rerun_w8": {"status": "FEASIBLE", "revoke_lb": 2, "revoke_ub": 6, "snapshot_tuple_evaluated": [6, 141, 2529, 825], "wall_s": 307.2},
+   "layer1_rerun_w1": {"status": "FEASIBLE", "revoke_lb": 0, "revoke_ub": 6, "snapshot_tuple_evaluated": [6, 122, 1997, 665], "wall_s": 306.7},
+   "outcome": "无 rev<6 解 → objective=植入锚 [6,121,1996,663]（source=planted_from_Q2-R51）；自跑未支配事实登记：两锚定重跑快照与自跑 [8,…] 词典序均劣于植入锚",
+   "narrative_correction": "删除/改写旧宣称『8<14⇒自由度有收益』→『支配界锚=Q2-R51 植入解 6；Q4 自跑 8 未支配植入锚；改善宣称冻结至生产热启动结果』"
+  },
+  "TF5_reproducibility": {
+   "artifact": "scouts/Q4-R11/run_anchor/reproducibility_check.json",
+   "consistency": "workers=8 vs workers=1：status 同 FEASIBLE；层 1 incumbent 第一级一致 rev=6；LB（2 vs 0）与深层元组差异为多 worker 搜索路径产物，如实登记（CP-SAT 多 worker 非位级复现的已知限制）"
+  },
+  "budget_disclosure": "本次锚定重跑求解预算 2×300s 上限（实耗 307.2s + 306.7s，各含 ~7s 域/模型构建）；工件评测 evaluator 调用 +3 次，组累计 13 < 16 台账"
+ },
+ "special_checks_from_route": {
+  "包含性自检": "通过（见 inclusion_check_Q2）",
+  "间隔边界_g1_g18": "通过（见 r3_truncation_stats）",
+  "越界检查": "checker 位图无截断（int 位图直读 643 界）；99 个正/大 dg 选项按 R3 判无效剔除",
+  "禁止元组表构建耗时": "437962 子句模型构建 3.4s，全 pipeline 5.8s，<<600s 预算"
+ },
+ "failure_conditions_realized": [
+  "CH-01 预警『元组表规模使第 1 层界无法在预算内推进』部分应验：LB 停在 2、UB 停在 8；第 3/4 层 UNKNOWN（以快照回退如实报告，不冒充闭合）"
+ ],
+ "deviations": [
+  "CH-01 原计划 hint=Q2-R12 解 + Q2 最优上界锚——本 agent 读白名单不含 results/，改用 Q4-R41 seed47 解做 hint（自产，口径不变）",
+  "Q2 退化对照由本组自跑（150s L1），非引用他组 Q2-R51 产物"
+ ],
+ "failure_mode": null,
+ "status": "completed",
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run_anchor/solution_planted_q2r51.json",
+ "solution_path_note": "objective 对应植入锚解；自跑历史解保留于 run/solution_actions.json",
+ "eval_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run_anchor/eval_q4_planted.json"
+}

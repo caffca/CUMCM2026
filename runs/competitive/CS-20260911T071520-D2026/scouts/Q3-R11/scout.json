@@ -1,0 +1,75 @@
+{
+ "idea_id": "Q3-R11",
+ "question_id": "Q3",
+ "route_source": "CH-01 (recommended, set-packing CP-SAT)",
+ "objective": 139,
+ "objective_unit": "new_C_plans",
+ "direction": "maximize",
+ "lower_bound": 139,
+ "upper_bound": 139,
+ "upper_bound_source": "本候选认证界：CP-SAT A/B 双模型 OPTIMAL best_bound=139 + HiGHS LP 松弛界=139.0（不同求解器族复证）",
+ "relative_gap": 0.0,
+ "base_ref": "Q2-R51 冻结方案（revoke 6→资源释放 ADJ R8；evaluator Q2 feasible=true, tuple=[6,121,1996,663]）",
+ "zero_conflict_with_base": true,
+ "stopping_reason": "CP-SAT 双模型 OPTIMAL（incumbent=bound=139，<5s），另以 HiGHS LP 界=139 独立复证；界闭合",
+ "failure_mode": null,
+ "model_A": {
+  "model": "A_pairwise_clauses",
+  "status": "OPTIMAL",
+  "wall_s": 1.1,
+  "n_vars": 2123,
+  "n_constraints": 62071,
+  "has_incumbent": true,
+  "num_conflicts": 0,
+  "num_branches": 52,
+  "cp_wall_s": 1.1,
+  "incumbent": 139,
+  "best_bound": 139
+ },
+ "model_B": {
+  "model": "B_cell_capacity",
+  "status": "OPTIMAL",
+  "wall_s": 0.4,
+  "n_vars": 2123,
+  "n_constraints": 13822,
+  "has_incumbent": true,
+  "num_conflicts": 0,
+  "num_branches": 52,
+  "cp_wall_s": 0.4,
+  "incumbent": 139,
+  "best_bound": 139
+ },
+ "incumbent_used": "A_pairwise_clauses",
+ "cp_best_bound_min": 139,
+ "cp_bound_certifies_optimum": true,
+ "model_equivalence_note": "整数可行集：A（干扰边 x_i+x_j≤1）≡ B（每格 Σx≤1），因两者都精确表达『无两放置共享时频单元』；LP 松弛：B 的多面体 ⊆ A（同格任意对被 B 的格行强制），故 B 的 CP-SAT best_bound ≥ A（界更紧）；边数=6.2e4 未爆炸 ⇒ 按协议以 A 为主模型，B 为对照。",
+ "edge_equivalence_audit": {
+  "pairs_with_band_overlap_checked": 131254,
+  "analytic_vs_bitmap_vs_inverted_mismatches": 0
+ },
+ "n_edges": 62071,
+ "n_candidates_base_free": 2123,
+ "lp_crosscheck_hiGHS": {
+  "purpose": "以不同求解器族（HiGHS LP 松弛）独立复证 CP-SAT 的 OPTIMAL=139",
+  "lp_bound": 139.0,
+  "confirms_no_140": true,
+  "rows": 13822,
+  "vars": 2123,
+  "wall_s": 0.4,
+  "conclusion": "LP 上界=139.0（对整数最优为合法上界）⇒ N*<=139；incumbent=139 可行 ⇒ N*=139（在冻结 base=Q2-R51、模板宽3/时长2/间隔8/次数12、f0∈0..97、t0∈0..531 口径下）"
+ },
+ "budget_disclosure": {
+  "protocol_limit_per_replicate_s": 600,
+  "main_run_wall_s": 4.3,
+  "lp_crosscheck_wall_s": 0.4,
+  "total_candidate_wall_s": 4.7,
+  "within_limit": true
+ },
+ "elementary_bound": 332,
+ "elementary_bound_source": "Q3-R51 相位×块双计数界（UB=min(332,密度界676)）；仅作可手核对照，非本候选上界字段",
+ "certified_optimal": {
+  "value": true,
+  "scope": "scope: frozen base=Q2-R51 scout solution (tuple [6,121,1996,663]); 基座敏感性 R32→134/R41→136 见评审 CH-REV-A base_sensitivity"
+ },
+ "revision_note": "评审闭环修订 v2：原 finalize 表头把 upper_bound 统一写成 R51 初等界 332，与自身认证矛盾；现以认证界 139 为准（gap=0），332 保留为 elementary_bound 对照"
+}

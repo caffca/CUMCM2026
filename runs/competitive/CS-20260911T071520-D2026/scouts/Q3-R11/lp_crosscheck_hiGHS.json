@@ -1,0 +1,11 @@
+{
+ "lp_status": 0,
+ "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+ "lp_bound_max_formulation": 139.0,
+ "lp_bound_floor": 139,
+ "confirms_no_140": true,
+ "rows": 13822,
+ "nnz": 151709,
+ "vars": 2123,
+ "wall_s": 0.4
+}

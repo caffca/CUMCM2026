@@ -1,0 +1,112 @@
+{
+  "protocol_id": "TP-D2026-01",
+  "search_id": "CS-20260911T071520-D2026",
+  "frozen_at": "2026-09-11T16:08:00+08:00",
+  "frozen_before_any_prototype_scout": true,
+  "adjudication_ref": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json",
+  "canonical_evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+  "canonical_evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "objective_scalar_formula": "objective_scalar = 1e12*revoke + 1e8*adjusted + 1e4*priority_loss + magnitude_sum（由 canonical_evaluator 四级元组确定性映射，minimize；Q1 用 symdiff_pairs；Q3 用 count 取负号统一 minimize 语义，unit=new_C_plans_negated）",
+  "budget": {
+    "scout_wall_seconds_per_candidate_per_replicate": 600,
+    "replicates_stochastic": 3,
+    "seed_set": [
+      11,
+      29,
+      47
+    ],
+    "replicates_deterministic": 1,
+    "seed_policy_deterministic": "N/A",
+    "aggregation_stochastic": "median over replicates; ties broken by tuple then lower runtime",
+    "evaluations_ledger_limit": 16
+  },
+  "constraint_tolerance": 0,
+  "per_question": {
+    "Q1": {
+      "candidate_set": [
+        "Q1-R21",
+        "Q1-R52",
+        "Q1-R41"
+      ],
+      "baseline": "Q1-R21",
+      "objective_key": "objective",
+      "direction": "minimize",
+      "unit": "symdiff_vs_canonical_truth",
+      "note": "R21 baseline=逐对区间算术；R52=类内同余闭式（分析范式）；R41=位图+植入压力测试（仿真范式）。全部确定性。"
+    },
+    "Q2": {
+      "candidate_set": [
+        "Q2-R41",
+        "Q2-R51",
+        "Q2-R32"
+      ],
+      "baseline": "Q2-R41",
+      "objective_key": "objective",
+      "direction": "minimize",
+      "unit": "weighted_lexicographic_scalar",
+      "note": "R41=GRASP+LS baseline（随机,3seeds）；R51=成对不相容子句 CP-SAT+撤销阶梯证书（精确,必须实现 G* 全势边约束——只约束原冲突边会产生假OPTIMAL，CH-05 警示#2a）；R32=连续罚场+取整修复（异范式,确定性版+随机版各测）。"
+    },
+    "Q3": {
+      "candidate_set": [
+        "Q3-R23",
+        "Q3-R11",
+        "Q3-R51"
+      ],
+      "baseline": "Q3-R23",
+      "objective_key": "objective",
+      "direction": "maximize",
+      "unit": "new_C_plans",
+      "note": "依赖 Q2 winner 冻结方案作 base_actions（wave 2 侦察）。R23=贪心+LNS；R11=空闲集set-packing CP-SAT；R51=相位×块双计数上界+构造下界会合（必须做 UB>=LB 自检门，CH-05 警示#3）。"
+    },
+    "Q4": {
+      "candidate_set": [
+        "Q4-R41",
+        "Q4-R11",
+        "Q4-R22"
+      ],
+      "baseline": "Q4-R41",
+      "objective_key": "objective",
+      "direction": "minimize",
+      "unit": "weighted_lexicographic_scalar",
+      "note": "R41=重定时SA baseline（3seeds）；R11=扩域差分CSP CP-SAT（含 g 选项后全势边重建，注意 C 末窗 11 倍放大与 643 视界）；R22=(t1,g') 禁止条带解析构造（确定性，CH-02 版）。"
+    }
+  },
+  "result_artifact_contract": {
+    "path": "scouts/<idea_id>/result.json",
+    "required_fields": [
+      "question_id",
+      "idea_id",
+      "status",
+      "feasible",
+      "objective",
+      "objective_tuple",
+      "runtime_seconds",
+      "evaluator_invoked",
+      "seed",
+      "solution_path",
+      "failure_mode"
+    ],
+    "status_enum": [
+      "completed",
+      "failed",
+      "timeout"
+    ],
+    "authority_rule": "只有 status=completed 且 feasible=true 的 result 进入 P1-03 authority；failed/timeout 也必须写盘（禁止删失败记录）"
+  },
+  "rounds_ledger": {
+    "round0": "baseline 候选",
+    "round1": "其余 2 候选",
+    "round2/round3": "无新增候选的重置轮（记录 Pareto 稳定=两轮无改善停止）"
+  },
+  "amendments": [
+    {
+      "id": "AMD-01",
+      "field": "per_question.Q4.candidate_set[2]",
+      "from": "Q4-R52",
+      "to": "Q4-R22",
+      "recorded_at": "2026-09-11T20:15:48+08:00",
+      "reason": "装配期（IDEA_CANDIDATES 生成前）发现协议笔误与派工文本不一致：Q4 组 prototype 派工自始指定 CH-02 的 Q4-R22（解析重定时构造），实际执行与 result.json 均为 R22；R52（CH-05 同范式候选）从未被侦察、无 result authority，不得进入账本。两候选同属『解析范式』代表，替换不改变 Top-K 多样性政策；Q4-R52 记入 eliminations（未侦察-同范式被 R22 代表）。本修订如实带时间戳，不追改 frozen_at，属账本对齐而非事后换将（被选者从未基于结果变化）。",
+      "impact": "无结果影响：Q4 winner（R11）在两种候选集下不变（R52 从未参选）"
+    }
+  ]
+}

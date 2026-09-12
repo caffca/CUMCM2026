@@ -1,0 +1,72 @@
+{
+ "check": "顺序敏感性（PYTHONHASHSEED）实测",
+ "variants": {
+  "interval": [
+   {
+    "seed": 0,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 1,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 12345,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   }
+  ],
+  "interval_all_seeds_equal": true,
+  "bitmap": [
+   {
+    "seed": 0,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 1,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 12345,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   }
+  ],
+  "bitmap_all_seeds_equal": true,
+  "congruence": [
+   {
+    "seed": 0,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 1,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   },
+   {
+    "seed": 12345,
+    "rc": 0,
+    "n_edges": 297,
+    "sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+   }
+  ],
+  "congruence_all_seeds_equal": true
+ },
+ "p2_analytic_sha": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "p2_analytic_n": 297,
+ "matches_all_prod_variants": true,
+ "verdict": "PASS"
+}

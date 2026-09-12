@@ -1,0 +1,75 @@
+{
+ "check": "hint 链",
+ "hint_source_field": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "hint_role_field": "search_hint_only_all_figures_recomputed",
+ "path_exists": true,
+ "resolved_abs": "F:\\2026 数模\\D题重跑\\D题\\runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "file_top_keys": [
+  "A003",
+  "A004",
+  "A005",
+  "A006",
+  "A007",
+  "A008",
+  "A009",
+  "A010"
+ ],
+ "is_plain_actions_map": true,
+ "hint_n_actions": 127,
+ "hint_revoke_ids": [
+  "B013",
+  "B018",
+  "B019",
+  "B020",
+  "B022",
+  "B028"
+ ],
+ "hint_revoke_count": 6,
+ "hint_illegal_actions": [],
+ "hint_residual_conflicts_mine": 0,
+ "hint_tuple_mine": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "final_revoke_count": 6,
+ "hint_rev_eq_6": true,
+ "hint_rev_eq_final_rev": true,
+ "hint_equals_final_actions": false,
+ "n_actions_differing": 18,
+ "scout_dir_files": [
+  "DEV_LOG.md",
+  "PROTOTYPE_NOTES.md",
+  "cert_stdout.txt",
+  "code",
+  "cpsat_report.json",
+  "eval.json",
+  "r51_certificates.json",
+  "r51_phase2_log.txt",
+  "real_run_stdout.txt",
+  "result.json",
+  "result_authority.json",
+  "run_log.txt",
+  "run_stdout.txt",
+  "scout.json",
+  "solution_actions.json",
+  "solution_meta.json",
+  "star_edges.json"
+ ],
+ "star_edges_exists": true,
+ "star_edges_top_keys": [
+  "edges",
+  "stats"
+ ],
+ "star_edges_size_mine": 1693,
+ "star_edges_stats": {
+  "pairs_envelope_checked": 2266,
+  "star_edges": 1693,
+  "infeasible_combos": 270626,
+  "build_seconds": 0.4,
+  "source": "built"
+ },
+ "star_edges_size_auth_in_Q2_solution": 1693,
+ "verdict": "PASS"
+}

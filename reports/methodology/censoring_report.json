@@ -1,0 +1,9 @@
+{
+  "classification": "none",
+  "candidate_models": [],
+  "interpolation_used": false,
+  "interpolation_labeled_approximate": false,
+  "interval_model_comparison_done": false,
+  "decision_impact_reported": false,
+  "notes": "不存在事件时间估计问题：全部占用时刻由整数参数精确给定（Δt/Δf 离散化，F-001/F-003）。删失结构=none，豁免声明。"
+}

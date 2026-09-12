@@ -1,0 +1,83 @@
+{
+  "models": [
+    {
+      "id": "Q1-ENUM3",
+      "role": "Primary",
+      "changes_conclusion": true,
+      "improves_performance": true,
+      "explains_mechanism": true,
+      "used_in_decision": true,
+      "necessity": "完全枚举是 Q1-C1 验收的硬要求；三实现对账（算术/同余闭式/位图）防口径漂移，闭式与位图各自还是 Q2(G*)与Q3(栅格)的输入结构"
+    },
+    {
+      "id": "Q2-CSP-GSTAR",
+      "role": "Primary",
+      "changes_conclusion": true,
+      "improves_performance": true,
+      "explains_mechanism": true,
+      "used_in_decision": true,
+      "necessity": "众数解（逐边贪心修补/只约束原边）被机器证伪：只约束原 297 边的松弛 min Σr=OPTIMAL 0（假象）；G* 全势边+词典序是正确性的必要条件，非装饰"
+    },
+    {
+      "id": "Q2-LADDER-CERT",
+      "role": "Primary",
+      "changes_conclusion": true,
+      "improves_performance": false,
+      "explains_mechanism": true,
+      "used_in_decision": true,
+      "necessity": "Q2-C3 验收要求撤销数下界论证；阶梯 INFEASIBLE 证书是唯一可复核机制（组合界恒 0 已证伪）"
+    },
+    {
+      "id": "Q3-SETPACK",
+      "role": "Primary",
+      "changes_conclusion": true,
+      "improves_performance": true,
+      "explains_mechanism": true,
+      "used_in_decision": true,
+      "necessity": "Q3-C2 要求『最多』论证：候选完备+CP-SAT 双模型+LP 对偶三腿会合是唯一能写『最大=139（该基座下）』的路径；贪心只能给下界"
+    },
+    {
+      "id": "Q4-RETIMING-CSP",
+      "role": "Primary",
+      "changes_conclusion": true,
+      "improves_performance": true,
+      "explains_mechanism": true,
+      "used_in_decision": true,
+      "necessity": "支配界（Q4 域⊇Q2 域）是可证先验：不劣于 Q2 由模型包含构造保证，比实验对比强；扩域 CSP 是收益判定的载体"
+    },
+    {
+      "id": "GRASP-SA-BASELINE",
+      "role": "Baseline",
+      "used_in_decision": true,
+      "necessity": "Q2-C3 明确要求启发式对照（防精确解实现 bug 与过度自信）；结果区间 [10,28] 也量化了纯启发式的不可靠性"
+    },
+    {
+      "id": "PENALTY-FIELD",
+      "role": "Robustness",
+      "used_in_decision": false,
+      "necessity": "连续引导的量化负结果（297→175 后修复退化为全量重解）：支撑『问题本质是组合的，连续化不构成独立贡献』的论证；也提供热启动源"
+    },
+    {
+      "id": "ELEMENTARY-BOUND-332",
+      "role": "Robustness",
+      "used_in_decision": false,
+      "necessity": "相位×块双计数界 332 是论文可手核的初等上界（教学价值+机器界 sanity 哨兵）；不用于最优宣称（认证界=139）"
+    },
+    {
+      "id": "ANALYTIC-RETIME-R22",
+      "role": "Rejected",
+      "moved_to_appendix": true,
+      "necessity": "作为求解路线被评审 reject（撤销 66 系实现自伤）；其 mod-10 同余引理（4005 对 0 反例）保留为附录机理解释素材"
+    }
+  ],
+  "content_share": {
+    "primary": 0.65,
+    "baseline": 0.15,
+    "robustness": 0.12,
+    "rejected_in_appendix": 0.08
+  },
+  "moved_to_appendix": [
+    "ANALYTIC-RETIME-R22"
+  ],
+  "notes": "每模型四问审计见 necessity 字段；『它解决了哪个现有方法无法解决的问题』逐条回答。"
+}

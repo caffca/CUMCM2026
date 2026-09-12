@@ -1,0 +1,22 @@
+{
+ "elapsed_seconds": 224.715,
+ "status": "completed",
+ "stopping_reason": "stages_complete_or_budget",
+ "evaluator_calls": 4,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "workers": 4,
+  "stage_budget": {
+   "l1": 100,
+   "ladder": 20,
+   "l2": 20,
+   "l3": 12,
+   "l4": 12
+  },
+  "q2_solution": "@Q2MAIN",
+  "anchor": true,
+  "_q2_src": "shard:runs\\fresh\\SMOKE-R1\\tasks\\q2-Q2-R51-main-N-A-p0\\attempts\\1\\payload.json"
+ }
+}

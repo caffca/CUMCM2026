@@ -1,0 +1,14 @@
+{
+  "gate": "asset_conflicts",
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "ran_at": "2026-09-11T15:02:25+08:00",
+  "conflicts": [],
+  "summary": {
+    "total": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "rule": "HIGH 冲突须暂停与用户确认；MEDIUM 须在继续前刷新或人工确认；LOW 记录即可。"
+}

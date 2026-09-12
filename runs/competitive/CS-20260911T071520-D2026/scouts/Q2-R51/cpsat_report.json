@@ -1,0 +1,242 @@
+{
+ "stages": [
+  {
+   "stage": 1,
+   "layer": "revoke",
+   "mode": "min_sum_revoke",
+   "status": "FEASIBLE",
+   "budget_s": 48.0,
+   "wall_s": 48.2,
+   "n_conflicts": 0,
+   "n_branches": 0,
+   "n_solutions_logged": 21,
+   "value": 21,
+   "best_bound": 2,
+   "proven_optimal": false,
+   "trajectory_min_revoke": 21
+  },
+  {
+   "stage": 2,
+   "layer": "adjusted",
+   "mode": "min_adjusted",
+   "status": "FEASIBLE",
+   "budget_s": 131.5,
+   "wall_s": 131.5,
+   "n_conflicts": 0,
+   "n_branches": 0,
+   "value": 121,
+   "best_bound": 84,
+   "proven_optimal": false,
+   "tuple_of_solution": [
+    6,
+    121,
+    2185,
+    760
+   ]
+  },
+  {
+   "stage": 3,
+   "layer": "priority_loss",
+   "mode": "min_priority_loss",
+   "status": "FEASIBLE",
+   "budget_s": 56.2,
+   "wall_s": 56.7,
+   "n_conflicts": 0,
+   "n_branches": 0,
+   "value": 1996,
+   "best_bound": 422,
+   "proven_optimal": false,
+   "tuple_of_solution": [
+    6,
+    121,
+    1996,
+    755
+   ]
+  },
+  {
+   "stage": 4,
+   "layer": "magnitude_sum",
+   "mode": "min_magnitude_sum",
+   "status": "FEASIBLE",
+   "budget_s": 95.6,
+   "wall_s": 95.7,
+   "n_conflicts": 0,
+   "n_branches": 0,
+   "value": 663,
+   "best_bound": 321,
+   "proven_optimal": false,
+   "tuple_of_solution": [
+    6,
+    121,
+    1996,
+    663
+   ]
+  }
+ ],
+ "ladder": [
+  {
+   "k_max_revoke": 0,
+   "phase": "floor",
+   "status": "INFEASIBLE",
+   "budget_s": 15.0,
+   "model_build_s": 1.96,
+   "wall_s": 6.2,
+   "objective_used": false
+  },
+  {
+   "k_max_revoke": 13,
+   "phase": "lapse8_try1",
+   "status": "OPTIMAL",
+   "budget_s": 14.0,
+   "model_build_s": 2.03,
+   "wall_s": 7.3,
+   "objective_used": false,
+   "found_revoke": 13,
+   "found_tuple": [
+    13,
+    137,
+    2971,
+    769
+   ]
+  },
+  {
+   "k_max_revoke": 9,
+   "phase": "lapse4_try1",
+   "status": "OPTIMAL",
+   "budget_s": 14.0,
+   "model_build_s": 0.0,
+   "wall_s": 10.8,
+   "objective_used": false,
+   "found_revoke": 9,
+   "found_tuple": [
+    9,
+    137,
+    2540,
+    770
+   ]
+  },
+  {
+   "k_max_revoke": 7,
+   "phase": "lapse2_try1",
+   "status": "OPTIMAL",
+   "budget_s": 14.0,
+   "model_build_s": 0.0,
+   "wall_s": 5.6,
+   "objective_used": false,
+   "found_revoke": 7,
+   "found_tuple": [
+    7,
+    142,
+    2649,
+    794
+   ]
+  },
+  {
+   "k_max_revoke": 6,
+   "phase": "lapse1_try1",
+   "status": "UNKNOWN",
+   "budget_s": 14.0,
+   "model_build_s": 0.0,
+   "wall_s": 14.5,
+   "objective_used": false
+  },
+  {
+   "k_max_revoke": 6,
+   "phase": "lapse1_try2",
+   "status": "UNKNOWN",
+   "budget_s": 28.0,
+   "model_build_s": 0.0,
+   "wall_s": 28.1,
+   "objective_used": false
+  },
+  {
+   "k_max_revoke": 6,
+   "phase": "lapse1_try3",
+   "status": "UNKNOWN",
+   "budget_s": 56.0,
+   "model_build_s": 0.0,
+   "wall_s": 56.1,
+   "objective_used": false
+  },
+  {
+   "k_max_revoke": 6,
+   "phase": "deep_certificate",
+   "status": "OPTIMAL",
+   "budget_s": 119.7,
+   "model_build_s": 0.0,
+   "wall_s": 82.5,
+   "objective_used": false,
+   "found_revoke": 6,
+   "found_tuple": [
+    6,
+    142,
+    2449,
+    820
+   ]
+  }
+ ],
+ "certs": {
+  "L1_min_revoke_solve": {
+   "status": "FEASIBLE",
+   "value": 21,
+   "best_bound": 2,
+   "proven_optimal": false,
+   "wall_s": 48.2
+  },
+  "revoke_LB_floor_certificate": 1,
+  "deep_certificate_outcome": "FEASIBLE@k=6 (r=6)",
+  "revoke_LB_after_ladder": 2,
+  "revoke_UB_incumbent": 6,
+  "revoke_gap": 4,
+  "ladder_rebuilds": 2,
+  "contested_k": 6,
+  "revoke_LB_certificate": 2,
+  "revoke_layer_certified_optimal": false,
+  "layers_locked_unproven": [
+   "adjusted",
+   "priority_loss",
+   "magnitude_sum"
+  ],
+  "revoke_final_incumbent": 6
+ },
+ "model": {
+  "n_bool": 4582,
+  "n_clauses": 270626,
+  "n_star_edges": 1693,
+  "n_plans": 150,
+  "build_seconds": 2.22
+ },
+ "stats": {
+  "pairs_envelope_checked": 2266,
+  "star_edges": 1693,
+  "infeasible_combos": 270626,
+  "build_seconds": 0.4,
+  "source": "cache",
+  "mask_recheck": "PASS(sample=250)",
+  "mask_recheck_seconds": 0.4,
+  "base_conflicts": 297,
+  "star_covers_base": true
+ },
+ "locked": {
+  "revoke": 6,
+  "adjusted": 121,
+  "priority_loss": 1996,
+  "magnitude_sum": 663
+ },
+ "internal_tuple": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "internal_residual": 0,
+ "total_seconds": 547.2,
+ "wall_total_s": 547.3,
+ "params": {
+  "budget": 555.0,
+  "stage1_budget": 300.0,
+  "num_search_workers": 8,
+  "random_seed": 0,
+  "encoding": "pairwise nogood clauses over full potential-conflict graph G*"
+ }
+}

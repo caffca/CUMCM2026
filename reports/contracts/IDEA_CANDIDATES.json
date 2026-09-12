@@ -1,0 +1,3525 @@
+{
+ "schema_version": 2,
+ "search_run": {
+  "search_id": "CS-20260911T071520Z-1A9D30",
+  "profile": "standard",
+  "question_ids": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "run_directory": "runs/competitive/CS-20260911T071520-D2026",
+  "identity_note": "账本 search_id 按 P2-07 在装配期规范化（UTC 起搜 07:15:20Z + hex）；物理目录为派发期命名，所有工件路径以 run_directory 为根逐字在册，非复用旧运行",
+  "supersedes": [],
+  "input_snapshot": {
+   "question_contract_sha256": "a72afdaa4bb4186d829a4ef49940ba0209f1b79843ca70bec0942f42576e7a88",
+   "problem_facts_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+   "data_profile_sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+  },
+  "sources": [
+   {
+    "source_class": "peer_reviewed_paper",
+    "query": "frequency assignment problem interference graph coloring survey",
+    "used_for": "model family prior（FAP 文献锚点）"
+   },
+   {
+    "source_class": "peer_reviewed_paper",
+    "query": "bin packing maximum independent set interval graph algorithms",
+    "used_for": "packing/独立集 prior"
+   },
+   {
+    "source_class": "academic_documentation",
+    "query": "OR-Tools CP-SAT scheduling interval constraints optimization",
+    "used_for": "solver prior（CP-SAT 文档）"
+   },
+   {
+    "source_class": "peer_reviewed_paper",
+    "query": "frequency assignment problem models algorithms review IEEE",
+    "used_for": "FAP 综述 prior"
+   },
+   {
+    "source_class": "academic_documentation",
+    "query": "constraint programming orthogonal windows scheduling time tables CP-SAT",
+    "used_for": "CSP prior"
+   },
+   {
+    "source_class": "peer_reviewed_paper",
+    "query": "maximum independent set conflict graph channel assignment integer programming",
+    "used_for": "图论 prior"
+   },
+   {
+    "source_class": "peer_reviewed_paper",
+    "query": "radio frequency interference mitigation resource allocation optimization survey",
+    "used_for": "资源分配 prior"
+   }
+  ],
+  "budget": {
+   "max_wall_minutes": 60,
+   "max_generator_children": 4,
+   "top_k": 3,
+   "scout_budget_seconds_per_route": 600,
+   "replicates": 3,
+   "frozen_before_scouts": true
+  },
+  "started_at": "2026-09-11T15:15:20+08:00",
+  "completed_at": "2026-09-11T20:45:56+08:00"
+ },
+ "problem_structures": [
+  {
+   "question_id": "Q1",
+   "problem_types": [
+    "combinatorial_enumeration",
+    "predicate_evaluation"
+   ],
+   "decision_dimension": 0,
+   "variable_types": [
+    "none"
+   ],
+   "objective_direction": "estimate",
+   "smoothness": "non_smooth",
+   "convexity": "not_applicable",
+   "stochasticity": "deterministic",
+   "decomposability": "yes",
+   "canonical_evaluator_required": true,
+   "notes": "纯判定枚举；三实现全等。"
+  },
+  {
+   "question_id": "Q2",
+   "problem_types": [
+    "combinatorial_optimization",
+    "constraint_satisfaction"
+   ],
+   "decision_dimension": 150,
+   "variable_types": [
+    "integer_choice"
+   ],
+   "objective_direction": "minimize",
+   "smoothness": "non_smooth",
+   "convexity": "non_convex",
+   "stochasticity": "deterministic",
+   "decomposability": "no",
+   "canonical_evaluator_required": true,
+   "notes": "多选择 CSP/部分列表着色；词典序四级。"
+  },
+  {
+   "question_id": "Q3",
+   "problem_types": [
+    "packing",
+    "set_packing"
+   ],
+   "decision_dimension": 2123,
+   "variable_types": [
+    "binary"
+   ],
+   "objective_direction": "maximize",
+   "smoothness": "non_smooth",
+   "convexity": "non_convex",
+   "stochasticity": "deterministic",
+   "decomposability": "no",
+   "canonical_evaluator_required": true,
+   "notes": "候选完备集上的最大独立集/集包装；N*=139 三腿可证（基座=Q2-R51 侦察解）。"
+  },
+  {
+   "question_id": "Q4",
+   "problem_types": [
+    "combinatorial_optimization",
+    "retiming"
+   ],
+   "decision_dimension": 150,
+   "variable_types": [
+    "integer_choice"
+   ],
+   "objective_direction": "minimize",
+   "smoothness": "non_smooth",
+   "convexity": "non_convex",
+   "stochasticity": "mixed",
+   "decomposability": "no",
+   "canonical_evaluator_required": true,
+   "notes": "Q2 模型扩 dg 列；支配界可证。"
+  }
+ ],
+ "structural_checks": [
+  {
+   "question_id": "Q1",
+   "structure": "closed_form",
+   "status": "retained",
+   "reason": "类内 (g,d) 齐次 ⇒ 时间交叠=同余+reach 闭式（CH-01/CH-05；R52 闭式判据 4975 同组对 0 反例）",
+   "candidate_ids": [
+    "Q1-R52"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "variable_elimination",
+   "status": "screened_out",
+   "reason": "纯判定问题无决策变量可消元；等价于比较次数缩减，已由枚举剪枝覆盖",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "structure": "dimension_reduction",
+   "status": "retained",
+   "reason": "频段轴/时间轴正交分解：|E|=|B∩T|，候选对 11175→频段交叠 1352 再查时间（R21/R52/R41 全部利用）",
+   "candidate_ids": [
+    "Q1-R21",
+    "Q1-R52",
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "decomposition",
+   "status": "retained",
+   "reason": "按类对（AA/AB/AC/BC/BB/CC）与频段带分组并行枚举；三路独立实现对称差=0",
+   "candidate_ids": [
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "coordinate_transform",
+   "status": "retained",
+   "reason": "时频格→位图索引/倒排 join（R41 的 64300-bit AND 与倒排两实现）",
+   "candidate_ids": [
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "convexification",
+   "status": "not_applicable",
+   "reason": "无优化目标，判定问题不存在凸化对象",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "structure": "relaxation_and_bounds",
+   "status": "retained",
+   "reason": "审计夹逼界 LB(强制同余对)≤|E|≤UB(两轴独立) 作错误探测（R52 界自检 LB8≤29≤UB92 通过；评审限定为错误探测界）",
+   "candidate_ids": [
+    "Q1-R52"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "monotonicity_or_boundary",
+   "status": "retained",
+   "reason": "半开区间边界用例（相接不交叠）5/5-8/8 通过（R21/R41 special_checks）",
+   "candidate_ids": [
+    "Q1-R21",
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "symmetry",
+   "status": "screened_out",
+   "reason": "计划编号无对称群可利用；重复占用已由周期参数显式压缩",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "structure": "dominance_and_pruning",
+   "status": "retained",
+   "reason": "频段轴排序+前缀剪枝（R52/CH-02 扫描线版 O(n log n) 前筛）",
+   "candidate_ids": [
+    "Q1-R52"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "graph_or_flow_reformulation",
+   "status": "retained",
+   "reason": "冲突对集=区间交图∩周期交图（图论重表达成立，产出边表 G 供 Q2/Q4 消费）",
+   "candidate_ids": [
+    "Q1-R21"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "structure": "scheduling_or_coverage",
+   "status": "not_applicable",
+   "reason": "Q1 为纯检测，无排程/覆盖决策",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "structure": "dynamic_programming",
+   "status": "not_applicable",
+   "reason": "无时序阶段结构；判定用直接枚举最优（0.017s 已在预算 0.003%）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "structure": "reachable_set",
+   "status": "retained",
+   "reason": "占用格集合=可达资源集，distinct 口径 14698（R41 位图给出，供 Q3 复用）",
+   "candidate_ids": [
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "closed_form",
+   "status": "screened_out",
+   "reason": "撤销/调整组合数 ~1e222 无闭式；仅逐边可分离判据有闭式（297/297 边单端可修⇒组合层面无强制撤销，CH-05 探针）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "structure": "variable_elimination",
+   "status": "retained",
+   "reason": "每边只需 2 个轴向布尔而非 32×32 全表（CH-02 消元）；子句 270626 条由动作对组合压缩",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "dimension_reduction",
+   "status": "retained",
+   "reason": "同类参数同质 ⇒ 状态坍缩到 (动作类型,平移量) 域（平均 29.5 选项/计划）",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "decomposition",
+   "status": "screened_out",
+   "reason": "分量分解被 CH-01 探针证伪（G 148 点与 G* 150 点均单分量）；时间轴 gcd 不可分",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "structure": "coordinate_transform",
+   "status": "screened_out",
+   "reason": "平移不变性（Δf_i-Δf_j 判据）已被子句编码隐式利用，无独立变换路线",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "structure": "convexification",
+   "status": "retained",
+   "reason": "连续重叠体积罚场凸分段线性（R32 取整前 297→175 量化贡献；最终解质量归 CP-SAT——负结果证据保留）",
+   "candidate_ids": [
+    "Q2-R32"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "relaxation_and_bounds",
+   "status": "retained",
+   "reason": "撤销阶梯 INFEASIBLE 证书+CP 分数界 LB=2；原边松弛 OPTIMAL=0 证明界必须来自预防性 G*",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "monotonicity_or_boundary",
+   "status": "retained",
+   "reason": "资源盒边界 [0,643)×[0,100) 作显式可行性约束（R3 口径）",
+   "candidate_ids": [
+    "Q2-R51",
+    "Q2-R32"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "symmetry",
+   "status": "screened_out",
+   "reason": "计划同质但标签不同构（平移窗口各异），对称破缺收益未证实",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "structure": "dominance_and_pruning",
+   "status": "retained",
+   "reason": "候选动作域预剪枝：越界/等效动作剔除（构建 <4s）",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "graph_or_flow_reformulation",
+   "status": "retained",
+   "reason": "冲突图顶点覆盖骨架 ν=71 下界仅对 adjusted+revoked 总量有效（τ≥ν），组合界对撤销层恒 0 已证伪",
+   "candidate_ids": [
+    "Q2-R41"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "scheduling_or_coverage",
+   "status": "retained",
+   "reason": "多选择 CSP/部分列表着色（G*=1693 边禁元组表）是 Q2 的主导重表达",
+   "candidate_ids": [
+    "Q2-R51",
+    "Q2-R41"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "structure": "dynamic_programming",
+   "status": "not_applicable",
+   "reason": "无最优子结构：平移耦合为全局图约束（CH-02 状态空间指数论证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "structure": "reachable_set",
+   "status": "retained",
+   "reason": "每计划动作可达终态集显式枚举（域 22..32）",
+   "candidate_ids": [
+    "Q2-R51",
+    "Q2-R32"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "closed_form",
+   "status": "screened_out",
+   "reason": "最大化加装数无闭式；初等双计数界合法但松 2.39×（R51：332 vs 认证 139）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "structure": "variable_elimination",
+   "status": "retained",
+   "reason": "与 base 冲突的放置预筛消元：52136→2123 候选",
+   "candidate_ids": [
+    "Q3-R11",
+    "Q3-R23"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "dimension_reduction",
+   "status": "retained",
+   "reason": "相位/oct 分解：C 图案=3 频段×12 连续 oct×相位 p∈0..9",
+   "candidate_ids": [
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "decomposition",
+   "status": "retained",
+   "reason": "逐频段三列带分组；跨带干扰经位图倒排保留（三路对拍 131254 边 0 失配）",
+   "candidate_ids": [
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "coordinate_transform",
+   "status": "retained",
+   "reason": "时频格→(f0,t0) 起点坐标+占用位图（与 evaluator 同一 mask 代码）",
+   "candidate_ids": [
+    "Q3-R23",
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "convexification",
+   "status": "screened_out",
+   "reason": "LP 松弛仅作对照：HiGHS 分数上界=139.0 与整数界会合（R11 复证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "structure": "relaxation_and_bounds",
+   "status": "retained",
+   "reason": "三腿闭合：CP-SAT A/B 双模型 OPTIMAL=139 + HiGHS LP=139.0 + 候选穷举完备 ⇒ N*=139 可证；初等界 332 作可手核上界对照",
+   "candidate_ids": [
+    "Q3-R11",
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "monotonicity_or_boundary",
+   "status": "retained",
+   "reason": "末窗 ≤643 视界边界单调筛 t0∈0..531",
+   "candidate_ids": [
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "symmetry",
+   "status": "screened_out",
+   "reason": "候选同质性存在但未做对称破缺（OPTIMAL 4.3s 无需）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "structure": "dominance_and_pruning",
+   "status": "retained",
+   "reason": "被支配放置剔除（同 (f0 带,oct 段) 内）",
+   "candidate_ids": [
+    "Q3-R23"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "graph_or_flow_reformulation",
+   "status": "retained",
+   "reason": "set-packing/稳定集 IP（冲突图 62071 边 pairwise 主模型）",
+   "candidate_ids": [
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "scheduling_or_coverage",
+   "status": "retained",
+   "reason": "装箱/覆盖视角：空闲单元 48700/图案 72 格密度界 676 上界",
+   "candidate_ids": [
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "structure": "dynamic_programming",
+   "status": "screened_out",
+   "reason": "CH-01 分块滑窗 DP 因跨带耦合降为对照，未进 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "structure": "reachable_set",
+   "status": "retained",
+   "reason": "base 冻结后自由可达集显式构造（Q2-R51 应用 actions 后位图）",
+   "candidate_ids": [
+    "Q3-R11",
+    "Q3-R23",
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "closed_form",
+   "status": "retained",
+   "reason": "mod-10 同余判据 4005 个 C-C 对 0 反例；(t1,g') 条带闭式消 16/19 CC 边（R22 机理件，但全局消解须整数层——撤销 66 的坍塌即负结果证据）",
+   "candidate_ids": [
+    "Q4-R22"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "variable_elimination",
+   "status": "retained",
+   "reason": "R3 视界截断消去 99/1530 个 dg 选项",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "dimension_reduction",
+   "status": "retained",
+   "reason": "扩域后仍 (类型,量) 域表示（29.5→39.7 选项均值）",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "decomposition",
+   "status": "screened_out",
+   "reason": "同 Q2：单分量不可分（CH-01 证伪复用）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "structure": "coordinate_transform",
+   "status": "retained",
+   "reason": "重定时坐标 (t1,g') 平面：∂(第k窗起点)/∂g=k-1 结构",
+   "candidate_ids": [
+    "Q4-R22",
+    "Q4-R41"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "convexification",
+   "status": "screened_out",
+   "reason": "连续化无增益证据；未进 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "structure": "relaxation_and_bounds",
+   "status": "retained",
+   "reason": "支配界（可证：Q4 动作集⊇Q2 ⇒ 同评价函数最优值不劣，包含性实测过）+ 阶梯证书 LB=2",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "monotonicity_or_boundary",
+   "status": "retained",
+   "reason": "dg>0 与 643 视界的单调截断（C083 仅 g'≤7）",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "symmetry",
+   "status": "screened_out",
+   "reason": "未利用",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "structure": "dominance_and_pruning",
+   "status": "retained",
+   "reason": "越界 dg 动作预剔除 + 禁元组三路对拍",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "graph_or_flow_reformulation",
+   "status": "retained",
+   "reason": "同 Q2 冲突图基座扩列",
+   "candidate_ids": [
+    "Q4-R11",
+    "Q4-R41"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "scheduling_or_coverage",
+   "status": "retained",
+   "reason": "多选择差分 CSP（6104 选项）+ SA 退火调度范式",
+   "candidate_ids": [
+    "Q4-R11",
+    "Q4-R41"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "structure": "dynamic_programming",
+   "status": "not_applicable",
+   "reason": "同 Q2 论证：全局图耦合无最优子结构",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "structure": "reachable_set",
+   "status": "retained",
+   "reason": "重定时可达相位类（R22 条带矩阵）",
+   "candidate_ids": [
+    "Q4-R22"
+   ]
+  }
+ ],
+ "model_family_coverage": [
+  {
+   "question_id": "Q1",
+   "family": "analytic_mechanistic",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q1-R21",
+    "Q1-R52"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "family": "statistical_probabilistic",
+   "status": "not_applicable",
+   "reason": "结果需求为精确枚举/精确消解，概率模型不产生契约要求的输出（Q1-R42 类证据已并入 R41 诊断件）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "operations_research",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "graph_combinatorial",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "dynamic_control",
+   "status": "not_applicable",
+   "reason": "无动力学状态方程与控制输入结构（F-004 四参数静态计划）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "simulation",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "family": "machine_learning",
+   "status": "not_applicable",
+   "reason": "无噪声/无标签/单实例确定性判定，ML 无辨识对象（CH-04 论证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "hybrid_decomposition",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "analytic_mechanistic",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "statistical_probabilistic",
+   "status": "not_applicable",
+   "reason": "结果需求为精确枚举/精确消解，概率模型不产生契约要求的输出（Q1-R42 类证据已并入 R41 诊断件）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "operations_research",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "family": "graph_combinatorial",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R41"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "family": "dynamic_control",
+   "status": "not_applicable",
+   "reason": "无动力学状态方程与控制输入结构（F-004 四参数静态计划）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "simulation",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "machine_learning",
+   "status": "not_applicable",
+   "reason": "无噪声/无标签/单实例确定性判定，ML 无辨识对象（CH-04 论证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "hybrid_decomposition",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R32"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "analytic_mechanistic",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "statistical_probabilistic",
+   "status": "not_applicable",
+   "reason": "结果需求为精确枚举/精确消解，概率模型不产生契约要求的输出（Q1-R42 类证据已并入 R41 诊断件）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "operations_research",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "graph_combinatorial",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "dynamic_control",
+   "status": "not_applicable",
+   "reason": "无动力学状态方程与控制输入结构（F-004 四参数静态计划）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "simulation",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R23"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "machine_learning",
+   "status": "not_applicable",
+   "reason": "无噪声/无标签/单实例确定性判定，ML 无辨识对象（CH-04 论证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "hybrid_decomposition",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "analytic_mechanistic",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R22"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "statistical_probabilistic",
+   "status": "not_applicable",
+   "reason": "结果需求为精确枚举/精确消解，概率模型不产生契约要求的输出（Q1-R42 类证据已并入 R41 诊断件）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "operations_research",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "graph_combinatorial",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "dynamic_control",
+   "status": "not_applicable",
+   "reason": "无动力学状态方程与控制输入结构（F-004 四参数静态计划）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "simulation",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R41"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "machine_learning",
+   "status": "not_applicable",
+   "reason": "无噪声/无标签/单实例确定性判定，ML 无辨识对象（CH-04 论证）",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "hybrid_decomposition",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  }
+ ],
+ "solver_family_coverage": [
+  {
+   "question_id": "Q1",
+   "family": "closed_form",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q1-R52"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "family": "exact_enumerative",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q1-R21",
+    "Q1-R41"
+   ]
+  },
+  {
+   "question_id": "Q1",
+   "family": "convex_optimization",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "gradient_local",
+   "status": "not_applicable",
+   "reason": "变量全整数、目标分段常值，无梯度可用",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "derivative_free_local",
+   "status": "not_applicable",
+   "reason": "无连续变量；Nelder/Powell 类无对象",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "deterministic_global",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "stochastic_population",
+   "status": "not_applicable",
+   "reason": "整图种群算法在预算内无增量证据（CH-04 预算筛查），随机性仅以 SA/GRASP 单点形式保留",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "surrogate_bayesian",
+   "status": "not_applicable",
+   "reason": "评估无噪声且单次评估近乎免费，代理模型无收益",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q1",
+   "family": "structure_specific",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "closed_form",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "exact_enumerative",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "convex_optimization",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R32"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "family": "gradient_local",
+   "status": "not_applicable",
+   "reason": "变量全整数、目标分段常值，无梯度可用",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "derivative_free_local",
+   "status": "not_applicable",
+   "reason": "无连续变量；Nelder/Powell 类无对象",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "deterministic_global",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R51"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "family": "stochastic_population",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q2-R41"
+   ]
+  },
+  {
+   "question_id": "Q2",
+   "family": "surrogate_bayesian",
+   "status": "not_applicable",
+   "reason": "评估无噪声且单次评估近乎免费，代理模型无收益",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q2",
+   "family": "structure_specific",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "closed_form",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R51"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "exact_enumerative",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "convex_optimization",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "gradient_local",
+   "status": "not_applicable",
+   "reason": "变量全整数、目标分段常值，无梯度可用",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "derivative_free_local",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R23"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "deterministic_global",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q3-R11"
+   ]
+  },
+  {
+   "question_id": "Q3",
+   "family": "stochastic_population",
+   "status": "not_applicable",
+   "reason": "整图种群算法在预算内无增量证据（CH-04 预算筛查），随机性仅以 SA/GRASP 单点形式保留",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "surrogate_bayesian",
+   "status": "not_applicable",
+   "reason": "评估无噪声且单次评估近乎免费，代理模型无收益",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q3",
+   "family": "structure_specific",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "closed_form",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R22"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "exact_enumerative",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "convex_optimization",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "gradient_local",
+   "status": "not_applicable",
+   "reason": "变量全整数、目标分段常值，无梯度可用",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "derivative_free_local",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R41"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "deterministic_global",
+   "status": "retained",
+   "reason": "本问 Top-K 中该族有已侦察候选支撑",
+   "candidate_ids": [
+    "Q4-R11"
+   ]
+  },
+  {
+   "question_id": "Q4",
+   "family": "stochastic_population",
+   "status": "not_applicable",
+   "reason": "整图种群算法在预算内无增量证据（CH-04 预算筛查），随机性仅以 SA/GRASP 单点形式保留",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "surrogate_bayesian",
+   "status": "not_applicable",
+   "reason": "评估无噪声且单次评估近乎免费，代理模型无收益",
+   "candidate_ids": []
+  },
+  {
+   "question_id": "Q4",
+   "family": "structure_specific",
+   "status": "screened_out",
+   "reason": "已生成候选但被同族更强候选 Pareto 支配（见 coverage_notes/评审），未入 Top-K",
+   "candidate_ids": []
+  }
+ ],
+ "coverage_policy": {
+  "schema_version": 1,
+  "discovery_id": "DISC-E9D8A97BC71B91CD",
+  "fixed_all_family_requirement": false,
+  "question_plans": {
+   "Q1": {
+    "question_id": "Q1",
+    "discovery_opportunity_ids": [
+     "Q1-OP-special_boundary"
+    ],
+    "triggered_model_families": [
+     "analytic_mechanistic",
+     "simulation"
+    ],
+    "triggered_solver_families": [
+     "closed_form",
+     "exact_enumerative"
+    ],
+    "model_family_dispositions": [
+     {
+      "question_id": "Q1",
+      "family": "analytic_mechanistic",
+      "status": "retained",
+      "reason": "Q1 的边界/可达集结构（Q1-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q1-R21",
+       "Q1-R52"
+      ]
+     },
+     {
+      "question_id": "Q1",
+      "family": "simulation",
+      "status": "retained",
+      "reason": "Q1 的边界/可达集结构（Q1-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q1-R41"
+      ]
+     }
+    ],
+    "solver_family_dispositions": [
+     {
+      "question_id": "Q1",
+      "family": "closed_form",
+      "status": "retained",
+      "reason": "求解器族 closed_form 适配 Q1 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q1-R52"
+      ]
+     },
+     {
+      "question_id": "Q1",
+      "family": "exact_enumerative",
+      "status": "retained",
+      "reason": "求解器族 exact_enumerative 适配 Q1 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q1-R21",
+       "Q1-R41"
+      ]
+     }
+    ],
+    "candidate_ids": [
+     "Q1-R21",
+     "Q1-R52",
+     "Q1-R41"
+    ],
+    "undercoverage_reason": "P1-03 按 Discovery 触发族登记：special_boundary 触发资源盒边界/可达集类族；ML/控制/代理等未触发族在全族覆盖表中登记 not_applicable 论证，未凑候选。"
+   },
+   "Q2": {
+    "question_id": "Q2",
+    "discovery_opportunity_ids": [
+     "Q2-OP-special_boundary"
+    ],
+    "triggered_model_families": [
+     "graph_combinatorial",
+     "hybrid_decomposition",
+     "operations_research"
+    ],
+    "triggered_solver_families": [
+     "convex_optimization",
+     "deterministic_global",
+     "stochastic_population"
+    ],
+    "model_family_dispositions": [
+     {
+      "question_id": "Q2",
+      "family": "graph_combinatorial",
+      "status": "retained",
+      "reason": "Q2 的边界/可达集结构（Q2-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q2-R41"
+      ]
+     },
+     {
+      "question_id": "Q2",
+      "family": "hybrid_decomposition",
+      "status": "retained",
+      "reason": "Q2 的边界/可达集结构（Q2-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q2-R32"
+      ]
+     },
+     {
+      "question_id": "Q2",
+      "family": "operations_research",
+      "status": "retained",
+      "reason": "Q2 的边界/可达集结构（Q2-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q2-R51"
+      ]
+     }
+    ],
+    "solver_family_dispositions": [
+     {
+      "question_id": "Q2",
+      "family": "convex_optimization",
+      "status": "retained",
+      "reason": "求解器族 convex_optimization 适配 Q2 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q2-R32"
+      ]
+     },
+     {
+      "question_id": "Q2",
+      "family": "deterministic_global",
+      "status": "retained",
+      "reason": "求解器族 deterministic_global 适配 Q2 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q2-R51"
+      ]
+     },
+     {
+      "question_id": "Q2",
+      "family": "stochastic_population",
+      "status": "retained",
+      "reason": "求解器族 stochastic_population 适配 Q2 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q2-R41"
+      ]
+     }
+    ],
+    "candidate_ids": [
+     "Q2-R41",
+     "Q2-R51",
+     "Q2-R32"
+    ],
+    "undercoverage_reason": "P1-03 按 Discovery 触发族登记：special_boundary 触发资源盒边界/可达集类族；ML/控制/代理等未触发族在全族覆盖表中登记 not_applicable 论证，未凑候选。"
+   },
+   "Q3": {
+    "question_id": "Q3",
+    "discovery_opportunity_ids": [
+     "Q3-OP-special_boundary"
+    ],
+    "triggered_model_families": [
+     "graph_combinatorial",
+     "operations_research",
+     "simulation"
+    ],
+    "triggered_solver_families": [
+     "closed_form",
+     "derivative_free_local",
+     "deterministic_global"
+    ],
+    "model_family_dispositions": [
+     {
+      "question_id": "Q3",
+      "family": "graph_combinatorial",
+      "status": "retained",
+      "reason": "Q3 的边界/可达集结构（Q3-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q3-R51"
+      ]
+     },
+     {
+      "question_id": "Q3",
+      "family": "operations_research",
+      "status": "retained",
+      "reason": "Q3 的边界/可达集结构（Q3-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q3-R11"
+      ]
+     },
+     {
+      "question_id": "Q3",
+      "family": "simulation",
+      "status": "retained",
+      "reason": "Q3 的边界/可达集结构（Q3-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q3-R23"
+      ]
+     }
+    ],
+    "solver_family_dispositions": [
+     {
+      "question_id": "Q3",
+      "family": "closed_form",
+      "status": "retained",
+      "reason": "求解器族 closed_form 适配 Q3 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q3-R51"
+      ]
+     },
+     {
+      "question_id": "Q3",
+      "family": "derivative_free_local",
+      "status": "retained",
+      "reason": "求解器族 derivative_free_local 适配 Q3 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q3-R23"
+      ]
+     },
+     {
+      "question_id": "Q3",
+      "family": "deterministic_global",
+      "status": "retained",
+      "reason": "求解器族 deterministic_global 适配 Q3 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q3-R11"
+      ]
+     }
+    ],
+    "candidate_ids": [
+     "Q3-R23",
+     "Q3-R11",
+     "Q3-R51"
+    ],
+    "undercoverage_reason": "P1-03 按 Discovery 触发族登记：special_boundary 触发资源盒边界/可达集类族；ML/控制/代理等未触发族在全族覆盖表中登记 not_applicable 论证，未凑候选。"
+   },
+   "Q4": {
+    "question_id": "Q4",
+    "discovery_opportunity_ids": [
+     "Q4-OP-special_boundary"
+    ],
+    "triggered_model_families": [
+     "analytic_mechanistic",
+     "graph_combinatorial",
+     "simulation"
+    ],
+    "triggered_solver_families": [
+     "closed_form",
+     "derivative_free_local",
+     "deterministic_global"
+    ],
+    "model_family_dispositions": [
+     {
+      "question_id": "Q4",
+      "family": "analytic_mechanistic",
+      "status": "retained",
+      "reason": "Q4 的边界/可达集结构（Q4-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q4-R22"
+      ]
+     },
+     {
+      "question_id": "Q4",
+      "family": "graph_combinatorial",
+      "status": "retained",
+      "reason": "Q4 的边界/可达集结构（Q4-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q4-R11"
+      ]
+     },
+     {
+      "question_id": "Q4",
+      "family": "simulation",
+      "status": "retained",
+      "reason": "Q4 的边界/可达集结构（Q4-OP-special_boundary）下该族有成立候选",
+      "candidate_ids": [
+       "Q4-R41"
+      ]
+     }
+    ],
+    "solver_family_dispositions": [
+     {
+      "question_id": "Q4",
+      "family": "closed_form",
+      "status": "retained",
+      "reason": "求解器族 closed_form 适配 Q4 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q4-R22"
+      ]
+     },
+     {
+      "question_id": "Q4",
+      "family": "derivative_free_local",
+      "status": "retained",
+      "reason": "求解器族 derivative_free_local 适配 Q4 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q4-R41"
+      ]
+     },
+     {
+      "question_id": "Q4",
+      "family": "deterministic_global",
+      "status": "retained",
+      "reason": "求解器族 deterministic_global 适配 Q4 的组合判定/优化结构（ADJ 口径）",
+      "candidate_ids": [
+       "Q4-R11"
+      ]
+     }
+    ],
+    "candidate_ids": [
+     "Q4-R41",
+     "Q4-R11",
+     "Q4-R22"
+    ],
+    "undercoverage_reason": "P1-03 按 Discovery 触发族登记：special_boundary 触发资源盒边界/可达集类族；ML/控制/代理等未触发族在全族覆盖表中登记 not_applicable 论证，未凑候选。"
+   }
+  }
+ },
+ "stop_policy": {
+  "schema_version": 1,
+  "rule": "two_consecutive_pareto_non_improving_rounds_or_budget_exhausted",
+  "budget": {
+   "rule": "candidate_evaluations",
+   "unit": "evaluator_calls",
+   "limit": 16.0,
+   "spent": 12.0,
+   "remaining": 4.0,
+   "next_round_min_cost": 4.0,
+   "cost_contract": {
+    "schema_version": 1,
+    "cost_basis": "one_evaluator_call",
+    "candidate_costs": [
+     {
+      "candidate_id": "Q1-R21",
+      "cost": 1.0,
+      "source_result_ref": "result:Q1:Q1-R21"
+     },
+     {
+      "candidate_id": "Q2-R51",
+      "cost": 1.0,
+      "source_result_ref": "result:Q2:Q2-R51"
+     },
+     {
+      "candidate_id": "Q3-R11",
+      "cost": 1.0,
+      "source_result_ref": "result:Q3:Q3-R11"
+     },
+     {
+      "candidate_id": "Q4-R11",
+      "cost": 1.0,
+      "source_result_ref": "result:Q4:Q4-R11"
+     }
+    ],
+    "overhead_cost": 0,
+    "derived_next_round_min_cost": 4.0
+   }
+  },
+  "result_authority": {
+   "schema_version": 1,
+   "results": [
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R21",
+     "round_id": 0,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/result_authority.json",
+     "result_sha256": "aff3736788c14a677bb56fe1e36bf13d06ab492771a5f03d2220353a458d655f",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R52",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/result_authority.json",
+     "result_sha256": "f50f7f221c910a4653e94453e5802c4d66077c924016bc3e08c49f381778204b",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R41",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/result_authority.json",
+     "result_sha256": "fea14922242147a3f0fe1114fef3f1fe5f030c7c49dab8cee096c87380e643e1",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R41",
+     "round_id": 0,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/result_authority.json",
+     "result_sha256": "d05a8a7afba6f5d6bb954f24251d4d7a2896e8ed8f5c7ebdad90c5ffef593081",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R51",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/result_authority.json",
+     "result_sha256": "37826bb7ba71e7a247f9d24da23535fb6de3dfa77d3f2230c3456f726c43d0c8",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R32",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/result_authority.json",
+     "result_sha256": "c480315029b62d8dcd555b93b536c8fe582f8fdba2fc8a69933857cf6e28db1f",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R23",
+     "round_id": 0,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result_authority.json",
+     "result_sha256": "1d46f76c6bc3a252f475b5746b9502707c9e867d74041dd4144a56411a5aa63f",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R11",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/result_authority.json",
+     "result_sha256": "5e2b1e7ffd91c7a21d1fce9996cc904b519bfb2f1faae904aadc3bfe7e2ae728",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R51",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/result_authority.json",
+     "result_sha256": "d5d0bc39f860950ecc86ba804f233ba5db57a73e47228efdf6b14d9957c73cbc",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R41",
+     "round_id": 0,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/result_authority.json",
+     "result_sha256": "af9b3cb13b3a84e60b610b551f543d9d2fcccaadce78e1c3a536ff83d413e702",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R11",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/result_authority.json",
+     "result_sha256": "001be47edcdb527834c4ba1d1ea09512f06d14abfac74e4d43486853251a5905",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    },
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R22",
+     "round_id": 1,
+     "result_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/result_authority.json",
+     "result_sha256": "fc7584399fe23ec77a6fa2ba48dda9d34f3ec10eeb41590e1b5a3f5d745c39e2",
+     "evaluator_path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+     "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+     "objective_key": "objective"
+    }
+   ]
+  },
+  "rounds": [
+   {
+    "round_id": 1,
+    "question_id": "Q1",
+    "candidate_ids_added": [
+     "Q1-R52",
+     "Q1-R41"
+    ],
+    "pareto_front_before": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R52",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R41",
+      "objective": 0.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q1",
+     "result:Q1:Q1-R21",
+     "result:Q1:Q1-R52",
+     "result:Q1:Q1-R41"
+    ]
+   },
+   {
+    "round_id": 2,
+    "question_id": "Q1",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R52",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R41",
+      "objective": 0.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R52",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R41",
+      "objective": 0.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q1",
+     "result:Q1:Q1-R21",
+     "result:Q1:Q1-R52",
+     "result:Q1:Q1-R41"
+    ]
+   },
+   {
+    "round_id": 3,
+    "question_id": "Q1",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R52",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R41",
+      "objective": 0.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R21",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R52",
+      "objective": 0.0
+     },
+     {
+      "question_id": "Q1",
+      "idea_id": "Q1-R41",
+      "objective": 0.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q1",
+     "result:Q1:Q1-R21",
+     "result:Q1:Q1-R52",
+     "result:Q1:Q1-R41"
+    ]
+   },
+   {
+    "round_id": 1,
+    "question_id": "Q2",
+    "candidate_ids_added": [
+     "Q2-R51",
+     "Q2-R32"
+    ],
+    "pareto_front_before": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R41",
+      "objective": 19009618530491.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R51",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": true,
+    "evidence_refs": [
+     "evaluator:Q2",
+     "result:Q2:Q2-R41",
+     "result:Q2:Q2-R51",
+     "result:Q2:Q2-R32"
+    ]
+   },
+   {
+    "round_id": 2,
+    "question_id": "Q2",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R51",
+      "objective": 6012119960663.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R51",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q2",
+     "result:Q2:Q2-R41",
+     "result:Q2:Q2-R51",
+     "result:Q2:Q2-R32"
+    ]
+   },
+   {
+    "round_id": 3,
+    "question_id": "Q2",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R51",
+      "objective": 6012119960663.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q2",
+      "idea_id": "Q2-R51",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q2",
+     "result:Q2:Q2-R41",
+     "result:Q2:Q2-R51",
+     "result:Q2:Q2-R32"
+    ]
+   },
+   {
+    "round_id": 1,
+    "question_id": "Q3",
+    "candidate_ids_added": [
+     "Q3-R11",
+     "Q3-R51"
+    ],
+    "pareto_front_before": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R23",
+      "objective": 137.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R11",
+      "objective": 139.0
+     }
+    ],
+    "improved": true,
+    "evidence_refs": [
+     "evaluator:Q3",
+     "result:Q3:Q3-R23",
+     "result:Q3:Q3-R11",
+     "result:Q3:Q3-R51"
+    ]
+   },
+   {
+    "round_id": 2,
+    "question_id": "Q3",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R11",
+      "objective": 139.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R11",
+      "objective": 139.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q3",
+     "result:Q3:Q3-R23",
+     "result:Q3:Q3-R11",
+     "result:Q3:Q3-R51"
+    ]
+   },
+   {
+    "round_id": 3,
+    "question_id": "Q3",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R11",
+      "objective": 139.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q3",
+      "idea_id": "Q3-R11",
+      "objective": 139.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q3",
+     "result:Q3:Q3-R23",
+     "result:Q3:Q3-R11",
+     "result:Q3:Q3-R51"
+    ]
+   },
+   {
+    "round_id": 1,
+    "question_id": "Q4",
+    "candidate_ids_added": [
+     "Q4-R11",
+     "Q4-R22"
+    ],
+    "pareto_front_before": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R41",
+      "objective": 11011723440578.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R11",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": true,
+    "evidence_refs": [
+     "evaluator:Q4",
+     "result:Q4:Q4-R41",
+     "result:Q4:Q4-R11",
+     "result:Q4:Q4-R22"
+    ]
+   },
+   {
+    "round_id": 2,
+    "question_id": "Q4",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R11",
+      "objective": 6012119960663.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R11",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q4",
+     "result:Q4:Q4-R41",
+     "result:Q4:Q4-R11",
+     "result:Q4:Q4-R22"
+    ]
+   },
+   {
+    "round_id": 3,
+    "question_id": "Q4",
+    "candidate_ids_added": [],
+    "pareto_front_before": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R11",
+      "objective": 6012119960663.0
+     }
+    ],
+    "pareto_front_after": [
+     {
+      "question_id": "Q4",
+      "idea_id": "Q4-R11",
+      "objective": 6012119960663.0
+     }
+    ],
+    "improved": false,
+    "evidence_refs": [
+     "evaluator:Q4",
+     "result:Q4:Q4-R41",
+     "result:Q4:Q4-R11",
+     "result:Q4:Q4-R22"
+    ]
+   }
+  ],
+  "stop_reason": "pareto_no_improvement_2_rounds",
+  "stopped": true
+ },
+ "delegation": {
+  "required": true,
+  "degraded": false,
+  "degraded_reason": null,
+  "manager_role": "merge_only_adjudicate",
+  "common_input_path": "runs/competitive/CS-20260911T071520-D2026/common_input.json",
+  "common_input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+  "child_runs": [
+   {
+    "child_run_id": "CH-01",
+    "role": "structure_scout",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-01.route.json",
+    "artifact_sha256": "55b2bbd5da949ca97aa933076654c3195de93c733f86a28dc2615b773208ee06",
+    "status": "completed",
+    "started_at": "2026-09-11T15:15:20+08:00",
+    "completed_at": "2026-09-11T15:51:55+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "CH-02",
+    "role": "exact_or_scout",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-02.route.json",
+    "artifact_sha256": "03eb60f390b47e02a966e59ef125d52de81f1c35b0862facf6b4d4a6e07edf19",
+    "status": "completed",
+    "started_at": "2026-09-11T15:15:20+08:00",
+    "completed_at": "2026-09-11T15:41:06+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "CH-03",
+    "role": "continuous_solver_scout",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-03.route.json",
+    "artifact_sha256": "2dd737a48479f821da3f9e1785c8be51982ea75e1abfbbb5e6d4655a982bc99c",
+    "status": "completed",
+    "started_at": "2026-09-11T15:15:20+08:00",
+    "completed_at": "2026-09-11T15:24:35+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "CH-04",
+    "role": "alternative_paradigm_scout",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-04.route.json",
+    "artifact_sha256": "210ce17cd247307243d660adcd0ddecf3938c2d76177f5ac2279cab9fcd3ad5a",
+    "status": "completed",
+    "started_at": "2026-09-11T15:15:20+08:00",
+    "completed_at": "2026-09-11T15:40:01+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "CH-05",
+    "role": "bound_scout",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-05.route.json",
+    "artifact_sha256": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685",
+    "status": "completed",
+    "started_at": "2026-09-11T15:15:20+08:00",
+    "completed_at": "2026-09-11T16:02:24+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "PE-Q1",
+    "role": "prototype_engineer",
+    "question_ids": [
+     "Q1"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/result.json",
+    "artifact_sha256": "5c473bd34eaee112c7b69ed4070cbae52025582772f49f6b0bf246452fba2f0f",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T16:34:00+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "PE-Q2",
+    "role": "prototype_engineer",
+    "question_ids": [
+     "Q2"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/result.json",
+    "artifact_sha256": "2d0592ecf05edd76c3076388564fb2aaffe1a9e770178f0e01ea1ce8abd43023",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T18:34:38+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "PE-Q3",
+    "role": "prototype_engineer",
+    "question_ids": [
+     "Q3"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result.json",
+    "artifact_sha256": "e46122d38c8d2ea1a044a012c0510597b6c6e6ce32bf3b8dfe22994accc22896",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T19:48:22+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "PE-Q4",
+    "role": "prototype_engineer",
+    "question_ids": [
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/result.json",
+    "artifact_sha256": "d400f9bfac6c128f814d2cdebc856e8c449a29125b53f9d02069e106c3292136",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T17:03:30+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "REVIEW-Q1",
+    "role": "adversarial_reviewer",
+    "question_ids": [
+     "Q1"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q1-CH-R1.json",
+    "artifact_sha256": "6fd19ba37a2dd3e488f4075a1db3cb4e55624a55726abeebb2bcd77bb1f4ea03",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T18:56:30+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "REVIEW-Q2",
+    "role": "adversarial_reviewer",
+    "question_ids": [
+     "Q2"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q2-CH-R2.json",
+    "artifact_sha256": "a40086c4574e3c2ec439366dab7d521a741ea2ba4025aeb28719100e1b429d35",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T18:56:30+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "REVIEW-Q3",
+    "role": "adversarial_reviewer",
+    "question_ids": [
+     "Q3"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q3-CH-R1b.json",
+    "artifact_sha256": "74f8c763ea0184d97fea9e835987449a1fac644853871046cfe4eefcbbac5081",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T19:36:12+08:00",
+    "retry_count": 0
+   },
+   {
+    "child_run_id": "REVIEW-Q4",
+    "role": "adversarial_reviewer",
+    "question_ids": [
+     "Q4"
+    ],
+    "input_sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+    "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q4-CH-R3.json",
+    "artifact_sha256": "74159f6177053355017394d1965172007599314852b27d43dac87291a8a97df1",
+    "status": "completed",
+    "started_at": "2026-09-11T16:08:00+08:00",
+    "completed_at": "2026-09-11T20:13:28+08:00",
+    "retry_count": 0
+   }
+  ]
+ },
+ "candidates": [
+  {
+   "question_id": "Q1",
+   "tier": "minimal_sufficient_solution",
+   "method_family": "analytic_mechanistic",
+   "problem_reformulation": "把冲突检测重写为 C(150,2)=11175 个计划对上的闭合布尔谓词求值：频段半开区间交非空 且 存在一对使用时段（k,m）时间半开区间交非空。",
+   "model": {
+    "family": "closed-form predicate evaluation over plan pairs (no optimization)",
+    "representation": "plan-pair x slot-pair boolean lattice; 结果为一个 297 元素的边集合 E 及每边的冲突时段明细",
+    "decision_variables": [
+     "c_ij in {0,1}（派生量，非决策）",
+     "m_ijkm in {0,1}（时段级命中计数，用于统计与热点）"
+    ],
+    "objective_id": "Q1-OBJ-COLLECT：输出集合 {(i,j): F-006 谓词为真}，无最优化目标",
+    "constraint_ids": [
+     "F-001",
+     "F-003",
+     "F-005",
+     "F-006",
+     "F-023",
+     "Q1-F014"
+    ],
+    "equations_summary": "slot_k(i)=[t1_i+(k-1)(g_i+d_i), t1_i+(k-1)(g_i+d_i)+d_i)（F-005）；band_ov(i,j)=min(b_i,b_j)-max(a_i,a_j)>0（F-023 半开）；time_ov(i,j)=OR_{k,m} max(s_ik,s_jm)<min(e_ik,e_jm)；c_ij=band_ov AND time_ov。静态核算（仅用 common_input.plans_table_compact + F-006 规则，非求解器实验）：|E|=297，按类对 AB21/AC66/BC181/BB10/CC19，涉及 148 个计划，与 computed_data_facts.q1_conflict_pairs_reference_check 完全一致；最坏时段比较次数 sum_{i<j} n_i*n_j 上界 11175*144=1.61e6。"
+   },
+   "transformations": [
+    "谓词直接求值（无变换）",
+    "双实现交叉验证：逐时段暴力枚举 vs 区间算术合并判据"
+   ],
+   "solver": {
+    "family": "exact_enumerative",
+    "algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+    "fit_reason": "F-013 给出 n=150 使计划对仅 11175，F-005/F-009 给出每计划时段数 n<=12（附件区间 3..12），F-001 给出频段为 100 个离散段——规模使全枚举在每个 600s 侦察预算内可跑若干万倍，因此题面 F-006 的谓词可直接作为算法，无需近似或松弛；Q1-C1 的验收规则本身要求双实现一致。",
+    "stopping_rule": "全部 11175 对枚举完毕且两实现集合对称差为 0",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "无随机性；两实现共用同一输入快照（附件/附件1.xlsx SHA b7f905cd…f3449c），复现仅需固定该 SHA",
+    "algorithm_detail": "deterministic enumeration（无求解器） | 双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言"
+   },
+   "bound_plan": {
+    "lower_bound_method": "不适用（精确有限枚举，无近似间隙）；以比较次数上界 1.61e6 作为运行时预算依据",
+    "upper_bound_method": "同上；以「不可能漏对」的全对覆盖论证代替统计界",
+    "gap_metric": "两种实现的冲突集合对称差 |A delta B| / |A|",
+    "gap_threshold": 0.0,
+    "proof_possible": true,
+    "gap_threshold_note": "0（非 0 即路线失败，不得放行）",
+    "proof_possible_note": "可：有限枚举完备性 + 独立实现交叉；再加人工边界用例（交叠长度恰为 0 的相邻半开区间不得计冲突）"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "两实现 |E| 与逐元素一致性（对称差=0）",
+     "半开区间边界用例：频段 [80,90) 与 [90,95) 不得计冲突；时间端点相接不得计冲突",
+     "重复对/自对排除（i<j），行数与 result1.xlsx 模板行数一致（Q1-C2）",
+     "与 computed_data_facts 的 297/类对分布比对（不一致须先复核口径而非改数）",
+     "统计口径冻结：按类对/按计划度数/按冲突时段数三种统计各自定义（供 Q1-C3 用）"
+    ]
+   },
+   "required_assumptions": [
+    "冲突判定按题面 F-006 的『频段交叠 AND 时间交叠』，时间交叠覆盖全部 n 次周期占用（非仅首次区间）",
+    "全部区间为半开 [a,b)（F-023），时间以 Delta t 整数计（F-003）",
+    "result1.xlsx 每行一个冲突对，不重复不遗漏"
+   ],
+   "failure_conditions": [
+    "两实现集合对称差非 0 → 谓词或周期展开口径有误，禁止进入 Q2",
+    "行数与 |E| 不一致 → 模板写出错误（Q1-C2 失败）",
+    "与题面口径冲突（如把端点相接算作冲突）→ 全部下游统计失效"
+   ],
+   "strengths": [
+    "零近似、零不可控风险",
+    "直接满足 Q1-C1 的双实现验收规则",
+    "为 Q2/Q4 提供唯一合法输入（冲突边集 E）"
+   ],
+   "weaknesses": [
+    "不产出结构解释（哪些边由哪个轴消解）——由 Q1-R22/R23 补足",
+    "O(n^2) 在 150 规模无所谓，但不具扩展性"
+   ],
+   "validation_plan": [
+    "check_q1_pairset.py：断言 |E|=297 且两实现一致",
+    "样例手算复核：A001（首次 [35,40), g=60）第三次占用 [165,170)，与任一同频段计划逐时段核对",
+    "result1.xlsx 行数 == |E| == 两实现交集大小"
+   ],
+   "complexity": "low",
+   "interpretability": "high",
+   "implementation_risk": "low",
+   "status": "accepted",
+   "idea_id": "Q1-R21",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-02",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "symdiff_vs_canonical_truth",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/result_authority.json",
+    "result_authority_sha256": "aff3736788c14a677bb56fe1e36bf13d06ab492771a5f03d2220353a458d655f",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/scout.json",
+    "scout_json_sha256": "469f57653db4804de476776133396a4e74b0a1c66e09a0b4720a6692ee07ac88"
+   }
+  },
+  {
+   "question_id": "Q1",
+   "tier": "advanced_alternative",
+   "method_family": "analytic_mechanistic",
+   "problem_reformulation": "把时间冲突判定化为同余方程可解性：同类 (g,d) 齐次 ⇒ 时间交叠 ⟺ 一次项起点差 Δ 满足 Δ ≡ r (mod P) 且 r ∈ {−(d−1),…,d−1}（跨类则用 gcd(P_i,P_j) 判定残差可达集）；于是冲突对计数变成『端点不等式（频段）× 残差类计数（时间）』的有限求和。",
+   "model": {
+    "family": "周期同余 / 中国剩余型可达残差计数",
+    "representation": "每计划映射到三元组 (频段区间 [flo,fhi), 周期 P=g+d, 残差类 t1 mod P)；冲突 ⟺ 区间交叠 ∧ 残差差 ∈ 冲突残差集 R(d)  ∧ 窗序可达（|k−k'| ≤ n−1）",
+    "decision_variables": [
+     "无（解析计数）；辅助计数变量 m_c(r) = 类 c 中残差为 r 的计划数"
+    ],
+    "objective_id": "Q1-C1 / Q1-C3（作为独立第三实现的闭式核对）",
+    "constraint_ids": [
+     "F-001",
+     "F-003",
+     "F-005",
+     "F-006",
+     "F-013",
+     "F-023"
+    ],
+    "equations_summary": "同类（P_i=P_j=P, d_i=d_j=d）：time_overlap ⟺ ∃k,k'∈[0,n−1]: |Δt1 − P(k−k')| < d ⇔ Δt1 mod P ∈ S_d 且 |Δt1| 的商部分不超出窗序可达范围。跨类：周期取 A=65、B=43、C=10（探针实测 g+d），gcd(65,43)=1、gcd(65,10)=5、gcd(43,10)=1、lcm(65,43,10)=5590 ⇒ 仅 A-C 类对可按 5 的陪集网格压缩，A-B 与 B-C 因互质无残差压缩空间；闭式给出类内精确计数，跨类以残差格双重和表达（A-C 可化简，其余需穷举）。"
+   },
+   "transformations": [
+    "按类分层（A/B/C 内部 (g,d) 齐次）",
+    "模 P 残差桶计数",
+    "频段端点排序 + 前缀计数（把区间交叠对数化为一维求和）",
+    "闭式与穷举互为交叉证书"
+   ],
+   "solver": {
+    "family": "closed_form",
+    "algorithm": "步骤1 统计每类残差直方图 m_c(r)（探针：A P=65 有 16 个非空残差、含 3 处重复（res=60 有 3 部）；B P=43 有 30 个非空残差、10 处重复；C P=10 十个残差全占用且高度重复，如 res=5 有 17 部）；步骤2 类内对数 = Σ_{r} C(m_c(r) 与冲突残差邻域)× 频段交叠判据求和；步骤3 跨类以 (P_i,P_j) 网格双重和；步骤4 与 Q1-R51 的边集做集合等式比对",
+    "fit_reason": "F-013 的三类 150 部装备在题面附件中按类给出统一的间隔与时长（探针实测每类 (g,d) 唯一），使 F-005 的周期占用退化为同一周期的平移副本，从而时间判据可约化为同余条件；这是 Q1 中唯一能给出『可手算闭式』的结构，故可作为独立证书实现。",
+    "stopping_rule": "闭式计数与穷举边集在 |E| 与每个类对分层计数上完全相等即停止；任一不等 ⇒ 判定为闭式推导（窗序可达项）写错，降级为参考实现。",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "无随机；固定输入快照与脚本哈希即可复现全部整数求和。",
+    "algorithm_detail": "解析计数（组合闭式）+ 精确整数求和 | 步骤1 统计每类残差直方图 m_c(r)（探针：A P=65 有 16 个非空残差、含 3 处重复（res=60 有 3 部）；B P=43 有 30 个非空残差、10 处重复；C P=10 十个残差全占用且高度重复，如 res=5 有 17 部）；步骤2 类内对数 = Σ_{r} C(m_c(r) 与冲突残差邻域)× 频段交叠判据求和；步骤3 跨类以 (P_i,P_j) 网格双重和；步骤4 与 Q1-R51 的边集做集合等式比对"
+   },
+   "bound_plan": {
+    "lower_bound_method": "类内残差同余强制冲突数：残差相同（Δ≡0）且频段交叠 ⇒ 冲突（完全子图，可证）；给出 LB 的解析闭式（例：C 类 90 部分布在 10 个残差类 ⇒ 类内强制对数 = Σ_r C(m(r),2) 再乘频段交叠比例）。",
+    "upper_bound_method": "去掉窗序可达约束（放宽为允许任意 k−k' ∈ ℤ）⇒ 同一残差邻域内的对全部计为时间交叠，给出 |T| 的解析上界；再与频段一维前缀界相乘得 |E| 上界。",
+    "gap_metric": "闭式 |E_analytic| 与穷举 |E_enum| 的绝对差（期望 0）；以及 LB/UB 与 |E| 的相对宽度。",
+    "gap_threshold": 0.0,
+    "proof_possible": true,
+    "gap_threshold_note": "严格阈值 0（闭式必须逐类对上穷举）；若残差可达近似导致非零差，则本路线只保留为『界与结构说明』，不得作为答案实现。",
+    "proof_possible_note": "类内可证（同余 + 端点不等式均为初等整数论，可写成论文中的可复核推导）；跨类因窗序有限（n 次）与视界截断，闭式只对『放宽模型』可证上界，对原模型需与枚举一致后才成立。"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "C 类残差全占（10/10）⇒ 类内强制冲突最多（探针 CC=19），用于检查残差判据方向",
+     "视界截断项：末窗超过最晚结束点的计划是否被闭式误计",
+     "gcd 结构核对：跨类残差可达集是否真的按 gcd(P_i,P_j) 陪集分层（探针 gcd(43,10)=1 ⇒ 该类对无法用单残差条件压缩）",
+     "有效性自检：LB ≤ 枚举值 ≤ UB（CH-05 在 Q3 上曾因上界小于构造解而发现界错误，此处设同一硬门）"
+    ]
+   },
+   "required_assumptions": [
+    "每类 (g,d) 在附件1 中齐次（探针基于 common_input.plans_table_compact 实测；正式实现必须先在 code 中断言该性质，若不成立则本路线失效）",
+    "时间起点 t1 与次数 n 使窗序可达范围可精确写出（k−k' 的取值集合不受视界截断影响）",
+    "使用次数不因平移而裁剪（与 F-009 一致：次数不得调整）"
+   ],
+   "failure_conditions": [
+    "类内 (g,d) 不齐次 ⇒ 同余判据不可用，路线直接淘汰（不是调参可救）",
+    "闭式与枚举出现 1 对以上差异 ⇒ 窗序/视界项写错；若两次修正仍不一致，本路线降级为附录性结构讨论",
+    "跨类闭式复杂度（双重和带可达性修正）膨胀到无法手算 ⇒ 只保留类内部分"
+   ],
+   "strengths": [
+    "提供论文中稀缺的『可手算闭式』证据链，使 Q1 结论的可复核性不依赖单一实现",
+    "天然给出类内冲突团的下界，为 Q2 的撤销下界论证提供结构（哪些对是结构性必然冲突）",
+    "与实现 A/B 完全不同的算法范式，满足 Q1-C1 的独立复核要求"
+   ],
+   "weaknesses": [
+    "跨类（AB/AC/BC，占探针冲突的 268/297）闭式最复杂、收益最低，主要靠类内结构",
+    "依赖数据齐次性这一经验事实，属『结构性巧合』而非题面保证，需显式断言",
+    "对 result1 的行级输出无直接帮助（仍需枚举）"
+   ],
+   "validation_plan": [
+    "code/q1_closed_form.py 输出类内/跨类分层计数 + 与 q1_detect 的等式断言",
+    "results/Q1_stats.json 增加 analytic_vs_enum 一致性字段（0 差为 PASS），并在论文推导节给出残差直方图表",
+    "断言类内 (g,d) 齐次性的前置检查写入 results 元数据（若失败即记 failure_class=formulation_assumption_violated）"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q1-R52",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-05",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "symdiff_vs_canonical_truth",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/result_authority.json",
+    "result_authority_sha256": "f50f7f221c910a4653e94453e5802c4d66077c924016bc3e08c49f381778204b",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/scout.json",
+    "scout_json_sha256": "b59b29b70ebcedd921a9993c2d6d043e7f20631605105f5263de9f886f7a9f7c"
+   }
+  },
+  {
+   "question_id": "Q1",
+   "tier": "minimal_sufficient_solution",
+   "method_family": "simulation",
+   "problem_reformulation": "把冲突检测改写成 150 个周期脉冲梳在 (100 频段 × T_MAX 时隙) 离散占用张量上的“单元格共现连接”问题：先物化占用位图，再用 (band,time) 倒排索引/位并行 AND 生成冲突对集，并用植入已知冲突的随机化压力测试为“完全且无伪”提供召回率证据。",
+   "model": {
+    "family": "离散占用张量 + 倒排连接（位并行集合求交）",
+    "representation": "每计划 i 的占用集合 O_i ⊆ [0,100)×[0,643)（按 F-005 周期重复、F-001/F-023 半开频段、F-003 整数时隙）；冲突判据 C(i,j)=1 ⇔ O_i ∩ O_j ≠ ∅（与 F-006 等价，因二者都是“存在同格共占”）",
+    "decision_variables": [
+     "无优化决策；输出量 y_ij=1[O_i∩O_j≠∅]"
+    ],
+    "objective_id": "Q1-C1",
+    "constraint_ids": [
+     "F-001",
+     "F-003",
+     "F-005",
+     "F-006",
+     "F-023"
+    ],
+    "equations_summary": "O_i = {(f,t): f∈[a_i,b_i), t∈[t1_i+(k-1)(g_i+d_i), t1_i+(k-1)(g_i+d_i)+d_i), k=1..n_i}；冲突对 = ⋃_{cell} {{i,j}: i<j ∈倒排列表(cell)}；实现用 uint64 位图 (643×2 words) 与 numpy 广播 AND。"
+   },
+   "transformations": [
+    "discretization_to_grid",
+    "set_join_via_inverted_index",
+    "bit_parallel_representation",
+    "randomized_stress_testing_with_planted_truth"
+   ],
+   "solver": {
+    "family": "exact_enumerative",
+    "algorithm": "阶段A 占用位图 + 倒排索引 join 精确枚举；阶段B 植入式随机压力测试：在冻结种子下对 150 计划参数做受控扰动/复制平移，生成带植入真值的实例，测两条独立实现（位图 join 与区间算术）的对称差与召回率",
+    "fit_reason": "题面结构 F-001(100 个离散频段)+F-003(整数 Δt 时隙)+F-005(周期重复)+F-006(冲突=频段交叠且任一占用时段交叠) 使冲突等价于“存在同格共占”；本人复算 incidence=16680、去重单元 14698、单格最多 4 计划，说明倒排 join 的候选对规模远小于 C(150,2)=11175 全扫描，位图全扫描实测 0.079 s。Q1-C1 的验收规则要求“双实现一致”，本路线提供的正是与区间算术在表示层完全不同的第二条实现。",
+    "stopping_rule": "全部 C(150,2)=11175 对判定完毕即停；压力测试按固定种子集跑满 200 个合成实例即停（预算 600s 内以完成度而非时间截止）",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "阶段A 完全确定性、无随机；阶段B 固定种子集 [11,29,47] 与题面冻结的 3 次重复一致，扰动实例哈希登记，同一条码两实现共用同一批实例",
+    "algorithm_detail": "structure_specific | 阶段A 占用位图 + 倒排索引 join 精确枚举；阶段B 植入式随机压力测试：在冻结种子下对 150 计划参数做受控扰动/复制平移，生成带植入真值的实例，测两条独立实现（位图 join 与区间算术）的对称差与召回率"
+   },
+   "bound_plan": {
+    "lower_bound_method": "植入真值召回：每个合成实例植入 K 个已知冲突对，要求 100% 检出，得“完全性”的随机化下界证据（漏检率 ≤ 1/(200K) 的经验界）",
+    "upper_bound_method": "伪阳性率：位图结果与区间算术结果的对称差必须为空集；非空即 FAIL（两实现互为上界校验）",
+    "gap_metric": "两套实现冲突对集合的对称差 / |冲突对|",
+    "gap_threshold": 0.0,
+    "proof_possible": true
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "边界用例：Δt 邻接（[40,45) 与 [45,50) 不算冲突）、频段 [80,90) 与 [90,95) 不算冲突、末格 t=T_MAX-1 截断（F-023 半开口径）",
+     "口径双向复算：同时输出 g 为空闲间隔（F-005，297 对）与 g 为周期（237 对）两种口径的计数，供 Manager 冻结口径并解释差异来源",
+     "与 computed_data_facts 的 297 及按类分布逐项比对；不一致必须报告而非静默取其一",
+     "result1.xlsx 行数 == 冲突对数（Q1-C2 前置）",
+     "内存与时界标定：占用张量 643×100 bit×150 与全对扫描实测耗时写入 scout.json"
+    ]
+   },
+   "required_assumptions": [
+    "时间视界取 [0, T_MAX)，T_MAX 由数据复算为 643（与 occupancy_cells_total=64300 自洽），不使用 horizon_note 的 621",
+    "冲突判定按 F-005 的“间隔=两次占用之间的空闲时长”口径（题面例算式）",
+    "Q1 只检测不决策（question_contract.forbidden_information）"
+   ],
+   "failure_conditions": [
+    "两实现对称差非空，且定位后仍存在口径分歧",
+    "任一体现方案在 600s×3 重复内无法完成全部 11175 对判定",
+    "植入真值测试出现漏检（召回 <1）→ 直接淘汰该实现",
+    "实现把冲突记成“时段对”而非“计划对”，导致 result1.xlsx 行语义与模板不符（Q1-C2）"
+   ],
+   "strengths": [
+    "表示层与区间算术完全独立，直接满足 Q1-C1 的双实现一致性验收",
+    "植入式压力测试给出可量化召回证据，而不是“看起来对”",
+    "运行时余量大（全扫描 <0.1s 量级），600s 预算几乎不构成约束"
+   ],
+   "weaknesses": [
+    "随机压力测试只能给概率性完全性证据，最终完全性仍需精确枚举的确定性论证",
+    "不产生最优性或上界证书（Q1 也不需要）",
+    "对 n=150 这种小规模，位图相对暴力枚举的优势主要是表示独立性而非速度"
+   ],
+   "evidence_against_minimal": "若暴力逐对枚举在 600s 内即可完成且与区间算术实现零对称差，则本路线的增量价值仅为第二条表示的独立性与植入测试的召回证据；若二者均无法产出，则记为证据缺口而非路线优势。",
+   "validation_plan": [
+    "独立 checker：重跑位图实现并与提交对集比对（Q1-C1）",
+    "行级断言：result1.xlsx 每对出现一次、无重复、列结构与附件2 模板一致（Q1-C2）",
+    "统计口径：结果按类对/频段/时隙聚合，与 results JSON 绑定（Q1-C3 前置）"
+   ],
+   "complexity": "low",
+   "interpretability": "high",
+   "implementation_risk": "low",
+   "status": "accepted",
+   "idea_id": "Q1-R41",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-04",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "symdiff_vs_canonical_truth",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/result_authority.json",
+    "result_authority_sha256": "fea14922242147a3f0fe1114fef3f1fe5f030c7c49dab8cee096c87380e643e1",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/scout.json",
+    "scout_json_sha256": "17203db6676d043a84f49198f3a4ef402e807bb25779d662989005501d72d41e"
+   }
+  },
+  {
+   "question_id": "Q2",
+   "tier": "minimal_sufficient_solution",
+   "method_family": "graph_combinatorial",
+   "problem_reformulation": "消解 = 在冲突图上为每个顶点选一个“重嵌入动作”（保持/频段平移/时间平移/撤销），使边集清空；用随机化多起点贪心按“每动作边际消解边数”构造，再用交换+重定位局部搜索改进。",
+   "model": {
+    "family": "冲突图顶点操作（加权顶点覆盖 + 着色式重嵌入）",
+    "representation": "图 G=([150], E)，E 为 Q1 冲突对；每顶点动作 a_i ∈ A_i（|A_i|=22..32，本人复算），a_i=重嵌入后占用集重算；约束：所有动作执行后 E' = ∅",
+    "decision_variables": [
+     "a_i ∈ {keep, band_shift(δf), time_shift(δt), revoke}, i=1..150",
+     "δf ∈ [-10,10], δt ∈ [-5,5]（整数，F-012）"
+    ],
+    "objective_id": "Q2-C3",
+    "constraint_ids": [
+     "F-006",
+     "F-008",
+     "F-009",
+     "F-012",
+     "Q2-F011"
+    ],
+    "equations_summary": "字典序最小化 lex(|revoke|, |adjusted|, Σ 优先级权重*被调指示, Σ(|δf|+|δt|))；可行性：E(a)=∅。贪心打分 = 消解边数 / 代价，随机限制候选列表 RCL（α∈(0,1)）产生多起点。"
+   },
+   "transformations": [
+    "graph_reformulation",
+    "randomized_greedy_construction",
+    "local_search_improvement",
+    "incremental_conflict_delta_evaluation"
+   ],
+   "solver": {
+    "family": "stochastic_population",
+    "algorithm": "多起点随机贪心 + 局部搜索（RCL 排序：优先保护 A>B>C、边际消解边数最大）→ 局部最优后做 1-交换/2-交换（换动作类型、换平移量）与撤销↔调整互换；每起点用位图增量评估",
+    "fit_reason": "引用本人复算的结构事实：冲突图仅 297 条边、平均度 4.01、最大度 8，且 148 个涉事顶点构成单一主分量（不可按连通分量整体分解）→ 分解式精确法受限，边际改进型局部搜索是预算内可完成的范式；“边际消解边数”的贪心打分因最大度仅 8 而高度局部化。平移交互图 1244 边、最大度 30 → 单移动的增量评估只需覆盖 ≤30 个邻居，位图实测约 767 次移动/秒（行级增量可更高）→ 600s 内可跑 4×10^5 次以上移动，起点数可放到 500+。Q2-C3 的验收规则显式要求“启发式对照”，本路线即该对照证据的来源。",
+    "stopping_rule": "达到 600s 墙钟或 500 个随机起点完成（先到者停）；同一局部最优连续 20 起点无改进即停止扩展",
+    "budget_type": "wall_clock",
+    "determinism": "seeded_stochastic",
+    "seed_protocol": "起点 s 的 PRNG 由 (run_seed, s) 派生，run_seed ∈ [11,29,47]；三个重复各自独立，记录每个起点的目标元组与耗时，不做跨重复取最大后隐瞒离散度",
+    "algorithm_detail": "stochastic_population | 多起点随机贪心 + 局部搜索（RCL 排序：优先保护 A>B>C、边际消解边数最大）→ 局部最优后做 1-交换/2-交换（换动作类型、换平移量）与撤销↔调整互换；每起点用位图增量评估"
+   },
+   "bound_plan": {
+    "lower_bound_method": "被触碰计划数下界 = 冲突图极大匹配（本人复算贪心 61、随机序最大 63，因每条边至少需一端被调整或撤销）；撤销数下界 = 仅靠“不撤销”能否清空边的可行性证书（把该约束交 CP-SAT 或图搜索判定）",
+    "upper_bound_method": "本路线自身产出的最优可行解（|revoke|, |adjusted|, 优先级代价, 幅度）元组即上界；与精确路线（CP-SAT）结果比对",
+    "gap_metric": "字典序逐层差（revoke 差、adjusted 差、幅度差）；相对匹配下界的 |adjusted|+|revoke| gap",
+    "gap_threshold": null,
+    "proof_possible": false,
+    "gap_threshold_note": "启发式对照路线不设 gap 门限，但必须报告与精确路线的逐层差与与匹配下界的差"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "每个起点解必须过 Q1 检测器复验为 0 对（Q2-C1）",
+     "逐行合规断言 |Δf|≤10、|Δt|≤5、次数与间隔不变、频段落 0..99（Q2-C2）",
+     "稳定性：3 个种子各自的最优元组极差；报告 500 起点的元组分布（不只报最好）",
+     "增量评估正确性：随机抽 200 个中间态，用全量位图重算冲突数，差异必须为 0",
+     "选择数据范围声明：本路线不消费任何留出测试集，参数（α、起点数、邻域）在侦察前冻结，禁止看结果后调参"
+    ]
+   },
+   "required_assumptions": [
+    "动作幅度为整数 Δf/Δt 格点（F-003、F-012）",
+    "“调整次数”=被调整计划数（题面表1 口径），幅度为 |Δf|+|Δt| 之和",
+    "平移后是否允许超出 [0,T_MAX) 采用与主路线一致的冻结口径（本人复算：2 个 C 计划在 +5Δt 方向越界）"
+   ],
+   "failure_conditions": [
+    "任一重复在 600s 内得不到零冲突可行解（贪心易陷入冲突残余 → 直接 FAIL，不得靠撤销兜底刷可行）",
+    "增量评估与全量重算不一致（正确性缺陷，整条路线作废）",
+    "结果对 α/起点数极端敏感（3 种子元组极差 >1 个撤销）",
+    "撤销数明显高于精确路线且无下界说明 → 作为“对照失败”登记，不用于正文结论"
+   ],
+   "strengths": [
+    "与 CP-SAT 精确路线范式不同，满足 Q2-C3 的“启发式对照”硬要求",
+    "匹配下界给出可核查的 |adjusted|+|revoke| 证书，纯图论、不依赖求解器状态",
+    "实现小、可解释、秒级可得首解，便于快速定位口径错误"
+   ],
+   "weaknesses": [
+    "无最优性证书，字典序第 3/4 层（优先级、幅度）只被近似优化",
+    "贪心易过早撤销：需显式“先试调整再撤销”的次序，否则撤销数虚高",
+    "邻域设计经验性强，参数（RCL α）影响结果稳定性"
+   ],
+   "validation_plan": [
+    "对调整后计划集重跑 Q1 检测器返回 0 对（Q2-C1）",
+    "check_q2 逐行断言（Q2-C2）",
+    "表1 三类保留/调整/撤销与逐行动作聚合一致（Q2-C4）",
+    "与精确路线在同一 canonical evaluator 下比对字典序元组"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "low",
+   "status": "accepted",
+   "idea_id": "Q2-R41",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-04",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/result_authority.json",
+    "result_authority_sha256": "d05a8a7afba6f5d6bb954f24251d4d7a2896e8ed8f5c7ebdad90c5ffef593081",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/scout.json",
+    "scout_json_sha256": "0d341881e2559978b93cb23352b11d9dda0a5d19b219cc2ae044fd8f6f7d59bc"
+   }
+  },
+  {
+   "question_id": "Q2",
+   "tier": "recommended_solution",
+   "method_family": "operations_research",
+   "problem_reformulation": "把消解改写为『每计划选一个合法终态』的 CSP：动作集 A_i={恒等} ∪ {Δf: 1≤|Δf|≤10, 平移后仍在 0..99} ∪ {Δt: 1≤|Δt|≤5} ∪ {撤销}；对每一对『存在某组动作仍冲突』的计划加入成对不相容子句；先用强制撤销预算 r=0,1,2,… 的可行性阶梯（INFEASIBLE 即证书）钉住第一目标层，再用 CP-SAT 的 BestObjectiveBound 与 incumbent 夹逼其余层。",
+   "model": {
+    "family": "带枚举动作列的约束可满足/约束优化（列表着色型冲突消解）",
+    "representation": "布尔 x_{i,a}（Σ_a x_{i,a}=1）；成对子句 ¬x_{i,a}∨¬x_{i,b'} 对每一对使 (i,j) 仍冲突的动作组合生成（F-006 判据）；撤销变量 r_i=x_{i,REVOKE}",
+    "decision_variables": [
+     "x_{i,a} ∀i∈150, a∈A_i（探针列数 4597＝去重恒等动作后；若同时保留 (f,0) 与 (t,0) 两个恒等动作则为 4747，重复恒等会让分数解以 0.5/0.5 零代价满足全部成对行，见 Q2-R53 自检）",
+     "r_i（撤销指示）",
+     "adj_i, m_i=|Δ|, pri_i（派生）"
+    ],
+    "objective_id": "Q2-C3 目标链 lex(revoke, adjusted, priority(A>B>C 保持), magnitude)（F-010、F-012、Q2-F011）",
+    "constraint_ids": [
+     "F-002",
+     "F-006",
+     "F-007",
+     "F-008",
+     "F-009",
+     "F-012",
+     "F-023",
+     "Q2-C1",
+     "Q2-C2"
+    ],
+    "equations_summary": "min lex(Σr_i, Σ adj_i, Σ_{i∈A∪B} adj_i, Σ|Δ_i|) s.t. AddExactlyOne_i, x_{i,a}+x_{j,b}≤1 ∀(i,j)∈候选对, ∀(a,b) 使 band_overlap∧time_overlap 成立；候选对 = 频段可达区间相交 ∧ 时间可达包络相交（探针规模：候选对 1525、成对行 265188、列 4597）。"
+   },
+   "transformations": [
+    "逐边可修性预筛（把 11175 对压到 ~1500 候选对，需可证完备）",
+    "lex 目标 → 分层求解或大权重标量化（权重合法性条件 W1 > n_max·W2 必须写入断言）",
+    "先固定第一层再优化后层（阶梯式）",
+    "LP 松弛并行跑，作为独立界来源"
+   ],
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+    "fit_reason": "F-008『只能调一个参数或撤销』使每计划的终态天然离散可枚举（探针 |A_i|≤32），把连续平移决策转成 150 选 1 的列表着色结构；F-006 的合取判据使两两约束可预计算为常数表（时间占用按 F-005 完全由 (t1,g,d,n) 决定，无隐藏状态）；F-012 的 10Δf/5Δt 上限把动作幅封闭成有限集，故 CP-SAT 的 OPTIMAL/INFEASIBLE 是离散可判定证书，而不是启发式信心。",
+    "stopping_rule": "阶段1 首个 k 使 status=INFEASIBLE 即停（LB=k+1）；阶段2 在 600s/路线预算内到 OPTIMAL 即停，否则以 FEASIBLE + bound 报告 certified interval；任一阶段先须通过独立 checker 的 0 残留冲突断言。",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "cp_model 固定 random_seed=0、log_search=0、num_workers=8（记录 worker 数，因 LP 界与并行策略有关）；同机同版本重跑断言 obj 逐位一致。",
+    "algorithm_detail": "CP-SAT（ortools 9.15，可用）+ LP（GLOP/SCIP）双轨 | 阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。"
+   },
+   "bound_plan": {
+    "lower_bound_method": "三层可复核下界：(i) 强制不撤销（Σr≤k）可行性阶梯的 INFEASIBLE 证书（离散可判定，探针：k=0 的纯可行性模型返回 INFEASIBLE（单模型求解约 10s，同脚本累计 220s） ⇒ 撤销数 ≥1 成立；且『漏加子句只会放松模型』，故 INFEASIBLE 结论对完整模型方向安全）；(ii) 成对不相容 LP 的 BestObjectiveBound（分数界，探针：min Σr → LB=0，说明 LP 分数解对撤销层无区分力，必须靠阶梯或整数割）；(iii) 前沿界 LB_adj(k)：固定 Σr≤k 时的 adjusted 分数界（探针：k=0→71.20（整数 ⌈·⌉=72），k=1→70.17，k=2→69.15，k=3→68.13）。",
+    "upper_bound_method": "CP-SAT incumbent（独立 checker 复验通过）给各层上界；另跑一个『零撤销启发式可行解/或撤销最少贪心解』作为可执行上界对照，探针口径下成对子句全模型 200s 得 (revoke=10, adjusted=110, magnitude=571) 且因候选对剪枝不完备残留 11 对冲突 —— 该教训要求『上界必须经 checker 复验』。",
+    "gap_metric": "每层整数差 gap_j = UB_j − LB_j（重点第一层 gap_revoke），并报告总标量化 gap/W1 的等价撤销当量。",
+    "gap_threshold": 0.0,
+    "proof_possible": true,
+    "gap_threshold_note": "交付标准：gap_revoke = 0（阶梯证书与 incumbent 会合）且 adjusted 层给出 bound 或明确标注未闭合；若 600s 内 gap_revoke > 0，论文只能写『在 [LB,UB] 区间内』并给出证书脚本，禁止写『最优』（对应 Q2-C3 的 acceptance_rule 要求『CP-SAT 最优性状态 + 撤销数下界论证』）。",
+    "proof_possible_note": "部分可证：撤销层可通过有限次 INFEASIBLE 探测达到完全证明（每步是 CP-SAT 验证过的证明）；adjusted/priority/magnitude 层依赖 CP-SAT 内部 LP 界，通常给出区间而非等号；纯组合界（团/匹配/度）在本实例实测为 0（见 Q2-R52），不可指望。"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "候选对剪枝的可证完备性：必须满足『若 (i,j) 在某组合法动作下会冲突，则 (i,j) 必在候选对内』（探针曾出现过剪枝不完备→残留 11 对冲突，据此把该项设为硬门）",
+     "大权重合法性断言：W1 > 150·W2，W2 > 150·W3，W3 > 1500·W4（否则标量化不再代表 lex 序）",
+     "禁止列剪枝破坏完备性：只保留『至少修好一条原边』的动作列会给出虚假更优解（探针：列剪枝模型 79s 报 OPTIMAL=(0,98,585) 但残留 121 对冲突）",
+     "独立 checker：对输出方案重跑 Q1 检测器，要求返回 0 对；逐行断言 |Δf|≤10、|Δt|≤5、次数不变、间隔不变、频段∈[0,100)",
+     "稳定性：3 次同参重跑（replicates=3）比较 obj 与 bound，记录是否逐位一致"
+    ]
+   },
+   "required_assumptions": [
+    "F-008 解释为『每个计划至多改变一个参数（或撤销）』，恒等动作允许存在",
+    "平移幅度按 |新起点−旧起点| 计（F-012 note），且平移后频段仍落在 0..99（F-001）",
+    "lex 链中 priority 层解释为『先保 A 再保 B 再保 C』（F-010），与 adjusted 层的先后次序需在正式建模前冻结并登记决策账本",
+    "新产生的冲突同样禁止（F-006/F-007 的『消解后不存在时频冲突』是对终态全体计划的断言，而非仅对原冲突对）"
+   ],
+   "failure_conditions": [
+    "600s 内第一层阶梯无法闭合（LB<UB）⇒ 退到 Q2-R52/Q2-R53 的组合+LP 界组合，并在论文中只报区间",
+    "候选对规模膨胀（跨类可达对远大于探针 1525）⇒ 改为按频段分带的局部模型 + 一致性缝合",
+    "CP-SAT 返回 FEASIBLE 但 checker 发现残留冲突 ⇒ 视为模型/剪枝 bug（不是『接近可行』），必须修模型而非放宽验收",
+    "INFEASIBLE 阶梯显示不存在任何满足 F-008/F-012 的零冲突终态（即使 r 很大）⇒ 题面口径理解有误，立即上报而不是继续调权重"
+   ],
+   "strengths": [
+    "直接产出 Q2-C3 acceptance_rule 点名的两类证据（最优性状态 + 撤销数下界论证）",
+    "证书可机器复核：INFEASIBLE 证明 + 独立 checker，避免『启发式说自己是最好』",
+    "同一模型天然给出与启发式对照的上界，也可为 Q3 提供冻结基线"
+   ],
+   "weaknesses": [
+    "模型规模由候选对数控制，剪枝一旦不完备就产生不可信结论（探针已实证该风险）",
+    "编码选择直接决定『能否证明』：探针对比显示，同一问题的『频段列 NoOverlap 编码』（190590 个可选区间实例）在 253s 内仅到 FEASIBLE 且等价撤销层界≈0，而『成对不相容子句编码』（26.5–27.8 万子句）在 210s 内给出 incumbent（revoke=10/adjusted=110/magnitude=571）且对 r=0 判 INFEASIBLE ⇒ 本路线必须以子句编码为基座，列编码只可用于可行性生成",
+    "lex 标量化对权重设置敏感，写错即改变问题",
+    "adjusted/priority/magnitude 层的最优性证明可能无法在预算内闭合"
+   ],
+   "validation_plan": [
+    "code/check_q2.py：0 冲突（复用 Q1 检测器）+ 逐行合规断言（F-008/F-012/F-001）",
+    "results/Q2_solution.json 增加 certificate 字段：{status, objective, best_bound, ladder:[{k,status}], checker_pass, weights}",
+    "results/Q2_table1.json 与 result2.xlsx 行级一致性（Q2-C4）",
+    "reports/decisions/MODEL_SELECTION_DECISION.json 记录 lex 权重与优先级层解释的取舍"
+   ],
+   "complexity": "high",
+   "interpretability": "high",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q2-R51",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-05",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/result_authority.json",
+    "result_authority_sha256": "37826bb7ba71e7a247f9d24da23535fb6de3dfa77d3f2230c3456f726c43d0c8",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/scout.json",
+    "scout_json_sha256": "e61347f6d993f6e06cf911ec1eaaa87814c3c1814d50bdf01c4392baf2a17730"
+   }
+  },
+  {
+   "question_id": "Q2",
+   "tier": "advanced_alternative",
+   "method_family": "hybrid_decomposition",
+   "problem_reformulation": "把硬零冲突约束替换为连续'重叠体积罚'：在单参数互斥动作下，每个计划按其最优连续模式（频段平移 δf∈[-10,10] 或 时间平移 δt∈[-5,5] 或 保持）逐模式求解非光滑凸罚最小化（Majorize-Minimize/近端次梯度+盒投影），得到连续'冲突压力场'，再确定性取整并只对残余冲突分量做小邻域约束修复，产出可行方案与目标链改进候选。",
+   "model": {
+    "family": "nonconvex_separable_penalty（每模式内部凸分段线性）",
+    "representation": "连续松弛变量 δ=(δf_i) 与 (δt_i)（互斥模式分别求解）；成对时间重叠测度 P^T_ij(δt_i,δt_j)=Σ_{k,l} max(0, min(e_i(k)+δt_i+d_i, e_j(l)+δt_j+d_j) − max(s_i(k)+δt_i, s_j(l)+δt_j))，s/t 端点由 F-005 仿射给出 ⇒ P^T_ij 为仿射函数的 max(0,·) 之和 = 凸分段线性；频段罚 P^F 同型；总罚 Φ=Σ_{(i,j)∈E_Q1} P^F·P^T（乘积项非凸）+ 幅度正则 Σw_i|δ_i|",
+    "decision_variables": [
+     "δf_i∈[-10,10]（连续松弛）",
+     "δt_i∈[-5,5]（连续松弛）",
+     "模式 m_i∈{band,time,keep}（离散外层，逐模式枚举）"
+    ],
+    "objective_id": "连续代理目标 Φ 最小化（仅作引导，不等同 Q2-F011 lex 链）",
+    "constraint_ids": [
+     "F-012",
+     "F-008",
+     "F-005",
+     "F-006"
+    ],
+    "equations_summary": "关键结构事实：固定周期 (g,d,n) 下 slot 端点对平移量仿射（F-005），故单计划-单模式的重叠测度对 δ 凸分段线性（Lipschitz），次梯度=参与重叠的 slot 对的 ±1 流；乘积 P^F×P^T 破坏整体凸性 → 用 MM：固定另一因子得凸子问题交替下降。取整：δ→round 后重跑精确谓词，残余冲突按连通分量交小邻域修复（仅动分量内 ≤k 计划）。"
+   },
+   "transformations": [
+    "continuous_relaxation_shift_box",
+    "convex_pw_linear_overlap_kernel",
+    "mode_wise_decomposition",
+    "majorize_minimize",
+    "deterministic_rounding",
+    "component_local_repair"
+   ],
+   "solver": {
+    "family": "convex_optimization",
+    "algorithm": "每模式 ≤2000 迭代次梯度，步长 c/k，盒投影；Φ 单调下降记录；全计划模式-幅度输出 → 按 |frac(δ)| 降序确定性取整 → 谓词复核 → 残量局部修复 → 与 Q2-R31 主解比较",
+    "fit_reason": "F-012 的 21+11 连续盒是题面自带定义域（非人为扩张），F-005 端点仿射保证单模式核的凸分段线性结构成立；148/150 计划卷入（297 对）使全量精确求解与引导层互补有空间；此路线正是任务允许的'连续化仅作启发式引导'变体，并给出局部法（梯度族）在本离散题上唯一可辩护的作用位置。",
+    "stopping_rule": "ΔΦ<1e-6×Φ0 或 2000 迭代；取整-修复一轮闭环；无改善则弃用",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "无随机；顺序/破平键固定为计划编号；3 replicates 校验逐位一致",
+    "algorithm_detail": "nonsmooth_first_order（近端次梯度 / L-BFGS 于 Moreau 光滑化版本） | 每模式 ≤2000 迭代次梯度，步长 c/k，盒投影；Φ 单调下降记录；全计划模式-幅度输出 → 按 |frac(δ)| 降序确定性取整 → 谓词复核 → 残量局部修复 → 与 Q2-R31 主解比较"
+   },
+   "bound_plan": {
+    "lower_bound_method": "无证明级下界（罚值非松弛目标的双侧界，禁止宣称 Φ* 任何方向的有效界）",
+    "upper_bound_method": "修复后可行解（若存在）即目标链第1-4层的一个上界样本",
+    "gap_metric": "修复后残余冲突对数、与 incumbent 的 lex 元组差",
+    "gap_threshold": 0.0,
+    "proof_possible": false,
+    "gap_threshold_note": "残余冲突=0 才允许作为候选提交；否则仅作诊断"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability"
+    ],
+    "special_checks": [
+     "Φ 沿 MM 迭代单调不升（实现正确性哨兵）",
+     "取整前/后冲突对数直方图（度量引导强度，侦察内诊断）",
+     "修复触发规模：若修复分量覆盖 >50% 计划则记'引导无增量'降级",
+     "盒边界饱和率（A类带宽10/位移10 边界计划占比，检查约束退化）"
+    ]
+   },
+   "required_assumptions": [
+    "单参数互斥规则在连续层不可表达为凸约束，故逐模式松弛分别求解再选模式（允许层间混合低估冲突可消除性，由取整+谓词复核兜底安全性）",
+    "乘积罚 Φ=0 与原零冲突等价（重叠测度乘积在闭式区间算下为 0 ⟺ 无交叠），Φ>0 无解可判"
+   ],
+   "failure_conditions": [
+    "罚面平坦/大量等价局部最小导致引导输出与随机取整无差异 ⇒ 侦察判定无增量，路线淘汰交 Manager",
+    "取整后修复退化为全量重解 ⇒ 连续层贡献为零",
+    "修复找不到零冲突可行解 ⇒ 本路线仅作诊断产物，不得写入提交方案"
+   ],
+   "strengths": [
+    "对'连续化在本离散题上到底能做什么'给出诚实、可检验的答案：压力场可视化 + 引导候选",
+    "修复层保证任何输出仍经精确谓词零冲突复核，不引入正确性风险"
+   ],
+   "weaknesses": [
+    "无任何最优性/可行性证明贡献；lex 目标须后接三层字典序修复轮才能与 incumbent 公平比较（复杂度成本）",
+    "非凸乘积项使局部法结果对模式枚举顺序敏感"
+   ],
+   "validation_plan": [
+    "Φ=0 ⟺ 谓词零冲突 的双向小用例单测（含端点相接负例）",
+    "修复后方案必过 check_q2.py 同套 checker 后才计数",
+    "与 Q2-R31 组合：引导解作为 CP-SAT 热启动 incumbent 的对照实验（公平、同预算）"
+   ],
+   "complexity": "high",
+   "interpretability": "medium",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q2-R32",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-03",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/result_authority.json",
+    "result_authority_sha256": "c480315029b62d8dcd555b93b536c8fe582f8fdba2fc8a69933857cf6e28db1f",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/scout.json",
+    "scout_json_sha256": "6b918fed707708846631d23d2c3c8b0d33d31eb5e0a891ca9a3d85ef1d441049"
+   }
+  },
+  {
+   "question_id": "Q3",
+   "tier": "minimal_sufficient_solution",
+   "method_family": "simulation",
+   "problem_reformulation": "把加装视作对剩余时频容量的顺序装箱仿真：按『剩余同相位可用列数最少』的启发式逐件插入，周期性做大小-k 移除-重插的大邻域重排，以尽可能高的可行数量作为下界。",
+   "model": {
+    "family": "sequential bin-packing heuristic + large-neighborhood search（无最优性主张）",
+    "representation": "100x643 占用位图的动态更新 + 候选放置优先级队列",
+    "decision_variables": [
+     "每次插入选择的 p=(f0,t0)"
+    ],
+    "objective_id": "Q3-OBJ-N 的可行下界（max N s.t. 零冲突）",
+    "constraint_ids": [
+     "F-006",
+     "Q3-F017",
+     "Q3-F018",
+     "F-001"
+    ],
+    "equations_summary": "插入准则：score(p) = -sum_{b in f0..f0+2} |Ph_b 剩余| （优先消耗『只有此处能放』的稀缺相位），tie-break 用 (f0,t0) 字典序；LNS 移除规模 k in {5,10,20}，接受准则为非劣（数量不减）。静态核算的规模：预筛候选约 986（未调整参照）→ 单次贪心为 O(|K| log |K| * 3) 位图测试，远小于 600s 预算。"
+   },
+   "transformations": [
+    "位图增量更新（把冲突测试降为按位与）",
+    "稀缺度评分（把打包转化为贪心覆盖式选择）",
+    "LNS 重排（用随机化逃离局部最优）"
+   ],
+   "solver": {
+    "family": "derivative_free_local",
+    "algorithm": "贪心构造 → 3 个 replicate 的不同 seed LNS → 取最好可行 N 作为 LB；可选用 R21 的 CP-SAT 做一次固定 N+1 的可行性判定来尝试突破",
+    "fit_reason": "候选放置只有 2 个整数自由度（Q3-F018 隐含固定形状）且预筛后规模约千级，使『插入-检查』的近邻操作代价极低；单元界 688 与列界 670 之间、以及可能的真实 N 之间差距未知 → 需要一个廉价的下界发生器来为 R21/R22 的 gap 提供 LB（Q3-C2 明确以下界=提交行数）。",
+    "stopping_rule": "连续 20 次 LNS 无改进或 600s 壁钟；记录最好值与其种子/迭代号",
+    "budget_type": "wall_clock",
+    "determinism": "seeded_stochastic",
+    "seed_protocol": "seed 集合 = {20260911, 20260912, 20260913}（replicates=3），每个 seed 跑同样迭代数并报告最好/中位/最差 N（稳定性指标）",
+    "algorithm_detail": "heuristic search（确定性贪心 + 多种子 LNS） | 贪心构造 → 3 个 replicate 的不同 seed LNS → 取最好可行 N 作为 LB；可选用 R21 的 CP-SAT 做一次固定 N+1 的可行性判定来尝试突破"
+   },
+   "bound_plan": {
+    "lower_bound_method": "启发式可行 N（= result3 行数的候选值），取 3 replicate 的最好值并记录最差-最好差",
+    "upper_bound_method": "直接引用 R22 的结构界与 R21 的聚合界（本路线不自产上界）",
+    "gap_metric": "UB(引用) - LB(本路线)；以及 replicate 间极差（稳定性）",
+    "gap_threshold": null,
+    "proof_possible": true,
+    "gap_threshold_note": "本路线不承诺闭合，只承诺 LB 不低于贪心基线且方差可报",
+    "proof_possible_note": "否（启发式不产生最优性证明）"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "可复现性：同 seed 两次运行必须得到完全相同的放置集合（stochastic 声明下的确定性）",
+     "贪心 vs 随机顺序的差（衡量启发式的真实增益）",
+     "与 R22 构造下界的大小比较（谁给更好的 LB）",
+     "全部可行解都必须过 check_q3.py（禁止未验证即报数）"
+    ]
+   },
+   "required_assumptions": [
+    "评分函数不引入题面外信息（只用占用位图与相位）",
+    "LNS 不改变既有方案（与 R21 同一接口契约）"
+   ],
+   "failure_conditions": [
+    "replicate 间极差过大 → 下界不稳定，须改由 R21/R22 提供 LB",
+    "启发式给出的 N 超过 R22 上界 → 要么上界错要么 checker 漏（必须先解决矛盾再交付）"
+   ],
+   "strengths": [
+    "最快拿到可提交的零冲突方案",
+    "为 gap 提供稳定 LB，并暴露上界是否过松",
+    "实现简单、无闭包风险"
+   ],
+   "weaknesses": [
+    "无最优性",
+    "结果对口径（H、是否允许平移既有）敏感，须与 R21 共享同一口径配置",
+    "作为唯一路线会被评审视为『只会算不会证』"
+   ],
+   "validation_plan": [
+    "check_q3.py 全量复验（含 result3 行数 == N）",
+    "seed 日志：每 replicate 的迭代曲线与最好值",
+    "与 R21/R22 的 N 三方对照表（LB/CP 结果/构造结果）"
+   ],
+   "complexity": "low",
+   "interpretability": "medium",
+   "implementation_risk": "low",
+   "status": "accepted",
+   "idea_id": "Q3-R23",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-02",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "maximize",
+   "unit": "new_C_plans",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result_authority.json",
+    "result_authority_sha256": "1d46f76c6bc3a252f475b5746b9502707c9e867d74041dd4144a56411a5aa63f",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/scout.json",
+    "scout_json_sha256": "8bf932aa4b3dab3d546f9ea34069edf95a9944377711038d413d1e9168cb1bda"
+   }
+  },
+  {
+   "question_id": "Q3",
+   "tier": "recommended_solution",
+   "method_family": "operations_research",
+   "problem_reformulation": "把加装问题重表达为空闲可达集上的最大集合包装：先在 Q2 无冲突方案的占用掩码上枚举全部合法的新 C 计划放置（每条 = 3 个连续频段列 × 12 个长度 2 的周期窗），再在放置-放置干扰图上求最大独立集 / 集包装整数规划。",
+   "model": {
+    "family": "可达放置枚举 + 集合包装（Maximum Set Packing / MIS）整数模型",
+    "representation": "候选集 P = {(a,t): a∈[0,96], t∈[0,H-112], (三列空闲掩码) ∧ (12×2 窗全空闲)}；变量 z_p ∈ {0,1}；干扰边 (p,p') ⟺ 两放置共享任一格",
+    "decision_variables": [
+     "z_p（是否采用放置 p）"
+    ],
+    "objective_id": "OBJ-Q3 = max Σ_p z_p（新增 C 数量最大化）",
+    "constraint_ids": [
+     "Q3-F017",
+     "Q3-F018",
+     "Q3-C1",
+     "Q3-C2",
+     "F-001",
+     "F-003",
+     "F-006"
+    ],
+    "equations_summary": "单个新 C 计划耗 3 列 × 12 窗 × 2 格 = 72 格；两放置干扰 ⟺ |a-a'| ≤ 2（列条带重叠）AND 时间窗相交（同列条件下等价于 |Δt mod 10| ≤ 1 且 |Δt| ≤ 111，该判据已在原数据的 C-C 对上逐对验证）。可达集规模（原 150 计划 footprint 上的结构探针）：97 个条带中 70 个含可行起点，共 903 个候选放置；单列可行起点 0~243 个。"
+   },
+   "transformations": [
+    "reachable_set_enumeration_on_idle_mask",
+    "interference_graph_construction",
+    "bit_parallel_feasibility",
+    "set_packing_formulation"
+   ],
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+    "fit_reason": "引用 Q3-F017（不限平移幅度、不增加时频资源 ⇒ 新计划参数固定为宽 3/时长 2/间隔 8/次数 12，仅位置可选）与 dataset_snapshot（100 频段 × 视界 H 的有限格）：解空间就是有限可达放置集合，因此枚举 + 打包既无近似也无外生假设；实测该可达集在毫秒级构建，格打包约束可直接由位掩码给出。",
+    "stopping_rule": "CP-SAT 证明 OPTIMAL 则停；否则记录 [构造下界, 打包 LP/CP 上界] 与 gap",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "固定 seed，3 次重复核对最大数量与解集大小",
+    "algorithm_detail": "CP-SAT 布尔/整数规划（或 MIS 分支定界） | 空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）"
+   },
+   "bound_plan": {
+    "lower_bound_method": "可行解 = result3 行数（提交即下界）；另用 Q3-R12 的分块构造给出更强的解析下界",
+    "upper_bound_method": "逐格打包约束的 LP 松弛界 / 列容量界（实测原 footprint 上朴素格计数界 ≈ 670~688）",
+    "gap_metric": "(UB - LB)/LB 与绝对差 UB-LB",
+    "gap_threshold": 3.0,
+    "proof_possible": true,
+    "gap_threshold_note": "Q3-C2 要求上界可检查且报告 gap；本路线目标 gap 尽量闭合为 0，若闭合不了则必须同时给出结构化的紧上界（见 Q3-R13）",
+    "proof_possible_note": "partial：可行方案完全可证；最大数量取决于上界收紧程度（朴素格计数界与构造下界相差约 5~6 倍，须换用相位感知界）"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "候选放置完备性：对每个 (a,t) 断言 72 格全空闲，且不存在被漏掉的起点（按列可行起点集合取交验证）",
+     "对 Q2 方案的依赖检查：可达集必须在 Q2 最终无冲突方案上重算（本 child 的 903/70 条带数字是原 footprint 探针，不得当作 Q3 结果）",
+     "视界口径敏感性：H = 621 / 627 / 643 三种取值下候选数与最大数量对比（class_profile 与 computed_data_facts 存在不一致，须由 Manager 定口径）",
+     "新计划内部零冲突：checker 对新增集合两两跑 Q1 检测器"
+    ]
+   },
+   "required_assumptions": [
+    "既有 150 计划冻结为 Q2 方案（Q3-F017 note）",
+    "新 C 计划沿用附件 C 模板（宽 3/时长 2/间隔 8/次数 12，F-005 周期口径 p=g+D=10）",
+    "不增加时频资源 = 仍为 100 频段且时间视界不超出既有视界（H 取值待锁定）",
+    "时间起点非负"
+   ],
+   "failure_conditions": [
+    "候选放置数或干扰图边数在真实 Q2 方案上过大致 CP-SAT 无法证明最优 ⇒ 转 Q3-R12 分块精确 + Q3-R13 界路线",
+    "若 H 口径改为允许超出既有最晚结束点 ⇒ 数量单调上升，答案不可比（必须先定口径）",
+    "若 Q2 方案本身不唯一，Q3 的数量随方案变化 ⇒ 需报告 Q3 对 Q2 解的敏感性，不能声称唯一最大数"
+   ],
+   "strengths": [
+    "语义直白，完全可复现；提交行数与模型目标一致，满足 Q3-C3",
+    "可达集与干扰图用位掩码构建，实现成本极低",
+    "界（LP/列容量）与构造在同一路径内可给"
+   ],
+   "weaknesses": [
+    "朴素上界远松，单靠此路难以论证最多",
+    "对 Q2 方案有强依赖"
+   ],
+   "validation_plan": [
+    "Q3-C1 checker 复验（对 Q2 方案 + 内部）",
+    "Q3-C2 上下界 JSON 落盘",
+    "Q3-C3 result3 行级断言（宽 3/时长 2/间隔 8/次数 12 隐含）"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q3-R11",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-01",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "maximize",
+   "unit": "new_C_plans",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/result_authority.json",
+    "result_authority_sha256": "5e2b1e7ffd91c7a21d1fce9996cc904b519bfb2f1faae904aadc3bfe7e2ae728",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/scout.json",
+    "scout_json_sha256": "9448db5fba4303ec4070606a041b15c1f9280465918390134e7582b05f43d988"
+   }
+  },
+  {
+   "question_id": "Q3",
+   "tier": "recommended_solution",
+   "method_family": "graph_combinatorial",
+   "problem_reformulation": "把加装问题写成时频格上的图案打包：候选图案 = (3 连续频段窗口) × (12 个 [t+10k, t+10k+2) 时间窗)；上界由『每频段×每相位×连续块』的容量打包界（双计数）给出，下界由构造放置给出，两者会合即最大数证明。",
+   "model": {
+    "family": "时频格打包 / 区间-区间二部冲突图独立集（含容量界）",
+    "representation": "放置集合 Φ = {φ=(a, t): a∈[0,97], t∈[0, T−112]}；φ 可行 ⟺ 其 3×24 占用格与冻结 Q2 方案的占用不交；冲突 ⟺ 频段窗口交叠 ∧ 时间窗交叠（F-006 判据）；新增 C 参数固定：宽 3、时长 2、间隔 8、次数 12（Q3-F018 note，P=g+d=10，跨度 11·10+2=112）",
+    "decision_variables": [
+     "z_φ ∈ {0,1}（是否采用放置 φ）；计数目标 Σz_φ"
+    ],
+    "objective_id": "Q3-C2（数量最大化论证：上界可检查、下界=提交行数、报告 gap）",
+    "constraint_ids": [
+     "Q3-F017",
+     "Q3-F018",
+     "F-001",
+     "F-003",
+     "F-005",
+     "F-006",
+     "F-009"
+    ],
+    "equations_summary": "同带同相位 r 的两图案必须占用互不相交的 12 个连续时隙块 ⇒ 对每 (b, r)：j(b,r) 个可用块（自由 10Δt 块的极大连续段 lengths run_s）⇒ k_b(r) ≤ Σ_s ⌊run_s/12⌋（且 ≤ Σ_s run_s/12 取整，两者取小）；双计数 3N = Σ_b k_b ≤ Σ_b Σ_r k_b(r) ⇒ UB = ⌊Σ_b Σ_r k_b(r) / 3⌋。密度界 UB_dens = ⌊(100·T − |自由格∪|)/72⌋ 为另一独立合法上界（每图案耗 3×24=72 格）。"
+   },
+   "transformations": [
+    "按频段分带（每带独立计数）",
+    "按相位 r = t mod 10 分解（利用 P=10 的完全同余结构）",
+    "连续可用块分解（把打包数化为区间长度整除）",
+    "双计数（放置-频段关联）得全局界",
+    "构造下界：贪心放置（按带扫描）与 CP-SAT 解互为对照"
+   ],
+   "solver": {
+    "family": "closed_form",
+    "algorithm": "① 由冻结 Q2 方案算每带占用位集；② 对每 (b,r) 计算连续自由块并求 Σ⌊run/12⌋，得 UB；③ 贪心：按带起点顺序放置所有可行且与已放置不冲突的图案，得 LB；④ 自检断言 LB ≤ UB；若 LB > UB ⇒ 界推导错误（此失效模式已被 CH-05 探针真实触发并修正）",
+    "fit_reason": "Q3-F018 note 说明模板仅 3 列 ⇒ 宽 3/时长 2/间隔 8/次数 12 为隐含固定，于是所有候选图案共享同一周期 P=10（探针实测），冲突判据退化为『相位差 mod 10 ∈ {0,±1} ∧ 频段窗口交叠』，使按相位×块的整除界成立；F-001 的 100 频段与 F-003 的整数时间格保证格计数是精确整数运算，无需采样估计。",
+    "stopping_rule": "UB 与 LB 会合（相等）⇒ 给最大数证明并停止；否则输出区间 [LB, UB] 并把 UB 收紧尝试限制在一轮内（预算 600s）。",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "纯整数运算无随机；贪心的遍历顺序固定为 (a 升序, t 升序) 并记录在元数据，保证 LB 可复现。",
+    "algorithm_detail": "确定性组合计数 + 贪心构造（无求解器，或 CP-SAT 作对照） | ① 由冻结 Q2 方案算每带占用位集；② 对每 (b,r) 计算连续自由块并求 Σ⌊run/12⌋，得 UB；③ 贪心：按带起点顺序放置所有可行且与已放置不冲突的图案，得 LB；④ 自检断言 LB ≤ UB；若 LB > UB ⇒ 界推导错误（此失效模式已被 CH-05 探针真实触发并修正）"
+   },
+   "bound_plan": {
+    "lower_bound_method": "构造下界 = 实际放置数（result3 行数，经 checker 复验零冲突）；原始占用口径的探针量级：按带贪心得 84（另一遍历序得 90，均为合法构造下界，正式值须基于冻结 Q2 方案重算）。",
+    "upper_bound_method": "两条独立合法上界取小：(i) 相位×块双计数界（探针：Σ_b Σ_r k=623 ⇒ UB=207，在原始占用口径下）；(ii) 密度界（探针：自由格/72 = 688）。注：CH-05 早期版本曾把『每频段最多 5 个相位类』直接当作每带容量，得 UB=79，被自身构造解 84 否证——修正后（同相位图案须时间跨度不重叠、每图案占 12 块）界成立且可复核。",
+    "gap_metric": "gap_abs = UB − LB，gap_rel = gap_abs/UB；并要求每条界都附『LB ≤ UB』断言与人工可核算的整数链。",
+    "gap_threshold": 0.0,
+    "proof_possible": true,
+    "gap_threshold_note": "论文交付分两种：若会合（gap=0）⇒ 写『最大数量 = N，并有上界证明』；若未会合（探针口径 84 vs 207 ⇒ 差距 ~2.5 倍）⇒ 只能写『至少 N，至多 M』并给出两条界的推导，禁止写『最多 N』。",
+    "proof_possible_note": "可证（上界为初等双计数 + 整除论证，全整数可手核）；但界是否够紧不确定：相位×块界忽略了跨相位互斥（相位差 ±1 也不可共存）与 3 带联合可行性，天然偏松；因此『会合』需额外收紧（CP-SAT 界或 LP 对偶界）。"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "界有效性硬门：断言 UB ≥ 已知可行放置数（含启发式与 CP-SAT 解）；不满足即界作废（本侦察阶段真实发生一次）",
+     "时间视界口径敏感性：T=643 与 T=621 两种口径分别重算 UB（探针：密度界 688；候选起点上限 509 vs 531），并把口径分歧登记到决策账本",
+     "『不增加时频资源』的精确化：允许新增图案的起点平移到任意格点（Q3 解除 10Δf/5Δt 限制，F-012 note），但不得超出 100 频段与同一时间视界",
+     "与冻结 Q2 方案的耦合检查：上界依赖既有占用，若 Q2 方案改变（不同入选路线）则界必须重算，禁止沿用旧界",
+     "内部冲突复验：新增集合两两按 F-006 判据复核 0 冲突，且与既有方案 0 冲突（Q3-C1）"
+    ]
+   },
+   "required_assumptions": [
+    "Q3-F017 note 口径：既有计划固定为 Q2 最终方案，不因其调整而再改",
+    "新增 C 装备沿用附件 C 模板隐含参数（宽 3/时长 2/间隔 8/次数 12），且平移幅度不限",
+    "时间视界不扩展（100 频段 × 同一视界，F-001），具体视界端点取 621 还是 643 需在正式建模前冻结",
+    "result3 只需序号/频段区间/时间区间 3 列（Q3-F018），故周期参数由隐含固定"
+   ],
+   "failure_conditions": [
+    "LB > UB ⇒ 上界推导有误（第一优先怀疑：把周期图案当成无限周期、忽略相位可复用），修正后重跑",
+    "界与构造差距过大（>1.5 倍）⇒ 本路线只能作为『区间论证』，主证改由 Q3-R52 的 CP-SAT 界/LP 对偶界承担",
+    "冻结 Q2 方案尚未产生 ⇒ 本路线只能在假想基线上侦察，正式界延后到 coding 阶段",
+    "发现既有方案在某频段完全阻塞（探针：早期相位算法口径下有 9 个频段无可用相位，正式实现须用修正后的块算法重算）⇒ 检查是否误把整带标记为占用（位集越界/掩码 bug）"
+   ],
+   "strengths": [
+    "上界是全整数、可手核的初等论证，是国赛论文里最有说服力的『最多还能安排多少』型证据",
+    "界对时间视界/口径的依赖被显式量化，能顺带暴露题面口径分歧",
+    "与求解器无关，秒级完成，不挤占 600s 侦察预算"
+   ],
+   "weaknesses": [
+    "相位×块界天然忽略跨相位互斥与 3 带联合约束，实测偏松（探针 207 vs 构造 84）",
+    "结论依赖 Q2 冻结方案，跨问耦合强（Q3 的界会随入选路线改变）",
+    "无法单独给出最大值的证明，除非与下界会合"
+   ],
+   "validation_plan": [
+    "code/q3_bound.py 输出 results/Q3_bound.json：{LB, UB_phase_block, UB_density, 每带明细, 视界口径两版, checker_pass}",
+    "code/check_q3.py：新增集合内部 0 冲突 + 与 Q2 方案 0 冲突 + 行数=宣称数量（Q3-C3）",
+    "论文中上界推导以整数链形式呈现（每步可手核），并显式声明未会合时只给区间"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "low",
+   "status": "accepted",
+   "idea_id": "Q3-R51",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-05",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "maximize",
+   "unit": "new_C_plans",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/result_authority.json",
+    "result_authority_sha256": "d5d0bc39f860950ecc86ba804f233ba5db57a73e47228efdf6b14d9957c73cbc",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/scout.json",
+    "scout_json_sha256": "76e6ffec5de985f0f570ddc06cfc8d617628b8363c618833ea0bcfac49ca7abd"
+   }
+  },
+  {
+   "question_id": "Q4",
+   "tier": "minimal_sufficient_solution",
+   "method_family": "simulation",
+   "problem_reformulation": "把 C 类的间隔调整看作“周期重定时”：仅改 g 会把周期 p=g+d 从 10 变为 3..20（对 C 的 d=2、g=8，g'∈[1,18]），整条梳状占用的格点结构随之改变；用模拟退火在“平移 or 重定时 or 撤销”的扩张动作空间上搜索零冲突解，Q2 方案作为可行初始态。",
+   "model": {
+    "family": "周期重定时（retiming）+ 模拟退火",
+    "representation": "A/B 动作域同 Q2（本人复算 22..32 个动作）；C 额外动作 g' ∈ [g-10, g+10] ∩ 正整数 → 对附件 C 的 g=8,d=2 有 g'∈[1,18]、周期 p'=g'+d ∈ [3,20]，末槽结束 t1+11p'+d 决定是否需按视界截断",
+    "decision_variables": [
+     "每计划动作类型 + 幅度；C 类可选 g'（仍单参数，F-008）"
+    ],
+    "objective_id": "Q4-C1",
+    "constraint_ids": [
+     "F-006",
+     "F-008",
+     "F-012",
+     "Q4-F019",
+     "Q4-F011"
+    ],
+    "equations_summary": "对 C 计划：Occ = [a,a+w) × {t1+(k-1)p' + [0,d)}, k=1..n，p'=g'+d；|g'-g|≤10, g'≥1；目标仍 lex(revoke, adjusted, 优先级, 幅度)，其中 C 的“幅度”在间隔动作上取 |g'-g|（需 Manager 冻结跨动作类型的幅度可比性）。"
+   },
+   "transformations": [
+    "period_retiming",
+    "action_domain_expansion_for_C",
+    "stochastic_local_search",
+    "feasibility_projection_repair"
+   ],
+   "solver": {
+    "family": "derivative_free_local",
+    "algorithm": "以 Q2 可行方案为初始态的模拟退火；提案分布 = {改 δf, 改 δt, 改 g'（仅 C）}，温度分层（先高温探索周期格点，再低温精修）；收尾撤销修复投影保证零冲突",
+    "fit_reason": "引用结构事实：F-005 使占用为周期梳（周期 p=g+d），C 类 d=2、g=8 → p=10，Q4-F019 允许 |Δg|≤10 → g'∈[1,18]、p'∈[3,20] 把格点结构完全改变（本人复算 C 残差类 mod 10 的互斥性正是 p=10 的后果）；因此改 p' 与改 δt（模 10 内的平移）不是同一件事，前者改变交叠的“是否可能”，后者只改变相位。冲突图平均度 4.01、最大 8（本人复算）说明搜索改进主要来自少数高密度顶点，适合 SA 的加权提案。Q2 方案对 Q4 自动可行（见 Q4-R42 的暖启动论证），故 SA 从可行域出发、anytime 保持可行。",
+    "stopping_rule": "600s 墙钟或固定降温表跑满（每链 4×10^5 移动，与 Q2-R43 同预算规模）；三链均无改进即停",
+    "budget_type": "wall_clock",
+    "determinism": "seeded_stochastic",
+    "seed_protocol": "三链种子 [11,29,47]，提案流与温度表侦察前冻结；记录每链首次达到“优于 Q2 元组”的移动序号（这是 Q4-C2 的直接证据）",
+    "algorithm_detail": "derivative_free_local | 以 Q2 可行方案为初始态的模拟退火；提案分布 = {改 δf, 改 δt, 改 g'（仅 C）}，温度分层（先高温探索周期格点，再低温精修）；收尾撤销修复投影保证零冲突"
+   },
+   "bound_plan": {
+    "lower_bound_method": "被触碰计划数下界用扩展冲突图匹配（在 Q4 动作域下“可能消解的边”重算交互图后再取极大匹配）；另有 Q2 可行元组作为目标链上界锚",
+    "upper_bound_method": "Q2 方案元组（对 Q4 可行，故为 Q4 最优值的合法上界）+ 本 SA 找到的更优元组（取字典序更小者）",
+    "gap_metric": "字典序元组相对 Q2 的逐层差（revoke/adjusted/优先级/幅度），以及到匹配下界的相对差",
+    "gap_threshold": 2.0,
+    "proof_possible": false,
+    "gap_threshold_note": "登记口径：至少要在 adjusted 或优先级层取得不劣于 Q2 的元组；若三链均与 Q2 元组相等，则如实报告“额外自由度在本实现/预算下未被利用”"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "间隔规则断言：仅 C 可改 g、|g'-g|≤10、g'≥1、次数 n 不变（Q4-C1）",
+     "result4 五列模板与逐行动作一致（F-022）",
+     "周期重定时正确性：抽样 30 个改 g' 的计划，用逐时段暴力枚举复算其占用集合与交叠，与位图一致",
+     "与 Q2 在同一 canonical 评价函数下对比（Q4-C2 验收要求）",
+     "三链元组极差与“首次优于 Q2”的移动序号分布"
+    ]
+   },
+   "required_assumptions": [
+    "间隔动作的幅度代价取 |g'-g|（单位 Δt），与 |δf|/|δt| 直接相加需 Manager 冻结可比性口径",
+    "改 g 后占用跨度可变；是否要求末槽 ≤T_MAX 采用统一冻结口径（影响 C 类 12 次占用的可行 p' 子集）",
+    "仍禁止同时调两个参数（F-008），禁止调次数（F-009）"
+   ],
+   "failure_conditions": [
+    "改 g' 后越界截断的处理与题面口径不一致 → 全部结论失效",
+    "三链中出现“比 Q2 更差”的最终元组（初始态即 Q2，说明实现或接受准则有 bug）",
+    "增量评估未覆盖周期变化带来的格点重排（漏判新冲突 → Q4-C1 FAIL）",
+    "600s 内移动数低于 1×10^4（预算不可完成，淘汰）"
+   ],
+   "strengths": [
+    "为 Q4 提供独立于 CP-SAT 的对照证据，且初始态可行、全程 anytime",
+    "直接产出“优于/等于 Q2 的元组”对照，命中 Q4-C2 验收",
+    "周期重定时的物理含义在论文里可解释（比单纯变量枚举更有叙事价值）"
+   ],
+   "weaknesses": [
+    "动作域扩张（每个 C 计划额外 17 个可行间隔取值，g'∈[1,18] 且 g'≠8）后，SA 的收敛更慢、方差更大",
+    "无最优证书，无法证明“用满了间隔自由度”",
+    "幅度可比性口径未冻结前，与 Q2 的字典序比较存在解释风险"
+   ],
+   "evidence_against_minimal": "反证判据（侦察前预登记）：若 Q2 方案在 Q4 中即为字典序最优（例如精确路线给出 PROVEN 最优且元组等于 Q2），则本路线的额外自由度无实测收益，必须把这一“无改善”如实登记为结论而非隐藏。",
+   "validation_plan": [
+    "零冲突 + 全合规 checker（Q4-C1）",
+    "表1 聚合与逐行一致（Q4-C2 依赖 Q2/Q4 表1 对照）",
+    "与 Q2 元组同评价函数比对（Q4-C2）"
+   ],
+   "complexity": "medium",
+   "interpretability": "medium",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q4-R41",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-04",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/result_authority.json",
+    "result_authority_sha256": "af9b3cb13b3a84e60b610b551f543d9d2fcccaadce78e1c3a536ff83d413e702",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/scout.json",
+    "scout_json_sha256": "809e315e043f513060c14dc6dee42213d4e3da2e9d6623634665443ee7d7d232"
+   }
+  },
+  {
+   "question_id": "Q4",
+   "tier": "recommended_solution",
+   "method_family": "graph_combinatorial",
+   "problem_reformulation": "沿用 Q2 的带撤销色部分列表着色骨架，只扩大 C 类的颜色表（新增 17 个间隔取值状态）：由于状态域仍是离散小集合、约束仍只在潜在冲突图的边上发生，Q4 与 Q2 同构，差别只在域更大、边更多、可行域包含 Q2。",
+   "model": {
+    "family": "带重定时状态的部分列表着色 + 字典序分层",
+    "representation": "ST_i = {保持} ∪ {δf: |δf|≤10} ∪ {δt: |δt|≤5} ∪（仅 C）{g': |g'-g| ≤ 10, g' ≥ 1, g' ≠ g}；x_i ∈ {0..|ST_i|}（末位为撤销）；边 = G*_Q4 上的禁止元组",
+    "decision_variables": [
+     "x_i",
+     "r_i",
+     "adj_i",
+     "mag_i",
+     "动作类型（频段/时间/间隔 三选一）"
+    ],
+    "objective_id": "OBJ-Q4-lex = lex(Σr, Σadj, 优先级加权, Σmag)（Q4-F011，与 Q2 同一 canonical 评价函数）",
+    "constraint_ids": [
+     "F-008",
+     "F-012",
+     "Q4-F019",
+     "Q4-F020",
+     "Q4-C1",
+     "Q4-C2"
+    ],
+    "equations_summary": "间隔状态改变第 k 次占用起点为 t1+(k-1)(g'+D) ⇒ 掩码需按 g' 重建；实测（结构探针）平均域从 Q2 的 29.5 增到 39.7，|E(G*)| 从 1693 增到 2117，禁止元组从 269994 增到 443002，模型构建 <2s。Q4 可行域 ⊇ Q2 可行域（Q2 的每个状态在 Q4 中仍存在）⇒ 同一评价函数下 Q4 最优值不劣于 Q2。"
+   },
+   "transformations": [
+    "state_domain_extension_retiming",
+    "potential_conflict_graph_rebuild",
+    "lexicographic_stage_wise_solving",
+    "warm_start_from_Q2_solution"
+   ],
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+    "fit_reason": "引用 Q4-F019（仅 C 可调间隔、|Δgap| ≤ 10、间隔为正整数）⇒ 扩域是离散有界的，仍可枚举成元组表；引用 Q4-C2（同一 canonical 评价函数下与 Q2 对比）⇒ 必须使用与 Q2 完全一致的着色/元组语义与目标链，否则对比不可信（这是本路线选择同构编码的直接原因）。",
+    "stopping_rule": "各层 OPTIMAL，或达到预算后报告各层 [LB,UB] 并如实写明未闭合的层",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "固定 seed + 固定 num_workers；3 次重复核对各层目标值与界",
+    "algorithm_detail": "约束规划 CP-SAT（以 Q2 解为提示 hints） | 同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界"
+   },
+   "bound_plan": {
+    "lower_bound_method": "撤销数下界沿用基数序列 UNSAT 证书；并给出 Q4 ≥ 1（非平凡）与 Q4 ≤ Q2 上界的夹逼；对第 2/3/4 层用各自 LP/CP 界",
+    "upper_bound_method": "Q2 最优解在 Q4 中直接可行 ⇒ UB_Q4 = UB_Q2（结构性上界）；再用 CP-SAT 改进",
+    "gap_metric": "各层 (UB−LB)/max(1,UB) 与 Q4 vs Q2 的目标链逐项对照",
+    "gap_threshold": 1.0,
+    "proof_possible": true,
+    "gap_threshold_note": "第 1 层力争 gap=0；至少必须证明 Q4 不劣于 Q2（同评价函数、同 checker）",
+    "proof_possible_note": "partial：不劣性可结构性论证（可行域包含）；最优性证据强度与 Q2 同级（探针显示第 1 层易停滞）"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "包含性自检：Q2 的每个状态在 Q4 状态表中存在且掩码一致（保证可行域包含、从而不劣性论证成立）",
+     "间隔边界：g' = 1 与 g' = 18 两个极值状态单独验证（防 |Δgap| 计算口径错）",
+     "越界检查：增大间隔使末窗延伸到既有视界之外（实测 C 类 g'=18 时末窗可到 753 > 643），必须确认 checker 的位宽与口径不截断",
+     "禁止元组表构建耗时与内存（443002 元组实测 1.9s 构建，但求解停滞风险需评估）"
+    ]
+   },
+   "required_assumptions": [
+    "仅 C 类可调间隔，A/B 不得调（forbidden_information）",
+    "任计划仍只能动一个参数（F-008 在 Q4 延续）",
+    "使用次数不可调（F-009）",
+    "Q4 无新增资源限制，故允许占用时间延伸超出原最晚结束点（若官方解释禁止，需加 g' 上界约束）"
+   ],
+   "failure_conditions": [
+    "若允许延伸出原视界的口径被否决 ⇒ 间隔域缩小，探针中的边/元组数需重算，Q4 优势可能减弱",
+    "元组表规模使 CP-SAT 第 1 层界无法在预算内推进 ⇒ 转 Q4-R12 的解析可行域路线",
+    "若 Q4 解与 Q2 解动作类型混淆（同一计划既移时间又调间隔）⇒ checker 必须判 FAIL"
+   ],
+   "strengths": [
+    "与 Q2 完全同构 ⇒ 论文中两问对照干净、评价函数一致",
+    "实测模型规模可承受（2117 边 / 44 万元组 / 构建 <2s）",
+    "可用 Q2 解作结构性上界，天然支持 Q4-C2 的对比"
+   ],
+   "weaknesses": [
+    "继承 Q2 的最优性证据难点",
+    "间隔扩域使解释复杂度上升（三类动作需在表1中区分）"
+   ],
+   "validation_plan": [
+    "Q4-C1 checker 全断言（含间隔规则）",
+    "Q4-C2 与 results/Q2_table1.json 同口径对照",
+    "重跑 Q1 检测器确认 0 冲突"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "medium",
+   "status": "accepted",
+   "idea_id": "Q4-R11",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-01",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/result_authority.json",
+    "result_authority_sha256": "001be47edcdb527834c4ba1d1ea09512f06d14abfac74e4d43486853251a5905",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/scout.json",
+    "scout_json_sha256": "18bf38f62a5b6c11eb57f72351e53c7e7c5f633500fe664a81eb18ae83624ecd"
+   }
+  },
+  {
+   "question_id": "Q4",
+   "tier": "advanced_alternative",
+   "method_family": "analytic_mechanistic",
+   "problem_reformulation": "把消解看成数论式重定时：对等周期冲突对（C-C，p=10）冲突条件等价于相对相位模 10 落入 {0,±1}，改间隔就是改模基；对不等周期对（A/B 与 C）冲突窗密度约随 C 的占空比 d/p 下降。于是先按『给每个 C 挑一个避开冲突模类的周期』做构造，剩余无法由模结构消解的边再交给组合层。",
+   "model": {
+    "family": "congruence/modular retiming construction + residual conflict covering",
+    "representation": "每边一个模条件（delta_t mod p_ij in forbidden set）；每计划一个周期选择 g'_i；剩余边集 E_res 交给 R23 的覆盖/重嵌入或 R21 的 CSP",
+    "decision_variables": [
+     "g'_i in [max(1,g_i-10), g_i+10]（仅 C）",
+     "Delta t_i（可选，仍受单参数互斥限制）",
+     "覆盖残余边的动作集合"
+    ],
+    "objective_id": "同 Q2-OBJ-LEX，但目标先由结构构造达成大部分消解，再用组合层收尾；本路线的核心产物是『为什么改间隔有效』的机理论证",
+    "constraint_ids": [
+     "F-005",
+     "F-006",
+     "F-008",
+     "F-012",
+     "Q4-F019",
+     "Q4-F011"
+    ],
+    "equations_summary": "等周期对（周期 p、窗长 d）：两脉冲串相交 iff 相对位移 mod p in union_{k}[-d+1, d-1] 型邻域；静态核算（C-C，p=10, d=2）禁用相对位移集合为 {-11,-10,-9,-1,0,1,9,10,11} ⇔ mod 10 in {0,±1}，与理论一致。改间隔到 g' 后 p' = g'+2 in {3..20}，模基改变 → 同一相对位移的相容性翻转。不等周期对：C 的 12 个窗在跨度 11p' 内均匀分布，A/B 的窗长 5/3 → 时间轴命中集合宽度 |TO| 的静态核算分布为 AC 12..31、BC 8..31（在 [-15,15] 的 31 个候选差值中），说明大 p' 有摊薄效应，但这只是结构估计，真正的界须由 R21/R23 的枚举给出。"
+   },
+   "transformations": [
+    "把时域约束改写为模同余（差分 → 模类）",
+    "占空比松弛（把 p' 视作连续密度参数做机理说明，不进入证明）",
+    "构造-残余两阶段（模类选择 + 覆盖残余）",
+    "对称破缺：C 类按模 p' 的等价类分组"
+   ],
+   "solver": {
+    "family": "closed_form",
+    "algorithm": "1) 对每条 C-C 边算禁用模类；2) 以图着色式贪心为 C 计划指派 g'（使所有 incident C-C 边的模条件成立），冲突时回退；3) 统计残余边 E_res（AC/BC 那类不等周期边）；4) 只对 E_res 跑 R21 的受限 CSP 做消解",
+    "fit_reason": "静态核算 C-C 边只有 19 条而 BC 边 181 条、AC 66 条（Q1 结果口径），故模构造主要清理 CC 子图，主力困难在不等周期对；CC 的禁用差值集合结构（9 个值，模 10 的 {0,±1}）说明这类边确有闭式消解规则可用；F-005 的周期定义使改间隔严格等价于改模基，而不是任意的窗位重排——这是本路线成立的题面依据。",
+    "stopping_rule": "模构造阶段在全部 CC 边消解或回退计数达阈值时停止；残余 CSP 限时 600s",
+    "budget_type": "wall_clock",
+    "determinism": "deterministic",
+    "seed_protocol": "无随机性；若引入随机着色则 seed = 20260911 + replicate_index 并单独报告方差；确定性说明：贪心顺序按计划编号字典序；回退顺序固定",
+    "algorithm_detail": "constructive number-theoretic assignment + CP-SAT 收尾（小残余实例） | 1) 对每条 C-C 边算禁用模类；2) 以图着色式贪心为 C 计划指派 g'（使所有 incident C-C 边的模条件成立），冲突时回退；3) 统计残余边 E_res（AC/BC 那类不等周期边）；4) 只对 E_res 跑 R21 的受限 CSP 做消解"
+   },
+   "bound_plan": {
+    "lower_bound_method": "动作数 LB 仍取 nu(G)=71（对任何 Q4 解成立）；撤销数 LB：由包含关系，Q4* <= Q2*，故 Q2 的 LB（如匹配界与 CP 界）在 Q4 侧只作参考不作上界",
+    "upper_bound_method": "构造解（模指派 + 残余 CSP 解）给 UB；Q2 最优解给可比较的 UB",
+    "gap_metric": "canonical 目标逐层与 Q2 的差；以及『CC 边由模构造消解的比例』这一机理性诊断量",
+    "gap_threshold": 21.0,
+    "proof_possible": true,
+    "gap_threshold_note": "无最优性承诺；以 R21 的闭包为准，本路线的 gap 只用于说明机理覆盖度",
+    "proof_possible_note": "局部可（CC 边的模消解规则可严格证明），整体不可（占空比论证只是估计）"
+   },
+   "scout_plan": {
+    "required": true,
+    "metrics": [
+     "feasible",
+     "objective",
+     "runtime",
+     "stability",
+     "gap"
+    ],
+    "special_checks": [
+     "模规则全量核对：对 19 条 CC 边 + 随机 200 个 (g', delta) 组合，验证冲突 iff 相对位移 mod p' in {0,±1}",
+     "禁止把占空比/密度叙述当作界：任何『大约』结论必须换成枚举计数",
+     "残余边规模 |E_res| 的分布（决定收尾 CSP 难度），以及模指派与跨度约束（t1 + 11g'+24 <= H）的冲突率",
+     "与 R21 在同层目标上的对照：若 R21 严格更好，须报告差值并解释（模构造限制了幅度层）"
+    ]
+   },
+   "required_assumptions": [
+    "间隔改变等价于周期改变（F-005 定义），窗长 d 与次数 n 不变",
+    "模条件在跨度截断处（脉冲串不完整时）仍成立——须在 t1 + span <= H 的前提下使用",
+    "A/B 与 C 的不等周期边不由模构造处理（交给残余 CSP）"
+   ],
+   "failure_conditions": [
+    "若跨度约束与模指派冲突（拉长间隔导致越界）比例高 → 模自由度实际不可用，构造退化为 R23 局部搜索",
+    "若在 CC 之外的边上误用模论证 → 生成不可行解，checker 立即暴露",
+    "若模构造给出的解的动作数 > nu(G)+明显冗余 → 说明构造破坏了幅度层，只能作解释性路线"
+   ],
+   "strengths": [
+    "给论文提供『改间隔为什么能消解冲突』的可验证机理（模基 + 占空比），而不是只报数",
+    "把最难的 19 条 CC 边闭式化，缩小残余实例，可能显著降低 R21 的搜索时间",
+    "纯数论论证可独立复核，不依赖求解器状态"
+   ],
+   "weaknesses": [
+    "不产生整体最优性证明",
+    "对 BC/AC 这类不等周期边（合计 247 条）无消解力，主要工作量仍在残余层",
+    "跨度-视界耦合容易被忽略，属高风险实现点"
+   ],
+   "validation_plan": [
+    "check_q4.py 全断言（尤其间隔规则与跨度）",
+    "模规则的全量与抽样双验证日志",
+    "与 Q2、R21 的三方 canonical 对照（Q4-C2）"
+   ],
+   "complexity": "medium",
+   "interpretability": "high",
+   "implementation_risk": "high",
+   "status": "accepted",
+   "idea_id": "Q4-R22",
+   "route_kind": "full_route",
+   "source_child_run_id": "CH-02",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "scout_evidence": {
+    "result_authority": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/result_authority.json",
+    "result_authority_sha256": "fc7584399fe23ec77a6fa2ba48dda9d34f3ec10eeb41590e1b5a3f5d745c39e2",
+    "scout_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/scout.json",
+    "scout_json_sha256": "aac7ebdacdb16d303adc26f47b56ff253bdc88345e5edd3c8dc753733acf2f78"
+   }
+  }
+ ]
+}

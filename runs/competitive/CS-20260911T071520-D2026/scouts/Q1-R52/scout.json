@@ -1,0 +1,51 @@
+{
+ "idea_id": "Q1-R52",
+ "question_id": "Q1",
+ "started_at": "2026-09-11T16:19:26+0800",
+ "feasible": true,
+ "objective": 0,
+ "objective_tuple": [
+  0
+ ],
+ "runtime_seconds": 0.2802,
+ "replicate_values": [
+  0
+ ],
+ "replicates": 1,
+ "stability_metric": 0.0,
+ "stability_note": "确定性路线（Q1 三候选均标注 deterministic）：同输入 SHA 重跑逐位一致；跨实现对称差同时为 0，故 replicate 间方差为 0。",
+ "lower_bound": 0,
+ "upper_bound": 0,
+ "relative_gap": 0.0,
+ "bound_note": "完全枚举/等价闭式，无近似间隙 ⇒ lower_bound = upper_bound = objective，relative_gap = 0（协议：确定性路线）。",
+ "evaluations": {
+  "pair_evaluations": 11175,
+  "pairs_total_expected": 11175,
+  "internal_cross_checks": {
+   "class_homogeneity_g_d_n": true,
+   "closed_form_time_predicate_pairs_checked": 4975,
+   "closed_form_vs_enum_time_predicate_mismatches": 0,
+   "closed_form_vs_enum_edge_pair_symdiff": 0,
+   "edge_sets_elementwise_equal": true,
+   "bound_validity_LB_le_enum_le_UB": true,
+   "cross_class_fallback_pairs": 6200,
+   "intra_class_LB": 8,
+   "intra_class_UB": 92
+  }
+ },
+ "stopping_reason": "all_pairs_enumerated_and_dual_impl_symdiff_zero",
+ "budget_exhausted": false,
+ "failure_mode": null,
+ "canonical_evaluator": {
+  "invoked": true,
+  "out": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/eval.json",
+  "counts": {
+   "truth": 297,
+   "submitted": 297,
+   "missing": 0,
+   "spurious": 0
+  }
+ },
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/solution_q1_r52.json",
+ "status": "completed"
+}

@@ -1,0 +1,68 @@
+{
+  "question_id": "Q1",
+  "candidate_id": "Q1-R21",
+  "run_id": "FULL-D2026-PROD-H",
+  "feasible": true,
+  "derived_from_authority": true,
+  "counts_edges": 297,
+  "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+  "note": "bundle 视图：字段镜像自本问权威结果件（无新增数值）",
+  "_meta": {
+    "metadata_writer": "v7-p2-02/result_writer",
+    "metadata_writer_schema_version": 1,
+    "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+    "role": "support",
+    "authority": false,
+    "problem_ids": [
+      "Q1"
+    ],
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "contract_rev": 1,
+    "generator_path": "code/prod/make_bundle_views.py",
+    "generator_sha256": "3857d04f293da9862a2bddc906ba5188447e7c14d3d3b0df27d75b61f21db0b9",
+    "input_hashes": {
+      "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+    },
+    "input_sha256": "4680ec4066f0616395bf6f5011759b6b6069adc13172ddb68c878f7b4963a35c",
+    "output_hashes": {
+      "__result_payload__": "94cb850b4c4f7e85de616dd5a6df6f46cea1bfd71e8ed89310c0885afdece975"
+    },
+    "output_sha256": "5606ea85204dffc0688a766cae35a1fe0a2b7f62c861822205a103c246d547bf",
+    "coverage": {
+      "status": "not_applicable",
+      "coverage_id": null,
+      "plan_path": null,
+      "plan_sha256": null,
+      "observed": null,
+      "observed_sha256": null
+    },
+    "coverage_id": null,
+    "coverage_plan": null,
+    "coverage_plan_sha256": null,
+    "observed_coverage_sha256": null,
+    "generated_at": "2026-09-12T14:04:03+08:00",
+    "problem_id": "Q1",
+    "formulation_sha256": "4cb9dfc411287049da46af7db3d85069da490af3ec4d301cf677de66395c0c49",
+    "route_id": "Q1-R21",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "exact_enumerative",
+    "solver_algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "implementation": "code/prod/q1_solve.py",
+    "implementation_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+    "formulation_kind": "analytical",
+    "seed_policy": "N/A",
+    "model_decision_binding": {
+      "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+      "profile_id": "PROFILE-8ADA7763202B25BA",
+      "strategy_matching_id": "MATCH-1504A0480D6D591A",
+      "question_id": "Q1",
+      "decision_status": "pending_proposal",
+      "selected_strategy_id": null,
+      "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+      "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+    }
+  }
+}

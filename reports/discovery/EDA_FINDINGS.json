@@ -1,0 +1,3727 @@
+{
+  "schema_version": 1,
+  "discovery_id": "DISC-E9D8A97BC71B91CD",
+  "generated_at": "2026-09-11T15:04:41+08:00",
+  "finding_policy": {
+    "required_fields": [
+      "source_asset",
+      "source_sha256",
+      "reproducible_evidence",
+      "model_implication",
+      "confidence",
+      "affected_question_ids",
+      "material_decision_impact"
+    ],
+    "allowed_impacts": [
+      "route_added_and_selected",
+      "route_added_but_rejected",
+      "model_family_removed",
+      "variable_space_reduced",
+      "constraint_added_or_changed",
+      "solver_changed",
+      "validation_strategy_changed",
+      "cross_question_state_changed",
+      "incumbent_confirmed_with_stronger_evidence",
+      "no_material_impact"
+    ],
+    "no_data_rule": "无数据/纯解析题只登记 not_applicable 与题面证据，不填造样本统计。"
+  },
+  "findings": [
+    {
+      "finding_id": "Q1-F-sample_size",
+      "question_id": "Q1",
+      "structure": "sample_size",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "cols": 5
+        },
+        "evidence_sha256": "ea38bbabb179a1b429bc2eb84b7b7d89da01caedad65bfdfde1323253e070dba"
+      },
+      "model_implication": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-variable_type",
+      "question_id": "Q1",
+      "structure": "variable_type",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "用频装备编号": "text",
+          "频段区间": "text",
+          "时间区间": "text",
+          "间隔时长": "numeric",
+          "使用次数": "numeric"
+        },
+        "evidence_sha256": "706e2aff7d0939f32ffbb6865785f383dbf3e8476ddf530dca88911944ef7686"
+      },
+      "model_implication": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-missing",
+      "question_id": "Q1",
+      "structure": "missing",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "total_cells": 750,
+          "missing_cells": 0,
+          "by_column": [
+            {
+              "column": "用频装备编号",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "频段区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "时间区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "间隔时长",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "使用次数",
+              "missing": 0,
+              "fraction": 0.0
+            }
+          ]
+        },
+        "evidence_sha256": "69c324450fdca3d2a756a52a06066f19ebbb5453f338baba25fa823dcac1ef90"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-anomaly",
+      "question_id": "Q1",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": [],
+        "evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-duplicate",
+      "question_id": "Q1",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "duplicates": 0
+        },
+        "evidence_sha256": "93149add2ac2890b19814b9da8689414af135ea11eea96c4bffeb49329931baf"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-hierarchy",
+      "question_id": "Q1",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-repeated_measures",
+      "question_id": "Q1",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-temporal",
+      "question_id": "Q1",
+      "structure": "temporal",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-spatial",
+      "question_id": "Q1",
+      "structure": "spatial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_2d": false,
+          "has_3d": false,
+          "x": null,
+          "y": null,
+          "z": null
+        },
+        "evidence_sha256": "e39dc2123716912122adf14072f50cc1e72d43f69676577c33c927c7f1ac095b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-graph",
+      "question_id": "Q1",
+      "structure": "graph",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-network",
+      "question_id": "Q1",
+      "structure": "network",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-path",
+      "question_id": "Q1",
+      "structure": "path",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-control",
+      "question_id": "Q1",
+      "structure": "control",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-combinatorial",
+      "question_id": "Q1",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-symmetry",
+      "question_id": "Q1",
+      "structure": "symmetry",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ]
+        },
+        "evidence_sha256": "e682f51628d03c8690401a38c40fcac3e5631d0f428aec4adafae8fc6721ab41"
+      },
+      "model_implication": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-monotonicity",
+      "question_id": "Q1",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "detected": false
+        },
+        "evidence_sha256": "2fa5f33c56a3df6dd6d4689666113b850c23ad0e7585d0cf5633f89cccbb14e6"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-convexity",
+      "question_id": "Q1",
+      "structure": "convexity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "text_hint": false
+        },
+        "evidence_sha256": "16d4ffdc23ef0a2fbaf5d65ad13a4905e97e108098f35543c96eb233c91d109f"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-low_rank",
+      "question_id": "Q1",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "approx_rank": 2,
+          "numeric_dimension": 2
+        },
+        "evidence_sha256": "70d4003b6eef40da4fbab926f7ca9d591b00cd9d3f9f94c57b945a05f072651a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-sparsity",
+      "question_id": "Q1",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "zero_fraction": 0.0
+        },
+        "evidence_sha256": "7aa6492798d4a001dc81e29c97896f544133ef8f7678a9312188756c0183bfd7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-periodicity",
+      "question_id": "Q1",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-decomposability",
+      "question_id": "Q1",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity": false,
+          "graph": false,
+          "table_count": 1
+        },
+        "evidence_sha256": "1847746f3ca3545789b74baac5cdb1a7ff5372c5da81422501ed2b12e6ac5505"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-reachable_domain",
+      "question_id": "Q1",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "boundary": true
+        },
+        "evidence_sha256": "aa0a5c9217e6e75e092a6889836b6d916588636bc730b3a59cd5019294069fa3"
+      },
+      "model_implication": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-conservation",
+      "question_id": "Q1",
+      "structure": "conservation",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "row_sum_relative_range": 1.338174273858921,
+          "detected": false
+        },
+        "evidence_sha256": "f75d21f9ebda98b580cb9a95490029c16b33bdd37e63f302b78571ac00d5eb2b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-special_boundary",
+      "question_id": "Q1",
+      "structure": "special_boundary",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "text_hint": true
+        },
+        "evidence_sha256": "86cfecb1b93f7c1ee74b3d0cb622752383822a42fd062033f976ddbb9873b038"
+      },
+      "model_implication": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q1",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q1",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ]
+    },
+    {
+      "finding_id": "Q1-F-elimination",
+      "question_id": "Q1",
+      "structure": "elimination",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "derived_name_hints": true
+        },
+        "evidence_sha256": "0cdc13116d52b68f6475015d529061a96720f2ce6ce6e43df9675e0d4fc90077"
+      },
+      "model_implication": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-dimensionality_reduction",
+      "question_id": "Q1",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "numeric_dimension": 2,
+          "approx_rank": 2
+        },
+        "evidence_sha256": "42ba30742bd40057f8e48c8c47f40a86da7562a0426eb01ce9c7f4928e187fc4"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-analytical_special_case",
+      "question_id": "Q1",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "no_data": false,
+          "text_hint": false
+        },
+        "evidence_sha256": "21c6f39ac7a46c70f7359ed6d6b6ba9939fec97bd5271da04d1dee0f0f508a83"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-upper_lower_bounds",
+      "question_id": "Q1",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "columns": {
+            "间隔时长": {
+              "min": 8.0,
+              "max": 60.0
+            },
+            "使用次数": {
+              "min": 3.0,
+              "max": 12.0
+            }
+          }
+        },
+        "evidence_sha256": "db27282347b606e57f5216891f51bf71d6a9a48de92ffb6e8b54b0cb97833250"
+      },
+      "model_implication": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-leakage",
+      "question_id": "Q1",
+      "structure": "leakage",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_target_columns": []
+        },
+        "evidence_sha256": "fccf8c5b6a15ed97a56f8a128f7ef3b538220a6ec0e742aa804dc839f0492234"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-unavailable_variables",
+      "question_id": "Q1",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_post_outcome_columns": []
+        },
+        "evidence_sha256": "e9c3d4d20c2bfda8b59540c496c6ab24e2a8f3d4eb5ee2fb36ac01d768a3a259"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q1-F-cross_question_shared_state",
+      "question_id": "Q1",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "time_column": "时间区间",
+          "table_count": 1
+        },
+        "evidence_sha256": "f18df78f1b9b473c0aff9ba11590803346449c270d8302975aaa90a48db85e32"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q1"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-sample_size",
+      "question_id": "Q2",
+      "structure": "sample_size",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "cols": 5
+        },
+        "evidence_sha256": "ea38bbabb179a1b429bc2eb84b7b7d89da01caedad65bfdfde1323253e070dba"
+      },
+      "model_implication": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-variable_type",
+      "question_id": "Q2",
+      "structure": "variable_type",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "用频装备编号": "text",
+          "频段区间": "text",
+          "时间区间": "text",
+          "间隔时长": "numeric",
+          "使用次数": "numeric"
+        },
+        "evidence_sha256": "706e2aff7d0939f32ffbb6865785f383dbf3e8476ddf530dca88911944ef7686"
+      },
+      "model_implication": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-missing",
+      "question_id": "Q2",
+      "structure": "missing",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "total_cells": 750,
+          "missing_cells": 0,
+          "by_column": [
+            {
+              "column": "用频装备编号",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "频段区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "时间区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "间隔时长",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "使用次数",
+              "missing": 0,
+              "fraction": 0.0
+            }
+          ]
+        },
+        "evidence_sha256": "69c324450fdca3d2a756a52a06066f19ebbb5453f338baba25fa823dcac1ef90"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-anomaly",
+      "question_id": "Q2",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": [],
+        "evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-duplicate",
+      "question_id": "Q2",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "duplicates": 0
+        },
+        "evidence_sha256": "93149add2ac2890b19814b9da8689414af135ea11eea96c4bffeb49329931baf"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-hierarchy",
+      "question_id": "Q2",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-repeated_measures",
+      "question_id": "Q2",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-temporal",
+      "question_id": "Q2",
+      "structure": "temporal",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-spatial",
+      "question_id": "Q2",
+      "structure": "spatial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_2d": false,
+          "has_3d": false,
+          "x": null,
+          "y": null,
+          "z": null
+        },
+        "evidence_sha256": "e39dc2123716912122adf14072f50cc1e72d43f69676577c33c927c7f1ac095b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-graph",
+      "question_id": "Q2",
+      "structure": "graph",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-network",
+      "question_id": "Q2",
+      "structure": "network",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-path",
+      "question_id": "Q2",
+      "structure": "path",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-control",
+      "question_id": "Q2",
+      "structure": "control",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-combinatorial",
+      "question_id": "Q2",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-symmetry",
+      "question_id": "Q2",
+      "structure": "symmetry",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ]
+        },
+        "evidence_sha256": "e682f51628d03c8690401a38c40fcac3e5631d0f428aec4adafae8fc6721ab41"
+      },
+      "model_implication": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-monotonicity",
+      "question_id": "Q2",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "detected": false
+        },
+        "evidence_sha256": "2fa5f33c56a3df6dd6d4689666113b850c23ad0e7585d0cf5633f89cccbb14e6"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-convexity",
+      "question_id": "Q2",
+      "structure": "convexity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "text_hint": false
+        },
+        "evidence_sha256": "16d4ffdc23ef0a2fbaf5d65ad13a4905e97e108098f35543c96eb233c91d109f"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-low_rank",
+      "question_id": "Q2",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "approx_rank": 2,
+          "numeric_dimension": 2
+        },
+        "evidence_sha256": "70d4003b6eef40da4fbab926f7ca9d591b00cd9d3f9f94c57b945a05f072651a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-sparsity",
+      "question_id": "Q2",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "zero_fraction": 0.0
+        },
+        "evidence_sha256": "7aa6492798d4a001dc81e29c97896f544133ef8f7678a9312188756c0183bfd7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-periodicity",
+      "question_id": "Q2",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-decomposability",
+      "question_id": "Q2",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity": false,
+          "graph": false,
+          "table_count": 1
+        },
+        "evidence_sha256": "1847746f3ca3545789b74baac5cdb1a7ff5372c5da81422501ed2b12e6ac5505"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-reachable_domain",
+      "question_id": "Q2",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "boundary": true
+        },
+        "evidence_sha256": "aa0a5c9217e6e75e092a6889836b6d916588636bc730b3a59cd5019294069fa3"
+      },
+      "model_implication": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-conservation",
+      "question_id": "Q2",
+      "structure": "conservation",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "row_sum_relative_range": 1.338174273858921,
+          "detected": false
+        },
+        "evidence_sha256": "f75d21f9ebda98b580cb9a95490029c16b33bdd37e63f302b78571ac00d5eb2b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-special_boundary",
+      "question_id": "Q2",
+      "structure": "special_boundary",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "text_hint": true
+        },
+        "evidence_sha256": "86cfecb1b93f7c1ee74b3d0cb622752383822a42fd062033f976ddbb9873b038"
+      },
+      "model_implication": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q2",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q2",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ]
+    },
+    {
+      "finding_id": "Q2-F-elimination",
+      "question_id": "Q2",
+      "structure": "elimination",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "derived_name_hints": true
+        },
+        "evidence_sha256": "0cdc13116d52b68f6475015d529061a96720f2ce6ce6e43df9675e0d4fc90077"
+      },
+      "model_implication": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-dimensionality_reduction",
+      "question_id": "Q2",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "numeric_dimension": 2,
+          "approx_rank": 2
+        },
+        "evidence_sha256": "42ba30742bd40057f8e48c8c47f40a86da7562a0426eb01ce9c7f4928e187fc4"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-analytical_special_case",
+      "question_id": "Q2",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "no_data": false,
+          "text_hint": false
+        },
+        "evidence_sha256": "21c6f39ac7a46c70f7359ed6d6b6ba9939fec97bd5271da04d1dee0f0f508a83"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-upper_lower_bounds",
+      "question_id": "Q2",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "columns": {
+            "间隔时长": {
+              "min": 8.0,
+              "max": 60.0
+            },
+            "使用次数": {
+              "min": 3.0,
+              "max": 12.0
+            }
+          }
+        },
+        "evidence_sha256": "db27282347b606e57f5216891f51bf71d6a9a48de92ffb6e8b54b0cb97833250"
+      },
+      "model_implication": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-leakage",
+      "question_id": "Q2",
+      "structure": "leakage",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_target_columns": []
+        },
+        "evidence_sha256": "fccf8c5b6a15ed97a56f8a128f7ef3b538220a6ec0e742aa804dc839f0492234"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-unavailable_variables",
+      "question_id": "Q2",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_post_outcome_columns": []
+        },
+        "evidence_sha256": "e9c3d4d20c2bfda8b59540c496c6ab24e2a8f3d4eb5ee2fb36ac01d768a3a259"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q2-F-cross_question_shared_state",
+      "question_id": "Q2",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "time_column": "时间区间",
+          "table_count": 1
+        },
+        "evidence_sha256": "f18df78f1b9b473c0aff9ba11590803346449c270d8302975aaa90a48db85e32"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-sample_size",
+      "question_id": "Q3",
+      "structure": "sample_size",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "cols": 5
+        },
+        "evidence_sha256": "ea38bbabb179a1b429bc2eb84b7b7d89da01caedad65bfdfde1323253e070dba"
+      },
+      "model_implication": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-variable_type",
+      "question_id": "Q3",
+      "structure": "variable_type",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "用频装备编号": "text",
+          "频段区间": "text",
+          "时间区间": "text",
+          "间隔时长": "numeric",
+          "使用次数": "numeric"
+        },
+        "evidence_sha256": "706e2aff7d0939f32ffbb6865785f383dbf3e8476ddf530dca88911944ef7686"
+      },
+      "model_implication": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-missing",
+      "question_id": "Q3",
+      "structure": "missing",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "total_cells": 750,
+          "missing_cells": 0,
+          "by_column": [
+            {
+              "column": "用频装备编号",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "频段区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "时间区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "间隔时长",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "使用次数",
+              "missing": 0,
+              "fraction": 0.0
+            }
+          ]
+        },
+        "evidence_sha256": "69c324450fdca3d2a756a52a06066f19ebbb5453f338baba25fa823dcac1ef90"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-anomaly",
+      "question_id": "Q3",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": [],
+        "evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-duplicate",
+      "question_id": "Q3",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "duplicates": 0
+        },
+        "evidence_sha256": "93149add2ac2890b19814b9da8689414af135ea11eea96c4bffeb49329931baf"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-hierarchy",
+      "question_id": "Q3",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-repeated_measures",
+      "question_id": "Q3",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-temporal",
+      "question_id": "Q3",
+      "structure": "temporal",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-spatial",
+      "question_id": "Q3",
+      "structure": "spatial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_2d": false,
+          "has_3d": false,
+          "x": null,
+          "y": null,
+          "z": null
+        },
+        "evidence_sha256": "e39dc2123716912122adf14072f50cc1e72d43f69676577c33c927c7f1ac095b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-graph",
+      "question_id": "Q3",
+      "structure": "graph",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-network",
+      "question_id": "Q3",
+      "structure": "network",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-path",
+      "question_id": "Q3",
+      "structure": "path",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-control",
+      "question_id": "Q3",
+      "structure": "control",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-combinatorial",
+      "question_id": "Q3",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-symmetry",
+      "question_id": "Q3",
+      "structure": "symmetry",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ]
+        },
+        "evidence_sha256": "e682f51628d03c8690401a38c40fcac3e5631d0f428aec4adafae8fc6721ab41"
+      },
+      "model_implication": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-monotonicity",
+      "question_id": "Q3",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "detected": false
+        },
+        "evidence_sha256": "2fa5f33c56a3df6dd6d4689666113b850c23ad0e7585d0cf5633f89cccbb14e6"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-convexity",
+      "question_id": "Q3",
+      "structure": "convexity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "text_hint": false
+        },
+        "evidence_sha256": "16d4ffdc23ef0a2fbaf5d65ad13a4905e97e108098f35543c96eb233c91d109f"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-low_rank",
+      "question_id": "Q3",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "approx_rank": 2,
+          "numeric_dimension": 2
+        },
+        "evidence_sha256": "70d4003b6eef40da4fbab926f7ca9d591b00cd9d3f9f94c57b945a05f072651a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-sparsity",
+      "question_id": "Q3",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "zero_fraction": 0.0
+        },
+        "evidence_sha256": "7aa6492798d4a001dc81e29c97896f544133ef8f7678a9312188756c0183bfd7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-periodicity",
+      "question_id": "Q3",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-decomposability",
+      "question_id": "Q3",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity": false,
+          "graph": false,
+          "table_count": 1
+        },
+        "evidence_sha256": "1847746f3ca3545789b74baac5cdb1a7ff5372c5da81422501ed2b12e6ac5505"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-reachable_domain",
+      "question_id": "Q3",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "boundary": true
+        },
+        "evidence_sha256": "aa0a5c9217e6e75e092a6889836b6d916588636bc730b3a59cd5019294069fa3"
+      },
+      "model_implication": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-conservation",
+      "question_id": "Q3",
+      "structure": "conservation",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "row_sum_relative_range": 1.338174273858921,
+          "detected": false
+        },
+        "evidence_sha256": "f75d21f9ebda98b580cb9a95490029c16b33bdd37e63f302b78571ac00d5eb2b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-special_boundary",
+      "question_id": "Q3",
+      "structure": "special_boundary",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "text_hint": true
+        },
+        "evidence_sha256": "86cfecb1b93f7c1ee74b3d0cb622752383822a42fd062033f976ddbb9873b038"
+      },
+      "model_implication": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q3",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q3",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ]
+    },
+    {
+      "finding_id": "Q3-F-elimination",
+      "question_id": "Q3",
+      "structure": "elimination",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "derived_name_hints": true
+        },
+        "evidence_sha256": "0cdc13116d52b68f6475015d529061a96720f2ce6ce6e43df9675e0d4fc90077"
+      },
+      "model_implication": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-dimensionality_reduction",
+      "question_id": "Q3",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "numeric_dimension": 2,
+          "approx_rank": 2
+        },
+        "evidence_sha256": "42ba30742bd40057f8e48c8c47f40a86da7562a0426eb01ce9c7f4928e187fc4"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-analytical_special_case",
+      "question_id": "Q3",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "no_data": false,
+          "text_hint": false
+        },
+        "evidence_sha256": "21c6f39ac7a46c70f7359ed6d6b6ba9939fec97bd5271da04d1dee0f0f508a83"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-upper_lower_bounds",
+      "question_id": "Q3",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "columns": {
+            "间隔时长": {
+              "min": 8.0,
+              "max": 60.0
+            },
+            "使用次数": {
+              "min": 3.0,
+              "max": 12.0
+            }
+          }
+        },
+        "evidence_sha256": "db27282347b606e57f5216891f51bf71d6a9a48de92ffb6e8b54b0cb97833250"
+      },
+      "model_implication": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-leakage",
+      "question_id": "Q3",
+      "structure": "leakage",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_target_columns": []
+        },
+        "evidence_sha256": "fccf8c5b6a15ed97a56f8a128f7ef3b538220a6ec0e742aa804dc839f0492234"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-unavailable_variables",
+      "question_id": "Q3",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_post_outcome_columns": []
+        },
+        "evidence_sha256": "e9c3d4d20c2bfda8b59540c496c6ab24e2a8f3d4eb5ee2fb36ac01d768a3a259"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q3-F-cross_question_shared_state",
+      "question_id": "Q3",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "time_column": "时间区间",
+          "table_count": 1
+        },
+        "evidence_sha256": "f18df78f1b9b473c0aff9ba11590803346449c270d8302975aaa90a48db85e32"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-sample_size",
+      "question_id": "Q4",
+      "structure": "sample_size",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "cols": 5
+        },
+        "evidence_sha256": "ea38bbabb179a1b429bc2eb84b7b7d89da01caedad65bfdfde1323253e070dba"
+      },
+      "model_implication": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-variable_type",
+      "question_id": "Q4",
+      "structure": "variable_type",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "用频装备编号": "text",
+          "频段区间": "text",
+          "时间区间": "text",
+          "间隔时长": "numeric",
+          "使用次数": "numeric"
+        },
+        "evidence_sha256": "706e2aff7d0939f32ffbb6865785f383dbf3e8476ddf530dca88911944ef7686"
+      },
+      "model_implication": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-missing",
+      "question_id": "Q4",
+      "structure": "missing",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "total_cells": 750,
+          "missing_cells": 0,
+          "by_column": [
+            {
+              "column": "用频装备编号",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "频段区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "时间区间",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "间隔时长",
+              "missing": 0,
+              "fraction": 0.0
+            },
+            {
+              "column": "使用次数",
+              "missing": 0,
+              "fraction": 0.0
+            }
+          ]
+        },
+        "evidence_sha256": "69c324450fdca3d2a756a52a06066f19ebbb5453f338baba25fa823dcac1ef90"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-anomaly",
+      "question_id": "Q4",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": [],
+        "evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-duplicate",
+      "question_id": "Q4",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "duplicates": 0
+        },
+        "evidence_sha256": "93149add2ac2890b19814b9da8689414af135ea11eea96c4bffeb49329931baf"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-hierarchy",
+      "question_id": "Q4",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-repeated_measures",
+      "question_id": "Q4",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          }
+        },
+        "evidence_sha256": "efabaee0c398f802ba261ec9d759264712250c38925df56def76a5c93e360d76"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-temporal",
+      "question_id": "Q4",
+      "structure": "temporal",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-spatial",
+      "question_id": "Q4",
+      "structure": "spatial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_2d": false,
+          "has_3d": false,
+          "x": null,
+          "y": null,
+          "z": null
+        },
+        "evidence_sha256": "e39dc2123716912122adf14072f50cc1e72d43f69676577c33c927c7f1ac095b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-graph",
+      "question_id": "Q4",
+      "structure": "graph",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-network",
+      "question_id": "Q4",
+      "structure": "network",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-path",
+      "question_id": "Q4",
+      "structure": "path",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "has_edge_endpoints": false,
+          "source": null,
+          "target": null,
+          "edge_tokens": false
+        },
+        "evidence_sha256": "22168d947ff99d1e84cc525070d78fa39e336f2c21cfef9321e30bbd9c98e044"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-control",
+      "question_id": "Q4",
+      "structure": "control",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-combinatorial",
+      "question_id": "Q4",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ]
+        },
+        "evidence_sha256": "9f53abb4517cfb0ae3561a45c5d38429d8159b07c7e1580a0858d6168c78601a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-symmetry",
+      "question_id": "Q4",
+      "structure": "symmetry",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ]
+        },
+        "evidence_sha256": "e682f51628d03c8690401a38c40fcac3e5631d0f428aec4adafae8fc6721ab41"
+      },
+      "model_implication": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-monotonicity",
+      "question_id": "Q4",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "detected": false
+        },
+        "evidence_sha256": "2fa5f33c56a3df6dd6d4689666113b850c23ad0e7585d0cf5633f89cccbb14e6"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-convexity",
+      "question_id": "Q4",
+      "structure": "convexity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "text_hint": false
+        },
+        "evidence_sha256": "16d4ffdc23ef0a2fbaf5d65ad13a4905e97e108098f35543c96eb233c91d109f"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-low_rank",
+      "question_id": "Q4",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "approx_rank": 2,
+          "numeric_dimension": 2
+        },
+        "evidence_sha256": "70d4003b6eef40da4fbab926f7ca9d591b00cd9d3f9f94c57b945a05f072651a"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-sparsity",
+      "question_id": "Q4",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "zero_fraction": 0.0
+        },
+        "evidence_sha256": "7aa6492798d4a001dc81e29c97896f544133ef8f7678a9312188756c0183bfd7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-periodicity",
+      "question_id": "Q4",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "time_column": "时间区间"
+        },
+        "evidence_sha256": "16d1be2255c9090f076aacebf9a32984f2715c2f976e2b6c9b78fbbf5f81dbe7"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-decomposability",
+      "question_id": "Q4",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity": false,
+          "graph": false,
+          "table_count": 1
+        },
+        "evidence_sha256": "1847746f3ca3545789b74baac5cdb1a7ff5372c5da81422501ed2b12e6ac5505"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-reachable_domain",
+      "question_id": "Q4",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "boundary": true
+        },
+        "evidence_sha256": "aa0a5c9217e6e75e092a6889836b6d916588636bc730b3a59cd5019294069fa3"
+      },
+      "model_implication": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-conservation",
+      "question_id": "Q4",
+      "structure": "conservation",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "row_sum_relative_range": 1.338174273858921,
+          "detected": false
+        },
+        "evidence_sha256": "f75d21f9ebda98b580cb9a95490029c16b33bdd37e63f302b78571ac00d5eb2b"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-special_boundary",
+      "question_id": "Q4",
+      "structure": "special_boundary",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "text_hint": true
+        },
+        "evidence_sha256": "86cfecb1b93f7c1ee74b3d0cb622752383822a42fd062033f976ddbb9873b038"
+      },
+      "model_implication": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q4",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q4",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ]
+    },
+    {
+      "finding_id": "Q4-F-elimination",
+      "question_id": "Q4",
+      "structure": "elimination",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "derived_name_hints": true
+        },
+        "evidence_sha256": "0cdc13116d52b68f6475015d529061a96720f2ce6ce6e43df9675e0d4fc90077"
+      },
+      "model_implication": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-dimensionality_reduction",
+      "question_id": "Q4",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "rows": 150,
+          "numeric_dimension": 2,
+          "approx_rank": 2
+        },
+        "evidence_sha256": "42ba30742bd40057f8e48c8c47f40a86da7562a0426eb01ce9c7f4928e187fc4"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-analytical_special_case",
+      "question_id": "Q4",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "no_data": false,
+          "text_hint": false
+        },
+        "evidence_sha256": "21c6f39ac7a46c70f7359ed6d6b6ba9939fec97bd5271da04d1dee0f0f508a83"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-upper_lower_bounds",
+      "question_id": "Q4",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "columns": {
+            "间隔时长": {
+              "min": 8.0,
+              "max": 60.0
+            },
+            "使用次数": {
+              "min": 3.0,
+              "max": 12.0
+            }
+          }
+        },
+        "evidence_sha256": "db27282347b606e57f5216891f51bf71d6a9a48de92ffb6e8b54b0cb97833250"
+      },
+      "model_implication": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-leakage",
+      "question_id": "Q4",
+      "structure": "leakage",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_target_columns": []
+        },
+        "evidence_sha256": "fccf8c5b6a15ed97a56f8a128f7ef3b538220a6ec0e742aa804dc839f0492234"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-unavailable_variables",
+      "question_id": "Q4",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "possible_post_outcome_columns": []
+        },
+        "evidence_sha256": "e9c3d4d20c2bfda8b59540c496c6ab24e2a8f3d4eb5ee2fb36ac01d768a3a259"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    },
+    {
+      "finding_id": "Q4-F-cross_question_shared_state",
+      "question_id": "Q4",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "source_asset": "附件/附件1.xlsx",
+      "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "reproducible_evidence": {
+        "method": "deterministic local structural scan (no search input)",
+        "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>",
+        "observed": {
+          "entity_id": "用频装备编号",
+          "time_column": "时间区间",
+          "table_count": 1
+        },
+        "evidence_sha256": "f18df78f1b9b473c0aff9ba11590803346449c270d8302975aaa90a48db85e32"
+      },
+      "model_implication": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "confidence": "medium",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "material_decision_impact": "no_material_impact",
+      "decision_before": {},
+      "decision_after": {},
+      "changed_paths": []
+    }
+  ]
+}

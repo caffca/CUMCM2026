@@ -1,0 +1,43 @@
+{
+  "figure_id": "fig-q4-vs-q2",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:27+08:00",
+  "source_results": [
+    {
+      "file": "Q4_table1.json",
+      "sha256": "d0192bb534111c17a23c14e6535fdcd2d71d0bf7db19b1d0f0f95f100e12e8e9",
+      "keys": [
+        "by_class",
+        "objective_tuple"
+      ]
+    },
+    {
+      "file": "Q4_solution.json",
+      "sha256": "d429868879265b1a5d5fe5f0ee912317758d4593a6f249633d6f81a1af17bb3a",
+      "keys": [
+        "revoke_gain_vs_q2"
+      ]
+    }
+  ],
+  "source_hash": "bf0a5e74b00013f85d31a27dafb9be8e74418723ec0a7a263b65b9a1c6376924",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 18,
+      "text_count": 0,
+      "collection_count": 0
+    },
+    "B": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 8,
+      "text_count": 0,
+      "collection_count": 0
+    }
+  },
+  "annotations": [],
+  "axes": [],
+  "caption": "问题四与问题二对比"
+}

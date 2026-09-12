@@ -1,0 +1,1662 @@
+{
+ "idea_id": "Q4-R22",
+ "deterministic": true,
+ "wall_seconds_total": 29.2,
+ "mod10_rule_check": {
+  "pairs_checked": 4005,
+  "true_conflicts": 19,
+  "rule_mismatches": 0,
+  "examples": []
+ },
+ "cc_edges": 19,
+ "cc_strip_matrix": {
+  "C025|C055": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 119,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -3,
+     -1
+    ],
+    [
+     -3,
+     1
+    ],
+    [
+     -3,
+     -2
+    ],
+    [
+     -3,
+     2
+    ]
+   ]
+  },
+  "C023|C033": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 119,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -3,
+     -1
+    ],
+    [
+     -3,
+     1
+    ],
+    [
+     -3,
+     -2
+    ],
+    [
+     -3,
+     2
+    ]
+   ]
+  },
+  "C031|C051": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 51,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [
+    -7,
+    9
+   ],
+   "sample_feas": [
+    [
+     0,
+     -7
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     -7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     -4
+    ],
+    [
+     1,
+     -7
+    ],
+    [
+     -2,
+     -7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     -7
+    ]
+   ]
+  },
+  "C076|C086": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 28,
+   "gi_feasible_if_gj_none": [
+    9
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     -1,
+     9
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     6
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     -4,
+     2
+    ],
+    [
+     -4,
+     -4
+    ]
+   ]
+  },
+  "C061|C071": {
+   "n_pairs_total": 270,
+   "n_pairs_feasible": 68,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [
+    -7,
+    -6,
+    -5
+   ],
+   "sample_feas": [
+    [
+     0,
+     -5
+    ],
+    [
+     0,
+     -6
+    ],
+    [
+     0,
+     -7
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     -5
+    ],
+    [
+     -1,
+     -6
+    ],
+    [
+     -1,
+     -7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     -5
+    ],
+    [
+     1,
+     -6
+    ],
+    [
+     1,
+     -7
+    ]
+   ]
+  },
+  "C033|C043": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 0,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": []
+  },
+  "C039|C049": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 54,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    9
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     -1,
+     9
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     -6,
+     0
+    ],
+    [
+     -6,
+     -1
+    ],
+    [
+     -6,
+     1
+    ]
+   ]
+  },
+  "C028|C058": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 90,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    9
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     -1,
+     9
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -2,
+     -6
+    ],
+    [
+     -2,
+     6
+    ],
+    [
+     -2,
+     7
+    ],
+    [
+     -2,
+     8
+    ]
+   ]
+  },
+  "C069|C079": {
+   "n_pairs_total": 288,
+   "n_pairs_feasible": 77,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [
+    -7,
+    -6,
+    9
+   ],
+   "sample_feas": [
+    [
+     0,
+     -6
+    ],
+    [
+     0,
+     -7
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -6
+    ],
+    [
+     -1,
+     -7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     -6
+    ],
+    [
+     1,
+     -7
+    ],
+    [
+     -2,
+     -2
+    ]
+   ]
+  },
+  "C038|C048": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 91,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     6
+    ],
+    [
+     -1,
+     7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     5
+    ],
+    [
+     -2,
+     6
+    ],
+    [
+     -2,
+     7
+    ],
+    [
+     -3,
+     1
+    ]
+   ]
+  },
+  "C022|C032": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 140,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -2,
+     -3
+    ],
+    [
+     -2,
+     3
+    ],
+    [
+     -2,
+     -4
+    ],
+    [
+     -2,
+     4
+    ],
+    [
+     -2,
+     -5
+    ],
+    [
+     -2,
+     5
+    ],
+    [
+     -2,
+     -6
+    ]
+   ]
+  },
+  "C027|C057": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 26,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     -1,
+     9
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     6
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     -4,
+     2
+    ],
+    [
+     -4,
+     -4
+    ]
+   ]
+  },
+  "C037|C077": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 131,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -2,
+     -3
+    ]
+   ]
+  },
+  "C067|C077": {
+   "n_pairs_total": 270,
+   "n_pairs_feasible": 114,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2
+   ],
+   "sample_feas": [
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -4
+    ],
+    [
+     0,
+     -5
+    ],
+    [
+     0,
+     -6
+    ],
+    [
+     0,
+     -7
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     -3
+    ],
+    [
+     -1,
+     -4
+    ],
+    [
+     -1,
+     -5
+    ],
+    [
+     -1,
+     -6
+    ],
+    [
+     -1,
+     -7
+    ]
+   ]
+  },
+  "C019|C029": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 79,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     4
+    ],
+    [
+     -1,
+     7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     6
+    ],
+    [
+     -2,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     -4
+    ]
+   ]
+  },
+  "C005|C025": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 140,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -2,
+     -3
+    ],
+    [
+     -2,
+     3
+    ],
+    [
+     -2,
+     -4
+    ],
+    [
+     -2,
+     4
+    ],
+    [
+     -2,
+     -5
+    ],
+    [
+     -2,
+     5
+    ],
+    [
+     -2,
+     -6
+    ]
+   ]
+  },
+  "C050|C070": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 160,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     -2
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     -1,
+     -3
+    ],
+    [
+     -1,
+     3
+    ],
+    [
+     -1,
+     -4
+    ],
+    [
+     -1,
+     4
+    ],
+    [
+     -1,
+     -5
+    ],
+    [
+     -1,
+     5
+    ],
+    [
+     -1,
+     -6
+    ]
+   ]
+  },
+  "C043|C053": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 51,
+   "gi_feasible_if_gj_none": [],
+   "gj_feasible_if_gi_none": [
+    -7,
+    9
+   ],
+   "sample_feas": [
+    [
+     0,
+     -7
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -1,
+     -7
+    ],
+    [
+     -1,
+     8
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     -4
+    ],
+    [
+     1,
+     -7
+    ],
+    [
+     -2,
+     -7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     -4
+    ],
+    [
+     2,
+     -7
+    ]
+   ]
+  },
+  "C021|C051": {
+   "n_pairs_total": 324,
+   "n_pairs_feasible": 142,
+   "gi_feasible_if_gj_none": [
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2
+   ],
+   "gj_feasible_if_gi_none": [],
+   "sample_feas": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -2,
+     1
+    ],
+    [
+     -2,
+     -2
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -2,
+     -3
+    ],
+    [
+     -2,
+     3
+    ],
+    [
+     -2,
+     -4
+    ],
+    [
+     -2,
+     4
+    ],
+    [
+     -2,
+     -5
+    ],
+    [
+     -2,
+     5
+    ],
+    [
+     -2,
+     -6
+    ]
+   ]
+  }
+ },
+ "cc_components": [
+  {
+   "component": [
+    "C005",
+    "C025",
+    "C055"
+   ],
+   "mode": "brute_force",
+   "combos": 5832,
+   "cost": [
+    2,
+    5
+   ]
+  },
+  {
+   "component": [
+    "C019",
+    "C029"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    6
+   ]
+  },
+  {
+   "component": [
+    "C021",
+    "C031",
+    "C051"
+   ],
+   "mode": "brute_force",
+   "combos": 5832,
+   "cost": [
+    2,
+    9
+   ]
+  },
+  {
+   "component": [
+    "C022",
+    "C032"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    2
+   ]
+  },
+  {
+   "component": [
+    "C023",
+    "C033",
+    "C043",
+    "C053"
+   ],
+   "mode": "brute_force",
+   "combos": 104976,
+   "cost": null,
+   "note": "分量内无法全消解，交由阶段 II"
+  },
+  {
+   "component": [
+    "C027",
+    "C057"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    2,
+    2
+   ]
+  },
+  {
+   "component": [
+    "C028",
+    "C058"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    6
+   ]
+  },
+  {
+   "component": [
+    "C037",
+    "C067",
+    "C077"
+   ],
+   "mode": "brute_force",
+   "combos": 4860,
+   "cost": [
+    2,
+    4
+   ]
+  },
+  {
+   "component": [
+    "C038",
+    "C048"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    5
+   ]
+  },
+  {
+   "component": [
+    "C039",
+    "C049"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    6
+   ]
+  },
+  {
+   "component": [
+    "C050",
+    "C070"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    1
+   ]
+  },
+  {
+   "component": [
+    "C061",
+    "C071"
+   ],
+   "mode": "brute_force",
+   "combos": 270,
+   "cost": [
+    1,
+    5
+   ]
+  },
+  {
+   "component": [
+    "C069",
+    "C079"
+   ],
+   "mode": "brute_force",
+   "combos": 288,
+   "cost": [
+    1,
+    6
+   ]
+  },
+  {
+   "component": [
+    "C076",
+    "C086"
+   ],
+   "mode": "brute_force",
+   "combos": 324,
+   "cost": [
+    1,
+    9
+   ]
+  }
+ ],
+ "repair_steps": 113,
+ "repair_log_head": [
+  {
+   "edge": [
+    "A001",
+    "B001"
+   ],
+   "fix": "revoke",
+   "plan": "B001"
+  },
+  {
+   "edge": [
+    "A001",
+    "C002"
+   ],
+   "fix": "revoke",
+   "plan": "C002"
+  },
+  {
+   "edge": [
+    "A001",
+    "C012"
+   ],
+   "fix": "revoke",
+   "plan": "C012"
+  },
+  {
+   "edge": [
+    "A002",
+    "B010"
+   ],
+   "fix": "revoke",
+   "plan": "B010"
+  },
+  {
+   "edge": [
+    "A002",
+    "C009"
+   ],
+   "fix": "revoke",
+   "plan": "C009"
+  },
+  {
+   "edge": [
+    "A002",
+    "C010"
+   ],
+   "fix": "adjust",
+   "plan": "C010",
+   "action": {
+    "df": -2
+   },
+   "kind": "df"
+  },
+  {
+   "edge": [
+    "A002",
+    "C019"
+   ],
+   "fix": "revoke",
+   "plan": "C019"
+  },
+  {
+   "edge": [
+    "A002",
+    "C029"
+   ],
+   "fix": "adjust",
+   "plan": "C029",
+   "action": {
+    "dg": 1
+   },
+   "kind": "dg"
+  },
+  {
+   "edge": [
+    "A003",
+    "B009"
+   ],
+   "fix": "revoke",
+   "plan": "B009"
+  },
+  {
+   "edge": [
+    "A003",
+    "C008"
+   ],
+   "fix": "adjust",
+   "plan": "C008",
+   "action": {
+    "dg": -6
+   },
+   "kind": "dg"
+  },
+  {
+   "edge": [
+    "A003",
+    "C018"
+   ],
+   "fix": "revoke",
+   "plan": "C018"
+  },
+  {
+   "edge": [
+    "A003",
+    "C028"
+   ],
+   "fix": "revoke",
+   "plan": "C028"
+  },
+  {
+   "edge": [
+    "A004",
+    "B014"
+   ],
+   "fix": "revoke",
+   "plan": "B014"
+  },
+  {
+   "edge": [
+    "A004",
+    "B018"
+   ],
+   "fix": "revoke",
+   "plan": "B018"
+  },
+  {
+   "edge": [
+    "A004",
+    "C016"
+   ],
+   "fix": "revoke",
+   "plan": "C016"
+  },
+  {
+   "edge": [
+    "A004",
+    "C017"
+   ],
+   "fix": "revoke",
+   "plan": "C017"
+  },
+  {
+   "edge": [
+    "A004",
+    "C027"
+   ],
+   "fix": "revoke",
+   "plan": "C027"
+  },
+  {
+   "edge": [
+    "A005",
+    "B007"
+   ],
+   "fix": "revoke",
+   "plan": "B007"
+  },
+  {
+   "edge": [
+    "A005",
+    "B012"
+   ],
+   "fix": "revoke",
+   "plan": "B012"
+  },
+  {
+   "edge": [
+    "A005",
+    "C014"
+   ],
+   "fix": "revoke",
+   "plan": "C014"
+  },
+  {
+   "edge": [
+    "A005",
+    "C024"
+   ],
+   "fix": "revoke",
+   "plan": "C024"
+  },
+  {
+   "edge": [
+    "A005",
+    "C054"
+   ],
+   "fix": "adjust",
+   "plan": "A005",
+   "action": {
+    "dt": -2
+   },
+   "kind": "dt"
+  },
+  {
+   "edge": [
+    "A006",
+    "B004"
+   ],
+   "fix": "adjust",
+   "plan": "B004",
+   "action": {
+    "df": -5
+   },
+   "kind": "df"
+  },
+  {
+   "edge": [
+    "A006",
+    "B008"
+   ],
+   "fix": "revoke",
+   "plan": "B008"
+  },
+  {
+   "edge": [
+    "A006",
+    "C006"
+   ],
+   "fix": "adjust",
+   "plan": "C006",
+   "action": {
+    "dg": -1
+   },
+   "kind": "dg"
+  },
+  {
+   "edge": [
+    "A007",
+    "B011"
+   ],
+   "fix": "revoke",
+   "plan": "B011"
+  },
+  {
+   "edge": [
+    "A007",
+    "B022"
+   ],
+   "fix": "revoke",
+   "plan": "B022"
+  },
+  {
+   "edge": [
+    "A007",
+    "C023"
+   ],
+   "fix": "revoke",
+   "plan": "C023"
+  },
+  {
+   "edge": [
+    "A007",
+    "C053"
+   ],
+   "fix": "adjust",
+   "plan": "A007",
+   "action": {
+    "df": 1
+   },
+   "kind": "df"
+  },
+  {
+   "edge": [
+    "A008",
+    "C038"
+   ],
+   "fix": "revoke",
+   "plan": "C038"
+  },
+  {
+   "edge": [
+    "A008",
+    "C039"
+   ],
+   "fix": "revoke",
+   "plan": "C039"
+  },
+  {
+   "edge": [
+    "A008",
+    "C049"
+   ],
+   "fix": "revoke",
+   "plan": "C049"
+  },
+  {
+   "edge": [
+    "A008",
+    "C058"
+   ],
+   "fix": "revoke",
+   "plan": "C058"
+  },
+  {
+   "edge": [
+    "A008",
+    "C059"
+   ],
+   "fix": "adjust",
+   "plan": "A008",
+   "action": {
+    "df": 4
+   },
+   "kind": "df"
+  },
+  {
+   "edge": [
+    "A009",
+    "C033"
+   ],
+   "fix": "revoke",
+   "plan": "C033"
+  },
+  {
+   "edge": [
+    "A009",
+    "C043"
+   ],
+   "fix": "revoke",
+   "plan": "C043"
+  },
+  {
+   "edge": [
+    "A009",
+    "C053"
+   ],
+   "fix": "revoke",
+   "plan": "C053"
+  },
+  {
+   "edge": [
+    "A009",
+    "C054"
+   ],
+   "fix": "adjust",
+   "plan": "A009",
+   "action": {
+    "df": 2
+   },
+   "kind": "df"
+  },
+  {
+   "edge": [
+    "A010",
+    "C037"
+   ],
+   "fix": "revoke",
+   "plan": "C037"
+  },
+  {
+   "edge": [
+    "A010",
+    "C057"
+   ],
+   "fix": "adjust",
+   "plan": "C057",
+   "action": {
+    "dt": -2
+   },
+   "kind": "dt"
+  }
+ ],
+ "n_adjust_repairs": 47,
+ "n_revoke_repairs": 66,
+ "final_residual_internal": 0,
+ "objective_tuple_internal": [
+  66,
+  43,
+  1111,
+  144
+ ],
+ "objective_scalar": 66004311110144,
+ "endpoint_order_rule": "类权 C(1)<B(10)<A(100) 先动；候选按 (类型 df<dt<dg, |v|升, 负先)；修不动撤销 C 优先、同权撤销 id 大者"
+}

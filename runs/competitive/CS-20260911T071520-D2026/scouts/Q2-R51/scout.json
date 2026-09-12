@@ -1,0 +1,512 @@
+{
+ "idea_id": "Q2-R51",
+ "question_id": "Q2",
+ "status": "completed",
+ "feasible": true,
+ "objective": 6012119960663,
+ "objective_tuple": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "runtime_seconds": 547.3,
+ "replicates": 1,
+ "replicate_values": [
+  6012119960663
+ ],
+ "stability_metric": null,
+ "stability_note": "确定性精确路线：协议 replicates_deterministic=1；同机同参重跑 incumbent 目标逐位一致（本次未做第二重复，预算全用于层1-4 搜索与界）。",
+ "lower_bound": 2000000000000,
+ "upper_bound": 6012119960663,
+ "bound_detail": {
+  "kind": "CP-SAT 分层界（词典序四级，逐级锁定）",
+  "layer1_revoke": {
+   "LB": 2,
+   "UB": 6,
+   "gap": 4,
+   "LB_sources": {
+    "min_sum_revoke_best_bound": 2,
+    "floor_k0_INFEASIBLE_certificate": 1,
+    "relaxation_base_edges_only": 0,
+    "full_model_deep_certificate": null
+   },
+   "lb_sources_all": [
+    0,
+    1,
+    2
+   ],
+   "certificate_status": "OPEN：Σr≤5 深证明 116.5s 仍 UNKNOWN ⇒ 撤销层只有 LB=2（CP 界/地板证书），无闭合 INFEASIBLE 证书"
+  },
+  "per_layer_incumbent_and_bound": [
+   {
+    "layer": "revoke",
+    "status": "FEASIBLE",
+    "incumbent": 21,
+    "best_bound": 2,
+    "proven_optimal": false,
+    "budget_s": 48.0,
+    "wall_s": 48.2
+   },
+   {
+    "layer": "adjusted",
+    "status": "FEASIBLE",
+    "incumbent": 121,
+    "best_bound": 84,
+    "proven_optimal": false,
+    "budget_s": 131.5,
+    "wall_s": 131.5
+   },
+   {
+    "layer": "priority_loss",
+    "status": "FEASIBLE",
+    "incumbent": 1996,
+    "best_bound": 422,
+    "proven_optimal": false,
+    "budget_s": 56.2,
+    "wall_s": 56.7
+   },
+   {
+    "layer": "magnitude_sum",
+    "status": "FEASIBLE",
+    "incumbent": 663,
+    "best_bound": 321,
+    "proven_optimal": false,
+    "budget_s": 95.6,
+    "wall_s": 95.7
+   }
+  ],
+  "scalar_LB_note": "下界标量只用层1（撤销数）的证书界；层2-4 的界是在Σr=层1 锁定条件下的条件界，不参与全局标量下界。",
+  "ladder": [
+   {
+    "k_max_revoke": 0,
+    "phase": "floor",
+    "status": "INFEASIBLE",
+    "budget_s": 15.0,
+    "model_build_s": 1.96,
+    "wall_s": 6.2,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 13,
+    "phase": "lapse8_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 2.03,
+    "wall_s": 7.3,
+    "objective_used": false,
+    "found_revoke": 13,
+    "found_tuple": [
+     13,
+     137,
+     2971,
+     769
+    ]
+   },
+   {
+    "k_max_revoke": 9,
+    "phase": "lapse4_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 10.8,
+    "objective_used": false,
+    "found_revoke": 9,
+    "found_tuple": [
+     9,
+     137,
+     2540,
+     770
+    ]
+   },
+   {
+    "k_max_revoke": 7,
+    "phase": "lapse2_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 5.6,
+    "objective_used": false,
+    "found_revoke": 7,
+    "found_tuple": [
+     7,
+     142,
+     2649,
+     794
+    ]
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try1",
+    "status": "UNKNOWN",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 14.5,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try2",
+    "status": "UNKNOWN",
+    "budget_s": 28.0,
+    "model_build_s": 0.0,
+    "wall_s": 28.1,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try3",
+    "status": "UNKNOWN",
+    "budget_s": 56.0,
+    "model_build_s": 0.0,
+    "wall_s": 56.1,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "deep_certificate",
+    "status": "OPTIMAL",
+    "budget_s": 119.7,
+    "model_build_s": 0.0,
+    "wall_s": 82.5,
+    "objective_used": false,
+    "found_revoke": 6,
+    "found_tuple": [
+     6,
+     142,
+     2449,
+     820
+    ]
+   }
+  ],
+  "certificates": {
+   "L1_min_revoke_solve": {
+    "status": "FEASIBLE",
+    "value": 21,
+    "best_bound": 2,
+    "proven_optimal": false,
+    "wall_s": 48.2
+   },
+   "revoke_LB_floor_certificate": 1,
+   "deep_certificate_outcome": "FEASIBLE@k=6 (r=6)",
+   "revoke_LB_after_ladder": 2,
+   "revoke_UB_incumbent": 6,
+   "revoke_gap": 4,
+   "ladder_rebuilds": 2,
+   "contested_k": 6,
+   "revoke_LB_certificate": 2,
+   "revoke_layer_certified_optimal": false,
+   "layers_locked_unproven": [
+    "adjusted",
+    "priority_loss",
+    "magnitude_sum"
+   ],
+   "revoke_final_incumbent": 6
+  },
+  "phase2": {
+   "stage1_UB_revoke": 6,
+   "n_star_edges": 1693,
+   "n_base_edges": 297,
+   "revoke_LB_relaxation": 0,
+   "revoke_LB_relaxation_valid": true,
+   "relaxation_record": {
+    "model": "relaxation(base_edges_only)",
+    "status": "OPTIMAL",
+    "budget_s": 57.2,
+    "wall_s": 3.5,
+    "clauses": 142427,
+    "value": 0,
+    "best_bound": 0,
+    "proven_optimal": true
+   },
+   "certificate_stopped": "UNKNOWN@k=5（预算耗尽）",
+   "certificate_ladder": [
+    {
+     "k_max_revoke": 5,
+     "status": "UNKNOWN",
+     "budget_s": 114.3,
+     "wall_s": 116.5
+    }
+   ],
+   "revoke_LB_full_model_certificate": null,
+   "revoke_LB_best": 0,
+   "revoke_gap_best": 6,
+   "certified": false,
+   "wall_total_s": 120.4
+  }
+ },
+ "relative_gap": 0.6673386404320107,
+ "seed": "确定性路线（CP-SAT random_seed=0, num_search_workers=8）；replicates=1",
+ "canonical_evaluator": {
+  "invoked": true,
+  "out": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/eval.json",
+  "objective": [
+   6,
+   121,
+   1996,
+   663
+  ],
+  "feasible": true
+ },
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "failure_mode": null,
+ "scope_statement": "只读 common_input/protocol/evaluator/routes；只写本 scout 目录；未写 results/figures/paper/IDEA_DECISION/FINAL_MODEL_SPEC，侦察数字不外传进 results/。",
+ "structural_findings": {
+  "star_vs_base": {
+   "base_conflicts": 297,
+   "star_edges": 1693,
+   "action_level_nogoods": 270626
+  },
+  "key_insight_revokes_are_preventive": {
+   "statement": "把子句集缩到『只处理原 297 条冲突边』的真子句松弛后，min Σr = 0（CP-SAT 证 OPTIMAL）⇒ 本实例的撤销需求完全由『不得新造冲突』（预防性 G* 约束）逼出，而不是由原冲突本身逼出。",
+   "evidence_relaxation_min_revoke": 0,
+   "evidence_relaxation_status": "OPTIMAL",
+   "consequence": "因此撤销数下界不可能来自原冲突图上的匹配/团等组合论证（CH-05 探针实测组合界=0），只能来自全势边模型上的 INFEASIBLE 证书；该证书在 116.5s 内未取得 ⇒ gap_revoke=4 是本路线的诚实交付状态。"
+  },
+  "identity_action_note": "每计划只保留 1 个恒等动作（若同时保留 (f,0)/(t,0) 两个恒等列，分数解可用 0.5/0.5 零代价满足全部成对行，见 Q2-R53 自检）。"
+ },
+ "search_process": {
+  "stages": [
+   {
+    "layer": "revoke",
+    "status": "FEASIBLE",
+    "incumbent": 21,
+    "best_bound": 2,
+    "proven_optimal": false,
+    "budget_s": 48.0,
+    "wall_s": 48.2
+   },
+   {
+    "layer": "adjusted",
+    "status": "FEASIBLE",
+    "incumbent": 121,
+    "best_bound": 84,
+    "proven_optimal": false,
+    "budget_s": 131.5,
+    "wall_s": 131.5
+   },
+   {
+    "layer": "priority_loss",
+    "status": "FEASIBLE",
+    "incumbent": 1996,
+    "best_bound": 422,
+    "proven_optimal": false,
+    "budget_s": 56.2,
+    "wall_s": 56.7
+   },
+   {
+    "layer": "magnitude_sum",
+    "status": "FEASIBLE",
+    "incumbent": 663,
+    "best_bound": 321,
+    "proven_optimal": false,
+    "budget_s": 95.6,
+    "wall_s": 95.7
+   }
+  ],
+  "ladder": [
+   {
+    "k_max_revoke": 0,
+    "phase": "floor",
+    "status": "INFEASIBLE",
+    "budget_s": 15.0,
+    "model_build_s": 1.96,
+    "wall_s": 6.2,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 13,
+    "phase": "lapse8_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 2.03,
+    "wall_s": 7.3,
+    "objective_used": false,
+    "found_revoke": 13,
+    "found_tuple": [
+     13,
+     137,
+     2971,
+     769
+    ]
+   },
+   {
+    "k_max_revoke": 9,
+    "phase": "lapse4_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 10.8,
+    "objective_used": false,
+    "found_revoke": 9,
+    "found_tuple": [
+     9,
+     137,
+     2540,
+     770
+    ]
+   },
+   {
+    "k_max_revoke": 7,
+    "phase": "lapse2_try1",
+    "status": "OPTIMAL",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 5.6,
+    "objective_used": false,
+    "found_revoke": 7,
+    "found_tuple": [
+     7,
+     142,
+     2649,
+     794
+    ]
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try1",
+    "status": "UNKNOWN",
+    "budget_s": 14.0,
+    "model_build_s": 0.0,
+    "wall_s": 14.5,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try2",
+    "status": "UNKNOWN",
+    "budget_s": 28.0,
+    "model_build_s": 0.0,
+    "wall_s": 28.1,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "lapse1_try3",
+    "status": "UNKNOWN",
+    "budget_s": 56.0,
+    "model_build_s": 0.0,
+    "wall_s": 56.1,
+    "objective_used": false
+   },
+   {
+    "k_max_revoke": 6,
+    "phase": "deep_certificate",
+    "status": "OPTIMAL",
+    "budget_s": 119.7,
+    "model_build_s": 0.0,
+    "wall_s": 82.5,
+    "objective_used": false,
+    "found_revoke": 6,
+    "found_tuple": [
+     6,
+     142,
+     2449,
+     820
+    ]
+   }
+  ],
+  "certificates": {
+   "L1_min_revoke_solve": {
+    "status": "FEASIBLE",
+    "value": 21,
+    "best_bound": 2,
+    "proven_optimal": false,
+    "wall_s": 48.2
+   },
+   "revoke_LB_floor_certificate": 1,
+   "deep_certificate_outcome": "FEASIBLE@k=6 (r=6)",
+   "revoke_LB_after_ladder": 2,
+   "revoke_UB_incumbent": 6,
+   "revoke_gap": 4,
+   "ladder_rebuilds": 2,
+   "contested_k": 6,
+   "revoke_LB_certificate": 2,
+   "revoke_layer_certified_optimal": false,
+   "layers_locked_unproven": [
+    "adjusted",
+    "priority_loss",
+    "magnitude_sum"
+   ],
+   "revoke_final_incumbent": 6
+  },
+  "phase2": {
+   "stage1_UB_revoke": 6,
+   "n_star_edges": 1693,
+   "n_base_edges": 297,
+   "revoke_LB_relaxation": 0,
+   "revoke_LB_relaxation_valid": true,
+   "relaxation_record": {
+    "model": "relaxation(base_edges_only)",
+    "status": "OPTIMAL",
+    "budget_s": 57.2,
+    "wall_s": 3.5,
+    "clauses": 142427,
+    "value": 0,
+    "best_bound": 0,
+    "proven_optimal": true
+   },
+   "certificate_stopped": "UNKNOWN@k=5（预算耗尽）",
+   "certificate_ladder": [
+    {
+     "k_max_revoke": 5,
+     "status": "UNKNOWN",
+     "budget_s": 114.3,
+     "wall_s": 116.5
+    }
+   ],
+   "revoke_LB_full_model_certificate": null,
+   "revoke_LB_best": 0,
+   "revoke_gap_best": 6,
+   "certified": false,
+   "wall_total_s": 120.4
+  }
+ },
+ "model_facts": {
+  "n_bool": 4582,
+  "n_clauses": 270626,
+  "n_star_edges": 1693,
+  "n_plans": 150,
+  "build_seconds": 2.22
+ },
+ "star_graph": {
+  "pairs_envelope_checked": 2266,
+  "star_edges": 1693,
+  "infeasible_combos": 270626,
+  "build_seconds": 0.4,
+  "source": "cache",
+  "mask_recheck": "PASS(sample=250)",
+  "mask_recheck_seconds": 0.4,
+  "base_conflicts": 297,
+  "star_covers_base": true
+ },
+ "feasibility_gates": {
+  "base_conflicts_subset_of_star": true,
+  "mask_recheck": "PASS(sample=250)",
+  "internal_residual_pairs": 0,
+  "evaluator_n_violations": 0
+ },
+ "stopping_reason": "budget_exhausted_after_layer4",
+ "route_failure_flags_triggered": [
+  {
+   "flag": "600s 内第一层阶梯无法闭合（LB<UB）",
+   "route_source": "CH-05 Q2-R51 failure_conditions[0]",
+   "evidence": "Σr≤5 在全势边模型上 116.5s 仍 UNKNOWN；min Σr 的 CP 分数界=2，地板测试 Σr≤0 INFEASIBLE 仅给 LB≥1 ⇒ LB=2 < UB=6",
+   "consequence": "按 route 的 gap_threshold 条款：论文只能写'撤销数在 [2,6] 区间内'（并给证书脚本），禁止写'撤销数最优'。层2-4 同样只有条件界(adjusted 84≤·≤121, priority 422≤·≤1996, magnitude 321≤·≤663)"
+  },
+  {
+   "flag": "候选对规模膨胀（探针 1525 → 实测 1693）",
+   "route_source": "CH-05 Q2-R51 failure_conditions[1]",
+   "evidence": "G*=1693 边 / 270626 子句，模型构建 2.1-4.0s，未触发改带分片建模",
+   "consequence": "未触发（规模可接受）"
+  }
+ ],
+ "route_gates_passed": [
+  "全势边完备性硬门：原冲突边 297 ⊆ G* 1693（assert 通过）",
+  "解析式 δf/δt 判定 vs 掩码暴力抽样复核（250 对）逐组合一致",
+  "未做列剪枝（探针显示'只保留修好原边的动作列'会给出假 OPTIMAL）",
+  "独立 checker：evaluator --question Q2 feasible=True、n_violations=0；内部掩码复核 residual=0",
+  "大权重合法性：四级采用逐级锁定而非大 M 标量化（ADJUDICATION R4 的实现口径）",
+  "CP-SAT 状态与 best bound 全部如实落盘（cpsat_report.json / r51_certificates.json）"
+ ]
+}

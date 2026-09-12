@@ -1,0 +1,43 @@
+{
+ "question_id": "Q2",
+ "variant": "check",
+ "checker": true,
+ "by_class": {
+  "A": {
+   "kept": 5,
+   "adjusted": 15,
+   "revoked": 0
+  },
+  "B": {
+   "kept": 4,
+   "adjusted": 30,
+   "revoked": 6
+  },
+  "C": {
+   "kept": 14,
+   "adjusted": 76,
+   "revoked": 0
+  }
+ },
+ "objective_tuple": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "revoked": 6,
+ "adjusted": 121,
+ "residual_pairs": 0,
+ "objective_scalar": 6012119960661,
+ "residual_pairs_second_impl": 0,
+ "mirrors_for_ir_pairs": true,
+ "compliance_violations": 0,
+ "violation_detail": [],
+ "objective_tuple_second_impl": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "tuple_matches_solver": 1
+}

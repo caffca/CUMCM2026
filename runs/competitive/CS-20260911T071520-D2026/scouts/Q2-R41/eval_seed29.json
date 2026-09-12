@@ -1,0 +1,36 @@
+{
+ "question": "Q2",
+ "feasible": true,
+ "objective": [
+  28,
+  75,
+  2012,
+  379
+ ],
+ "direction": "lexicographic_minimize",
+ "unit": "revoked,adjusted,priority_loss,magnitude_sum",
+ "stats": {
+  "kept": 47,
+  "adjusted": 75,
+  "revoked": 28,
+  "by_class": {
+   "A": {
+    "kept": 9,
+    "adjusted": 7,
+    "revoked": 4
+   },
+   "B": {
+    "kept": 6,
+    "adjusted": 24,
+    "revoked": 10
+   },
+   "C": {
+    "kept": 32,
+    "adjusted": 44,
+    "revoked": 14
+   }
+  }
+ },
+ "violations": [],
+ "n_violations": 0
+}

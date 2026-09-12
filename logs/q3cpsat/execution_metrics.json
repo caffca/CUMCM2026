@@ -1,0 +1,15 @@
+{
+ "elapsed_seconds": 6.359,
+ "status": "completed",
+ "stopping_reason": "solved",
+ "evaluator_calls": 1,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "cpsat_a",
+  "enum_payload": "logs/q3enum/payload.json",
+  "limit": 60,
+  "workers": 4
+ }
+}

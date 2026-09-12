@@ -1,0 +1,29 @@
+{
+  "figure_id": "fig-q2-table1",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:26+08:00",
+  "source_results": [
+    {
+      "file": "Q2_table1.json",
+      "sha256": "8c556bdc1a3a8037109fabc293e3263dfbf06657d38d87c51ee14654b8a382d9",
+      "keys": [
+        "by_class",
+        "table_closure_diff"
+      ]
+    }
+  ],
+  "source_hash": "2075120b8c67ec6f163054150dbb7c119158ac3a8a12e32708bba0420621a395",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 9,
+      "text_count": 9,
+      "collection_count": 0
+    }
+  },
+  "annotations": [],
+  "axes": [],
+  "caption": "问题二按类统计（表1）"
+}

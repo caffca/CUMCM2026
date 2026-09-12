@@ -1,0 +1,16 @@
+{
+ "question_id": "Q3",
+ "variant": "lp_hiGHS",
+ "n_cand": 4469,
+ "n_edges": 214992,
+ "cand_agreement_second_impl": 1,
+ "base_tuple": [
+  18,
+  93,
+  2181,
+  607
+ ],
+ "lp_status": 0,
+ "lp_bound": 2234.5,
+ "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+}

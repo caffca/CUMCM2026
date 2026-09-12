@@ -1,0 +1,1732 @@
+{
+  "schema_version": 2,
+  "run_id": "FULL-D2026-PROD-F",
+  "budget_class": "full",
+  "authoritative": true,
+  "complete": true,
+  "generated_at": "2026-09-12T10:07:28+08:00",
+  "plan_sha256": "64cb72b7ebc68f1c4a80a29b449d41ed60ddf62fd6dfed938ef82f7ea4610665",
+  "source_plan_sha256": "cebd46fc3b64416408a875e0aef3610813676e38aee04fa777cea1a51d20b2a5",
+  "plan_file": "runs/fresh/FULL-D2026-PROD-F/SHARD_PLAN.json",
+  "identity_contract": {
+    "algorithm": "sha256(canonical shard identity v1)",
+    "shard_ids_derived": true,
+    "caller_ids_rechecked": true
+  },
+  "execution_isolation": {
+    "mode": "task_attempt_directory",
+    "one_directory_per_attempt": true,
+    "preexisting_output_policy": "reject"
+  },
+  "execution_policy": {
+    "max_workers": 2,
+    "isolation_mode": "task_attempt_directory",
+    "deadline_seconds": 1800
+  },
+  "failure_policy": {
+    "max_attempts": 1,
+    "retry_on": [
+      "nonzero_exit",
+      "timeout",
+      "missing_output"
+    ],
+    "continue_on_failure": false,
+    "fail_fast": true,
+    "required_task_ids": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "optional_task_ids": []
+  },
+  "coverage_policy": {
+    "design": "required_subset",
+    "required_cases": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "mandatory_cases": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "replicates": 1,
+    "authority_level": "full",
+    "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+    "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+    "rationale": "one selected question-local route per current FMS question with all declared scenario/seed/parameter cases"
+  },
+  "coverage_summary": {
+    "design": "required_subset",
+    "declared_case_ids": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "mandatory_case_ids": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "observed_case_ids": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ],
+    "missing_case_ids": [],
+    "complete": true
+  },
+  "required_task_ids": [
+    "Q1-Q1-R21-main-N-A-p0",
+    "Q2-Q2-R51-main-N-A-p0",
+    "Q2-Q2-R51-main-N-A-p1",
+    "Q2-Q2-R51-main-N-A-p2",
+    "Q2-Q2-R51-main-N-A-p3",
+    "Q2-Q2-R51-main-N-A-p4",
+    "Q2-Q2-R51-main-N-A-p5",
+    "Q2-Q2-R51-main-N-A-p6",
+    "Q3-Q3-R11-main-N-A-p0",
+    "Q3-Q3-R11-main-N-A-p1",
+    "Q3-Q3-R11-main-N-A-p2",
+    "Q3-Q3-R11-main-N-A-p3",
+    "Q3-Q3-R11-main-N-A-p4",
+    "Q3-Q3-R11-main-N-A-p5",
+    "Q3-Q3-R11-main-N-A-p6",
+    "Q4-Q4-R11-main-N-A-p0",
+    "Q4-Q4-R11-main-N-A-p1",
+    "Q4-Q4-R11-main-N-A-p2",
+    "Q4-Q4-R11-main-N-A-p3"
+  ],
+  "stop_policy": {
+    "mode": "all_required",
+    "required_task_ids": [
+      "Q1-Q1-R21-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p0",
+      "Q2-Q2-R51-main-N-A-p1",
+      "Q2-Q2-R51-main-N-A-p2",
+      "Q2-Q2-R51-main-N-A-p3",
+      "Q2-Q2-R51-main-N-A-p4",
+      "Q2-Q2-R51-main-N-A-p5",
+      "Q2-Q2-R51-main-N-A-p6",
+      "Q3-Q3-R11-main-N-A-p0",
+      "Q3-Q3-R11-main-N-A-p1",
+      "Q3-Q3-R11-main-N-A-p2",
+      "Q3-Q3-R11-main-N-A-p3",
+      "Q3-Q3-R11-main-N-A-p4",
+      "Q3-Q3-R11-main-N-A-p5",
+      "Q3-Q3-R11-main-N-A-p6",
+      "Q4-Q4-R11-main-N-A-p0",
+      "Q4-Q4-R11-main-N-A-p1",
+      "Q4-Q4-R11-main-N-A-p2",
+      "Q4-Q4-R11-main-N-A-p3"
+    ]
+  },
+  "stop_decision": {
+    "mode": "all-required",
+    "reached": true,
+    "reason": "all required shards complete",
+    "source": "derived from status/declared stop contract"
+  },
+  "tasks": [
+    {
+      "task_id": "Q1-Q1-R21-main-N-A-p0",
+      "shard_id": "shard-9e55f1598e2515f105e1ea74",
+      "identity_sha256": "9e55f1598e2515f105e1ea74f770ee666ff65a2948d79684c2ad67a4f099c0cf",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q1",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q1-Q1-R21-main-N-A-p0/status.json",
+      "status_sha256": "3372c69d5befe68a6ac04f0af3993afe13a2b20c4291fdfc2dc6e28787afaaaf",
+      "coverage_case_id": "Q1-Q1-R21-main-N-A-p0",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/payload.json": "fc22bbfacfbc15b62e61d306e4af1c4a7be6d52dfbc1c4c2e119e5068d5bad04",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json": "0c00f9bd30cf5f5ea0be337801ac5b64b28376466cdfa7010ca027d42813a738"
+      },
+      "model_binding": {
+        "question_id": "Q1",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "4cb9dfc411287049da46af7db3d85069da490af3ec4d301cf677de66395c0c49",
+        "route_id": "Q1-R21",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "exact_enumerative",
+        "solver_algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+        "implementation": "code/prod/q1_solve.py",
+        "implementation_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "data/canonical_plans.csv",
+          "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.6902834000065923
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p0",
+      "shard_id": "shard-723734c529fa080ccd023973",
+      "identity_sha256": "723734c529fa080ccd0239735c66359103e021d35b5094937167277c2b13b947",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p0/status.json",
+      "status_sha256": "f6e407151cb3804235e0cdf17dbd04066a5f8068bbe3319af7bff044fcfa0f24",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p0",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p0/attempts/001/payload.json": "bbb5a68f06581e903e2bc29bf80efa02800c18a02aed891522cce55837599f3e",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p0/attempts/001/execution_metrics.json": "5eb5c9c4b4287e2bd075e74b53597566712f4b339e513ea089273f3c0086dd99"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 1331.2976975000056
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p1",
+      "shard_id": "shard-db20a37a4fa3353c4351ca11",
+      "identity_sha256": "db20a37a4fa3353c4351ca11e467e4a293c1fdedd5da63f863cf0e75aae52a54",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p1/status.json",
+      "status_sha256": "072c3acd37efc0b7fe44582112d99bf8b140352da99b1607bee8df009c17000b",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p1",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p1/attempts/001/payload.json": "97c225102e0e968ce5d6dcc261f3b02276053a0c787c87670ee50c0f12cea310",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p1/attempts/001/execution_metrics.json": "5ec592619a235ffeb7badf3ff90400251e5a1b36f0744abd4b8a839f8d019178"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 1269.7528452000115
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p2",
+      "shard_id": "shard-6da87755b534f92e8d9120bc",
+      "identity_sha256": "6da87755b534f92e8d9120bca67592734010c2d0a36c629f0046155342e5cea6",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p2/status.json",
+      "status_sha256": "67484a9adcfb7740685ca5207bc67a20e2cc308e7476280ab989a76c1a35516b",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p2",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p2/attempts/001/payload.json": "b7f9e7689357c61bd46d3444c5d240d1a06cb7aca5542c03e0819a248128244d",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p2/attempts/001/execution_metrics.json": "2c3de5a1dd06d0d0eaf95f434bf07248fcd7397c267ec926c47ddbe99b4a81bd"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 241.46743200000492
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p3",
+      "shard_id": "shard-6225b5d09a4009a90405677a",
+      "identity_sha256": "6225b5d09a4009a90405677a7f0921b90397fe8d625787d0de60960ac7083ba6",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p3/status.json",
+      "status_sha256": "39b4c65b347531720e8f240ca9fc88b9c5898fccf2818ff50b2d56f75c73268b",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p3",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p3/attempts/001/payload.json": "e7ef290c64e699906968ce711e8154bd3e9258af232620d82a09ebef61ae06e8",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p3/attempts/001/execution_metrics.json": "b3650e1124daaea22e07f8d21db77e1c9997115e4abb281d07ff637b9e2172c9"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 240.6260486000101
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p4",
+      "shard_id": "shard-c8dfeef4125692abf9deb942",
+      "identity_sha256": "c8dfeef4125692abf9deb94273aed0adacc8245f9af16f5c4a965e049d455503",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p4/status.json",
+      "status_sha256": "b315ea429f1b3ec5fe0400ba90ace837b182cc86f93aa6cfa4affaeac825a493",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p4",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p4/attempts/001/payload.json": "e04ac156742428f1e729d5d585191a86c7b8f34efb4c03a7bc32e666f4e9a6f9",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p4/attempts/001/execution_metrics.json": "0328f2a66b2d62d0121022cbce51a5bb816b5385b7483ce1935a7b3e957f34ef"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 240.2756262999901
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p5",
+      "shard_id": "shard-9f98a305948085fe8e0abbb1",
+      "identity_sha256": "9f98a305948085fe8e0abbb1f3fa93f06ffd70758659c9acb797ac9a61ba4ab9",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p5/status.json",
+      "status_sha256": "c89043fa5f0838c13a40814ed9b088bac2ed8a457b3d559f3f00b0e6215d95ef",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p5",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p5/attempts/001/payload.json": "431bf0c4daa9d843ec50e18fb841fd22f2a07634d0e71e6b51de60e3886b2b50",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p5/attempts/001/execution_metrics.json": "6ba3a74a1cf32a213d304e7f46b928280dc8b6dfe370f3d629d166eed64b2924"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.2523155999951996
+    },
+    {
+      "task_id": "Q2-Q2-R51-main-N-A-p6",
+      "shard_id": "shard-63f1a1f2db29e6feacadeb57",
+      "identity_sha256": "63f1a1f2db29e6feacadeb57317352b81b090ea9ddc6d1fb127a9e7de77a7555",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q2",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p6/status.json",
+      "status_sha256": "24ac93363297a7dbcc7cef6f0fe3557b81a49fe90626d5587882c7b1adfc51d5",
+      "coverage_case_id": "Q2-Q2-R51-main-N-A-p6",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/payload.json": "6c824410bc5f2267be0e81032f11af620dfae245b8770d1c44c282c08f5969af",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/execution_metrics.json": "7c3b6597942a54e9a30a74dbb62ffd30a82cc2fea711a72b3d2bdea62fcea1b1"
+      },
+      "model_binding": {
+        "question_id": "Q2",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+        "route_id": "Q2-R51",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "implementation": "code/prod/q2_solve.py",
+        "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.2182909999974072
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p0",
+      "shard_id": "shard-1a2358a4a1554615a32a96ba",
+      "identity_sha256": "1a2358a4a1554615a32a96baac70c5ef670b3adf37bbd3cebc4d1adf49114bf2",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p0/status.json",
+      "status_sha256": "b5a8430a22f86cb5996af247449548bd3dd0ac8b457381a9a1c7c672c0c14564",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p0",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p0/attempts/001/payload.json": "e08ac66eeb9a57bea34ab54956028e08fa69e89171f9d62ac7fe3b79f465aa21",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p0/attempts/001/execution_metrics.json": "6d326953f70ebc7fcc8eb66cd64d13a3f355e9bb7241c11b07668887d97697a9"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 7.850362500001211
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p1",
+      "shard_id": "shard-e88bc56346e75babcc0c9b91",
+      "identity_sha256": "e88bc56346e75babcc0c9b91ca665c5147f3f9501dd24b4161954f381c041fb5",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p1/status.json",
+      "status_sha256": "661e60348294e30461671780e8fd661a2aa332a500df7ccee48b14e4a5ceb701",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p1",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p1/attempts/001/payload.json": "3ba90c60c84c9470be2b03ba42d7555dea74dd230b941d7a49c4c72afa769190",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p1/attempts/001/execution_metrics.json": "2bc7eb7dedcb131b5d19d2c330d40d60c8f0561ab9b5cd1ad8ca4a0be67f8aca"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 9.542959500016877
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p2",
+      "shard_id": "shard-2db5718b2db6f93de00b746b",
+      "identity_sha256": "2db5718b2db6f93de00b746b41f06562137f1f869fafb8847c9a804a25343413",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p2/status.json",
+      "status_sha256": "b516931b06da422ea4c31be9bf1928279eae7199d26ebf918dc838c4a81b39fe",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p2",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p2/attempts/001/payload.json": "5ee1851d92294f50ddd42168f3b85b5be9c38ab10829f4482dacb96e88442116",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p2/attempts/001/execution_metrics.json": "709e4774ce1649b6be21e129bbbc62dc6f43b2e2330c2b6e8dc1ba438737d783"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 8.800330199999735
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p3",
+      "shard_id": "shard-406bc1893375cb0ddaa5474b",
+      "identity_sha256": "406bc1893375cb0ddaa5474b6fee71d466e41e7c3fdd180034736a42e2044ed6",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p3/status.json",
+      "status_sha256": "7128d648bbbef647a75374a248f45a8e7a15687a2dd7f2704e4783c1ab48ec0b",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p3",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p3/attempts/001/payload.json": "481528f7a22e1eb33de04aa20e429b582ca64b2617ee1bb1fae06945a706a83a",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p3/attempts/001/execution_metrics.json": "8c7d071ea6e1bfea167018d94d9d63ba3a42c1d83e3fe11b35d723b73ba6fc2f"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 8.778257300000405
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p4",
+      "shard_id": "shard-ef9d0d0242ae5cc6c27fe344",
+      "identity_sha256": "ef9d0d0242ae5cc6c27fe344a8afecfdebda243d916b467e21adb182b9f02cb1",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p4/status.json",
+      "status_sha256": "21ab123affaa869caa373a827127765da7959ae558663e92e5bc15c757347a3f",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p4",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p4/attempts/001/payload.json": "8cc6b41d10d4102b6ef04f97a3404eb975f24bf4ba4f1fcad2ff9ca692b7cae8",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p4/attempts/001/execution_metrics.json": "e3c39086f1e614eb061cc402bdbbc61cca1c9dd1439749f7c6e68210a597c16a"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.22022219997597858
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p5",
+      "shard_id": "shard-2804e185dc6d88d73d0b1038",
+      "identity_sha256": "2804e185dc6d88d73d0b1038c3eddbabacd487493644b97076af01e4b39800fa",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p5/status.json",
+      "status_sha256": "153d02403fe80cfef581c8829725f9c8a9596976a2336e8a9d80c5c139779387",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p5",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p5/attempts/001/payload.json": "a7d5e5edbd223803915adcda3000a66ea7eaf222884b29e72b5fdbbf280e9aed",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p5/attempts/001/execution_metrics.json": "76db6a8575263db432edca3f1d2ff06f776d27fab7050b68a648babfe2efb7c1"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.7906942999979947
+    },
+    {
+      "task_id": "Q3-Q3-R11-main-N-A-p6",
+      "shard_id": "shard-1cf554635adea9747ee92bfb",
+      "identity_sha256": "1cf554635adea9747ee92bfba5a1fec106e039cc485bf9f6bbd157b225e4a7a8",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q3",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p6/status.json",
+      "status_sha256": "f3ef9ec786a8b967150fd1835b7b7b7cfe0889b67b36456bcd1f0a13e2b752c9",
+      "coverage_case_id": "Q3-Q3-R11-main-N-A-p6",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p6/attempts/001/payload.json": "6cd8933152e2a161c98264d7888276ba4559f77391918bd3f60a189b8b1603ff",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q3-Q3-R11-main-N-A-p6/attempts/001/execution_metrics.json": "ebbe9f642c427248ca969eff45b219ff28b9b341294604e30f589a22d42f7244"
+      },
+      "model_binding": {
+        "question_id": "Q3",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+        "route_id": "Q3-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+        "implementation": "code/prod/q3_solve.py",
+        "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.37666259999969043
+    },
+    {
+      "task_id": "Q4-Q4-R11-main-N-A-p0",
+      "shard_id": "shard-79711ec1383350e3d2ee699c",
+      "identity_sha256": "79711ec1383350e3d2ee699cd9b2af96724f5ef5af9a871e543f86d384df3d2d",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q4",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p0/status.json",
+      "status_sha256": "afd314f1c19eee5f36094790e81a04f660c625f0f15e7856bbf12c7a8ec22601",
+      "coverage_case_id": "Q4-Q4-R11-main-N-A-p0",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p0/attempts/001/payload.json": "cf84f16be3a24fe2a849945ba776840613057d2086c72f7dbe2990df4a6a4dc6",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p0/attempts/001/execution_metrics.json": "3b434f14dc30fc6ec000b3b8eddc43fab1eca009832f1c4c4e11379f4ac8a9d5"
+      },
+      "model_binding": {
+        "question_id": "Q4",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+        "route_id": "Q4-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+        "implementation": "code/prod/q4_solve.py",
+        "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 1484.466480699979
+    },
+    {
+      "task_id": "Q4-Q4-R11-main-N-A-p1",
+      "shard_id": "shard-e0c6b5b40ccd61512bd9e8b4",
+      "identity_sha256": "e0c6b5b40ccd61512bd9e8b462f6fef2908e8c49ebd5dd638ac4015753747470",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q4",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p1/status.json",
+      "status_sha256": "ea6d93f056a04887dd1b4b6ef1bbba9501b146836e90e530bf0435ce20b06e7c",
+      "coverage_case_id": "Q4-Q4-R11-main-N-A-p1",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p1/attempts/001/payload.json": "c25e70fc97271df046a80784fa099ee96571172bc82fce7cadbd7f518e9e4f2d",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p1/attempts/001/execution_metrics.json": "8d78f899010389ae84fcc2a127e3a9d566700c882488c4d3f8b950faf351dc71"
+      },
+      "model_binding": {
+        "question_id": "Q4",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+        "route_id": "Q4-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+        "implementation": "code/prod/q4_solve.py",
+        "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 1553.4459476999764
+    },
+    {
+      "task_id": "Q4-Q4-R11-main-N-A-p2",
+      "shard_id": "shard-81f30b033a627634fccfd9f4",
+      "identity_sha256": "81f30b033a627634fccfd9f4a73db32461cb8948072f9d6aebf4fe918eb362fd",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q4",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p2/status.json",
+      "status_sha256": "c369958453ba68b484a2b1327eada777632aa8110d019fcc8fd032c24655edde",
+      "coverage_case_id": "Q4-Q4-R11-main-N-A-p2",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p2/attempts/001/payload.json": "8c22c4020ee5864af49d372f214c74d7165b832d1275bb1d38b93a085dee2a26",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p2/attempts/001/execution_metrics.json": "964a484119524eb272cc7e1ccb1de385e00d27472a3a22823ae27058b3b2024b"
+      },
+      "model_binding": {
+        "question_id": "Q4",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+        "route_id": "Q4-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+        "implementation": "code/prod/q4_solve.py",
+        "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.21282590000191703
+    },
+    {
+      "task_id": "Q4-Q4-R11-main-N-A-p3",
+      "shard_id": "shard-f6f7759855fd1d696bb3c9b8",
+      "identity_sha256": "f6f7759855fd1d696bb3c9b842f7b788307b7034352e1a3c5672c2de396c128b",
+      "required": true,
+      "run_id": "FULL-D2026-PROD-F",
+      "question_id": "Q4",
+      "stage": "production_question_local",
+      "budget_class": "full",
+      "authoritative": true,
+      "complete": true,
+      "state": "complete",
+      "reason": "complete",
+      "status_file": "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p3/status.json",
+      "status_sha256": "fc2401f375816340511467df09dc3138196dc171dc672b21f8b70810e6c49145",
+      "coverage_case_id": "Q4-Q4-R11-main-N-A-p3",
+      "coverage_plan_id": "P2-01-FULL-D2026-PROD-F-required-subset",
+      "coverage_plan_sha256": "f59dc86bf653a1770a8bf4adfcc632008d4dd3112735804d8e3614a8bf58d4ed",
+      "stratum_id": "",
+      "dependency_ids": [],
+      "priority": 10,
+      "preemptible": false,
+      "attempts": 1,
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p3/attempts/001/payload.json": "9578e81c6207092c651bd615d132c4f12d113e8c3de803078177962b4ffee332",
+        "runs/fresh/FULL-D2026-PROD-F/tasks/Q4-Q4-R11-main-N-A-p3/attempts/001/execution_metrics.json": "ac5125ca29fc82b5eb2147e2bafc72261561779025d62da134515e41495d373e"
+      },
+      "model_binding": {
+        "question_id": "Q4",
+        "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+        "route_id": "Q4-R11",
+        "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+        "solver_family": "deterministic_global",
+        "solver_algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+        "implementation": "code/prod/q4_solve.py",
+        "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+        "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+        "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+      },
+      "input_bindings": [
+        {
+          "path": "reports/FINAL_MODEL_SPEC.json",
+          "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+        },
+        {
+          "path": "reports/contracts/IDEA_DECISION.json",
+          "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+        },
+        {
+          "path": "reports/VALIDATION_PLAN.json",
+          "sha256": "f00b19480a65631c5ab0fd27c95d74362e0afcddeb9921366b486b9247207c81"
+        },
+        {
+          "path": "reports/data/DATA_PROFILE.json",
+          "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+        },
+        {
+          "path": "reports/data/DATASET_SNAPSHOT.json",
+          "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+        },
+        {
+          "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+          "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+        }
+      ],
+      "output_identity": {
+        "paths": [
+          "{task_dir}/payload.json",
+          "{task_dir}/execution_metrics.json"
+        ],
+        "scope": "task_attempt_directory",
+        "hashes": "recomputed_after_execution"
+      },
+      "elapsed_seconds": 0.19953899999381974
+    }
+  ],
+  "failures": [],
+  "aggregation": {
+    "task_count": 19,
+    "required_task_count": 19,
+    "complete_task_count": 19,
+    "failed_task_count": 0,
+    "total_elapsed_seconds": 6399.2648214999645,
+    "total_function_evaluations": 0,
+    "task_elapsed_p50_seconds": 8.778257300000405,
+    "task_elapsed_p90_seconds": 1484.466480699979,
+    "max_workers": 2,
+    "computed_from": "status.json attempt timings + execution_metrics files"
+  },
+  "problems": [],
+  "model_decision_binding": {
+    "schema_version": 1,
+    "authority_scope": "explanatory_projection_only",
+    "decision_record": {
+      "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+      "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658"
+    },
+    "selection_validation": {
+      "path": "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+      "sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f"
+    },
+    "problem_id": "D2026",
+    "profile_id": "PROFILE-8ADA7763202B25BA",
+    "strategy_matching_id": "MATCH-1504A0480D6D591A",
+    "question_bindings": {
+      "Q1": {
+        "question_id": "Q1",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+        "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+      },
+      "Q2": {
+        "question_id": "Q2",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+        "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+      },
+      "Q3": {
+        "question_id": "Q3",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+        "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+      },
+      "Q4": {
+        "question_id": "Q4",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+        "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+      }
+    }
+  }
+}

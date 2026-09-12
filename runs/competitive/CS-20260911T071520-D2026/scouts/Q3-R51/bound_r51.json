@@ -1,0 +1,36 @@
+{
+ "idea_id": "Q3-R51",
+ "question_id": "Q3",
+ "base": {
+  "n_kept": 144,
+  "n_revoked": 6,
+  "distinct_used": 15600,
+  "T_MAX": 643,
+  "B_MAX": 100
+ },
+ "constructive_lb": {
+  "source": "Q3-R23 solution (任务明示复用)",
+  "count": 137,
+  "verified_zero_conflict": true,
+  "verify_msg": "ok",
+  "evaluator_feasible": true,
+  "evaluator_objective": [
+   137
+  ]
+ },
+ "ub_phase_block": 332,
+ "ub_sum_cells": 997,
+ "ub_density": 676,
+ "free_cells": 48700,
+ "ub_reported": 332,
+ "gate_ub_ge_lb": {
+  "known_feasible_counts": {
+   "Q3-R23": 137,
+   "Q3-R11": 139
+  },
+  "required_min": 139,
+  "passed": true,
+  "note": "CH-05 警示#3：UB<已知可行解 ⇒ 界代码 bug"
+ },
+ "runtime_seconds": 0.19
+}

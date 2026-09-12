@@ -1,0 +1,57 @@
+{
+ "task": "TF-5 layer-1 锚定重跑 workers=8 vs workers=1 复现比对",
+ "runs": {
+  "w8": {
+   "status": "FEASIBLE",
+   "revoke_lb": 2,
+   "revoke_ub": 6,
+   "evaluator_tuple": [
+    6,
+    141,
+    2529,
+    825
+   ],
+   "total_wall_seconds": 307.2,
+   "workers": 8
+  },
+  "w1": {
+   "status": "FEASIBLE",
+   "revoke_lb": 0,
+   "revoke_ub": 6,
+   "evaluator_tuple": [
+    6,
+    122,
+    1997,
+    665
+   ],
+   "total_wall_seconds": 306.7,
+   "workers": 1
+  }
+ },
+ "agreement": {
+  "status_identical": true,
+  "revoke_ub_identical": true,
+  "revoke_lb_note": "LB 为搜索副产物（w8=2 / w1=0），多 worker 下非位级可复现，如实登记，不构成元组不一致",
+  "neither_run_dominates_planted": true,
+  "planted_also_found_by_hint_w1_snapshot_near_tie": {
+   "w1_minus_planted": [
+    0,
+    1,
+    1,
+    2
+   ]
+  }
+ },
+ "verdict": "层1 incumbent 第一级一致（rev=6，锚内）；两跑均未支配植入锚 → R11 报告 objective 采用植入锚 [6,121,1996,663]（source=planted_from_Q2-R51）",
+ "budget_disclosure": {
+  "solver_caps_seconds": [
+   300,
+   300
+  ],
+  "solver_walls_seconds": [
+   307.2,
+   306.7
+  ],
+  "note": "两跑合计求解预算 600s 上限；工件各含 ~7s 域/模型构建，逐值登记"
+ }
+}

@@ -1,0 +1,1468 @@
+# MathModel Agent 工作流单一事实源（Single Source of Truth）—— v6（Editorial & Visual Evidence）
+#
+# 本文件定义阶段顺序/每个阶段的 skill/id/输入输出/依赖/失效/失败路由。以下组件全部以本文件为准，
+# 任何地方都不得再手写一份阶段顺序或门禁清单：
+#   - skills/1start-mathmodel/SKILL.md   -> 读取本文件生成 plan.md / todo.md
+#   - agent.cordis.yml                  -> 工作流段必须与本文件一致（workflow_spec.py --check 校验）
+#   - README.md / docs/WORKFLOW_v5.md    -> 阶段表由本文件生成（docs_sync.py）
+#   - skills/6verity/scripts/check_decision_log.py -> stages 列表由本文件加载
+#   - skills/6verity/scripts/run_all_gates.py      -> 校验 decision_log 执行历史与本文件一致；gate registry 只读本表
+#
+# v5 新增字段（任务书 §24）：
+#   introduced_in   : 首次引入的本 spec 版本（旧项目 decision_log 可不含该阶段，校验器只强制 v4 阶段）
+#   depends_on      : 该阶段依赖的上游阶段 id（校验存在性；无环）
+#   parallel_group  : 并行组（同名可并行执行；v5 主链均为 serial 单组）
+#   invalidates     : 该阶段产物的下游阶段 id（上游 hash 改变 -> 这些阶段标记 INVALIDATED）
+#   on_failure      : 失败路由 {verdict/status: 目标阶段 id}（REFUTED/INCONCLUSIVE/... -> return_to）
+#   execution_profile: 执行档位（serial | parallel_group）
+#
+# v6 新增（计划.md §17，VE-01）：
+#   version: 6 / workflow_id: mathmodel-v6；新增 editorial_plan 与 figure_editorial 两个强制阶段
+#   （introduced_in=6）。阶段强制性按"项目自身 workflow.version"判定（workflow_spec.py
+#   optional/required_stage_ids + project_workflow_version）——v5 项目允许缺失新阶段，v6 项目强制。
+#
+# 修改流程：改本文件 -> 跑 `python <6verity>/scripts/workflow_spec.py --check --root <repo>`
+# 验证所有引用方一致 -> 提交。
+
+version: 6
+workflow_id: "mathmodel-v6"
+
+stages:
+  - id: intake
+    title: 资产接管
+    skill: 0intake-assets
+    introduced_in: 5
+    inputs: ["user 提供的工作区资产（题目/数据/代码/结果/图/模板）"]
+    outputs:
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "reports/intake/ASSET_CONFLICTS.json"
+      - "reports/intake/INTAKE_REPORT.md"
+      - {path: "reports/data/DATASET_SNAPSHOT.json", required: false, producer: intake}
+    depends_on: []
+    parallel_group: serial
+    invalidates: ["brainstorm", "analysis", "methodology_review", "validation_plan", "coding_visual", "result_review", "paper_plan", "schematic", "writing", "compile_package", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    # V7-P0-06：intake 正式收口强制 asset_registry v3（六态 authority；v1/v2 只读兼容不可收口）
+    gate: "asset_registry"
+    gate_args: ["--require-v3"]
+    purpose: "资产接管：清点已有题目/数据/代码/结果/图/模板，交叉一致性检查（代码vs数据/结果vs图/结果vs旧论文/模板vs官方规则/旧结果vs新canonical evaluator），缺件登记；authority 六态（primary_official/verified_legacy/unverified/conflicting/stale/invalidated，asset_registry v3）——已有结果不是真值，verified_legacy 仅冻结历史证据可被新 canonical evaluator 冲突失效；冲突必须 conflicting（双方保留）；stale/invalidated 禁作 paper claim 的 authority 输入"
+  - id: brainstorm
+    title: 头脑风暴与路线搜索
+    skill: brainstorm-mathmodel
+    introduced_in: 4
+    # Discovery hook resolves its narrow input allowlist directly from the
+    # intake registry/snapshot; keep the legacy stage input surface stable so
+    # pre-V7 artifact bindings remain readable.
+    inputs: []
+    outputs:
+      # V7-P1-00：Discovery 是 brainstorm 内部的强制前置子阶段；不新增顶级 stage。
+      # required_when is enforced by the V7 discovery/idea startup gate;
+      # required=false preserves the pre-V7 stage-close compatibility path.
+      - {path: "reports/data/DATA_PROFILE.json", required: false, required_when: "v7_discovery_policy_enabled", producer: brainstorm, schema: "data_profile.v1"}
+      - {path: "reports/data/DATA_CONTRACT.json", required: false, required_when: "v7_discovery_policy_enabled", producer: brainstorm, schema: "data_contract.v1"}
+      - {path: "reports/discovery/PROBLEM_STRUCTURE.json", required: false, required_when: "v7_discovery_policy_enabled", producer: brainstorm, schema: "problem_structure.v1"}
+      - {path: "reports/discovery/EDA_FINDINGS.json", required: false, required_when: "v7_discovery_policy_enabled", producer: brainstorm, schema: "eda_findings.v1"}
+      - {path: "reports/discovery/MODEL_OPPORTUNITIES.json", required: false, required_when: "v7_discovery_policy_enabled", producer: brainstorm, schema: "model_opportunities.v1"}
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/contracts/PROBLEM_FACTS.json"
+      - "reports/contracts/IDEA_CANDIDATES.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      # P2-04-01：版本化策略库 workspace snapshot；不做自动模型选择。
+      - {path: "reports/contracts/MODELING_STRATEGY_LIBRARY.json", required: false, required_when: "v7_model_strategy_library_enabled", producer: brainstorm, schema: "modeling_strategy_library.v1", introduced_in: 7}
+      # P2-04-02：Problem Feature Extraction；只从 Discovery/data contract 派生 profile，
+      # 不读取 IDEA/FMS，不做自动模型选择。
+      - {path: "reports/contracts/PROBLEM_PROFILE.json", required: false, required_when: "v7_problem_feature_extraction_enabled", producer: brainstorm, schema: "problem_profile.v1", introduced_in: 6}
+      # P2-04-03：Strategy Matching；只生成 question-local candidate strategy set，
+      # 不做 ranking/selection，不生成 MODEL_DECISION_RECORD。
+      - {path: "reports/contracts/STRATEGY_MATCHING.json", required: false, required_when: "v7_strategy_matching_enabled", producer: brainstorm, schema: "strategy_matching.v1", introduced_in: 6}
+      # P2-04-04：Strategy Selection Validation；无 proposal 时只生成 pending record，
+      # 有显式 proposal 时独立验证，不修改 IDEA/FMS authority。
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_strategy_selection_validation_enabled", producer: brainstorm, schema: "model_decision_record.v1", introduced_in: 6}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_strategy_selection_validation_enabled", producer: brainstorm, schema: "model_selection_validation.v1", introduced_in: 6}
+      - "reports/BRAINSTORM_REPORT.md"
+    depends_on: [intake]
+    parallel_group: serial
+    invalidates: ["analysis", "methodology_review", "validation_plan", "coding_visual", "result_review", "paper_plan", "schematic", "writing", "compile_package", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: required_unless_exempt}
+    skippable: false
+    gate: idea_contracts
+    purpose: "Competitive Search 联合路线搜索：独立 route 发现（问题重表达/模型族/求解器族覆盖）→ 结构筛选 Top-K → 公平侦察实验 → 对抗评审 → 预算内选定路线并冻结 route+solver（IDEA DECISION v2）；Manager 只合并/淘汰/记录 failure event，禁止代写 route；禁止实验结论词；不直接形成可执行模型定义"
+  - id: analysis
+    title: 赛题分析与建模设计
+    skill: 2analysis-modeling
+    introduced_in: 4
+    inputs:
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/contracts/PROBLEM_FACTS.json"
+      - "reports/contracts/IDEA_CANDIDATES.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/BRAINSTORM_REPORT.md"
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      # P2-CAP-004：P2-04 是 analysis 的真实只读策略上下文；FMS/IDEA
+      # authority 仍由后续既有契约拥有，缺失 handoff 不得在 v7 静默降级。
+      - {path: "reports/contracts/MODELING_STRATEGY_LIBRARY.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "modeling_strategy_library.v1"}
+      - {path: "reports/contracts/PROBLEM_PROFILE.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "problem_profile.v1"}
+      - {path: "reports/contracts/STRATEGY_MATCHING.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "strategy_matching.v1"}
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+    outputs: ["reports/ANALYSIS_MODELING_REPORT.md"]
+    depends_on: [brainstorm]
+    parallel_group: serial
+    invalidates: ["methodology_review", "validation_plan", "coding_visual", "result_review", "paper_plan", "schematic", "writing", "compile_package", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: ""
+    purpose: "解析题意、识别变量/约束/数据/评价指标；众数解清单 + 差异化审查"
+  - id: methodology_review
+    title: 方法学审查与模型契约
+    skill: 7methodology-review
+    timeout_seconds: 300
+    safe_parallel: false
+    introduced_in: 4
+    inputs:
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/contracts/IDEA_CANDIDATES.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/ANALYSIS_MODELING_REPORT.md"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      - {path: "reports/contracts/MODELING_STRATEGY_LIBRARY.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "modeling_strategy_library.v1"}
+      - {path: "reports/contracts/PROBLEM_PROFILE.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "problem_profile.v1"}
+      - {path: "reports/contracts/STRATEGY_MATCHING.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "strategy_matching.v1"}
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+      # P4-09 quality admission 的 real problem-run authority；只读消费既有
+      # DATA_PROFILE/IDEA inputs，不创建平行 authority。
+      - {path: "reports/data/DATA_PROFILE.json", required: true, required_when: "v7_full_paper_readability_benchmark_enabled", producer: brainstorm, schema: "data_profile.v1", introduced_in: 7}
+      - {path: "reports/contracts/IDEA_CANDIDATES.json", required: true, required_when: "v7_full_paper_readability_benchmark_enabled", producer: brainstorm, schema: "idea_candidates.v2", introduced_in: 7}
+      - {path: "reports/contracts/IDEA_DECISION.json", required: true, required_when: "v7_full_paper_readability_benchmark_enabled", producer: brainstorm, schema: "idea_decision.v3", introduced_in: 7}
+    outputs:
+      - "reports/methodology/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      # WP-04（P0-03）：methodology 只拥有需求清单，不再握有最终 manifest（producer=mfigure_finalize）
+      - "reports/FIGURE_REQUIREMENTS.json"
+      # V7-P3-02：Dynamic Reviewer Router 是 methodology_review control 的只读路由投影；
+      # A/C 固定，B 每问至多一个 primary + 一个窄 secondary。
+      - {path: "reports/review/REVIEW_ROUTER_DECISION.json", required: false, required_when: "v7_dynamic_reviewer_router_enabled", producer: methodology_review, schema: "review_router_decision.v1", introduced_in: 6}
+    depends_on: [analysis]
+    parallel_group: serial
+    invalidates: ["validation_plan", "coding_visual", "result_review", "paper_plan", "schematic", "writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: methodology
+    purpose: "DGP/假设/删失/退化/必要性/泄露/样本量审计；产出可执行模型契约 FINAL_MODEL_SPEC.json 与 Figure Requirements（数据图需求清单，proposed 状态；最终 manifest 由 figure_finalize 合并）"
+  - id: validation_plan
+    title: 验证计划冻结
+    skill: 8validation-plan
+    introduced_in: 5
+    inputs:
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/methodology/*.json"
+      # P2-CAP-004：validation plan records the explanatory decision context;
+      # it does not become a second model authority.
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+    outputs:
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/VALIDATION_PLAN.md"
+    depends_on: [methodology_review]
+    parallel_group: serial
+    invalidates: ["coding_visual", "result_review", "paper_plan", "schematic", "writing", "compile_package", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: ""
+    purpose: "运行前冻结验证证据契约：每条 claim 声明 type/metric/success_rule/failure_rule/priority（feasibility/baseline/CV/rolling/sensitivity/robustness/ablation/residual/uncertainty/convergence/scenario/degeneracy/necessity）；先定义'什么算通过'再跑实验"
+  - id: coding_visual
+    title: 编程实现与数据图草稿
+    skill: 3coding-visual
+    introduced_in: 4
+    inputs:
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      # P2-CAP-004：execution consumes a read-only Decision/Validation binding;
+      # FINAL_MODEL_SPEC remains the sole executable model definition.
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+    outputs:
+      - "code/*.py"
+      - "results/*.json"
+      # VE-03（计划.md §17.3）：coding_visual 只产草图/诊断图与 draft manifest——
+      # 最终正式图与 figure_manifest 唯一 producer 是 figure_editorial（figure_finalize）
+      - "figures/drafts/*.pdf"
+      - "figures/drafts/*.meta.json"
+      - "figures/draft_figure_manifest.json"
+      - {path: "runs/fresh/*/SHARD_PLAN.json", required: false, producer: coding_visual, schema: "shard_plan.v2"}
+      - {path: "runs/fresh/*/SHARD_AGGREGATE.json", required: false, producer: coding_visual, schema: "shard_aggregate.v2"}
+      # V7-P2-01：唯一 Sentinel production dispatch contract；只在 Sentinel
+      # production capability 激活时成为 coding_visual 的硬输出。
+      - {path: "reports/execution/SENTINEL_PRODUCTION_DISPATCH.json", required: false, required_when: "sentinel_production_execution_enabled", producer: coding_visual, schema: "sentinel_production_dispatch.v1", introduced_in: 6}
+      # V7-P3-00：triggered Challenger decision；无触发时不产出，不产生常驻成本。
+      - {path: "reports/challenger/CHALLENGER_DECISION.json", required: false, required_when: "challenger_triggered", producer: coding_visual, schema: "challenger_decision.v1", introduced_in: 6}
+    depends_on: [validation_plan]
+    parallel_group: serial
+    invalidates: ["result_review", "paper_plan", "editorial_plan", "schematic", "figure_editorial", "writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: leakage
+    purpose: "只实现 FINAL_MODEL_SPEC.json 声明的模型；按 VALIDATION_PLAN 运行并记录证据；长任务使用同一 sharded_run v2 的 identity/隔离/coverage/失败处理；结果 metadata 只能由 result_writer 写入；探索性/诊断图只产出 figures/drafts/ 与 draft manifest，不得直接批准为论文最终主图"
+  - id: result_review
+    title: 结果→Claim 判定
+    skill: 9result-review
+    introduced_in: 5
+    inputs:
+      - "results/*.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/VALIDATION_EVAL.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - {path: "results/RESULT_REGISTRY.json", required: false, required_when: "v7_execution_metadata_writer_enabled", producer: coding_visual, schema: "result_registry.v2"}
+      # V7-P3-00：Result Review 只读消费触发式 Challenger decision；不覆盖 IDEA/FMS winner。
+      - {path: "reports/challenger/CHALLENGER_DECISION.json", required: false, required_when: "challenger_triggered", producer: coding_visual, schema: "challenger_decision.v1", introduced_in: 6}
+      # P2-CAP-004：review consumes the same read-only handoff that execution
+      # wrote into result metadata and validation evidence.
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+      # VE-03：result_review 只消费草图/draft manifest（最终 manifest 在 figure_editorial 后才有）
+      - "figures/drafts/*.pdf"
+      - "figures/draft_figure_manifest.json"
+    outputs:
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/RESULT_REVIEW.md"
+      - {path: "reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json", required: false, required_when: "v7_whole_problem_route_bundle_enabled", producer: result_review, schema: "whole_problem_route_bundle.v1", introduced_in: 6}
+    depends_on: [coding_visual, validation_plan]
+    parallel_group: serial
+    invalidates: ["paper_plan", "editorial_plan", "schematic", "figure_editorial", "writing", "compile_package", "final_review", "verification"]
+    on_failure:
+      REFUTED: methodology_review
+      INCONCLUSIVE: validation_plan
+      MODEL_INVALID: methodology_review
+      IMPLEMENTATION_ERROR: coding_visual
+      DATA_INVALID: intake
+      MISSING_EVIDENCE: coding_visual
+      CRITERION_INVALID: validation_plan
+      BUDGET_EXHAUSTED: coding_visual
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: result_review
+    gate_args: ["--require-v2"]
+    purpose: "Result Review v2：只解释 validation evaluator 的 PASS/FAIL/UNKNOWN/ERROR；evaluator 必须已完成 RESULT_REGISTRY v2、execution metadata、result evidence、independent reproduction 与 P2-04 binding 校验；failure_class 精确决定 resolution/return_to；PARTIAL 仅允许显式缩窄且缩窄 claim 的 must evidence 全 PASS；禁止无 revision self-loop 与事后改阈值洗失败"
+  - id: paper_plan
+    title: 论文规划
+    skill: 10paper-plan
+    introduced_in: 5
+    inputs:
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "figures/draft_figure_manifest.json"
+    outputs:
+      - "reports/PAPER_PLAN.json"
+      - "reports/PAPER_PLAN.md"
+      - {path: "repro/CLAIM_PROVENANCE.json", required: false, producer: paper_plan}
+      # V7-P3-03：逐问 structure→model→result→baseline→evidence→gap→shared-state
+      # admission projection；不新增 stage，不成为 Paper/Result authority。
+      - {path: "reports/gates/result_paper_narrative_gate.json", required: false, required_when: "v7_result_paper_narrative_check_enabled", producer: paper_plan, schema: "result_paper_narrative_gate.v1", introduced_in: 6}
+      # VE-03：FIGURE_PLAN.json 所有权移交 editorial_plan（本阶段不再产出）
+    depends_on: [result_review]
+    parallel_group: serial
+    # VE-01（计划.md §17.4）：paper_plan 下游插入 editorial_plan；invalidates 覆盖新链
+    invalidates: ["editorial_plan", "schematic", "figure_editorial", "writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: ""
+    purpose: "Claims-Evidence Matrix（claim→result→validation→figure/table→section）；无 evidence 的 claim 不得进 writing；被淘汰方法不得从旧 brainstorm 回捞正文"
+  # VE-01（计划.md §17.4）：editorial_plan = PAPER_NARRATIVE/PAGE_PLAN/VISUAL_REFERENCE_BOARD/
+  # HERO_EVALUATION/figures/specs 的唯一 producer（FIGURE_PLAN 所有权随 VE-03 移交）。
+  # v6 项目强制；v5 项目（workflow.version<6）允许缺失（消费方按 project_workflow_version 判定）。
+  - id: editorial_plan
+    title: 科学表达编辑计划
+    skill: 13editorial-plan
+    introduced_in: 6
+    timeout_seconds: 300
+    safe_parallel: false
+    inputs:
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      # VE-03：editorial 消费草图证据与结果登记（图型选择的事实基础）
+      - "figures/drafts/*.pdf"
+      - "figures/draft_figure_manifest.json"
+      - "results/RESULT_REGISTRY.json"
+      # V7-P4-02：matrix 的 current capability/provenance 直接读取现有 registry；
+      # active v7 时纳入 editorial_plan 输入 hash，registry 变化只使真实 matrix
+      # entries 及其下游 stale，不创建第二 registry。
+      - {path: "skills/3coding-visual/renderers/registry.json", required: false, required_when: "v7_renderer_gap_matrix_enabled", schema: "renderer_capability.v1"}
+      # V7-P4-04：competition-scale visual benchmark 只在显式 benchmark capability
+      # 打开时作为 editorial_plan 的 synthetic input；不污染普通真实题 run。
+      - {path: "benchmarks/visual/COMPETITION_SCALE_INPUT_MANIFEST.json", required: false, required_when: "competition_scale_visual_benchmark_enabled", producer: editorial_plan, schema: "competition_scale_input.v1", introduced_in: 6}
+    outputs:
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/PAGE_PLAN.json"
+      # VE-03：FIGURE_PLAN.json 唯一 producer 移交 editorial_plan
+      - "reports/FIGURE_PLAN.json"
+      - "reports/VISUAL_REFERENCE_BOARD.json"
+      - "reports/HERO_EVALUATION.json"
+      # no-primary 合法项目允许 0 个 spec（typed optional；P0-02 no_primary_justification 路径）
+      - {path: "figures/specs/*.figure.json", required: false, producer: editorial_plan, schema: "figure_spec.v3"}
+      # V7-P4-02：active v7 workspace 必须由同一 editorial_plan producer 写唯一 matrix；
+      # v6/legacy workspace 不激活该 additive output。
+      - {path: "benchmarks/visual/RENDERER_GAP_MATRIX.json", required: false, required_when: "v7_renderer_gap_matrix_enabled", producer: editorial_plan, schema: "renderer_gap_matrix.v1", introduced_in: 6}
+      # V7-P4-04：唯一 competition-scale benchmark manifest；显式 capability 才激活。
+      - {path: "benchmarks/visual/COMPETITION_SCALE_BENCHMARK_MANIFEST.json", required: false, required_when: "competition_scale_visual_benchmark_enabled", producer: editorial_plan, schema: "competition_scale_visual_benchmark.v1", introduced_in: 6}
+      - "reports/EDITORIAL_PLAN.md"
+    depends_on: [paper_plan]
+    parallel_group: serial
+    invalidates: ["schematic", "figure_editorial", "writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: editorial_plan
+    purpose: "科学表达编辑计划：逐问 Narrative Arc（第一眼结论/beats/kill list）+ 视觉触发器判定（primary figure 或结构化 no_primary_justification）+ 页面带规划（PAGE_PLAN）+ FigureSpec v3 + FIGURE_PLAN + 视觉参考板（style-only）+ Hero 评估；只消费受支持 claim，不运行模型、不改结果、不生成最终图"
+  - id: schematic
+    title: 流程与架构图
+    skill: 4drawio
+    introduced_in: 4
+    inputs: ["reports/PAPER_PLAN.json", "reports/FINAL_MODEL_SPEC.json", "reports/FIGURE_PLAN.json",
+             "reports/PAPER_NARRATIVE.json"]
+    outputs:
+      - "figures/*.tex|*.mmd|*.drawio"
+      # WP-04（P0-03）：concept figure 的 manifest/source/pdf/report 全部进输出绑定
+      - {path: "figures/concept_figure_manifest.json", required: false, producer: schematic,
+         note: "skipped 时由 stage_close 写结构化 skipped closure，不伪造"}
+      - "reports/DRAWIO_REPORT.md"
+    # VE-01（计划.md §17.4）：schematic 改依赖 editorial_plan（消费 Narrative/FIGURE_PLAN）
+    depends_on: [editorial_plan]
+    parallel_group: serial
+    invalidates: ["figure_editorial", "writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: true
+    gate: ""
+    purpose: "仅当存在无法用正文/数据图表达的结构关系才画概念图（concept figure ≤1）；输出 concept manifest/source/PDF/DRAWIO_REPORT（WP-04 全绑定）；在 claim 与 paper plan 冻结后产出（P0-06：不再置于 coding_visual 后）"
+  # VE-01（计划.md §17.4）：figure_editorial = 最终正式图渲染/重绘与 RENDER_REPORT 的唯一 producer
+  # （figure_manifest.json / data_figure_manifest.json 所有权随 VE-03 从 coding_visual 移交至此）。
+  - id: figure_editorial
+    title: 正式图编辑与渲染
+    skill: 14figure-editorial
+    introduced_in: 6
+    timeout_seconds: 600
+    safe_parallel: false
+    inputs:
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/PAGE_PLAN.json"
+      - "reports/FIGURE_PLAN.json"
+      - "reports/VISUAL_REFERENCE_BOARD.json"
+      - "reports/HERO_EVALUATION.json"
+      - "figures/specs/*.figure.json"
+      - "figures/drafts/*.pdf"
+      - "figures/draft_figure_manifest.json"
+      - "figures/concept_figure_manifest.json"
+      # V7-P4-02：figure_editorial 只读消费唯一 renderer_gap_matrix requirement
+      # projection；不会由该输入自动修改 renderer。
+      - {path: "benchmarks/visual/RENDERER_GAP_MATRIX.json", required: false, required_when: "v7_renderer_gap_matrix_enabled", producer: editorial_plan, schema: "renderer_gap_matrix.v1", introduced_in: 6}
+      # V7-P4-04：figure_editorial 只读消费 competition-scale benchmark evidence；
+      # 不生成 benchmark truth，也不修改 renderer。
+      - {path: "benchmarks/visual/COMPETITION_SCALE_BENCHMARK_MANIFEST.json", required: false, required_when: "competition_scale_visual_benchmark_enabled", producer: editorial_plan, schema: "competition_scale_visual_benchmark.v1", introduced_in: 6}
+      - "results/*.json"
+    outputs:
+      # VE-03：最终正式图（pdf/png/meta）+ data manifest + figure_manifest（figure_finalize 合并）
+      # 唯一 producer = figure_editorial；coding_visual 只产 drafts
+      - "figures/*.pdf"
+      - "figures/*.png"
+      - "figures/*.meta.json"
+      - "figures/data_figure_manifest.json"
+      - {path: "figures/figure_manifest.json", required: true, producer: figure_finalize,
+         note: "VE-03：figure_finalize.merge() 只允许在 figure_editorial 阶段调用（v6）；coding_visual/paper_plan 不再产出最终 manifest"}
+      - "reports/figure_editorial/RENDER_REPORT.json"
+      - "reports/figure_editorial/VISUAL_ASSERTIONS.json"
+    depends_on: [editorial_plan, schematic]
+    parallel_group: serial
+    invalidates: ["writing", "compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: figure_editorial
+    purpose: "按冻结的 FigureSpec 从 results authority 生成/重绘全部论文正式图（禁止手输数值）；执行逐图视觉断言（关键对象可见/标签不遮挡/有效字号）与最多三轮重绘；输出渲染报告与断言记录；最终 figure manifest 合并（figure_finalize）只允许在本阶段调用。阶段门 figure_editorial（VE-21）核验 FigureSpec/source_result_keys/渲染返回码/PDF-PNG-meta SHA/视觉断言/清单一致性——只存在输出文件不算通过。"
+  - id: writing
+    title: 论文撰写
+    skill: 5writing
+    introduced_in: 4
+    inputs:
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/FIGURE_PLAN.json"
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/PAGE_PLAN.json"
+      # V7-P3-03：writing 只读消费已通过的逐问叙事证据链。
+      - {path: "reports/gates/result_paper_narrative_gate.json", required: false, required_when: "v7_result_paper_narrative_check_enabled", producer: paper_plan, schema: "result_paper_narrative_gate.v1", introduced_in: 6}
+      - "results/*.json"
+      - "figures/figure_manifest.json"   # WP-04：writing 显式绑定最终 manifest（caption 唯一来源）
+      - "figures/*.pdf"                   # VE-03：最终图 PDF 改动 -> writing 及以后全部 stale
+      - "figures/*.meta.json"
+      - "paper/generated_values.tex"
+    outputs:
+      - "paper/main.tex|main.typ"
+      - "paper/sections/*"
+      # V7-P4-05/P4-06：既有 STYLE_REWRITE_REPORT 内的 optional
+      # competition_compression.v1 / formula_importance.v1 nested extensions；
+      # 仍由 writing 唯一生产，writing_closure/judge_readability/final_review/
+      # verification/trace 只读消费，不新增报告或 stage。
+      - {path: "reports/writing/STYLE_REWRITE_REPORT.json", required: true, producer: writing, schema: "style_rewrite_report.v1", introduced_in: 6}
+      # V7-P4-07：Page Editor 是 writing/editorial mode 内的 source-only
+      # decision record；不创建顶级 stage，PDF 仍由 compile_package 产生。
+      - {path: "reports/writing/PAGE_EDIT_DECISIONS.json", required: false, required_when: "page_editor_applicable", producer: writing, schema: "page_edit_decisions.v1", introduced_in: 6}
+    # VE-01（计划.md §17.4）：writing 改依赖 figure_editorial（只消费冻结的最终图与 Narrative）
+    depends_on: [figure_editorial]
+    # P0-04 决策说明：writing 不强依赖 schematic——概念图若判定不需要（无结构关系）即 skipped，
+    # 不得阻塞写作；顺序上 schematic 经 figure_editorial 间接先于 writing（spec stages 顺序保证）。
+    parallel_group: serial
+    invalidates: ["compile_package", "final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: figure_story
+    purpose: "数值来源二选一（numeric_source_policy.mode=one_of）：generated_values.tex（recommended）或 results/*.json 权威 trace 闭环，二者选一即可，禁止无源数值；caption 由 figure manifest 生成；模型缺点随契约失效；Claim 只消费 RESULT_INTERPRETATION 中 SUPPORTED/PARTIAL（缩窄后）的 claim"
+    numeric_source_policy:
+      mode: one_of
+      alternatives:
+        - generated_values
+        - authority_trace
+  - id: compile_package
+    title: 编译与打包
+    skill: 11compile-package
+    introduced_in: 5
+    inputs:
+      - "paper/main.tex|main.typ"
+      - "paper/sections/*"
+      - "reports/PAGE_PLAN.json"   # VE-03 §17.3：compile 消费页面带规划（布局修复依据）
+      # V7-P4-07：compile_package 只读消费 writing 的 source-mapped decision，
+      # 并继续唯一产生 compiled PDF/compile reports。
+      - {path: "reports/writing/PAGE_EDIT_DECISIONS.json", required: false, required_when: "page_editor_applicable", producer: writing, schema: "page_edit_decisions.v1", introduced_in: 6}
+    outputs:
+      - "paper/main.pdf"
+      - "reports/compile/COMPILE_REPORT.json"
+      - "reports/compile/REPAIR_LOG.json"
+    depends_on: [writing]
+    parallel_group: serial
+    invalidates: ["final_review", "verification"]
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: ""
+    purpose: "编译 + 错误分类修复（数学环境/LR mode/undefined control sequence/BibTeX 四类，grep parse log 逐条手修，禁止宽泛 sed）+ 图宽合规防凑页；禁止改结果/模型/数值/claim 强度/verifier"
+  # WP-03（P0-02）：正式三席终审阶段——compile_package 与 verification 之间；
+  # 旧项目（introduced_in 5 之前）允许缺失。native v5 缺任一席/旧席位名/旧 PDF SHA 均 FAIL。
+  - id: final_review
+    title: 三席终审
+    skill: 12final-review
+    timeout_seconds: 120
+    safe_parallel: true
+    introduced_in: 5
+    inputs:
+      - "paper/main.pdf"
+      - "paper/main.tex|main.typ"
+      - "paper/sections/*"
+      - "results/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/PAGE_PLAN.json"
+      - "figures/figure_manifest.json"
+      - "figures/*.pdf"   # VE-03：最终图 PDF 改动 -> 旧 page review stale（VE03-C）
+      - "reports/writing/STYLE_REWRITE_REPORT.json"  # WAI-P0-06: 写作闭环消费
+      # V7-P4-07：Final Review 只读消费 page-editor before/after lineage；
+      # visual verdict 仍由 Reviewer C 产生。
+      - {path: "reports/writing/PAGE_EDIT_DECISIONS.json", required: false, required_when: "page_editor_applicable", producer: writing, schema: "page_edit_decisions.v1", introduced_in: 6}
+      # V7-P3-02：只读消费 Discovery/FMS-driven Reviewer B checklist route。
+      - {path: "reports/review/REVIEW_ROUTER_DECISION.json", required: false, required_when: "v7_dynamic_reviewer_router_enabled", producer: methodology_review, schema: "review_router_decision.v1", introduced_in: 6}
+    outputs:
+      - {path: "reports/review/blind_scores.json", required: true, producer: final_review, schema: "blind_scores.v2"}
+      - {path: "reports/review/page_visual_review.json", required: true, producer: final_review}
+      - {path: "reports/review/raw/*/*.json", required: true, min_matches: 3, producer: final_review}
+      - {path: "reports/review/REVIEW_CLOSURE.json", required: true, producer: final_review}
+    depends_on: [compile_package]
+    parallel_group: serial
+    invalidates: ["verification"]
+    # VE-22（计划.md §VE-15 路由表）：分类返修路由与 style_policy.final_review.repair_routes
+    # 使用同一套语义——verdict 级 BLOCKER/CRITICAL 目标必须命中 repair_routes 目标阶段并集；
+    # 5 类视觉/图文/排版/claim 问题按类别回对应阶段，模型/统计错误按既有策略回
+    # methodology_review / validation_plan / coding_visual。
+    # verdict 默认映射说明：severity_map 中 figure_blank/cropped/result_conflict = BLOCKER
+    # （图问题 -> figure_editorial 有界重绘）；checks_empty/checks_copy_pattern = CRITICAL
+    # （评审/文本机制问题 -> writing）。
+    on_failure:
+      BLOCKER: figure_editorial
+      CRITICAL: writing
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: final_review
+    purpose: "三席独立终审（seatA_modeling/seatB_statml/seatC_visual，roster=final_review.personas）：只 review/finding/re-review——盲评最终 PDF，输出 blind_scores/raw/page_visual_review/REVIEW_CLOSURE；binding 最终 PDF SHA 与输入快照；total 必须等于 dims 求和；核心维度阈值机器执行；旧席位名只兼容 legacy；修改 PDF 后旧评审_STALE；缺陷由 Repair/Editorial owner（13editorial-plan Repair 协议）修复后同 reviewer 复评（新 trip）。本阶段不修改论文、不自行关闭 finding。"
+  - id: verification
+    title: 验证与验收
+    skill: 6verity
+    introduced_in: 4
+    inputs:
+      - "paper/main.tex|main.typ"
+      - "paper/sections/*"
+      - "paper/main.pdf"
+      - "results/*.json"
+      - "figures/*.pdf"
+      - "figures/figure_manifest.json"
+      - "figures/*.meta.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/FIGURE_PLAN.json"       # VE-03 §17.3：verification 消费 FIGURE_PLAN/Narrative
+      - "reports/PAPER_NARRATIVE.json"
+      # V7-P4-02：verification 只读核验 matrix provenance/candidate/stale closure。
+      - {path: "benchmarks/visual/RENDERER_GAP_MATRIX.json", required: false, required_when: "v7_renderer_gap_matrix_enabled", producer: editorial_plan, schema: "renderer_gap_matrix.v1", introduced_in: 6}
+      # V7-P4-04：verification 只读聚合 competition-scale benchmark evidence；
+      # 不派 reviewer、不代修、不修改 benchmark 或真实题 authority。
+      - {path: "benchmarks/visual/COMPETITION_SCALE_BENCHMARK_MANIFEST.json", required: false, required_when: "competition_scale_visual_benchmark_enabled", producer: editorial_plan, schema: "competition_scale_visual_benchmark.v1", introduced_in: 6}
+      - "reports/methodology/*.json"
+      - "repro/CLAIM_PROVENANCE.json"
+      - {path: "results/RESULT_REGISTRY.json", required: false, required_when: "v7_execution_metadata_writer_enabled", producer: coding_visual, schema: "result_registry.v2"}
+      # V7-P3-00：Verification 只读验证 Challenger decision provenance/contract。
+      - {path: "reports/challenger/CHALLENGER_DECISION.json", required: false, required_when: "challenger_triggered", producer: coding_visual, schema: "challenger_decision.v1", introduced_in: 6}
+      # V7-P3-01：bundle coordination is read-only for verification; it is
+      # produced by the already-closed result_review stage.
+      - {path: "reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json", required: false, required_when: "v7_whole_problem_route_bundle_enabled", producer: result_review, schema: "whole_problem_route_bundle.v1"}
+      # V7-P3-02：reviewer checklist routing is read-only for verification.
+      - {path: "reports/review/REVIEW_ROUTER_DECISION.json", required: false, required_when: "v7_dynamic_reviewer_router_enabled", producer: methodology_review, schema: "review_router_decision.v1", introduced_in: 6}
+      # V7-P3-03：result-to-paper chain is read-only for verification.
+      - {path: "reports/gates/result_paper_narrative_gate.json", required: false, required_when: "v7_result_paper_narrative_check_enabled", producer: paper_plan, schema: "result_paper_narrative_gate.v1", introduced_in: 6}
+      # V7-P4-07：Verification 只读聚合 page-editor provenance/stale/review；
+      # 不派 reviewer、不代修、不代关 finding。
+      - {path: "reports/writing/PAGE_EDIT_DECISIONS.json", required: false, required_when: "page_editor_applicable", producer: writing, schema: "page_edit_decisions.v1", introduced_in: 6}
+      # P2-CAP-004：verification closes the complete P2-04 producer-to-consumer
+      # trace without making the Decision Record a truth authority.
+      - {path: "reports/contracts/MODELING_STRATEGY_LIBRARY.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "modeling_strategy_library.v1"}
+      - {path: "reports/contracts/PROBLEM_PROFILE.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "problem_profile.v1"}
+      - {path: "reports/contracts/STRATEGY_MATCHING.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "strategy_matching.v1"}
+      - {path: "reports/contracts/MODEL_DECISION_RECORD.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_decision_record.v1"}
+      - {path: "reports/contracts/MODEL_SELECTION_VALIDATION.json", required: false, required_when: "v7_model_strategy_intelligence_handoff_enabled", producer: brainstorm, schema: "model_selection_validation.v1"}
+      - {path: "reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json", required: false, required_when: "v7_whole_problem_route_bundle_enabled", producer: result_review, schema: "whole_problem_route_bundle.v1"}
+    outputs:
+      - "reports/gates/*.json"
+      - "reports/VERIFY_REPORT.md"
+      # P2-00：最优性证据由 verification 的独立 gate 唯一产生；不让早期
+      # paper stage 反向消费 verification 输出，避免新增环或自消费。
+      - {path: "reports/OPTIMALITY_EVIDENCE.json", required: true, required_when: "v7_optimality_evidence_enabled", producer: verification, schema: "optimality_evidence.v1", introduced_in: 6}
+      # V7-P4-09：Full-Paper Readability Benchmark 是 verification 的只读
+      # recompute/report projection；machine metrics 与 final_review blind evidence
+      # 分离，不能成为第二 paper truth。producer 不消费自身输出。
+      - {path: "reports/verification/FULL_PAPER_READABILITY_BENCHMARK.json", required: true, required_when: "v7_full_paper_readability_benchmark_enabled", producer: verification, schema: "full_paper_readability_benchmark.v1", introduced_in: 6}
+    depends_on: [compile_package, final_review]  # NO-GO：验证在终审收口后执行
+    parallel_group: serial
+    invalidates: []
+    on_failure: {}
+    execution_profile: {mode: serial, internal_parallelism: optional}
+    skippable: false
+    gate: run_all_gates
+    purpose: "验证器完全只读（V7-P0-04）：输入=论文/结果/图/清单/契约/方法学 JSON（含 RESULT_INTERPRETATION）与 final_review 评审产物（仅门禁校验）；不派 reviewer、不修改论文/图/模型、不代为修复；不得把自产的 gates_report 当输入（无自输入循环）；输出门禁报告与验收报告"
+
+# ============================================================================
+# P0-03（任务书 V7-P0-03）：Artifact Catalog——关键 artifact 的唯一机器事实源。
+# 规则：
+#   - producer 唯一（一个 stage id；跨 stage 双 producer 由 check-catalog 判 FAIL）；
+#   - consumers 引用 stage id 或 gates registry 中的 gate id（悬空引用 FAIL）；
+#   - alias 仅迁移期只读兼容（禁止任何 producer 写 alias 路径；hard-coded 扫描兜底）；
+#   - required_when 非空（不得声明"无条件必产出"以外的空语义）；
+#   - 解析入口：skills/6verity/scripts/artifact_catalog.py resolve <artifact_id>。
+# ============================================================================
+artifacts:
+  page_visual_review:
+    path: reports/review/page_visual_review.json
+    producer: final_review
+    consumers: [visual_review_gate, schema_validation, verification]
+    introduced_in: 6
+    required_when: final_review_applicable
+    alias: [reports/page_visual_review.json]
+  blind_scores:
+    path: reports/review/blind_scores.json
+    producer: final_review
+    consumers: [final_review, schema_validation, verification]
+    introduced_in: 6
+    required_when: final_review_applicable
+  review_closure:
+    path: reports/review/REVIEW_CLOSURE.json
+    producer: final_review
+    consumers: [final_review, verification]
+    introduced_in: 6
+    required_when: final_review_applicable
+  generated_values:
+    path: paper/generated_values.tex
+    producer: writing
+    consumers: [trace, verification]
+    introduced_in: 4
+    required_when: numeric_source_policy_mode_equals_generated_values
+  # V7-P4-00：FigureSpec v3 的 Domain Visual Semantics 增量仍由 editorial_plan 唯一生产；
+  # extensions.domain_visual_semantics 是同一 FigureSpec 内的语义绑定，不是平行 spec。
+  figure_spec:
+    path: figures/specs/*.figure.json
+    producer: editorial_plan
+    consumers: [figure_editorial, figure_spec, verification, trace]
+    schema: figure_spec.v3
+    introduced_in: 6
+    required_when: figure_editorial_applicable
+  # V7-P4-02：Renderer Gap Matrix 是 Golden-primary capability/semantic gap 的
+  # 唯一 explanatory planning projection；不成为 FigureSpec、renderer、model、result 或
+  # evaluator authority。唯一 producer 仍为 editorial_plan。
+  renderer_gap_matrix:
+    path: benchmarks/visual/RENDERER_GAP_MATRIX.json
+    producer: editorial_plan
+    consumers: [figure_editorial, verification, trace]
+    schema: renderer_gap_matrix.v1
+    introduced_in: 6
+    required_when: visual_gap_assessment_applicable
+  # V7-P4-04：固定 generator 输入；它是 benchmark provenance source，不是结果 authority。
+  competition_scale_input_manifest:
+    path: benchmarks/visual/COMPETITION_SCALE_INPUT_MANIFEST.json
+    producer: editorial_plan
+    consumers: [editorial_plan, verification, trace]
+    schema: competition_scale_input.v1
+    introduced_in: 6
+    required_when: competition_scale_visual_benchmark_enabled
+  # V7-P4-04：唯一 competition-scale benchmark manifest；只在显式 benchmark run 激活。
+  competition_scale_visual_benchmark:
+    path: benchmarks/visual/COMPETITION_SCALE_BENCHMARK_MANIFEST.json
+    producer: editorial_plan
+    consumers: [figure_editorial, final_review, verification, trace]
+    schema: competition_scale_visual_benchmark.v1
+    introduced_in: 6
+    required_when: competition_scale_visual_benchmark_enabled
+  figure_manifest_draft:
+    path: figures/draft_figure_manifest.json
+    producer: coding_visual
+    consumers: [result_review, editorial_plan, figure_editorial, verification]
+    introduced_in: 6
+    required_when: coding_visual_applicable
+  figure_manifest_data:
+    path: figures/data_figure_manifest.json
+    producer: figure_editorial
+    consumers: [verification]
+    introduced_in: 6
+    required_when: figure_editorial_applicable
+  figure_manifest:
+    path: figures/figure_manifest.json
+    producer: figure_editorial
+    consumers: [writing, figure_spec, verification]
+    introduced_in: 6
+    required_when: figure_editorial_applicable
+  dataset_snapshot:
+    path: reports/data/DATASET_SNAPSHOT.json
+    producer: intake
+    consumers: [brainstorm, analysis, asset_registry, verification]
+    introduced_in: 5
+    required_when: intake_applicable
+  data_profile:
+    path: reports/data/DATA_PROFILE.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: brainstorm_applicable
+  data_contract:
+    path: reports/data/DATA_CONTRACT.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: brainstorm_applicable
+  problem_structure:
+    path: reports/discovery/PROBLEM_STRUCTURE.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: brainstorm_applicable
+  eda_findings:
+    path: reports/discovery/EDA_FINDINGS.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: brainstorm_applicable
+  model_opportunities:
+    path: reports/discovery/MODEL_OPPORTUNITIES.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: brainstorm_applicable
+  modeling_strategy_library:
+    path: reports/contracts/MODELING_STRATEGY_LIBRARY.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    # 当前 workflow spec 的规范版本为 v6；V7 启用由 required_when 控制，
+    # 不把 catalog introduced_in 写成晚于 spec.version 的值。
+    introduced_in: 6
+    required_when: v7_model_strategy_library_enabled
+  problem_profile:
+    path: reports/contracts/PROBLEM_PROFILE.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: v7_problem_feature_extraction_enabled
+  strategy_matching:
+    path: reports/contracts/STRATEGY_MATCHING.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, verification]
+    introduced_in: 6
+    required_when: v7_strategy_matching_enabled
+  model_decision_record:
+    path: reports/contracts/MODEL_DECISION_RECORD.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, validation_plan, coding_visual, result_review, verification, trace]
+    introduced_in: 6
+    required_when: v7_strategy_selection_validation_enabled
+  model_selection_validation:
+    path: reports/contracts/MODEL_SELECTION_VALIDATION.json
+    producer: brainstorm
+    consumers: [analysis, methodology_review, validation_plan, coding_visual, result_review, verification, trace]
+    introduced_in: 6
+    required_when: v7_strategy_selection_validation_enabled
+  optimality_evidence:
+    path: reports/OPTIMALITY_EVIDENCE.json
+    producer: verification
+    consumers: [trace, submission_package]
+    schema: optimality_evidence.v1
+    introduced_in: 6
+    required_when: v7_optimality_evidence_enabled
+  # V7-P4-09：唯一 Full-Paper Readability Benchmark；verification 只读
+  # 重算/产出，trace/submission/schema 只读消费，不新增 paper truth authority。
+  full_paper_readability_benchmark:
+    path: reports/verification/FULL_PAPER_READABILITY_BENCHMARK.json
+    producer: verification
+    consumers: [trace, submission_package, schema_validation]
+    schema: full_paper_readability_benchmark.v1
+    introduced_in: 6
+    required_when: v7_full_paper_readability_benchmark_enabled
+  # V7-P3-00：triggered Challenger 是 coding hook 的 decision projection；
+  # 无触发不物化，存在时由 result_review/verification/trace 只读消费。
+  challenger_decision:
+    path: reports/challenger/CHALLENGER_DECISION.json
+    producer: coding_visual
+    consumers: [result_review, verification, trace]
+    schema: challenger_decision.v1
+    introduced_in: 6
+    required_when: challenger_triggered
+  whole_problem_route_bundle:
+    path: reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json
+    producer: result_review
+    consumers: [verification, trace]
+    schema: whole_problem_route_bundle.v1
+    introduced_in: 6
+    required_when: v7_whole_problem_route_bundle_enabled
+  # V7-P3-02：Dynamic Reviewer Router；methodology_review 唯一 producer，
+  # final_review/verification/trace 只读消费，不增加顶级 stage。
+  review_router_decision:
+    path: reports/review/REVIEW_ROUTER_DECISION.json
+    producer: methodology_review
+    consumers: [final_review, verification, trace]
+    schema: review_router_decision.v1
+    introduced_in: 6
+    required_when: v7_dynamic_reviewer_router_enabled
+  # V7-P3-03：Paper Plan admission projection；writing/verification/trace 只读消费。
+  result_paper_narrative_gate:
+    path: reports/gates/result_paper_narrative_gate.json
+    producer: paper_plan
+    consumers: [writing, verification, trace]
+    schema: result_paper_narrative_gate.v1
+    introduced_in: 6
+    required_when: v7_result_paper_narrative_check_enabled
+  result_registry:
+    path: results/RESULT_REGISTRY.json
+    producer: coding_visual
+    consumers: [result_review, verification, execution_evidence, methodology, trace]
+    introduced_in: 6
+    required_when: v7_execution_metadata_writer_enabled
+  claim_provenance:
+    path: repro/CLAIM_PROVENANCE.json
+    producer: paper_plan
+    consumers: [writing, figure_spec, capability_coverage, submission_package, verification]
+    introduced_in: 5
+    required_when: paper_plan_applicable
+  style_rewrite_report:
+    path: reports/writing/STYLE_REWRITE_REPORT.json
+    producer: writing
+    # V7-P4-08：voice_profile nested extension 由 writing 唯一生产；
+    # downstream routes 只读消费。
+    consumers: [writing_closure, natural_prose, judge_readability, final_review, verification, trace]
+    introduced_in: 6
+    required_when: writing_closure_applicable
+  # V7-P4-07：唯一 Source-Mapped PDF Page Editor record；所有内部 page
+  # diagnostic/source-map/decision/before-after evidence 均在此 artifact 内。
+  page_edit_decisions:
+    path: reports/writing/PAGE_EDIT_DECISIONS.json
+    producer: writing
+    consumers: [writing_closure, compile_package, final_review, visual_review_gate, verification, trace]
+    schema: page_edit_decisions.v1
+    introduced_in: 6
+    required_when: page_editor_applicable
+  shard_plan:
+    path: runs/fresh/*/SHARD_PLAN.json
+    producer: coding_visual
+    consumers: [execution_evidence, verification]
+    schema: shard_plan.v2
+    introduced_in: 5
+    required_when: sharded_execution_applicable
+  shard_aggregate:
+    path: runs/fresh/*/SHARD_AGGREGATE.json
+    producer: coding_visual
+    consumers: [execution_evidence, verification]
+    schema: shard_aggregate.v2
+    introduced_in: 5
+    required_when: sharded_execution_applicable
+  # V7-P2-01：Sentinel dispatch 是现有 sharded_run v2 的唯一调度投影，不是第二 runner。
+  sentinel_production_dispatch:
+    path: reports/execution/SENTINEL_PRODUCTION_DISPATCH.json
+    producer: coding_visual
+    consumers: [execution_evidence, verification, trace]
+    schema: sentinel_production_dispatch.v1
+    introduced_in: 6
+    required_when: sentinel_production_execution_enabled
+  # P5-00/P5-01：contest controller 只生产控制面状态与历史 timing profile；
+  # 它们不是工作流 stage，也不是 paper/result authority。external producer
+  # 表示由现有 start/controller CLI 按本 catalog 写入，避免新增顶级 stage。
+  contest_state:
+    path: state/CONTEST_STATE.json
+    producer: external
+    producer_script: skills/1start-mathmodel/scripts/contest_controller.py
+    consumers: [verification, trace]
+    schema: contest_state.v1
+    introduced_in: 6
+    required_when: contest_controller_applicable
+  baseline_timing_profile:
+    path: reports/quality_ascent/BASELINE_TIMING_PROFILE.json
+    producer: external
+    producer_script: skills/1start-mathmodel/scripts/contest_controller.py
+    consumers: [verification, trace]
+    schema: baseline_timing_profile.v1
+    introduced_in: 6
+    required_when: contest_controller_applicable
+
+gates:
+  # v4.4（P0-10/§7）：gate registry 单一事实源——run_all_gates.py 只解析本表，
+  # README/计数/VERIFY_SUMMARY 均由它派生；禁止在别处再维护一份执行列表。
+  # 字段：id / script（相对 skills/6verity/scripts/）/ args（静态部分；--workspace 与
+  # --strict 由 runner 注入）/ report（相对 workspace 的报告路径，null=无）/ required / strict_aware
+  - id: manifest
+    fingerprint:
+      - "project.manifest.json"
+      - "docs/cumcm_rules/*.json"
+    script: project_manifest.py
+    args: ["--check"]
+    report: null
+    required: true
+    strict_aware: false
+  - id: layout
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "paper/main.pdf"
+      - "figures/*.pdf"
+      - "figures/figure_manifest.json"
+    script: layout_gate.py
+    timeout_seconds: 600
+    safe_parallel: false
+    args: []
+    report: reports/gates/layout_gate.json
+    required: true
+    strict_aware: true
+  - id: text_integrity
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "paper/**/*.md"
+    script: text_integrity.py
+    args: []
+    report: reports/gates/text_integrity.json
+    required: true
+    strict_aware: true
+  - id: trace
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "paper/main.pdf"
+    script: trace_numbers.py
+    timeout_seconds: 600
+    safe_parallel: false
+    args: []
+    report: trace_report.json
+    required: true
+    strict_aware: true
+  - id: style
+    fingerprint:
+      - "paper/main.pdf"
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+    script: style_audit.py
+    timeout_seconds: 900
+    safe_parallel: false
+    args: []
+    report: reports/gates/style_audit.json
+    required: true
+    strict_aware: true
+  - id: decision
+    fingerprint:
+      - "state/decision_log.json"
+    script: check_decision_log.py
+    args: []
+    report: null
+    required: true
+    strict_aware: false
+  - id: refs
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "references/**"
+      - "reports/compliance/WEB_ACCESS_LOG.json"
+    script: verify_refs.py
+    args: []
+    report: reports/gates/references_check.json
+    required: true
+    strict_aware: true
+  - id: methodology
+    fingerprint:
+      - "reports/methodology/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "repro/CLAIM_PROVENANCE.json"
+      - "trace_authority.json"
+    script: methodology_gate.py
+    args: []
+    report: reports/gates/methodology_gate.json
+    required: true
+    strict_aware: true
+  # v6 P0：长优化/多 seed/敏感性任务执行证据；根据模型契约自动 fail-closed，
+  # quick/smoke、缺分片、输入或输出 hash 漂移均不得进入论文 authority。
+  - id: execution_evidence
+    fingerprint:
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "results/RESULT_REGISTRY.json"
+      - "results/*.json"
+      - "runs/fresh/**/*.json"
+      - "code/**"
+    script: execution_evidence_gate.py
+    args: []
+    report: reports/gates/execution_evidence_gate.json
+    required: false
+    required_from_version: 6
+    strict_aware: true
+    timeout_seconds: 120
+    safe_parallel: true
+    engines: []
+  - id: leakage
+    fingerprint:
+      - "results/*.json"
+      - "results/leakage_audit.json"
+      - "reports/methodology/*.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "repro/CLAIM_PROVENANCE.json"
+    script: leakage_gate.py
+    args: []
+    report: reports/gates/leakage_gate.json
+    required: true
+    strict_aware: true
+  - id: figure_story
+    fingerprint:
+      - "reports/PAPER_PLAN.json"
+      - "figures/figure_manifest.json"
+      - "figures/*.meta.json"
+      - "results/*.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "repro/CLAIM_PROVENANCE.json"
+    script: figure_story.py
+    args: []
+    report: reports/gates/figure_story.json
+    required: true
+    strict_aware: true
+  - id: idea_contracts
+    fingerprint:
+      - "reports/contracts/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "runs/competitive/**/*.json"
+      - "runs/competitive/*/canonical_evaluator.py"
+    script: idea_gate.py
+    args: []
+    report: reports/gates/idea_gate.json
+    required: true
+    strict_aware: true
+  # P2-EXIT-OPTIMALITY-001：独立从 question-local result payload、RESULT_REGISTRY、
+  # canonical evaluator/FMS binding 和 MDDR rationale 重建最优性证据；v7 强制，
+  # legacy 工作区不自动启用。
+  - id: optimality_evidence
+    fingerprint:
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/contracts/IDEA_CANDIDATES.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/contracts/MODELING_STRATEGY_LIBRARY.json"
+      - "reports/contracts/PROBLEM_PROFILE.json"
+      - "reports/contracts/STRATEGY_MATCHING.json"
+      - "reports/contracts/MODEL_DECISION_RECORD.json"
+      - "reports/contracts/MODEL_SELECTION_VALIDATION.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      - "results/RESULT_REGISTRY.json"
+      - "results/*.json"
+      - "code/**"
+    script: optimality_evidence_gate.py
+    args: []
+    report: reports/gates/optimality_evidence_gate.json
+    required: false
+    required_from_version: 7
+    strict_aware: true
+  # V7-P3-00：存在 Challenger decision 时由真实 result/evaluator/provenance
+  # 重建并校验；无触发且无 artifact 时为零成本 NOT_TRIGGERED。
+  - id: challenger_decision
+    fingerprint:
+      - "reports/challenger/CHALLENGER_DECISION.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "results/RESULT_REGISTRY.json"
+      - "results/*.json"
+      - "reports/VALIDATION_EVAL.json"
+      - "reports/OPTIMALITY_EVIDENCE.json"
+      - "runs/fresh/**/*.json"
+      - "code/**"
+    script: challenger_gate.py
+    args: []
+    report: reports/gates/challenger_decision_gate.json
+    required: false
+    required_from_version: 7
+    strict_aware: true
+  # V7-P3-01：Whole-Problem Route Bundle；仅对 active V7 run 强制，
+  # legacy workspace 无 bundle 时保持兼容读取。
+  - id: whole_problem_route_bundle
+    fingerprint:
+      - "reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "results/RESULT_REGISTRY.json"
+      - "reports/discovery/*.json"
+      - "reports/challenger/CHALLENGER_DECISION.json"
+      - "runs/fresh/**/*.json"
+      - "code/**"
+    script: whole_problem_route_bundle_gate.py
+    args: []
+    report: reports/gates/whole_problem_route_bundle_gate.json
+    required: false
+    required_from_version: 7
+    strict_aware: true
+  # V7-P3-02：Dynamic Reviewer Router；active V7 缺 router artifact 时 fail-closed，
+  # legacy workspace 无该 artifact 时保持 NOT_TRIGGERED。
+  - id: review_router
+    fingerprint:
+      - "reports/review/REVIEW_ROUTER_DECISION.json"
+      - "reports/discovery/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/review/blind_scores.json"
+      - "reports/review/REVIEW_CLOSURE.json"
+    script: review_router_gate.py
+    args: []
+    report: reports/gates/review_router_gate.json
+    required: false
+    required_from_version: 7
+    strict_aware: true
+  - id: visual_review_gate
+    fingerprint:
+      - "reports/page_visual_review.json"
+      - "reports/visual_review.json"
+      - "reports/writing/PAGE_EDIT_DECISIONS.json"
+      - "figures/figure_manifest.json"
+      - "figures/*.meta.json"
+      - "paper/main.pdf"
+    script: visual_review_gate.py
+    args: ["--root", "__REPO_ROOT__"]
+    report: reports/gates/visual_review_gate.json
+    required: true
+    strict_aware: true
+  - id: figure_spec
+    fingerprint:
+      - "figures/specs/*.figure.json"
+      - "figures/figure_manifest.json"
+      - "figures/*.meta.json"
+    script: figure_spec_gate.py
+    args: []
+    report: reports/gates/figure_spec_gate.json
+    required: true
+    strict_aware: true
+  - id: deployment_utility
+    fingerprint:
+      - "code/**"
+      - "results/*.json"
+      - "requirements.txt"
+      - "reports/FINAL_MODEL_SPEC.json"
+    script: deployment_utility.py
+    args: []
+    report: reports/deployment_utility.json
+    required: true
+    strict_aware: true
+  - id: submission_package
+    fingerprint:
+      - "artifact_manifest.json"
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "@asset_registry_contents"
+      - "results/*.json"
+      - "figures/figure_manifest.json"
+      - "*.zip"
+    script: submission_package_gate.py
+    timeout_seconds: 600
+    safe_parallel: false
+    args: ["--check"]
+    report: null
+    required: true
+    strict_aware: false
+  - id: schema_validation
+    fingerprint:
+      - "reports/contracts/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "results/RESULT_REGISTRY.json"
+      - "figures/figure_manifest.json"
+      - "repro/CLAIM_PROVENANCE.json"
+      - "trace_authority.json"
+      - "reports/review/blind_scores.json"
+      - "reports/review/REVIEW_CLOSURE.json"
+      - "reports/review/REVIEW_ROUTER_DECISION.json"
+    script: schema_validator.py
+    timeout_seconds: 300
+    safe_parallel: false
+    args: []
+    report: reports/gates/schema_validation.json
+    required: true
+    strict_aware: true
+  # V7-P4-09：verification-only full-paper readability projection.  The gate
+  # recomputes one canonical artifact from current PDF/source/render bindings;
+  # it never repairs source/PDF or assigns the Final Review blind verdict.
+  - id: full_paper_readability_benchmark
+    fingerprint:
+      - "paper/main.pdf"
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "repro/FULL_PAPER_READABILITY_INPUT.json"
+      - "reports/compile/*.json"
+      - "reports/render/*.json"
+      - "reports/review/blind_scores.json"
+      - "reports/review/REVIEW_CLOSURE.json"
+      - "reports/writing/PAGE_EDIT_DECISIONS.json"
+      - "reports/writing/STYLE_REWRITE_REPORT.json"
+      - "reports/dev/v7/P4-07/*.json"
+      - "reports/dev/v7/P4-08/*.json"
+      # P4-09 quality admission：真实 problem-run authority 必须进入同一
+      # verification fingerprint；这些是既有上游 artifact 的只读输入，不新增 stage。
+      - "reports/data/DATA_PROFILE.json"
+      - "reports/contracts/IDEA_CANDIDATES.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/PAPER_NARRATIVE.json"
+      - "results/RESULT_REGISTRY.json"
+      - "figures/specs/*.figure.json"
+      - "figures/figure_manifest.json"
+    script: full_paper_readability_benchmark.py
+    args: []
+    report: reports/gates/full_paper_readability_benchmark_gate.json
+    required: false
+    strict_aware: true
+    timeout_seconds: 300
+    safe_parallel: false
+  # v4.5.2（任务书 §40-§44）：写作/阅读层三门——频率+上下文联合判断，非禁词门
+  - id: natural_prose
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "paper/main.pdf"
+      # V7-P4-08：voice_profile 是既有 STYLE_REWRITE_REPORT 内的
+      # additive natural-prose calibration/lint input。
+      - "reports/writing/STYLE_REWRITE_REPORT.json"
+    script: natural_prose_gate.py
+    args: []
+    report: reports/gates/natural_prose_gate.json
+    required: true
+    strict_aware: true
+  - id: judge_readability
+    fingerprint:
+      - "paper/main.pdf"
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "reports/writing/STYLE_REWRITE_REPORT.json"
+    script: judge_readability_gate.py
+    args: []
+    report: reports/gates/judge_readability_gate.json
+    required: true
+    strict_aware: true
+  - id: chinese_lint
+    fingerprint:
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+    script: chinese_writing_lint.py
+    args: []
+    report: reports/gates/chinese_writing_lint.json
+    required: true
+    strict_aware: true
+  # v5.0（任务书 §7/DoD 4）：Capability Contract 全链验证门——mandatory capability 必须被
+  # 模型契约/结果/图/claim/论文覆盖；spec 层缺失 FAIL，其余层缺失（该层已产出）WARN；REFUTED 禁止进论文。
+  - id: capability_coverage
+    fingerprint:
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/contracts/PROBLEM_FACTS.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/methodology/*.json"
+    script: capability_coverage_gate.py
+    args: []
+    report: reports/gates/capability_coverage_gate.json
+    required: true
+    strict_aware: true
+  # V7-P0-05：Result Review v2 语义门。聚合检查兼容读取 v1；result_review
+  # stage_close 通过 stage.gate_args 强制 --require-v2，旧契约不能用于新收口。
+  - id: result_review
+    fingerprint:
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/VALIDATION_EVAL.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/methodology/failure_events.json"
+      - "results/RESULT_REGISTRY.json"
+      - "results/*.json"
+    script: result_review_gate.py
+    args: []
+    report: reports/gates/result_review_gate.json
+    # 正式 result_review 收口由 stage.gate + --require-v2 强制；聚合器中设 optional，
+    # 避免早期阶段/legacy release roster 因工件尚未产生而误报。
+    required: false
+    strict_aware: true
+  # v5.0.1（P1-02）：Paper Plan 语义门——claim ∈ INTERPRETATION、status ∈ {SUPPORTED,PARTIAL}、
+  # evidence 非空、figure/table/result/validation 引用存在性（IT-15）。
+  - id: paper_plan_gate
+    fingerprint:
+      - "reports/PAPER_PLAN.json"
+      - "reports/FIGURE_PLAN.json"
+      - "figures/figure_manifest.json"
+      - "results/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+    script: paper_plan_gate.py
+    args: []
+    report: reports/gates/paper_plan_gate.json
+    required: true
+    strict_aware: true
+  # V7-P3-03：逐问七项结构—模型—结果—baseline—证据—gap—shared state gate；
+  # active V7 缺 artifact 或真实证据不完整时 fail-closed，legacy 不触发。
+  - id: result_paper_narrative
+    fingerprint:
+      - "reports/gates/result_paper_narrative_gate.json"
+      - "reports/contracts/IDEA_DECISION.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/RESULT_INTERPRETATION.json"
+      - "reports/VALIDATION_PLAN.json"
+      - "reports/VALIDATION_EVAL.json"
+      - "results/RESULT_REGISTRY.json"
+      - "reports/PAPER_PLAN.json"
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/contracts/WHOLE_PROBLEM_ROUTE_BUNDLE.json"
+      - "reports/review/REVIEW_ROUTER_DECISION.json"
+    script: result_paper_narrative_gate.py
+    args: []
+    report: reports/gates/result_paper_narrative_gate_report.json
+    required: false
+    required_from_version: 7
+    strict_aware: true
+  # WP-05（P0-04）：资产真实哈希门——未登记/被替换的原始资产（题面/数据）使结果与论文失效
+  - id: asset_registry
+    fingerprint:
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "@asset_registry_contents"
+      - "reports/data/DATASET_SNAPSHOT.json"
+      - "artifact_manifest.json"
+      - "results/*.json"
+      - "code/**"
+    script: asset_registry_gate.py
+    timeout_seconds: 300
+    safe_parallel: true
+    args: []
+    report: reports/gates/asset_registry_gate.json
+    required: true
+    strict_aware: true
+  # WP-03（P0-02）：三席终审门——native v5 强制（缺任一席/伪造身份/旧席位名/旧 PDF SHA ->
+  # FAIL）；legacy v4 无 blind_scores 时维持旧 WARN 语义（check_decision_log 兼容）。
+  - id: final_review
+    title: 三席终审
+    fingerprint:
+      - "reports/review/blind_scores.json"
+      - "reports/review/REVIEW_CLOSURE.json"
+      - "reports/review/raw/*/*.json"
+      - "paper/main.pdf"
+      - "state/decision_log.json"
+      - "results/*.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/PAPER_PLAN.json"
+      - "figures/figure_manifest.json"
+    script: final_review_gate.py
+    args: []
+    report: reports/gates/final_review_gate.json
+    required: true
+    strict_aware: true
+  # Pre-Run（P0-A/GO-05）：Artifact Binding 一致性门——checker 只读比较；native v5 无任何
+  # binding（从未由阶段收口刷新）-> FAIL；stale 存在 -> exit 1。
+  - id: artifact_graph
+    fingerprint:
+      - "artifact_manifest.json"
+      - "state/artifact_bindings.json"
+      - "reports/contracts/*.json"
+      - "reports/intake/ASSET_REGISTRY.json"
+      - "results/*.json"
+      - "figures/figure_manifest.json"
+      - "code/**"
+    script: artifact_graph.py
+    timeout_seconds: 120
+    safe_parallel: true
+    args: []
+    report: reports/ARTIFACT_GRAPH.json
+    required: true
+    strict_aware: false
+  - id: source_compliance
+    fingerprint:
+      - "reports/compliance/WEB_ACCESS_LOG.json"
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+      - "paper/**/*.md"
+    # NO-GO（P1-6）：网络合规门必须正式执行（此前仅存在脚本未接入 registry）
+    script: source_compliance_gate.py
+    args: []
+    report: reports/gates/source_compliance_gate.json
+    required: true
+    strict_aware: true
+    timeout_seconds: 120
+    safe_parallel: false
+    engines: []
+  # VE-05（计划.md §P0-02/VE-05）：editorial 触发器与 primary 规则门（v6 项目强制；v5 跳过）
+  - id: editorial_plan
+    title: 科学表达编辑计划
+    fingerprint:
+      - "reports/PAPER_NARRATIVE.json"
+      - "reports/PAGE_PLAN.json"
+      - "reports/FIGURE_PLAN.json"
+      - "reports/contracts/QUESTION_CONTRACT.json"
+      - "reports/FINAL_MODEL_SPEC.json"
+      - "reports/RESULT_INTERPRETATION.json"
+    script: editorial_plan_gate.py
+    args: []
+    report: reports/gates/editorial_plan_gate.json
+    required: true
+    strict_aware: true
+    timeout_seconds: 120
+    safe_parallel: false
+    engines: []
+  # VE-21（计划.md §VE-07/§17.3）：figure_editorial 阶段门——FigureSpec/source_result_keys/
+  # 渲染报告返回码/PDF-PNG-meta SHA/视觉断言/data+figure manifest/figure_finalize 一致性
+  # 全链证据（v6 项目强制；v5 跳过）。只存在输出文件不能算通过。
+  - id: figure_editorial
+    title: 正式图编辑与渲染
+    fingerprint:
+      - "reports/FIGURE_PLAN.json"
+      - "reports/figure_editorial/RENDER_REPORT.json"
+      - "reports/figure_editorial/VISUAL_ASSERTIONS.json"
+      - "figures/*.pdf"
+      - "figures/*.png"
+      - "figures/*.meta.json"
+      - "figures/data_figure_manifest.json"
+      - "figures/figure_manifest.json"
+    script: figure_editorial_gate.py
+    args: []
+    report: reports/gates/figure_editorial_gate.json
+    required: true
+    strict_aware: true
+    timeout_seconds: 120
+    safe_parallel: false
+    engines: []
+  # WAI-P0-06: 写作闭环门——STYLE_REWRITE_REPORT.json 完整性与可接受性校验
+  - id: writing_closure
+    fingerprint:
+      - "reports/writing/STYLE_REWRITE_REPORT.json"
+      - "reports/writing/PAGE_EDIT_DECISIONS.json"
+      - "reports/gates/natural_prose_gate.json"
+      - "reports/gates/judge_readability_gate.json"
+      - "reports/gates/chinese_writing_lint.json"
+      - "paper/**/*.tex"
+      - "paper/**/*.typ"
+    script: writing_closure_gate.py
+    args: []
+    report: reports/gates/writing_closure_gate.json
+    required: true
+    strict_aware: true
+    timeout_seconds: 60
+    safe_parallel: true
+    engines: []
+  # VE-16（计划.md §17.7）：Harness 改造决策门——preset_only 永远允许；plugin/upstream
+  # 需完整证据链；core_change_allowed=true 无证据 FAIL（禁止 patch node_modules）
+  - id: harness_decision
+    fingerprint:
+      - "reports/expression_upgrade/HARNESS_DECISION.json"
+    script: harness_decision_gate.py
+    args: []
+    report: reports/gates/harness_decision_gate.json
+    required: true
+    strict_aware: false
+    timeout_seconds: 60
+    safe_parallel: true
+    engines: []
+
+final_review:
+  personas:
+    - id: A
+      name: 数学建模专家
+      scope: 问题抽象/优化模型/模型必要性/结论匹配度
+    - id: B
+      name: 统计与机器学习审稿人
+      scope: independence/repeated measures/censoring/leakage/bias/threshold selection/CI/overfitting
+    - id: C
+      name: 科学编辑与视觉审稿人
+      scope: 摘要/图/表/标粗/视觉层级/30秒可理解; page composition（orphan spill/recoverable underfill/float placement/first-reference proximity）
+  veto:
+    - "Reviewer B critical: leakage / wrong likelihood / invalid censoring / invalid test protocol"
+    - "Reviewer C submission blocker: figure blank / table clipped / unresolved reference / orphan spill / near-empty continuation page / isolated heading或caption / broken abstract-keywords"
+  pass_rule: "总分 ≥70 且核心维度（建模求解、结果检验）≥该维满分50%，其余维度≥40%"
+
+# v4.3：机器可读控制面——工作流依赖 verdict 字段驱动，禁止自然语言"建议考虑"式回滚
+control_plane:
+  verdicts: ["PASS", "WARN", "BLOCKER", "CRITICAL"]
+  failure_events: "reports/methodology/failure_events.json"
+  failure_events_schema:
+    code: string          # 如 PARSIMONY_PRIMARY_LOST
+    severity: "blocker | critical"
+    invalidate: ["<result key / model id>"]
+    return_to: string     # 如 methodology_review / coding_visual
+    validation_verdict: "FAIL | UNKNOWN | ERROR"
+    failure_class: "model_invalid | implementation_error | data_invalid | budget_exhausted | criterion_invalid | missing_evidence"
+    resolution_mode: "replace_model | repair_code | repair_data | run_missing_evidence | fix_criterion | drop_claim"
+    source_artifact_revisions: {"<workspace-relative path>": "sha256"}
+    evidence_refs: ["<validation/result/artifact ref>"]
+    status: "open | resolved"
+    resolved_at: string   # status=resolved 时必填
+  rules:
+    - "任一 failure.event severity∈{blocker,critical} 且 status=open -> 最终验收 BLOCKER（methodology gate FAIL）"
+    - "典型触发：assumption failed / family selection leakage / model has no practical gain / optimization degenerates / simpler model dominates / calibration failed but probability wording required / result contradicts core hypothesis"
+    - "不能让 Agent 为『把原计划写圆』而继续推向论文阶段：failure event 的 return_to 即机器化回滚目标阶段"
+    - "Result Review v2 的 failure_class/resolution_mode/return_to 必须继承预注册 VALIDATION_PLAN 与 VALIDATION_EVAL；不得在结果出来后改 criterion、降阈值或重标 failure_class"
+    - "V7-P0-06（Intake Authority v3）：authority 只有六态 primary_official/verified_legacy/unverified/conflicting/stale/invalidated，不存在'已有结果=真值'；verified_legacy 仅表示冻结历史证据（frozen=true），可被新 canonical evaluator 冲突失效，无永久真值地位"
+    - "V7-P0-06：旧结果与 VALIDATION_EVAL（canonical evaluator）冲突时必须标 conflicting 并保留双方产物，禁止静默覆盖或删除任一方；stale/invalidated 资产不得作为 paper claim 的 authority 输入（RESULT_REGISTRY 交叉校验 FAIL）"
+    - "V7-P0-06：禁止通过修改 hash、时间戳、source 标记或 authority 状态掩盖冲突——重算 SHA（T295-T297 语义）+ conflict 台账 conflict_id 对账 + primary_official 仅限 source=official 机器强制"
+    - "V7-P0-07（官方规则 authority）：official_rules.json 是硬规范唯一机器来源（每条规则带 source_id/locator 原文位置/verbatim 引文/effective_at，引文逐字对账 mcm.edu.cn 离线快照 SHA——声明不是证明）；style policy 只能引用 rule_id，硬参数回植=覆盖/重新解释 hard rule，rules_doctor FAIL；无法确认的主张只能标 internal/unresolved 进 internal_policies，禁止留在官方 must 集合"
+    - "V7-P0-07（R-06 已核实恢复）：论文附录必须含全部完整可运行源码全文（官方第五条），『核心伪代码+ZIP 替代』不是合规路径；ZIP 与论文一致（R-09）是附加义务；AI 声明官方定句以 R-05.hard_value 为准（style policy 内改写定句的旧条款已废除）"
+    - "V7-P0-08（benchmark 冻结）：五题 Development Benchmark Suite（BENCHMARK_SUITE_MANIFEST.json，题面/数据/参考论文/五 profile + sha 钉死）在 Phase 1 前冻结，之后不得为迎合新功能更换题目；Sentinel=CUMCM2025-C，baseline=V6 deployed preset 原样 clean-room 运行冻结（身份三锚点：P0-00A 冻结清单逐字节 + dc65b02c lineage + 044f4275≠V6 反例），禁止先修后冻"
+    - "V7-P0-08（Sentinel E2E 纪律）：Sentinel run 只能经 tools/run_sentinel_e2e.py prepare→(agent session)→finalize 链执行——空工作区拒绝非空目录、题面/数据 sha 漂移拒绝、产物命中禁读资产哈希或路径引用即 FAIL、prepare 前已存在文件即跨 run 污染 FAIL、preset staging 篡改 FAIL；runner 永不生成论文内容（运行编排是 Agent 运行时行为，伪造 run 产物禁止）；Phase 对比只能 tools/phase_audit.py 一条命令出 before/after 报告"
+

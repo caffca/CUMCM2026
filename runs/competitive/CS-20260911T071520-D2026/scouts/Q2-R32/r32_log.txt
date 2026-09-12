@@ -1,0 +1,15 @@
+[    0.5s] field: |G*|=1693 slot_pairs=108941
+[    4.2s] subgrad it=200 Phi=672.67 amp=36.38 F=745.44 step=0.00120
+[   11.9s] subgrad it=400 Phi=672.21 amp=36.40 F=745.00 step=0.00100
+[   25.4s] subgrad it=600 Phi=672.18 amp=36.40 F=744.97 step=0.00100
+[   49.6s] subgrad it=800 Phi=672.18 amp=36.40 F=744.97 step=0.00100
+[   83.0s] subgrad it=1000 Phi=672.18 amp=36.40 F=744.97 step=0.00100
+[  122.8s] subgrad it=1200 Phi=672.18 amp=36.40 F=744.97 step=0.00100
+[  168.0s] subgrad it=1400 Phi=672.18 amp=36.40 F=744.97 step=0.00050
+[  170.1s] field: Phi 2124.00 -> 672.18  amp=36.40  Phi_up_steps=10  deadline
+[  170.1s] rounding: {"keep": 23, "df": 62, "dt": 65} violated=175 (全恒等=297)
+[  203.5s] repair: rounds=1 subs=4 violated=0 touched=150
+[  266.3s] derevoke ladder Σr<=27 -> FEASIBLE (60.4s)
+[  328.8s] derevoke ladder Σr<=9 -> FEASIBLE (60.1s)
+[  391.0s] derevoke ladder Σr<=5 -> UNKNOWN (60.0s)
+[  391.1s] FINAL internal tuple=[6, 123, 2205, 762] residual=0 listed=129 wall=391.07s

@@ -1,0 +1,36 @@
+{
+ "exit": 0,
+ "feasible": true,
+ "tuple": [
+  42,
+  73,
+  1282,
+  371
+ ],
+ "n_violations": 0,
+ "stats": {
+  "kept": 35,
+  "adjusted": 73,
+  "revoked": 42,
+  "by_class": {
+   "A": {
+    "kept": 12,
+    "adjusted": 8,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 10,
+    "adjusted": 23,
+    "revoked": 7
+   },
+   "C": {
+    "kept": 13,
+    "adjusted": 42,
+    "revoked": 35
+   }
+  }
+ },
+ "independent_residual": 0,
+ "vs_R22_lexicographically_better": true,
+ "rounds": 245
+}

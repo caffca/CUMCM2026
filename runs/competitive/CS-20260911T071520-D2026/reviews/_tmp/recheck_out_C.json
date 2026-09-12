@@ -1,0 +1,138 @@
+{
+ "B2_frozen_evaluator": {
+  "exit": 0,
+  "feasible": true,
+  "tuple": [
+   63,
+   53,
+   1529,
+   204
+  ],
+  "n_violations": 0,
+  "stats": {
+   "kept": 34,
+   "adjusted": 53,
+   "revoked": 63,
+   "by_class": {
+    "A": {
+     "kept": 10,
+     "adjusted": 10,
+     "revoked": 0
+    },
+    "B": {
+     "kept": 17,
+     "adjusted": 6,
+     "revoked": 17
+    },
+    "C": {
+     "kept": 7,
+     "adjusted": 37,
+     "revoked": 46
+    }
+   }
+  },
+  "independent_conflicts": 0
+ },
+ "R22_unrevoke_test": {
+  "revokes_before": 66,
+  "n_tested": 66,
+  "n_restored": 9,
+  "restored": [
+   [
+    "B010",
+    {
+     "dt": -3
+    }
+   ],
+   [
+    "C002",
+    {
+     "dg": 3
+    }
+   ],
+   [
+    "C011",
+    {
+     "dg": -1
+    }
+   ],
+   [
+    "C014",
+    {
+     "dt": -2
+    }
+   ],
+   [
+    "C022",
+    {
+     "dg": 4
+    }
+   ],
+   [
+    "C023",
+    {
+     "dg": 6
+    }
+   ],
+   [
+    "C039",
+    {
+     "dt": -3
+    }
+   ],
+   [
+    "C046",
+    {
+     "df": 8
+    }
+   ],
+   [
+    "C067",
+    {
+     "df": 7
+    }
+   ]
+  ],
+  "tuple_after_restore": [
+   57,
+   52,
+   1093,
+   181
+  ],
+  "residual_after_restore": 0,
+  "scalar_after_restore": 57005210930181,
+  "frozen_evaluator_tuple": [
+   57,
+   52,
+   1093,
+   181
+  ],
+  "frozen_evaluator_feasible": true,
+  "lexicographically_better": true
+ },
+ "R11_model_can_hold_6revoke": {
+  "unmapped_options": [],
+  "n_unmapped": 0,
+  "residual_conflicts": 0,
+  "tuple_of_6revoke_in_R11_encoding": [
+   6,
+   121,
+   1996,
+   663
+  ],
+  "meaning": "R11 的域/边表达完整包含 6 撤销解 ⇒ 其撤销层 UB 报告 8 而非 <=6 是锚定/hint 选择问题，非模型表达力问题"
+ },
+ "scalarization_safety": {
+  "max_ploss": 4980,
+  "gap_to_adj_tier": 10000,
+  "safe": true,
+  "max_mag": 1500,
+  "gap_to_ploss_tier": 10000,
+  "max_adjusted": 150,
+  "gap_to_rev_tier": 10000,
+  "max_pairs": 11175,
+  "violation_tier": 1000000000000000,
+  "max_V_times_tier": 11175000000000000000,
+  "note": "本实例下 ploss<=4980<1e4，四级不会串层；但该安全性来自实例规模（150 计划），非公式本身性质"
+ }
+}

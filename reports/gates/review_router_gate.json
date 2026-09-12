@@ -1,0 +1,21 @@
+{
+  "gate": "review_router",
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "status": "PASS",
+  "artifact": "reports/review/REVIEW_ROUTER_DECISION.json",
+  "artifact_sha256": "4ebbec8ca86f86615c14d58ff0236f507d0434d1d1169e3b5a7dfd327a37dbaf",
+  "review_events": null,
+  "findings": [],
+  "summary": {
+    "fails": 0,
+    "pass": true,
+    "not_triggered": false,
+    "v7_active": true
+  },
+  "authority_scope": "review_checklist_routing_projection_only",
+  "read_only": true,
+  "dispatches_reviewer": false,
+  "closes_finding": false
+}

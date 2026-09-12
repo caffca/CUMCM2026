@@ -1,0 +1,13 @@
+{
+ "question_id": "Q3",
+ "variant": "check",
+ "conflicts_vs_base": 0,
+ "conflicts_internal": 0,
+ "conflict_total_second_impl": 0,
+ "rows": 210,
+ "phi": 210,
+ "phi_second_impl": 210,
+ "base_multiplicity_defects": 0,
+ "cand_count_second_impl": 4469,
+ "phi_matches_solver": 1
+}

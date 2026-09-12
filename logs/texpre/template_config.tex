@@ -1,0 +1,24 @@
+% =============================================================================
+% template_config.tex — CUMCM Template Config（v4.5 模板 v2 §28）
+% 唯一配置入口：问题数 / 章节开关 / 题型模块。由生成器从 QUESTION_CONTRACT 与
+% SECTION_PLAN.json 渲染本文件（禁止在 main.tex 手工改 N 处）。
+% =============================================================================
+
+\newcommand{\questioncount}{4}   % 由 QUESTION_CONTRACT.questions 长度生成
+
+% 章节显示开关（SECTION_PLAN.json -> true/false）；\newif 布尔 + 默认行
+\newif\ifshowdatasection
+\showdatasectiontrue             % 四、数据预处理（有数据/清洗时）
+\newif\ifshowframeworksection
+\showframeworksectionfalse       % 第二章末尾的问题间关系/总体建模框架（有跨问依赖时）
+\newif\ifshowrobustnesssection
+\showrobustnesssectionfalse      % 稳健性/敏感性/不确定性（spec 声明时才用）
+\newif\ifshowevaluationsection
+\showevaluationsectiontrue       % 模型评价
+\newif\ifshowconclusionsection
+\showconclusionsectionfalse      % 结论与建议（按题型决定）
+
+% 题型模块（QUESTION_CONTRACT/Model Spec 判定；只注释不加载——模块内容由写手按骨架填充）
+% modules/: data_analysis / prediction / classification / optimization / time_series /
+%           survival / mechanism / network_graph / evaluation / uncertainty
+\newcommand{\moduletype}{data_analysis}  % 例：survival + classification（多模块用逗号注释）

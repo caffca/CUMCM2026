@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "validation_id": "SELVAL-694B324777475D56",
+  "problem_id": "D2026",
+  "profile_id": "PROFILE-8ADA7763202B25BA",
+  "strategy_matching_id": "MATCH-1504A0480D6D591A",
+  "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+  "validation_policy": {
+    "independent_recompute": true,
+    "candidate_membership_required": true,
+    "evidence_required": true,
+    "question_isolation": true,
+    "auto_selection": false
+  },
+  "source_bindings": [
+    {
+      "artifact_id": "decision_record",
+      "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+      "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "role": "model decision record under validation"
+    },
+    {
+      "artifact_id": "problem_profile",
+      "path": "reports/contracts/PROBLEM_PROFILE.json",
+      "sha256": "a6dc243515bfe4d19da595982b66829fce13247a2533fb8f8902ddfcc84df89a",
+      "role": "Discovery-derived question-local profile"
+    },
+    {
+      "artifact_id": "strategy_matching",
+      "path": "reports/contracts/STRATEGY_MATCHING.json",
+      "sha256": "12744003c7a5c5dc3f447dfc56ba46f17d2ce74d53487735ac8a2e4fc3451d65",
+      "role": "question-local candidate strategy set"
+    },
+    {
+      "artifact_id": "modeling_strategy_library",
+      "path": "reports/contracts/MODELING_STRATEGY_LIBRARY.json",
+      "sha256": "a347988c470dd67f452444f703bfaa841e21abeafb07becd01c51b48c3d379c3",
+      "role": "versioned strategy card library snapshot"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q1",
+      "status": "PENDING",
+      "selected_strategy_id": null,
+      "checks": [
+        {
+          "check_id": "candidate_membership",
+          "status": "PASS",
+          "reason": "candidate_models are rebuilt from question-local matching result",
+          "evidence_refs": [
+            "Q1-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "feature_fit_evidence",
+          "status": "PASS",
+          "reason": "every card carries predicate evidence and card binding",
+          "evidence_refs": [
+            "Q1-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "rejection_evidence",
+          "status": "PASS",
+          "reason": "every rejected card remains with a reason and evidence refs",
+          "evidence_refs": [
+            "Q1-FE-task_type",
+            "Q1-FE-control",
+            "Q1-FE-combinatorial",
+            "Q1-F014",
+            "Q1-FE-special_boundary",
+            "Q1-FE-reachable_domain",
+            "Q1-FE-upper_lower_bounds",
+            "Q1-FE-temporal",
+            "Q1-FE-repeated_measures",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-FE-unavailable_variables",
+            "Q1-FE-leakage",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-F014",
+            "Q1-FE-graph",
+            "Q1-FE-network",
+            "Q1-FE-path"
+          ]
+        },
+        {
+          "check_id": "question_isolation",
+          "status": "PASS",
+          "reason": "decision and all candidates are explicitly question-local",
+          "evidence_refs": [
+            "Q1-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "criteria_declared",
+          "status": "PENDING",
+          "reason": "awaiting explicit per-question criteria",
+          "evidence_refs": [
+            "Q1-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "selection_basis_evidence",
+          "status": "PENDING",
+          "reason": "awaiting explicit evidence-backed selection proposal",
+          "evidence_refs": [
+            "Q1-FE-task_type"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "status": "PENDING",
+      "selected_strategy_id": null,
+      "checks": [
+        {
+          "check_id": "candidate_membership",
+          "status": "PASS",
+          "reason": "candidate_models are rebuilt from question-local matching result",
+          "evidence_refs": [
+            "Q2-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "feature_fit_evidence",
+          "status": "PASS",
+          "reason": "every card carries predicate evidence and card binding",
+          "evidence_refs": [
+            "Q2-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "rejection_evidence",
+          "status": "PASS",
+          "reason": "every rejected card remains with a reason and evidence refs",
+          "evidence_refs": [
+            "Q2-FE-task_type",
+            "Q2-FE-control",
+            "Q2-FE-combinatorial",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-special_boundary",
+            "Q2-FE-reachable_domain",
+            "Q2-FE-upper_lower_bounds",
+            "Q2-FE-temporal",
+            "Q2-FE-repeated_measures",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-FE-unavailable_variables",
+            "Q2-FE-leakage",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-graph",
+            "Q2-FE-network",
+            "Q2-FE-path"
+          ]
+        },
+        {
+          "check_id": "question_isolation",
+          "status": "PASS",
+          "reason": "decision and all candidates are explicitly question-local",
+          "evidence_refs": [
+            "Q2-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "criteria_declared",
+          "status": "PENDING",
+          "reason": "awaiting explicit per-question criteria",
+          "evidence_refs": [
+            "Q2-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "selection_basis_evidence",
+          "status": "PENDING",
+          "reason": "awaiting explicit evidence-backed selection proposal",
+          "evidence_refs": [
+            "Q2-FE-task_type"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "status": "PENDING",
+      "selected_strategy_id": null,
+      "checks": [
+        {
+          "check_id": "candidate_membership",
+          "status": "PASS",
+          "reason": "candidate_models are rebuilt from question-local matching result",
+          "evidence_refs": [
+            "Q3-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "feature_fit_evidence",
+          "status": "PASS",
+          "reason": "every card carries predicate evidence and card binding",
+          "evidence_refs": [
+            "Q3-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "rejection_evidence",
+          "status": "PASS",
+          "reason": "every rejected card remains with a reason and evidence refs",
+          "evidence_refs": [
+            "Q3-FE-task_type",
+            "Q3-FE-control",
+            "Q3-FE-combinatorial",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-special_boundary",
+            "Q3-FE-reachable_domain",
+            "Q3-FE-upper_lower_bounds",
+            "Q3-FE-temporal",
+            "Q3-FE-repeated_measures",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-FE-unavailable_variables",
+            "Q3-FE-leakage",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-analysis_unit",
+            "Q3-FE-observation_unit",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-sample_size",
+            "Q3-FE-repeated_measures",
+            "Q3-FE-graph",
+            "Q3-FE-network",
+            "Q3-FE-path"
+          ]
+        },
+        {
+          "check_id": "question_isolation",
+          "status": "PASS",
+          "reason": "decision and all candidates are explicitly question-local",
+          "evidence_refs": [
+            "Q3-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "criteria_declared",
+          "status": "PENDING",
+          "reason": "awaiting explicit per-question criteria",
+          "evidence_refs": [
+            "Q3-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "selection_basis_evidence",
+          "status": "PENDING",
+          "reason": "awaiting explicit evidence-backed selection proposal",
+          "evidence_refs": [
+            "Q3-FE-task_type"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "status": "PENDING",
+      "selected_strategy_id": null,
+      "checks": [
+        {
+          "check_id": "candidate_membership",
+          "status": "PASS",
+          "reason": "candidate_models are rebuilt from question-local matching result",
+          "evidence_refs": [
+            "Q4-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "feature_fit_evidence",
+          "status": "PASS",
+          "reason": "every card carries predicate evidence and card binding",
+          "evidence_refs": [
+            "Q4-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "rejection_evidence",
+          "status": "PASS",
+          "reason": "every rejected card remains with a reason and evidence refs",
+          "evidence_refs": [
+            "Q4-FE-task_type",
+            "Q4-FE-control",
+            "Q4-FE-combinatorial",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-special_boundary",
+            "Q4-FE-reachable_domain",
+            "Q4-FE-upper_lower_bounds",
+            "Q4-FE-temporal",
+            "Q4-FE-repeated_measures",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-FE-unavailable_variables",
+            "Q4-FE-leakage",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-graph",
+            "Q4-FE-network",
+            "Q4-FE-path"
+          ]
+        },
+        {
+          "check_id": "question_isolation",
+          "status": "PASS",
+          "reason": "decision and all candidates are explicitly question-local",
+          "evidence_refs": [
+            "Q4-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "criteria_declared",
+          "status": "PENDING",
+          "reason": "awaiting explicit per-question criteria",
+          "evidence_refs": [
+            "Q4-FE-task_type"
+          ]
+        },
+        {
+          "check_id": "selection_basis_evidence",
+          "status": "PENDING",
+          "reason": "awaiting explicit evidence-backed selection proposal",
+          "evidence_refs": [
+            "Q4-FE-task_type"
+          ]
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "generator_path": "skills/brainstorm-mathmodel/scripts/strategy_selection.py",
+    "generator_sha256": "4a61b6e3d1367e18c30b7ab645c70fbd9bb4702f15061927f57fcedbe6eb0066",
+    "source_commit": null,
+    "input_artifact_ids": [
+      "decision_record",
+      "problem_profile",
+      "strategy_matching",
+      "modeling_strategy_library"
+    ],
+    "input_bindings_sha256": "dacc0bb04f1abb8e5ccc1b8b50dffc29d0261660b679af6066398a9ad0377dfa",
+    "generated_at": "2026-09-11T20:43:12+08:00"
+  }
+}

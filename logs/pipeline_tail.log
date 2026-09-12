@@ -1,0 +1,379 @@
+
+===== write_results =====
+SKIP (no payload) Q1 full_triple None
+SKIP (no payload) Q2 cpsat_lex 4
+SKIP (no payload) Q2 check None
+SKIP (no payload) Q2 synth None
+SKIP (no payload) Q3 bound_elementary None
+SKIP (no payload) Q3 check None
+SKIP (no payload) Q3 synth None
+SKIP (no payload) Q4 check None
+SKIP (no payload) Q4 synth None
+
+[write_results] rc=0
+
+===== make_xlsx =====
+
+STDERR:Traceback (most recent call last):
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 72, in <module>
+    main()
+    ~~~~^^
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 26, in main
+    q1 = R("results/Q1_detect.json")
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 11, in R
+    d = json.load(open(p, encoding="utf-8"))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/Q1_detect.json'
+
+[make_xlsx] rc=1
+
+===== write_results =====
+
+STDERR:Traceback (most recent call last):
+  File "F:\2026 数模\D题重跑\D题\code\prod\write_results.py", line 108, in <module>
+    main()
+    ~~~~^^
+  File "F:\2026 数模\D题重跑\D题\code\prod\write_results.py", line 29, in main
+    ad = sorted(glob.glob(os.path.join(run_root, "tasks", tid, "attempts", "*")))
+                ^^^^
+NameError: name 'glob' is not defined. Did you forget to import 'glob'?
+
+[write_results] rc=1
+
+===== write_results =====
+FAIL results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": null, "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": [], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+
+[write_results] rc=0
+
+===== make_xlsx =====
+
+STDERR:Traceback (most recent call last):
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 72, in <module>
+    main()
+    ~~~~^^
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 26, in main
+    q1 = R("results/Q1_detect.json")
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 11, in R
+    d = json.load(open(p, encoding="utf-8"))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/Q1_detect.json'
+
+[make_xlsx] rc=1
+
+===== write_results =====
+Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+
+[write_results] rc=0
+
+===== make_xlsx =====
+
+STDERR:Traceback (most recent call last):
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 72, in <module>
+    main()
+    ~~~~^^
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 26, in main
+    q1 = R("results/Q1_detect.json")
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 11, in R
+    d = json.load(open(p, encoding="utf-8"))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/Q1_detect.json'
+
+[make_xlsx] rc=1
+
+===== write_results =====
+Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+FAIL results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+RESULT_WRITER: FAIL（coverage contract 缺失或为空：{"coverage_id": "P2-01-FULL-D2026-PROD-C-required-subset", "plan_path": "runs/fresh/FULL-D2026-PROD-C/COVERAGE_PLAN.json", "observed": {"cases_complete": ["Q1-Q1-R21-main-N-A-p0", "Q2-Q2-R51-main-N-A-p0", "Q2-Q2-R51-main-N-A-p1", "Q2-Q2-R51-main-N-A-p2", "Q2-Q2-R51-main-N-A-p3", "Q2-Q2-R51-main-N-A-p4", "Q2-Q2-R51-main-N-A-p5", "Q2-Q2-R51-main-N-A-p6", "Q3-Q3-R11-main-N-A-p0", "Q3-Q3-R11-main-N-A-p1", "Q3-Q3-R11-main-N-A-p2", "Q3-Q3-R11-main-N-A-p3", "Q3-Q3-R11-main-N-A-p4", "Q3-Q3-R11-main-N-A-p5", "Q3-Q3-R11-main-N-A-p6", "Q4-Q4-R11-main-N-A-p0", "Q4-Q4-R11-main-N-A-p1", "Q4-Q4-R11-main-N-A-p2", "Q4-Q4-R11-main-N-A-p3"], "total_cases": 19, "run_id": "FULL-D2026-PROD-C"}, "status": "complete"}）
+ 
+
+[write_results] rc=0
+
+===== make_xlsx =====
+
+STDERR:Traceback (most recent call last):
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 72, in <module>
+    main()
+    ~~~~^^
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 26, in main
+    q1 = R("results/Q1_detect.json")
+  File "F:\2026 数模\D题重跑\D题\code\prod\make_xlsx.py", line 11, in R
+    d = json.load(open(p, encoding="utf-8"))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results/Q1_detect.json'
+
+[make_xlsx] rc=1
+
+===== write_results =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify =====
+verify_all: FAIL(2) | docs: 13
+  [FAIL] missing:Q4_submission_check
+  [FAIL] Q2 w1/w8 第一级复现不一致
+
+[verify] rc=1
+
+===== write_results =====
+FAIL results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+Q3-Q3-R11-main-N-A-p2: 未完成', 'Q3-Q3-R11-main-N-A-p3: 未完成', 'Q3-Q3-R11-main-N-A-p4: 未完成', 'Q3-Q3-R11-main-N-A-p5: 未完成', 'Q3-Q3-R11-main-N-A-p6: 未完成', 'Q4-Q4-R11-main-N-A-p0: 未完成', 'Q4-Q4-R11-main-N-A-p1: 未完成', 'Q4-Q4-R11-main-N-A-p2: 未完成', 'Q4-Q4-R11-main-N-A-p3: 未完成', 'coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3', 'stop_policy 未达到停止条件：required shard incomplete']；Q1-Q1-R21-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p1: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p2: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p3: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p4: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p5: status_file 缺失/非法）
+ 
+FAIL results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+Q3-Q3-R11-main-N-A-p2: 未完成', 'Q3-Q3-R11-main-N-A-p3: 未完成', 'Q3-Q3-R11-main-N-A-p4: 未完成', 'Q3-Q3-R11-main-N-A-p5: 未完成', 'Q3-Q3-R11-main-N-A-p6: 未完成', 'Q4-Q4-R11-main-N-A-p0: 未完成', 'Q4-Q4-R11-main-N-A-p1: 未完成', 'Q4-Q4-R11-main-N-A-p2: 未完成', 'Q4-Q4-R11-main-N-A-p3: 未完成', 'coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3', 'stop_policy 未达到停止条件：required shard incomplete']；Q1-Q1-R21-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p1: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p2: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p3: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p4: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p5: status_file 缺失/非法）
+ 
+SKIP (no payload) Q2 check None
+SKIP (no payload) Q2 synth None
+SKIP (no payload) Q3 bound_elementary None
+SKIP (no payload) Q3 check None
+SKIP (no payload) Q3 synth None
+SKIP (no payload) Q4 check None
+SKIP (no payload) Q4 synth None
+
+[write_results] rc=0
+
+===== make_xlsx =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify =====
+verify_all v2: PASS | run=FULL-D2026-PROD-H | docs: 16
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[21, 99, 1905, 573] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1063.0 ub_phase=334（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=0
+
+===== report =====
+RESULTS_REPORT v2 written; run= FULL-D2026-PROD-H
+
+[report] rc=0
+
+===== figures =====
+draft figures written: 10
+
+[figures] rc=0
+
+===== write_results =====
+FAIL results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+Q3-Q3-R11-main-N-A-p2: 未完成', 'Q3-Q3-R11-main-N-A-p3: 未完成', 'Q3-Q3-R11-main-N-A-p4: 未完成', 'Q3-Q3-R11-main-N-A-p5: 未完成', 'Q3-Q3-R11-main-N-A-p6: 未完成', 'Q4-Q4-R11-main-N-A-p0: 未完成', 'Q4-Q4-R11-main-N-A-p1: 未完成', 'Q4-Q4-R11-main-N-A-p2: 未完成', 'Q4-Q4-R11-main-N-A-p3: 未完成', 'coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3', 'stop_policy 未达到停止条件：required shard incomplete']；Q1-Q1-R21-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p1: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p2: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p3: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p4: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p5: status_file 缺失/非法）
+ 
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+SKIP (no payload) Q2 check None
+SKIP (no payload) Q2 synth None
+SKIP (no payload) Q3 bound_elementary None
+SKIP (no payload) Q3 check None
+SKIP (no payload) Q3 synth None
+SKIP (no payload) Q4 check None
+SKIP (no payload) Q4 synth None
+
+[write_results] rc=0
+
+===== make_xlsx =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify =====
+verify_all v2: PASS | run=FULL-D2026-PROD-H | docs: 16
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[21, 99, 1905, 573] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1063.0 ub_phase=334（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=0
+
+===== report =====
+RESULTS_REPORT v2 written; run= FULL-D2026-PROD-H
+
+[report] rc=0
+
+===== figures =====
+draft figures written: 10
+
+[figures] rc=0
+
+===== write_results =====
+FAIL results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+Q3-Q3-R11-main-N-A-p2: 未完成', 'Q3-Q3-R11-main-N-A-p3: 未完成', 'Q3-Q3-R11-main-N-A-p4: 未完成', 'Q3-Q3-R11-main-N-A-p5: 未完成', 'Q3-Q3-R11-main-N-A-p6: 未完成', 'Q4-Q4-R11-main-N-A-p0: 未完成', 'Q4-Q4-R11-main-N-A-p1: 未完成', 'Q4-Q4-R11-main-N-A-p2: 未完成', 'Q4-Q4-R11-main-N-A-p3: 未完成', 'coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3', 'stop_policy 未达到停止条件：required shard incomplete']；Q1-Q1-R21-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p1: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p2: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p3: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p4: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p5: status_file 缺失/非法）
+ 
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+SKIP (no payload) Q2 check None
+SKIP (no payload) Q2 synth None
+SKIP (no payload) Q3 bound_elementary None
+SKIP (no payload) Q3 check None
+SKIP (no payload) Q3 synth None
+SKIP (no payload) Q4 check None
+SKIP (no payload) Q4 synth None
+
+[write_results] rc=0
+
+===== make_xlsx =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify =====
+verify_all v2: FAIL(1) | run=FULL-D2026-PROD-H | docs: 16
+  [FAIL] Q3_sensitivity: 输入证据 sha 漂移 results/Q3_solution.json
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[21, 99, 1905, 573] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1063.0 ub_phase=334（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=1
+
+===== write_results =====
+FAIL results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+Q3-Q3-R11-main-N-A-p2: 未完成', 'Q3-Q3-R11-main-N-A-p3: 未完成', 'Q3-Q3-R11-main-N-A-p4: 未完成', 'Q3-Q3-R11-main-N-A-p5: 未完成', 'Q3-Q3-R11-main-N-A-p6: 未完成', 'Q4-Q4-R11-main-N-A-p0: 未完成', 'Q4-Q4-R11-main-N-A-p1: 未完成', 'Q4-Q4-R11-main-N-A-p2: 未完成', 'Q4-Q4-R11-main-N-A-p3: 未完成', 'coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3', 'stop_policy 未达到停止条件：required shard incomplete']；Q1-Q1-R21-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p0: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p1: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p2: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p3: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p4: 输入 hash 已变化；Q2-Q2-R51-main-N-A-p5: status_file 缺失/非法）
+ 
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+SKIP (no payload) Q2 check None
+SKIP (no payload) Q2 synth None
+SKIP (no payload) Q3 bound_elementary None
+SKIP (no payload) Q3 check None
+SKIP (no payload) Q3 synth None
+SKIP (no payload) Q4 check None
+SKIP (no payload) Q4 synth None
+
+[write_results] rc=0
+
+===== make_xlsx =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify =====
+verify_all v2: FAIL(1) | run=FULL-D2026-PROD-H | docs: 16
+  [FAIL] Q3_sensitivity: 输入证据 sha 漂移 results/Q3_solution.json
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[21, 99, 1905, 573] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1063.0 ub_phase=334（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=1

@@ -1,0 +1,22 @@
+{
+ "elapsed_seconds": 70.289,
+ "status": "completed",
+ "stopping_reason": "stages_complete_or_budget",
+ "evaluator_calls": 4,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "cpsat_lex",
+  "workers": 4,
+  "stage_budget": {
+   "l1": 20,
+   "ladder": 10,
+   "l2": 10,
+   "l3": 8,
+   "l4": 8
+  },
+  "q2_solution": "logs/q2smoke/payload.json",
+  "anchor": true
+ }
+}

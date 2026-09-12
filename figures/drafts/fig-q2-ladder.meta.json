@@ -1,0 +1,29 @@
+{
+  "figure_id": "fig-q2-ladder",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:26+08:00",
+  "source_results": [
+    {
+      "file": "Q2_solution.json",
+      "sha256": "127d153f865ae3ba0b21783b3e03dd75932008a37b29f73a7cd9c4afca60ef46",
+      "keys": [
+        "ladder_proven_revoke_lb",
+        "revoke"
+      ]
+    }
+  ],
+  "source_hash": "a00364abd758c16e6165f4d0f9690e5a053b10bccb1ae1ecacc7a93559422509",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 6,
+      "text_count": 0,
+      "collection_count": 0
+    }
+  },
+  "annotations": [],
+  "axes": [],
+  "caption": "撤销阶梯证书序列"
+}

@@ -1,0 +1,811 @@
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+25000110874, p90=1273.2080186999956) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q2-Q2-R51-main-N-A-p1: 未完成
+  - Q2-Q2-R51-main-N-A-p2: 未完成
+  - Q2-Q2-R51-main-N-A-p3: 未完成
+  - Q2-Q2-R51-main-N-A-p4: 未完成
+  - Q2-Q2-R51-main-N-A-p5: 未完成
+  - Q2-Q2-R51-main-N-A-p6: 未完成
+  - Q3-Q3-R11-main-N-A-p0: 未完成
+  - Q3-Q3-R11-main-N-A-p1: 未完成
+  - Q3-Q3-R11-main-N-A-p2: 未完成
+  - Q3-Q3-R11-main-N-A-p3: 未完成
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p1, Q2-Q2-R51-main-N-A-p2, Q2-Q2-R51-main-N-A-p3, Q2-Q2-R51-main-N-A-p4, Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 1 launch_rc=1 complete=2 failed=0
+=== WAVE 2: ['Q2-Q2-R51-main-N-A-p1', 'Q2-Q2-R51-main-N-A-p2']
+PASS Q2-Q2-R51-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q2-Q2-R51-main-N-A-p2\attempts\001
+PASS Q2-Q2-R51-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q2-Q2-R51-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (4/19, p50=240.56257979999646, p90=1273.2080186999956) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q2-Q2-R51-main-N-A-p3: 未完成
+  - Q2-Q2-R51-main-N-A-p4: 未完成
+  - Q2-Q2-R51-main-N-A-p5: 未完成
+  - Q2-Q2-R51-main-N-A-p6: 未完成
+  - Q3-Q3-R11-main-N-A-p0: 未完成
+  - Q3-Q3-R11-main-N-A-p1: 未完成
+  - Q3-Q3-R11-main-N-A-p2: 未完成
+  - Q3-Q3-R11-main-N-A-p3: 未完成
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p3, Q2-Q2-R51-main-N-A-p4, Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 2 launch_rc=1 complete=4 failed=0
+=== WAVE 3: ['Q2-Q2-R51-main-N-A-p3', 'Q2-Q2-R51-main-N-A-p4', 'Q2-Q2-R51-main-N-A-p5']
+PASS Q2-Q2-R51-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q2-Q2-R51-main-N-A-p4\attempts\001
+PASS Q2-Q2-R51-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q2-Q2-R51-main-N-A-p3\attempts\001
+FAIL Q2-Q2-R51-main-N-A-p5: v2 attempts=1 failure=nonzero_exit
+SHARD_AGGREGATE v2: INCOMPLETE (6/19, p50=241.84403829999792, p90=1273.2080186999956) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q2-Q2-R51-main-N-A-p5: 未完成
+  - Q2-Q2-R51-main-N-A-p6: 未完成
+  - Q3-Q3-R11-main-N-A-p0: 未完成
+  - Q3-Q3-R11-main-N-A-p1: 未完成
+  - Q3-Q3-R11-main-N-A-p2: 未完成
+  - Q3-Q3-R11-main-N-A-p3: 未完成
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 3 launch_rc=1 complete=6 failed=1
+
+[waves] rc=2
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+=== WAVE 1: ['Q2-Q2-R51-main-N-A-p0', 'Q1-Q1-R21-main-N-A-p0']
+SHARD_AGGREGATE v2: INCOMPLETE (6/19, p50=241.84403829999792, p90=1273.2080186999956) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q2-Q2-R51-main-N-A-p5: 未完成
+  - Q2-Q2-R51-main-N-A-p6: 未完成
+  - Q3-Q3-R11-main-N-A-p0: 未完成
+  - Q3-Q3-R11-main-N-A-p1: 未完成
+  - Q3-Q3-R11-main-N-A-p2: 未完成
+  - Q3-Q3-R11-main-N-A-p3: 未完成
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q2-Q2-R51-main-N-A-p5, Q2-Q2-R51-main-N-A-p6, Q3-Q3-R11-main-N-A-p0, Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 1 launch_rc=1 complete=6 failed=1
+
+[waves] rc=2
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p1, Q3-Q3-R11-main-N-A-p2, Q3-Q3-R11-main-N-A-p3, Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=15.108689400003641, p90=1272.3364641999942) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=14.52063860000635, p90=1272.3364641999942) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=15.108689400003641, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2', 'Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+FAIL Q4-Q4-R11-main-N-A-p3: v2 attempts=1 failure=nonzero_exit
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+WAVE-INCOMPLETE Q4-Q4-R11-main-N-A-p3 | Q4-Q4-R11-main-N-A-p3 | true | failed | shard-9ec0df5b8612b978435086b6 | 未完成 | 1 |
+
+[waves] rc=3
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+=== WAVE 1: ['Q2-Q2-R51-main-N-A-p0', 'Q1-Q1-R21-main-N-A-p0']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 1 launch_rc=1
+=== WAVE 2: ['Q2-Q2-R51-main-N-A-p1', 'Q2-Q2-R51-main-N-A-p2']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 2 launch_rc=1
+=== WAVE 3: ['Q2-Q2-R51-main-N-A-p3', 'Q2-Q2-R51-main-N-A-p4', 'Q2-Q2-R51-main-N-A-p5']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 3 launch_rc=1
+=== WAVE 4: ['Q2-Q2-R51-main-N-A-p6', 'Q3-Q3-R11-main-N-A-p0']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=14.52063860000635, p90=1386.777908499993) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-C\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+ 
+
+[waves] rc=2
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+=== WAVE 1: ['Q2-Q2-R51-main-N-A-p0', 'Q1-Q1-R21-main-N-A-p0']
+FAIL existing production source plan differs from recomputed plan: reports/execution/SHARD_PLAN.json
+PRODUCTION_PLAN: FAIL_CLOSED
+=== WAVE 1 launch_rc=2
+=== WAVE 2: ['Q2-Q2-R51-main-N-A-p1', 'Q2-Q2-R51-main-N-A-p2']
+FAIL existing production source plan differs from recomputed plan: reports/execution/SHARD_PLAN.json
+PRODUCTION_PLAN: FAIL_CLOSED
+=== WAVE 2 launch_rc=2
+=== WAVE 3: ['Q2-Q2-R51-main-N-A-p3', 'Q2-Q2-R51-main-N-A-p4', 'Q2-Q2-R51-main-N-A-p5']
+FAIL existing production source plan differs from recomputed plan: reports/execution/SHARD_PLAN.json
+PRODUCTION_PLAN: FAIL_CLOSED
+=== WAVE 3 launch_rc=2
+WAVE-INCOMPLETE Q2-Q2-R51-main-N-A-p5 | Q2-Q2-R51-main-N-A-p5 | true | pending | shard-c4a3ddc3878116e3934de499 | 未完成 |  |
+
+[waves] rc=3
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+red shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=10.911396799987415, p90=1269.915448499989) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=10.91095759999007, p90=1269.915448499989) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=10.911396799987415, p90=1379.6302218000055) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=10.91095759999007, p90=1379.6302218000055) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.91095759999007, p90=1379.6302218000055) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.91095759999007, p90=1379.6302218000055) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[waves] rc=0
+
+===== aggregate @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'aggregate'] =====
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.91095759999007, p90=1379.6302218000055) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-D\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[aggregate] rc=0
+
+===== write_results @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/write_results.py', '--run-id', 'FULL-D2026-PROD-D'] =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_xlsx.py'] =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/submission_checks.py'] =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify @ ['C:\\Program Files\\Python314\\python.exe', 'code/verify_all.py'] =====
+verify_all: FAIL(1) | docs: 14
+  [FAIL] Q2 w1/w8 第一级复现不一致
+
+[verify] rc=1
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+uired shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=9.057522299990524, p90=1269.842813299998) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=9.015002200001618, p90=1269.842813299998) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=9.057522299990524, p90=1483.5500692000205) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=9.015002200001618, p90=1483.5500692000205) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.015002200001618, p90=1483.5500692000205) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.015002200001618, p90=1483.5500692000205) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[waves] rc=0
+
+===== aggregate @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'aggregate'] =====
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.015002200001618, p90=1483.5500692000205) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-E\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[aggregate] rc=0
+
+===== write_results @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/write_results.py', '--run-id', 'FULL-D2026-PROD-E'] =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_xlsx.py'] =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/submission_checks.py'] =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== verify @ ['C:\\Program Files\\Python314\\python.exe', 'code/verify_all.py'] =====
+verify_all: PASS | docs: 14
+
+[verify] rc=0
+
+===== report @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_report.py'] =====
+RESULTS_REPORT written
+
+[report] rc=0
+
+===== figures @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_figures.py'] =====
+draft figures written: 10
+
+[figures] rc=0
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+=== WAVE 1: ['Q2-Q2-R51-main-N-A-p0', 'Q1-Q1-R21-main-N-A-p0']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 1 launch_rc=2
+=== WAVE 2: ['Q2-Q2-R51-main-N-A-p1', 'Q2-Q2-R51-main-N-A-p2']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 2 launch_rc=2
+=== WAVE 3: ['Q2-Q2-R51-main-N-A-p3', 'Q2-Q2-R51-main-N-A-p4', 'Q2-Q2-R51-main-N-A-p5']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 3 launch_rc=2
+=== WAVE 4: ['Q2-Q2-R51-main-N-A-p6', 'Q3-Q3-R11-main-N-A-p0']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 4 launch_rc=2
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 5 launch_rc=2
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 6 launch_rc=2
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 7 launch_rc=2
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 8 launch_rc=2
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+=== WAVE 9 launch_rc=2
+ERROR 同一 run_id 的 SHARD_PLAN 已存在且内容不同；请使用新 run_id
+ 
+
+[waves] rc=2
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+equired shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=8.800330199999735, p90=1269.7528452000115) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=8.778257300000405, p90=1269.7528452000115) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=8.800330199999735, p90=1484.466480699979) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=8.778257300000405, p90=1484.466480699979) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=8.778257300000405, p90=1484.466480699979) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+SHARD_AGGREGATE v2: PASS (19/19, p50=8.778257300000405, p90=1484.466480699979) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[waves] rc=0
+
+===== aggregate @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'aggregate'] =====
+SHARD_AGGREGATE v2: PASS (19/19, p50=8.778257300000405, p90=1484.466480699979) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-F\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[aggregate] rc=0
+
+===== write_results @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/write_results.py', '--run-id', 'FULL-D2026-PROD-F'] =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_xlsx.py'] =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/submission_checks.py'] =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== sensitivity @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_q3_sensitivity.py'] =====
+writer rc 0 _ids": ["Q3"], "registry_path": "results/RESULT_REGISTRY.json", "result_file_sha256": "8812208de9098cbce17afb9976e8a2ac424a45bfc39f1f454d928744e7c1c24e", "result_path": "results/Q3_sensitivity.json"}
+
+
+[sensitivity] rc=0
+
+===== verify @ ['C:\\Program Files\\Python314\\python.exe', 'code/verify_all.py'] =====
+verify_all v2: PASS | run=FULL-D2026-PROD-F | docs: 16
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[20, 103, 1907, 607] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=138.0 ub_lp=1089.5 ub_phase=335（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=0
+
+===== report @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_report.py'] =====
+RESULTS_REPORT v2 written; run= FULL-D2026-PROD-F
+
+[report] rc=0
+
+===== figures @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_figures.py'] =====
+draft figures written: 10
+
+[figures] rc=0
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+red shard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=10.069583599979524, p90=1272.821191199997) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=9.876024899975164, p90=1272.821191199997) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=10.069583599979524, p90=1489.6806273999973) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=9.876024899975164, p90=1489.6806273999973) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.876024899975164, p90=1489.6806273999973) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.876024899975164, p90=1489.6806273999973) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[waves] rc=0
+
+===== aggregate @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'aggregate'] =====
+SHARD_AGGREGATE v2: PASS (19/19, p50=9.876024899975164, p90=1489.6806273999973) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-G\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[aggregate] rc=0
+
+===== write_results @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/write_results.py', '--run-id', 'FULL-D2026-PROD-G'] =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_xlsx.py'] =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/submission_checks.py'] =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== sensitivity @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_q3_sensitivity.py'] =====
+writer rc 0 _ids": ["Q3"], "registry_path": "results/RESULT_REGISTRY.json", "result_file_sha256": "d0fabab29bf47b2ce92c339d63f7857a24e4305f72c9e5f4e26debf8ece8991c", "result_path": "results/Q3_sensitivity.json"}
+
+
+[sensitivity] rc=0
+
+===== verify @ ['C:\\Program Files\\Python314\\python.exe', 'code/verify_all.py'] =====
+verify_all v2: PASS | run=FULL-D2026-PROD-G | docs: 16
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[20, 104, 2007, 585] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1060.0 ub_phase=332（勿混引）
+  [WARN] Q4 证书: lb=2（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=0
+
+===== report @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_report.py'] =====
+RESULTS_REPORT v2 written; run= FULL-D2026-PROD-G
+
+[report] rc=0
+
+===== figures @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_figures.py'] =====
+draft figures written: 10
+
+[figures] rc=0
+
+===== waves @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'all'] =====
+ard incomplete
+=== WAVE 4 launch_rc=1
+=== WAVE 5: ['Q3-Q3-R11-main-N-A-p1', 'Q3-Q3-R11-main-N-A-p2', 'Q3-Q3-R11-main-N-A-p3']
+PASS Q3-Q3-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p2\attempts\001
+PASS Q3-Q3-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p1\attempts\001
+PASS Q3-Q3-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (12/19, p50=10.398321999993641, p90=1275.2739780999837) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+  - Q3-Q3-R11-main-N-A-p4: 未完成
+  - Q3-Q3-R11-main-N-A-p5: 未完成
+  - Q3-Q3-R11-main-N-A-p6: 未完成
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q3-Q3-R11-main-N-A-p4, Q3-Q3-R11-main-N-A-p5, Q3-Q3-R11-main-N-A-p6, Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 5 launch_rc=1
+=== WAVE 6: ['Q3-Q3-R11-main-N-A-p4', 'Q3-Q3-R11-main-N-A-p5', 'Q3-Q3-R11-main-N-A-p6']
+PASS Q3-Q3-R11-main-N-A-p4: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p4\attempts\001
+PASS Q3-Q3-R11-main-N-A-p5: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p5\attempts\001
+PASS Q3-Q3-R11-main-N-A-p6: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q3-Q3-R11-main-N-A-p6\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (15/19, p50=10.152823000011267, p90=1275.2739780999837) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p0: 未完成
+  - Q4-Q4-R11-main-N-A-p1: 未完成
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p0, Q4-Q4-R11-main-N-A-p1, Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 6 launch_rc=1
+=== WAVE 7: ['Q4-Q4-R11-main-N-A-p0', 'Q4-Q4-R11-main-N-A-p1']
+PASS Q4-Q4-R11-main-N-A-p0: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q4-Q4-R11-main-N-A-p0\attempts\001
+PASS Q4-Q4-R11-main-N-A-p1: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q4-Q4-R11-main-N-A-p1\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (17/19, p50=10.398321999993641, p90=1490.4683084999851) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p2: 未完成
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p2, Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 7 launch_rc=1
+=== WAVE 8: ['Q4-Q4-R11-main-N-A-p2']
+PASS Q4-Q4-R11-main-N-A-p2: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q4-Q4-R11-main-N-A-p2\attempts\001
+SHARD_AGGREGATE v2: INCOMPLETE (18/19, p50=10.152823000011267, p90=1490.4683084999851) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+  - Q4-Q4-R11-main-N-A-p3: 未完成
+  - coverage mandatory cases 未完成：Q4-Q4-R11-main-N-A-p3
+  - stop_policy 未达到停止条件：required shard incomplete
+=== WAVE 8 launch_rc=1
+=== WAVE 9: ['Q4-Q4-R11-main-N-A-p3']
+PASS Q4-Q4-R11-main-N-A-p3: v2 attempt=1 isolated=F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\tasks\Q4-Q4-R11-main-N-A-p3\attempts\001
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.152823000011267, p90=1490.4683084999851) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+=== WAVE 9 launch_rc=0
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.152823000011267, p90=1490.4683084999851) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[waves] rc=0
+
+===== aggregate @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/run_prod.py', 'aggregate'] =====
+SHARD_AGGREGATE v2: PASS (19/19, p50=10.152823000011267, p90=1490.4683084999851) -> F:\2026 数模\D题重跑\D题\runs\fresh\FULL-D2026-PROD-H\SHARD_AGGREGATE.json
+EXECUTION_EVIDENCE_GATE --strict: PASS (P2-01 aggregate)
+ 
+
+[aggregate] rc=0
+
+===== write_results @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/write_results.py', '--run-id', 'FULL-D2026-PROD-H'] =====
+OK   results/Q1_detect.json <- Q1-Q1-R21-main-N-A-p0
+OK   results/Q2_main_w4.json <- Q2-Q2-R51-main-N-A-p0
+OK   results/Q2_check.json <- Q2-Q2-R51-main-N-A-p5
+OK   results/Q2_solution.json <- Q2-Q2-R51-main-N-A-p6
+OK   results/Q3_bound.json <- Q3-Q3-R11-main-N-A-p4
+OK   results/Q3_check.json <- Q3-Q3-R11-main-N-A-p5
+OK   results/Q3_solution.json <- Q3-Q3-R11-main-N-A-p6
+OK   results/Q4_check.json <- Q4-Q4-R11-main-N-A-p2
+OK   results/Q4_solution.json <- Q4-Q4-R11-main-N-A-p3
+
+[write_results] rc=0
+
+===== make_xlsx @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_xlsx.py'] =====
+xlsx written: ['AI工具使用详情.pdf', 'result1.xlsx', 'result2.xlsx', 'result3.xlsx', 'result4.xlsx']
+
+[make_xlsx] rc=0
+
+===== submission_checks @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/submission_checks.py'] =====
+OK   results/Q1_verify.json 
+OK   results/Q1_stats.json 
+OK   results/Q2_table1.json 
+OK   results/Q3_submission_check.json 
+OK   results/Q4_submission_check.json 
+OK   results/Q4_table1.json 
+
+[submission_checks] rc=0
+
+===== sensitivity @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_q3_sensitivity.py'] =====
+writer rc 0 _ids": ["Q3"], "registry_path": "results/RESULT_REGISTRY.json", "result_file_sha256": "73408ad928b8e1f5fbbc685b272d7f0699772d10b8d6b3cab731851f3c13721d", "result_path": "results/Q3_sensitivity.json"}
+
+
+[sensitivity] rc=0
+
+===== verify @ ['C:\\Program Files\\Python314\\python.exe', 'code/verify_all.py'] =====
+verify_all v2: PASS | run=FULL-D2026-PROD-H | docs: 16
+  [WARN] Q1 植入召回 min=0.7177（V-Q1-06 recommended 正式判定；该统计为构造性诊断口径的保守下界，真值 297 已由三实现+官方口径+独立终检四路对账）
+  [WARN] Q2 复现诊断: first_layer=0 w1=[21, 99, 1905, 573] w4=[6, 121, 1996, 661]; gap=1（未闭合→禁称最优）
+  [WARN] Q3 界口径: ub_cp=136.0 ub_lp=1063.0 ub_phase=334（勿混引）
+  [WARN] Q4 证书: lb=3（未闭合禁称最优；低层级改善如实报）
+
+[verify] rc=0
+
+===== report @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_report.py'] =====
+RESULTS_REPORT v2 written; run= FULL-D2026-PROD-H
+
+[report] rc=0
+
+===== figures @ ['C:\\Program Files\\Python314\\python.exe', 'code/prod/make_figures.py'] =====
+draft figures written: 10
+
+[figures] rc=0

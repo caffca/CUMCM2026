@@ -1,0 +1,592 @@
+{
+ "question_id": "Q2",
+ "variant": "cpsat_lex",
+ "workers": 1,
+ "gstar_edges": 1693,
+ "forced_edges": 0,
+ "options_total": 4582,
+ "actions": {
+  "A001": {
+   "df": 6
+  },
+  "A002": {
+   "dt": 3
+  },
+  "A003": {
+   "df": 10
+  },
+  "A004": {
+   "dt": -4
+  },
+  "A005": {
+   "revoke": true
+  },
+  "A006": {
+   "df": -5
+  },
+  "A007": {
+   "df": 8
+  },
+  "A008": {
+   "df": -6
+  },
+  "A009": {
+   "revoke": true
+  },
+  "A010": {
+   "revoke": true
+  },
+  "A011": {
+   "revoke": true
+  },
+  "A012": {
+   "dt": -3
+  },
+  "A013": {
+   "revoke": true
+  },
+  "A014": {
+   "revoke": true
+  },
+  "A015": {
+   "df": 10
+  },
+  "A016": {
+   "df": 3
+  },
+  "A017": {
+   "df": -10
+  },
+  "A018": {
+   "df": 10
+  },
+  "A019": {
+   "dt": -3
+  },
+  "A020": {
+   "df": 10
+  },
+  "B001": {
+   "dt": 5
+  },
+  "B002": {
+   "dt": -5
+  },
+  "B003": {
+   "df": 3
+  },
+  "B004": {
+   "dt": -4
+  },
+  "B005": {
+   "dt": 4
+  },
+  "B006": {
+   "df": -10
+  },
+  "B007": {
+   "revoke": true
+  },
+  "B008": {
+   "revoke": true
+  },
+  "B009": {
+   "df": -10
+  },
+  "B010": {
+   "df": 7
+  },
+  "B011": {
+   "revoke": true
+  },
+  "B012": {
+   "revoke": true
+  },
+  "B013": {
+   "revoke": true
+  },
+  "B014": {
+   "dt": 1
+  },
+  "B015": {
+   "revoke": true
+  },
+  "B016": {
+   "revoke": true
+  },
+  "B017": {
+   "revoke": true
+  },
+  "B018": {
+   "dt": 1
+  },
+  "B019": {
+   "df": 7
+  },
+  "B020": {
+   "revoke": true
+  },
+  "B021": {
+   "revoke": true
+  },
+  "B022": {
+   "dt": -4
+  },
+  "B023": {
+   "revoke": true
+  },
+  "B024": {
+   "dt": 3
+  },
+  "B026": {
+   "df": -10
+  },
+  "B027": {
+   "dt": -5
+  },
+  "B028": {
+   "revoke": true
+  },
+  "B029": {
+   "revoke": true
+  },
+  "B030": {
+   "dt": 5
+  },
+  "B031": {
+   "df": -6
+  },
+  "B032": {
+   "df": 9
+  },
+  "B033": {
+   "revoke": true
+  },
+  "B034": {
+   "df": 2
+  },
+  "B035": {
+   "revoke": true
+  },
+  "B036": {
+   "df": 10
+  },
+  "B037": {
+   "dt": -4
+  },
+  "B038": {
+   "df": -6
+  },
+  "B039": {
+   "revoke": true
+  },
+  "B040": {
+   "df": -5
+  },
+  "C001": {
+   "revoke": true
+  },
+  "C002": {
+   "dt": 4
+  },
+  "C003": {
+   "dt": 4
+  },
+  "C004": {
+   "df": -10
+  },
+  "C005": {
+   "df": -5
+  },
+  "C006": {
+   "df": 1
+  },
+  "C007": {
+   "revoke": true
+  },
+  "C008": {
+   "dt": 4
+  },
+  "C009": {
+   "revoke": true
+  },
+  "C010": {
+   "df": -4
+  },
+  "C012": {
+   "revoke": true
+  },
+  "C014": {
+   "df": -4
+  },
+  "C015": {
+   "df": -5
+  },
+  "C016": {
+   "df": 8
+  },
+  "C017": {
+   "revoke": true
+  },
+  "C018": {
+   "df": 7
+  },
+  "C019": {
+   "df": 10
+  },
+  "C020": {
+   "dt": 5
+  },
+  "C021": {
+   "dt": -2
+  },
+  "C022": {
+   "df": -9
+  },
+  "C023": {
+   "df": -7
+  },
+  "C024": {
+   "dt": -4
+  },
+  "C025": {
+   "dt": 2
+  },
+  "C026": {
+   "dt": -2
+  },
+  "C027": {
+   "revoke": true
+  },
+  "C028": {
+   "dt": 4
+  },
+  "C029": {
+   "df": -10
+  },
+  "C030": {
+   "df": -6
+  },
+  "C031": {
+   "dt": -3
+  },
+  "C032": {
+   "dt": 4
+  },
+  "C033": {
+   "dt": -2
+  },
+  "C034": {
+   "df": -5
+  },
+  "C036": {
+   "df": 10
+  },
+  "C037": {
+   "revoke": true
+  },
+  "C038": {
+   "revoke": true
+  },
+  "C039": {
+   "df": -10
+  },
+  "C040": {
+   "dt": -2
+  },
+  "C041": {
+   "revoke": true
+  },
+  "C042": {
+   "dt": 5
+  },
+  "C043": {
+   "df": 10
+  },
+  "C044": {
+   "df": -4
+  },
+  "C045": {
+   "df": 6
+  },
+  "C046": {
+   "revoke": true
+  },
+  "C047": {
+   "revoke": true
+  },
+  "C048": {
+   "df": -4
+  },
+  "C049": {
+   "revoke": true
+  },
+  "C051": {
+   "dt": 2
+  },
+  "C052": {
+   "df": 5
+  },
+  "C053": {
+   "dt": 5
+  },
+  "C054": {
+   "dt": 2
+  },
+  "C055": {
+   "df": 8
+  },
+  "C056": {
+   "revoke": true
+  },
+  "C057": {
+   "df": -5
+  },
+  "C058": {
+   "dt": -1
+  },
+  "C059": {
+   "df": 5
+  },
+  "C060": {
+   "df": 2
+  },
+  "C061": {
+   "df": 5
+  },
+  "C062": {
+   "df": 6
+  },
+  "C063": {
+   "dt": -4
+  },
+  "C064": {
+   "df": -10
+  },
+  "C065": {
+   "df": -4
+  },
+  "C066": {
+   "df": 2
+  },
+  "C067": {
+   "df": -4
+  },
+  "C068": {
+   "df": -7
+  },
+  "C070": {
+   "revoke": true
+  },
+  "C071": {
+   "dt": 5
+  },
+  "C072": {
+   "dt": -3
+  },
+  "C073": {
+   "revoke": true
+  },
+  "C074": {
+   "df": -2
+  },
+  "C075": {
+   "revoke": true
+  },
+  "C076": {
+   "revoke": true
+  },
+  "C077": {
+   "df": 1
+  },
+  "C078": {
+   "revoke": true
+  },
+  "C079": {
+   "df": -10
+  },
+  "C080": {
+   "dt": 2
+  },
+  "C082": {
+   "df": 9
+  },
+  "C083": {
+   "df": -1
+  },
+  "C085": {
+   "df": -1
+  },
+  "C086": {
+   "revoke": true
+  },
+  "C087": {
+   "df": -10
+  },
+  "C088": {
+   "df": 5
+  },
+  "C089": {
+   "df": -8
+  },
+  "C090": {
+   "dt": 5
+  }
+ },
+ "objective_tuple": [
+  41,
+  101,
+  3252,
+  538
+ ],
+ "objective_scalar": 41010132520538,
+ "revocation": {
+  "upper_incumbent": 41,
+  "proven_lb": 1,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": null,
+    "source": "cpsat_bound_L1",
+    "status": "FEASIBLE",
+    "lb": -19
+   },
+   {
+    "cap": 0,
+    "status": "INFEASIBLE",
+    "source": "infeasibility_probe"
+   },
+   {
+    "cap": 40,
+    "status": "UNKNOWN",
+    "source": "probe_timeout"
+   }
+  ],
+  "ladder_log": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "locks": {},
+    "min": "R",
+    "cap_R": null,
+    "wall_cum": 105.0,
+    "objective": 41.0,
+    "best_bound": -19.0,
+    "solution_tuple": [
+     41,
+     94,
+     3929,
+     527
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "locks": {},
+    "min": null,
+    "cap_R": 0,
+    "wall_cum": 112.9
+   },
+   {
+    "layer": "ladder_Rle40",
+    "status": "UNKNOWN",
+    "locks": {},
+    "min": "R",
+    "cap_R": 40,
+    "wall_cum": 121.9
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 41
+    },
+    "min": "A",
+    "cap_R": null,
+    "wall_cum": 144.3,
+    "objective": 101.0,
+    "best_bound": 0.0,
+    "solution_tuple": [
+     41,
+     101,
+     3252,
+     538
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "UNKNOWN",
+    "locks": {
+     "R": 41,
+     "A": 101
+    },
+    "min": "PL",
+    "cap_R": null,
+    "wall_cum": 158.2
+   }
+  ]
+ },
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "FEASIBLE",
+   "locks": {},
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 105.0,
+   "objective": 41.0,
+   "best_bound": -19.0,
+   "solution_tuple": [
+    41,
+    94,
+    3929,
+    527
+   ]
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "INFEASIBLE",
+   "locks": {},
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 112.9
+  },
+  {
+   "layer": "ladder_Rle40",
+   "status": "UNKNOWN",
+   "locks": {},
+   "min": "R",
+   "cap_R": 40,
+   "wall_cum": 121.9
+  },
+  {
+   "layer": "L2_minA",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 41
+   },
+   "min": "A",
+   "cap_R": null,
+   "wall_cum": 144.3,
+   "objective": 101.0,
+   "best_bound": 0.0,
+   "solution_tuple": [
+    41,
+    101,
+    3252,
+    538
+   ]
+  },
+  {
+   "layer": "L3_minPL",
+   "status": "UNKNOWN",
+   "locks": {
+    "R": 41,
+    "A": 101
+   },
+   "min": "PL",
+   "cap_R": null,
+   "wall_cum": 158.2
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "idea_id": "Q3-R23",
+ "question_id": "Q3",
+ "status": "completed",
+ "seed": 29,
+ "greedy_count": 133,
+ "best_count": 137,
+ "external_verify": {
+  "ok": true,
+  "msg": "ok"
+ },
+ "evaluator": {
+  "feasible": true,
+  "objective": [
+   137
+  ],
+  "n_violations": 0
+ },
+ "lns": {
+  "iterations": 591690,
+  "accepted": 4,
+  "no_improve_streak_at_stop": 591372,
+  "budget_s": 240.0,
+  "stopped_by": "budget"
+ },
+ "solve_wall_seconds": 240.0,
+ "solution_path": "F:\\2026 数模\\D题重跑\\D题\\runs\\competitive\\CS-20260911T071520-D2026\\scouts\\Q3-R23\\solution_newc_seed29.json",
+ "protocol_wall_limit_s": 600
+}

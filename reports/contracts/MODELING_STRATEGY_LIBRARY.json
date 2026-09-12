@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "library_id": "mathmodel-strategy-library",
+  "library_version": "1.0.0",
+  "source_kind": "snapshot",
+  "cards": [
+    {
+      "strategy_id": "optimization-structure-first",
+      "family": "optimization",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "explicit_decision_variables",
+        "objective_direction_known",
+        "constraint_domain_available"
+      ],
+      "required_inputs": [
+        "PROBLEM_STRUCTURE",
+        "MODEL_OPPORTUNITIES",
+        "QUESTION_CONTRACT"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "maximize",
+          "minimize"
+        ],
+        "description": "先冻结目标方向、变量域和单位，再比较可行目标值。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "domain",
+          "capacity",
+          "logic",
+          "integrality",
+          "boundary"
+        ],
+        "description": "所有硬约束必须有可行性检查和边界解释。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "feasibility",
+          "objective_value",
+          "bound_or_gap",
+          "stability",
+          "runtime"
+        ],
+        "comparability": [
+          "same_question",
+          "same_evaluator",
+          "same_budget"
+        ],
+        "evidence_level": "canonical_evaluator_plus_production_result"
+      },
+      "assumptions": [
+        "decision variables are identifiable",
+        "constraint expressions are evaluable"
+      ],
+      "known_failure_modes": [
+        "infeasible rounded solution",
+        "local optimum reported as global",
+        "constraint direction reversed"
+      ],
+      "rejection_conditions": [
+        "objective or constraints are not defined",
+        "required decision variables are unavailable",
+        "candidate cannot produce a feasible incumbent"
+      ],
+      "evidence_requirements": [
+        "objective and constraint source facts",
+        "independent feasibility check",
+        "production result with bounds or explicit claim ceiling"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.optimization",
+        "math_modeling_norms.constraint_validation"
+      ],
+      "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c"
+    },
+    {
+      "strategy_id": "prediction-temporal-holdout",
+      "family": "prediction",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "ordered_observations",
+        "forecast_target_defined",
+        "future_information_boundary"
+      ],
+      "required_inputs": [
+        "PROBLEM_STRUCTURE",
+        "DATA_PROFILE",
+        "DATASET_SNAPSHOT"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "minimize_error",
+          "maximize_calibration"
+        ],
+        "description": "评价指标、预测窗口和外推边界必须在数据划分前冻结。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "time_order",
+          "feature_availability",
+          "physical_range"
+        ],
+        "description": "训练过程不得使用预测时点之后的信息或越过可用变量边界。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "temporal_holdout_error",
+          "baseline_comparison",
+          "uncertainty_coverage",
+          "stability"
+        ],
+        "comparability": [
+          "same_forecast_horizon",
+          "same_split",
+          "same_metric"
+        ],
+        "evidence_level": "frozen_split_and_out_of_sample_result"
+      },
+      "assumptions": [
+        "forecast covariates are available at prediction time",
+        "time ordering is meaningful"
+      ],
+      "known_failure_modes": [
+        "random split leakage",
+        "future covariate leakage",
+        "unlabeled extrapolation"
+      ],
+      "rejection_conditions": [
+        "target or forecast horizon is undefined",
+        "time order cannot be reconstructed",
+        "only in-sample fit is available"
+      ],
+      "evidence_requirements": [
+        "time/data source facts",
+        "frozen split or rolling plan",
+        "baseline and uncertainty result"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.prediction",
+        "math_modeling_norms.leakage"
+      ],
+      "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc"
+    },
+    {
+      "strategy_id": "evaluation-multi-criteria-audited",
+      "family": "evaluation",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "multiple_alternatives",
+        "multiple_criteria",
+        "criterion_direction_available"
+      ],
+      "required_inputs": [
+        "PROBLEM_FACTS",
+        "PROBLEM_STRUCTURE",
+        "DATA_PROFILE"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "maximize_score",
+          "minimize_cost"
+        ],
+        "description": "综合评价必须显式区分指标方向、量纲和权重来源。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "weight_sum",
+          "consistency",
+          "normalization_domain",
+          "alternative_eligibility"
+        ],
+        "description": "标准化、权重和方案可比性必须可复核。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "direction_correctness",
+          "normalization_validity",
+          "weight_provenance",
+          "rank_stability"
+        ],
+        "comparability": [
+          "same_alternative_set",
+          "same_criteria",
+          "same_weight_policy"
+        ],
+        "evidence_level": "criterion_and_sensitivity_record"
+      },
+      "assumptions": [
+        "alternatives share the declared criterion meanings",
+        "criterion directions are known"
+      ],
+      "known_failure_modes": [
+        "mixed units without normalization",
+        "weights chosen after seeing rank",
+        "double counting correlated criteria"
+      ],
+      "rejection_conditions": [
+        "no defensible criterion semantics",
+        "alternative set is not comparable",
+        "weight policy cannot be audited"
+      ],
+      "evidence_requirements": [
+        "criterion definitions and units",
+        "weight source",
+        "normalization and rank sensitivity"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.evaluation",
+        "math_modeling_norms.multi_criteria"
+      ],
+      "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1"
+    },
+    {
+      "strategy_id": "statistics-observation-mechanism-first",
+      "family": "statistics",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "sample_unit_identified",
+        "estimand_identified",
+        "observation_mechanism_present"
+      ],
+      "required_inputs": [
+        "PROBLEM_FACTS",
+        "DATA_PROFILE",
+        "DATASET_SNAPSHOT",
+        "QUESTION_CONTRACT"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "estimate",
+          "test",
+          "predict_with_uncertainty"
+        ],
+        "description": "先确定 estimand 和观测机制，再选择 likelihood、估计和推断策略。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "sample_scope",
+          "censoring",
+          "missingness",
+          "group_dependence",
+          "fit_scope"
+        ],
+        "description": "抽样、删失、重复测量和拟合范围必须与估计过程一致。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "identifiability",
+          "assumption_fit",
+          "uncertainty",
+          "residual_or_calibration",
+          "sensitivity"
+        ],
+        "comparability": [
+          "same_estimand",
+          "same_observation_mechanism",
+          "same_data_scope"
+        ],
+        "evidence_level": "estimand_and_observation_aware_inference"
+      },
+      "assumptions": [
+        "analysis unit is explicit",
+        "observation mechanism is documented",
+        "uncertainty target is stated"
+      ],
+      "known_failure_modes": [
+        "repeated observations treated as independent",
+        "censoring treated as exact time",
+        "outer test used for model selection"
+      ],
+      "rejection_conditions": [
+        "estimand cannot be stated",
+        "observation mechanism is incompatible",
+        "required sample scope is unavailable"
+      ],
+      "evidence_requirements": [
+        "DGP and sampling facts",
+        "assumption audit",
+        "estimate with uncertainty and sensitivity"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.statistics",
+        "math_modeling_norms.observation_mechanism"
+      ],
+      "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c"
+    },
+    {
+      "strategy_id": "graph-theory-feasibility-first",
+      "family": "graph_theory",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "nodes_and_edges_available",
+        "connectivity_or_flow_semantics",
+        "edge_weight_meaningful"
+      ],
+      "required_inputs": [
+        "PROBLEM_STRUCTURE",
+        "PROBLEM_FACTS",
+        "DATASET_SNAPSHOT"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "minimize_path_cost",
+          "maximize_flow_or_coverage"
+        ],
+        "description": "路径、流或覆盖目标必须和边权、容量、方向及任务对象一致。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "connectivity",
+          "capacity",
+          "flow_conservation",
+          "simple_path",
+          "time_window"
+        ],
+        "description": "图结构和路径/流约束必须可回代验证。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "path_or_flow_feasibility",
+          "objective_value",
+          "conservation",
+          "sensitivity_to_edges"
+        ],
+        "comparability": [
+          "same_graph",
+          "same_weight_units",
+          "same_constraint_set"
+        ],
+        "evidence_level": "graph_reconstruction_and_independent_check"
+      },
+      "assumptions": [
+        "node and edge identities are stable",
+        "weight units are compatible",
+        "graph direction is known"
+      ],
+      "known_failure_modes": [
+        "negative edge with Dijkstra",
+        "disconnected route reported as feasible",
+        "flow conservation omitted",
+        "subtour left unchecked"
+      ],
+      "rejection_conditions": [
+        "edge semantics are unavailable",
+        "required graph is not reconstructible",
+        "candidate violates path/flow constraints"
+      ],
+      "evidence_requirements": [
+        "node/edge source",
+        "reconstructed graph hash",
+        "path/flow constraint checks"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.graph",
+        "math_modeling_norms.path_and_flow"
+      ],
+      "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05"
+    },
+    {
+      "strategy_id": "machine-learning-scope-first",
+      "family": "machine_learning",
+      "version": "1.0.0",
+      "problem_feature_predicates": [
+        "target_or_unsupervised_goal_defined",
+        "feature_scope_known",
+        "evaluation_split_available"
+      ],
+      "required_inputs": [
+        "PROBLEM_STRUCTURE",
+        "DATA_PROFILE",
+        "DATASET_SNAPSHOT",
+        "QUESTION_CONTRACT"
+      ],
+      "objective_semantics": {
+        "applicable": true,
+        "directions": [
+          "minimize_loss",
+          "maximize_task_metric",
+          "maximize_calibration"
+        ],
+        "description": "学习目标、指标、基线和数据作用范围必须先于训练和调参冻结。"
+      },
+      "constraint_semantics": {
+        "applicable": true,
+        "types": [
+          "train_fit_scope",
+          "inner_tuning_scope",
+          "outer_test_isolation",
+          "class_or_range_boundary"
+        ],
+        "description": "预处理、特征选择、调参与评估的 data scope 必须分层记录。"
+      },
+      "evaluation_contract": {
+        "criteria": [
+          "held_out_metric",
+          "baseline_comparison",
+          "calibration_or_uncertainty",
+          "stability"
+        ],
+        "comparability": [
+          "same_split",
+          "same_metric",
+          "same_preprocessing_scope"
+        ],
+        "evidence_level": "nested_or_frozen_split_with_audit"
+      },
+      "assumptions": [
+        "target or unsupervised objective is explicit",
+        "features are available at inference time",
+        "split prevents leakage"
+      ],
+      "known_failure_modes": [
+        "outer test tuning",
+        "target leakage",
+        "pseudo-likelihood for non-probabilistic model",
+        "unstable small-sample ranking"
+      ],
+      "rejection_conditions": [
+        "target/goal is undefined",
+        "feature availability cannot be established",
+        "no defensible held-out evaluation exists"
+      ],
+      "evidence_requirements": [
+        "fit scope and split",
+        "baseline metric",
+        "leakage audit",
+        "seed/stability record"
+      ],
+      "reference_ids": [
+        "math_modeling_norms.machine_learning",
+        "math_modeling_norms.leakage"
+      ],
+      "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f"
+    }
+  ],
+  "provenance": {
+    "source_path": "skills/brainstorm-mathmodel/references/modeling-strategies/index.json",
+    "source_sha256": "e36e2e8332f53e49962afdfd787e6725f2f4b06eaa199628f5d347b210deb69f",
+    "source_commit": null,
+    "generator_path": "skills/brainstorm-mathmodel/scripts/strategy_library.py",
+    "generator_sha256": "557b9317f522924cbb0dae02bcdb6e897fbd8720cede1497ba930177084dbee9",
+    "generated_at": "2026-09-11T07:04:54+00:00"
+  }
+}

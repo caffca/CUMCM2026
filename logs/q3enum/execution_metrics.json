@@ -1,0 +1,13 @@
+{
+ "elapsed_seconds": 23.863,
+ "status": "completed",
+ "stopping_reason": "enumerated",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "enum",
+  "base": "logs/q2smoke/payload.json"
+ }
+}

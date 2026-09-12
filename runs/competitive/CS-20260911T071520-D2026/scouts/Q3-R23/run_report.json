@@ -1,0 +1,45 @@
+{
+ "idea_id": "Q3-R23",
+ "question_id": "Q3",
+ "base": {
+  "n_kept": 144,
+  "n_revoked": 6,
+  "distinct_used": 15600,
+  "mult_used": 15600,
+  "T_MAX": 643,
+  "B_MAX": 100
+ },
+ "n_candidates_base_free": 2123,
+ "nonempty_strips": 67,
+ "greedy_count": 133,
+ "lns": {
+  "seed": 11,
+  "iterations": 571577,
+  "accepted": 4,
+  "removal_sizes_k": [
+   5,
+   10,
+   20,
+   40
+  ],
+  "refill": "同扫描贪心、条带访问序随机化",
+  "no_improve_streak_at_stop": 571030,
+  "budget_s": 240.0,
+  "stopped_by": "budget"
+ },
+ "best_count": 137,
+ "external_verify": {
+  "ok": true,
+  "msg": "ok"
+ },
+ "evaluator": {
+  "feasible": true,
+  "objective": [
+   137
+  ],
+  "n_violations": 0
+ },
+ "solve_wall_seconds": 240.0,
+ "protocol_wall_limit_s": 600,
+ "replicates": 1
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "competition": "cumcm",
+  "competition_name": "全国大学生数学建模竞赛",
+  "competition_year": 2026,
+  "language": "zh-CN",
+  "rules": {
+    "profile_id": "cumcm-2026",
+    "source": "本地官方文件：全国大学生数学建模竞赛参赛规则（2026年修订稿）/论文格式规范（2026年修订稿）/人工智能工具使用规定（2026年试行），见工作区 PDF 附件",
+    "sha256": "06331f1358302b6e12e16b7aada7200d93915b947230ddfd5499f74e93bca077",
+    "effective_at": "2026-03-01"
+  },
+  "problem": "D",
+  "engine": "latex",
+  "entry": "paper/main.tex",
+  "problem_count": "4",
+  "route": {
+    "requested": "cumcm-d",
+    "actual": "cumcm-d"
+  },
+  "hil_policy": "auto",
+  "input_roots": [
+    "."
+  ],
+  "official_problem_files": [],
+  "data_files": [],
+  "benchmark": {
+    "mode": false,
+    "agent_version": "unknown",
+    "agent_commit": "unknown",
+    "allow_agent_modification": false
+  },
+  "workflow": {
+    "id": "mathmodel-v7",
+    "version": 7
+  },
+  "capabilities": {
+    "editorial_pipeline": true
+  },
+  "competitive_search": {
+    "enabled": true,
+    "contract_version": 2,
+    "profile": "standard"
+  },
+  "discovery": {
+    "enabled": true,
+    "before_search": true,
+    "contract_version": 1
+  },
+  "tools": {
+    "python": {
+      "name": "python",
+      "path": "C:\\Program Files\\Python314\\python.exe",
+      "version": "3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)]"
+    },
+    "xelatex": {
+      "name": "xelatex",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\xelatex.EXE",
+      "version": "MiKTeX-XeTeX 4.16 (MiKTeX 25.12)"
+    },
+    "pdflatex": {
+      "name": "pdflatex",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdflatex.EXE",
+      "version": "MiKTeX-pdfTeX 4.23 (MiKTeX 25.12)"
+    },
+    "latexmk": {
+      "name": "latexmk",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\latexmk.EXE",
+      "version": "Sorry, but latexmk.EXE did not succeed for the following reason:"
+    },
+    "typst": {
+      "name": "typst",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Typst.Typst_Microsoft.Winget.Source_8wekyb3d8bbwe\\typst-x86_64-pc-windows-msvc\\typst.EXE",
+      "version": "typst 0.15.1 (9dfd3a08)"
+    },
+    "pdftoppm": {
+      "name": "pdftoppm",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\pdftoppm.EXE",
+      "version": "I/O Error: Couldn't open file '--version': No such file or directory."
+    },
+    "mgs": {
+      "name": "mgs",
+      "path": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\mgs.EXE",
+      "version": "9.25"
+    },
+    "mutool": {
+      "name": "mutool",
+      "path": null,
+      "version": null
+    },
+    "magick": {
+      "name": "magick",
+      "path": null,
+      "version": null
+    },
+    "inkscape": {
+      "name": "inkscape",
+      "path": null,
+      "version": null
+    },
+    "mmdc": {
+      "name": "mmdc",
+      "path": "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\mmdc.CMD",
+      "version": "11.16.0"
+    },
+    "drawio": {
+      "name": "drawio",
+      "path": null,
+      "version": null
+    },
+    "git": {
+      "name": "git",
+      "path": "F:\\Git\\cmd\\git.EXE",
+      "version": "git version 2.54.0.windows.1"
+    }
+  },
+  "updated_at": "2026-09-11T14:56:04+08:00"
+}

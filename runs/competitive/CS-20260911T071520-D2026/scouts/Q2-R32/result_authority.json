@@ -1,0 +1,30 @@
+{
+ "question_id": "Q2",
+ "idea_id": "Q2-R32",
+ "status": "completed",
+ "feasible": true,
+ "objective": 6012322050762,
+ "objective_key": "objective",
+ "objective_tuple": [
+  6,
+  123,
+  2205,
+  762
+ ],
+ "runtime_seconds": 391.07,
+ "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+ "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "objective_direction": "minimize",
+ "unit": "weighted_lexicographic_scalar",
+ "budget_rule": "wall_clock",
+ "budget": 600,
+ "stopping_reason": "取整-修复一轮闭环 + 去撤销阶梯预算耗尽（391s/≤600s）",
+ "failure_mode": null,
+ "derived_from": {
+  "result_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/result.json",
+  "result_json_sha256": "d081a0d23bb0f38853f571998c35ced7cec54b707bc0a2a1d325ec9d4d4e0bc1",
+  "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/solution_actions.json",
+  "solution_sha256": "59a0e2a6f1fb448ad842c2253dd7e651d586435863a99b7ed269dc855b4fd66a"
+ },
+ "note": "Manager 装配的 P1-03 result authority 绑定视图；数值逐字复制自 child result.json，未重算未修改"
+}

@@ -1,0 +1,1084 @@
+{
+ "t_max": 643,
+ "checks": {
+  "R11": {
+   "claimed_result_tuple": [
+    8,
+    113,
+    2289,
+    719
+   ],
+   "claimed_scalar": 8011322890719,
+   "independent_tuple": [
+    8,
+    113,
+    2289,
+    719
+   ],
+   "independent_scalar": 8011322890719,
+   "evaluator_recheck_tuple": [
+    8,
+    113,
+    2289,
+    719
+   ],
+   "evaluator_recheck_feasible": true,
+   "evaluator_recheck_violations": 0,
+   "independent_residual_conflicts": 0,
+   "independent_violations": [],
+   "n_actions": 121,
+   "n_dg_actions": 14,
+   "dg_detail": [
+    {
+     "pid": "C001",
+     "cls": "C",
+     "t0": 40,
+     "d": 2,
+     "g": 8,
+     "dg": 5,
+     "gp": 13,
+     "n": 12,
+     "period": 15,
+     "last_end": 207,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C005",
+     "cls": "C",
+     "t0": 33,
+     "d": 2,
+     "g": 8,
+     "dg": 1,
+     "gp": 9,
+     "n": 12,
+     "period": 11,
+     "last_end": 156,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C006",
+     "cls": "C",
+     "t0": 25,
+     "d": 2,
+     "g": 8,
+     "dg": -7,
+     "gp": 1,
+     "n": 12,
+     "period": 3,
+     "last_end": 60,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C029",
+     "cls": "C",
+     "t0": 137,
+     "d": 2,
+     "g": 8,
+     "dg": 4,
+     "gp": 12,
+     "n": 12,
+     "period": 14,
+     "last_end": 293,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C046",
+     "cls": "C",
+     "t0": 327,
+     "d": 2,
+     "g": 8,
+     "dg": 10,
+     "gp": 18,
+     "n": 12,
+     "period": 20,
+     "last_end": 549,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C048",
+     "cls": "C",
+     "t0": 346,
+     "d": 2,
+     "g": 8,
+     "dg": -1,
+     "gp": 7,
+     "n": 12,
+     "period": 9,
+     "last_end": 447,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C050",
+     "cls": "C",
+     "t0": 306,
+     "d": 2,
+     "g": 8,
+     "dg": -1,
+     "gp": 7,
+     "n": 12,
+     "period": 9,
+     "last_end": 407,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C057",
+     "cls": "C",
+     "t0": 185,
+     "d": 2,
+     "g": 8,
+     "dg": 6,
+     "gp": 14,
+     "n": 12,
+     "period": 16,
+     "last_end": 363,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C061",
+     "cls": "C",
+     "t0": 450,
+     "d": 2,
+     "g": 8,
+     "dg": 4,
+     "gp": 12,
+     "n": 12,
+     "period": 14,
+     "last_end": 606,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C067",
+     "cls": "C",
+     "t0": 451,
+     "d": 2,
+     "g": 8,
+     "dg": 7,
+     "gp": 15,
+     "n": 12,
+     "period": 17,
+     "last_end": 640,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C068",
+     "cls": "C",
+     "t0": 461,
+     "d": 2,
+     "g": 8,
+     "dg": 5,
+     "gp": 13,
+     "n": 12,
+     "period": 15,
+     "last_end": 628,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C071",
+     "cls": "C",
+     "t0": 390,
+     "d": 2,
+     "g": 8,
+     "dg": 4,
+     "gp": 12,
+     "n": 12,
+     "period": 14,
+     "last_end": 546,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C072",
+     "cls": "C",
+     "t0": 386,
+     "d": 2,
+     "g": 8,
+     "dg": 5,
+     "gp": 13,
+     "n": 12,
+     "period": 15,
+     "last_end": 553,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    },
+    {
+     "pid": "C080",
+     "cls": "C",
+     "t0": 368,
+     "d": 2,
+     "g": 8,
+     "dg": -7,
+     "gp": 1,
+     "n": 12,
+     "period": 3,
+     "last_end": 403,
+     "within_643": true,
+     "gp_ge1": true,
+     "dg_le10": true
+    }
+   ],
+   "sample20_pairs": [
+    {
+     "pair": [
+      "A004",
+      "C033"
+     ],
+     "act_i": {
+      "dt": -4
+     },
+     "act_j": {},
+     "last_end_i": 360,
+     "last_end_j": 230,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B004",
+      "C055"
+     ],
+     "act_i": {},
+     "act_j": {},
+     "last_end_i": 325,
+     "last_end_j": 177,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B025",
+      "C070"
+     ],
+     "act_i": {
+      "revoke": true
+     },
+     "act_j": {
+      "dt": 4
+     },
+     "last_end_i": null,
+     "last_end_j": 531,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C023",
+      "C045"
+     ],
+     "act_i": {
+      "df": -4
+     },
+     "act_j": {},
+     "last_end_i": 429,
+     "last_end_j": 283,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C005",
+      "C066"
+     ],
+     "act_i": {},
+     "act_j": {
+      "dg": 1
+     },
+     "last_end_i": 554,
+     "last_end_j": 156,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B015",
+      "C086"
+     ],
+     "act_i": {
+      "df": 10
+     },
+     "act_j": {},
+     "last_end_i": 329,
+     "last_end_j": 517,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C010",
+      "C070"
+     ],
+     "act_i": {
+      "df": -2
+     },
+     "act_j": {
+      "dt": 4
+     },
+     "last_end_i": 120,
+     "last_end_j": 531,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B003",
+      "C052"
+     ],
+     "act_i": {
+      "df": 3
+     },
+     "act_j": {
+      "df": -10
+     },
+     "last_end_i": 162,
+     "last_end_j": 316,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B012",
+      "C037"
+     ],
+     "act_i": {
+      "df": -10
+     },
+     "act_j": {
+      "dt": 2
+     },
+     "last_end_i": 382,
+     "last_end_j": 301,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C070",
+      "C078"
+     ],
+     "act_i": {
+      "dt": 4
+     },
+     "act_j": {
+      "dt": 4
+     },
+     "last_end_i": 505,
+     "last_end_j": 531,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C065",
+      "C081"
+     ],
+     "act_i": {
+      "df": 10
+     },
+     "act_j": {
+      "dt": -1
+     },
+     "last_end_i": 590,
+     "last_end_j": 596,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C022",
+      "C057"
+     ],
+     "act_i": {
+      "df": 9
+     },
+     "act_j": {
+      "dg": 6
+     },
+     "last_end_i": 259,
+     "last_end_j": 363,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "A015",
+      "C047"
+     ],
+     "act_i": {
+      "df": -10
+     },
+     "act_j": {
+      "df": -9
+     },
+     "last_end_i": 520,
+     "last_end_j": 453,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B021",
+      "C048"
+     ],
+     "act_i": {},
+     "act_j": {
+      "dg": -1
+     },
+     "last_end_i": 427,
+     "last_end_j": 447,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B016",
+      "C090"
+     ],
+     "act_i": {
+      "df": -6
+     },
+     "act_j": {},
+     "last_end_i": 367,
+     "last_end_j": 594,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "A007",
+      "C038"
+     ],
+     "act_i": {
+      "df": -10
+     },
+     "act_j": {
+      "df": 7
+     },
+     "last_end_i": 397,
+     "last_end_j": 310,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "A015",
+      "C012"
+     ],
+     "act_i": {
+      "df": -10
+     },
+     "act_j": {
+      "df": -10
+     },
+     "last_end_i": 177,
+     "last_end_j": 520,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "C001",
+      "C084"
+     ],
+     "act_i": {},
+     "act_j": {
+      "dg": 5
+     },
+     "last_end_i": 622,
+     "last_end_j": 207,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "B026",
+      "C085"
+     ],
+     "act_i": {
+      "df": -10
+     },
+     "act_j": {
+      "dt": -5
+     },
+     "last_end_i": 604,
+     "last_end_j": 502,
+     "overlap": false,
+     "errs": []
+    },
+    {
+     "pair": [
+      "A005",
+      "B028"
+     ],
+     "act_i": {
+      "dt": 5
+     },
+     "act_j": {
+      "dt": 4
+     },
+     "last_end_i": 502,
+     "last_end_j": 264,
+     "overlap": false,
+     "errs": []
+    }
+   ],
+   "sample20_overlaps": 0,
+   "dg_vs_all_conflicts": [],
+   "scalar_formula_consistent": true
+  },
+  "R41": {
+   "claimed_by_seed": {
+    "11": [
+     16,
+     105,
+     2549,
+     556
+    ],
+    "29": [
+     11,
+     117,
+     2344,
+     578
+    ],
+    "47": [
+     10,
+     112,
+     2229,
+     596
+    ]
+   },
+   "per_seed_independent": {
+    "11": {
+     "indep_tuple": [
+      16,
+      105,
+      2549,
+      556
+     ],
+     "eval_tuple": [
+      16,
+      105,
+      2549,
+      556
+     ],
+     "eval_feasible": true,
+     "indep_conflicts": 0,
+     "indep_violations": [],
+     "claimed_in_result_json": [
+      16,
+      105,
+      2549,
+      556
+     ],
+     "indep_matches_claim": true,
+     "eval_matches_claim": true
+    },
+    "29": {
+     "indep_tuple": [
+      11,
+      117,
+      2344,
+      578
+     ],
+     "eval_tuple": [
+      11,
+      117,
+      2344,
+      578
+     ],
+     "eval_feasible": true,
+     "indep_conflicts": 0,
+     "indep_violations": [],
+     "claimed_in_result_json": [
+      11,
+      117,
+      2344,
+      578
+     ],
+     "indep_matches_claim": true,
+     "eval_matches_claim": true
+    },
+    "47": {
+     "indep_tuple": [
+      10,
+      112,
+      2229,
+      596
+     ],
+     "eval_tuple": [
+      10,
+      112,
+      2229,
+      596
+     ],
+     "eval_feasible": true,
+     "indep_conflicts": 0,
+     "indep_violations": [],
+     "claimed_in_result_json": [
+      10,
+      112,
+      2229,
+      596
+     ],
+     "indep_matches_claim": true,
+     "eval_matches_claim": true
+    }
+   },
+   "lex_order_by_claimed": [
+    [
+     10,
+     112,
+     2229,
+     596
+    ],
+    [
+     11,
+     117,
+     2344,
+     578
+    ],
+    [
+     16,
+     105,
+     2549,
+     556
+    ]
+   ],
+   "median_seed_by_claimed": 29,
+   "median_tuple_by_claimed": [
+    11,
+    117,
+    2344,
+    578
+   ],
+   "result_json_tuple": [
+    11,
+    117,
+    2344,
+    578
+   ],
+   "result_json_seed": 29,
+   "result_json_scalar": 11011723440578,
+   "median_is_seed29": true,
+   "best_seed": 47,
+   "best_tuple": [
+    10,
+    112,
+    2229,
+    596
+   ],
+   "solution_path_points_to_median": true,
+   "scalar_consistent": true
+  },
+  "inclusion": {
+   "claimed_q2reduction_tuple": [
+    14,
+    96,
+    2383,
+    638
+   ],
+   "independent_q2reduction_tuple": [
+    14,
+    96,
+    2383,
+    638
+   ],
+   "independent_conflicts": 0,
+   "evaluator_as_Q2": [
+    14,
+    96,
+    2383,
+    638
+   ],
+   "evaluator_as_Q2_feasible": true,
+   "evaluator_as_Q4": [
+    14,
+    96,
+    2383,
+    638
+   ],
+   "evaluator_as_Q4_feasible": true,
+   "dual_eval_identical": true,
+   "q2reduction_contains_dg": [],
+   "objective_tuple_function_ignores_allow_gap": true,
+   "structural_note": "evaluator.objective_tuple(plans,actions,allow_gap) 的形参 allow_gap 在函数体内从未被引用 ⇒ 同一动作集在 Q2/Q4 两次评估下元组必然逐字相同，该『双评估一致』判据对元组是恒真式；其唯一非平凡部分是 feasible（含 dg 的动作在 Q2 下报 gap_not_allowed）。",
+   "edges_claim": {
+    "q2": 1693,
+    "q4": 2117,
+    "subset_field_in_artifact": false,
+    "note": "q2_inclusion_check.json 无 edge_subset/clause_subset 落盘字段（仅 scout.json 口头声称通过）"
+   },
+   "q2_official_incumbent": {
+    "path": "runs\\competitive\\CS-20260911T071520-D2026\\scouts\\Q2-R51\\solution_actions.json",
+    "independent_tuple": [
+     6,
+     121,
+     1996,
+     663
+    ],
+    "evaluator_Q4_tuple": [
+     6,
+     121,
+     1996,
+     663
+    ],
+    "evaluator_Q4_feasible": true,
+    "evaluator_Q2_tuple": [
+     6,
+     121,
+     1996,
+     663
+    ],
+    "n_dg_actions": 0,
+    "has_dg_in_q2sol": false
+   },
+   "q4_r11_tuple": [
+    8,
+    113,
+    2289,
+    719
+   ],
+   "q4_r11_vs_q2_official": "dominated",
+   "r11_claimed_gain_vs_own_reduction_only": true
+  },
+  "R22": {
+   "claimed_tuple": [
+    66,
+    43,
+    1111,
+    144
+   ],
+   "independent_tuple": [
+    66,
+    43,
+    1111,
+    144
+   ],
+   "evaluator_recheck_tuple": [
+    66,
+    43,
+    1111,
+    144
+   ],
+   "evaluator_feasible": true,
+   "independent_conflicts": 0,
+   "scalar_formula_consistent": true,
+   "n_actions": 109,
+   "class_breakdown": {
+    "A": {
+     "rev": 0,
+     "adj": 6
+    },
+    "B": {
+     "rev": 17,
+     "adj": 4
+    },
+    "C": {
+     "rev": 49,
+     "adj": 33
+    }
+   },
+   "mod10_rule": {
+    "pairs": 4005,
+    "true_conflicts": 19,
+    "mismatches": 0,
+    "examples": [],
+    "claimed": {
+     "pairs": 4005,
+     "true": 19,
+     "mism": 0
+    }
+   },
+   "cc_edges_recomputed": 19,
+   "cc_log_cc_edges": 19,
+   "cc_audit": [
+    {
+     "edge": [
+      "C005",
+      "C025"
+     ],
+     "revoked_i": false,
+     "revoked_j": false,
+     "dg_i": -1,
+     "dg_j": 0,
+     "killed_by_revoke": false,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C019",
+      "C029"
+     ],
+     "revoked_i": true,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": 1,
+     "killed_by_revoke": true,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C021",
+      "C051"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C022",
+      "C032"
+     ],
+     "revoked_i": true,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C023",
+      "C033"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C025",
+      "C055"
+     ],
+     "revoked_i": false,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C027",
+      "C057"
+     ],
+     "revoked_i": true,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C028",
+      "C058"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C031",
+      "C051"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C033",
+      "C043"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C037",
+      "C077"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C038",
+      "C048"
+     ],
+     "revoked_i": true,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": -2,
+     "killed_by_revoke": true,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C039",
+      "C049"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C043",
+      "C053"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C050",
+      "C070"
+     ],
+     "revoked_i": false,
+     "revoked_j": true,
+     "dg_i": -2,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C061",
+      "C071"
+     ],
+     "revoked_i": false,
+     "revoked_j": true,
+     "dg_i": 5,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C067",
+      "C077"
+     ],
+     "revoked_i": true,
+     "revoked_j": true,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": true,
+     "retimed": false
+    },
+    {
+     "edge": [
+      "C069",
+      "C079"
+     ],
+     "revoked_i": true,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": -1,
+     "killed_by_revoke": true,
+     "retimed": true
+    },
+    {
+     "edge": [
+      "C076",
+      "C086"
+     ],
+     "revoked_i": false,
+     "revoked_j": false,
+     "dg_i": 0,
+     "dg_j": 0,
+     "killed_by_revoke": false,
+     "retimed": false
+    }
+   ],
+   "cc_killed_by_revoke": 17,
+   "cc_resolved_by_retiming_only": 2,
+   "empty_strip_claim": {
+    "edge": "C033|C043",
+    "independent_feasible_pairs": [],
+    "is_empty": true,
+    "band_overlap": true,
+    "t0": {
+     "C033": 252,
+     "C043": 253
+    }
+   },
+   "result_json_failure_mode": null,
+   "log_fields": {
+    "repair_steps": 113,
+    "n_rev": 66,
+    "n_adj": 47,
+    "final_residual": 0
+   }
+  },
+  "caliber": {
+   "T_MAX_in_evaluator": 643,
+   "all_candidates_import_same_evaluator": true,
+   "scalar_formula": "1e12*rev+1e8*adj+1e4*ploss+mag",
+   "max_possible_ploss": 4980,
+   "ploss_term_spacing": 10000,
+   "adj_term_spacing": 100000000,
+   "ploss_overflow_threshold": 10000,
+   "lexicographic_scalar_safe_for_observed_runs": true,
+   "ploss_overflow_possible": false,
+   "mag_ub_in_model": 1500,
+   "observed_ploss": {
+    "R11": 2289,
+    "R41": 2344,
+    "R22": 1111
+   }
+  }
+ }
+}

@@ -1,0 +1,8 @@
+[    1.0s] G* {"pairs_envelope_checked": 2266, "star_edges": 1693, "infeasible_combos": 270626, "build_seconds": 0.4, "source": "cache", "mask_recheck": "PASS(sample=250)", "mask_recheck_seconds": 0.5, "base_conflicts": 297, "star_covers_base": true}
+[    4.2s] model {"n_bool": 4582, "n_clauses": 270626, "n_star_edges": 1693, "n_plans": 150, "build_seconds": 3.19}
+[   82.7s] L1(min Σr) {"stage": 1, "layer": "revoke", "mode": "min_sum_revoke", "status": "FEASIBLE", "budget_s": 78.0, "wall_s": 78.4, "n_conflicts": 0, "n_branches": 0, "n_solutions_logged": 30, "value": 13, "best_bound": 2, "proven_optimal": false, "trajectory_min_revoke": 13}
+[   97.4s] ladder[floor] Σr<=0 -> INFEASIBLE (14.6s)
+[  106.6s] ladder[bisect] Σr<=7 -> UNKNOWN (9.1s)
+[  114.4s] ladder[descent] Σr<=12 -> UNKNOWN (7.7s)
+[  142.1s] ladder[deep_certificate] Σr<=12 -> OPTIMAL (27.4s)
+[  142.1s] revoke locked at 12 (LB=2, certified=False)

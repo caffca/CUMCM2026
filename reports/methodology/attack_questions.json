@@ -1,0 +1,60 @@
+{
+  "questions": [
+    {
+      "topic": "necessity",
+      "trigger": "necessity: ANALYTIC-RETIME-R22 Rejected",
+      "question": "模型「ANALYTIC-RETIME-R22」被拒的依据是什么？删除后结论/性能/解释是否变化？",
+      "severity": "P1",
+      "status": "open",
+      "answer": "",
+      "evidence": [],
+      "answerable_in_text": true,
+      "hint": ""
+    },
+    {
+      "topic": "summary",
+      "trigger": "methodology: degeneracy",
+      "question": "方法学检查提示（优化退化证据不完整：问题 ['Q2', 'Q3', 'Q4'] 的 objective_only/constraint_only/full 含 null/pla…）：正文口径是否需要修正？",
+      "severity": "P1",
+      "status": "open",
+      "answer": "",
+      "evidence": [],
+      "answerable_in_text": true,
+      "hint": ""
+    },
+    {
+      "topic": "summary",
+      "trigger": "methodology: conclusion",
+      "question": "方法学检查提示（未发现『最佳时点/精确决定』类强结论词…）：正文口径是否需要修正？",
+      "severity": "P1",
+      "status": "open",
+      "answer": "",
+      "evidence": [],
+      "answerable_in_text": true,
+      "hint": ""
+    },
+    {
+      "topic": "figure",
+      "trigger": "default",
+      "question": "每张主 Figure 的 main_message 是否在对应正文段落被明确支持？是否存在图与正文结论冲突？",
+      "severity": "P1",
+      "status": "open",
+      "answer": "",
+      "evidence": [],
+      "answerable_in_text": true,
+      "hint": ""
+    },
+    {
+      "topic": "summary",
+      "trigger": "default",
+      "question": "摘要在 30 秒内能否传达『发现问题→最终答案』？每问模型缩写是否超过 2 个？",
+      "severity": "P1",
+      "status": "open",
+      "answer": "",
+      "evidence": [],
+      "answerable_in_text": true,
+      "hint": ""
+    }
+  ],
+  "generated_at": "2026-09-11T21:05:30+08:00"
+}

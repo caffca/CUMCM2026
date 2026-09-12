@@ -1,0 +1,10 @@
+{
+ "elapsed_seconds": 0.6,
+ "status": "completed",
+ "stopping_reason": "all_pairs_enumerated_and_crosschecked",
+ "evaluator_calls": 1,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {}
+}

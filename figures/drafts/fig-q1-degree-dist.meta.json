@@ -1,0 +1,36 @@
+{
+  "figure_id": "fig-q1-degree-dist",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:25+08:00",
+  "source_results": [
+    {
+      "file": "Q1_detect.json",
+      "sha256": "e43dbea85883b0a2a28b6370c01fa275595b831fbb815e07f4bc52ce4e23ea1f",
+      "keys": [
+        "involved_plans"
+      ]
+    }
+  ],
+  "source_hash": "d8567f4436986faef8bfce294973072dc0555c83f725e2ca4d94f6aa7ff4791d",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 30,
+      "text_count": 1,
+      "collection_count": 0
+    }
+  },
+  "annotations": [
+    {
+      "label": "涉及计划",
+      "value_key": "involved_plans",
+      "raw": 148,
+      "value": 148,
+      "text": "148/150"
+    }
+  ],
+  "axes": [],
+  "caption": "冲突度分布"
+}

@@ -1,0 +1,97 @@
+{
+ "seed": 11,
+ "budget_s": 185.0,
+ "wall_s": 185.0,
+ "starts": 18,
+ "failed_descents": 0,
+ "history": [
+  {
+   "t": 2.5,
+   "start": 1,
+   "tuple": [
+    24,
+    84,
+    1680,
+    450
+   ]
+  },
+  {
+   "t": 58.2,
+   "start": 6,
+   "tuple": [
+    23,
+    88,
+    2042,
+    452
+   ]
+  },
+  {
+   "t": 62.6,
+   "start": 6,
+   "tuple": [
+    21,
+    93,
+    1935,
+    472
+   ],
+   "lns": true
+  },
+  {
+   "t": 141.5,
+   "start": 14,
+   "tuple": [
+    21,
+    93,
+    1935,
+    469
+   ],
+   "lns": true
+  },
+  {
+   "t": 150.8,
+   "start": 15,
+   "tuple": [
+    19,
+    96,
+    1853,
+    491
+   ],
+   "lns": true
+  }
+ ],
+ "params": {
+  "alpha_construct": 0.35,
+  "alpha_ils": 0.5,
+  "edge_sample": 4,
+  "topk_per_endpoint": 8,
+  "repair_max_moves": 8,
+  "ls1_topact": 12,
+  "stall_limit": 20,
+  "ils_perturb": [
+   2,
+   3,
+   4,
+   6
+  ],
+  "W_RES": 1000000.0,
+  "lns_rounds_per_start": 6,
+  "lns_unrevoke_prob": 0.75,
+  "lns_unrevoke_max": 6,
+  "max_construct_iters": 8000
+ },
+ "tuple": [
+  19,
+  96,
+  1853,
+  491
+ ],
+ "internal_residual_full_mask": 0,
+ "internal_objective_tuple": [
+  19,
+  96,
+  1853,
+  491
+ ],
+ "n_listed": 115,
+ "objective_scalar_internal": 19009618530491.0
+}

@@ -1,0 +1,23 @@
+{
+ "gradient_vs_fd_worst_mismatch": 0.0,
+ "phi_vs_predicate_equivalence": {
+  "all_keep": {
+   "Phi": 2124.0,
+   "violated": 297,
+   "consistent": true
+  },
+  "all_revoke": {
+   "violated": 0,
+   "consistent": true
+  },
+  "touching_bands_negative_case": {
+   "pair": [
+    "A001",
+    "B001"
+   ],
+   "df": -10,
+   "band_overlap_len_after_touch": 0,
+   "half_open_no_overlap": true
+  }
+ }
+}

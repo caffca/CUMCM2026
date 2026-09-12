@@ -1,0 +1,39 @@
+Collecting ortools
+  Downloading ortools-9.15.6755-cp314-cp314-win_amd64.whl.metadata (3.4 kB)
+Collecting absl-py>=2.0.0 (from ortools)
+  Downloading absl_py-2.5.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting numpy>=2.0.2 (from ortools)
+  Downloading numpy-2.5.3-cp314-cp314-win_amd64.whl.metadata (6.6 kB)
+Collecting pandas>=2.0.0 (from ortools)
+  Downloading pandas-3.0.5-cp314-cp314-win_amd64.whl.metadata (19 kB)
+Collecting protobuf<6.34,>=6.33.1 (from ortools)
+  Downloading protobuf-6.33.6-cp310-abi3-win_amd64.whl.metadata (593 bytes)
+Collecting typing-extensions>=4.12 (from ortools)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting immutabledict>=3.0.0 (from ortools)
+  Downloading immutabledict-4.3.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting python-dateutil>=2.8.2 (from pandas>=2.0.0->ortools)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting tzdata (from pandas>=2.0.0->ortools)
+  Downloading tzdata-2026.3-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=2.0.0->ortools)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading ortools-9.15.6755-cp314-cp314-win_amd64.whl (24.7 MB)
+   ---------------------------------------- 24.7/24.7 MB 9.6 MB/s  0:00:02
+Downloading protobuf-6.33.6-cp310-abi3-win_amd64.whl (437 kB)
+Downloading absl_py-2.5.0-py3-none-any.whl (137 kB)
+Downloading immutabledict-4.3.1-py3-none-any.whl (5.0 kB)
+Downloading numpy-2.5.3-cp314-cp314-win_amd64.whl (12.7 MB)
+   ---------------------------------------- 12.7/12.7 MB 9.2 MB/s  0:00:01
+Downloading pandas-3.0.5-cp314-cp314-win_amd64.whl (10.0 MB)
+   ---------------------------------------- 10.0/10.0 MB 6.3 MB/s  0:00:01
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, typing-extensions, six, protobuf, numpy, immutabledict, absl-py, python-dateutil, pandas, ortools
+
+Successfully installed absl-py-2.5.0 immutabledict-4.3.1 numpy-2.5.3 ortools-9.15.6755 pandas-3.0.5 protobuf-6.33.6 python-dateutil-2.9.0.post0 six-1.17.0 typing-extensions-4.16.0 tzdata-2026.3
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip

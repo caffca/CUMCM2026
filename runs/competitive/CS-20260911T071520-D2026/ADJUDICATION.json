@@ -1,0 +1,54 @@
+{
+  "adjudication_id": "ADJ-CS-20260911T071520-D2026-01",
+  "frozen_at": "2026-09-11T15:45:00+08:00",
+  "frozen_before_any_scout_experiment": true,
+  "decided_by": "Manager（依据 problem_facts 与三方独立复算：q1_crosscheck 双实现、CH-02/CH-03/CH-04 静态复算）",
+  "rulings": {
+    "R1_time_horizon": {
+      "ruling": "T_MAX=643Δt，时间资源固定为 [0,643)；一切（含调整后与新增）占用必须整体落于其中。",
+      "basis": "F-005 例算式：第k次占用起点=t1+(k-1)*(g+d)。C083 最晚结束 531+11*10+2=643。common_input.horizon_note 文本笔误 621 与 T_MAX_delta_t=643 冲突，按字段与复算裁定 643（决策 D-HORIZON-001）。若采用 g 为周期的错误口径，冲突对=237 且出现 AA 冲突，与题面优先级叙述及例证不符。"
+    },
+    "R2_occupancy_cells": {
+      "ruling": "占用单元计数一律用 distinct 口径（网格并集）；Q3 自由单元上界 = 100*643 - distinct_used。",
+      "basis": "资源格互斥占用本质是集合；按重数口径(16,680)会重复计同格多次，CH-02 报告 distinct=14,698 供对照，运行时以代码复算为准。"
+    },
+    "R3_shift_boundary": {
+      "ruling": "平移后的计划不得越出 [0,643)×[0,100)（含首次区间与全部重复窗）；df/dt 使任何 slot 越界的动作无效。",
+      "basis": "不增加时频资源（F-012/F-017 语义推广）；对既有计划平移越界=占用视界外新时间资源。"
+    },
+    "R4_objective_lexicography": {
+      "ruling": "Q2/Q4 目标 = 词典序四级 (撤销数, 调整数, 优先级损失Σw_c(被改), 幅度Σ|δ|)，w_A=100,w_B=10,w_C=1，撤销的优先级损失按 2 倍计。比较元组逐位，前级严格支配才为优。",
+      "basis": "F-011 题面叙述顺序；权重仅作用于第三级内部排序（同被改数下 A>B>C 保护），不改变前两级语义；实现采用逐级固定再优化，避免大 M 系数失真。"
+    },
+    "R5_q3_interpretation": {
+      "ruling": "主口径：问题2 冻结方案保持不动，新增 C 计划不受 10Δf/5Δt 限制、可落在资源内任意位置；result3 只登记新增计划。备查口径（灵敏度用）：允许 Q2 方案自由重排后加装。",
+      "basis": "D-Q3-001；result3 模板仅 3 列（序号/频段区间/时间区间），与主口径自洽。新C参数沿用附件1 C 模板（宽3/时长2/间隔8/次数12，F-013/F-018）。"
+    },
+    "R6_gap_rules_Q4": {
+      "ruling": "仅 C 类可 dg，|dg|≤10 且 g'=8+dg≥1；每个计划仍只调一个参数；A/B 与次数绝对不动。Q2 同理禁调 g（F-009）。",
+      "basis": "Q4-F019/F-008/F-009。"
+    },
+    "R7_conflict_semantics": {
+      "ruling": "计划对 (i,j) 冲突 ⇔ 频段半开区间交叠>0 且 存在占用时段对交叠>0（全部 n 次展开，半开区间）；每对至多计一次（不按窗对重复计数）。",
+      "basis": "F-006；result1 模板每行一对。基准集 297 对（AB21/AC66/BC181/BB10/CC19），双独立实现集合差=0。"
+    },
+    "R8_newC_overlap_with_revoked": {
+      "ruling": "撤销计划的资源视为空闲，新增 C 可使用。",
+      "basis": "消解定义 F-007：撤销后该计划不再占用资源。"
+    }
+  },
+  "pending_adjudications": [
+    {
+      "id": "P1",
+      "item": "Q3 上界紧致性依赖候选集定义（f0∈0..97, t0∈0..T_MAX-112）；上界计算代码必须与 evaluator 同一资源常数",
+      "owner": "bound_scout/prototype",
+      "status": "open"
+    }
+  ],
+  "evaluator": {
+    "path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "selftest": "Q1 full-truth symdiff=0; Q2 empty->297 residual violations detected; distinct_used=14698"
+  },
+  "note_scouts": "本裁定文件在 Top-K scout 实验开始前冻结；scout 与评审必须逐字使用本 evaluator 复算主指标，不得以路线内部指标替代。"
+}

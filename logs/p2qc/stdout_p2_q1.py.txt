@@ -1,0 +1,252 @@
+{
+ "check": "Q1_detect 独立重算",
+ "n_plans": 150,
+ "class_counts": {
+  "A": 20,
+  "B": 40,
+  "C": 90
+ },
+ "csv_integrity_bad": [],
+ "pairs_checked_mine": 11175,
+ "pairs_checked_auth": 11175,
+ "edges_mine": 297,
+ "edges_auth": 297,
+ "edges_auth_field": 297,
+ "symdiff": 0,
+ "only_in_authority": [],
+ "only_in_p2": [],
+ "sha_mine": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "sha_auth_field": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "sha_equal": true,
+ "per_variant_shas": {
+  "interval": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+  "bitmap": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+  "congruence": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+ },
+ "counts_mine": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "AA": 0,
+  "BB": 10,
+  "CC": 19
+ },
+ "counts_auth": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "AA": 0,
+  "BB": 10,
+  "CC": 19
+ },
+ "counts_equal": {
+  "AB": true,
+  "AC": true,
+  "BC": true,
+  "AA": true,
+  "BB": true,
+  "CC": true
+ },
+ "involved_mine": 148,
+ "involved_auth": 148,
+ "isolated_mine": [
+  "C007",
+  "C060"
+ ],
+ "isolated_auth": [
+  "C007",
+  "C060"
+ ],
+ "T_MAX_mine_derivation": 643,
+ "T_MAX_auth": 643,
+ "max_slot_end_over_all_plans": 643,
+ "witness_edges": [
+  {
+   "pair": [
+    "A001",
+    "B001"
+   ],
+   "ok": true,
+   "k_l": [
+    1,
+    2
+   ],
+   "slots": [
+    [
+     100,
+     105
+    ],
+    [
+     101,
+     104
+    ]
+   ],
+   "band": [
+    80,
+    90,
+    80,
+    95
+   ]
+  },
+  {
+   "pair": [
+    "A001",
+    "C002"
+   ],
+   "ok": true,
+   "k_l": [
+    0,
+    1
+   ],
+   "slots": [
+    [
+     35,
+     40
+    ],
+    [
+     37,
+     39
+    ]
+   ],
+   "band": [
+    80,
+    90,
+    82,
+    85
+   ]
+  },
+  {
+   "pair": [
+    "A001",
+    "C012"
+   ],
+   "ok": true,
+   "k_l": [
+    2,
+    10
+   ],
+   "slots": [
+    [
+     165,
+     170
+    ],
+    [
+     165,
+     167
+    ]
+   ],
+   "band": [
+    80,
+    90,
+    83,
+    86
+   ]
+  },
+  {
+   "pair": [
+    "A001",
+    "C022"
+   ],
+   "ok": true,
+   "k_l": [
+    2,
+    2
+   ],
+   "slots": [
+    [
+     165,
+     170
+    ],
+    [
+     167,
+     169
+    ]
+   ],
+   "band": [
+    80,
+    90,
+    86,
+    89
+   ]
+  },
+  {
+   "pair": [
+    "A002",
+    "B010"
+   ],
+   "ok": true,
+   "k_l": [
+    1,
+    2
+   ],
+   "slots": [
+    [
+     110,
+     115
+    ],
+    [
+     110,
+     113
+    ]
+   ],
+   "band": [
+    5,
+    15,
+    5,
+    20
+   ]
+  }
+ ],
+ "witness_nonedges": [
+  {
+   "pair": [
+    "A001",
+    "A002"
+   ],
+   "band_overlap": false,
+   "time_overlap_exists": null
+  },
+  {
+   "pair": [
+    "A001",
+    "A003"
+   ],
+   "band_overlap": false,
+   "time_overlap_exists": null
+  },
+  {
+   "pair": [
+    "A001",
+    "A004"
+   ],
+   "band_overlap": false,
+   "time_overlap_exists": null
+  },
+  {
+   "pair": [
+    "A001",
+    "A005"
+   ],
+   "band_overlap": false,
+   "time_overlap_exists": null
+  },
+  {
+   "pair": [
+    "A001",
+    "A006"
+   ],
+   "band_overlap": false,
+   "time_overlap_exists": null
+  }
+ ],
+ "auth_evaluator_counts": {
+  "truth": 297,
+  "submitted": 297,
+  "missing": 0,
+  "spurious": 0
+ },
+ "auth_three_way_max_symdiff": 0,
+ "auth_all_three_sha_equal": 1,
+ "verdict": "PASS"
+}
+WROTE F:\2026 数模\D题重跑\D题\logs\p2qc\p2_q1_report.json

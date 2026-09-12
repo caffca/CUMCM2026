@@ -1,0 +1,28 @@
+===== result1.xlsx SHEET: Sheet1 rows=1 cols=3
+('序号', '冲突装备1', '冲突设备2')
+(None, None, None)
+(None, None, None)
+(None, None, None)
+(None, None, None)
+(None, None, None)
+===== result2.xlsx SHEET: Sheet1 rows=1 cols=4
+('用频装备编号', '调整后频段区间', '调整后时间区间', '是否撤销用频计划')
+(None, None, None, None)
+(None, None, None, None)
+(None, None, None, None)
+(None, None, None, None)
+(None, None, None, None)
+===== result3.xlsx SHEET: Sheet1 rows=1 cols=3
+('新增用频装备序号', '调整后频段区间', '调整后时间区间')
+(None, None, None)
+(None, None, None)
+(None, None, None)
+(None, None, None)
+(None, None, None)
+===== result4.xlsx SHEET: Sheet1 rows=1 cols=5
+('用频装备编号', '调整后频段范围', '调整后时间区间', '调整后间隔时长', '是否撤销用频计划')
+(None, None, None, None, None)
+(None, None, None, None, None)
+(None, None, None, None, None)
+(None, None, None, None, None)
+(None, None, None, None, None)

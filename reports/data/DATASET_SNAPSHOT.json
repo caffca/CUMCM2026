@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cumcm2026D-attachment1-plans-150",
+  "raw_input_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+  "cleaned_dataset_sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+  "source_file": "附件/附件1.xlsx",
+  "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+  "source_files": [
+    "附件/附件1.xlsx"
+  ],
+  "source_sha256s": [
+    "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+  ],
+  "cleaned_file": "data/canonical_plans.csv",
+  "created_at": "intake",
+  "n_records": 150,
+  "columns": [
+    "equipment_id",
+    "cls",
+    "f_lo",
+    "f_hi",
+    "t_first_lo",
+    "t_first_hi",
+    "gap",
+    "use_count",
+    "band_width",
+    "time_width"
+  ],
+  "class_profile": {
+    "A": {
+      "n": 20,
+      "band_width": [
+        10
+      ],
+      "time_width": [
+        5
+      ],
+      "gap": [
+        60
+      ],
+      "use_count": [
+        3
+      ],
+      "f_lo_range": [
+        2,
+        82
+      ],
+      "t_first_lo_range": [
+        0,
+        485
+      ],
+      "last_slot_end_max": 610
+    },
+    "B": {
+      "n": 40,
+      "band_width": [
+        15
+      ],
+      "time_width": [
+        3
+      ],
+      "gap": [
+        40
+      ],
+      "use_count": [
+        4
+      ],
+      "f_lo_range": [
+        0,
+        85
+      ],
+      "t_first_lo_range": [
+        15,
+        495
+      ],
+      "last_slot_end_max": 618
+    },
+    "C": {
+      "n": 90,
+      "band_width": [
+        3
+      ],
+      "time_width": [
+        2
+      ],
+      "gap": [
+        8
+      ],
+      "use_count": [
+        12
+      ],
+      "f_lo_range": [
+        0,
+        96
+      ],
+      "t_first_lo_range": [
+        2,
+        531
+      ],
+      "last_slot_end_max": 621
+    }
+  },
+  "notes": "cleaned 为无损规范化解析（区间字符串->整数四列），未删除/修改任何记录；profile 供 discovery 复核 DGP。",
+  "source_assets": [
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "size": 16067
+    }
+  ],
+  "no_data": false
+}

@@ -1,0 +1,26 @@
+{
+  "gate": "leakage",
+  "schema_version": 2,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "engine": "latex",
+  "scope_file": true,
+  "runtime_audit_file": false,
+  "findings": [
+    {
+      "level": "OK",
+      "check": "scope",
+      "message": "ml_applicable=false：无 ML 操作（确定性模型），不要求 EXPECTED_OPS 登记"
+    },
+    {
+      "level": "WARN",
+      "check": "runtime",
+      "message": "results/leakage_audit.json 缺失：仅声明式证明（scope），无运行时 fold 隔离证据；v4 要求代码每折输出 train/test/threshold groups 断言"
+    }
+  ],
+  "summary": {
+    "fails": 0,
+    "warns": 1
+  },
+  "note": "代码启发式（check=code）为 WARN：误报率高，人工确认后销号；FAIL 来自声明/论文/运行时证据违规。"
+}

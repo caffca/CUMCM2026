@@ -1,0 +1,32 @@
+{
+ "idea_id": "Q3-R51",
+ "question_id": "Q3",
+ "route_source": "CH-05 (bound scout, 相位×块双计数+构造下界)",
+ "objective": 137,
+ "objective_unit": "new_C_plans",
+ "direction": "maximize",
+ "lower_bound": 137,
+ "upper_bound": 332,
+ "upper_bound_source": "Q3-R51 相位×块双计数 UB（密度界对照，取小），三候选记录同一 UB 供对照",
+ "relative_gap": 0.5873493975903614,
+ "base_ref": "Q2-R51 冻结方案（revoke 6→资源释放 ADJ R8；evaluator Q2 feasible=true, tuple=[6,121,1996,663]）",
+ "zero_conflict_with_base": true,
+ "stopping_reason": "界推导+构造下界完成；UB 与 LB 未会合（区间陈述）",
+ "failure_mode": null,
+ "ub_phase_block": 332,
+ "ub_density": 676,
+ "ub_sum_cells": 997,
+ "free_cells": 48700,
+ "gate": {
+  "known_feasible_counts": {
+   "Q3-R23": 137,
+   "Q3-R11": 139
+  },
+  "required_min": 139,
+  "passed": true,
+  "note": "CH-05 警示#3：UB<已知可行解 ⇒ 界代码 bug"
+ },
+ "lb_source": "Q3-R23 solution (任务明示复用)",
+ "density_note": "密度界=floor(free/72)（ADJ R2 distinct 口径），远松于双计数界，仅作对照",
+ "meeting": false
+}

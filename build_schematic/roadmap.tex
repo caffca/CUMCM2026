@@ -1,0 +1,38 @@
+\documentclass[tikz,border=6pt]{standalone}
+\usepackage{ctex}
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds}
+\begin{document}
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={draw=black!55, rounded corners=2pt, minimum height=0.72cm, align=center, fill=blue!6, text width=4.6cm},
+  head/.style={draw=blue!60!black, rounded corners=2pt, minimum height=0.72cm, align=center, font=\small, text width=4.6cm, fill=blue!15},
+  obox/.style={draw=gray!60, rounded corners=2pt, minimum height=0.72cm, align=center, fill=gray!8, text width=4.2cm},
+  arr/.style={-{Stealth[length=2.4mm]}, thick, blue!45!black},
+  carr/.style={-{Stealth[length=2.2mm]}, thick, gray!60},
+]
+  \node[box] (data) {赛题计划参数\\（A/B/C 三类 150 个计划，时频离散格）};
+  \node[head] (q1) at (0,-1.6) {问题一：冲突检测\\三独立实现互证＋官方口径对账};
+  \node[obox] (r1) at (0,-3.1) {冲突计划对集合（result1）};
+  \node[head] (q2) at (0,-4.7) {问题二：词典序四级消解\\候选动作枚举→CP-SAT 分层求解};
+  \node[box] (cert) at (5.6,-4.7) {\shortstack{撤销数证书阶梯\\（下界探测＋达成值）}};
+  \node[obox] (r2) at (0,-6.2) {消解方案：撤销／平移（result2）};
+  \node[head] (q3) at (0,-7.8) {问题三：基座上最大加装\\零冲突候选穷举→集包装整数规划};
+  \node[box] (bnd) at (5.6,-7.8) {\shortstack{三腿认证\\CP 整数界／LP 松弛／初等计数}};
+  \node[obox] (r3) at (0,-9.3) {新增 C 类计划表（result3）};
+  \node[head] (q4) at (0,-10.9) {问题四：间隔重定时消解\\扩域建模＋问题二解作可行锚};
+  \node[obox] (r4) at (0,-12.4) {含间隔调整的消解方案（result4）};
+  \node[box] (ver) at (0,-14.0) {\shortstack{独立复验链：第二实现检查器逐约束重算／\\提交表与权威结果对账}};
+  \draw[arr] (data) -- (q1);
+  \draw[arr] (q1) -- (r1);
+  \draw[arr] (r1) -- (q2);
+  \draw[carr] (cert) -- (q2);
+  \draw[arr] (q2) -- (r2);
+  \draw[arr] (r2) -- (q3);
+  \draw[carr] (bnd) -- (q3);
+  \draw[arr] (q3) -- (r3);
+  \draw[arr] (r3) -- (q4);
+  \draw[arr] (q4) -- (r4);
+  \draw[carr] (r4) -- (ver);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,31 @@
+{
+ "stage1_UB_revoke": 6,
+ "n_star_edges": 1693,
+ "n_base_edges": 297,
+ "revoke_LB_relaxation": 0,
+ "revoke_LB_relaxation_valid": true,
+ "relaxation_record": {
+  "model": "relaxation(base_edges_only)",
+  "status": "OPTIMAL",
+  "budget_s": 57.2,
+  "wall_s": 3.5,
+  "clauses": 142427,
+  "value": 0,
+  "best_bound": 0,
+  "proven_optimal": true
+ },
+ "certificate_stopped": "UNKNOWN@k=5（预算耗尽）",
+ "certificate_ladder": [
+  {
+   "k_max_revoke": 5,
+   "status": "UNKNOWN",
+   "budget_s": 114.3,
+   "wall_s": 116.5
+  }
+ ],
+ "revoke_LB_full_model_certificate": null,
+ "revoke_LB_best": 0,
+ "revoke_gap_best": 6,
+ "certified": false,
+ "wall_total_s": 120.4
+}

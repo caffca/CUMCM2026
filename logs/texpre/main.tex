@@ -1,0 +1,255 @@
+% !TEX program = xelatex
+% =============================================================================
+%  全国大学生数学建模竞赛（CUMCM）LaTeX 模板 v2（结构丰富、内容空白、按题型自适应、版面自适应）
+%  对应 Typst 模板 zh/cumcm/main.typ。
+%
+%  架构（v4.5 模板 v2 §3）：
+%    compliance.tex      官方硬约束（不决定审美）
+%    style_tokens.tex    视觉参数唯一来源（字号/行距/图宽档）
+%    components.tex      语义组件（resultkey/resultstatement/PaperFigure/SupportManifestTable）
+%    table_components.tex 表格系统（Short/Flexible/Long/Wide/Result/Symbol/Comparison）
+%    template_config.tex 配置（questioncount/章节开关/题型模块）
+%
+%  内容纪律（模板 v2 §1/§30）：
+%    - 模板零虚构：不预置模型名（随机森林/ARIMA/AHP/熵权法）、不预置结果数字
+%      （R²=0.xxx / 准确率 xx% / 推荐值 xxx）；只允许排版参数与 <FROM_REGISTRY> 槽位。
+%    - 章节由 \questioncount 与开关控制；问题数 = QUESTION_CONTRACT.questions 长度。
+%    - 数字来源二选一：generated_values.tex（recommended）或 results/*.json authority trace。
+%    - 附录 A 由 SUBMISSION_MANIFEST 生成（禁硬编码 5 行）；AI 声明由 AI_USE_PROVENANCE 生成候选、
+%      经参赛队确认（未确认时占位）。
+%
+%  字体依赖（正文宋体 / 标题黑体 / 强调楷体）：按本机字体自动选择（Windows SimSun/SimHei/KaiTi，
+%  macOS 回退 Songti SC/Heiti SC/Kaiti SC）；西文 Times New Roman；代码等宽 Menlo→Consolas。
+%  编译方式：xelatex main.tex（两遍生成内部引用）
+% =============================================================================
+\documentclass[fontset=none, 12pt, a4paper]{ctexart}
+
+\input{template_config}
+\input{compliance}
+\input{style_tokens}
+
+% ---------- 页面：A4，边距（合规层 CUMCM-1；官方最低 ≥2.5cm，本模板取 2.8-3.0cm） ----------
+\usepackage[a4paper, top=2.8cm, bottom=2.8cm, left=3cm, right=3cm]{geometry}
+
+% ---------- 断行救急：防止行内不可断 token 硬越界（零副作用） ----------
+\emergencystretch=2em
+
+% ---------- 数学 ----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ---------- 字体（fontspec + ctex，xelatex 编译；本机字体自动回退，禁绝对路径） ----------
+% 与 Typst 模板一致的字体角色（引擎无关语义）：正文宋体 / 标题黑体 / 强调楷体 / 西文 Times /
+% 代码等宽 Consolas→Courier New→Latin Modern Mono→Menlo（Windows 优先，避免 Men.cfg 配置告警）；
+% 中文代码字体 FangSong→SimSun（TPL-L08 修复 \CJKttdefault 未定义）。
+% TPL-L07：中文粗体/斜体映射（正文宋体粗体映射黑体、斜体映射楷体），
+% 禁止本机绝对字体路径；\IfFontExistsTF 探测失败时回退 macOS 族。
+\IfFontExistsTF{SimSun}{%
+  \setCJKmainfont{SimSun}[BoldFont=SimHei, ItalicFont=KaiTi]}{%
+  \setCJKmainfont{Songti SC}[BoldFont=Heiti SC, ItalicFont=Kaiti SC]}
+\IfFontExistsTF{SimSun}{%
+  \newCJKfontfamily\songti{SimSun}[BoldFont=SimHei, ItalicFont=KaiTi]}{%
+  \newCJKfontfamily\songti{Songti SC}[BoldFont=Heiti SC, ItalicFont=Kaiti SC]}
+\IfFontExistsTF{SimHei}{%
+  \newCJKfontfamily\heiti{SimHei}[BoldFont=SimHei, ItalicFont=KaiTi]}{%
+  \newCJKfontfamily\heiti{Heiti SC}[BoldFont=Heiti SC, ItalicFont=Kaiti SC]}
+\IfFontExistsTF{KaiTi}{%
+  \newCJKfontfamily\kaishu{KaiTi}[BoldFont=SimHei, ItalicFont=KaiTi]}{%
+  \newCJKfontfamily\kaishu{Kaiti SC}[BoldFont=Heiti SC, ItalicFont=Kaiti SC]}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{}
+% TPL-L06：Windows 优先等宽回退链（Consolas→Courier New→Latin Modern Mono），Menlo 仅兜底
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{%
+  \IfFontExistsTF{Courier New}{\setmonofont{Courier New}}{%
+    \IfFontExistsTF{Latin Modern Mono}{\setmonofont{Latin Modern Mono}}{%
+      \IfFontExistsTF{Menlo}{\setmonofont{Menlo}}{}}}}
+% TPL-L08：CJK 代码字体（\CJKttdefault 未定义告警消除）；Windows 优先 FangSong→SimSun
+\IfFontExistsTF{FangSong}{\setCJKmonofont{FangSong}}{%
+  \IfFontExistsTF{SimSun}{\setCJKmonofont{SimSun}}{}}
+
+% ---------- 正文：\BodyLineSpread、首行缩进 2em、两端对齐 ----------
+\linespread{\BodyLineSpread}
+\setlength{\parindent}{\ParagraphIndent}
+
+% ---------- 标题编号（一级中文数字，二级 1.1） ----------
+\ctexset{
+  section/number       = \chinese{section},
+  subsection/number    = \arabic{section}.\arabic{subsection},
+  subsubsection/number = \arabic{section}.\arabic{subsection}.\arabic{subsubsection},
+}
+
+% ---------- 标题格式（titlesec + 孤立保护 needspace） ----------
+\usepackage{titlesec}
+\usepackage{needspace}
+\titlespacing{\section}       {0pt}{\SectionAbove}{\SectionBelow}
+\titlespacing{\subsection}    {0pt}{\SubsectionAbove}{\SubsectionBelow}
+\titlespacing{\subsubsection} {0pt}{\SubsectionAbove}{\SubsectionBelow}
+% 孤立标题保护：小节标题后至少留 3 行正文空间，三小节标题后至少留 2 行（模板 v2 §10）
+\titleformat{\section}{\needspace{4\baselineskip}\centering\fontsize{\SectionFontSize}{\SectionLineHeight}\heiti\bfseries}
+  {\chinese{section}、}{1em}{}
+\titleformat{\subsection}{\needspace{3\baselineskip}\fontsize{\SubsectionFontSize}{\SubsectionLineHeight}\heiti\bfseries}
+  {\arabic{section}.\arabic{subsection}}{1em}{}
+\titleformat{\subsubsection}{\needspace{2\baselineskip}\fontsize{\SubsubsectionFontSize}{\SubsubsectionLineHeight}\heiti\bfseries}
+  {\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}
+
+% 2026 格式规范：不要目录 → 本模板无目录页
+
+% ---------- 表格/图/代码基础设施 ----------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{pgffor}    % \questioncount 动态循环生成问题章节
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{black!3},
+  frame=single,
+  framesep=6pt,
+  rulecolor=\color{black!30},
+  framerule=0.8pt,
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+  keepspaces=true,
+}
+
+% ---------- 页码：底部居中 ----------
+\pagestyle{plain}
+
+% ---------- 组件层 ----------
+\input{components}
+\input{table_components}
+
+% ---------- 自定义命令（保留 v1 兼容；v2 优先使用组件宏） ----------
+% \papertitle{标题}：居中加粗标题
+\newcommand{\papertitle}[1]{%
+  \begin{center}
+    {\fontsize{\TitleFontSize}{22pt}\bfseries #1}
+  \end{center}
+  \vspace{1em}
+}
+% \abstractcn{摘要正文}{关键词}：摘要页（合规层 CUMCM-2：标题+摘要+关键词同页，页码 1）
+% v2：正文段数 N = QUESTION_CONTRACT.questions.length（1 总起段 + N 任务段 + 可选收束句），
+%     不是固定 4 段；每问覆盖 任务→做法→关键发现→最终答案；每问 ≤1 个 \resultkey。
+\newcommand{\abstractcn}[2]{%
+  \setcounter{page}{1}%
+  \vspace{0.5em}%
+  {\centering\fontsize{\AbstractTitleFontSize}{17pt}\heiti\bfseries 摘要\par}%
+  \vspace{0.5em}%
+  {\sloppy #1\par}%
+  \vspace{1em}
+  {\heiti\bfseries 关键词：}#2\par
+  \newpage
+}
+% \kw{...}：内容性加粗（v1 兼容语义：结论句 > 模型/方法名 > 引导语；每问 ≤2 处）
+\newcommand{\kw}[1]{{\heiti\bfseries #1}}
+% \referencescn：参考文献节
+\newcommand{\referencescn}{%
+  \input{references}%
+}
+% \appendixcn：附录 B 源程序代码（合规层 CUMCM-4：全部完整可运行源码）
+\newcommand{\appendixcn}{%
+  \subsection*{B\quad 源程序代码}%
+  \input{sections/A_code}%
+}
+% \supportfilescn：附录 A 支撑材料清单（合规层 CUMCM-5：由 SUBMISSION_MANIFEST 生成）
+\newcommand{\supportfilescn}{%
+  \subsection*{A\quad 支撑材料文件列表}%
+  支撑材料已压缩为单个 ZIP 文件，内容清单由 \texttt{SUBMISSION\_MANIFEST.json} 生成如下：\par
+  \SupportManifestTable{%
+     % 生成器占位：\SupportManifestTable 的 #1 由 manifest 渲染（行结构：类别 & 路径 & 说明 & 角色）
+     % TODO: 由 SUBMISSION_MANIFEST.json 生成表格行（禁硬编码 code/*.py 五行清单）
+  }%
+}
+% \aideclnotused / \aideclused：AI 声明（合规层 CUMCM-6）——定句文本以
+% skills/6verity/official_rules.json R-05.hard_value.ai_decl 为唯一来源（官方第3条，二者择一）。
+% 使用版=官方框架（“…使用了AI工具，主要用于【简要用途】，详细使用情况见支撑材料。”）；
+% 【简要用途】按 AI_USE_PROVENANCE 实际环节填写并经参赛队确认（IP-04 内部机制），禁止改写框架。
+\newcommand{\aideclnotused}{%
+  \aideclaration{本参赛队在竞赛过程中未使用任何 AI 工具。}%
+}
+\newcommand{\aideclused}[1]{%
+  \aideclaration{本参赛队在竞赛过程中使用了AI工具，主要用于赛题结构化分析、代码实现与调试、
+  结果核验与语言润色，详细使用情况见支撑材料。#1}%
+}
+% \threelinetable{标题}{列定义}{表头}{行}：v1 兼容三线表（新内容优先 Short/Flexible/Long 组件）
+\newcommand{\threelinetable}[4]{%
+  \begin{center}
+    {\fontsize{\CaptionFontSize}{\CaptionLineHeight}\heiti\bfseries #1}\par
+    \vspace{0.6em}
+    \begin{tabular}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+}
+
+% ---------- 图表 caption 与浮动体间距（图注下方、表注上方，字号小于正文） ----------
+\captionsetup{font=small, labelfont=bf, justification=centering, labelsep=quad}
+\setlength{\intextsep}{\TextFloatSep}
+\setlength{\textfloatsep}{\TextFloatSep}
+\setlength{\floatsep}{\TextFloatSep}
+
+% ---------- PDF 书签与超链接（侧栏导航层，不与"禁目录页"冲突） ----------
+\usepackage[bookmarks=true, bookmarksnumbered=true, bookmarksopen=true,
+            colorlinks=false, pdfborder={0 0 0}, unicode=true]{hyperref}
+
+\begin{document}
+
+% ============ 摘要专用页（合规层 CUMCM-2）============
+\papertitle{[论文标题]}   % TODO: 从 QUESTION_CONTRACT 生成标题
+
+% 摘要正文（v2）：N 段动态（1 总起段 + N 任务段 + 可选收束句），每问：
+%   任务 → 核心方法（≤1-2 个方法名）→ 关键发现/证据 → 最终答案/边界；
+%   结果只从 RESULT_REGISTRY/CLAIM_PROVENANCE 取（禁止手输数字）；
+%   每问 ≤1 个 \resultkey{...}；长度以"一页内完成"为准（500-850 中文字为风格建议）。
+\abstractcn{%
+  % TODO: 用 2-3 句概括对象/核心矛盾/整体路线（禁止套话："数学建模具有重要意义"等）。
+  %
+  % TODO: 按 QUESTION_CONTRACT.questions 逐问写任务段（此处为生成器模板，禁止固定 4 段）。
+  % 示例骨架（内容来自 registry 生成，禁止手输）：
+  % \resultkey{最终答案/关键结论}……
+}{%
+  % TODO: 关键词 4-6 个（核心方法/模型类别/关键数学对象；避免"数学建模、数据分析"等空泛词）
+  关键词1 关键词2 关键词3%
+}
+
+% ============ 正文：CUMCM 国一信息架构 ============
+% 问题重述/问题分析并列；若题目存在跨问依赖，framework 在第二章末尾出现。
+% 模型建立与求解为第五章父层，问题 N 仅生成 5.1、5.2……编号小节。
+\input{sections/1_restatement}
+\input{sections/2_analysis}
+\ifshowframeworksection\input{sections/6_framework}\fi
+\input{sections/3_assumptions}
+\ifshowdatasection\input{sections/3_data}\fi
+\input{sections/5_model}
+\foreach \n in {1,...,\questioncount}{%
+  \input{sections/question_\n}%
+}
+\ifshowevaluationsection\input{sections/evaluation}\fi
+\ifshowrobustnesssection\input{sections/robustness}\fi
+\ifshowconclusionsection\input{sections/conclusion}\fi
+
+\newpage
+% AI 工具使用声明（合规层 CUMCM-6：参考文献之前；未确认时占位，禁止自动断言）
+\pdfbookmark[0]{AI 工具使用声明}{ai_decl}
+\aideclused{}   % TODO: 确认后替换为 \aideclaration{经参赛队确认的最终声明全文}
+
+\newpage
+\pdfbookmark[0]{参考文献}{references}
+\referencescn
+\newpage
+\pdfbookmark[0]{附录}{appendix}
+\section*{附录}
+\pdfbookmark[1]{附录 A 支撑材料文件列表}{appendix_a}
+\supportfilescn
+\pdfbookmark[1]{附录 B 源程序代码}{appendix_b}
+\appendixcn
+
+\end{document}

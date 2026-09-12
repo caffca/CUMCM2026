@@ -1,0 +1,4 @@
+[    0.4s] stage1 UB=6 | base=297 subset of G*=1693
+[    3.9s] relax {"model": "relaxation(base_edges_only)", "status": "OPTIMAL", "budget_s": 57.2, "wall_s": 3.5, "clauses": 142427, "value": 0, "best_bound": 0, "proven_optimal": true}
+[  120.4s] certificate Σr<=5 -> UNKNOWN (116.5s)
+[  120.4s] SUMMARY {"revoke_LB_best": 0, "revoke_gap_best": 6, "certified": false}

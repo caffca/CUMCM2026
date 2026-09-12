@@ -1,0 +1,2158 @@
+{
+  "schema_version": 1,
+  "decision_record_id": "MDR-08459C2ED4F1652C",
+  "problem_id": "D2026",
+  "profile_id": "PROFILE-8ADA7763202B25BA",
+  "strategy_matching_id": "MATCH-1504A0480D6D591A",
+  "library_id": "mathmodel-strategy-library",
+  "library_version": "1.0.0",
+  "authority_scope": "explanatory_projection_only",
+  "decision_policy": {
+    "per_question": true,
+    "auto_selection": false,
+    "cross_question_comparison": false,
+    "numeric_ranking": false,
+    "fms_semantics_modified": false
+  },
+  "source_bindings": [
+    {
+      "artifact_id": "problem_profile",
+      "path": "reports/contracts/PROBLEM_PROFILE.json",
+      "sha256": "a6dc243515bfe4d19da595982b66829fce13247a2533fb8f8902ddfcc84df89a",
+      "role": "Discovery-derived question-local profile"
+    },
+    {
+      "artifact_id": "strategy_matching",
+      "path": "reports/contracts/STRATEGY_MATCHING.json",
+      "sha256": "12744003c7a5c5dc3f447dfc56ba46f17d2ce74d53487735ac8a2e4fc3451d65",
+      "role": "question-local candidate strategy set"
+    },
+    {
+      "artifact_id": "modeling_strategy_library",
+      "path": "reports/contracts/MODELING_STRATEGY_LIBRARY.json",
+      "sha256": "a347988c470dd67f452444f703bfaa841e21abeafb07becd01c51b48c3d379c3",
+      "role": "versioned strategy card library snapshot"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q1",
+      "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+      "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9",
+      "candidate_models": [
+        {
+          "question_id": "Q1",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "feature_fit": {
+            "matched_predicates": [
+              "constraint_domain_available"
+            ],
+            "unsatisfied_predicates": [
+              "explicit_decision_variables",
+              "objective_direction_known"
+            ],
+            "evidence_refs": [
+              "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+              "Q1-FE-task_type",
+              "Q1-FE-control",
+              "Q1-FE-combinatorial",
+              "Q1-F014",
+              "Q1-FE-special_boundary",
+              "Q1-FE-reachable_domain",
+              "Q1-FE-upper_lower_bounds"
+            ]
+          },
+          "assumptions": [
+            "decision variables are identifiable",
+            "constraint expressions are evaluable"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "domain",
+                "capacity",
+                "logic",
+                "integrality",
+                "boundary"
+              ],
+              "description": "所有硬约束必须有可行性检查和边界解释。"
+            }
+          },
+          "evaluation_criteria": [
+            "feasibility",
+            "objective_value",
+            "bound_or_gap",
+            "stability",
+            "runtime"
+          ],
+          "risks": [
+            "infeasible rounded solution",
+            "local optimum reported as global",
+            "constraint direction reversed"
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q1-FE-task_type",
+            "Q1-FE-control",
+            "Q1-FE-combinatorial",
+            "Q1-F014",
+            "Q1-FE-special_boundary",
+            "Q1-FE-reachable_domain",
+            "Q1-FE-upper_lower_bounds"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "feature_fit": {
+            "matched_predicates": [
+              "ordered_observations"
+            ],
+            "unsatisfied_predicates": [
+              "forecast_target_defined",
+              "future_information_boundary"
+            ],
+            "evidence_refs": [
+              "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+              "Q1-FE-temporal",
+              "Q1-FE-repeated_measures",
+              "Q1-FE-task_type",
+              "Q1-FE-decision_target",
+              "Q1-FE-unavailable_variables",
+              "Q1-FE-leakage"
+            ]
+          },
+          "assumptions": [
+            "forecast covariates are available at prediction time",
+            "time ordering is meaningful"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "time_order",
+                "feature_availability",
+                "physical_range"
+              ],
+              "description": "训练过程不得使用预测时点之后的信息或越过可用变量边界。"
+            }
+          },
+          "evaluation_criteria": [
+            "temporal_holdout_error",
+            "baseline_comparison",
+            "uncertainty_coverage",
+            "stability"
+          ],
+          "risks": [
+            "random split leakage",
+            "future covariate leakage",
+            "unlabeled extrapolation"
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q1-FE-temporal",
+            "Q1-FE-repeated_measures",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-FE-unavailable_variables",
+            "Q1-FE-leakage"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "feature_fit": {
+            "matched_predicates": [],
+            "unsatisfied_predicates": [
+              "multiple_alternatives",
+              "multiple_criteria",
+              "criterion_direction_available"
+            ],
+            "evidence_refs": [
+              "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+              "Q1-FE-task_type",
+              "Q1-FE-decision_target",
+              "Q1-F014"
+            ]
+          },
+          "assumptions": [
+            "alternatives share the declared criterion meanings",
+            "criterion directions are known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "weight_sum",
+                "consistency",
+                "normalization_domain",
+                "alternative_eligibility"
+              ],
+              "description": "标准化、权重和方案可比性必须可复核。"
+            }
+          },
+          "evaluation_criteria": [
+            "direction_correctness",
+            "normalization_validity",
+            "weight_provenance",
+            "rank_stability"
+          ],
+          "risks": [
+            "mixed units without normalization",
+            "weights chosen after seeing rank",
+            "double counting correlated criteria"
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-F014"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, multiple_criteria, criterion_direction_available"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "feature_fit": {
+            "matched_predicates": [
+              "sample_unit_identified",
+              "estimand_identified",
+              "observation_mechanism_present"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+              "Q1-FE-analysis_unit",
+              "Q1-FE-observation_unit",
+              "Q1-F014",
+              "Q1-FE-sample_size",
+              "Q1-FE-repeated_measures"
+            ]
+          },
+          "assumptions": [
+            "analysis unit is explicit",
+            "observation mechanism is documented",
+            "uncertainty target is stated"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "sample_scope",
+                "censoring",
+                "missingness",
+                "group_dependence",
+                "fit_scope"
+              ],
+              "description": "抽样、删失、重复测量和拟合范围必须与估计过程一致。"
+            }
+          },
+          "evaluation_criteria": [
+            "identifiability",
+            "assumption_fit",
+            "uncertainty",
+            "residual_or_calibration",
+            "sensitivity"
+          ],
+          "risks": [
+            "repeated observations treated as independent",
+            "censoring treated as exact time",
+            "outer test used for model selection"
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q1-FE-analysis_unit",
+            "Q1-FE-observation_unit",
+            "Q1-F014",
+            "Q1-FE-sample_size",
+            "Q1-FE-repeated_measures"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "feature_fit": {
+            "matched_predicates": [],
+            "unsatisfied_predicates": [
+              "nodes_and_edges_available",
+              "connectivity_or_flow_semantics",
+              "edge_weight_meaningful"
+            ],
+            "evidence_refs": [
+              "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+              "Q1-FE-graph",
+              "Q1-FE-network",
+              "Q1-FE-path"
+            ]
+          },
+          "assumptions": [
+            "node and edge identities are stable",
+            "weight units are compatible",
+            "graph direction is known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "connectivity",
+                "capacity",
+                "flow_conservation",
+                "simple_path",
+                "time_window"
+              ],
+              "description": "图结构和路径/流约束必须可回代验证。"
+            }
+          },
+          "evaluation_criteria": [
+            "path_or_flow_feasibility",
+            "objective_value",
+            "conservation",
+            "sensitivity_to_edges"
+          ],
+          "risks": [
+            "negative edge with Dijkstra",
+            "disconnected route reported as feasible",
+            "flow conservation omitted",
+            "subtour left unchecked"
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q1-FE-graph",
+            "Q1-FE-network",
+            "Q1-FE-path"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "feature_fit": {
+            "matched_predicates": [
+              "target_or_unsupervised_goal_defined",
+              "feature_scope_known",
+              "evaluation_split_available"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+              "Q1-FE-decision_target",
+              "Q1-FE-task_type",
+              "Q1-FE-variable_type",
+              "Q1-FE-sample_size",
+              "Q1-FE-leakage",
+              "Q1-FE-unavailable_variables"
+            ]
+          },
+          "assumptions": [
+            "target or unsupervised objective is explicit",
+            "features are available at inference time",
+            "split prevents leakage"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q1-F014"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "train_fit_scope",
+                "inner_tuning_scope",
+                "outer_test_isolation",
+                "class_or_range_boundary"
+              ],
+              "description": "预处理、特征选择、调参与评估的 data scope 必须分层记录。"
+            }
+          },
+          "evaluation_criteria": [
+            "held_out_metric",
+            "baseline_comparison",
+            "calibration_or_uncertainty",
+            "stability"
+          ],
+          "risks": [
+            "outer test tuning",
+            "target leakage",
+            "pseudo-likelihood for non-probabilistic model",
+            "unstable small-sample ranking"
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q1-FE-decision_target",
+            "Q1-FE-task_type",
+            "Q1-FE-variable_type",
+            "Q1-FE-sample_size",
+            "Q1-FE-leakage",
+            "Q1-FE-unavailable_variables"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        }
+      ],
+      "evaluation_criteria": [],
+      "selected_model": null,
+      "selection_basis": [],
+      "rejection_records": [
+        {
+          "question_id": "Q1",
+          "strategy_id": "optimization-structure-first",
+          "reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known",
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q1-FE-task_type",
+            "Q1-FE-control",
+            "Q1-FE-combinatorial",
+            "Q1-F014",
+            "Q1-FE-special_boundary",
+            "Q1-FE-reachable_domain",
+            "Q1-FE-upper_lower_bounds"
+          ]
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "prediction-temporal-holdout",
+          "reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary",
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q1-FE-temporal",
+            "Q1-FE-repeated_measures",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-FE-unavailable_variables",
+            "Q1-FE-leakage"
+          ]
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "reason": "required predicates not all satisfied: multiple_alternatives, multiple_criteria, criterion_direction_available",
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-F014"
+          ]
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "graph-theory-feasibility-first",
+          "reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful",
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q1-FE-graph",
+            "Q1-FE-network",
+            "Q1-FE-path"
+          ]
+        }
+      ],
+      "decision_status": "pending_proposal",
+      "decision_revision": 0,
+      "evidence_refs": [
+        "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+        "Q1-FE-task_type",
+        "Q1-FE-control",
+        "Q1-FE-combinatorial",
+        "Q1-F014",
+        "Q1-FE-special_boundary",
+        "Q1-FE-reachable_domain",
+        "Q1-FE-upper_lower_bounds",
+        "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+        "Q1-FE-temporal",
+        "Q1-FE-repeated_measures",
+        "Q1-FE-decision_target",
+        "Q1-FE-unavailable_variables",
+        "Q1-FE-leakage",
+        "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+        "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+        "Q1-FE-analysis_unit",
+        "Q1-FE-observation_unit",
+        "Q1-FE-sample_size",
+        "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+        "Q1-FE-graph",
+        "Q1-FE-network",
+        "Q1-FE-path",
+        "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+        "Q1-FE-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+      "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8",
+      "candidate_models": [
+        {
+          "question_id": "Q2",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "feature_fit": {
+            "matched_predicates": [
+              "constraint_domain_available"
+            ],
+            "unsatisfied_predicates": [
+              "explicit_decision_variables",
+              "objective_direction_known"
+            ],
+            "evidence_refs": [
+              "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+              "Q2-FE-task_type",
+              "Q2-FE-control",
+              "Q2-FE-combinatorial",
+              "Q2-F011",
+              "Q2-F015",
+              "Q2-FE-special_boundary",
+              "Q2-FE-reachable_domain",
+              "Q2-FE-upper_lower_bounds"
+            ]
+          },
+          "assumptions": [
+            "decision variables are identifiable",
+            "constraint expressions are evaluable"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "domain",
+                "capacity",
+                "logic",
+                "integrality",
+                "boundary"
+              ],
+              "description": "所有硬约束必须有可行性检查和边界解释。"
+            }
+          },
+          "evaluation_criteria": [
+            "feasibility",
+            "objective_value",
+            "bound_or_gap",
+            "stability",
+            "runtime"
+          ],
+          "risks": [
+            "infeasible rounded solution",
+            "local optimum reported as global",
+            "constraint direction reversed"
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q2-FE-task_type",
+            "Q2-FE-control",
+            "Q2-FE-combinatorial",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-special_boundary",
+            "Q2-FE-reachable_domain",
+            "Q2-FE-upper_lower_bounds"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "feature_fit": {
+            "matched_predicates": [
+              "ordered_observations"
+            ],
+            "unsatisfied_predicates": [
+              "forecast_target_defined",
+              "future_information_boundary"
+            ],
+            "evidence_refs": [
+              "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+              "Q2-FE-temporal",
+              "Q2-FE-repeated_measures",
+              "Q2-FE-task_type",
+              "Q2-FE-decision_target",
+              "Q2-FE-unavailable_variables",
+              "Q2-FE-leakage"
+            ]
+          },
+          "assumptions": [
+            "forecast covariates are available at prediction time",
+            "time ordering is meaningful"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "time_order",
+                "feature_availability",
+                "physical_range"
+              ],
+              "description": "训练过程不得使用预测时点之后的信息或越过可用变量边界。"
+            }
+          },
+          "evaluation_criteria": [
+            "temporal_holdout_error",
+            "baseline_comparison",
+            "uncertainty_coverage",
+            "stability"
+          ],
+          "risks": [
+            "random split leakage",
+            "future covariate leakage",
+            "unlabeled extrapolation"
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q2-FE-temporal",
+            "Q2-FE-repeated_measures",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-FE-unavailable_variables",
+            "Q2-FE-leakage"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "feature_fit": {
+            "matched_predicates": [
+              "multiple_criteria"
+            ],
+            "unsatisfied_predicates": [
+              "multiple_alternatives",
+              "criterion_direction_available"
+            ],
+            "evidence_refs": [
+              "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+              "Q2-FE-task_type",
+              "Q2-FE-decision_target",
+              "Q2-F011",
+              "Q2-F015"
+            ]
+          },
+          "assumptions": [
+            "alternatives share the declared criterion meanings",
+            "criterion directions are known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "weight_sum",
+                "consistency",
+                "normalization_domain",
+                "alternative_eligibility"
+              ],
+              "description": "标准化、权重和方案可比性必须可复核。"
+            }
+          },
+          "evaluation_criteria": [
+            "direction_correctness",
+            "normalization_validity",
+            "weight_provenance",
+            "rank_stability"
+          ],
+          "risks": [
+            "mixed units without normalization",
+            "weights chosen after seeing rank",
+            "double counting correlated criteria"
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-F011",
+            "Q2-F015"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "feature_fit": {
+            "matched_predicates": [
+              "sample_unit_identified",
+              "estimand_identified",
+              "observation_mechanism_present"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+              "Q2-FE-analysis_unit",
+              "Q2-FE-observation_unit",
+              "Q2-F011",
+              "Q2-F015",
+              "Q2-FE-sample_size",
+              "Q2-FE-repeated_measures"
+            ]
+          },
+          "assumptions": [
+            "analysis unit is explicit",
+            "observation mechanism is documented",
+            "uncertainty target is stated"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "sample_scope",
+                "censoring",
+                "missingness",
+                "group_dependence",
+                "fit_scope"
+              ],
+              "description": "抽样、删失、重复测量和拟合范围必须与估计过程一致。"
+            }
+          },
+          "evaluation_criteria": [
+            "identifiability",
+            "assumption_fit",
+            "uncertainty",
+            "residual_or_calibration",
+            "sensitivity"
+          ],
+          "risks": [
+            "repeated observations treated as independent",
+            "censoring treated as exact time",
+            "outer test used for model selection"
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q2-FE-analysis_unit",
+            "Q2-FE-observation_unit",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-sample_size",
+            "Q2-FE-repeated_measures"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "feature_fit": {
+            "matched_predicates": [],
+            "unsatisfied_predicates": [
+              "nodes_and_edges_available",
+              "connectivity_or_flow_semantics",
+              "edge_weight_meaningful"
+            ],
+            "evidence_refs": [
+              "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+              "Q2-FE-graph",
+              "Q2-FE-network",
+              "Q2-FE-path"
+            ]
+          },
+          "assumptions": [
+            "node and edge identities are stable",
+            "weight units are compatible",
+            "graph direction is known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "connectivity",
+                "capacity",
+                "flow_conservation",
+                "simple_path",
+                "time_window"
+              ],
+              "description": "图结构和路径/流约束必须可回代验证。"
+            }
+          },
+          "evaluation_criteria": [
+            "path_or_flow_feasibility",
+            "objective_value",
+            "conservation",
+            "sensitivity_to_edges"
+          ],
+          "risks": [
+            "negative edge with Dijkstra",
+            "disconnected route reported as feasible",
+            "flow conservation omitted",
+            "subtour left unchecked"
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q2-FE-graph",
+            "Q2-FE-network",
+            "Q2-FE-path"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "feature_fit": {
+            "matched_predicates": [
+              "target_or_unsupervised_goal_defined",
+              "feature_scope_known",
+              "evaluation_split_available"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+              "Q2-FE-decision_target",
+              "Q2-FE-task_type",
+              "Q2-FE-variable_type",
+              "Q2-FE-sample_size",
+              "Q2-FE-leakage",
+              "Q2-FE-unavailable_variables"
+            ]
+          },
+          "assumptions": [
+            "target or unsupervised objective is explicit",
+            "features are available at inference time",
+            "split prevents leakage"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-009",
+              "F-010",
+              "F-012",
+              "Q2-F011",
+              "Q2-F015"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "train_fit_scope",
+                "inner_tuning_scope",
+                "outer_test_isolation",
+                "class_or_range_boundary"
+              ],
+              "description": "预处理、特征选择、调参与评估的 data scope 必须分层记录。"
+            }
+          },
+          "evaluation_criteria": [
+            "held_out_metric",
+            "baseline_comparison",
+            "calibration_or_uncertainty",
+            "stability"
+          ],
+          "risks": [
+            "outer test tuning",
+            "target leakage",
+            "pseudo-likelihood for non-probabilistic model",
+            "unstable small-sample ranking"
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q2-FE-decision_target",
+            "Q2-FE-task_type",
+            "Q2-FE-variable_type",
+            "Q2-FE-sample_size",
+            "Q2-FE-leakage",
+            "Q2-FE-unavailable_variables"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        }
+      ],
+      "evaluation_criteria": [],
+      "selected_model": null,
+      "selection_basis": [],
+      "rejection_records": [
+        {
+          "question_id": "Q2",
+          "strategy_id": "optimization-structure-first",
+          "reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known",
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q2-FE-task_type",
+            "Q2-FE-control",
+            "Q2-FE-combinatorial",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-special_boundary",
+            "Q2-FE-reachable_domain",
+            "Q2-FE-upper_lower_bounds"
+          ]
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "prediction-temporal-holdout",
+          "reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary",
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q2-FE-temporal",
+            "Q2-FE-repeated_measures",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-FE-unavailable_variables",
+            "Q2-FE-leakage"
+          ]
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available",
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-F011",
+            "Q2-F015"
+          ]
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "graph-theory-feasibility-first",
+          "reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful",
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q2-FE-graph",
+            "Q2-FE-network",
+            "Q2-FE-path"
+          ]
+        }
+      ],
+      "decision_status": "pending_proposal",
+      "decision_revision": 0,
+      "evidence_refs": [
+        "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+        "Q2-FE-task_type",
+        "Q2-FE-control",
+        "Q2-FE-combinatorial",
+        "Q2-F011",
+        "Q2-F015",
+        "Q2-FE-special_boundary",
+        "Q2-FE-reachable_domain",
+        "Q2-FE-upper_lower_bounds",
+        "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+        "Q2-FE-temporal",
+        "Q2-FE-repeated_measures",
+        "Q2-FE-decision_target",
+        "Q2-FE-unavailable_variables",
+        "Q2-FE-leakage",
+        "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+        "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+        "Q2-FE-analysis_unit",
+        "Q2-FE-observation_unit",
+        "Q2-FE-sample_size",
+        "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+        "Q2-FE-graph",
+        "Q2-FE-network",
+        "Q2-FE-path",
+        "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+        "Q2-FE-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+      "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a",
+      "candidate_models": [
+        {
+          "question_id": "Q3",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "feature_fit": {
+            "matched_predicates": [
+              "constraint_domain_available"
+            ],
+            "unsatisfied_predicates": [
+              "explicit_decision_variables",
+              "objective_direction_known"
+            ],
+            "evidence_refs": [
+              "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+              "Q3-FE-task_type",
+              "Q3-FE-control",
+              "Q3-FE-combinatorial",
+              "Q3-F017",
+              "Q3-F018",
+              "Q3-FE-special_boundary",
+              "Q3-FE-reachable_domain",
+              "Q3-FE-upper_lower_bounds"
+            ]
+          },
+          "assumptions": [
+            "decision variables are identifiable",
+            "constraint expressions are evaluable"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "domain",
+                "capacity",
+                "logic",
+                "integrality",
+                "boundary"
+              ],
+              "description": "所有硬约束必须有可行性检查和边界解释。"
+            }
+          },
+          "evaluation_criteria": [
+            "feasibility",
+            "objective_value",
+            "bound_or_gap",
+            "stability",
+            "runtime"
+          ],
+          "risks": [
+            "infeasible rounded solution",
+            "local optimum reported as global",
+            "constraint direction reversed"
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q3-FE-task_type",
+            "Q3-FE-control",
+            "Q3-FE-combinatorial",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-special_boundary",
+            "Q3-FE-reachable_domain",
+            "Q3-FE-upper_lower_bounds"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "feature_fit": {
+            "matched_predicates": [
+              "ordered_observations"
+            ],
+            "unsatisfied_predicates": [
+              "forecast_target_defined",
+              "future_information_boundary"
+            ],
+            "evidence_refs": [
+              "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+              "Q3-FE-temporal",
+              "Q3-FE-repeated_measures",
+              "Q3-FE-task_type",
+              "Q3-FE-decision_target",
+              "Q3-FE-unavailable_variables",
+              "Q3-FE-leakage"
+            ]
+          },
+          "assumptions": [
+            "forecast covariates are available at prediction time",
+            "time ordering is meaningful"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "time_order",
+                "feature_availability",
+                "physical_range"
+              ],
+              "description": "训练过程不得使用预测时点之后的信息或越过可用变量边界。"
+            }
+          },
+          "evaluation_criteria": [
+            "temporal_holdout_error",
+            "baseline_comparison",
+            "uncertainty_coverage",
+            "stability"
+          ],
+          "risks": [
+            "random split leakage",
+            "future covariate leakage",
+            "unlabeled extrapolation"
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q3-FE-temporal",
+            "Q3-FE-repeated_measures",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-FE-unavailable_variables",
+            "Q3-FE-leakage"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "feature_fit": {
+            "matched_predicates": [
+              "multiple_criteria"
+            ],
+            "unsatisfied_predicates": [
+              "multiple_alternatives",
+              "criterion_direction_available"
+            ],
+            "evidence_refs": [
+              "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+              "Q3-FE-task_type",
+              "Q3-FE-decision_target",
+              "Q3-F017",
+              "Q3-F018"
+            ]
+          },
+          "assumptions": [
+            "alternatives share the declared criterion meanings",
+            "criterion directions are known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "weight_sum",
+                "consistency",
+                "normalization_domain",
+                "alternative_eligibility"
+              ],
+              "description": "标准化、权重和方案可比性必须可复核。"
+            }
+          },
+          "evaluation_criteria": [
+            "direction_correctness",
+            "normalization_validity",
+            "weight_provenance",
+            "rank_stability"
+          ],
+          "risks": [
+            "mixed units without normalization",
+            "weights chosen after seeing rank",
+            "double counting correlated criteria"
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-F017",
+            "Q3-F018"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "feature_fit": {
+            "matched_predicates": [
+              "sample_unit_identified",
+              "observation_mechanism_present"
+            ],
+            "unsatisfied_predicates": [
+              "estimand_identified"
+            ],
+            "evidence_refs": [
+              "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+              "Q3-FE-analysis_unit",
+              "Q3-FE-observation_unit",
+              "Q3-F017",
+              "Q3-F018",
+              "Q3-FE-sample_size",
+              "Q3-FE-repeated_measures"
+            ]
+          },
+          "assumptions": [
+            "analysis unit is explicit",
+            "observation mechanism is documented",
+            "uncertainty target is stated"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "sample_scope",
+                "censoring",
+                "missingness",
+                "group_dependence",
+                "fit_scope"
+              ],
+              "description": "抽样、删失、重复测量和拟合范围必须与估计过程一致。"
+            }
+          },
+          "evaluation_criteria": [
+            "identifiability",
+            "assumption_fit",
+            "uncertainty",
+            "residual_or_calibration",
+            "sensitivity"
+          ],
+          "risks": [
+            "repeated observations treated as independent",
+            "censoring treated as exact time",
+            "outer test used for model selection"
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q3-FE-analysis_unit",
+            "Q3-FE-observation_unit",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-sample_size",
+            "Q3-FE-repeated_measures"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: estimand_identified"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "feature_fit": {
+            "matched_predicates": [],
+            "unsatisfied_predicates": [
+              "nodes_and_edges_available",
+              "connectivity_or_flow_semantics",
+              "edge_weight_meaningful"
+            ],
+            "evidence_refs": [
+              "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+              "Q3-FE-graph",
+              "Q3-FE-network",
+              "Q3-FE-path"
+            ]
+          },
+          "assumptions": [
+            "node and edge identities are stable",
+            "weight units are compatible",
+            "graph direction is known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "connectivity",
+                "capacity",
+                "flow_conservation",
+                "simple_path",
+                "time_window"
+              ],
+              "description": "图结构和路径/流约束必须可回代验证。"
+            }
+          },
+          "evaluation_criteria": [
+            "path_or_flow_feasibility",
+            "objective_value",
+            "conservation",
+            "sensitivity_to_edges"
+          ],
+          "risks": [
+            "negative edge with Dijkstra",
+            "disconnected route reported as feasible",
+            "flow conservation omitted",
+            "subtour left unchecked"
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q3-FE-graph",
+            "Q3-FE-network",
+            "Q3-FE-path"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "feature_fit": {
+            "matched_predicates": [
+              "target_or_unsupervised_goal_defined",
+              "feature_scope_known",
+              "evaluation_split_available"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+              "Q3-FE-decision_target",
+              "Q3-FE-task_type",
+              "Q3-FE-variable_type",
+              "Q3-FE-sample_size",
+              "Q3-FE-leakage",
+              "Q3-FE-unavailable_variables"
+            ]
+          },
+          "assumptions": [
+            "target or unsupervised objective is explicit",
+            "features are available at inference time",
+            "split prevents leakage"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-003",
+              "F-007",
+              "F-010",
+              "Q3-F017",
+              "Q3-F018"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "train_fit_scope",
+                "inner_tuning_scope",
+                "outer_test_isolation",
+                "class_or_range_boundary"
+              ],
+              "description": "预处理、特征选择、调参与评估的 data scope 必须分层记录。"
+            }
+          },
+          "evaluation_criteria": [
+            "held_out_metric",
+            "baseline_comparison",
+            "calibration_or_uncertainty",
+            "stability"
+          ],
+          "risks": [
+            "outer test tuning",
+            "target leakage",
+            "pseudo-likelihood for non-probabilistic model",
+            "unstable small-sample ranking"
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q3-FE-decision_target",
+            "Q3-FE-task_type",
+            "Q3-FE-variable_type",
+            "Q3-FE-sample_size",
+            "Q3-FE-leakage",
+            "Q3-FE-unavailable_variables"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        }
+      ],
+      "evaluation_criteria": [],
+      "selected_model": null,
+      "selection_basis": [],
+      "rejection_records": [
+        {
+          "question_id": "Q3",
+          "strategy_id": "optimization-structure-first",
+          "reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known",
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q3-FE-task_type",
+            "Q3-FE-control",
+            "Q3-FE-combinatorial",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-special_boundary",
+            "Q3-FE-reachable_domain",
+            "Q3-FE-upper_lower_bounds"
+          ]
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "prediction-temporal-holdout",
+          "reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary",
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q3-FE-temporal",
+            "Q3-FE-repeated_measures",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-FE-unavailable_variables",
+            "Q3-FE-leakage"
+          ]
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available",
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-F017",
+            "Q3-F018"
+          ]
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "reason": "required predicates not all satisfied: estimand_identified",
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q3-FE-analysis_unit",
+            "Q3-FE-observation_unit",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-sample_size",
+            "Q3-FE-repeated_measures"
+          ]
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "graph-theory-feasibility-first",
+          "reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful",
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q3-FE-graph",
+            "Q3-FE-network",
+            "Q3-FE-path"
+          ]
+        }
+      ],
+      "decision_status": "pending_proposal",
+      "decision_revision": 0,
+      "evidence_refs": [
+        "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+        "Q3-FE-task_type",
+        "Q3-FE-control",
+        "Q3-FE-combinatorial",
+        "Q3-F017",
+        "Q3-F018",
+        "Q3-FE-special_boundary",
+        "Q3-FE-reachable_domain",
+        "Q3-FE-upper_lower_bounds",
+        "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+        "Q3-FE-temporal",
+        "Q3-FE-repeated_measures",
+        "Q3-FE-decision_target",
+        "Q3-FE-unavailable_variables",
+        "Q3-FE-leakage",
+        "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+        "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+        "Q3-FE-analysis_unit",
+        "Q3-FE-observation_unit",
+        "Q3-FE-sample_size",
+        "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+        "Q3-FE-graph",
+        "Q3-FE-network",
+        "Q3-FE-path",
+        "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+        "Q3-FE-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+      "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257",
+      "candidate_models": [
+        {
+          "question_id": "Q4",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "feature_fit": {
+            "matched_predicates": [
+              "objective_direction_known",
+              "constraint_domain_available"
+            ],
+            "unsatisfied_predicates": [
+              "explicit_decision_variables"
+            ],
+            "evidence_refs": [
+              "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+              "Q4-FE-task_type",
+              "Q4-FE-control",
+              "Q4-FE-combinatorial",
+              "Q4-F011",
+              "Q4-F020",
+              "Q4-FE-special_boundary",
+              "Q4-FE-reachable_domain",
+              "Q4-FE-upper_lower_bounds"
+            ]
+          },
+          "assumptions": [
+            "decision variables are identifiable",
+            "constraint expressions are evaluable"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "domain",
+                "capacity",
+                "logic",
+                "integrality",
+                "boundary"
+              ],
+              "description": "所有硬约束必须有可行性检查和边界解释。"
+            }
+          },
+          "evaluation_criteria": [
+            "feasibility",
+            "objective_value",
+            "bound_or_gap",
+            "stability",
+            "runtime"
+          ],
+          "risks": [
+            "infeasible rounded solution",
+            "local optimum reported as global",
+            "constraint direction reversed"
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q4-FE-task_type",
+            "Q4-FE-control",
+            "Q4-FE-combinatorial",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-special_boundary",
+            "Q4-FE-reachable_domain",
+            "Q4-FE-upper_lower_bounds"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "feature_fit": {
+            "matched_predicates": [
+              "ordered_observations"
+            ],
+            "unsatisfied_predicates": [
+              "forecast_target_defined",
+              "future_information_boundary"
+            ],
+            "evidence_refs": [
+              "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+              "Q4-FE-temporal",
+              "Q4-FE-repeated_measures",
+              "Q4-FE-task_type",
+              "Q4-FE-decision_target",
+              "Q4-FE-unavailable_variables",
+              "Q4-FE-leakage"
+            ]
+          },
+          "assumptions": [
+            "forecast covariates are available at prediction time",
+            "time ordering is meaningful"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "time_order",
+                "feature_availability",
+                "physical_range"
+              ],
+              "description": "训练过程不得使用预测时点之后的信息或越过可用变量边界。"
+            }
+          },
+          "evaluation_criteria": [
+            "temporal_holdout_error",
+            "baseline_comparison",
+            "uncertainty_coverage",
+            "stability"
+          ],
+          "risks": [
+            "random split leakage",
+            "future covariate leakage",
+            "unlabeled extrapolation"
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q4-FE-temporal",
+            "Q4-FE-repeated_measures",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-FE-unavailable_variables",
+            "Q4-FE-leakage"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "feature_fit": {
+            "matched_predicates": [
+              "multiple_criteria"
+            ],
+            "unsatisfied_predicates": [
+              "multiple_alternatives",
+              "criterion_direction_available"
+            ],
+            "evidence_refs": [
+              "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+              "Q4-FE-task_type",
+              "Q4-FE-decision_target",
+              "Q4-F011",
+              "Q4-F020"
+            ]
+          },
+          "assumptions": [
+            "alternatives share the declared criterion meanings",
+            "criterion directions are known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "weight_sum",
+                "consistency",
+                "normalization_domain",
+                "alternative_eligibility"
+              ],
+              "description": "标准化、权重和方案可比性必须可复核。"
+            }
+          },
+          "evaluation_criteria": [
+            "direction_correctness",
+            "normalization_validity",
+            "weight_provenance",
+            "rank_stability"
+          ],
+          "risks": [
+            "mixed units without normalization",
+            "weights chosen after seeing rank",
+            "double counting correlated criteria"
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-F011",
+            "Q4-F020"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "feature_fit": {
+            "matched_predicates": [
+              "sample_unit_identified",
+              "estimand_identified",
+              "observation_mechanism_present"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+              "Q4-FE-analysis_unit",
+              "Q4-FE-observation_unit",
+              "Q4-F011",
+              "Q4-F020",
+              "Q4-FE-sample_size",
+              "Q4-FE-repeated_measures"
+            ]
+          },
+          "assumptions": [
+            "analysis unit is explicit",
+            "observation mechanism is documented",
+            "uncertainty target is stated"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "sample_scope",
+                "censoring",
+                "missingness",
+                "group_dependence",
+                "fit_scope"
+              ],
+              "description": "抽样、删失、重复测量和拟合范围必须与估计过程一致。"
+            }
+          },
+          "evaluation_criteria": [
+            "identifiability",
+            "assumption_fit",
+            "uncertainty",
+            "residual_or_calibration",
+            "sensitivity"
+          ],
+          "risks": [
+            "repeated observations treated as independent",
+            "censoring treated as exact time",
+            "outer test used for model selection"
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q4-FE-analysis_unit",
+            "Q4-FE-observation_unit",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-sample_size",
+            "Q4-FE-repeated_measures"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "feature_fit": {
+            "matched_predicates": [],
+            "unsatisfied_predicates": [
+              "nodes_and_edges_available",
+              "connectivity_or_flow_semantics",
+              "edge_weight_meaningful"
+            ],
+            "evidence_refs": [
+              "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+              "Q4-FE-graph",
+              "Q4-FE-network",
+              "Q4-FE-path"
+            ]
+          },
+          "assumptions": [
+            "node and edge identities are stable",
+            "weight units are compatible",
+            "graph direction is known"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "connectivity",
+                "capacity",
+                "flow_conservation",
+                "simple_path",
+                "time_window"
+              ],
+              "description": "图结构和路径/流约束必须可回代验证。"
+            }
+          },
+          "evaluation_criteria": [
+            "path_or_flow_feasibility",
+            "objective_value",
+            "conservation",
+            "sensitivity_to_edges"
+          ],
+          "risks": [
+            "negative edge with Dijkstra",
+            "disconnected route reported as feasible",
+            "flow conservation omitted",
+            "subtour left unchecked"
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q4-FE-graph",
+            "Q4-FE-network",
+            "Q4-FE-path"
+          ],
+          "selection_eligibility": "rejected",
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "feature_fit": {
+            "matched_predicates": [
+              "target_or_unsupervised_goal_defined",
+              "feature_scope_known",
+              "evaluation_split_available"
+            ],
+            "unsatisfied_predicates": [],
+            "evidence_refs": [
+              "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+              "Q4-FE-decision_target",
+              "Q4-FE-task_type",
+              "Q4-FE-variable_type",
+              "Q4-FE-sample_size",
+              "Q4-FE-leakage",
+              "Q4-FE-unavailable_variables"
+            ]
+          },
+          "assumptions": [
+            "target or unsupervised objective is explicit",
+            "features are available at inference time",
+            "split prevents leakage"
+          ],
+          "constraints": {
+            "profile_fact_ids": [
+              "F-002",
+              "F-003",
+              "F-007",
+              "F-008",
+              "F-010",
+              "F-012",
+              "Q4-F019",
+              "Q4-F011",
+              "Q4-F020"
+            ],
+            "strategy_constraint_semantics": {
+              "applicable": true,
+              "types": [
+                "train_fit_scope",
+                "inner_tuning_scope",
+                "outer_test_isolation",
+                "class_or_range_boundary"
+              ],
+              "description": "预处理、特征选择、调参与评估的 data scope 必须分层记录。"
+            }
+          },
+          "evaluation_criteria": [
+            "held_out_metric",
+            "baseline_comparison",
+            "calibration_or_uncertainty",
+            "stability"
+          ],
+          "risks": [
+            "outer test tuning",
+            "target leakage",
+            "pseudo-likelihood for non-probabilistic model",
+            "unstable small-sample ranking"
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q4-FE-decision_target",
+            "Q4-FE-task_type",
+            "Q4-FE-variable_type",
+            "Q4-FE-sample_size",
+            "Q4-FE-leakage",
+            "Q4-FE-unavailable_variables"
+          ],
+          "selection_eligibility": "eligible",
+          "rejection_reason": null
+        }
+      ],
+      "evaluation_criteria": [],
+      "selected_model": null,
+      "selection_basis": [],
+      "rejection_records": [
+        {
+          "question_id": "Q4",
+          "strategy_id": "optimization-structure-first",
+          "reason": "required predicates not all satisfied: explicit_decision_variables",
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q4-FE-task_type",
+            "Q4-FE-control",
+            "Q4-FE-combinatorial",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-special_boundary",
+            "Q4-FE-reachable_domain",
+            "Q4-FE-upper_lower_bounds"
+          ]
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "prediction-temporal-holdout",
+          "reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary",
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q4-FE-temporal",
+            "Q4-FE-repeated_measures",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-FE-unavailable_variables",
+            "Q4-FE-leakage"
+          ]
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available",
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-F011",
+            "Q4-F020"
+          ]
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "graph-theory-feasibility-first",
+          "reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful",
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q4-FE-graph",
+            "Q4-FE-network",
+            "Q4-FE-path"
+          ]
+        }
+      ],
+      "decision_status": "pending_proposal",
+      "decision_revision": 0,
+      "evidence_refs": [
+        "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+        "Q4-FE-task_type",
+        "Q4-FE-control",
+        "Q4-FE-combinatorial",
+        "Q4-F011",
+        "Q4-F020",
+        "Q4-FE-special_boundary",
+        "Q4-FE-reachable_domain",
+        "Q4-FE-upper_lower_bounds",
+        "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+        "Q4-FE-temporal",
+        "Q4-FE-repeated_measures",
+        "Q4-FE-decision_target",
+        "Q4-FE-unavailable_variables",
+        "Q4-FE-leakage",
+        "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+        "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+        "Q4-FE-analysis_unit",
+        "Q4-FE-observation_unit",
+        "Q4-FE-sample_size",
+        "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+        "Q4-FE-graph",
+        "Q4-FE-network",
+        "Q4-FE-path",
+        "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+        "Q4-FE-variable_type"
+      ]
+    }
+  ],
+  "provenance": {
+    "generator_path": "skills/brainstorm-mathmodel/scripts/strategy_selection.py",
+    "generator_sha256": "4a61b6e3d1367e18c30b7ab645c70fbd9bb4702f15061927f57fcedbe6eb0066",
+    "source_commit": null,
+    "input_artifact_ids": [
+      "problem_profile",
+      "strategy_matching",
+      "modeling_strategy_library"
+    ],
+    "input_bindings_sha256": "10b24c65cdb9cd9f6cfeedba9640559c4f4d2c79f011c2c7d6c74adca0481777",
+    "generated_at": "2026-09-11T20:43:11+08:00"
+  }
+}

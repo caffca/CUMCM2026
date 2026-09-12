@@ -1,0 +1,85 @@
+{
+ "idea_id": "Q1-R41",
+ "question_id": "Q1",
+ "started_at": "2026-09-11T16:32:01+0800",
+ "feasible": true,
+ "objective": 0,
+ "objective_tuple": [
+  0
+ ],
+ "runtime_seconds": 12.8864,
+ "replicate_values": [
+  0
+ ],
+ "replicates": 1,
+ "stability_metric": 0.0,
+ "stability_note": "确定性路线（Q1 三候选均标注 deterministic）：同输入 SHA 重跑逐位一致；跨实现对称差同时为 0，故 replicate 间方差为 0。",
+ "lower_bound": 0,
+ "upper_bound": 0,
+ "relative_gap": 0.0,
+ "bound_note": "完全枚举/等价闭式，无近似间隙 ⇒ lower_bound = upper_bound = objective，relative_gap = 0（协议：确定性路线）。",
+ "evaluations": {
+  "pair_evaluations": 11175,
+  "pairs_total_expected": 11175,
+  "internal_cross_checks": {
+   "symdiff_join_vs_bitand": 0,
+   "symdiff_join_vs_oracle_pruned": 0,
+   "symdiff_join_vs_oracle_fullscan": 0,
+   "boundary_cases_all_pass": true,
+   "stress_trials_completed": 996,
+   "stress_injection_recall": 1.0,
+   "stress_deletion_vanish_recall": 1.0,
+   "stress_pair_level_missing": 0,
+   "stress_pair_level_false_positive": 0,
+   "stress_global_symdiff": 0,
+   "per_seed_symdiff": {
+    "11": 0,
+    "29": 0,
+    "47": 0
+   },
+   "per_seed_pair_miss": {
+    "11": 0,
+    "29": 0,
+    "47": 0
+   }
+  }
+ },
+ "stopping_reason": "all_pairs_enumerated_and_planted_stress_recall_1_symdiff_zero_across_3_frozen_seeds",
+ "budget_exhausted": false,
+ "failure_mode": null,
+ "canonical_evaluator": {
+  "invoked": true,
+  "out": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/eval.json",
+  "counts": {
+   "truth": 297,
+   "submitted": 297,
+   "missing": 0,
+   "spurious": 0
+  }
+ },
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/solution_q1_r41.json",
+ "status": "completed",
+ "stress_seed_replicates": {
+  "11": {
+   "global_symdiff": 0,
+   "pair_miss": 0,
+   "pair_fp": 0,
+   "injection_recall": 1.0,
+   "deletion_vanish_recall": 1.0
+  },
+  "29": {
+   "global_symdiff": 0,
+   "pair_miss": 0,
+   "pair_fp": 0,
+   "injection_recall": 1.0,
+   "deletion_vanish_recall": 1.0
+  },
+  "47": {
+   "global_symdiff": 0,
+   "pair_miss": 0,
+   "pair_fp": 0,
+   "injection_recall": 1.0,
+   "deletion_vanish_recall": 1.0
+  }
+ }
+}

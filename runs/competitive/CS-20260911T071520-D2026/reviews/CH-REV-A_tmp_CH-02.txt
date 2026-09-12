@@ -1,0 +1,124 @@
+child_run_id: "CH-02"
+role: "exact_or_scout"
+question_ids: (list, len=4)
+  [0]: "Q1"
+  [1]: "Q2"
+  [2]: "Q3"
+  [3]: "Q4"
+routes: (list, len=12)
+  [0] (dict, len=19)
+    idea_id_suggested: "Q1-R21"
+    question_id: "Q1"
+    tier: "baseline"
+    method_family: "analytic_mechanistic"
+    problem_reformulation: "把冲突检测重写为 C(150,2)=11175 个计划对上的闭合布尔谓词求值：频段半开区间交非空 且 存在一对使用时段（k,m）时间半开区间交非空。"
+    model: {"family": "closed-form predicate evaluation over plan pairs (no optimization)", "representation": "plan-pair x slot-pair boolean lattice; 结果为一个 297 元素的边集合 E 及每边的冲突时段明细", "decision_variables": ["c_ij in {0,1}（派生量，非决策）", "m_ijkm in {0,1}（时段级命中计数，用于统计与热点）"], "objective_id": "Q1-OBJ-COLLECT：输出集合 {(i,j)...<+532 chars>
+    transformations: ["谓词直接求值（无变换）", "双实现交叉验证：逐时段暴力枚举 vs 区间算术合并判据"]
+    solver: {"family": "deterministic enumeration（无求解器）", "algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言", "fit_reason": "F-013 给出 n=150 使计划对仅 11175，F-005/F-009 给出每计划时段数 n<=12（附件区间 3..12），F-001 给出频段为 100 个离散段——规模使全枚举在每个 600s 侦察预算内可跑若干万倍，因此题面 F-006 的谓词可直接作为算法，无需近似或松弛；Q1-C1 的验收规则本身要求...<+198 chars>
+    bound_plan: {"lower_bound_method": "不适用（精确有限枚举，无近似间隙）；以比较次数上界 1.61e6 作为运行时预算依据", "upper_bound_method": "同上；以「不可能漏对」的全对覆盖论证代替统计界", "gap_metric": "两种实现的冲突集合对称差 |A delta B| / |A|", "gap_threshold": "0（非 0 即路线失败，不得放行）", "proof_possible": "可：有限枚举完备性 + 独立实现交叉；再加人工边界用例（交叠长度恰为 0 的相邻半开区间不得计冲突）"}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["两实现 |E| 与逐元素一致性（对称差=0）", "半开区间边界用例：频段 [80,90) 与 [90,95) 不得计冲突；时间端点相接不得计冲突", "重复对/自对排除（i<j），行数与 result1.xlsx 模板行数一致（Q1-C2）", "与 computed_data_facts 的 297/类对分布比对（不一致须先复核口径而非改数）", "统计口径冻结：按类对/按计划...<+31 chars>
+    required_assumptions: ["冲突判定按题面 F-006 的『频段交叠 AND 时间交叠』，时间交叠覆盖全部 n 次周期占用（非仅首次区间）", "全部区间为半开 [a,b)（F-023），时间以 Delta t 整数计（F-003）", "result1.xlsx 每行一个冲突对，不重复不遗漏"]
+    failure_conditions: ["两实现集合对称差非 0 → 谓词或周期展开口径有误，禁止进入 Q2", "行数与 |E| 不一致 → 模板写出错误（Q1-C2 失败）", "与题面口径冲突（如把端点相接算作冲突）→ 全部下游统计失效"]
+    strengths: ["零近似、零不可控风险", "直接满足 Q1-C1 的双实现验收规则", "为 Q2/Q4 提供唯一合法输入（冲突边集 E）"]
+    weaknesses: ["不产出结构解释（哪些边由哪个轴消解）——由 Q1-R22/R23 补足", "O(n^2) 在 150 规模无所谓，但不具扩展性"]
+    validation_plan: ["check_q1_pairset.py：断言 |E|=297 且两实现一致", "样例手算复核：A001（首次 [35,40), g=60）第三次占用 [165,170)，与任一同频段计划逐时段核对", "result1.xlsx 行数 == |E| == 两实现交集大小"]
+    complexity: "low"
+    interpretability: "high"
+    implementation_risk: "low"
+    status: "proposed"
+  [1] (dict, len=19)
+    idea_id_suggested: "Q1-R22"
+    question_id: "Q1"
+    tier: "advanced_alternative"
+    method_family: "analytic_mechanistic"
+    problem_reformulation: "把时频平面栅格化为 100 频段列 x 643 时间单元的位图，每个计划映射为若干列上的一个时间位向量；冲突对 = 共列且两个位向量按位与非空。"
+    model: {"family": "bitmap raster / set intersection over occupied-cell families", "representation": "band-column-indexed 位集（每计划一个 643-bit 字）+ 计划-列稀疏倒排表", "decision_variables": ["T_i（派生位图）", "O_ij = 1[T_i & T_j != 0 AND 共列]"], "objective_id": "Q1-OBJ-COLLECT（同 R21，但以单元层表示为副产品）", "constraint_ids": ["F-001", ...<+326 chars>
+    transformations: ["离散化/栅格化（时频平面 → 位图）", "按频段列倒排（把成对问题改写为逐列内部相交问题）", "位并行（把 O(n_i n_j) 相交降为 1 次按位与）"]
+    solver: {"family": "vectorized bitwise raster（numpy / python big-int）", "algorithm": "1) 逐计划构造时间位向量；2) 对每频段列收集活跃计划；3) 列内两两按位与判冲突；4) 全局去重成边集", "fit_reason": "F-001 把频域离散为 100 段、F-003 把时域离散为整数 Delta t，使时频平面天然有限（computed_data_facts 给出 100*643=64300 单元，与 occupancy_cells_total 一致），因此『占用集合的交』与 F-006 的『区间同时交叠』逻辑等价...<+195 chars>
+    bound_plan: {"lower_bound_method": "不适用（等价变换，精确）", "upper_bound_method": "单元容量恒等式：|占用 distinct| <= 64300，用作 Q3 的自由单元预算基线", "gap_metric": "与 R21 边集的对称差；以及 distinct(14698) 与 multiplicity(16680) 两种口径的差（暴露重叠占用）", "gap_threshold": "边集对称差 = 0；口径差异必须在报告中显式命名，不得混用", "proof_possible": "可：位图构造与半开区间的等价性可由端点定义逐项证明"}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["位图长度与时间视界口径（621 / 627 / 643 三个候选值，见 computed_data_facts 的 horizon_note 与 T_MAX_delta_t）必须显式冻结", "位偏移 off-by-one：末位单元是否可达（t=H-1）", "distinct 与 multiplicity 两种单元计数在 Q3 上界里的角色分离", "运行时间与峰值内存（100*...<+50 chars>
+    required_assumptions: ["时间视界取单一值 H（候选 643），且所有占用落在 [0,H) 内（数据核算：C 类最晚结束 643、B 627、A 620）", "栅格分辨率恰为 Delta f x Delta t，不做亚格细分"]
+    failure_conditions: ["视界口径不冻结 → 位图长度可变，Q3 的自由单元上界随之漂移（±4% 量级），结论不可比", "半开区间被实现为闭区间 → 产生伪冲突（端点相接）", "用 multiplicity 口径冒充 distinct 口径 → Q3 上界失真"]
+    strengths: ["与 R21 完全独立的数据结构，交叉验证力度最强", "天然产出热点统计（每列负载、每单元占用）满足 Q1-C3", "同一栅格可直接被 Q3 复用为剩余容量图"]
+    weaknesses: ["内存/时间随 H 线性增长（若未来视界扩大则退化）", "只给『有没有冲突』，不直接给『怎么消解』"]
+    validation_plan: ["check_q1_raster.py：位图法 vs 区间法边集对称差 = 0", "单元守恒断言：sum over columns distinct == 14698（同一口径内自洽）", "随机抽样 20 条边人工回算冲突时段与冲突频段区间"]
+    complexity: "low"
+    interpretability: "high"
+    implementation_risk: "low"
+    status: "proposed"
+  [2] (dict, len=19)
+    idea_id_suggested: "Q1-R23"
+    question_id: "Q1"
+    tier: "advanced_alternative"
+    method_family: "graph_combinatorial"
+    problem_reformulation: "把冲突检测重写为『派生冲突图的建边问题』：节点=用频计划，先在频段轴上取区间重叠图（区间图，完美图），再在其每条边上做时间脉冲串求交，得派生冲突图 G=(V,E) 并计算其团、匹配、度分布等结构量。"
+    model: {"family": "two-layer graph construction: interval supergraph on band axis x temporal pulse-train intersection filter", "representation": "邻接表 + 扫描线事件表（每频段列一次平面扫描）", "decision_variables": ["E 的每条边存在性（派生）", "clique/matching 结构量（派生，供 Q2/Q4 下界）"], "objective_id": "Q1-OBJ-GRAPH：产出边集与结构摘要（度数/团数/匹配数），作为 Q...<+351 chars>
+    transformations: ["重表达为图构造（成对谓词 → 两轴分层建边）", "扫描线事件排序（把 O(n^2) 降为按列的 O(S log S + K)）", "结构量计算（团/匹配/分量）为后续问提供可核对骨架"]
+    solver: {"family": "combinatorial algorithms (sweep-line + exact branch-and-bound clique + Edmonds matching)", "algorithm": "1) 频轴扫描线生成候选边（S=sum n_i=1300 个时段区间，100 列）；2) 对候选边做时间脉冲串求交；3) networkx/自实现求 nu(G)、omega(G)、分量、度序列", "fit_reason": "F-006 的合取结构（频段的 AND 时间的 AND）使冲突图必为频轴区间图的子图（静态核算：频轴每列负载<=16 → 候选边规模远小于...<+270 chars>
+    bound_plan: {"lower_bound_method": "同 R21（精确）；附加：nu(G)=71 作为 Q2/Q4 动作数下界的合法性证明来源", "upper_bound_method": "候选边规模上界：每列负载 L_b 给出 sum_b C(L_b,2) 作为建边工作量的紧上界", "gap_metric": "三法边集对称差（R21/R22/R23）；omega 的 B&B 闭合状态", "gap_threshold": "对称差 = 0", "proof_possible": "可：区间图性质 + 精确团/匹配算法，全部为可核对的组合论证"}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["确认频轴区间图的极大团负载（每列）与 G 的实际团数 omega=4 的差异（时间过滤掉了哪些频轴团）", "确认『动作集合必为顶点覆盖』的证明：若某边两端均保持则仍冲突，故 |调整+撤销| >= tau(G) >= nu(G) = 71", "检查分量分解价值：非平凡分量只有 1 个 → 分量级分解对 Q2/Q4 无收益（须显式记录，避免后续误用）", "孤立 2 计划（不参与任...<+30 chars>
+    required_assumptions: ["派生图只在数据上定义，不引入题面外的边权（若加权须登记来源）", "统计口径（按类对/按计划）与 result1.xlsx 行语义一致"]
+    failure_conditions: ["若 omega 的分支定界未能在预算内关闭 → 只报 nu=71 这一可靠下界，不得引用团数结论", "若三法边集不一致 → 说明半开/周期展开存在口径分歧，Q1 阶段判 FAIL", "若误把 G 当二分图使用（静态核算三角形 80 → 非二分）→ 顶点覆盖的整数性论证失效"]
+    strengths: ["唯一在 Q1 阶段就产出 Q2/Q4 合法下界素材的路线", "扫描线为 Q2 提供按列的边生成与诊断（哪个轴消解了哪条边）", "三方法交叉，直接支撑 Q1-C1"]
+    weaknesses: ["实现量大于 R21/R22，Q1 本身不需要最优化", "G 的结构量不对应任何题面输出，属支撑性产物"]
+    validation_plan: ["边集三方一致断言", "tau(G) >= nu(G) = 71 的独立复核（用不同匹配实现或线性规划松弛）", "omega(G)=4 的证书：输出一个 4-团并给出无 5-团的搜索日志摘要"]
+    complexity: "medium"
+    interpretability: "high"
+    implementation_risk: "medium"
+    status: "proposed"
+  [3] (dict, len=19)
+    idea_id_suggested: "Q2-R21"
+    question_id: "Q2"
+    tier: "recommended_solution"
+    method_family: "operations_research"
+    problem_reformulation: "把冲突消解重写为 150 元多选择约束满足问题：每个计划 i 从有限动作集 D_i（保持 / 频段平移 Delta f in [-10,10]\\{0} / 时间平移 Delta t in [-5,5]\\{0} / 撤销）中取一项，而任意一条冲突边是否消除只取决于两端动作的『差值』(Delta f_i - Delta f_j, Delta t_i - Delta t_j)。"
+    model: {"family": "multi-choice binary-CSP with difference-predicate constraints（等价地写成 0-1 整数模型）+ 词典四层目标", "representation": "选项布尔 y_{i,o}（|D_i| 静态核算 22..32，sum |D_i| = 4574，其中非撤销选项 4424 + 撤销 150）；每边 2 个轴向布尔 b_ov_ij, t_ov_ij", "decision_variables": ["y_{i,o} in {0,1}，sum_o y_{i,o} = 1", "Delta f_i = sum_o ...<+1064 chars>
+    transformations: ["消解 → 差值谓词化（平移不变性，把成对约束从 4 维降到 2 个一维查表）", "整平面占用 → 每边 2 个轴向布尔（594 个辅助布尔）", "词典四层目标 → 4 次顺序求解 + 上层最优值作为下层约束", "候选集裁剪：把与任何边都不相邻的 2 个孤立计划钉为保持"]
+    solver: {"family": "constraint programming（CP-SAT, ortools 9.15，见 solver_environment）", "algorithm": "CP-SAT：选项布尔 + AddElement 取差值 + 每边子句 (NOT b_ov OR NOT t_ov)；b_ov 用区间分离的线性式定义，t_ov 用预计算的禁用差值集合做布尔通道（对每个禁用值做 OnlyEnforceIf）；词典迭代：先 min L1 至 OPTIMAL，再加 L1 = L1* 求 min L2，依此类推；用上一层解做 hint 暖启动", "fit_reason": "模型...<+592 chars>
+    bound_plan: {"lower_bound_method": "L2 层（动作总数）硬下界 tau(G) >= nu(G) = 71：任一可行解中『非保持』计划集合必为冲突图顶点覆盖（若某冲突边两端都保持则仍冲突）；该界静态可核对（networkx 最大匹配 Edmonds + 独立实现）；CP-SAT 自身在每层给出 objective bound", "upper_bound_method": "任一整合格局（含 R23 的贪心覆盖 + 重嵌入）给出各层 UB；LP/松弛不在此路线内（见 R22）", "gap_metric": "逐词典层 (UB - LB)/max(1,LB)；以及最终解重跑 Q1 检...<+184 chars>
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["先跑 30 计划诱导子图，与穷举（选项全组合的剪枝枚举）对照，验证差值编码无误", "证明 71 的下界可达性：记录最终解的动作数是否落在 [71, 71+k]，k 为实际松弛量", "词典层顺序敏感性：交换 L3 与 L4 会得到不同解，须固定按 Q2-F011 顺序并在日志中登记", "合规 checker 复用：对调整后 150 计划重跑 Q1 检测器必须返回 0 对（Q2-...<+97 chars>
+    required_assumptions: ["『调整时间区间』= 整条周期脉冲串刚性平移（首次区间平移，间隔/次数不变），非逐次独立平移", "平移后频段窗口仍落在 0..99（F-001），时间起点非负；是否要求全部占用窗落在同一视界内须在模型里显式选定并登记", "表1 的『调整数量』把频段平移与时间平移合并计数（若分开统计须另行声明）", "优先级层的实现：L3 采用按类别的动作数向量 (n_A, n_B, n_C) 的词典最小化，而非任意加权和"]
+    failure_conditions: ["CP-SAT 在 600s 内 L1 未闭合 → 该路线只能给可行解 + 区间，需与 R22/R23 的界合并判断", "若求得动作数 < 71 → 与顶点覆盖下界矛盾，说明约束编码漏边（必须停机复核，不得交付）", "若调整后重跑检测器冲突对数 > 0 → 差值谓词与 brute-force 判定不等价（优先排查边界/半开口径）", "若撤销数为 0 的调整解存在但违反单参数规则 → D_i 构造有误（同计划同时给了 Delta f 与 Delta t）"]
+    strengths: ["模型完全离散、无任何连续近似或大 M，语义与题面逐条对齐（F-002/F-007/F-008/F-009/F-012）", "规模小且结构稀疏（最大度 8），有闭包最优性证明的现实可能", "差值平移不变性已用 203280 个四元组零反例核查，编码风险可控"]
+    weaknesses: ["词典 4 次串行求解累加运行时", "选项域把幅度信息丢失进目标层，若 L4 未闭合解不唯一需额外约定", "对 Q4 需扩域（新增间隔维），骨架可复用但时间重叠表升为三元"]
+    validation_plan: ["check_q2.py 行级断言：|Delta f| <= 10、|Delta t| <= 5、次数/间隔与原表一致、频段 in 0..99、单参数（Q2-C2）", "重跑 Q1 检测器零冲突（Q2-C1）", "下界证书文件：nu(G)=71 的匹配与顶点覆盖定义（供论文引用）", "与 R22（MILP）、R23（覆盖+重嵌入）在 L1/L2 上的三向对照表"]
+    complexity: "medium"
+    interpretability: "high"
+    implementation_risk: "medium"
+    status: "proposed"
+  [4] (dict, len=19)
+    idea_id_suggested: "Q2-R22"
+    question_id: "Q2"
+    tier: "advanced_alternative"
+    method_family: "operations_research"
+    problem_reformulation: "把消解写成连续/整数偏移空间上的析取式 MILP：每条冲突边二选一『在频段轴分离』或『在时间轴分离』，分离条件是端点不等式；单参数规则用每组动作变量互斥表达，幅度用绝对值线性化。"
+    model: {"family": "disjunctive MILP (big-M / indicator constraints) with per-edge axis choice", "representation": "整数偏移变量 df_i, dt_i 与动作布尔 a^f_i, a^t_i, r_i；边级轴布尔 x_e", "decision_variables": ["df_i in [-10,10]", "dt_i in [-5,5]", "a^f_i, a^t_i, r_i in {0,1}", "x_e in {0,1}（e 的分离轴）", "u_e, v_e（绝对值辅助，幅度目标）"]...<+619 chars>
+    transformations: ["合取取反 → 轴向二选一析取（每边 1 个布尔）", "频轴切片 → 差分约束系统（最短路可行 + 网络矩阵 TU）", "时间轴 → 禁用差值指示布尔（31 值/边）", "词典目标 → 外层逐层固定（MILP 无原生 lex）"]
+    solver: {"family": "MILP（scipy.optimize.milp / HiGHS，环境 other 含 scipy）；辅以自研差分约束最短路子求解器", "algorithm": "HiGHS 分支定割求解完整 MILP；另一模式：外层枚举/搜索时间决策（或用 R21 的时间部分），内层对频轴用 Bellman-Ford 负圈判定 + 最小幅度 LP（网络流），构成 Benders 型割平面循环", "fit_reason": "F-001/F-003 使全部量为整数、F-002 使频轴占用是单一连续区间（宽度不变）→ 频轴分离确为差分约束，LP 松弛在该切片整数（网络矩阵 TU），因...<+389 chars>
+    bound_plan: {"lower_bound_method": "LP 松弛目标值（对 L1 撤销数、L2 动作数的线性松弛界）+ 顶点覆盖界 nu(G)=71；频轴切片的差分约束界（若固定时间决策则精确）", "upper_bound_method": "整解（HiGHS incumbent）与 R21/R23 的可行解互换暖启动", "gap_metric": "每层 MILP gap = (UB-LB)/max(1,|LB|)，以及 LP 界与组合界 71 的孰紧比较", "gap_threshold": "报告级：目标 gap < 1e-6 记为闭合；否则记录 best bound 与 incumben...<+88 chars>
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["大 M 有效性核查：M 取每轴最大可能跨度（频 100、时 643）时是否产生数值松弛；对 20 条边做 LP 松弛值与精确值对照", "频轴差分约束整数性实测：固定时间决策后，最短路解与 LP 解一致（TU 声明的经验核查）", "与 R21 在同一词典层序下的逐层目标值对照（差异必须可解释为建模口径而非求解失败）", "时间轴不能用单一线性式分离 → 若实现里出现『用 df 近...<+24 chars>
+    required_assumptions: ["允许在 MILP 中引入边级轴布尔（不改变题面语义，仅改变消解归因）", "时间轴禁用差值集合由与 R21 同一份预计算表生成（两路线共用真值表）", "HiGHS 的绝对值线性化不引入额外 M"]
+    failure_conditions: ["LP 松弛过弱（界接近平凡，如撤销层界为 0）→ 该路线只剩交叉验证价值，最优性证据须回落到 R21", "大 M 数值问题导致伪可行解 → checker 重跑检测器会暴露非零冲突，立即淘汰", "HiGHS 在 600s 内不收敛且无 incumbent（若从 R21 暖启动仍无解）→ 时间轴析取建模有误", "若误把频轴与时间轴都写成差分约束 → 与 F-005 的周期结构矛盾（时间轴非凸，静态核算 C-C 禁用差值集合不连通即证）"]
+    strengths: ["提供 CP 拿不到的 LP 松弛界与整数性解释（频轴的差分约束/网络矩阵结构）", "与 R21 完全不同的变量空间（偏移空间 vs 选项空间），是最强交叉验证对", "词典每层可给 bound，利于在预算内报告可信区间"]
+    weaknesses: ["时间轴大 M/析取使松弛弱、数值风险高", "无原生词典目标，外层 4 次求解累加运行", "建模口径错误更易发生（半开区间的严格不等式需整数化）"]
+    validation_plan: ["同一 check_q2.py 合规断言 + 重跑 Q1 零冲突", "LP bound 日志留存（供论文说明下界来源与强度）", "与 R21 的解结构差异表：每计划动作、每边归因轴", "TU 声明的独立验证：固定时间切片后，随机取 5 个实例比较 LP 与最短路目标"]
+    complexity: "high"
+    interpretability: "medium"
+    implementation_risk: "high"
+    status: "proposed"
+  ... (7 more items)
+coverage_notes: (dict, len=2)
+  structural_opportunities_checked: (list, len=15)
+    [0]: "MILP（Q2/Q4 适用）：已作为 Q2-R22 独立候选。依据——F-001/F-003 使一切量为整数、F-002 使频轴占用为单一连续区间，频轴分离条件可写成纯差分不等式；静态核算 |E|=297、最大度 8 → 边级轴布尔仅 297 个，HiGHS 规模无压力。局限——时间轴分离对周期脉冲串不是单一线性式（n_i*n_j <= 144 项析取），必须退化为禁用差值指示布尔，故 LP 松弛强度弱于 CP 传播。"
+    [1]: "MINLP（Q2/Q4 不适用）：若把『相对冲突窗密度』写成 1/p' 类非线性（p' 为待选周期）会引入分式非线性；但 g' 的取值域只有 18 个整数（g' in 1..18），枚举即可精确线性化 → MINLP 被『离散周期选择 + MILP』严格支配，不作为独立路线（属结构退化，非偏好排除）。"
+    [2]: "DP / 动态规划（Q2 不适用，Q3 局部适用）：按频段列做扫描 DP 需以『该列所有可能活跃计划的位移组合』为状态；静态核算原始每列负载 2..16、把位移放宽到 ±10 后单列被覆盖计划数最大 47，选项域 22..32 → 状态空间下界为指数级（无任何最优子结构可切断时间轴耦合，因 C 类周期 10 使时间轴在整列上全局耦合）。仅在 Q3 的单列（固定频段）子问题上，脉冲串打包化为一维区间调度，具备最优子结构。"
+    [3]: "图 / 流重表达（Q1 适用为派生图，网络流不适用 Q2/Q3）：派生冲突图 G（|V|=150, |E|=297, Delta=8, omega=4, nu=71, 三角形 80, 非二分, 1 个 148 点非平凡分量 + 2 个孤立点）真实存在且被 Q1-R23 使用；但注意 problem_structure 中 graph: not_observed 与 graph_or_flow_reformulation: screened_out 是对附件表列（无 source/target 边端点）的扫描结论，不否定派生图——本报告的所有图结构量均来自 common_input.plans...<+153 chars>
+    [4]: "调度 / 覆盖（Q2/Q4 强适用）：覆盖侧——任一可行解的『非保持计划集合』必为 G 的顶点覆盖（若边两端均保持则仍冲突），故 |调整+撤销| >= tau(G) >= nu(G) = 71，等价地原样保留计划 <= 79（再加 2 个孤立点至多 79，即 77+2）；该界对 Q2 与 Q4 同时成立（同一张 G）。团侧——omega(G)=4（精确 B&B 关闭）⇒ 每个 4-团中至多 1 计划可保持，即贡献 3 个动作；三角形 80 个说明 G 非二分，故顶点覆盖的 LP 整数性（Kőnig）不可用，nu=71 只是 LB 而非等式。调度侧——Q3 的加装是带周期释放模式的区间调度/装...<+3 chars>
+    ... (10 more items)
+  families_not_applicable: (list, len=8)
+    [0]: {"family": "machine_learning", "reason": "四个问均为确定性组合判定/消解（F-006 为闭合谓词，F-008/F-012 为硬约束），数据为 150 行无噪声官方计划（problem_structure: missing/anomaly/duplicate 均 not_observed，missing_cells=0, duplicates=0），无训练/验证分割对象，也无 Q1-C1『完全且无伪』所要求的可统计逼近空间；引入学习类模型只会以近似替代精确枚举，直接违反正确性优先于其他一切的优先级规则。"}
+    [1]: {"family": "statistical_probabilistic", "reason": "题面无随机观测机制、无重复测量（repeated_measures: not_observed）、无删失或噪声（anomaly: not_observed）；Q1 的输出是确定的边集合（静态核算 297），任何概率化只会引入可控之外的误差；Q3 的『最多』是组合计数而非期望量。"}
+    [2]: {"family": "dynamic_control", "reason": "不存在状态转移与控制输入：F-005 的周期占用是静态展开的时间集合，非时变状态方程；『调整间隔』（Q4-F019）是一次性离散选择而非反馈控制律；把 retiming 解释成控制问题会把有限整数选择（g' in 1..18）伪装成连续控制并丢失可核查性。"}
+    [3]: {"family": "convexification / 连续松弛为主模型", "reason": "problem_structure 的 convexity 与 coordinate_transform 为 not_observed/screened_out；本问题的本质是区间不重叠的合取/析取结构（F-006 + F-002 宽度不变），任何凸化都会破坏单参数互斥（F-008）与整数半开区间的严格性；连续松弛最多作为 Q2-R22 内的定界手段（LP bound），不能充当模型。"}
+    [4]: {"family": "simulation（作为 Q1/Q2/Q4 的主模型）", "reason": "Q1 是有限枚举判定（静态核算 11175 对，运行时代价可忽略），Q2/Q4 有 71 这一硬组合下界与可闭包的 CP 模型；随机仿真在这三问上既不能给最优性也不能给可行性保证。仿真/元启发式仅登记为 Q3 的下界发生器（Q3-R23），因为 Q3 是打包问题且上界谱系已独立可算。"}
+    ... (3 more items)

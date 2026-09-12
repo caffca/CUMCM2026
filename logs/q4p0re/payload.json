@@ -1,0 +1,53 @@
+{
+ "question_id": "Q4",
+ "variant": "cpsat_lex",
+ "workers": 4,
+ "gstar_edges": 2117,
+ "options_total": 6013,
+ "dg_options_dropped_by_horizon": 369,
+ "actions": {},
+ "objective_tuple": [
+  0,
+  0,
+  0,
+  0
+ ],
+ "objective_scalar": 0,
+ "planted_q2_tuple": [
+  16,
+  115,
+  2586,
+  707
+ ],
+ "planted_q2_residual": 0,
+ "planted_q2_feasible": 1,
+ "planted_reject_reason": null,
+ "revocation": {
+  "upper_incumbent": 0,
+  "proven_lb": 0,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": 0,
+    "status": "UNKNOWN"
+   }
+  ]
+ },
+ "anchor_requested": true,
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "UNKNOWN",
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 32.1
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "UNKNOWN",
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 54.1
+  }
+ ]
+}

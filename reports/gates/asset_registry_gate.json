@@ -1,0 +1,105 @@
+{
+  "gate": "asset_registry",
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "require_v3": true,
+  "registry_schema_version": 3,
+  "findings": [
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: artifact_manifest.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: code/intake_build_registry.py（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: code/intake_dataset_snapshot.py（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/cQMeL0YY905244c8bd4b9af832f1699446d8385e.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/D题.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/FlQt6kJV6f5d5b4603e06c3c60acf89b72d7f298.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/Glps6mBh6563c55c45300fede72ddbf6eb33d3a8.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/templates_dump.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: logs/附件1_dump.txt（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: project.manifest.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: reports/data/DATASET_SNAPSHOT.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: reports/gates/asset_registry_gate.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: reports/gates/schema_validation.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: reports/intake/ASSET_CONFLICTS.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: reports/intake/ASSET_REGISTRY.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: state/decision_log.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: state/rules_cumcm_2026.json（建议登记）"
+    },
+    {
+      "level": "WARN",
+      "check": "asset_registry",
+      "message": "未登记输入（非数据型）: state/runtime_manifest.json（建议登记）"
+    }
+  ],
+  "summary": {
+    "fails": 0,
+    "warns": 18,
+    "checks": 18
+  },
+  "note": "WP-05（P0-04）：最终 authority 只信重算 SHA；mtime 仅快速诊断；允许写目录不纳入（registry 自身除外）。V7-P0-06：authority 六态（primary_official/verified_legacy/unverified/conflicting/stale/invalidated），无'已有结果=真值'；冲突必须 conflicting；stale/invalidated 禁作 paper claim 输入。"
+}

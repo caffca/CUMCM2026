@@ -1,0 +1,61 @@
+{
+ "question_id": "Q3",
+ "idea_id": "Q3-R23",
+ "status": "completed",
+ "feasible": true,
+ "objective": 137,
+ "objective_tuple": [
+  137,
+  332
+ ],
+ "objective_unit": "new_C_plans",
+ "runtime_seconds": 240.0,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q3 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/solution_newc.json --base-actions runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "seed_set=[11,29,47]（协议冻结）；LNS 唯一随机源；三跑同一流水线同参数，各 ≤240s",
+ "replicates": 3,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/solution_newc.json",
+ "failure_mode": null,
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+ "evaluator_n_violations": 0,
+ "replicate_values": [
+  137,
+  137,
+  137
+ ],
+ "aggregation": "median over replicates (协议 aggregation_stochastic；平手按 tuple 再按更低 runtime)",
+ "selected_replicate_seed": 11,
+ "stability_metric": {
+  "kind": "极差/中位数",
+  "range": 0,
+  "median": 137,
+  "value": 0.0
+ },
+ "runtime_seconds_per_replicate": {
+  "11": 240.0,
+  "29": 240.0,
+  "47": 240.0
+ },
+ "replicate_reports": {
+  "11": {
+   "count": 137,
+   "status": "completed",
+   "report_file": "run_report.json",
+   "failure_mode": null
+  },
+  "29": {
+   "count": 137,
+   "status": "completed",
+   "report_file": "run_report_seed29.json",
+   "failure_mode": null
+  },
+  "47": {
+   "count": 137,
+   "status": "completed",
+   "report_file": "run_report_seed47.json",
+   "failure_mode": null
+  }
+ },
+ "revision_note": "评审闭环修订 v2：补跑 seed=29/47 满 3 重复；solution 选择=median 规则（本例 selected_seed=11，与 seed=11 既有记录一致，主文件未替换）"
+}

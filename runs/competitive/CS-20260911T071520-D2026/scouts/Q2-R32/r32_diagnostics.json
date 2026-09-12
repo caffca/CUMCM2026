@@ -1,0 +1,174 @@
+{
+ "idea": "Q2-R32",
+ "paradigm": "continuous_overlap_penalty -> rounding -> component_local_exact_repair",
+ "field": {
+  "params": {
+   "lambda": 2.0,
+   "iters_cap": 2000,
+   "step0": 2.0
+  },
+  "iterations_run": 1409,
+  "Phi_start": 2124.0,
+  "Phi_final": 672.18,
+  "F_final": 744.972,
+  "amp_final": 36.396,
+  "F_monotone_by_construction": true,
+  "Phi_upward_steps": 10,
+  "Phi_max_upward_jump": 0.0015,
+  "stop_reason": "deadline",
+  "grad_inf_norm_max": 43.0,
+  "fractional_df": 124,
+  "fractional_dt": 143,
+  "box_saturation_rate": 0.0,
+  "trajectory": [
+   {
+    "it": 0,
+    "F": 2124.0,
+    "Phi": 2124.0,
+    "amp": 0.0
+   },
+   {
+    "it": 200,
+    "F": 745.436,
+    "Phi": 672.672,
+    "amp": 36.382,
+    "step": 0.0012
+   },
+   {
+    "it": 400,
+    "F": 744.999,
+    "Phi": 672.209,
+    "amp": 36.395,
+    "step": 0.001
+   },
+   {
+    "it": 600,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 800,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1000,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1200,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.001
+   },
+   {
+    "it": 1400,
+    "F": 744.972,
+    "Phi": 672.18,
+    "amp": 36.396,
+    "step": 0.0005
+   }
+  ]
+ },
+ "rounding": {
+  "mode_hist": {
+   "keep": 23,
+   "df": 62,
+   "dt": 65
+  },
+  "violated_after_round": 175,
+  "violated_at_all_keep": 297,
+  "guide_reduction": 122
+ },
+ "repair": {
+  "rounds": 1,
+  "n_subproblems": 4,
+  "subproblems_last40": [
+   {
+    "round": 1,
+    "component": 130,
+    "free": 150,
+    "clauses": 270626,
+    "status": "FEASIBLE",
+    "wall_s": 30.11,
+    "viol_before": 175
+   },
+   {
+    "round": 1,
+    "component": 5,
+    "free": 21,
+    "clauses": 24961,
+    "status": "OPTIMAL",
+    "wall_s": 0.23,
+    "viol_before": 0
+   },
+   {
+    "round": 1,
+    "component": 3,
+    "free": 21,
+    "clauses": 23879,
+    "status": "OPTIMAL",
+    "wall_s": 0.27,
+    "viol_before": 0
+   },
+   {
+    "round": 1,
+    "component": 2,
+    "free": 14,
+    "clauses": 14362,
+    "status": "OPTIMAL",
+    "wall_s": 0.03,
+    "viol_before": 0
+   }
+  ],
+  "plans_touched": 150,
+  "touch_fraction": 1.0,
+  "violated_after_repair": 0
+ },
+ "after_repair_internal_tuple": [
+  28,
+  83,
+  2434,
+  519
+ ],
+ "mask_full_recheck_residual": 0,
+ "derevoke_ladder": [
+  {
+   "try_global_revoke_max": 27,
+   "status": "FEASIBLE",
+   "wall_s": 60.41,
+   "free": 147,
+   "fixed_revokes": 0
+  },
+  {
+   "try_global_revoke_max": 9,
+   "status": "FEASIBLE",
+   "wall_s": 60.08,
+   "free": 147,
+   "fixed_revokes": 0
+  },
+  {
+   "try_global_revoke_max": 5,
+   "status": "UNKNOWN",
+   "wall_s": 60.04,
+   "free": 147,
+   "fixed_revokes": 0
+  }
+ ],
+ "final_internal_tuple": [
+  6,
+  123,
+  2205,
+  762
+ ],
+ "final_internal_residual": 0,
+ "wall_total_s": 391.07
+}

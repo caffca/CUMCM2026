@@ -1,0 +1,218 @@
+{
+ "check": "Q4_solution 独立复算",
+ "shape_bad": [],
+ "violations": [],
+ "dg_violations": [],
+ "nonC_dg_actions": [],
+ "horizon_violations": [],
+ "n_revoked": 6,
+ "n_adjusted": 118,
+ "n_kept": 26,
+ "sum_equals_150": true,
+ "by_class_mine": {
+  "A": {
+   "kept": 6,
+   "adjusted": 14,
+   "revoked": 0
+  },
+  "B": {
+   "kept": 4,
+   "adjusted": 30,
+   "revoked": 6
+  },
+  "C": {
+   "kept": 16,
+   "adjusted": 74,
+   "revoked": 0
+  }
+ },
+ "by_class_auth": {
+  "A": {
+   "kept": 6,
+   "adjusted": 14,
+   "revoked": 0
+  },
+  "B": {
+   "kept": 4,
+   "adjusted": 30,
+   "revoked": 6
+  },
+  "C": {
+   "kept": 16,
+   "adjusted": 74,
+   "revoked": 0
+  }
+ },
+ "by_class_equal": true,
+ "post_conflict_edges_mine": 0,
+ "post_conflict_edges_auth": 0,
+ "post_pairs_checked": 10296,
+ "dg_dropped_mine": 369,
+ "dg_dropped_auth": 369,
+ "dg_dropped_equal": true,
+ "dg_dropped_c_option_space": 1800,
+ "dropped_samples_manual": [
+  {
+   "id": "C001",
+   "orig": {
+    "f0": 90,
+    "f1": 93,
+    "t0": 40,
+    "t1": 42,
+    "g": 8,
+    "n": 12,
+    "d": 2
+   },
+   "dg": -10,
+   "g_prime": -2,
+   "last_slot": [
+    40,
+    42
+   ],
+   "horizon": 643,
+   "dropped": "g'=-2<1"
+  },
+  {
+   "id": "C001",
+   "orig": {
+    "f0": 90,
+    "f1": 93,
+    "t0": 40,
+    "t1": 42,
+    "g": 8,
+    "n": 12,
+    "d": 2
+   },
+   "dg": -9,
+   "g_prime": -1,
+   "last_slot": [
+    51,
+    53
+   ],
+   "horizon": 643,
+   "dropped": "g'=-1<1"
+  },
+  {
+   "id": "C001",
+   "orig": {
+    "f0": 90,
+    "f1": 93,
+    "t0": 40,
+    "t1": 42,
+    "g": 8,
+    "n": 12,
+    "d": 2
+   },
+   "dg": -8,
+   "g_prime": 0,
+   "last_slot": [
+    62,
+    64
+   ],
+   "horizon": 643,
+   "dropped": "g'=0<1"
+  }
+ ],
+ "applied_dg_actions_manual_check": [
+  {
+   "id": "C001",
+   "dg": 7,
+   "g": 8,
+   "g_prime": 15,
+   "last_end": 229,
+   "within_horizon": true
+  },
+  {
+   "id": "C006",
+   "dg": -7,
+   "g": 8,
+   "g_prime": 1,
+   "last_end": 60,
+   "within_horizon": true
+  },
+  {
+   "id": "C009",
+   "dg": 2,
+   "g": 8,
+   "g_prime": 10,
+   "last_end": 165,
+   "within_horizon": true
+  },
+  {
+   "id": "C018",
+   "dg": 4,
+   "g": 8,
+   "g_prime": 12,
+   "last_end": 263,
+   "within_horizon": true
+  },
+  {
+   "id": "C029",
+   "dg": 8,
+   "g": 8,
+   "g_prime": 16,
+   "last_end": 337,
+   "within_horizon": true
+  },
+  {
+   "id": "C035",
+   "dg": 1,
+   "g": 8,
+   "g_prime": 9,
+   "last_end": 395,
+   "within_horizon": true
+  },
+  {
+   "id": "C059",
+   "dg": 7,
+   "g": 8,
+   "g_prime": 15,
+   "last_end": 390,
+   "within_horizon": true
+  },
+  {
+   "id": "C090",
+   "dg": 3,
+   "g": 8,
+   "g_prime": 11,
+   "last_end": 627,
+   "within_horizon": true
+  }
+ ],
+ "objective_tuple_mine": [
+  6,
+  118,
+  1894,
+  661
+ ],
+ "objective_tuple_auth": [
+  6,
+  118,
+  1894,
+  661
+ ],
+ "objective_tuple_equal": true,
+ "scalar_mine": 6011818940661,
+ "scalar_auth": 6011818940661,
+ "options_total_mine": null,
+ "revoked_ids": [
+  "B013",
+  "B018",
+  "B019",
+  "B020",
+  "B022",
+  "B028"
+ ],
+ "q2_planted_check": {
+  "planted_q2_tuple": [
+   6,
+   121,
+   1996,
+   661
+  ],
+  "planted_q2_residual_auth": 0,
+  "planted_q2_feasible_auth": 1
+ },
+ "q2_planted_residual_mine": 0,
+ "verdict": "PASS"
+}

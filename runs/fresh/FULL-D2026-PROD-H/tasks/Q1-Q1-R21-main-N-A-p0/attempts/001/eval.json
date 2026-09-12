@@ -1,0 +1,16 @@
+{
+ "question": "Q1",
+ "feasible": true,
+ "objective": [
+  0
+ ],
+ "direction": "minimize",
+ "unit": "symmetric_difference_pairs",
+ "counts": {
+  "truth": 297,
+  "submitted": 297,
+  "missing": 0,
+  "spurious": 0
+ },
+ "violations": []
+}

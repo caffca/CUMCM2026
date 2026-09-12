@@ -1,0 +1,278 @@
+{
+ "F1_r22_stage1_survival": {
+  "stage1_claim_resolved_edges": 16,
+  "cc_total": 19,
+  "failed_component_edges": [
+   [
+    "C023",
+    "C033"
+   ],
+   [
+    "C033",
+    "C043"
+   ],
+   [
+    "C043",
+    "C053"
+   ]
+  ],
+  "edges_with_both_endpoints_kept": 2,
+  "edges_surviving_via_retiming": 1,
+  "rows": [
+   {
+    "edge": [
+     "C005",
+     "C025"
+    ],
+    "kind_i": "dg",
+    "kind_j": "dt",
+    "both_endpoints_kept": true,
+    "survives_via_retiming": true
+   },
+   {
+    "edge": [
+     "C019",
+     "C029"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "dg",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C021",
+     "C051"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C022",
+     "C032"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "df",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C025",
+     "C055"
+    ],
+    "kind_i": "dt",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C027",
+     "C057"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "dt",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C028",
+     "C058"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C031",
+     "C051"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C037",
+     "C077"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C038",
+     "C048"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "dg",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C039",
+     "C049"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C050",
+     "C070"
+    ],
+    "kind_i": "dg",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C061",
+     "C071"
+    ],
+    "kind_i": "dg",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C067",
+     "C077"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "revoke",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C069",
+     "C079"
+    ],
+    "kind_i": "revoke",
+    "kind_j": "dg",
+    "both_endpoints_kept": false,
+    "survives_via_retiming": false
+   },
+   {
+    "edge": [
+     "C076",
+     "C086"
+    ],
+    "kind_i": "dt",
+    "kind_j": "none",
+    "both_endpoints_kept": true,
+    "survives_via_retiming": false
+   }
+  ],
+  "conclusion": "阶段 I 宣称闭式清零 16/19 条 CC 边；在最终交付解中，两端点都未被撤销的只剩 2 条，其中靠改 g' 存活的 1 条 ⇒ 同余构造成果几乎全部被阶段 II 的撤销覆盖，『机理证据』与『交付解』是两件事，报告若并列陈述易被读成后者体现了前者。"
+ },
+ "F2_r11_dg_domain": {
+  "potential": 1530,
+  "valid": 1431,
+  "pruned": 99,
+  "claimed": {
+   "potential": 1530,
+   "valid": 1431,
+   "pruned": 99
+  },
+  "matches": true
+ },
+ "F2_r11_revoke_mix": {
+  "revA": [
+   "A008"
+  ],
+  "revB": [
+   "B009",
+   "B011",
+   "B018",
+   "B022",
+   "B025",
+   "B027",
+   "B029"
+  ],
+  "revC": [],
+  "n": 121,
+  "revoke_ploss_actual": 340,
+  "revoke_ploss_if_all_C": 16,
+  "note": "层一只数总量 ⇒ 8 个撤销位放在 C 类可把层三代价从 340 降到 16；R11 的层三/层四 UNKNOWN，故该不对称未被优化，属可检验的改进方向（非正确性缺陷）"
+ },
+ "F3_r41_internal_consistency": {
+  "per_seed": {
+   "11": {
+    "record_tuple": [
+     16,
+     105,
+     2549,
+     556
+    ],
+    "record_scalar": 16010525490556,
+    "recomputed_scalar": 16010525490556,
+    "actions_equal_to_record": true,
+    "record_tuple_eq_evaluator": true,
+    "feasible": true,
+    "viol_recount": 0,
+    "best_viol": 0,
+    "projection": {
+     "applied": false
+    }
+   },
+   "29": {
+    "record_tuple": [
+     11,
+     117,
+     2344,
+     578
+    ],
+    "record_scalar": 11011723440578,
+    "recomputed_scalar": 11011723440578,
+    "actions_equal_to_record": true,
+    "record_tuple_eq_evaluator": true,
+    "feasible": true,
+    "viol_recount": 0,
+    "best_viol": 0,
+    "projection": {
+     "applied": false
+    }
+   },
+   "47": {
+    "record_tuple": [
+     10,
+     112,
+     2229,
+     596
+    ],
+    "record_scalar": 10011222290596,
+    "recomputed_scalar": 10011222290596,
+    "actions_equal_to_record": true,
+    "record_tuple_eq_evaluator": true,
+    "feasible": true,
+    "viol_recount": 0,
+    "best_viol": 0,
+    "projection": {
+     "applied": false
+    }
+   }
+  },
+  "tier_spacing_check": {
+   "max_ploss": 4980,
+   "ploss_spacing": 10000,
+   "safe": true
+  }
+ }
+}

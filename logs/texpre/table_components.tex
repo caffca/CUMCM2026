@@ -1,0 +1,144 @@
+% =============================================================================
+% table_components.tex — CUMCM 表格系统（v4.5 模板 v2 §13）
+% 短表/自适应表/长表/宽表/结果表/符号表/对比表；默认 [htbp]；三线表（booktabs）。
+% 禁止默认 \resizebox{\textwidth}{!}（宽表优先级：重写列名 → 自适应列宽 → 局部 small → landscape）。
+% =============================================================================
+
+% ---------- \ShortTable{标题}{列定义}{表头}{行}：短文本表，table + tabularx，默认 [htbp] ----------
+\newcommand{\ShortTable}[4]{%
+  \begin{table}[htbp]
+    \centering
+    \caption{#1}
+    \vspace{0.3em}
+    \begin{tabularx}{\textwidth}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}%
+}
+
+% ---------- \FlexibleTable{标题}{列定义}{表头}{行}：X/p 列自动换行的自适应宽表 ----------
+% 列定义示例：{@{}l X r@{}}（X 列自动填充剩余宽度并换行）
+\newcommand{\FlexibleTable}[4]{%
+  \begin{table}[htbp]
+    \centering
+    \caption{#1}
+    \vspace{0.3em}
+    \begin{tabularx}{\textwidth}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}%
+}
+
+% ---------- \LongTable{标题}{列定义}{表头}{行}：longtable 跨页（符号表/文件清单/长结果表） ----------
+% TPL-L02：四参数命令（禁止再以 \begin{LongTable} 环境方式使用）；
+% TPL-L03：longtable 不支持 tabularx 的 X 列——列定义必须用 l/p{}/等固定宽度；
+% TPL-L04：body 行由生成器自行以 \\ 结束，组件不再统一追加 \\（空 body 合法）。
+\newcommand{\LongTable}[4]{%
+  \begingroup
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\LTcapwidth}{\textwidth}
+  \begin{longtable}{#2}
+    \caption{#1} \\
+    \toprule
+    #3 \\
+    \midrule
+    \endfirsthead
+    \toprule
+    #3 \\
+    \midrule
+    \endhead
+    #4
+    \bottomrule
+  \end{longtable}
+  \endgroup
+}
+
+% ---------- \ResultTable{标题}{列定义}{表头}{行}：一问最终结果表；答案格用 \resultcell ----------
+\newcommand{\ResultTable}[4]{%
+  \begin{table}[htbp]
+    \centering
+    \caption{#1}
+    \vspace{0.3em}
+    \begin{tabularx}{\textwidth}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}%
+}
+% \resultcell{...}：仅强调真正答案（禁止整行粗体）
+\newcommand{\resultcell}[1]{{\heiti\bfseries #1}}
+
+% ---------- \SymbolTable{标题}{行}：符号/含义/单位三列，语义固定，longtable 可跨页 ----------
+% 行内容：$N$ & 样本数量 & 个 \\
+% TPL-L03：longtable 禁用 X 列（X 仅 tabularx 有效）——固定 p{} 宽度；
+% TPL-L04：行自行以 \\ 结束，空 body 合法（不暴力追加 \\）。
+\newcommand{\SymbolTable}[2]{%
+  \begingroup
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.15}
+  \setlength{\LTcapwidth}{\textwidth}
+  \begin{longtable}{@{}l p{8.6cm} p{2.4cm}@{}}
+    \caption{#1} \\
+    \toprule
+    \textbf{符号} & \textbf{含义} & \textbf{单位} \\
+    \midrule
+    \endfirsthead
+    \toprule
+    \textbf{符号} & \textbf{含义} & \textbf{单位} \\
+    \midrule
+    \endhead
+    #2
+    \bottomrule
+  \end{longtable}
+  \endgroup
+}
+
+% ---------- \ComparisonTable{标题}{列定义}{表头}{行}：模型/方案对比表（含 BASELINE 标识） ----------
+\newcommand{\ComparisonTable}[4]{%
+  \begin{table}[htbp]
+    \centering
+    \caption{#1}
+    \vspace{0.3em}
+    \begin{tabularx}{\textwidth}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}%
+}
+
+% ---------- \WideTable{标题}{列定义}{表头}{行}：超宽表——自适应列宽 + 局部 small 兜底 ----------
+% 禁止默认 resizebox；列定义用 X/p 列优先，实在超宽再用 \small 或 landscape（\begin{landscape}）。
+% TPL-L01：本文件是全模板唯一 \tablesmall 定义处（main.tex 不得重复定义）。
+\newcommand{\tablesmall}{\small}
+\newcommand{\WideTable}[4]{%
+  \begin{table}[htbp]
+    \centering
+    \caption{#1}
+    \vspace{0.3em}
+    {\tablesmall
+    \begin{tabularx}{\textwidth}{#2}
+      \toprule
+      #3 \\
+      \midrule
+      #4 \\
+      \bottomrule
+    \end{tabularx}}
+  \end{table}%
+}

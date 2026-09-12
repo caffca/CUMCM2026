@@ -1,0 +1,29 @@
+{
+ "tag": "w1",
+ "workers": 1,
+ "cap_seconds": 300.0,
+ "seed": 7,
+ "rev_cap": 6,
+ "hint": "solution_planted_q2r51.json",
+ "status": "FEASIBLE",
+ "edges": 2117,
+ "clauses": 437962,
+ "wall_seconds_model": 306.6,
+ "revoke_ub": 6,
+ "revoke_lb": 0,
+ "closed": false,
+ "snapshot_objective_tuple_internal": [
+  6,
+  122,
+  1997,
+  665
+ ],
+ "evaluator_tuple": [
+  6,
+  122,
+  1997,
+  665
+ ],
+ "evaluator_feasible": true,
+ "total_wall_seconds": 306.7
+}

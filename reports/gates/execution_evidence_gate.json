@@ -1,0 +1,63 @@
+{
+  "gate": "execution_evidence",
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "applicable": true,
+  "auto_detected_problem_ids": [
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "checked_results": [
+    "results/Q1_detect.json",
+    "results/Q3_bound.json",
+    "results/Q3_check.json",
+    "results/Q3_solution.json",
+    "results/Q4_check.json",
+    "results/Q4_solution.json",
+    "results/Q2_solution.json"
+  ],
+  "findings": [
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q1_detect.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q3_bound.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q3_check.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q3_solution.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q4_check.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q4_solution.json 绑定 complete/full 分片证据"
+    },
+    {
+      "level": "OK",
+      "check": "execution_evidence",
+      "message": "results/Q2_solution.json 绑定 complete/full 分片证据"
+    }
+  ],
+  "summary": {
+    "checks": 7,
+    "fails": 0,
+    "pass": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "ml_or_inference_applicable": false,
+  "independence": "not_applicable（无随机抽样；全部计算为确定性判定/优化）",
+  "conditional_independence": "not_applicable",
+  "homoscedasticity": "not_applicable",
+  "distribution": "not_applicable（唯一概率化操作=Q1 植入压力测试与 SA/GRASP 的种子采样，属算法随机性而非统计推断，种子冻结可复现）",
+  "censoring_assumption": "not_applicable",
+  "missingness_assumption": "none",
+  "random_effect_structure": "not_applicable",
+  "notes": "全文禁止出现无修饰『相互独立』等统计断言；本模型体系无统计假设对象。算法随机性以 seed 冻结+复现校验管理（见 ml_operation_scope 与 validation plan）。"
+}

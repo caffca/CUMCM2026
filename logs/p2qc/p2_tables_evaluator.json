@@ -1,0 +1,112 @@
+{
+ "check": "表1 + evaluator 指纹",
+ "Q2": {
+  "p2_by_class": {
+   "A": {
+    "kept": 5,
+    "adjusted": 15,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 4,
+    "adjusted": 30,
+    "revoked": 6
+   },
+   "C": {
+    "kept": 14,
+    "adjusted": 76,
+    "revoked": 0
+   }
+  },
+  "table1_by_class": {
+   "A": {
+    "kept": 5,
+    "adjusted": 15,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 4,
+    "adjusted": 30,
+    "revoked": 6
+   },
+   "C": {
+    "kept": 14,
+    "adjusted": 76,
+    "revoked": 0
+   }
+  },
+  "equal": true,
+  "closure_diff_auth": 0,
+  "class_totals_mine": {
+   "A": 20,
+   "B": 40,
+   "C": 90
+  },
+  "grand_total_mine": 150,
+  "table1_rows_field": 127
+ },
+ "Q4": {
+  "p2_by_class": {
+   "A": {
+    "kept": 6,
+    "adjusted": 14,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 4,
+    "adjusted": 30,
+    "revoked": 6
+   },
+   "C": {
+    "kept": 16,
+    "adjusted": 74,
+    "revoked": 0
+   }
+  },
+  "table1_by_class": {
+   "A": {
+    "kept": 6,
+    "adjusted": 14,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 4,
+    "adjusted": 30,
+    "revoked": 6
+   },
+   "C": {
+    "kept": 16,
+    "adjusted": 74,
+    "revoked": 0
+   }
+  },
+  "equal": true,
+  "closure_diff_auth": 0,
+  "class_totals_mine": {
+   "A": 20,
+   "B": 40,
+   "C": 90
+  },
+  "grand_total_mine": 150,
+  "table1_rows_field": 124
+ },
+ "evaluator": {
+  "path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+  "exists": true,
+  "sha256_actual": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "sha256_recorded_in_ADJ_and_FMS": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "match": true
+ },
+ "csv_binding": {
+  "actual": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+  "recorded_in_FMS_E_SET": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+  "match": true,
+  "note": "FMS 里 N_PLANS 的 source_sha256 指向附件1.xlsx，E-SET 的 source_sha256 指向 CSV"
+ },
+ "star_edges": {
+  "count": 1693,
+  "stats_field": 1693,
+  "auth_gstar_Q2": 1693
+ },
+ "verdict": "PASS"
+}

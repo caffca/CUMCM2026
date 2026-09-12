@@ -1,0 +1,496 @@
+{
+ "question_id": "Q2",
+ "variant": "cpsat_lex",
+ "workers": 4,
+ "gstar_edges": 1693,
+ "forced_edges": 0,
+ "options_total": 4582,
+ "actions": {
+  "A001": {
+   "dt": 5
+  },
+  "A003": {
+   "df": 10
+  },
+  "A005": {
+   "df": -7
+  },
+  "A006": {
+   "df": 10
+  },
+  "A007": {
+   "df": 7
+  },
+  "A008": {
+   "revoke": true
+  },
+  "A009": {
+   "df": -8
+  },
+  "A012": {
+   "df": -9
+  },
+  "A014": {
+   "df": 4
+  },
+  "A015": {
+   "df": 3
+  },
+  "A018": {
+   "dt": -5
+  },
+  "A020": {
+   "df": -7
+  },
+  "B001": {
+   "df": -5
+  },
+  "B002": {
+   "df": 10
+  },
+  "B003": {
+   "dt": 4
+  },
+  "B005": {
+   "dt": 4
+  },
+  "B006": {
+   "df": -10
+  },
+  "B007": {
+   "revoke": true
+  },
+  "B008": {
+   "df": -9
+  },
+  "B009": {
+   "revoke": true
+  },
+  "B010": {
+   "dt": -3
+  },
+  "B011": {
+   "dt": 4
+  },
+  "B012": {
+   "revoke": true
+  },
+  "B013": {
+   "revoke": true
+  },
+  "B014": {
+   "dt": 5
+  },
+  "B015": {
+   "df": -10
+  },
+  "B016": {
+   "revoke": true
+  },
+  "B017": {
+   "df": -5
+  },
+  "B018": {
+   "revoke": true
+  },
+  "B019": {
+   "dt": 2
+  },
+  "B020": {
+   "df": 5
+  },
+  "B021": {
+   "df": -10
+  },
+  "B022": {
+   "dt": -1
+  },
+  "B023": {
+   "dt": -2
+  },
+  "B024": {
+   "revoke": true
+  },
+  "B025": {
+   "df": 10
+  },
+  "B026": {
+   "df": -10
+  },
+  "B027": {
+   "revoke": true
+  },
+  "B028": {
+   "revoke": true
+  },
+  "B029": {
+   "df": -6
+  },
+  "B030": {
+   "revoke": true
+  },
+  "B031": {
+   "revoke": true
+  },
+  "B033": {
+   "revoke": true
+  },
+  "B034": {
+   "dt": 2
+  },
+  "B035": {
+   "revoke": true
+  },
+  "B036": {
+   "revoke": true
+  },
+  "B037": {
+   "revoke": true
+  },
+  "B038": {
+   "dt": 2
+  },
+  "B039": {
+   "df": 10
+  },
+  "B040": {
+   "revoke": true
+  },
+  "C002": {
+   "df": -10
+  },
+  "C003": {
+   "df": -3
+  },
+  "C004": {
+   "df": 10
+  },
+  "C005": {
+   "df": 10
+  },
+  "C006": {
+   "dt": 3
+  },
+  "C009": {
+   "df": 7
+  },
+  "C010": {
+   "df": -4
+  },
+  "C012": {
+   "df": 9
+  },
+  "C014": {
+   "dt": 4
+  },
+  "C015": {
+   "dt": -4
+  },
+  "C016": {
+   "df": 8
+  },
+  "C017": {
+   "df": 10
+  },
+  "C018": {
+   "dt": -4
+  },
+  "C019": {
+   "df": 8
+  },
+  "C022": {
+   "df": 10
+  },
+  "C023": {
+   "dt": -2
+  },
+  "C024": {
+   "df": 5
+  },
+  "C025": {
+   "df": -7
+  },
+  "C026": {
+   "dt": 3
+  },
+  "C027": {
+   "df": -10
+  },
+  "C028": {
+   "dt": -1
+  },
+  "C029": {
+   "dt": -4
+  },
+  "C030": {
+   "df": -6
+  },
+  "C031": {
+   "dt": -4
+  },
+  "C032": {
+   "df": 6
+  },
+  "C034": {
+   "revoke": true
+  },
+  "C035": {
+   "df": -10
+  },
+  "C037": {
+   "df": -9
+  },
+  "C039": {
+   "dt": -5
+  },
+  "C040": {
+   "df": -5
+  },
+  "C041": {
+   "df": 7
+  },
+  "C042": {
+   "df": 6
+  },
+  "C043": {
+   "df": 5
+  },
+  "C044": {
+   "revoke": true
+  },
+  "C047": {
+   "df": 8
+  },
+  "C048": {
+   "dt": 1
+  },
+  "C050": {
+   "df": -5
+  },
+  "C051": {
+   "dt": 4
+  },
+  "C052": {
+   "df": 6
+  },
+  "C054": {
+   "revoke": true
+  },
+  "C056": {
+   "dt": -2
+  },
+  "C057": {
+   "df": -6
+  },
+  "C058": {
+   "df": -3
+  },
+  "C059": {
+   "dt": 5
+  },
+  "C061": {
+   "df": -1
+  },
+  "C063": {
+   "df": -9
+  },
+  "C065": {
+   "df": 7
+  },
+  "C066": {
+   "df": 10
+  },
+  "C067": {
+   "df": -10
+  },
+  "C069": {
+   "df": 5
+  },
+  "C070": {
+   "df": 10
+  },
+  "C073": {
+   "df": 9
+  },
+  "C074": {
+   "dt": 4
+  },
+  "C075": {
+   "df": -10
+  },
+  "C077": {
+   "df": 10
+  },
+  "C078": {
+   "df": -5
+  },
+  "C082": {
+   "df": 9
+  },
+  "C085": {
+   "df": 10
+  },
+  "C086": {
+   "df": -2
+  },
+  "C087": {
+   "dt": 5
+  }
+ },
+ "objective_tuple": [
+  20,
+  90,
+  1903,
+  559
+ ],
+ "objective_scalar": 20009019030559,
+ "revocation": {
+  "upper_incumbent": 20,
+  "proven_lb": 2,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": null,
+    "source": "cpsat_bound_L1",
+    "status": "FEASIBLE",
+    "lb": 2
+   },
+   {
+    "cap": 0,
+    "status": "INFEASIBLE",
+    "source": "infeasibility_probe"
+   },
+   {
+    "cap": 19,
+    "status": "UNKNOWN",
+    "source": "probe_timeout"
+   }
+  ],
+  "ladder_log": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "locks": {},
+    "min": "R",
+    "cap_R": null,
+    "wall_cum": 24.8,
+    "objective": 20.0,
+    "best_bound": 2.0,
+    "solution_tuple": [
+     20,
+     118,
+     2822,
+     696
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "locks": {},
+    "min": null,
+    "cap_R": 0,
+    "wall_cum": 32.1
+   },
+   {
+    "layer": "ladder_Rle19",
+    "status": "UNKNOWN",
+    "locks": {},
+    "min": "R",
+    "cap_R": 19,
+    "wall_cum": 42.1
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 20
+    },
+    "min": "A",
+    "cap_R": null,
+    "wall_cum": 59.3,
+    "objective": 90.0,
+    "best_bound": 2.0,
+    "solution_tuple": [
+     20,
+     90,
+     1903,
+     559
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "UNKNOWN",
+    "locks": {
+     "R": 20,
+     "A": 90
+    },
+    "min": "PL",
+    "cap_R": null,
+    "wall_cum": 71.4
+   }
+  ]
+ },
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "FEASIBLE",
+   "locks": {},
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 24.8,
+   "objective": 20.0,
+   "best_bound": 2.0,
+   "solution_tuple": [
+    20,
+    118,
+    2822,
+    696
+   ]
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "INFEASIBLE",
+   "locks": {},
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 32.1
+  },
+  {
+   "layer": "ladder_Rle19",
+   "status": "UNKNOWN",
+   "locks": {},
+   "min": "R",
+   "cap_R": 19,
+   "wall_cum": 42.1
+  },
+  {
+   "layer": "L2_minA",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 20
+   },
+   "min": "A",
+   "cap_R": null,
+   "wall_cum": 59.3,
+   "objective": 90.0,
+   "best_bound": 2.0,
+   "solution_tuple": [
+    20,
+    90,
+    1903,
+    559
+   ]
+  },
+  {
+   "layer": "L3_minPL",
+   "status": "UNKNOWN",
+   "locks": {
+    "R": 20,
+    "A": 90
+   },
+   "min": "PL",
+   "cap_R": null,
+   "wall_cum": 71.4
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "internal_objective_tuple": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "internal_residual_pairs": 0,
+ "n_listed_actions": 127,
+ "objective_scalar_internal": 6012119960663.0,
+ "solve_seconds": 547.2
+}

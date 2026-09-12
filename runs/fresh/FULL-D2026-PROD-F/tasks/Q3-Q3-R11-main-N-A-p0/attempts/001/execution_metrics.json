@@ -1,0 +1,14 @@
+{
+ "elapsed_seconds": 7.358,
+ "status": "completed",
+ "stopping_reason": "enumerated",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "base": "@Q2MAIN",
+  "variant": "enum",
+  "base_resolved": "runs\\fresh\\FULL-D2026-PROD-F\\tasks\\Q2-Q2-R51-main-N-A-p0\\attempts\\001\\payload.json"
+ }
+}

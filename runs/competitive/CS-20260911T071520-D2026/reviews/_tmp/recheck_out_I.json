@@ -1,0 +1,386 @@
+{
+ "cases": [
+  {
+   "case": "q4_dg_nonpositive_gap",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "dg": -8
+    }
+   },
+   "expectation": "g'=8-8=0 违反 Q4-F019（应拒绝）",
+   "exit_code": 1,
+   "outcome": "CRASH",
+   "stderr_tail": []
+  },
+  {
+   "case": "q4_dg_over10",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "dg": 11
+    }
+   },
+   "expectation": "|dg|=11 越 10Δt（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    11
+   ],
+   "violation_kinds": [
+    "gap_range",
+    "residual_conflict"
+   ],
+   "n_violations": 297
+  },
+  {
+   "case": "q4_dg_on_A",
+   "question": "Q4",
+   "action": {
+    "A001": {
+     "dg": 1
+    }
+   },
+   "expectation": "A 类调间隔（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    100,
+    1
+   ],
+   "violation_kinds": [
+    "gap_only_C",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_dg_on_B",
+   "question": "Q4",
+   "action": {
+    "B001": {
+     "dg": -1
+    }
+   },
+   "expectation": "B 类调间隔（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    10,
+    1
+   ],
+   "violation_kinds": [
+    "gap_only_C",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_df_over10",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "df": 11
+    }
+   },
+   "expectation": "|df|=11 越 F-012（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    11
+   ],
+   "violation_kinds": [
+    "magnitude_exceeded",
+    "out_of_resource",
+    "residual_conflict"
+   ],
+   "n_violations": 297
+  },
+  {
+   "case": "q4_dt_over5",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "dt": 6
+    }
+   },
+   "expectation": "|dt|=6 越 F-012（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    6
+   ],
+   "violation_kinds": [
+    "magnitude_exceeded",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_multi_param",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "df": 1,
+     "dt": 1
+    }
+   },
+   "expectation": "一个计划调两参数（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    2
+   ],
+   "violation_kinds": [
+    "multi_param",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_df_out_of_band",
+   "question": "Q4",
+   "action": {
+    "A004": {
+     "df": 5
+    }
+   },
+   "expectation": "频段越出 [0,100)（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    100,
+    5
+   ],
+   "violation_kinds": [
+    "residual_conflict"
+   ],
+   "n_violations": 297
+  },
+  {
+   "case": "q4_dt_beyond_horizon",
+   "question": "Q4",
+   "action": {
+    "C083": {
+     "dt": 3
+    }
+   },
+   "expectation": "末窗越 643（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    3
+   ],
+   "violation_kinds": [
+    "out_of_resource",
+    "residual_conflict"
+   ],
+   "n_violations": 297
+  },
+  {
+   "case": "q4_dg_positive_last_window",
+   "question": "Q4",
+   "action": {
+    "C083": {
+     "dg": 1
+    }
+   },
+   "expectation": "C083 dg=+1 ⇒ 末窗 654>643（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    1
+   ],
+   "violation_kinds": [
+    "out_of_resource",
+    "residual_conflict"
+   ],
+   "n_violations": 297
+  },
+  {
+   "case": "q4_unknown_plan",
+   "question": "Q4",
+   "action": {
+    "C999": {
+     "df": 1
+    }
+   },
+   "expectation": "未知计划编号（应拒绝）",
+   "exit_code": 1,
+   "outcome": "CRASH",
+   "stderr_tail": []
+  },
+  {
+   "case": "q2_dg_forbidden",
+   "question": "Q2",
+   "action": {
+    "C001": {
+     "dg": 2
+    }
+   },
+   "expectation": "Q2 禁调间隔（应拒绝）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    2
+   ],
+   "violation_kinds": [
+    "gap_not_allowed",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_zero_value_action",
+   "question": "Q4",
+   "action": {
+    "C001": {
+     "df": 0
+    }
+   },
+   "expectation": "0 值动作（口径歧义：stats 计调整、objective 不计）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "violation_kinds": [
+    "empty_action",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_empty_action",
+   "question": "Q4",
+   "action": {
+    "C001": {}
+   },
+   "expectation": "空动作 dict（应拒绝/忽略）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "violation_kinds": [
+    "empty_action",
+    "residual_conflict"
+   ],
+   "n_violations": 298
+  },
+  {
+   "case": "q4_boundary_gp1",
+   "question": "Q4",
+   "action": {
+    "C083": {
+     "dg": -7
+    }
+   },
+   "expectation": "边界合法：g'=1，末窗缩短（应通过）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    1,
+    7
+   ],
+   "violation_kinds": [
+    "residual_conflict"
+   ],
+   "n_violations": 299
+  },
+  {
+   "case": "q4_boundary_dt_minus5",
+   "question": "Q4",
+   "action": {
+    "A006": {
+     "dt": -5
+    }
+   },
+   "expectation": "边界合法：dt=-5（应通过）",
+   "exit_code": 0,
+   "outcome": "returned",
+   "feasible": false,
+   "objective": [
+    0,
+    1,
+    100,
+    5
+   ],
+   "violation_kinds": [
+    "out_of_resource",
+    "residual_conflict"
+   ],
+   "n_violations": 295
+  }
+ ],
+ "defects": [
+  "q4_dg_nonpositive_gap: evaluator 崩溃（exit=1）而非返回 feasible=false — ",
+  "q4_unknown_plan: evaluator 崩溃（exit=1）而非返回 feasible=false — "
+ ],
+ "notes": [
+  "objective_tuple 用 `if act.get(k)` 过滤 0 值（不计入 adjusted），apply_actions/stats 用 `not in (None, False)`（计入 adjusted）⇒ 同一动作文件在『目标』与『表1 统计』两个口径下 adjusted 不同；三候选域生成不含 0 值动作，故本次数字不受影响，但 Q4 正式结果若有人手工补 0 值行会造成表1 与元组不一致。"
+ ],
+ "zero_action_probe": {
+  "objective": [
+   0,
+   1,
+   1,
+   1
+  ],
+  "stats_adjusted": 1,
+  "stats_by_class_C": {
+   "kept": 89,
+   "adjusted": 1,
+   "revoked": 0
+  },
+  "divergence": false
+ }
+}

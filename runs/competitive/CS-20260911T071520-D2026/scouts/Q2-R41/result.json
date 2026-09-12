@@ -1,0 +1,251 @@
+{
+ "question_id": "Q2",
+ "idea_id": "Q2-R41",
+ "status": "completed",
+ "feasible": true,
+ "objective": 19009618530491,
+ "objective_tuple": [
+  19,
+  96,
+  1853,
+  491
+ ],
+ "objective_unit": "weighted_lexicographic_scalar",
+ "objective_scalar_formula": "1e12*revoke + 1e8*adjusted + 1e4*priority_loss + magnitude_sum",
+ "runtime_seconds": 185.0,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q2 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/solution_actions_seed11.json --out runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/eval_seed11.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "冻结 seeds=[11,29,47]，每重复一个独立 random.Random(seed)",
+ "replicates": 3,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/solution_actions_seed11.json",
+ "solution_sha256": "a47ddfe65295b376a61d1c50ad8876255b0295aece004d9550a8652cb1a16f3b",
+ "failure_mode": null,
+ "adjudication_binding": {
+  "T_MAX": 643,
+  "half_open_intervals": true,
+  "lex_levels": [
+   "revoke",
+   "adjusted",
+   "priority_loss",
+   "magnitude_sum"
+  ],
+  "revoke_priority_double": true,
+  "reference": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+ },
+ "budget": {
+  "scout_wall_seconds_per_candidate_per_replicate": 600,
+  "replicate_wall_seconds": 185.0,
+  "protocol_limit_check": true
+ },
+ "finished_at": "2026-09-11T18:34:38+0800",
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+ "lower_bound": null,
+ "upper_bound": null,
+ "relative_gap": null,
+ "bound_detail": {
+  "kind": "启发式路线，按任务书规定 lower/upper_bound = null",
+  "route_plan": "冲突图极大匹配给出 |adjusted|+|revoke| 图论下界（CH-04 复算 61-63），本次侦察未实现为正式界",
+  "per_seed": {
+   "11": {
+    "tuple": [
+     19,
+     96,
+     1853,
+     491
+    ],
+    "feasible": true,
+    "internal_tuple": [
+     19,
+     96,
+     1853,
+     491
+    ],
+    "internal_residual": 0,
+    "wall_s": 185.0,
+    "starts": 18,
+    "failed_descents": 0,
+    "scalar": 19009618530491,
+    "match_internal": true
+   },
+   "29": {
+    "tuple": [
+     28,
+     75,
+     2012,
+     379
+    ],
+    "feasible": true,
+    "internal_tuple": [
+     28,
+     75,
+     2012,
+     379
+    ],
+    "internal_residual": 0,
+    "wall_s": 185.0,
+    "starts": 16,
+    "failed_descents": 0,
+    "scalar": 28007520120379,
+    "match_internal": true
+   },
+   "47": {
+    "tuple": [
+     19,
+     95,
+     1915,
+     466
+    ],
+    "feasible": true,
+    "internal_tuple": [
+     19,
+     95,
+     1915,
+     466
+    ],
+    "internal_residual": 0,
+    "wall_s": 185.0,
+    "starts": 18,
+    "failed_descents": 0,
+    "scalar": 19009519150466,
+    "match_internal": true
+   }
+  }
+ },
+ "replicate_values": [
+  19009618530491,
+  28007520120379,
+  19009519150466
+ ],
+ "replicate_tuples": [
+  [
+   19,
+   96,
+   1853,
+   491
+  ],
+  [
+   28,
+   75,
+   2012,
+   379
+  ],
+  [
+   19,
+   95,
+   1915,
+   466
+  ]
+ ],
+ "per_seed": {
+  "11": {
+   "tuple": [
+    19,
+    96,
+    1853,
+    491
+   ],
+   "feasible": true,
+   "internal_tuple": [
+    19,
+    96,
+    1853,
+    491
+   ],
+   "internal_residual": 0,
+   "wall_s": 185.0,
+   "starts": 18,
+   "failed_descents": 0,
+   "scalar": 19009618530491,
+   "match_internal": true
+  },
+  "29": {
+   "tuple": [
+    28,
+    75,
+    2012,
+    379
+   ],
+   "feasible": true,
+   "internal_tuple": [
+    28,
+    75,
+    2012,
+    379
+   ],
+   "internal_residual": 0,
+   "wall_s": 185.0,
+   "starts": 16,
+   "failed_descents": 0,
+   "scalar": 28007520120379,
+   "match_internal": true
+  },
+  "47": {
+   "tuple": [
+    19,
+    95,
+    1915,
+    466
+   ],
+   "feasible": true,
+   "internal_tuple": [
+    19,
+    95,
+    1915,
+    466
+   ],
+   "internal_residual": 0,
+   "wall_s": 185.0,
+   "starts": 18,
+   "failed_descents": 0,
+   "scalar": 19009519150466,
+   "match_internal": true
+  }
+ },
+ "aggregation": "median over 3 replicates (seeds 11/29/47)",
+ "total_wall_seconds": 555.0,
+ "params": {
+  "alpha_construct": 0.35,
+  "alpha_ils": 0.5,
+  "edge_sample": 4,
+  "topk_per_endpoint": 8,
+  "repair_max_moves": 8,
+  "ls1_topact": 12,
+  "stall_limit": 20,
+  "ils_perturb": [
+   2,
+   3,
+   4,
+   6
+  ],
+  "W_RES": 1000000.0,
+  "lns_rounds_per_start": 6,
+  "lns_unrevoke_prob": 0.75,
+  "lns_unrevoke_max": 6,
+  "max_construct_iters": 8000
+ },
+ "feasibility_gates": {
+  "evaluator_feasible_all_seeds": true,
+  "internal_residual_all_zero": true
+ },
+ "route_failure_flags_triggered": [
+  {
+   "flag": "撤销数明显高于精确路线且无下界说明",
+   "route_source": "CH-04 Q2-R41 failure_conditions[3]",
+   "evidence": "中位数撤销=19 vs 精确路线 Q2-R51=6；本路线自身未实现撤销层下界",
+   "consequence": "作为对照证据登记，不用于正文结论（route 原文规定）"
+  },
+  {
+   "flag": "结果对种子极端敏感（3 种子元组极差 >1 个撤销）",
+   "route_source": "CH-04 Q2-R41 failure_conditions[3]'敏感性'条款",
+   "evidence": "撤销数极差 = 28-19 = 9 > 1（seed29 陷在 28）",
+   "consequence": "基线不稳定，正式建模不应把该路线当质量基准，只作'启发式对照'"
+  }
+ ],
+ "route_gates_passed": [
+  "每个起点解经 evaluator 复验 0 残留冲突（3/3 seeds feasible=True, n_violations=0）",
+  "逐行合规 |Δf|≤10、|Δt|≤5、单参数、频段 0..99、占用窗 ⊆ [0,643)（evaluator 无 out_of_resource/magnitude_exceeded/multi_param 违规）",
+  "增量评估正确性：G* 残留=0 与掩码全量复核 residual=0 三重复一致（internal_residual_all_zero）",
+  "参数在跑实验前冻结（PARAMS 常量 + record 落盘），未看结果调参"
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "artifact": "q2_planted_inclusion_check",
+ "question": "Q4",
+ "source_solution": "scouts/Q2-R51/solution_actions.json",
+ "copied_to": "scouts/Q4-R11/run_anchor/solution_planted_q2r51.json",
+ "n_entries": 127,
+ "actions_subset_check": {
+  "ok": true,
+  "not_in_R11_Q4_domain": []
+ },
+ "mask_legal": {
+  "ok": true,
+  "rule": "域生成即 evaluator.mask_of 判据（[0,100)x[0,643)，R3）"
+ },
+ "residual_internal": {
+  "count": 0,
+  "list_head": []
+ },
+ "eval_q4_tuple": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "eval_q4_feasible": true,
+ "eval_literal_match_expected": true,
+ "n_violations": 0,
+ "ALL_PASS": true
+}

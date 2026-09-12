@@ -1,0 +1,32 @@
+{
+  "figure_id": "fig-q1-classpairs",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:25+08:00",
+  "source_results": [
+    {
+      "file": "Q1_detect.json",
+      "sha256": "e43dbea85883b0a2a28b6370c01fa275595b831fbb815e07f4bc52ce4e23ea1f",
+      "keys": [
+        "counts.AB",
+        "counts.AC",
+        "counts.BC",
+        "counts.BB",
+        "counts.CC"
+      ]
+    }
+  ],
+  "source_hash": "2a4bff6eefcece547bb41a9943798002a7099ecd2535296e755c0eda01331fa3",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 5,
+      "text_count": 5,
+      "collection_count": 0
+    }
+  },
+  "annotations": [],
+  "axes": [],
+  "caption": "冲突对类别构成"
+}

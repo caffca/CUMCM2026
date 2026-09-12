@@ -1,0 +1,37 @@
+{
+  "figure_id": "fig-q3-utilization",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:26+08:00",
+  "source_results": [
+    {
+      "file": "Q3_solution.json",
+      "sha256": "ce807b2047571733d4628d8c5f62e9cedae81577284077b409c0a837cb99ec1f",
+      "keys": [
+        "phi",
+        "ub_min"
+      ]
+    }
+  ],
+  "source_hash": "39934deaeb2512bc47eac60f161d9a9381a0c13aade01471869e9cf11d595d25",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 0,
+      "text_count": 1,
+      "collection_count": 1
+    }
+  },
+  "annotations": [
+    {
+      "label": "新增",
+      "value_key": "phi",
+      "raw": 136,
+      "value": 136,
+      "text": "136 台"
+    }
+  ],
+  "axes": [],
+  "caption": "问题三加装后的资源利用"
+}

@@ -1,0 +1,9 @@
+csv path: F:\2026 数模\D题重跑\D题\data\canonical_plans.csv True
+csv sha256: b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8
+csv header: equipment_id,cls,f_lo,f_hi,t_first_lo,t_first_hi,gap,use_count,band_width,time_width
+csv rows: 150
+csv vs compact mismatches: 0 n_csv: 150 n_compact: 150
+class counts: {'A': 20, 'B': 40, 'C': 90}
+computed_data_facts keys: ['horizon_note', 'T_MAX_delta_t', 'q1_conflict_pairs_reference_check', 'occupancy_cells_total', 'occupancy_cells_used']
+{"horizon_note": "时间视界 T_MAX=621Δt（既有150计划占用的最晚结束点）；频段 0..99", "T_MAX_delta_t": 643, "occupancy_cells_total": 64300, "occupancy_cells_used": 16680}
+{"method": "半开区间 [a,b) 交叠 => max(0,min(b1,b2)-max(a1,a2))>0；两计划的占用时段集合（n 次周期重复，slot_k=[t1+(k-1)(g+d),+d)）任一交叠且频段交叠 => 冲突对", "total_conflict_pairs": 297, "by_class_pair": {"AB": 21, "AC": 66, "BC": 181, "BB": 10, "CC": 19}, "plans_involved": 148, "caveat": "此为 Manager 用区间算术算出的基础数据事实（与题面口径一致），供 scout 理解问题规模；scout 可复核但不得据此编造实验结论"}

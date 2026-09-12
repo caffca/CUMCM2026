@@ -1,0 +1,12 @@
+{
+ "elapsed_seconds": 0.012,
+ "status": "completed",
+ "stopping_reason": "all_pairs_enumerated",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "congruence"
+ }
+}

@@ -1,0 +1,1 @@
+{"by_class": {"A": {"kept": 5, "adjusted": 15, "revoked": 0}, "B": {"kept": 4, "adjusted": 30, "revoked": 6}, "C": {"kept": 16, "adjusted": 74, "revoked": 0}}, "table_closure_diff": 0, "result4_rows": 125, "objective_tuple": [6, 119, 1994, 659]}

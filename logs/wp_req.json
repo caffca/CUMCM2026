@@ -1,0 +1,354 @@
+{
+ "schema_version": 1,
+ "run_id": "FULL-D2026-PROD-H",
+ "problem_id": "D2026",
+ "question_ids": [
+  "Q1",
+  "Q2",
+  "Q3",
+  "Q4"
+ ],
+ "inputs": {
+  "idea_decision": {
+   "path": "reports/contracts/IDEA_DECISION.json",
+   "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+  },
+  "fms": {
+   "path": "reports/FINAL_MODEL_SPEC.json",
+   "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+  },
+  "result_registry": {
+   "path": "results/RESULT_REGISTRY.json",
+   "sha256": "6c492846ded2e4fea0a3b43e3fb6828a87ed9c588bfec421e9aa3eb8eb5803b6"
+  }
+ },
+ "remaining_budget": {
+  "source_ref": {
+   "path": "results/compute_budget.json",
+   "sha256": "8c078f058f9e7b6750c291da76d6ed883e6ebf55c28d408b5b2cb715897702ac"
+  },
+  "value_path": "remaining_budget_hours",
+  "unit": "hours"
+ },
+ "route_options_by_question": {
+  "Q1": [
+   {
+    "candidate_id": "Q1-R21",
+    "result_ref": {
+     "path": "results/bundle_view_Q1.json",
+     "sha256": "3f047eb6c17669b4700aa5cb2266795292bc44d55192b574abe25fea4c221ddb",
+     "question_ids": [
+      "Q1"
+     ]
+    },
+    "cost_ref": {
+     "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json",
+     "sha256": "ad6b2e0a45cff9382c75bfa1cdb4a62d2c6bfe8a6b0e8d353b68e4225276364f",
+     "value_path": "elapsed_seconds",
+     "unit": "seconds",
+     "question_ids": [
+      "Q1"
+     ]
+    },
+    "coverage_ref": {
+     "path": "reports/VALIDATION_EVAL.json",
+     "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+     "question_ids": [
+      "Q1"
+     ]
+    },
+    "evidence_refs": [
+     {
+      "path": "results/bundle_view_Q1.json",
+      "sha256": "3f047eb6c17669b4700aa5cb2266795292bc44d55192b574abe25fea4c221ddb",
+      "question_ids": [
+       "Q1"
+      ]
+     },
+     {
+      "path": "reports/VALIDATION_EVAL.json",
+      "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+      "question_ids": [
+       "Q1"
+      ]
+     }
+    ],
+    "shared_state_ids": []
+   }
+  ],
+  "Q2": [
+   {
+    "candidate_id": "Q2-R51",
+    "result_ref": {
+     "path": "results/bundle_view_Q2.json",
+     "sha256": "4ca7f33f75807492efc08ac38e21d37f39b5b98f81ac2b0f0f91d9fe5dff9852",
+     "question_ids": [
+      "Q2"
+     ]
+    },
+    "cost_ref": {
+     "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q2-Q2-R51-main-N-A-p0/attempts/001/execution_metrics.json",
+     "sha256": "e73b2006783a048a5947273b582b178c3fda544050d00cd4ae016a4aa366306e",
+     "value_path": "elapsed_seconds",
+     "unit": "seconds",
+     "question_ids": [
+      "Q2"
+     ]
+    },
+    "coverage_ref": {
+     "path": "reports/VALIDATION_EVAL.json",
+     "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+     "question_ids": [
+      "Q2"
+     ]
+    },
+    "evidence_refs": [
+     {
+      "path": "results/bundle_view_Q2.json",
+      "sha256": "4ca7f33f75807492efc08ac38e21d37f39b5b98f81ac2b0f0f91d9fe5dff9852",
+      "question_ids": [
+       "Q2"
+      ]
+     },
+     {
+      "path": "reports/VALIDATION_EVAL.json",
+      "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+      "question_ids": [
+       "Q2"
+      ]
+     }
+    ],
+    "shared_state_ids": []
+   }
+  ],
+  "Q3": [
+   {
+    "candidate_id": "Q3-R11",
+    "result_ref": {
+     "path": "results/bundle_view_Q3.json",
+     "sha256": "554905224f3f1e70207967b33972811ca39dc0d9f6d5875864d8276f4a1112cf",
+     "question_ids": [
+      "Q3"
+     ]
+    },
+    "cost_ref": {
+     "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q3-Q3-R11-main-N-A-p1/attempts/001/execution_metrics.json",
+     "sha256": "dc8c9b2cd4c24f42d0d899536486302d8ff626bd1bdd0b30e1c04f4557725793",
+     "value_path": "elapsed_seconds",
+     "unit": "seconds",
+     "question_ids": [
+      "Q3"
+     ]
+    },
+    "coverage_ref": {
+     "path": "reports/VALIDATION_EVAL.json",
+     "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+     "question_ids": [
+      "Q3"
+     ]
+    },
+    "evidence_refs": [
+     {
+      "path": "results/bundle_view_Q3.json",
+      "sha256": "554905224f3f1e70207967b33972811ca39dc0d9f6d5875864d8276f4a1112cf",
+      "question_ids": [
+       "Q3"
+      ]
+     },
+     {
+      "path": "reports/VALIDATION_EVAL.json",
+      "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+      "question_ids": [
+       "Q3"
+      ]
+     }
+    ],
+    "shared_state_ids": []
+   }
+  ],
+  "Q4": [
+   {
+    "candidate_id": "Q4-R11",
+    "result_ref": {
+     "path": "results/bundle_view_Q4.json",
+     "sha256": "a7d4e25315623a658d8c1f7be85915d2bff2444aea79e4d9f29fa5b1811c248a",
+     "question_ids": [
+      "Q4"
+     ]
+    },
+    "cost_ref": {
+     "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q4-Q4-R11-main-N-A-p0/attempts/001/execution_metrics.json",
+     "sha256": "0f9dd87f1edaeeaec2c447f0af6789e55679251b85bf6274db97b87722545ba7",
+     "value_path": "elapsed_seconds",
+     "unit": "seconds",
+     "question_ids": [
+      "Q4"
+     ]
+    },
+    "coverage_ref": {
+     "path": "reports/VALIDATION_EVAL.json",
+     "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+     "question_ids": [
+      "Q4"
+     ]
+    },
+    "evidence_refs": [
+     {
+      "path": "results/bundle_view_Q4.json",
+      "sha256": "a7d4e25315623a658d8c1f7be85915d2bff2444aea79e4d9f29fa5b1811c248a",
+      "question_ids": [
+       "Q4"
+      ]
+     },
+     {
+      "path": "reports/VALIDATION_EVAL.json",
+      "sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+      "question_ids": [
+       "Q4"
+      ]
+     }
+    ],
+    "shared_state_ids": []
+   }
+  ]
+ },
+ "shared_states": [
+  {
+   "state_id": "T_MAX",
+   "question_ids": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+   ],
+   "value_ref": {
+    "path": "results/Q1_detect.json",
+    "sha256": "ee58d669ed93996b22fb5b3442ed68b2e0c22b483a467c5d8643e426bcb2b9c1",
+    "value_path": "T_MAX",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   "evidence_refs": [
+    {
+     "path": "results/Q1_detect.json",
+     "sha256": "ee58d669ed93996b22fb5b3442ed68b2e0c22b483a467c5d8643e426bcb2b9c1",
+     "question_ids": [
+      "Q1"
+     ]
+    }
+   ]
+  }
+ ],
+ "consistency_constraints": [
+  {
+   "constraint_id": "CC-Q2Q3-BASE",
+   "question_ids": [
+    "Q2",
+    "Q3"
+   ],
+   "expression": "Q3.base_tuple == Q2.objective_tuple",
+   "unit_contract": "typed shared state (4-level tuple)",
+   "check_ref": {
+    "path": "results/degeneracy_triangle.json",
+    "sha256": "78eef949df71111e418acd5faf1358c153360c969a83ffd5db2f73057f799ca6",
+    "question_ids": [
+     "Q2",
+     "Q3"
+    ]
+   }
+  },
+  {
+   "constraint_id": "CC-Q2Q4-ANCHOR",
+   "question_ids": [
+    "Q4",
+    "Q2"
+   ],
+   "expression": "Q4.planted_q2_tuple == Q2.objective_tuple",
+   "unit_contract": "typed shared state (4-level tuple)",
+   "check_ref": {
+    "path": "results/Q4_solution.json",
+    "sha256": "9238a8bb70a9cc67d5299f61847cf815ebff0b6d7d0d2304c23491ee9cd8ad8b",
+    "question_ids": [
+     "Q2",
+     "Q4"
+    ]
+   }
+  }
+ ],
+ "dependency_dag": [
+  {
+   "from_artifact": "shared_state:T_MAX",
+   "to_artifact": "whole_problem_route_bundle",
+   "question_ids": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+   ],
+   "edge_scope": "shared"
+  },
+  {
+   "from_artifact": "idea:Q1",
+   "to_artifact": "whole_problem_route_bundle",
+   "question_ids": [
+    "Q1"
+   ],
+   "edge_scope": "question_local"
+  },
+  {
+   "from_artifact": "idea:Q2",
+   "to_artifact": "whole_problem_route_bundle",
+   "question_ids": [
+    "Q2"
+   ],
+   "edge_scope": "question_local"
+  },
+  {
+   "from_artifact": "idea:Q3",
+   "to_artifact": "whole_problem_route_bundle",
+   "question_ids": [
+    "Q3"
+   ],
+   "edge_scope": "question_local"
+  },
+  {
+   "from_artifact": "idea:Q4",
+   "to_artifact": "whole_problem_route_bundle",
+   "question_ids": [
+    "Q4"
+   ],
+   "edge_scope": "question_local"
+  }
+ ],
+ "reuse": [],
+ "narrative_cost": "low",
+ "provenance": {
+  "problem_statement_ref": {
+   "path": "D题.pdf",
+   "sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+  },
+  "data_snapshot_refs": [
+   {
+    "path": "reports/data/DATASET_SNAPSHOT.json",
+    "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+   },
+   {
+    "path": "data/canonical_plans.csv",
+    "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+   }
+  ],
+  "preset_manifest_ref": {
+   "path": "PRESET_BUILD_MANIFEST.json",
+   "sha256": "d92f24ba77d0388e031fedcce85b02d72b3be3860a87a4b9c8fa7941bd5ecd32"
+  },
+  "prompt_model_resource": {
+   "prompt_sha256": "7c96f897e2f5df74c0a6286ad0f8dea37c7cd3a80de917b9e514c2ded9752ed7",
+   "model": "qwen3.8-flash",
+   "resource_profile": "standard"
+  }
+ }
+}

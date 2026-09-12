@@ -1,0 +1,1356 @@
+{
+ "schema_version": 3,
+ "search_id": "CS-20260911T071520Z-1A9D30",
+ "generated_at": "2026-09-11T20:45:56+08:00",
+ "primary": {
+  "Q1": "Q1-R21",
+  "Q2": "Q2-R51",
+  "Q3": "Q3-R11",
+  "Q4": "Q4-R11"
+ },
+ "accepted": [
+  "Q1-R21",
+  "Q2-R51",
+  "Q3-R11",
+  "Q4-R11"
+ ],
+ "rejected": [
+  "Q4-R22"
+ ],
+ "baseline": [
+  "Q1-R21",
+  "Q2-R41",
+  "Q3-R23",
+  "Q4-R41"
+ ],
+ "backup": [
+  "Q1-R52",
+  "Q1-R41",
+  "Q2-R32",
+  "Q3-R51",
+  "Q4-R41"
+ ],
+ "exploratory": [
+  "Q2-R41",
+  "Q3-R23"
+ ],
+ "rejection_reasons": [
+  {
+   "question_id": "Q4",
+   "idea_id": "Q4-R22",
+   "reason_code": "review_reject_objective_degenerate",
+   "evidence_refs": [
+    "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q4-CH-R3.json",
+    "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/result.json"
+   ],
+   "note": "REV-Q4-01 critical：撤销 66 系实现自伤（9/66 可无损回滚至 [57,…]，评审 60 行贪心得 [42,…]），非构造结构性极限；作为求解路线 reject，mod-10 同余引理（4005 C-C 对 0 反例、16/19 CC 边闭式可消）保留为机理解释素材；其侦察结果保留于 tournament 作诚实最差读数"
+  }
+ ],
+ "question_contracts": {
+  "Q1": {
+   "question_id": "Q1",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "symdiff_vs_canonical_truth",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   }
+  },
+  "Q2": {
+   "question_id": "Q2",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   }
+  },
+  "Q3": {
+   "question_id": "Q3",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "maximize",
+   "unit": "new_C_plans",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   }
+  },
+  "Q4": {
+   "question_id": "Q4",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   }
+  }
+ },
+ "tournaments_by_question": {
+  "Q1": {
+   "question_id": "Q1",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "symdiff_vs_canonical_truth",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   },
+   "baseline_route": "Q1-R21",
+   "seed_policy": "N/A",
+   "candidate_set": [
+    "Q1-R21",
+    "Q1-R52",
+    "Q1-R41"
+   ],
+   "pareto_set": [
+    "Q1-R21",
+    "Q1-R52",
+    "Q1-R41"
+   ],
+   "top_k": [
+    "Q1-R21",
+    "Q1-R52",
+    "Q1-R41"
+   ],
+   "winner": "Q1-R21",
+   "winner_decision": {
+    "question_id": "Q1",
+    "idea_id": "Q1-R21",
+    "basis": [
+     "三实现 objective 全等（完全枚举的完备性命题），按选择优先级 correctness=feasibility=optimality_evidence 并列 → implementation_risk/runtime 最低者（R21 0.017s，且直接满足 Q1-C1 双实现验收）；R52/R41 作闭式与位图辅助证据保留"
+    ],
+    "decision_basis": [
+     "三实现 objective 全等（完全枚举的完备性命题），按选择优先级 correctness=feasibility=optimality_evidence 并列 → implementation_risk/runtime 最低者（R21 0.017s，且直接满足 Q1-C1 双实现验收）；R52/R41 作闭式与位图辅助证据保留"
+    ],
+    "tradeoffs": "辅助证据链（闭式/位图）由 backup 候选承载，不牺牲",
+    "evidence_refs": [
+     "result:Q1:Q1-R21",
+     "review:Q1"
+    ]
+   },
+   "results": [
+    {
+     "idea_id": "Q1-R21",
+     "question_id": "Q1",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/result_authority.json",
+     "artifact_sha256": "aff3736788c14a677bb56fe1e36bf13d06ab492771a5f03d2220353a458d655f",
+     "feasible": true,
+     "objective": 0,
+     "constraint_violation": 0,
+     "runtime_seconds": 0.0165,
+     "replicate_values": [
+      0
+     ],
+     "stability_metric": 0.0,
+     "lower_bound": 0,
+     "upper_bound": 0,
+     "relative_gap": 0.0,
+     "stopping_reason": "all_pairs_enumerated_and_dual_impl_symdiff_zero",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q1-R52",
+     "question_id": "Q1",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/result_authority.json",
+     "artifact_sha256": "f50f7f221c910a4653e94453e5802c4d66077c924016bc3e08c49f381778204b",
+     "feasible": true,
+     "objective": 0,
+     "constraint_violation": 0,
+     "runtime_seconds": 0.2802,
+     "replicate_values": [
+      0
+     ],
+     "stability_metric": 0.0,
+     "lower_bound": 0,
+     "upper_bound": 0,
+     "relative_gap": 0.0,
+     "stopping_reason": "all_pairs_enumerated_and_dual_impl_symdiff_zero",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q1-R41",
+     "question_id": "Q1",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/result_authority.json",
+     "artifact_sha256": "fea14922242147a3f0fe1114fef3f1fe5f030c7c49dab8cee096c87380e643e1",
+     "feasible": true,
+     "objective": 0,
+     "constraint_violation": 0,
+     "runtime_seconds": 12.8864,
+     "replicate_values": [
+      0
+     ],
+     "stability_metric": 0.0,
+     "lower_bound": 0,
+     "upper_bound": 0,
+     "relative_gap": 0.0,
+     "stopping_reason": "all_pairs_enumerated_and_planted_stress_recall_1_symdiff_zero_across_3_frozen_seeds",
+     "failure_mode": null
+    }
+   ],
+   "pareto_points": [
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R21",
+     "objective": 0.0
+    },
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R52",
+     "objective": 0.0
+    },
+    {
+     "question_id": "Q1",
+     "idea_id": "Q1-R41",
+     "objective": 0.0
+    }
+   ],
+   "reviews": [
+    {
+     "idea_id": "Q1-R21",
+     "question_id": "Q1",
+     "review_id": "REV-Q1-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q1-CH-R1.json",
+     "artifact_sha256": "6fd19ba37a2dd3e488f4075a1db3cb4e55624a55726abeebb2bcd77bb1f4ea03",
+     "result_refs": [
+      "result:Q1:Q1-R21"
+     ]
+    },
+    {
+     "idea_id": "Q1-R52",
+     "question_id": "Q1",
+     "review_id": "REV-Q1-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q1-CH-R1.json",
+     "artifact_sha256": "6fd19ba37a2dd3e488f4075a1db3cb4e55624a55726abeebb2bcd77bb1f4ea03",
+     "result_refs": [
+      "result:Q1:Q1-R52"
+     ]
+    },
+    {
+     "idea_id": "Q1-R41",
+     "question_id": "Q1",
+     "review_id": "REV-Q1-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q1-CH-R1.json",
+     "artifact_sha256": "6fd19ba37a2dd3e488f4075a1db3cb4e55624a55726abeebb2bcd77bb1f4ea03",
+     "result_refs": [
+      "result:Q1:Q1-R41"
+     ]
+    }
+   ],
+   "eliminations": [
+    {
+     "idea_id": "Q1-R11",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R12",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R13",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R22",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R23",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R31",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R42",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q1-R51",
+     "question_id": "Q1",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    }
+   ],
+   "optimality_claim": {
+    "level": "L2_EMPIRICALLY_BEST",
+    "scope": "frozen_Q1_detection_formulation",
+    "claim": "297 对冲突集由三个独立实现（区间算术/同余闭式/位图）+植入压力测试共同钉死，对称差=0；答案完备性为可判定穷举命题（非『最优』宣称）",
+    "gap_threshold": 0,
+    "evidence_refs": [
+     "result:Q1:Q1-R21",
+     "result:Q1:Q1-R52",
+     "result:Q1:Q1-R41"
+    ],
+    "proof_artifact": null
+   }
+  },
+  "Q2": {
+   "question_id": "Q2",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   },
+   "baseline_route": "Q2-R41",
+   "seed_policy": {
+    "seeds": [
+     11,
+     29,
+     47
+    ],
+    "repetition_policy": "每随机候选 3 重复（协议），中位数聚合；Q3-R23 单 seed 缺口见 search_limitations",
+    "aggregation_rule": "median scalar; deterministic candidates single run",
+    "deterministic": false
+   },
+   "candidate_set": [
+    "Q2-R41",
+    "Q2-R51",
+    "Q2-R32"
+   ],
+   "pareto_set": [
+    "Q2-R51"
+   ],
+   "top_k": [
+    "Q2-R41",
+    "Q2-R51",
+    "Q2-R32"
+   ],
+   "winner": "Q2-R51",
+   "winner_decision": {
+    "question_id": "Q2",
+    "idea_id": "Q2-R51",
+    "basis": [
+     "R51 标量最优（[6,121,1996,663]）且唯一给出机器可复核证书链（Σr≤0 INFEASIBLE + 阶梯记录）；R32 被支配（同撤销、层2-4 劣）；R41 撤销 19 明显劣，按题面层级链不可比肩"
+    ],
+    "decision_basis": [
+     "R51 标量最优（[6,121,1996,663]）且唯一给出机器可复核证书链（Σr≤0 INFEASIBLE + 阶梯记录）；R32 被支配（同撤销、层2-4 劣）；R41 撤销 19 明显劣，按题面层级链不可比肩"
+    ],
+    "tradeoffs": "证书未闭合（gap_revoke=4），接受『区间表述』的论文代价",
+    "evidence_refs": [
+     "result:Q2:Q2-R51",
+     "review:Q2"
+    ]
+   },
+   "results": [
+    {
+     "idea_id": "Q2-R41",
+     "question_id": "Q2",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/result_authority.json",
+     "artifact_sha256": "d05a8a7afba6f5d6bb954f24251d4d7a2896e8ed8f5c7ebdad90c5ffef593081",
+     "feasible": true,
+     "objective": 19009618530491,
+     "constraint_violation": 0,
+     "runtime_seconds": 185.0,
+     "replicate_values": [
+      19009618530491,
+      28007520120379,
+      19009519150466
+     ],
+     "stability_metric": 0.4733393758260014,
+     "lower_bound": null,
+     "upper_bound": null,
+     "relative_gap": null,
+     "stopping_reason": "wall_clock_budget_per_replicate（185s×3，协议 ≤600s/重复）",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q2-R51",
+     "question_id": "Q2",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/result_authority.json",
+     "artifact_sha256": "37826bb7ba71e7a247f9d24da23535fb6de3dfa77d3f2230c3456f726c43d0c8",
+     "feasible": true,
+     "objective": 6012119960663,
+     "constraint_violation": 0,
+     "runtime_seconds": 547.3,
+     "replicate_values": [
+      6012119960663
+     ],
+     "stability_metric": null,
+     "lower_bound": 2000000000000,
+     "upper_bound": 6012119960663,
+     "relative_gap": 0.6673386404320107,
+     "stopping_reason": "budget_exhausted_after_layer4",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q2-R32",
+     "question_id": "Q2",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/result_authority.json",
+     "artifact_sha256": "c480315029b62d8dcd555b93b536c8fe582f8fdba2fc8a69933857cf6e28db1f",
+     "feasible": true,
+     "objective": 6012322050762,
+     "constraint_violation": 0,
+     "runtime_seconds": 391.07,
+     "replicate_values": [
+      6012322050762
+     ],
+     "stability_metric": null,
+     "lower_bound": null,
+     "upper_bound": null,
+     "relative_gap": null,
+     "stopping_reason": "取整-修复一轮闭环 + 去撤销阶梯预算耗尽（391s/≤600s）",
+     "failure_mode": null
+    }
+   ],
+   "pareto_points": [
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R41",
+     "objective": 19009618530491.0
+    },
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R51",
+     "objective": 6012119960663.0
+    },
+    {
+     "question_id": "Q2",
+     "idea_id": "Q2-R32",
+     "objective": 6012322050762.0
+    }
+   ],
+   "reviews": [
+    {
+     "idea_id": "Q2-R41",
+     "question_id": "Q2",
+     "review_id": "REV-Q2-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q2-CH-R2.json",
+     "artifact_sha256": "a40086c4574e3c2ec439366dab7d521a741ea2ba4025aeb28719100e1b429d35",
+     "result_refs": [
+      "result:Q2:Q2-R41"
+     ]
+    },
+    {
+     "idea_id": "Q2-R51",
+     "question_id": "Q2",
+     "review_id": "REV-Q2-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q2-CH-R2.json",
+     "artifact_sha256": "a40086c4574e3c2ec439366dab7d521a741ea2ba4025aeb28719100e1b429d35",
+     "result_refs": [
+      "result:Q2:Q2-R51"
+     ]
+    },
+    {
+     "idea_id": "Q2-R32",
+     "question_id": "Q2",
+     "review_id": "REV-Q2-01",
+     "verdict": "revise",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q2-CH-R2.json",
+     "artifact_sha256": "a40086c4574e3c2ec439366dab7d521a741ea2ba4025aeb28719100e1b429d35",
+     "result_refs": [
+      "result:Q2:Q2-R32"
+     ]
+    }
+   ],
+   "eliminations": [
+    {
+     "idea_id": "Q2-R11",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R12",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R13",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R21",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R22",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R23",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R31",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R42",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R43",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R52",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q2-R53",
+     "question_id": "Q2",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    }
+   ],
+   "optimality_claim": {
+    "level": "L2_EMPIRICALLY_BEST",
+    "scope": "frozen_Q2_formulation_ADJ_R1_R8",
+    "claim": "侦察预算内经验最优元组 [6,121,1996,663]；撤销层界 [2,6] 开放（Σr≤0 INFEASIBLE 已证、Σr≤5 未判定），生产长预算攻闭合前论文只写区间",
+    "gap_threshold": 0,
+    "evidence_refs": [
+     "result:Q2:Q2-R51",
+     "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/r51_certificates.json"
+    ],
+    "proof_artifact": null
+   }
+  },
+  "Q3": {
+   "question_id": "Q3",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "maximize",
+   "unit": "new_C_plans",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   },
+   "baseline_route": "Q3-R23",
+   "seed_policy": {
+    "seeds": [
+     11,
+     29,
+     47
+    ],
+    "repetition_policy": "每随机候选 3 重复（协议），中位数聚合；Q3-R23 单 seed 缺口见 search_limitations",
+    "aggregation_rule": "median scalar; deterministic candidates single run",
+    "deterministic": false
+   },
+   "candidate_set": [
+    "Q3-R23",
+    "Q3-R11",
+    "Q3-R51"
+   ],
+   "pareto_set": [
+    "Q3-R11"
+   ],
+   "top_k": [
+    "Q3-R23",
+    "Q3-R11",
+    "Q3-R51"
+   ],
+   "winner": "Q3-R11",
+   "winner_decision": {
+    "question_id": "Q3",
+    "idea_id": "Q3-R11",
+    "basis": [
+     "R11 三腿可证最优（CP-SAT A/B OPTIMAL=139 + HiGHS LP=139.0 + 候选穷举完备），Q3-C2 验收直接满足；R23=137 为启发式对照；R51 初等界 332 作可手核上界辅证"
+    ],
+    "decision_basis": [
+     "R11 三腿可证最优（CP-SAT A/B OPTIMAL=139 + HiGHS LP=139.0 + 候选穷举完备），Q3-C2 验收直接满足；R23=137 为启发式对照；R51 初等界 332 作可手核上界辅证"
+    ],
+    "tradeoffs": "认证最优依赖基座=侦察解；生产 Q2 解若更新则需重证",
+    "evidence_refs": [
+     "result:Q3:Q3-R11",
+     "review:Q3"
+    ]
+   },
+   "results": [
+    {
+     "idea_id": "Q3-R23",
+     "question_id": "Q3",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result_authority.json",
+     "artifact_sha256": "1d46f76c6bc3a252f475b5746b9502707c9e867d74041dd4144a56411a5aa63f",
+     "feasible": true,
+     "objective": 137,
+     "constraint_violation": 0,
+     "runtime_seconds": 240.0,
+     "replicate_values": [
+      137,
+      137,
+      137
+     ],
+     "stability_metric": 0.0,
+     "lower_bound": 137,
+     "upper_bound": 332,
+     "relative_gap": 0.5873493975903614,
+     "stopping_reason": "3 重复（seed 11/29/47）各 240s LNS 预算耗尽；聚合=median；评审闭环要求 stochastic 候选 3 重复已补齐",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q3-R11",
+     "question_id": "Q3",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/result_authority.json",
+     "artifact_sha256": "5e2b1e7ffd91c7a21d1fce9996cc904b519bfb2f1faae904aadc3bfe7e2ae728",
+     "feasible": true,
+     "objective": 139,
+     "constraint_violation": 0,
+     "runtime_seconds": 4.3,
+     "replicate_values": [
+      139
+     ],
+     "stability_metric": null,
+     "lower_bound": 139,
+     "upper_bound": 139,
+     "relative_gap": 0.0,
+     "stopping_reason": "CP-SAT 双模型 OPTIMAL（incumbent=bound=139，<5s），另以 HiGHS LP 界=139 独立复证；界闭合",
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q3-R51",
+     "question_id": "Q3",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/result_authority.json",
+     "artifact_sha256": "d5d0bc39f860950ecc86ba804f233ba5db57a73e47228efdf6b14d9957c73cbc",
+     "feasible": true,
+     "objective": 137,
+     "constraint_violation": 0,
+     "runtime_seconds": 0.19,
+     "replicate_values": [
+      137
+     ],
+     "stability_metric": null,
+     "lower_bound": 137,
+     "upper_bound": 332,
+     "relative_gap": 0.5873493975903614,
+     "stopping_reason": "界推导+构造下界完成；UB 与 LB 未会合（区间陈述）",
+     "failure_mode": null
+    }
+   ],
+   "pareto_points": [
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R23",
+     "objective": 137.0
+    },
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R11",
+     "objective": 139.0
+    },
+    {
+     "question_id": "Q3",
+     "idea_id": "Q3-R51",
+     "objective": 137.0
+    }
+   ],
+   "reviews": [
+    {
+     "idea_id": "Q3-R23",
+     "question_id": "Q3",
+     "review_id": "REV-Q3-01",
+     "verdict": "revise",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q3-CH-R1b.json",
+     "artifact_sha256": "74f8c763ea0184d97fea9e835987449a1fac644853871046cfe4eefcbbac5081",
+     "result_refs": [
+      "result:Q3:Q3-R23"
+     ]
+    },
+    {
+     "idea_id": "Q3-R11",
+     "question_id": "Q3",
+     "review_id": "REV-Q3-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q3-CH-R1b.json",
+     "artifact_sha256": "74f8c763ea0184d97fea9e835987449a1fac644853871046cfe4eefcbbac5081",
+     "result_refs": [
+      "result:Q3:Q3-R11"
+     ]
+    },
+    {
+     "idea_id": "Q3-R51",
+     "question_id": "Q3",
+     "review_id": "REV-Q3-01",
+     "verdict": "retain",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q3-CH-R1b.json",
+     "artifact_sha256": "74f8c763ea0184d97fea9e835987449a1fac644853871046cfe4eefcbbac5081",
+     "result_refs": [
+      "result:Q3:Q3-R51"
+     ]
+    }
+   ],
+   "eliminations": [
+    {
+     "idea_id": "Q3-R12",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R13",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R21",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R22",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R31",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R32",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R41",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R42",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q3-R52",
+     "question_id": "Q3",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    }
+   ],
+   "optimality_claim": {
+    "level": "L3_NEAR_GLOBAL",
+    "scope": "frozen_Q3_main_interpretation(base=Q2-R51 侦察解, 模板参数, 643 视界, distinct 口径)",
+    "claim": "在冻结基座与模板参数下 N*=139：CP-SAT 双模型 OPTIMAL + HiGHS LP 分数上界=139 + 候选放置集穷举完备 ⇒ 上界=下界会合（gap=0，gap_threshold 冻结于 0）；HiGHS 界为不同求解器族独立复核",
+    "gap_threshold": 0,
+    "evidence_refs": [
+     "result:Q3:Q3-R11",
+     "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/cpsat_r11_report.json",
+     "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/lp_crosscheck_hiGHS.json"
+    ],
+    "proof_artifact": null
+   }
+  },
+  "Q4": {
+   "question_id": "Q4",
+   "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "objective_direction": "minimize",
+   "unit": "weighted_lexicographic_scalar",
+   "constraint_tolerance": 0,
+   "budget_rule": "wall_clock",
+   "budget": 600,
+   "budget_contract": {
+    "compare_field": "runtime_seconds",
+    "unit": "seconds",
+    "compare_fields": [
+     "runtime_seconds"
+    ]
+   },
+   "baseline_route": "Q4-R41",
+   "seed_policy": {
+    "seeds": [
+     11,
+     29,
+     47
+    ],
+    "repetition_policy": "每随机候选 3 重复（协议），中位数聚合；Q3-R23 单 seed 缺口见 search_limitations",
+    "aggregation_rule": "median scalar; deterministic candidates single run",
+    "deterministic": false
+   },
+   "candidate_set": [
+    "Q4-R41",
+    "Q4-R11",
+    "Q4-R22"
+   ],
+   "pareto_set": [
+    "Q4-R11"
+   ],
+   "top_k": [
+    "Q4-R41",
+    "Q4-R11",
+    "Q4-R22"
+   ],
+   "winner": "Q4-R11",
+   "winner_decision": {
+    "question_id": "Q4",
+    "idea_id": "Q4-R11",
+    "basis": [
+     "R11=[8,113,2289,719] 为候选中最优标量。评审修正（采纳 REV-Q4-01 major）：支配界锚定=『Q2-R51 侦察解逐字可植入 Q4（动作集包含，结构成立）⇒ Q4 侦察 incumbent 应为 min(8 自跑, 6 植入)=6』；R11 自跑未及 6 是 600s 预算产物而非模型缺陷；其 q2_inclusion_check 的 150s 弱自对照基线（ub=14）不得用于改善宣称。生产阶段：Q4 必须以 Q2 生产解热启动（R42 式锚定不劣约束），『不劣于 Q2』由构造保证并 checker 复验。R41 中位 [11,117,…] 劣且偏离承诺实现（revise 登记）；R22 归因不成立（9/66 可无损回滚）→ rejected，仅其 mod-10 机理验证部分保留为结构证据"
+    ],
+    "decision_basis": [
+     "R11=[8,113,2289,719] 为候选中最优标量。评审修正（采纳 REV-Q4-01 major）：支配界锚定=『Q2-R51 侦察解逐字可植入 Q4（动作集包含，结构成立）⇒ Q4 侦察 incumbent 应为 min(8 自跑, 6 植入)=6』；R11 自跑未及 6 是 600s 预算产物而非模型缺陷；其 q2_inclusion_check 的 150s 弱自对照基线（ub=14）不得用于改善宣称。生产阶段：Q4 必须以 Q2 生产解热启动（R42 式锚定不劣约束），『不劣于 Q2』由构造保证并 checker 复验。R41 中位 [11,117,…] 劣且偏离承诺实现（revise 登记）；R22 归因不成立（9/66 可无损回滚）→ rejected，仅其 mod-10 机理验证部分保留为结构证据"
+    ],
+    "tradeoffs": "撤销层界开放；改进幅度只能以下界=0 诚实表述",
+    "evidence_refs": [
+     "result:Q4:Q4-R11",
+     "review:Q4"
+    ]
+   },
+   "results": [
+    {
+     "idea_id": "Q4-R41",
+     "question_id": "Q4",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/result_authority.json",
+     "artifact_sha256": "af9b3cb13b3a84e60b610b551f543d9d2fcccaadce78e1c3a536ff83d413e702",
+     "feasible": true,
+     "objective": 11011723440578,
+     "constraint_violation": 0,
+     "runtime_seconds": 567.3,
+     "replicate_values": [
+      11011723440578
+     ],
+     "stability_metric": null,
+     "lower_bound": null,
+     "upper_bound": null,
+     "relative_gap": null,
+     "stopping_reason": null,
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q4-R11",
+     "question_id": "Q4",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/result_authority.json",
+     "artifact_sha256": "001be47edcdb527834c4ba1d1ea09512f06d14abfac74e4d43486853251a5905",
+     "feasible": true,
+     "objective": 6012119960663,
+     "constraint_violation": 0,
+     "runtime_seconds": 547.3,
+     "replicate_values": [
+      6012119960663
+     ],
+     "stability_metric": null,
+     "lower_bound": null,
+     "upper_bound": null,
+     "relative_gap": null,
+     "stopping_reason": null,
+     "failure_mode": null
+    },
+    {
+     "idea_id": "Q4-R22",
+     "question_id": "Q4",
+     "status": "completed",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/result_authority.json",
+     "artifact_sha256": "fc7584399fe23ec77a6fa2ba48dda9d34f3ec10eeb41590e1b5a3f5d745c39e2",
+     "feasible": true,
+     "objective": 66004311110144,
+     "constraint_violation": 0,
+     "runtime_seconds": 29.2,
+     "replicate_values": [
+      66004311110144
+     ],
+     "stability_metric": null,
+     "lower_bound": null,
+     "upper_bound": null,
+     "relative_gap": null,
+     "stopping_reason": null,
+     "failure_mode": null
+    }
+   ],
+   "pareto_points": [
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R41",
+     "objective": 11011723440578.0
+    },
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R11",
+     "objective": 6012119960663.0
+    },
+    {
+     "question_id": "Q4",
+     "idea_id": "Q4-R22",
+     "objective": 66004311110144.0
+    }
+   ],
+   "reviews": [
+    {
+     "idea_id": "Q4-R41",
+     "question_id": "Q4",
+     "review_id": "REV-Q4-01",
+     "verdict": "revise",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q4-CH-R3.json",
+     "artifact_sha256": "74159f6177053355017394d1965172007599314852b27d43dac87291a8a97df1",
+     "result_refs": [
+      "result:Q4:Q4-R41"
+     ]
+    },
+    {
+     "idea_id": "Q4-R11",
+     "question_id": "Q4",
+     "review_id": "REV-Q4-01",
+     "verdict": "revise",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q4-CH-R3.json",
+     "artifact_sha256": "74159f6177053355017394d1965172007599314852b27d43dac87291a8a97df1",
+     "result_refs": [
+      "result:Q4:Q4-R11"
+     ]
+    },
+    {
+     "idea_id": "Q4-R22",
+     "question_id": "Q4",
+     "review_id": "REV-Q4-01",
+     "verdict": "reject",
+     "artifact_path": "runs/competitive/CS-20260911T071520-D2026/reviews/REV-Q4-CH-R3.json",
+     "artifact_sha256": "74159f6177053355017394d1965172007599314852b27d43dac87291a8a97df1",
+     "result_refs": [
+      "result:Q4:Q4-R22"
+     ]
+    }
+   ],
+   "eliminations": [
+    {
+     "idea_id": "Q4-R12",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R13",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R21",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R23",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R31",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R42",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R51",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    },
+    {
+     "idea_id": "Q4-R52",
+     "question_id": "Q4",
+     "reason_code": "topk_screened",
+     "reason": "未入 Top-K（同族 Pareto 支配/预算/评审定性），保留于 routes 片段与覆盖表",
+     "evidence_refs": [
+      "runs/competitive/CS-20260911T071520-D2026/routes/",
+      "reports/contracts/IDEA_CANDIDATES.json"
+     ]
+    }
+   ],
+   "optimality_claim": {
+    "level": "L2_EMPIRICALLY_BEST",
+    "scope": "frozen_Q4_formulation",
+    "claim": "侦察 incumbent [8,113,2289,719]；支配界（Q4≽Q2 逐字包含已实测）为可证先验界，撤销层 [2,8] 开放",
+    "gap_threshold": 0,
+    "evidence_refs": [
+     "result:Q4:Q4-R11",
+     "result:Q4:Q4-R41"
+    ],
+    "proof_artifact": null
+   }
+  }
+ },
+ "comparisons": [
+  {
+   "comparison_id": "CMP-Q1",
+   "question_id": "Q1",
+   "idea_ids": [
+    "Q1-R21",
+    "Q1-R52",
+    "Q1-R41"
+   ],
+   "status": "comparable",
+   "reason": "Q1 三候选共享同一 canonical evaluator/方向/单位/预算契约，可直接比较"
+  },
+  {
+   "comparison_id": "CMP-Q2",
+   "question_id": "Q2",
+   "idea_ids": [
+    "Q2-R41",
+    "Q2-R51",
+    "Q2-R32"
+   ],
+   "status": "comparable",
+   "reason": "Q2 三候选共享同一 canonical evaluator/方向/单位/预算契约，可直接比较"
+  },
+  {
+   "comparison_id": "CMP-Q3",
+   "question_id": "Q3",
+   "idea_ids": [
+    "Q3-R23",
+    "Q3-R11",
+    "Q3-R51"
+   ],
+   "status": "comparable",
+   "reason": "Q3 三候选共享同一 canonical evaluator/方向/单位/预算契约，可直接比较"
+  },
+  {
+   "comparison_id": "CMP-Q4",
+   "question_id": "Q4",
+   "idea_ids": [
+    "Q4-R41",
+    "Q4-R11",
+    "Q4-R22"
+   ],
+   "status": "comparable",
+   "reason": "Q4 三候选共享同一 canonical evaluator/方向/单位/预算契约，可直接比较"
+  },
+  {
+   "comparison_id": "CMP-X-Q2Q3",
+   "question_id": "Q2",
+   "idea_ids": [
+    "Q2-R51",
+    "Q3-R11"
+   ],
+   "status": "incomparable",
+   "reason": "跨问目标单位不同（词典序标量 vs 加装数计数），显式标记不可比"
+  }
+ ],
+ "discovery_integration": {
+  "opportunities": [
+   {
+    "opportunity_id": "Q1-OP-special_boundary",
+    "question_id": "Q1",
+    "affected_question_ids": [
+     "Q1"
+    ],
+    "material_decision_impact": "constraint_added_or_changed",
+    "changed_paths": [
+     "/constraints",
+     "/validation_strategy"
+    ],
+    "candidate_ids_added": [],
+    "candidate_ids_rejected": [],
+    "evidence_refs": [
+     "result:Q1:Q1-R21"
+    ],
+    "note": "special_boundary 触发资源盒边界约束（R1/R3 视界与平移不越界）进入全部候选模型；material impact 以 ADJUDICATION 边界条款与候选 required_assumptions 落实（before/after 均可复核）"
+   },
+   {
+    "opportunity_id": "Q2-OP-special_boundary",
+    "question_id": "Q2",
+    "affected_question_ids": [
+     "Q2"
+    ],
+    "material_decision_impact": "constraint_added_or_changed",
+    "changed_paths": [
+     "/constraints",
+     "/validation_strategy"
+    ],
+    "candidate_ids_added": [],
+    "candidate_ids_rejected": [],
+    "evidence_refs": [
+     "result:Q2:Q2-R51"
+    ],
+    "note": "special_boundary 触发资源盒边界约束（R1/R3 视界与平移不越界）进入全部候选模型；material impact 以 ADJUDICATION 边界条款与候选 required_assumptions 落实（before/after 均可复核）"
+   },
+   {
+    "opportunity_id": "Q3-OP-special_boundary",
+    "question_id": "Q3",
+    "affected_question_ids": [
+     "Q3"
+    ],
+    "material_decision_impact": "constraint_added_or_changed",
+    "changed_paths": [
+     "/constraints",
+     "/validation_strategy"
+    ],
+    "candidate_ids_added": [],
+    "candidate_ids_rejected": [],
+    "evidence_refs": [
+     "result:Q3:Q3-R11"
+    ],
+    "note": "special_boundary 触发资源盒边界约束（R1/R3 视界与平移不越界）进入全部候选模型；material impact 以 ADJUDICATION 边界条款与候选 required_assumptions 落实（before/after 均可复核）"
+   },
+   {
+    "opportunity_id": "Q4-OP-special_boundary",
+    "question_id": "Q4",
+    "affected_question_ids": [
+     "Q4"
+    ],
+    "material_decision_impact": "constraint_added_or_changed",
+    "changed_paths": [
+     "/constraints",
+     "/validation_strategy"
+    ],
+    "candidate_ids_added": [],
+    "candidate_ids_rejected": [],
+    "evidence_refs": [
+     "result:Q4:Q4-R11"
+    ],
+    "note": "special_boundary 触发资源盒边界约束（R1/R3 视界与平移不越界）进入全部候选模型；material impact 以 ADJUDICATION 边界条款与候选 required_assumptions 落实（before/after 均可复核）"
+   }
+  ]
+ },
+ "search_limitations": [
+  "Q2/Q4 撤销层证书未闭合（[2,6]/[2,8]），生产阶段以长预算攻闭合，未闭合前论文只写区间",
+  "Q2-R51 界证书进程超侦察预算 120.4s（incumbent 合规），Manager 豁免登记 D-BUDGET-R51",
+  "Q2-R32 revise：随机版未补测（豁免 D-R32-REVISE），定位为负结果证据+热启动源",
+  "Q3 认证最优绑定侦察基座（Q2-R51 解）；生产 Q2 更新后 Q3 须在生产重证",
+  "Q3-R23 LNS 仅 seed=11 单重复（预算内），replicate 缺口如实登记，不作认证依据",
+  "所有侦察数字仅存 runs/，不是论文 authority；正式结果由 coding_visual 生产运行产生"
+ ]
+}

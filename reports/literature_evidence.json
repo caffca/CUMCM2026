@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "question_id": "D2026",
+  "stage": "analysis",
+  "profile": "standard",
+  "compliance_note": "全部为方法学检索词；未检索本届赛题题解/参赛方案/讨论（MODEL_OPPORTUNITIES.search_gate 边界）",
+  "claims": [
+    {"claim_id": "Q1.DETECT.INTERVAL", "question_id": "Q1", "claim": "时频冲突检测=两类区间交叠关系的交（频段半开区间 × 周期时间窗集合），可完全枚举判定且三独立实现结果唯一", "refs": ["L1", "L2"], "verification_status": "unverified", "coverage": "strong"},
+    {"claim_id": "Q1.CONGRUENCE.CLOSED", "question_id": "Q1", "claim": "同类参数齐次使时间交叠存在同余+reach 闭式判据（分析加速层），与逐对枚举 4975 同组对 0 反例", "refs": ["L2", "L7"], "verification_status": "unverified", "coverage": "moderate"},
+    {"claim_id": "Q2.CSP.LISTCOLOR", "question_id": "Q2", "claim": "冲突消解可重表达为冲突图上的带撤销色部分列表着色/多选择 CSP，用约束规划精确求解", "refs": ["L2", "L3", "L5"], "verification_status": "unverified", "coverage": "strong"},
+    {"claim_id": "Q2.LEX.BOUNDS", "question_id": "Q2", "claim": "词典序四级目标用逐级锁定实现，撤销下界经阶梯 INFEASIBLE 证书、调整层界经 LP 对偶给出", "refs": ["L5", "L8"], "verification_status": "unverified", "coverage": "strong"},
+    {"claim_id": "Q3.PACKING.OPT", "question_id": "Q3", "claim": "加装=空闲时频格上的带冲突装箱/集包装；上界由双计数与 LP 对偶获得，可与构造下界会合给出可证最大数", "refs": ["L4", "L8"], "verification_status": "unverified", "coverage": "strong"},
+    {"claim_id": "Q4.RETIMING.DOMINATE", "question_id": "Q4", "claim": "间隔调整=周期结构重定时；扩域 CSP 逐字包含 Q2 可行域 ⇒ 同一评价函数下支配界可证、不劣于 Q2", "refs": ["L2", "L5", "L6"], "verification_status": "unverified", "coverage": "strong"},
+    {"claim_id": "DOM.DECONFLICT.ACTIONS", "question_id": "ALL", "claim": "用频冲突检测与消解（平移/撤销/重指配三类动作）是联合频谱管理中的规程化操作，建模动作空间与现实一致", "refs": ["L6"], "verification_status": "verified", "coverage": "moderate"}
+  ],
+  "search": {
+    "queries": 12,
+    "unique_candidate_refs": 14,
+    "retained_refs": 8,
+    "redundancy_rate": 0.43,
+    "saturated": true,
+    "budget_tier": "standard",
+    "stop_reason": "evidence saturation：最后两轮（图着色综述/装箱冲突）仅返回已保留集合的子集或弱版本；Q1-Q4 全部关键方法主张均有 ≥1 条真实文献锚定，新查询不再产生无证据支撑的方法主张"
+  },
+  "ref_registry": {
+    "L1": "W. K. Hale, Frequency assignment: Theory and applications, Proc. IEEE 68(12):1497-1514, 1980. DOI 10.1109/PROC.1980.11897",
+    "L2": "K. I. Aardal, S. P. M. van Hoesel, A. M. C. A. Koster, C. Mannino, A. Sassano, Models and solution techniques for frequency assignment problems, 4OR-QRAL 5(2):79-108, 2007. DOI 10.1007/s10288-006-0024-2",
+    "L3": "D. Brelaz, New methods to color the vertices of a graph, Comm. ACM 22(4):251-256, 1979. DOI 10.1145/359094.359101",
+    "L4": "L. Epstein, A. Levin, Bin packing with conflicts, Algorithmica, 2011. DOI 10.1007/s00453-010-9396-2",
+    "L5": "F. Rossi, P. van Beek, T. Walsh (eds.), Handbook of Constraint Programming, Elsevier, 2006. ISBN 978-0-444-52726-6",
+    "L6": "CJCSM 3320.01D, Joint Restricted Frequency Process, Chairman of the Joint Chiefs of Staff (official). https://www.jcs.mil/Portals/36/Documents/Library/Manuals/CJCSM%203320.01D.pdf",
+    "L7": "D. S. Johnson, Near-optimal colorings of graphs and the size of maximal independent sets, SIAM J. Comput. 3(2):100-113, 1974. DOI 10.1137/0203022",
+    "L8": "G. L. Nemhauser, L. A. Wolsey, Integer and Combinatorial Optimization, Wiley, 1999. ISBN 978-0-471-50621-0"
+  },
+  "note": "verification_status=pending 项由 6verity 阶段 verify_refs.py --strict 逐条 OpenAlex/Crossref 核验后回填；核验不过者不得进入论文参考文献。"
+}

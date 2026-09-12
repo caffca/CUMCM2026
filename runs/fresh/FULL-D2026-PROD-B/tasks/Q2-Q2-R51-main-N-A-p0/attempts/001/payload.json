@@ -1,0 +1,523 @@
+{
+ "question_id": "Q2",
+ "variant": "cpsat_lex",
+ "workers": 4,
+ "gstar_edges": 1693,
+ "forced_edges": 0,
+ "options_total": 4582,
+ "actions": {
+  "A001": {
+   "dt": 5
+  },
+  "A003": {
+   "df": 9
+  },
+  "A004": {
+   "df": -5
+  },
+  "A005": {
+   "df": 10
+  },
+  "A006": {
+   "df": -7
+  },
+  "A007": {
+   "df": 9
+  },
+  "A008": {
+   "df": 10
+  },
+  "A009": {
+   "df": 10
+  },
+  "A011": {
+   "df": -10
+  },
+  "A012": {
+   "df": -10
+  },
+  "A013": {
+   "dt": -5
+  },
+  "A014": {
+   "df": 7
+  },
+  "A015": {
+   "df": 5
+  },
+  "A017": {
+   "dt": 2
+  },
+  "A018": {
+   "revoke": true
+  },
+  "B001": {
+   "df": -5
+  },
+  "B002": {
+   "df": 10
+  },
+  "B004": {
+   "dt": -5
+  },
+  "B005": {
+   "dt": 2
+  },
+  "B006": {
+   "df": -10
+  },
+  "B007": {
+   "df": -10
+  },
+  "B008": {
+   "df": 10
+  },
+  "B009": {
+   "revoke": true
+  },
+  "B010": {
+   "dt": -4
+  },
+  "B011": {
+   "dt": 4
+  },
+  "B012": {
+   "df": -5
+  },
+  "B013": {
+   "revoke": true
+  },
+  "B014": {
+   "revoke": true
+  },
+  "B015": {
+   "df": 10
+  },
+  "B016": {
+   "df": -8
+  },
+  "B017": {
+   "df": -10
+  },
+  "B018": {
+   "df": 10
+  },
+  "B019": {
+   "dt": 2
+  },
+  "B020": {
+   "dt": 3
+  },
+  "B021": {
+   "revoke": true
+  },
+  "B022": {
+   "revoke": true
+  },
+  "B023": {
+   "dt": 4
+  },
+  "B024": {
+   "revoke": true
+  },
+  "B025": {
+   "df": 10
+  },
+  "B026": {
+   "df": -6
+  },
+  "B027": {
+   "revoke": true
+  },
+  "B028": {
+   "df": 4
+  },
+  "B029": {
+   "revoke": true
+  },
+  "B030": {
+   "df": -10
+  },
+  "B031": {
+   "df": -9
+  },
+  "B032": {
+   "df": 7
+  },
+  "B035": {
+   "df": -10
+  },
+  "B036": {
+   "df": 3
+  },
+  "B037": {
+   "df": -9
+  },
+  "B038": {
+   "df": -10
+  },
+  "B039": {
+   "df": 10
+  },
+  "C002": {
+   "df": 10
+  },
+  "C003": {
+   "df": -10
+  },
+  "C004": {
+   "df": 8
+  },
+  "C005": {
+   "df": -8
+  },
+  "C007": {
+   "df": -8
+  },
+  "C009": {
+   "df": 10
+  },
+  "C010": {
+   "df": -4
+  },
+  "C012": {
+   "df": 9
+  },
+  "C013": {
+   "df": -5
+  },
+  "C015": {
+   "df": -3
+  },
+  "C016": {
+   "df": 5
+  },
+  "C017": {
+   "df": -10
+  },
+  "C018": {
+   "dt": -4
+  },
+  "C019": {
+   "df": 10
+  },
+  "C022": {
+   "df": 7
+  },
+  "C023": {
+   "revoke": true
+  },
+  "C024": {
+   "df": 5
+  },
+  "C025": {
+   "df": -10
+  },
+  "C027": {
+   "df": 10
+  },
+  "C028": {
+   "df": -4
+  },
+  "C029": {
+   "df": -10
+  },
+  "C030": {
+   "df": 9
+  },
+  "C031": {
+   "dt": 3
+  },
+  "C032": {
+   "df": 10
+  },
+  "C033": {
+   "df": -6
+  },
+  "C034": {
+   "df": 7
+  },
+  "C035": {
+   "df": 8
+  },
+  "C037": {
+   "df": -9
+  },
+  "C039": {
+   "dt": -1
+  },
+  "C041": {
+   "df": 7
+  },
+  "C042": {
+   "df": 10
+  },
+  "C045": {
+   "df": -10
+  },
+  "C046": {
+   "dt": 2
+  },
+  "C047": {
+   "df": 8
+  },
+  "C048": {
+   "df": 6
+  },
+  "C049": {
+   "df": 4
+  },
+  "C050": {
+   "dt": 1
+  },
+  "C051": {
+   "dt": -5
+  },
+  "C052": {
+   "df": 6
+  },
+  "C053": {
+   "dt": -2
+  },
+  "C054": {
+   "df": 3
+  },
+  "C055": {
+   "df": -5
+  },
+  "C057": {
+   "df": 8
+  },
+  "C058": {
+   "df": -7
+  },
+  "C059": {
+   "df": 2
+  },
+  "C060": {
+   "dt": 2
+  },
+  "C062": {
+   "df": 8
+  },
+  "C063": {
+   "df": -2
+  },
+  "C064": {
+   "df": 6
+  },
+  "C065": {
+   "df": -9
+  },
+  "C066": {
+   "dt": 4
+  },
+  "C067": {
+   "df": -6
+  },
+  "C068": {
+   "dt": 2
+  },
+  "C069": {
+   "df": 5
+  },
+  "C070": {
+   "df": -6
+  },
+  "C071": {
+   "df": 5
+  },
+  "C072": {
+   "df": 4
+  },
+  "C073": {
+   "df": -10
+  },
+  "C075": {
+   "df": 10
+  },
+  "C076": {
+   "df": 2
+  },
+  "C077": {
+   "df": 10
+  },
+  "C079": {
+   "df": 7
+  },
+  "C082": {
+   "df": 10
+  },
+  "C085": {
+   "df": -6
+  },
+  "C086": {
+   "dt": -2
+  },
+  "C087": {
+   "df": -10
+  },
+  "C089": {
+   "df": 10
+  },
+  "C090": {
+   "df": -3
+  }
+ },
+ "objective_tuple": [
+  10,
+  109,
+  2109,
+  732
+ ],
+ "objective_scalar": 10010921090732,
+ "revocation": {
+  "upper_incumbent": 10,
+  "proven_lb": 4,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": null,
+    "source": "cpsat_bound_L1",
+    "status": "FEASIBLE",
+    "lb": 4
+   },
+   {
+    "cap": 0,
+    "status": "INFEASIBLE",
+    "source": "infeasibility_probe"
+   },
+   {
+    "cap": 9,
+    "status": "UNKNOWN",
+    "source": "probe_timeout"
+   }
+  ],
+  "ladder_log": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "locks": {},
+    "min": "R",
+    "cap_R": null,
+    "wall_cum": 817.0,
+    "objective": 10.0,
+    "best_bound": 4.0,
+    "solution_tuple": [
+     10,
+     129,
+     2444,
+     758
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "locks": {},
+    "min": null,
+    "cap_R": 0,
+    "wall_cum": 843.6
+   },
+   {
+    "layer": "ladder_Rle9",
+    "status": "UNKNOWN",
+    "locks": {},
+    "min": "R",
+    "cap_R": 9,
+    "wall_cum": 908.3
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 10
+    },
+    "min": "A",
+    "cap_R": null,
+    "wall_cum": 1211.8,
+    "objective": 109.0,
+    "best_bound": 8.0,
+    "solution_tuple": [
+     10,
+     109,
+     2109,
+     732
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "UNKNOWN",
+    "locks": {
+     "R": 10,
+     "A": 109
+    },
+    "min": "PL",
+    "cap_R": null,
+    "wall_cum": 1320.2
+   }
+  ]
+ },
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "FEASIBLE",
+   "locks": {},
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 817.0,
+   "objective": 10.0,
+   "best_bound": 4.0,
+   "solution_tuple": [
+    10,
+    129,
+    2444,
+    758
+   ]
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "INFEASIBLE",
+   "locks": {},
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 843.6
+  },
+  {
+   "layer": "ladder_Rle9",
+   "status": "UNKNOWN",
+   "locks": {},
+   "min": "R",
+   "cap_R": 9,
+   "wall_cum": 908.3
+  },
+  {
+   "layer": "L2_minA",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 10
+   },
+   "min": "A",
+   "cap_R": null,
+   "wall_cum": 1211.8,
+   "objective": 109.0,
+   "best_bound": 8.0,
+   "solution_tuple": [
+    10,
+    109,
+    2109,
+    732
+   ]
+  },
+  {
+   "layer": "L3_minPL",
+   "status": "UNKNOWN",
+   "locks": {
+    "R": 10,
+    "A": 109
+   },
+   "min": "PL",
+   "cap_R": null,
+   "wall_cum": 1320.2
+  }
+ ]
+}

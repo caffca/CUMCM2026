@@ -1,0 +1,150 @@
+{
+ "G1_empty_strip_attribution": {
+  "edge": [
+   "C033",
+   "C043"
+  ],
+  "band_overlap": 1,
+  "t0": [
+   252,
+   253
+  ],
+  "delta_t1": -1,
+  "feasible_dg_pairs_with_643": [],
+  "feasible_dg_pairs_without_horizon": [],
+  "claim": "无任何 (g'_i,g'_j) 组合可消解（R3 视界截断所致）",
+  "empty_under_643": true,
+  "empty_without_horizon": true,
+  "verdict": "归因成立（与视界无关，是同余/带宽结构本身）",
+  "separable_by_df_dt_sample": [
+   [
+    "df:-10",
+    "df:-5"
+   ],
+   [
+    "df:-10",
+    "df:-4"
+   ],
+   [
+    "df:-10",
+    "df:-3"
+   ],
+   [
+    "df:-10",
+    "df:-2"
+   ]
+  ]
+ },
+ "G2_shrink_kind_preference": {
+  "n_adjusted_plans": 43,
+  "n_improvable_same_pass": 7,
+  "first_examples": [
+   {
+    "plan": "A013",
+    "current": {
+     "df": -7
+    },
+    "better": {
+     "dt": -4
+    },
+    "cur_mag": 7,
+    "new_mag": 4,
+    "kind": "dt",
+    "cls": "A"
+   },
+   {
+    "plan": "C013",
+    "current": {
+     "dt": 4
+    },
+    "better": {
+     "dg": 1
+    },
+    "cur_mag": 4,
+    "new_mag": 1,
+    "kind": "dg",
+    "cls": "C"
+   },
+   {
+    "plan": "C032",
+    "current": {
+     "df": 9
+    },
+    "better": {
+     "dg": -1
+    },
+    "cur_mag": 9,
+    "new_mag": 1,
+    "kind": "dg",
+    "cls": "C"
+   },
+   {
+    "plan": "C059",
+    "current": {
+     "dt": 5
+    },
+    "better": {
+     "dg": 1
+    },
+    "cur_mag": 5,
+    "new_mag": 1,
+    "kind": "dg",
+    "cls": "C"
+   },
+   {
+    "plan": "C081",
+    "current": {
+     "dt": 2
+    },
+    "better": {
+     "dg": 1
+    },
+    "cur_mag": 2,
+    "new_mag": 1,
+    "kind": "dg",
+    "cls": "C"
+   },
+   {
+    "plan": "C082",
+    "current": {
+     "df": 3
+    },
+    "better": {
+     "dg": -2
+    },
+    "cur_mag": 3,
+    "new_mag": 2,
+    "kind": "dg",
+    "cls": "C"
+   },
+   {
+    "plan": "C087",
+    "current": {
+     "df": 3
+    },
+    "better": {
+     "dt": -2
+    },
+    "cur_mag": 3,
+    "new_mag": 2,
+    "kind": "dt",
+    "cls": "C"
+   }
+  ],
+  "tuple_before": [
+   66,
+   43,
+   1111,
+   144
+  ],
+  "tuple_after": [
+   66,
+   43,
+   1111,
+   123
+  ],
+  "mag_reduction": 21,
+  "lexicographically_better": true,
+  "note": "R22 收缩偏序 (df<dt<dg, |v|) 不是题面第四级（Σ|δ| 与动作类型无关）；上表证明存在保持零冲突的更小幅度动作 ⇒ 交付解的幅度层被实现规则抬高。"
+ }
+}

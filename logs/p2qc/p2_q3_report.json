@@ -1,0 +1,55 @@
+{
+ "check": "Q3_solution 独立复算",
+ "c_plan_template": {
+  "CW": 3,
+  "CD": 2,
+  "CG": 8,
+  "CN": 12,
+  "period": 10,
+  "f0_allowed": [
+   0,
+   97
+  ],
+  "t0_allowed": [
+   0,
+   531
+  ]
+ },
+ "selected_rows_mine": 140,
+ "phi_auth": 140,
+ "rows_auth": 140,
+ "phi_eq_rows": true,
+ "duplicate_selected": false,
+ "domain_violations": [],
+ "conflicts_vs_base_mine": 0,
+ "conflicts_vs_base_auth": 0,
+ "conflicts_internal_mine": 0,
+ "conflicts_internal_auth": 0,
+ "base_plans_used": 144,
+ "cand_universe_mine": 2270,
+ "cand_universe_grid": 52136,
+ "n_cand_auth": 2270,
+ "cand_count_second_impl_auth": 2270,
+ "cand_equal_auth": true,
+ "selected_subset_of_candidates": true,
+ "selected_not_in_candidates": [],
+ "maximality_1_add_addable": [],
+ "addable_count": 0,
+ "sha_mine": "33d6c1f3e7e27026b9104ccfcad6319eac9ea6a9afa9e478331d14961c2177f8",
+ "auth_selected_sha256": "33d6c1f3e7e27026b9104ccfcad6319eac9ea6a9afa9e478331d14961c2177f8",
+ "ub_auth": {
+  "ub_phase": 335,
+  "ub_density": 676,
+  "ub_lp": 1135.5,
+  "ub_cp": 140.0,
+  "ub_min": 140.0,
+  "gap_certified": 0.0,
+  "status": "OPTIMAL",
+  "proven_optimal": true
+ },
+ "free_cells_mine": 48700,
+ "base_distinct_cells_mine": 15600,
+ "density_upper_bound_check": 676,
+ "sha_equal_auth": true,
+ "verdict": "PASS"
+}

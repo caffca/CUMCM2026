@@ -1,0 +1,703 @@
+{
+  "child_run_id": "CH-05",
+  "role": "bound_scout",
+  "question_ids": ["Q1", "Q2", "Q3", "Q4"],
+  "routes": [
+    {
+      "idea_id_suggested": "Q1-R51",
+      "question_id": "Q1",
+      "tier": "recommended_solution",
+      "method_family": "graph_combinatorial",
+      "problem_reformulation": "把冲突检测改写为两个正交交叠关系的交：|E| = |B ∩ T|，其中 B=频段区间交叠关系、T=周期时间占用位集交叠关系；答案的合法性由『三套相互独立实现给出同一边集』与『边集规模被可解析复算的界夹住』共同担保。",
+      "model": {
+        "family": "二部正交关系交（区间图 ∩ 周期位图）",
+        "representation": "冲突图 G=(V,E)，|V|=150（F-013）；E = {(i,j): band_overlap(i,j) ∧ time_overlap(i,j)}（F-006，半开区间 [a,b) 口径 F-023，周期占用 slot_k=[t1+(k-1)(g+d),+d) 口径 F-005）",
+        "decision_variables": ["无决策变量：y_ij ∈ {0,1} 为待判定的指示量（由两轴判据唯一确定）"],
+        "objective_id": "Q1-C1（冲突对枚举完整且精确）/ Q1-C3（统计数字与 JSON 逐项命中）",
+        "constraint_ids": ["F-001", "F-005", "F-006", "F-013", "F-023", "Q1-F014"],
+        "equations_summary": "band_overlap(i,j) ⟺ min(fhi_i,fhi_j) − max(flo_i,flo_j) > 0；time_overlap(i,j) ⟺ bits_i ∧ bits_j ≠ ∅，bits_p = ∪_k [t1+(k-1)(g+d), +d)。界层：UB1=|E|≤min(|B|,|T|)；重数界 share_sum=Σ_b C(n_b,2)=Σ_{(i,j)∈B}|band_i∩band_j| ⇒ |B| ∈ [⌈share_sum/share_max⌉, share_sum]；分层恒等式 Σ_{类对∈{AA,AB,AC,BB,BC,CC}} |E_类对| = |E|。"
+      },
+      "transformations": ["两轴正交分解（频段轴 × 时间轴）", "位集（bitset）表示替代逐时段枚举", "按类别分层 + 和恒等式自校验", "三实现独立复算（同一命题不同算法）"],
+      "solver": {
+        "family": "确定性组合枚举（无求解器）",
+        "algorithm": "实现A=位集交叠 O(n²·W_word)（numpy/Python int 位运算）；实现B=逐计划逐次展开到时间格后按频段做扫描线（O(Σ 占用格) + 排序）；实现C=按类残差判据枚举（见 Q1-R52）；三者输出边集做集合等式比对",
+        "fit_reason": "F-006 把冲突定义为『频段交叠 ∧ 时间交叠』的合取，F-001/F-023 把频段与时间都离散为整数半开区间（F-003 时间为 Δt 整数倍），因此两轴可各自独立判定再取交；F-013 的 150 规模使 O(n²)=11175 对的穷举在毫秒级完成，位集与扫描线两种口径可直接互为证书。",
+        "stopping_rule": "三实现边集完全相等（对称差为空）且界层检查（min(|B|,|T|) ≥ |E| ≥ 残差强制数）全部通过，即停止；任一不等式被违反则不输出结论并转排查口径。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "无随机性；记录输入文件与 SHA-256（附件1=b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c）、Python/numpy 版本、脚本哈希，保证逐位可复现。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "强制冲突团计数（可证）：类内 (g,d) 齐次（探针实测 A 全部 (60,5)、B 全部 (40,3)、C 全部 (8,2)）⇒ 同类两计划时间窗完全同余（Δt1 mod P = 0）且频段交叠时必然冲突，构成可解析计数的完全子图；LB = Σ_类 #{(i,j): 残差同余 ∧ 带交叠}，为 |E| 的合法下界。",
+        "upper_bound_method": "两轴独立界 UB = min(|B|, |T|)，其中 |B| 由频段列重数夹逼 Σ_b C(n_b,2) 与 share_max 给出（可手算复核），|T| 由时间位集交叠计数给出；UB 只作规模审计，不作答案。",
+        "gap_metric": "gap_abs = UB − |E|（并记录 gap_rel = gap_abs/UB）；同时记录三实现对称差 |A△B|、|A△C|（应为 0）。",
+        "gap_threshold": "完全性判据阈值：三实现对称差 = 0（严格，否则 Q1 不得交付）；审计界阈值：|E| ≤ min(|B|,|T|) 与 |E| ≥ 残差强制数必须同时成立（探针口径下 |E|=297，min(|B|,|T|)=1352，故审计界是宽松的必要条件而非紧界，不得据此宣称最优）。",
+        "proof_possible": "可证（完全枚举型）：对全部 11175 对做穷举 + 判据可解析复算 ⇒ 结论『冲突对集合完全且无伪』在有限步内可验证，属可判定命题；但 min(|B|,|T|) 这类松弛界不紧，只能用于错误探测。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "边界用例：恰好相邻 [80,90) 与 [90,95)（半开不冲突）、末次占用超出时间视界的计划（F-005 末窗 t=621/643 口径）、间隔 g 与次数 n 的极值 8/60 与 3/12（探针实测区间 [8,60]/[3,12]）",
+          "位集正确性：随机抽 20 对，用逐时段展开复核位运算结果一致",
+          "分层恒等式：AA+AB+AC+BB+BC+CC = |E|（探针值 21+66+181+10+19+0=297，与题面无冲突数先验不符，故仅作内部一致性检查）",
+          "界有效性自检：断言 LB ≤ |E| ≤ UB 成立；若 LB > |E| 说明残差判据推错（此为 CH-05 在 Q3 上真实踩到的失效模式，见 Q3-R51）",
+          "孤立点核对：|E| 端点覆盖数应与题面一致（探针 148/150 涉及，2 个孤立点）"
+        ]
+      },
+      "required_assumptions": [
+        "冲突判定仅按 F-006 的两轴合取，不引入同频干扰等题面未给出的规则",
+        "频段与时间均为左闭右开半开区间（F-023、F-005 示例 A001 推算）",
+        "使用次数 n 次占用由 (t1, g, d) 唯一决定，无停止时刻限制（末窗可越过既有最晚结束点，题面未禁止）",
+        "同一对计划只计一次冲突（不按冲突时段/冲突频段重复计数）——若 result1 模板要求按时段展开则改为边×时段三元组，需在正式实现前按附件2模板冻结"
+      ],
+      "failure_conditions": [
+        "三实现对称差非空 ⇒ 存在实现或口径错误，Q1 结论作废并重做",
+        "LB > |E| 或 |E| > UB ⇒ 界推导或判据错误（提示半开/闭区间或次数展开口径不一致）",
+        "逐时段展开与位集在末窗越界处不一致 ⇒ 时间视界口径需先冻结（common_input 内 621 与 643 两个值并存，见 computed_data_facts.horizon_note 与 T_MAX_delta_t）",
+        "result1.xlsx 模板列结构与题面统计口径不一致 ⇒ 只影响 Q1-C2，不改判边集"
+      ],
+      "strengths": [
+        "结论是有限可判定命题，可给出完全性证书而非概率性信心",
+        "三种独立算法互为对照，符合 Q1-C1 acceptance_rule 的双实现+独立 checker",
+        "界层虽松，但对『漏判/重判』类错误极敏感（任何一边集差异都会破坏分层恒等式）"
+      ],
+      "weaknesses": [
+        "min(|B|,|T|) 类审计界在本题数据上松约 4.5 倍（探针 297 vs 1352），不能用于论证答案规模合理性",
+        "穷举 O(n²) 对 150 规模无压力，但若后续扩展到多附件/多方案对比需改用扫描线",
+        "界论证对『不冲突』的方向没有信息量（UB 只能证伪，不能证实唯一性）"
+      ],
+      "validation_plan": [
+        "code/q1_detect.py 输出边集 + results/Q1_detect.json；code/q1_verify.py 用第二实现（扫描线）复算并断言集合相等",
+        "把 |B|、|T|、share_sum、share_max、度序列、分层计数写入 results/Q1_stats.json 的 _meta，供论文数字双向追溯",
+        "对 3 类对（AB/AC/BC 各 1 对）在论文中给出人工可核算的交叠区间算式，作为可复核证书样例"
+      ],
+      "complexity": "low",
+      "interpretability": "high",
+      "implementation_risk": "low",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q1-R52",
+      "question_id": "Q1",
+      "tier": "advanced_alternative",
+      "method_family": "analytic_mechanistic",
+      "problem_reformulation": "把时间冲突判定化为同余方程可解性：同类 (g,d) 齐次 ⇒ 时间交叠 ⟺ 一次项起点差 Δ 满足 Δ ≡ r (mod P) 且 r ∈ {−(d−1),…,d−1}（跨类则用 gcd(P_i,P_j) 判定残差可达集）；于是冲突对计数变成『端点不等式（频段）× 残差类计数（时间）』的有限求和。",
+      "model": {
+        "family": "周期同余 / 中国剩余型可达残差计数",
+        "representation": "每计划映射到三元组 (频段区间 [flo,fhi), 周期 P=g+d, 残差类 t1 mod P)；冲突 ⟺ 区间交叠 ∧ 残差差 ∈ 冲突残差集 R(d)  ∧ 窗序可达（|k−k'| ≤ n−1）",
+        "decision_variables": ["无（解析计数）；辅助计数变量 m_c(r) = 类 c 中残差为 r 的计划数"],
+        "objective_id": "Q1-C1 / Q1-C3（作为独立第三实现的闭式核对）",
+        "constraint_ids": ["F-001", "F-003", "F-005", "F-006", "F-013", "F-023"],
+        "equations_summary": "同类（P_i=P_j=P, d_i=d_j=d）：time_overlap ⟺ ∃k,k'∈[0,n−1]: |Δt1 − P(k−k')| < d ⇔ Δt1 mod P ∈ S_d 且 |Δt1| 的商部分不超出窗序可达范围。跨类：周期取 A=65、B=43、C=10（探针实测 g+d），gcd(65,43)=1、gcd(65,10)=5、gcd(43,10)=1、lcm(65,43,10)=5590 ⇒ 仅 A-C 类对可按 5 的陪集网格压缩，A-B 与 B-C 因互质无残差压缩空间；闭式给出类内精确计数，跨类以残差格双重和表达（A-C 可化简，其余需穷举）。"
+      },
+      "transformations": ["按类分层（A/B/C 内部 (g,d) 齐次）", "模 P 残差桶计数", "频段端点排序 + 前缀计数（把区间交叠对数化为一维求和）", "闭式与穷举互为交叉证书"],
+      "solver": {
+        "family": "解析计数（组合闭式）+ 精确整数求和",
+        "algorithm": "步骤1 统计每类残差直方图 m_c(r)（探针：A P=65 有 16 个非空残差、含 3 处重复（res=60 有 3 部）；B P=43 有 30 个非空残差、10 处重复；C P=10 十个残差全占用且高度重复，如 res=5 有 17 部）；步骤2 类内对数 = Σ_{r} C(m_c(r) 与冲突残差邻域)× 频段交叠判据求和；步骤3 跨类以 (P_i,P_j) 网格双重和；步骤4 与 Q1-R51 的边集做集合等式比对",
+        "fit_reason": "F-013 的三类 150 部装备在题面附件中按类给出统一的间隔与时长（探针实测每类 (g,d) 唯一），使 F-005 的周期占用退化为同一周期的平移副本，从而时间判据可约化为同余条件；这是 Q1 中唯一能给出『可手算闭式』的结构，故可作为独立证书实现。",
+        "stopping_rule": "闭式计数与穷举边集在 |E| 与每个类对分层计数上完全相等即停止；任一不等 ⇒ 判定为闭式推导（窗序可达项）写错，降级为参考实现。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "无随机；固定输入快照与脚本哈希即可复现全部整数求和。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "类内残差同余强制冲突数：残差相同（Δ≡0）且频段交叠 ⇒ 冲突（完全子图，可证）；给出 LB 的解析闭式（例：C 类 90 部分布在 10 个残差类 ⇒ 类内强制对数 = Σ_r C(m(r),2) 再乘频段交叠比例）。",
+        "upper_bound_method": "去掉窗序可达约束（放宽为允许任意 k−k' ∈ ℤ）⇒ 同一残差邻域内的对全部计为时间交叠，给出 |T| 的解析上界；再与频段一维前缀界相乘得 |E| 上界。",
+        "gap_metric": "闭式 |E_analytic| 与穷举 |E_enum| 的绝对差（期望 0）；以及 LB/UB 与 |E| 的相对宽度。",
+        "gap_threshold": "严格阈值 0（闭式必须逐类对上穷举）；若残差可达近似导致非零差，则本路线只保留为『界与结构说明』，不得作为答案实现。",
+        "proof_possible": "类内可证（同余 + 端点不等式均为初等整数论，可写成论文中的可复核推导）；跨类因窗序有限（n 次）与视界截断，闭式只对『放宽模型』可证上界，对原模型需与枚举一致后才成立。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "C 类残差全占（10/10）⇒ 类内强制冲突最多（探针 CC=19），用于检查残差判据方向",
+          "视界截断项：末窗超过最晚结束点的计划是否被闭式误计",
+          "gcd 结构核对：跨类残差可达集是否真的按 gcd(P_i,P_j) 陪集分层（探针 gcd(43,10)=1 ⇒ 该类对无法用单残差条件压缩）",
+          "有效性自检：LB ≤ 枚举值 ≤ UB（CH-05 在 Q3 上曾因上界小于构造解而发现界错误，此处设同一硬门）"
+        ]
+      },
+      "required_assumptions": [
+        "每类 (g,d) 在附件1 中齐次（探针基于 common_input.plans_table_compact 实测；正式实现必须先在 code 中断言该性质，若不成立则本路线失效）",
+        "时间起点 t1 与次数 n 使窗序可达范围可精确写出（k−k' 的取值集合不受视界截断影响）",
+        "使用次数不因平移而裁剪（与 F-009 一致：次数不得调整）"
+      ],
+      "failure_conditions": [
+        "类内 (g,d) 不齐次 ⇒ 同余判据不可用，路线直接淘汰（不是调参可救）",
+        "闭式与枚举出现 1 对以上差异 ⇒ 窗序/视界项写错；若两次修正仍不一致，本路线降级为附录性结构讨论",
+        "跨类闭式复杂度（双重和带可达性修正）膨胀到无法手算 ⇒ 只保留类内部分"
+      ],
+      "strengths": [
+        "提供论文中稀缺的『可手算闭式』证据链，使 Q1 结论的可复核性不依赖单一实现",
+        "天然给出类内冲突团的下界，为 Q2 的撤销下界论证提供结构（哪些对是结构性必然冲突）",
+        "与实现 A/B 完全不同的算法范式，满足 Q1-C1 的独立复核要求"
+      ],
+      "weaknesses": [
+        "跨类（AB/AC/BC，占探针冲突的 268/297）闭式最复杂、收益最低，主要靠类内结构",
+        "依赖数据齐次性这一经验事实，属『结构性巧合』而非题面保证，需显式断言",
+        "对 result1 的行级输出无直接帮助（仍需枚举）"
+      ],
+      "validation_plan": [
+        "code/q1_closed_form.py 输出类内/跨类分层计数 + 与 q1_detect 的等式断言",
+        "results/Q1_stats.json 增加 analytic_vs_enum 一致性字段（0 差为 PASS），并在论文推导节给出残差直方图表",
+        "断言类内 (g,d) 齐次性的前置检查写入 results 元数据（若失败即记 failure_class=formulation_assumption_violated）"
+      ],
+      "complexity": "medium",
+      "interpretability": "high",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q2-R51",
+      "question_id": "Q2",
+      "tier": "recommended_solution",
+      "method_family": "operations_research",
+      "problem_reformulation": "把消解改写为『每计划选一个合法终态』的 CSP：动作集 A_i={恒等} ∪ {Δf: 1≤|Δf|≤10, 平移后仍在 0..99} ∪ {Δt: 1≤|Δt|≤5} ∪ {撤销}；对每一对『存在某组动作仍冲突』的计划加入成对不相容子句；先用强制撤销预算 r=0,1,2,… 的可行性阶梯（INFEASIBLE 即证书）钉住第一目标层，再用 CP-SAT 的 BestObjectiveBound 与 incumbent 夹逼其余层。",
+      "model": {
+        "family": "带枚举动作列的约束可满足/约束优化（列表着色型冲突消解）",
+        "representation": "布尔 x_{i,a}（Σ_a x_{i,a}=1）；成对子句 ¬x_{i,a}∨¬x_{i,b'} 对每一对使 (i,j) 仍冲突的动作组合生成（F-006 判据）；撤销变量 r_i=x_{i,REVOKE}",
+        "decision_variables": ["x_{i,a} ∀i∈150, a∈A_i（探针列数 4597＝去重恒等动作后；若同时保留 (f,0) 与 (t,0) 两个恒等动作则为 4747，重复恒等会让分数解以 0.5/0.5 零代价满足全部成对行，见 Q2-R53 自检）", "r_i（撤销指示）", "adj_i, m_i=|Δ|, pri_i（派生）"],
+        "objective_id": "Q2-C3 目标链 lex(revoke, adjusted, priority(A>B>C 保持), magnitude)（F-010、F-012、Q2-F011）",
+        "constraint_ids": ["F-002", "F-006", "F-007", "F-008", "F-009", "F-012", "F-023", "Q2-C1", "Q2-C2"],
+        "equations_summary": "min lex(Σr_i, Σ adj_i, Σ_{i∈A∪B} adj_i, Σ|Δ_i|) s.t. AddExactlyOne_i, x_{i,a}+x_{j,b}≤1 ∀(i,j)∈候选对, ∀(a,b) 使 band_overlap∧time_overlap 成立；候选对 = 频段可达区间相交 ∧ 时间可达包络相交（探针规模：候选对 1525、成对行 265188、列 4597）。"
+      },
+      "transformations": ["逐边可修性预筛（把 11175 对压到 ~1500 候选对，需可证完备）", "lex 目标 → 分层求解或大权重标量化（权重合法性条件 W1 > n_max·W2 必须写入断言）", "先固定第一层再优化后层（阶梯式）", "LP 松弛并行跑，作为独立界来源"],
+      "solver": {
+        "family": "CP-SAT（ortools 9.15，可用）+ LP（GLOP/SCIP）双轨",
+        "algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+        "fit_reason": "F-008『只能调一个参数或撤销』使每计划的终态天然离散可枚举（探针 |A_i|≤32），把连续平移决策转成 150 选 1 的列表着色结构；F-006 的合取判据使两两约束可预计算为常数表（时间占用按 F-005 完全由 (t1,g,d,n) 决定，无隐藏状态）；F-012 的 10Δf/5Δt 上限把动作幅封闭成有限集，故 CP-SAT 的 OPTIMAL/INFEASIBLE 是离散可判定证书，而不是启发式信心。",
+        "stopping_rule": "阶段1 首个 k 使 status=INFEASIBLE 即停（LB=k+1）；阶段2 在 600s/路线预算内到 OPTIMAL 即停，否则以 FEASIBLE + bound 报告 certified interval；任一阶段先须通过独立 checker 的 0 残留冲突断言。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "cp_model 固定 random_seed=0、log_search=0、num_workers=8（记录 worker 数，因 LP 界与并行策略有关）；同机同版本重跑断言 obj 逐位一致。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "三层可复核下界：(i) 强制不撤销（Σr≤k）可行性阶梯的 INFEASIBLE 证书（离散可判定，探针：k=0 的纯可行性模型返回 INFEASIBLE（单模型求解约 10s，同脚本累计 220s） ⇒ 撤销数 ≥1 成立；且『漏加子句只会放松模型』，故 INFEASIBLE 结论对完整模型方向安全）；(ii) 成对不相容 LP 的 BestObjectiveBound（分数界，探针：min Σr → LB=0，说明 LP 分数解对撤销层无区分力，必须靠阶梯或整数割）；(iii) 前沿界 LB_adj(k)：固定 Σr≤k 时的 adjusted 分数界（探针：k=0→71.20（整数 ⌈·⌉=72），k=1→70.17，k=2→69.15，k=3→68.13）。",
+        "upper_bound_method": "CP-SAT incumbent（独立 checker 复验通过）给各层上界；另跑一个『零撤销启发式可行解/或撤销最少贪心解』作为可执行上界对照，探针口径下成对子句全模型 200s 得 (revoke=10, adjusted=110, magnitude=571) 且因候选对剪枝不完备残留 11 对冲突 —— 该教训要求『上界必须经 checker 复验』。",
+        "gap_metric": "每层整数差 gap_j = UB_j − LB_j（重点第一层 gap_revoke），并报告总标量化 gap/W1 的等价撤销当量。",
+        "gap_threshold": "交付标准：gap_revoke = 0（阶梯证书与 incumbent 会合）且 adjusted 层给出 bound 或明确标注未闭合；若 600s 内 gap_revoke > 0，论文只能写『在 [LB,UB] 区间内』并给出证书脚本，禁止写『最优』（对应 Q2-C3 的 acceptance_rule 要求『CP-SAT 最优性状态 + 撤销数下界论证』）。",
+        "proof_possible": "部分可证：撤销层可通过有限次 INFEASIBLE 探测达到完全证明（每步是 CP-SAT 验证过的证明）；adjusted/priority/magnitude 层依赖 CP-SAT 内部 LP 界，通常给出区间而非等号；纯组合界（团/匹配/度）在本实例实测为 0（见 Q2-R52），不可指望。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "候选对剪枝的可证完备性：必须满足『若 (i,j) 在某组合法动作下会冲突，则 (i,j) 必在候选对内』（探针曾出现过剪枝不完备→残留 11 对冲突，据此把该项设为硬门）",
+          "大权重合法性断言：W1 > 150·W2，W2 > 150·W3，W3 > 1500·W4（否则标量化不再代表 lex 序）",
+          "禁止列剪枝破坏完备性：只保留『至少修好一条原边』的动作列会给出虚假更优解（探针：列剪枝模型 79s 报 OPTIMAL=(0,98,585) 但残留 121 对冲突）",
+          "独立 checker：对输出方案重跑 Q1 检测器，要求返回 0 对；逐行断言 |Δf|≤10、|Δt|≤5、次数不变、间隔不变、频段∈[0,100)",
+          "稳定性：3 次同参重跑（replicates=3）比较 obj 与 bound，记录是否逐位一致"
+        ]
+      },
+      "required_assumptions": [
+        "F-008 解释为『每个计划至多改变一个参数（或撤销）』，恒等动作允许存在",
+        "平移幅度按 |新起点−旧起点| 计（F-012 note），且平移后频段仍落在 0..99（F-001）",
+        "lex 链中 priority 层解释为『先保 A 再保 B 再保 C』（F-010），与 adjusted 层的先后次序需在正式建模前冻结并登记决策账本",
+        "新产生的冲突同样禁止（F-006/F-007 的『消解后不存在时频冲突』是对终态全体计划的断言，而非仅对原冲突对）"
+      ],
+      "failure_conditions": [
+        "600s 内第一层阶梯无法闭合（LB<UB）⇒ 退到 Q2-R52/Q2-R53 的组合+LP 界组合，并在论文中只报区间",
+        "候选对规模膨胀（跨类可达对远大于探针 1525）⇒ 改为按频段分带的局部模型 + 一致性缝合",
+        "CP-SAT 返回 FEASIBLE 但 checker 发现残留冲突 ⇒ 视为模型/剪枝 bug（不是『接近可行』），必须修模型而非放宽验收",
+        "INFEASIBLE 阶梯显示不存在任何满足 F-008/F-012 的零冲突终态（即使 r 很大）⇒ 题面口径理解有误，立即上报而不是继续调权重"
+      ],
+      "strengths": [
+        "直接产出 Q2-C3 acceptance_rule 点名的两类证据（最优性状态 + 撤销数下界论证）",
+        "证书可机器复核：INFEASIBLE 证明 + 独立 checker，避免『启发式说自己是最好』",
+        "同一模型天然给出与启发式对照的上界，也可为 Q3 提供冻结基线"
+      ],
+      "weaknesses": [
+        "模型规模由候选对数控制，剪枝一旦不完备就产生不可信结论（探针已实证该风险）",
+        "编码选择直接决定『能否证明』：探针对比显示，同一问题的『频段列 NoOverlap 编码』（190590 个可选区间实例）在 253s 内仅到 FEASIBLE 且等价撤销层界≈0，而『成对不相容子句编码』（26.5–27.8 万子句）在 210s 内给出 incumbent（revoke=10/adjusted=110/magnitude=571）且对 r=0 判 INFEASIBLE ⇒ 本路线必须以子句编码为基座，列编码只可用于可行性生成",
+        "lex 标量化对权重设置敏感，写错即改变问题",
+        "adjusted/priority/magnitude 层的最优性证明可能无法在预算内闭合"
+      ],
+      "validation_plan": [
+        "code/check_q2.py：0 冲突（复用 Q1 检测器）+ 逐行合规断言（F-008/F-012/F-001）",
+        "results/Q2_solution.json 增加 certificate 字段：{status, objective, best_bound, ladder:[{k,status}], checker_pass, weights}",
+        "results/Q2_table1.json 与 result2.xlsx 行级一致性（Q2-C4）",
+        "reports/decisions/MODEL_SELECTION_DECISION.json 记录 lex 权重与优先级层解释的取舍"
+      ],
+      "complexity": "high",
+      "interpretability": "high",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q2-R52",
+      "question_id": "Q2",
+      "tier": "advanced_alternative",
+      "method_family": "graph_combinatorial",
+      "problem_reformulation": "把『撤销数下界』改写为冲突图族上的结构界问题：在原始冲突图 G 上算 ω/ν/度界与分数顶点覆盖 τ*，在『动作可达冲突图 G′』上算 packing 与相位容量 pigeonhole 界；先用可证判据排除无信息量的界，再只对不平凡的界出论文证据。",
+      "model": {
+        "family": "冲突图 + 顶点覆盖/独立集/团划分与容量打包界",
+        "representation": "G=(V,E) 原冲突图（|E|=297，探针 max degree 8、平均 3.96、2 个孤立点）；H=强制撤销核图：{(i,j): 任一组合法动作都无法消除 (i,j) 的冲突}；G′=(V,E′) 动作可达冲突图（探针 |E′|=1525）",
+        "decision_variables": ["无优化变量（界计算本身为多项式或整数规划子问题）", "辅助：匹配 M、团 K、分数顶点覆盖 w_i∈[0,1]"],
+        "objective_id": "Q2-C3 的『撤销数下界论证』分量",
+        "constraint_ids": ["F-006", "F-008", "F-012", "F-001", "F-010"],
+        "equations_summary": "τ(H) ≤ |R*|（撤销数）成立的前提是 H 的每条边都『任何动作组合都修不掉』⇒ |R*| ≥ ν(H) ≤ ω(H)−1 ≤ τ(H)；分数界 τ*(G′) 由 LP min Σw s.t. w_i+w_j≥1 给出；容量 pigeonhole：某频段列 b 上可达该带的计划集合 S_b 与每带可容纳的互不相容图案数 cap_b  ⇒ |R*| ≥ Σ_b(|S_b|−cap_b) 的可行整数部分（需按 3 带窗口做双计数修正）。"
+      },
+      "transformations": ["先做『逐边单端可修性』判定以筛出强制核 H", "对 H 求极大匹配/极大团（小规模精确，用网络流或 Bron–Kerbosch）", "对 G′ 求分数顶点覆盖 LP 与最小度界", "按频段列做相位容量双计数（借 Q1-R52 的同余结构）"],
+      "solver": {
+        "family": "组合算法 + 线性规划（networkx / scipy / GLOP）",
+        "algorithm": "① 对每条 e=(i,j) 枚举 A_i×A_j（≤32×32）判断是否可修（探针结论：297/297 条边都可由单端动作修好 ⇒ H=∅）；② ν(H)、ω(H)、τ(H) 在 H=∅ 时恒为 0；③ τ*(G′) 与度界 Σ min(deg) 给出调整层参考界；④ pigeonhole：用 Q3 的相位×块容量界反向给出『必须移走多少计划』的候选下界并检查是否非零",
+        "fit_reason": "F-006 使 G 是良定义的两轴合取图，F-013 的 150 规模允许对 A_i×A_j 全组合（~100 万次判据）在秒级完成，从而『哪条边在任何动作下都修不掉』可被穷举判定而非估计；这一步是界有效性的前提（CH-05 实测发现该核为空，直接否证了常见『用团数论证撤销下界』的写法）。",
+        "stopping_rule": "若 H=∅ 则立刻停止团/匹配路线并如实记录『界为 0、不可用于撤销下界论证』；若 H≠∅ 则求 ν(H)（多项式）与 ω(H)（指数但 |H| 小时精确）直到给出非平凡 LB。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "networkx 极大匹配与 Bron–Kerbosch 按编号顺序遍历，无随机；LP 固定求解器版本与方法参数（GLOP 单线程）。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "（探针实证的否定结果）强制撤销核 H 为空 ⇒ ν(H)=ω(H)−1=τ(H)=0：在本数据上『冲突图团数/匹配/度界』对撤销数不提供任何非零下界；可用的非平凡下界只剩：(a) 逐边可修性 + 端点动作不相容图上的独立集界；(b) 相位/频段容量 pigeonhole；(c) G′ 上的分数顶点覆盖（调整层）。",
+        "upper_bound_method": "构造性上界（继承 Q2-R51 的 incumbent）；本路线不产上界，只判定哪些『界』是合法的。",
+        "gap_metric": "gap_revoke_struct = UB_revoke − LB_struct（LB_struct 实测为 0）；以及 τ*(G′) 与 adjusted 层整数解之差。",
+        "gap_threshold": "本路线的合格线不是把 gap 缩到 0，而是『界的有效性与是否平凡』：若某界 >0 且被独立 checker 认可，则升级为论文撤销下界论证；若恒为 0，则必须在论文中明确不使用团/匹配论证（防止写出被否证的界）。",
+        "proof_possible": "可证（但结论多为平凡）：H 为空由 A_i×A_j 全组合穷举验证，属有限可判定；pigeonhole 界若能写成不等式链则完全可证，探针尚未得到非零版本（列为待验证，不得先写进论文）。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "强制核 H 的判定必须对『双端动作组合』而非单端做（探针：单端可修 297/297，需再确认组合可修），并输出可复核的动作对表",
+          "把 H=∅ 这一否定结论写入 reports（防泄漏式写作：论文里不得出现『由冲突图团数知至少需撤销 k 个』除非 k 来自非空 H 或阶梯证书）",
+          "pigeonhole 界与 Q3 界共用相位×块计数代码，交叉校验一次（同一计数用于两个问题必须一致）",
+          "有效性自检门：任何下界 LB 必须 ≤ Q2-R51 的可行撤销数，否则界被自身否证（CH-05 在 Q3 探针中真实触发过该失效）"
+        ]
+      },
+      "required_assumptions": [
+        "动作集按 F-008/F-012 封闭枚举（不引入题面外的调整类型，如改宽度、改次数）",
+        "撤销一个计划等价于从图中删点（撤销后其余计划无需重算既有关系）",
+        "G′ 的成对判据与 Q2-R51 的模型完全一致（同一张常数表，避免两实现分歧）"
+      ],
+      "failure_conditions": [
+        "H=∅（探针已实测）⇒ 团/匹配/度界全部退化为 0，本路线只能作为『界有效性审计』与 Q2-R51 的补充，不得单独支撑 Q2-C3",
+        "若为制造非零界而放宽动作集（例如允许双端同时调）⇒ 界不再对原问题合法，禁止",
+        "pigeonhole 界需要『频段列容量』精确值，而容量依赖 Q2 未定的终态 ⇒ 逻辑循环风险（先有鸡还是先有蛋），需改用与终态无关的最坏容量界"
+      ],
+      "strengths": [
+        "对『看似自然的团/匹配论证』做了可证伪检验，避免论文写出会被评审一击即破的界",
+        "计算极廉价（秒级），可与任意入选路线并行运行而不占求解预算",
+        "G′、τ*、度序列本身是可写进论文的图结构描述（对 Q1 统计与 Q2 解释都有用）"
+      ],
+      "weaknesses": [
+        "在本数据上对撤销层几乎必然给 0（探针已见），贡献偏『审计/防守』",
+        "分数 LP 界与整数目标层之间没有直接的整数化桥梁（需 ceiling + 权重合法性论证）",
+        "pigeonhole 容量界受 Q3 口径（时间视界 621/643 之争）影响，需先冻结"
+      ],
+      "validation_plan": [
+        "code/q2_graph_bounds.py 输出 H、ν(H)、ω(H)、τ*(G′)、度序列到 results/Q2_graph_bounds.json（含 _meta 记录判据与穷举规模）",
+        "把『H=∅ ⇒ 不用团数论证』写入 reports/decisions/MODEL_SELECTION_DECISION.json 作为负结果登记",
+        "与 Q2-R51 的 checker 共用同一张冲突常数表，并在两文件间做哈希一致性断言"
+      ],
+      "complexity": "medium",
+      "interpretability": "high",
+      "implementation_risk": "low",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q2-R53",
+      "question_id": "Q2",
+      "tier": "advanced_alternative",
+      "method_family": "operations_research",
+      "problem_reformulation": "把『最少撤销』写成集合覆盖/整数规划并取其 LP 对偶：给每个候选『消解动作包』列，约束为每条冲突边至少被覆盖一次，对偶可行解（或 Σr≤k 不可行时的 Farkas 乘子）即是一份可第三方复算的撤销下界证书。",
+      "model": {
+        "family": "集合覆盖 IP + 列生成 + LP 对偶/Farkas 证书",
+        "representation": "列 ℓ = 一个计划的合法动作（或撤销）；主问题变量 y_{i,a}∈{0,1}（Σ_a y=1）；覆盖约束按冲突边展开；等价地写 Σr≤k 版本求可行性",
+        "decision_variables": ["y_{i,a}", "r_i=Σ_{a=REVOKE} y_{i,a}"],
+        "objective_id": "Q2-C3（第一层撤销数；第二层调整数）",
+        "constraint_ids": ["F-006", "F-007", "F-008", "F-012", "F-010"],
+        "equations_summary": "min Σr_i s.t. 覆盖约束 + Σ_a y_{i,a}=1, y∈{0,1}；LP 松弛最优值 LB_frac = ⌈v⌉ 为整数最优的合法下界；对偶形式给出乘子 π_e ≥0（Σ_e: i∈e π_e ≤ c_i），其目标 Σ_e π_e·1 − ... 即分数打包界；固定 Σr≤k 不可行时，Farkas 乘子 (u_i, π_{i,j,a,b}) 可导出『不存在撤销数 ≤k 的零冲突方案』的代数证明。"
+      },
+      "transformations": ["成对不相容子句 → 覆盖型不等式（聚合/分离两版）", "列生成：只生成参与冲突的动作列（必须附完备性证明，否则破坏下界合法性）", "不可行性 → Farkas 乘子导出", "分数界 → ceiling + 权重合法化"],
+      "solver": {
+        "family": "线性/整数规划（SCIP/GLOP + CP-SAT 作交叉）",
+        "algorithm": "① 构建 265188 条成对行（探针：GLOP 2s 求解，min Σr → 0；固定 Σr≤0 时 adjusted 分数界 71.20）；② 加整数割或改 SCIP 分支求撤销层整数界；③ 对每个 k 做不可行性证明并导出 Farkas 乘子，落盘为可复算证书文件；④ 与 CP-SAT 阶梯结果互相校验（两独立求解器同界）",
+        "fit_reason": "F-008 使动作集有限（探针 4597 列），F-012 的 10Δf/5Δt 使每计划动作数 ≤32，于是成对不相容矩阵可整体显式生成（探针 2 秒），LP 规模（~2.7×10⁵ 行 × 4.6×10³ 列）在 GLOP 上秒级可解；对偶/Farkas 路线的价值正在于它给出的是『数字证书』而非求解器状态声明，符合评审可复核要求。",
+        "stopping_rule": "当 LB_frac = 当前整数上界（会合）或连续 2 个 k 的不可行证书求出（LB 阶梯停止）时停；若 300s 内界无改善则停止并报告区间。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "GLOP 单线程确定性单纯形（fixed prices/无随机重启），SCIP 设 random_seed=0 并记录版本；Farkas 证书附验证脚本（乘子代入即可复核）。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "LP 分数界 + 阶梯不可行证书：探针已得 min Σr 的 LP 值为 0（分数界对撤销层无信息量），因此本路线的真实下界来源是『Σr≤k 不可行的 Farkas 证书』（k=0 已可由 CP-SAT 判 INFEASIBLE，见 Q2-R51 探针），以及 adjusted 层的分数界 ⌈71.20⌉=72（k=0 时）。",
+        "upper_bound_method": "整数解（来自 Q2-R51 的 incumbent 或本路线 SCIP 可行解），并附独立 checker 复验记录。",
+        "gap_metric": "gap_revoke = UB_revoke − LB_revoke（LB 来自不可行阶梯）；gap_adj = UB_adj − ⌈LP_adj⌉；同时报告证书条数与每条形如『Σr≤k ⇒ INFEASIBLE』的字符串。",
+        "gap_threshold": "撤销层要求 gap=0（否则明确写区间）；调整层允许 gap>0 但必须报告具体界值（探针量级：72 ≤ UB_adj）。",
+        "proof_possible": "撤销层可完全证明（Farkas/INFEASIBLE 双类型证书均可第三方复算）；调整层的对偶界只给分数界，整数化需 ceiling 论证；纯 LP 松弛（无阶梯）实测无法区分撤销数（LB=0），此为重要否定结论。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "行形式的合法性方向审计：『成对不相容行』(x_{i,a}+x_{j,b}≤1) 是松弛（合法下界）；『聚合行』(Σ_{a∈A_i}x_{i,a}+Σ_{b∈A_j}x_{j,b}≤1) 实为限制（会抬高界，非法作为下界）——CH-05 探针先给出 100.375 的聚合界、后经严格成对行修正为 71.20，正是此陷阱",
+          "恒等动作去重：动作集中同时放 (f,0) 与 (t,0) 会让分数解以 0.5/0.5 零代价满足所有成对行（探针曾见 obj=0），必须断言恒等动作唯一",
+          "Farkas 证书自校验：把乘子代回约束系统验证 Σπ·(LHS) ≥ RHS 成立，脚本化",
+          "两求解器一致性：CP-SAT 阶梯与 SCIP 阶梯在同一 k 上给出同一判定，否则查模型差异"
+        ]
+      },
+      "required_assumptions": [
+        "冲突判据与动作表可由常数矩阵精确表示（F-005/F-006 的确定性占用）",
+        "F-012 的幅度为整数 Δf/Δt 格点（F-001/F-003 离散化）",
+        "论文中的下界论证允许引用求解器状态（OPTIMAL/INFEASIBLE）作为证据；若不允许，则以 Farkas 乘子文件为唯一证据"
+      ],
+      "failure_conditions": [
+        "Farkas 乘子导出在所用 LP 接口不可得 ⇒ 退回 CP-SAT INFEASIBLE 状态 + 完整模型文件作为证据",
+        "列生成引入不完备列 ⇒ 界非法，必须回退全列（4597 列规模可承受）",
+        "分数界与整数解差距过大（如 adjusted 层 72 vs 110+）⇒ 报告为『界松』并降级为辅助证据，不写入主结论",
+        "与 Q2-R51 的候选对表不一致 ⇒ 立即停线，统一由单一冲突常数表供两路线"
+      ],
+      "strengths": [
+        "给出不依赖求解器可信度的代数证书（评审可手算复核）",
+        "秒级 LP 使得『k 阶梯 + 前沿 LB_adj(k)』可密集计算，界随 k 单调下降的曲线本身就是论文里的解释性证据",
+        "对界合法性方向（松弛 vs 限制）做了显式审计，直接降低论文写错界的概率"
+      ],
+      "weaknesses": [
+        "撤销层 LP 分数界实测为 0，须依赖不可行阶梯（计算更贵）",
+        "大 M/权重不进 LP 时，lex 结构需拆成多次求解",
+        "行规模 10⁵ 级，若后续 Q4 扩到 10⁶ 级行则单纯形时间上升"
+      ],
+      "validation_plan": [
+        "code/q2_lp_bound.py + results/Q2_lp_bound.json（含 LP 状态、界值、Farkas 文件路径与哈希）",
+        "code/verify_farkas.py：读乘子、代回约束、输出 PASS/FAIL",
+        "把 LB_adj(k) 曲线表写入 results（供论文表格），并在论文中只引用 JSON 命中的数字"
+      ],
+      "complexity": "medium",
+      "interpretability": "high",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q3-R51",
+      "question_id": "Q3",
+      "tier": "recommended_solution",
+      "method_family": "graph_combinatorial",
+      "problem_reformulation": "把加装问题写成时频格上的图案打包：候选图案 = (3 连续频段窗口) × (12 个 [t+10k, t+10k+2) 时间窗)；上界由『每频段×每相位×连续块』的容量打包界（双计数）给出，下界由构造放置给出，两者会合即最大数证明。",
+      "model": {
+        "family": "时频格打包 / 区间-区间二部冲突图独立集（含容量界）",
+        "representation": "放置集合 Φ = {φ=(a, t): a∈[0,97], t∈[0, T−112]}；φ 可行 ⟺ 其 3×24 占用格与冻结 Q2 方案的占用不交；冲突 ⟺ 频段窗口交叠 ∧ 时间窗交叠（F-006 判据）；新增 C 参数固定：宽 3、时长 2、间隔 8、次数 12（Q3-F018 note，P=g+d=10，跨度 11·10+2=112）",
+        "decision_variables": ["z_φ ∈ {0,1}（是否采用放置 φ）；计数目标 Σz_φ"],
+        "objective_id": "Q3-C2（数量最大化论证：上界可检查、下界=提交行数、报告 gap）",
+        "constraint_ids": ["Q3-F017", "Q3-F018", "F-001", "F-003", "F-005", "F-006", "F-009"],
+        "equations_summary": "同带同相位 r 的两图案必须占用互不相交的 12 个连续时隙块 ⇒ 对每 (b, r)：j(b,r) 个可用块（自由 10Δt 块的极大连续段 lengths run_s）⇒ k_b(r) ≤ Σ_s ⌊run_s/12⌋（且 ≤ Σ_s run_s/12 取整，两者取小）；双计数 3N = Σ_b k_b ≤ Σ_b Σ_r k_b(r) ⇒ UB = ⌊Σ_b Σ_r k_b(r) / 3⌋。密度界 UB_dens = ⌊(100·T − |自由格∪|)/72⌋ 为另一独立合法上界（每图案耗 3×24=72 格）。"
+      },
+      "transformations": ["按频段分带（每带独立计数）", "按相位 r = t mod 10 分解（利用 P=10 的完全同余结构）", "连续可用块分解（把打包数化为区间长度整除）", "双计数（放置-频段关联）得全局界", "构造下界：贪心放置（按带扫描）与 CP-SAT 解互为对照"],
+      "solver": {
+        "family": "确定性组合计数 + 贪心构造（无求解器，或 CP-SAT 作对照）",
+        "algorithm": "① 由冻结 Q2 方案算每带占用位集；② 对每 (b,r) 计算连续自由块并求 Σ⌊run/12⌋，得 UB；③ 贪心：按带起点顺序放置所有可行且与已放置不冲突的图案，得 LB；④ 自检断言 LB ≤ UB；若 LB > UB ⇒ 界推导错误（此失效模式已被 CH-05 探针真实触发并修正）",
+        "fit_reason": "Q3-F018 note 说明模板仅 3 列 ⇒ 宽 3/时长 2/间隔 8/次数 12 为隐含固定，于是所有候选图案共享同一周期 P=10（探针实测），冲突判据退化为『相位差 mod 10 ∈ {0,±1} ∧ 频段窗口交叠』，使按相位×块的整除界成立；F-001 的 100 频段与 F-003 的整数时间格保证格计数是精确整数运算，无需采样估计。",
+        "stopping_rule": "UB 与 LB 会合（相等）⇒ 给最大数证明并停止；否则输出区间 [LB, UB] 并把 UB 收紧尝试限制在一轮内（预算 600s）。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "纯整数运算无随机；贪心的遍历顺序固定为 (a 升序, t 升序) 并记录在元数据，保证 LB 可复现。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "构造下界 = 实际放置数（result3 行数，经 checker 复验零冲突）；原始占用口径的探针量级：按带贪心得 84（另一遍历序得 90，均为合法构造下界，正式值须基于冻结 Q2 方案重算）。",
+        "upper_bound_method": "两条独立合法上界取小：(i) 相位×块双计数界（探针：Σ_b Σ_r k=623 ⇒ UB=207，在原始占用口径下）；(ii) 密度界（探针：自由格/72 = 688）。注：CH-05 早期版本曾把『每频段最多 5 个相位类』直接当作每带容量，得 UB=79，被自身构造解 84 否证——修正后（同相位图案须时间跨度不重叠、每图案占 12 块）界成立且可复核。",
+        "gap_metric": "gap_abs = UB − LB，gap_rel = gap_abs/UB；并要求每条界都附『LB ≤ UB』断言与人工可核算的整数链。",
+        "gap_threshold": "论文交付分两种：若会合（gap=0）⇒ 写『最大数量 = N，并有上界证明』；若未会合（探针口径 84 vs 207 ⇒ 差距 ~2.5 倍）⇒ 只能写『至少 N，至多 M』并给出两条界的推导，禁止写『最多 N』。",
+        "proof_possible": "可证（上界为初等双计数 + 整除论证，全整数可手核）；但界是否够紧不确定：相位×块界忽略了跨相位互斥（相位差 ±1 也不可共存）与 3 带联合可行性，天然偏松；因此『会合』需额外收紧（CP-SAT 界或 LP 对偶界）。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "界有效性硬门：断言 UB ≥ 已知可行放置数（含启发式与 CP-SAT 解）；不满足即界作废（本侦察阶段真实发生一次）",
+          "时间视界口径敏感性：T=643 与 T=621 两种口径分别重算 UB（探针：密度界 688；候选起点上限 509 vs 531），并把口径分歧登记到决策账本",
+          "『不增加时频资源』的精确化：允许新增图案的起点平移到任意格点（Q3 解除 10Δf/5Δt 限制，F-012 note），但不得超出 100 频段与同一时间视界",
+          "与冻结 Q2 方案的耦合检查：上界依赖既有占用，若 Q2 方案改变（不同入选路线）则界必须重算，禁止沿用旧界",
+          "内部冲突复验：新增集合两两按 F-006 判据复核 0 冲突，且与既有方案 0 冲突（Q3-C1）"
+        ]
+      },
+      "required_assumptions": [
+        "Q3-F017 note 口径：既有计划固定为 Q2 最终方案，不因其调整而再改",
+        "新增 C 装备沿用附件 C 模板隐含参数（宽 3/时长 2/间隔 8/次数 12），且平移幅度不限",
+        "时间视界不扩展（100 频段 × 同一视界，F-001），具体视界端点取 621 还是 643 需在正式建模前冻结",
+        "result3 只需序号/频段区间/时间区间 3 列（Q3-F018），故周期参数由隐含固定"
+      ],
+      "failure_conditions": [
+        "LB > UB ⇒ 上界推导有误（第一优先怀疑：把周期图案当成无限周期、忽略相位可复用），修正后重跑",
+        "界与构造差距过大（>1.5 倍）⇒ 本路线只能作为『区间论证』，主证改由 Q3-R52 的 CP-SAT 界/LP 对偶界承担",
+        "冻结 Q2 方案尚未产生 ⇒ 本路线只能在假想基线上侦察，正式界延后到 coding 阶段",
+        "发现既有方案在某频段完全阻塞（探针：早期相位算法口径下有 9 个频段无可用相位，正式实现须用修正后的块算法重算）⇒ 检查是否误把整带标记为占用（位集越界/掩码 bug）"
+      ],
+      "strengths": [
+        "上界是全整数、可手核的初等论证，是国赛论文里最有说服力的『最多还能安排多少』型证据",
+        "界对时间视界/口径的依赖被显式量化，能顺带暴露题面口径分歧",
+        "与求解器无关，秒级完成，不挤占 600s 侦察预算"
+      ],
+      "weaknesses": [
+        "相位×块界天然忽略跨相位互斥与 3 带联合约束，实测偏松（探针 207 vs 构造 84）",
+        "结论依赖 Q2 冻结方案，跨问耦合强（Q3 的界会随入选路线改变）",
+        "无法单独给出最大值的证明，除非与下界会合"
+      ],
+      "validation_plan": [
+        "code/q3_bound.py 输出 results/Q3_bound.json：{LB, UB_phase_block, UB_density, 每带明细, 视界口径两版, checker_pass}",
+        "code/check_q3.py：新增集合内部 0 冲突 + 与 Q2 方案 0 冲突 + 行数=宣称数量（Q3-C3）",
+        "论文中上界推导以整数链形式呈现（每步可手核），并显式声明未会合时只给区间"
+      ],
+      "complexity": "medium",
+      "interpretability": "high",
+      "implementation_risk": "low",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q3-R52",
+      "question_id": "Q3",
+      "tier": "advanced_alternative",
+      "method_family": "operations_research",
+      "problem_reformulation": "把加装写成稳定集整数规划（列 = 可行放置，行 = 放置间冲突/与既有占用的排斥），用带对称破缺的 CP-SAT 最大化求整数下界，同时取 LP 对偶界与成对不相容 LP 的分数界作为机器可复核上界，两界会合即最优性证明。",
+      "model": {
+        "family": "稳定集/集合打包 IP + 对偶可行界",
+        "representation": "列 φ ∈ Φ（探针规模：约 98×532 ≈ 5.2×10⁴ 潜在放置，扣除与既有占用冲突后可行放置数千级；原始占用口径下探针实测为 (3 连频段 × 可行起点) 的位集判定）；z_φ ∈{0,1}；冲突对 (φ,φ′) 生成 z_φ+z_φ′≤1",
+        "decision_variables": ["z_φ（是否采用该放置）"],
+        "objective_id": "Q3-C2（最大化数量的上下界会合）",
+        "constraint_ids": ["Q3-F017", "Q3-F018", "Q3-C1", "F-001", "F-006"],
+        "equations_summary": "max Σ_φ z_φ s.t. z_φ + z_φ′ ≤ 1 ∀φ⊥φ′，z_φ=0 ∀φ 与冻结既有占用冲突；LP 松弛最优值 v_LP 为整数最优的合法上界；对偶 min Σ y 的可行解给出可复核证书；对称破缺：同带同相位的放置按起点字典序启用（合法且不切最优，需论证）"
+      },
+      "transformations": ["列（放置）枚举 + 位集可行性预筛", "按频段带分块求解（带间仅通过 3 连窗口耦合 ⇒ 滑动窗口/带界拼接）", "对称破缺（相同 C 装备可互换 ⇒ 轨道固定）", "LP 对偶界与组合界取小"],
+      "solver": {
+        "family": "CP-SAT（整数）+ LP/GLOP-SCIP（分数界）",
+        "algorithm": "① 枚举可行放置（位集与冻结占用交为 0）；② CP-SAT max Σz，固定 random_seed、num_workers=8，记录 ObjectiveValue 与 BestObjectiveBound；③ 独立地解成对不相容 LP 得分数上界，取 min(两者) 作报告上界；④ 若 bound == incumbent ⇒ 输出 OPTIMAL 证书；否则报 [incumbent, bound]",
+        "fit_reason": "Q3 的候选放置集有限且结构完全由 (a, t) 两整数决定（宽 3、时长 2、P=10 固定，Q3-F018 note），CP-SAT 的位集式约束能高效传播；同时该问题是『最大化数量』而非四级 lex，整数规划的 LP 界在此类打包问题上通常比 Q2 的覆盖型 LP 更有区分力，因此值得作为界主来源。",
+        "stopping_rule": "status=OPTIMAL 即停（此时上下界会合，可宣称最大）；否则 600s 内 bound 无改善 >1 即停并报区间。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "CP-SAT random_seed=0，num_workers 固定为 8 并在元数据记录（并行会改变 bound 收敛速度）；列枚举顺序固定并按哈希留档。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "CP-SAT incumbent（可行放置数，经 checker 复验）；辅以贪心构造（Q3-R51）作下界对照，取两者最大。",
+        "upper_bound_method": "CP-SAT BestObjectiveBound（其内点 LP 对偶界，整数意义上合法）与分数打包 LP 上界取小；再与 Q3-R51 的相位×块界、密度界取最小者作为最终报告上界。",
+        "gap_metric": "gap_abs = UB_machine − LB_construct；gap_rel = gap_abs/UB_machine；同时记录界来源（组合/LP/CP-SAT）与各自数值。",
+        "gap_threshold": "会合（gap=0）⇒ 论文可写最大值并附 OPTIMAL 证书；未会合 ⇒ 只写区间，且必须解释上界为何松（忽略跨相位互斥等）。",
+        "proof_possible": "有条件可证：小规模/分带版本可能 OPTIMAL；全 100×T 规模下大规模对称（同类 C 装备完全可互换）会让界收敛变慢，需依赖对称破缺；若仍不闭合，最大性不可宣称（这是 Q3 的主要风险，须在论文中如实处理）。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "对称破缺合法性论证：证明破缺不切除最优解（同带同相位按起点序贯启用），否则界非法",
+          "分带上界与全问题上界一致性：分带界之和 /3 不得小于全问题 incumbent",
+          "checker 双验：新增集合内部 + 对既有方案（Q3-C1）",
+          "行数=宣称数量（Q3-C3），且 result3 列结构与模板一致",
+          "与 Q3-R51 组合界互检：机器界 > 组合界 ⇒ 取更小的合法界；机器 incumbent > 组合上界 ⇒ 组合界被否证，立即修界"
+        ]
+      },
+      "required_assumptions": [
+        "候选放置可在 0..99 频段与时间视界内任意平移（Q3 不限幅度，F-012 note）",
+        "既有计划集合按冻结 Q2 方案位集给定",
+        "新增 C 装备彼此无优先级差异（可互换）⇒ 对称破缺成立的前提",
+        "不使用题面未给的额外资源（不扩频段/视界）"
+      ],
+      "failure_conditions": [
+        "CP-SAT 在 600s 内 incumbent 与 bound 差距 >20% ⇒ 放弃『最优』表述，改用 Q3-R51 区间论证 + 构造下界",
+        "可行放置列爆炸（若既有方案较松导致列数 >10⁵）⇒ 改为按带分块 + 列生成（同时保留完备性论证）",
+        "对称破缺被证明非法（切除最优）⇒ 去掉破缺并接受更慢的界收敛",
+        "机器界与组合界矛盾（界 < 可行解）⇒ 先查 checker 与位集，再判定哪个界失效"
+      ],
+      "strengths": [
+        "唯一有可能真正闭合上界的路线（OPTIMAL 即最优性证明）",
+        "界来源多元且可取小，组合界与机器界互检能迅速暴露错误界",
+        "复用 Q1/Q2 的位集与判据，跨问代码一致"
+      ],
+      "weaknesses": [
+        "高度对称的打包问题 LP 界常偏松（同相位可交换 ⇒ 分数解 0.5/0.5 现象，Q2-R53 已见同类退化）",
+        "依赖 Q2 冻结基线，口径变动需重跑",
+        "600s 内不保证闭合，需要预先写好『只报区间』的论文措辞"
+      ],
+      "validation_plan": [
+        "results/Q3_solution.json（含 status/objective/best_bound/列规模/worker 数）+ results/Q3_bound.json（三源界对照）",
+        "code/check_q3.py 独立复验零冲突与行数一致（Q3-C1/Q3-C3）",
+        "reports/decisions 登记：时间视界口径、对称破缺合法性论证、未闭合时的表述降级"
+      ],
+      "complexity": "high",
+      "interpretability": "medium",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q4-R51",
+      "question_id": "Q4",
+      "tier": "recommended_solution",
+      "method_family": "hybrid_decomposition",
+      "problem_reformulation": "与 Q2 同一模型 + 同一 canonical 评价函数，仅把 C 类动作集扩为 A_i ∪ {Δg: 1≤|Δg|≤10, g+Δg ≥1}；由『动作集包含关系』得到可证明的支配界（Q4 最优 ≤ Q2 最优），再用撤销阶梯与 CP-SAT 界给出改善幅度的下界/上界。",
+      "model": {
+        "family": "扩展动作列 CSP（周期重定时版）",
+        "representation": "x_{i,a}，a ∈ {恒等, Δf(≤10), Δt(≤5), Δg(仅 C, |Δg|≤10 且 g+Δg≥1), 撤销}；成对不相容子句由 (i,j,a,b) 四元冲突表生成（时间占用位集随 g 改变而完全重算，F-005）",
+        "decision_variables": ["x_{i,a}", "r_i", "adj_i", "gap_i（C 类间隔改动量）"],
+        "objective_id": "Q4-C1（零冲突+合规）与 Q4-C2（同一 canonical 评价函数下不劣于 Q2）",
+        "constraint_ids": ["F-005", "F-006", "F-008", "F-009", "F-010", "F-012", "Q4-F011", "Q4-F019", "Q4-F020", "Q2-F016"],
+        "equations_summary": "min lex(Σr, Σadj, Σ_{A∪B} adj, Σ|Δ|) s.t. AddExactlyOne, x_{i,a}+x_{j,b} ≤ 1 ∀(a,b) 使终态冲突；支配界：A_i^{Q4} ⊇ A_i^{Q2} ⇒ Opt_lex(Q4) ≤ Opt_lex(Q2)（同一评价函数、同一冲突判据下成立，可证明）。探针规模：列 4747→6277（×1.32），成对子句 289801→468538（×1.62，候选对 5295 口径下）。"
+      },
+      "transformations": ["复用 Q2 的冲突常数表 + 追加 gap 维（增量表而非重算）", "只对参与冲突的 C 计划展开 Δg 列（按需展开，附完备性论证）", "撤销阶梯 + 大权重标量化", "与 Q2 结果的同函数对比（不重定义目标）"],
+      "solver": {
+        "family": "CP-SAT + LP 界（与 Q2-R51 同栈）",
+        "algorithm": "① 增量生成含 Δg 的成对表；② 强制 Σr ≤ k 阶梯（k 从 Q2 的 LB 起，因支配界无需从 0 重探）；③ 标量化求 incumbent 与 best bound；④ 独立 checker 复验（含间隔规则 |Δg|≤10、g≥1、次数不变、A/B 不得调间隔）",
+        "fit_reason": "Q4-F019 只放开 C 类间隔、幅度上限 10Δt，动作集仍是有限枚举（F-008 保证每计划只动一个参数），因此 Q2 的成对不相容编码可直接扩展（探针显示规模仅 ×1.6）；而『调间隔』改变的是周期 P=g+d（F-005），使时间占用位集整体重排——这正好由位集重算吸收，无需新的数学 machinery。",
+        "stopping_rule": "第一层阶梯闭合（LB=UB_revoke）或 600s 预算耗尽报区间；另须满足支配界自检（Q4 评价函数值不劣于 Q2，若劣 ⇒ 建模 bug 而非真实结果）。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "random_seed=0、num_workers=8 记录；与 Q2 共用同一冲突表生成器版本（哈希比对）。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "两条：(i) 支配界给出的『先验界』——Q4 最优不可能劣于 Q2 最优（可证明，作为 Q4-C2 的主证据）；(ii) 撤销阶梯 INFEASIBLE 证书（与 Q2-R51 同法，探针在 Q2 上已见 k=0 可判 INFEASIBLE，Q4 需独立重跑因为动作集变大）。",
+        "upper_bound_method": "Q4 incumbent（checker 复验通过），以及『把 Q2 方案原样搬进 Q4』的可行解（动作集包含 ⇒ 必可行）给出与 Q2 相等的上界；两者取优。",
+        "gap_metric": "每层 gap_j = UB_j − LB_j；另报告改善量 Δ_improve = Value(Q2) − Value(Q4) 及其可信下界（由 Q4 的 LB 与 Q2 的 UB 之差给出，若为 0 或负 ⇒ 无法证明改善）。",
+        "gap_threshold": "Q4-C2 的验收要求『同一 canonical 评价函数下对比』：若 Δ_improve 的可证下界 = 0，论文只能写『允许调间隔不劣于 Q2（可证），实测改善 x 台/幅度 y，且 x 由 incumbent 与界共同支撑』，不得写『显著优于』（禁用结论词）。",
+        "proof_possible": "支配界可完全证明（集合包含 + 同一评价函数，一步推演）；最优性/最大改善只能部分证明（CP-SAT 界 + 阶梯），Q4 的动作集更大，预算内闭合概率低于 Q2，需预设区间表述。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "支配自检：Q4 模型必须接受 Q2 的全部动作列与 Q2 最优解（否则建模漏了包含关系）",
+          "A/B 计划禁调间隔（Q4-F019/F-009）与 C 类 g+Δg≥1 的逐行断言",
+          "调间隔后使用次数不变（F-009），但末窗可能超出视界 ⇒ 口径先冻结再重算位集（探针见 T=621/643 分歧）",
+          "候选对完备性（与 Q2-R51 同硬门；Q4 的时间可达包络因 Δg 而变宽，剪枝更易出错）",
+          "同函数对比：Q2 与 Q4 用同一 checker 与同一权重计算标量化值，禁止两套目标各自表述"
+        ]
+      },
+      "required_assumptions": [
+        "『部分 C 类可调整间隔』解释为任意子集（含 0 个），且仍受 F-008 单参数限制",
+        "间隔调整幅度按 |新−原| ≤ 10Δt（Q4-F019），新间隔为正整数（F-003）",
+        "目标链与 Q2 完全一致（Q4-F011），评价函数字面同源",
+        "与 Q2 一样禁止同时调两个参数、禁止改次数"
+      ],
+      "failure_conditions": [
+        "600s 内 Q4 界完全不收敛（成对子句 ~4.7×10⁵ 规模导致 LP 界缓慢）⇒ 退路：仅证支配界（不劣于 Q2）+ 报 incumbent 与区间，不宣称最优",
+        "按需展开 Δg 列导致漏列 ⇒ 支配界仍成立但最优性证据失效，回退全列（规模可承受）",
+        "出现 Q4 目标值劣于 Q2 ⇒ 判为 bug（包含关系被破坏），禁止写作『改善』",
+        "若 Q2 入选方案未冻结 ⇒ 无法定义 canonical 对比函数，Q4-C2 验收不成立"
+      ],
+      "strengths": [
+        "把『不劣于』这一最容易证明、也最常被评审质疑的界变成严格推演，直接命中 Q4-C2",
+        "最大化复用 Q2 的模型/表/checker，风险低、实现快",
+        "界链条清晰：支配界（先验）+ 阶梯（组合）+ CP-SAT bound（机器）三层互不依赖"
+      ],
+      "weaknesses": [
+        "自由度更大 ⇒ 搜索空间膨胀，预算内闭合更困难",
+        "支配界只给方向不给幅度，改善量的证明仍需整数界",
+        "与 Q2 结果强耦合（Q2 换路线则 Q4 全部重跑）"
+      ],
+      "validation_plan": [
+        "code/check_q4.py：全断言（含间隔规则、单参数、幅度、0 冲突）+ 同函数对比 Q4 vs Q2 目标值",
+        "results/Q4_solution.json 记录 dominance_check（Q4_value ≤ Q2_value 的布尔与两侧数值）、阶梯、bound",
+        "results/Q4_table1.json 与 result4.xlsx 行级一致（Q4-F020/Q2-F016），对比表进论文"
+      ],
+      "complexity": "high",
+      "interpretability": "high",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    },
+    {
+      "idea_id_suggested": "Q4-R52",
+      "question_id": "Q4",
+      "tier": "advanced_alternative",
+      "method_family": "analytic_mechanistic",
+      "problem_reformulation": "把 C 类的间隔调整看成周期重定时：新周期 P′ = g+Δg+d ∈ {3,…,20}（d=2,g=8）；两个同带 C 图案无冲突 ⟺ 其相位类集合（模各自周期）不相交；由此对每一对计划给出『可分离性判据』闭式，用来 (a) 构造不依赖求解器的强制撤销核，(b) 把动作列裁剪到『相位可达类』从而使证书规模可控。",
+      "model": {
+        "family": "模运算可达相位类 / 重定时可行性判据",
+        "representation": "计划 p 的可达占用相位集 Θ_p = { (t1+Δt + k(g+Δg+d)) mod L : k=0..n−1, Δt∈[−5,5], Δg∈[−10,10] }，L 为参与比较的周期对的最小公倍数（同带 C-C 时 L=P′ 或 10 的倍数）；冲突可避免 ⟺ Θ_i ∩ Θ_j = ∅（再叠加频段判据 F-006）",
+        "decision_variables": ["无（判据计算）；辅助：可达类集合 Θ_p、不可分离对集合 U"],
+        "objective_id": "Q4-C1 的『不可能性/下界』证据分量（与 Q4-R51 互补）",
+        "constraint_ids": ["F-005", "F-006", "F-008", "Q4-F019", "F-003", "F-001"],
+        "equations_summary": "同类 C-C（同 d=2、g=8）：P=10，相位差 Δ mod 10 ∈ {0,±1} ⇒ 必交叠；调 Δg 后周期变 P′∈{3..20} ⇒ 交叠条件成为 (t1_i − t1_j) 是否可写成 aP′_i − aP′_j + δ 形式（Frobenius 型可达性）；对 A-C（P=65）与 C：gcd(65,10)=5（探针）⇒ 相位网格按 5 分层，可分离性判据带该 gcd 修正。"
+      },
+      "transformations": ["把连续平移决策压缩到有限相位类（同余商空间）", "以 gcd/lcm 做类间可通约性判定", "用可达类做动作列裁剪（保完备性的前提下缩小证书规模）", "构造『在任何合法重下发下仍交叠』的不可分离对集合"],
+      "solver": {
+        "family": "整数同余计算（确定性算法，无求解器）+ 与 CP-SAT 界交叉验证",
+        "algorithm": "① 对每个计划算可达相位类集合 Θ_p（枚举 Δg、Δt 的全部组合并取并）；② 对每对 (i,j)（先经频段可达筛）判 Θ_i ∩ Θ_j；交为空 ⇒ 该对可分离，非空且频段必然交叠 ⇒ 记入不可分离集合 U；③ 若 U 非空则给出撤销下界 τ(U)（匹配/团，Q2-R52 同法）；④ 用 U 的补集裁剪 Q4-R51 的成对子句规模",
+        "fit_reason": "Q4-F019 把 C 类的时间占用周期变成 13 种可能取值（g ∈ 1..18 中 |Δg|≤10 的可达集），使『时间交叠』不再是几何区间问题而是有限同余问题（F-005 的周期矩形结构 + F-003 整数格）；探针显示 C 类残差全占（10/10）说明相位类才是这个问题的自然坐标，也是唯一能让界写成可手核算式的入口。",
+        "stopping_rule": "若 U=∅ 则记录『重定时判据不给撤销下界』（与 Q2-R52 的 H=∅ 同一否定型结论），转回 Q4-R51；若 U≠∅ 则求 ν(U) 并对每个证书做 checker 复核。",
+        "budget_type": "wall_clock",
+        "determinism": "deterministic",
+        "seed_protocol": "纯整数枚举，固定遍历顺序；中间集合 Θ_p 落盘供复核（小文件）。"
+      },
+      "bound_plan": {
+        "lower_bound_method": "不可分离对集合 U 的顶点覆盖界：|R*| ≥ ν(U) ≤ τ(U)（若 U 非空则完全可证，且不依赖任何求解器状态）；辅以相位容量 pigeonhole：某带内可达类总数 < 该带需容纳的图案数 ⇒ 需移出若干计划。",
+        "upper_bound_method": "本路线不产上界（继承 Q4-R51 的 incumbent）。",
+        "gap_metric": "gap_revoke_struct = UB_revoke(Q4-R51) − ν(U)；若 ν(U)=0 则记为『结构性界不紧/平凡』。",
+        "gap_threshold": "合格线：界 > 0 且被 checker 认可才进入论文主证；否则只作为『为什么必须靠整数求解器』的论证材料（Q2 上探针已见该界为 0，Q4 待实测，不得预设非零）。",
+        "proof_possible": "判据本身可证（有限同余穷举）；界是否非零是经验问题（Q2 实例上为 0，Q4 因多一个 Δg 自由度，可分离性更强，界更可能为 0——这是本路线的固有劣势，必须在侦察中量化而非假设）。"
+      },
+      "scout_plan": {
+        "required": true,
+        "metrics": ["feasible", "objective", "runtime", "stability", "gap"],
+        "special_checks": [
+          "判据与位集判据等价性检查：用枚举位集复核同余判据在 100 对随机计划对上完全一致（不同实现互证）",
+          "裁剪后完备性：以 U 判据裁剪 Q4-R51 子句时，必须保留所有『动作对可致冲突』的组合，否则界非法（探针在 Q2 见过剪枝不完备 → 残留冲突）",
+          "g+Δg 的可达集合边界：Δg 使 g→1（最小正间隔）与 g→18（8+10）两端各抽 2 例人工核算周期",
+          "视界截断对相位类的影响：调大间隔会使末窗超出既有最晚结束点，需按冻结口径处理并报告两种口径下的判据差异",
+          "有效性自检：任何结构界都不得大于 Q4-R51 的可行解（界否证检测）"
+        ]
+      },
+      "required_assumptions": [
+        "间隔调整后使用次数 n 不变（F-009），故周期拉长只让图案右延",
+        "时间网格为整数 Δt 倍（F-003），同余判据成立的前提",
+        "判据仅对同类或 gcd 可通约的类对给出简洁形式；跨类（gcd=1）情形需保留穷举位集，不得强行闭式化",
+        "不引入题面未允许的调次数/调宽度"
+      ],
+      "failure_conditions": [
+        "U=∅（Q2 上实测同法为空核）⇒ 本路线不构成撤销下界证据，仅保留其『动作列裁剪』价值；须如实报告",
+        "同余判据与位集判据出现不一致 ⇒ 相位可达集推导有误，整条路线暂停并修正（不得带病裁剪）",
+        "裁剪带来的规模收益 <20% ⇒ 放弃裁剪，改全列模型（保持证书可信）",
+        "跨类 gcd 修正过于复杂导致推导无法在论文中简洁呈现 ⇒ 降级为附录算法说明"
+      ],
+      "strengths": [
+        "唯一能把 Q4 的『周期重定时』写成可手核算式的路线，解释性最强（答辩友好）",
+        "同时提供结构下界与合法的模型压缩（两者都能独立交付）",
+        "与 Q1-R52 的残差结构共用同一套数论 machinery，跨问一致性好"
+      ],
+      "weaknesses": [
+        "Q4 自由度大于 Q2 ⇒ 结构性不可分离核更可能为空，界非零的先验概率低",
+        "跨类（gcd=1）无简洁闭式，覆盖题面冲突主体（探针 BC=181、AC=66）能力有限",
+        "仍需整数求解器给上界，不能独立闭合结论"
+      ],
+      "validation_plan": [
+        "code/q4_phase_bound.py 输出 U、ν(U)、判据-位集一致性断言、裁剪前后子句规模到 results/Q4_struct_bound.json",
+        "与 Q4-R51 共用冲突表并做哈希一致断言",
+        "负结果（核为空）登记到 reports/decisions，供论文解释『为何用 CP-SAT 证书而非组合界』"
+      ],
+      "complexity": "medium",
+      "interpretability": "high",
+      "implementation_risk": "medium",
+      "status": "proposed"
+    }
+  ],
+  "coverage_notes": {
+    "structural_opportunities_checked": [
+      "两轴正交判据（F-006：频段交叠 ∧ 时间交叠）⇒ Q1-R51 的界层与 Q2/Q4 的成对不相容编码基础",
+      "周期矩形占用的同余结构（F-005：slot_k=[t1+(k-1)(g+d),+d)）⇒ 类内 (g,d) 齐次（探针：A(60,5)/B(40,3)/C(8,2) 各自唯一）→ Q1-R52 闭式、Q4-R52 重定时",
+      "动作集有限可枚举（F-008 单参数 + F-012 幅度上限 10Δf/5Δt）⇒ 列表着色/枚举动作列建模（Q2-R51、Q2-R53、Q4-R51）",
+      "原始冲突图稀疏性（探针：|E|=297、max deg 8、avg 3.96、2 孤立点、plans_involved 148）⇒ 团/匹配/度界可行性审计（Q2-R52）",
+      "逐边单端可修性（探针：297/297 条边存在单端合法动作可消除该边冲突，双端协同需求为 0）⇒ 强制撤销核 H=∅，否证『用冲突图团数/匹配论证撤销下界』的写法",
+      "新产生冲突不可忽略（探针：仅约束原冲突边的模型给出 (revoke=0, adjusted=98) 的所谓 OPTIMAL，但独立复算残留 121 对冲突）⇒ 终态全局约束与候选对完备性为硬门",
+      "时频格容量（F-001 的 100 频段 × T_MAX；探针 T=643 时总格 64300，并集占用 14698、重复计数占用 16680）⇒ Q3 密度界与相位×块界双轨",
+      "新增 C 图案的固定周期结构（Q3-F018 note：宽 3/时长 2/间隔 8/次数 12 ⇒ P=10、跨度 112）⇒ Q3-R51 同相位块整除界、Q3-R52 对称破缺",
+      "跨问共享状态（data_contract.cross_question_shared_state=entity_time_state；Q3 依赖 Q2 冻结方案、Q4 与 Q2 同评价函数对比）⇒ 界随基线改变必须重算的显式声明",
+      "口径分歧登记：common_input 内 horizon_note 写 621 而 T_MAX_delta_t 写 643（相差 22Δt，输入未说明成因；总格数按 100×643=64300 与 computed_data_facts.occupancy_cells_total 一致）⇒ 所有格计数/上界都必须双口径出数（Q3-R51、Q4-R52 special_checks）"
+    ],
+    "families_not_applicable": [
+      {
+        "family": "machine_learning",
+        "reason": "题面为完全确定的组合/整数结构（F-003 整数格、F-005 确定周期占用、F-006 布尔判据、F-012 确定上限），无观测噪声、无待学规律、无训练/测试分割对象；任何学习模型都无法给出 Q2-C3/Q3-C2 要求的可复核上下界证书。"
+      },
+      {
+        "family": "statistical_probabilistic",
+        "reason": "150 部装备的计划参数全部给定（F-013，DATASET_SNAPSHOT 缺失单元格 0），冲突判定是合取布尔而非随机事件；以概率界替代组合界会直接违反 Q3-C2『上界可检查』与 Q2-C3『最优性证据』的验收形式。"
+      },
+      {
+        "family": "dynamic_control",
+        "reason": "无状态方程与控制输入、无时间演化目标；F-005 的『周期占用』是静态生成规则而非动力学，不存在可微分/伴随结构可利用。"
+      },
+      {
+        "family": "simulation",
+        "reason": "Q1 要求边集完全且无伪（Q1-C1）、Q2/Q3 要求零冲突与数量界（Q2-C1、Q3-C2），蒙特卡洛/随机搜索只能给概率性信心，无法产生 INFEASIBLE/OPTIMAL 或整数链式证书；且 budget.replicates=3 下随机性会破坏可追溯性。"
+      },
+      {
+        "family": "operations_research/闭式（撤销数的解析闭式）",
+        "reason": "探针显示撤销下界必须依赖新产生冲突与全局终态约束（H=∅、LP min Σr=0），不存在只依赖原始冲突图或单参数的解析闭式；强写闭式界即为不可证结论，故不提出此类候选。"
+      }
+    ]
+  }
+}

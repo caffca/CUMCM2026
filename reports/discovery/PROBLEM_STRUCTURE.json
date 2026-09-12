@@ -1,0 +1,2676 @@
+{
+  "schema_version": 1,
+  "discovery_id": "DISC-E9D8A97BC71B91CD",
+  "problem_id": "D2026",
+  "generated_at": "2026-09-11T15:04:41+08:00",
+  "source_assets": [
+    {
+      "path": "logs/D题.txt",
+      "sha256": "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1",
+      "role": "problem_statement",
+      "authority": "primary_official"
+    },
+    {
+      "path": "reports/intake/ASSET_REGISTRY.json",
+      "sha256": "ca24407b2ca58a4336c823a582f06911387e3cbd26581cd19ef7fd0effa46243",
+      "role": "intake_asset_registry",
+      "authority": "verified"
+    },
+    {
+      "path": "reports/data/DATASET_SNAPSHOT.json",
+      "sha256": "318fc8dc39bfc5f6711f4a8054c9bbc88f2befc8687e7454f6d3b570070b9186",
+      "role": "verified_dataset_snapshot",
+      "authority": "verified"
+    },
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "role": "current_problem_local_data",
+      "authority": "primary_official"
+    },
+    {
+      "path": "C:/Users/Administrator/.dsh/.agent-presets/mathmodel-v7/skills/6verity/official_rules.json",
+      "sha256": "cdea16171e0ccb6366c8dbce5fe1edc3fa18ba9598c557857c7fe4000e7d7c57",
+      "role": "frozen_official_authority",
+      "authority": "frozen"
+    }
+  ],
+  "discovery_order": {
+    "first_round_only": true,
+    "allowed_input_classes": [
+      "problem_statement",
+      "official_attachment",
+      "intake_asset_registry",
+      "verified_dataset_snapshot",
+      "frozen_official_authority",
+      "current_problem_local_data"
+    ],
+    "blocked_input_classes": [
+      "problem_discussion",
+      "solution_or_answer_search",
+      "competition_code_repository",
+      "model_recommendation_search",
+      "old_paper_or_replay",
+      "old_brainstorm_or_route",
+      "unregistered_workspace_file"
+    ],
+    "discovery_started_at": "2026-09-11T15:04:41+08:00",
+    "discovery_completed_at": "2026-09-11T15:04:41+08:00",
+    "search_started_at": null,
+    "read_allowlist_sha256": "b4d5d4d21010cf973a1e94a9b8ea745b9e071b3f6bea8bdfb3ab6efc7b21699c"
+  },
+  "questions": [
+    {
+      "question_id": "Q1",
+      "source_basis": [
+        "logs/D题.txt",
+        "附件/附件1.xlsx"
+      ],
+      "structure_summary": {
+        "data": {
+          "rows": 150,
+          "cols": 5,
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ],
+          "variable_types": {
+            "用频装备编号": "text",
+            "频段区间": "text",
+            "时间区间": "text",
+            "间隔时长": "numeric",
+            "使用次数": "numeric"
+          },
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "missingness": {
+            "total_cells": 750,
+            "missing_cells": 0,
+            "by_column": [
+              {
+                "column": "用频装备编号",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "频段区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "时间区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "间隔时长",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "使用次数",
+                "missing": 0,
+                "fraction": 0.0
+              }
+            ]
+          },
+          "duplicates": 0,
+          "candidate_anomalies": [],
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          },
+          "time_column": "时间区间",
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "control": false,
+          "repeated_measures": false,
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "approx_rank": 2,
+          "zero_fraction": 0.0,
+          "monotonicity": {
+            "detected": false
+          },
+          "conservation": {
+            "row_sum_relative_range": 1.338174273858921,
+            "detected": false
+          },
+          "table_profiles": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150,
+              "cols": 5,
+              "headers": [
+                "用频装备编号",
+                "频段区间",
+                "时间区间",
+                "间隔时长",
+                "使用次数"
+              ],
+              "variable_types": {
+                "用频装备编号": "text",
+                "频段区间": "text",
+                "时间区间": "text",
+                "间隔时长": "numeric",
+                "使用次数": "numeric"
+              },
+              "numeric_columns": [
+                "使用次数",
+                "间隔时长"
+              ],
+              "anomalies": [],
+              "numeric_bounds": {
+                "间隔时长": {
+                  "min": 8.0,
+                  "max": 60.0
+                },
+                "使用次数": {
+                  "min": 3.0,
+                  "max": 12.0
+                }
+              }
+            }
+          ],
+          "no_data": false,
+          "tables": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150
+            }
+          ]
+        },
+        "statement_text_sha256": "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1"
+      },
+      "shared_state_ids": [
+        "entity_time_state"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "source_basis": [
+        "logs/D题.txt",
+        "附件/附件1.xlsx"
+      ],
+      "structure_summary": {
+        "data": {
+          "rows": 150,
+          "cols": 5,
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ],
+          "variable_types": {
+            "用频装备编号": "text",
+            "频段区间": "text",
+            "时间区间": "text",
+            "间隔时长": "numeric",
+            "使用次数": "numeric"
+          },
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "missingness": {
+            "total_cells": 750,
+            "missing_cells": 0,
+            "by_column": [
+              {
+                "column": "用频装备编号",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "频段区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "时间区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "间隔时长",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "使用次数",
+                "missing": 0,
+                "fraction": 0.0
+              }
+            ]
+          },
+          "duplicates": 0,
+          "candidate_anomalies": [],
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          },
+          "time_column": "时间区间",
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "control": false,
+          "repeated_measures": false,
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "approx_rank": 2,
+          "zero_fraction": 0.0,
+          "monotonicity": {
+            "detected": false
+          },
+          "conservation": {
+            "row_sum_relative_range": 1.338174273858921,
+            "detected": false
+          },
+          "table_profiles": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150,
+              "cols": 5,
+              "headers": [
+                "用频装备编号",
+                "频段区间",
+                "时间区间",
+                "间隔时长",
+                "使用次数"
+              ],
+              "variable_types": {
+                "用频装备编号": "text",
+                "频段区间": "text",
+                "时间区间": "text",
+                "间隔时长": "numeric",
+                "使用次数": "numeric"
+              },
+              "numeric_columns": [
+                "使用次数",
+                "间隔时长"
+              ],
+              "anomalies": [],
+              "numeric_bounds": {
+                "间隔时长": {
+                  "min": 8.0,
+                  "max": 60.0
+                },
+                "使用次数": {
+                  "min": 3.0,
+                  "max": 12.0
+                }
+              }
+            }
+          ],
+          "no_data": false,
+          "tables": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150
+            }
+          ]
+        },
+        "statement_text_sha256": "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1"
+      },
+      "shared_state_ids": [
+        "entity_time_state"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "source_basis": [
+        "logs/D题.txt",
+        "附件/附件1.xlsx"
+      ],
+      "structure_summary": {
+        "data": {
+          "rows": 150,
+          "cols": 5,
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ],
+          "variable_types": {
+            "用频装备编号": "text",
+            "频段区间": "text",
+            "时间区间": "text",
+            "间隔时长": "numeric",
+            "使用次数": "numeric"
+          },
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "missingness": {
+            "total_cells": 750,
+            "missing_cells": 0,
+            "by_column": [
+              {
+                "column": "用频装备编号",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "频段区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "时间区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "间隔时长",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "使用次数",
+                "missing": 0,
+                "fraction": 0.0
+              }
+            ]
+          },
+          "duplicates": 0,
+          "candidate_anomalies": [],
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          },
+          "time_column": "时间区间",
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "control": false,
+          "repeated_measures": false,
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "approx_rank": 2,
+          "zero_fraction": 0.0,
+          "monotonicity": {
+            "detected": false
+          },
+          "conservation": {
+            "row_sum_relative_range": 1.338174273858921,
+            "detected": false
+          },
+          "table_profiles": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150,
+              "cols": 5,
+              "headers": [
+                "用频装备编号",
+                "频段区间",
+                "时间区间",
+                "间隔时长",
+                "使用次数"
+              ],
+              "variable_types": {
+                "用频装备编号": "text",
+                "频段区间": "text",
+                "时间区间": "text",
+                "间隔时长": "numeric",
+                "使用次数": "numeric"
+              },
+              "numeric_columns": [
+                "使用次数",
+                "间隔时长"
+              ],
+              "anomalies": [],
+              "numeric_bounds": {
+                "间隔时长": {
+                  "min": 8.0,
+                  "max": 60.0
+                },
+                "使用次数": {
+                  "min": 3.0,
+                  "max": 12.0
+                }
+              }
+            }
+          ],
+          "no_data": false,
+          "tables": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150
+            }
+          ]
+        },
+        "statement_text_sha256": "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1"
+      },
+      "shared_state_ids": [
+        "entity_time_state"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "source_basis": [
+        "logs/D题.txt",
+        "附件/附件1.xlsx"
+      ],
+      "structure_summary": {
+        "data": {
+          "rows": 150,
+          "cols": 5,
+          "headers": [
+            "用频装备编号",
+            "频段区间",
+            "时间区间",
+            "间隔时长",
+            "使用次数"
+          ],
+          "variable_types": {
+            "用频装备编号": "text",
+            "频段区间": "text",
+            "时间区间": "text",
+            "间隔时长": "numeric",
+            "使用次数": "numeric"
+          },
+          "numeric_columns": [
+            "使用次数",
+            "间隔时长"
+          ],
+          "missingness": {
+            "total_cells": 750,
+            "missing_cells": 0,
+            "by_column": [
+              {
+                "column": "用频装备编号",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "频段区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "时间区间",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "间隔时长",
+                "missing": 0,
+                "fraction": 0.0
+              },
+              {
+                "column": "使用次数",
+                "missing": 0,
+                "fraction": 0.0
+              }
+            ]
+          },
+          "duplicates": 0,
+          "candidate_anomalies": [],
+          "entity_id": "用频装备编号",
+          "entity_stats": {
+            "distinct": 150,
+            "observed": 150,
+            "repeated_groups": 0,
+            "max_repeats": 1
+          },
+          "time_column": "时间区间",
+          "spatial": {
+            "has_2d": false,
+            "has_3d": false,
+            "x": null,
+            "y": null,
+            "z": null
+          },
+          "graph": {
+            "has_edge_endpoints": false,
+            "source": null,
+            "target": null,
+            "edge_tokens": false
+          },
+          "control": false,
+          "repeated_measures": false,
+          "correlated_pairs": [
+            {
+              "left": "间隔时长",
+              "right": "使用次数",
+              "pearson": -0.9731939563729636
+            }
+          ],
+          "approx_rank": 2,
+          "zero_fraction": 0.0,
+          "monotonicity": {
+            "detected": false
+          },
+          "conservation": {
+            "row_sum_relative_range": 1.338174273858921,
+            "detected": false
+          },
+          "table_profiles": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150,
+              "cols": 5,
+              "headers": [
+                "用频装备编号",
+                "频段区间",
+                "时间区间",
+                "间隔时长",
+                "使用次数"
+              ],
+              "variable_types": {
+                "用频装备编号": "text",
+                "频段区间": "text",
+                "时间区间": "text",
+                "间隔时长": "numeric",
+                "使用次数": "numeric"
+              },
+              "numeric_columns": [
+                "使用次数",
+                "间隔时长"
+              ],
+              "anomalies": [],
+              "numeric_bounds": {
+                "间隔时长": {
+                  "min": 8.0,
+                  "max": 60.0
+                },
+                "使用次数": {
+                  "min": 3.0,
+                  "max": 12.0
+                }
+              }
+            }
+          ],
+          "no_data": false,
+          "tables": [
+            {
+              "path": "附件/附件1.xlsx",
+              "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+              "rows": 150
+            }
+          ]
+        },
+        "statement_text_sha256": "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1"
+      },
+      "shared_state_ids": [
+        "entity_time_state"
+      ]
+    }
+  ],
+  "structural_checks": [
+    {
+      "question_id": "Q1",
+      "structure": "sample_size",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-sample_size"
+      ],
+      "finding_ids": [
+        "Q1-F-sample_size"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "variable_type",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-variable_type"
+      ],
+      "finding_ids": [
+        "Q1-F-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "missing",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-missing"
+      ],
+      "finding_ids": [
+        "Q1-F-missing"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-anomaly"
+      ],
+      "finding_ids": [
+        "Q1-F-anomaly"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-duplicate"
+      ],
+      "finding_ids": [
+        "Q1-F-duplicate"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-hierarchy"
+      ],
+      "finding_ids": [
+        "Q1-F-hierarchy"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-repeated_measures"
+      ],
+      "finding_ids": [
+        "Q1-F-repeated_measures"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "temporal",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-temporal"
+      ],
+      "finding_ids": [
+        "Q1-F-temporal"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "spatial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-spatial"
+      ],
+      "finding_ids": [
+        "Q1-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "graph",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-graph"
+      ],
+      "finding_ids": [
+        "Q1-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "network",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-network"
+      ],
+      "finding_ids": [
+        "Q1-F-network"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "path",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-path"
+      ],
+      "finding_ids": [
+        "Q1-F-path"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "control",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-control"
+      ],
+      "finding_ids": [
+        "Q1-F-control"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-combinatorial"
+      ],
+      "finding_ids": [
+        "Q1-F-combinatorial"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "symmetry",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-symmetry"
+      ],
+      "finding_ids": [
+        "Q1-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-monotonicity"
+      ],
+      "finding_ids": [
+        "Q1-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "convexity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-convexity"
+      ],
+      "finding_ids": [
+        "Q1-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-low_rank"
+      ],
+      "finding_ids": [
+        "Q1-F-low_rank"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-sparsity"
+      ],
+      "finding_ids": [
+        "Q1-F-sparsity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-periodicity"
+      ],
+      "finding_ids": [
+        "Q1-F-periodicity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-decomposability"
+      ],
+      "finding_ids": [
+        "Q1-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-reachable_domain"
+      ],
+      "finding_ids": [
+        "Q1-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "conservation",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-conservation"
+      ],
+      "finding_ids": [
+        "Q1-F-conservation"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "special_boundary",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-special_boundary"
+      ],
+      "finding_ids": [
+        "Q1-F-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "elimination",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-elimination"
+      ],
+      "finding_ids": [
+        "Q1-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-dimensionality_reduction"
+      ],
+      "finding_ids": [
+        "Q1-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-analytical_special_case"
+      ],
+      "finding_ids": [
+        "Q1-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q1-F-upper_lower_bounds"
+      ],
+      "finding_ids": [
+        "Q1-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "leakage",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-leakage"
+      ],
+      "finding_ids": [
+        "Q1-F-leakage"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-unavailable_variables"
+      ],
+      "finding_ids": [
+        "Q1-F-unavailable_variables"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q1-F-cross_question_shared_state"
+      ],
+      "finding_ids": [
+        "Q1-F-cross_question_shared_state"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "closed_form",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "variable_elimination",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q1-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "dimension_reduction",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "decomposition",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "coordinate_transform",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "convexification",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "relaxation_and_bounds",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q1-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "monotonicity_or_boundary",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "symmetry",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q1-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "dominance_and_pruning",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q1-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "graph_or_flow_reformulation",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "scheduling_or_coverage",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-control"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "dynamic_programming",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q1-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q1",
+      "structure": "reachable_set",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q1-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "sample_size",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-sample_size"
+      ],
+      "finding_ids": [
+        "Q2-F-sample_size"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "variable_type",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-variable_type"
+      ],
+      "finding_ids": [
+        "Q2-F-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "missing",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-missing"
+      ],
+      "finding_ids": [
+        "Q2-F-missing"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-anomaly"
+      ],
+      "finding_ids": [
+        "Q2-F-anomaly"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-duplicate"
+      ],
+      "finding_ids": [
+        "Q2-F-duplicate"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-hierarchy"
+      ],
+      "finding_ids": [
+        "Q2-F-hierarchy"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-repeated_measures"
+      ],
+      "finding_ids": [
+        "Q2-F-repeated_measures"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "temporal",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-temporal"
+      ],
+      "finding_ids": [
+        "Q2-F-temporal"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "spatial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-spatial"
+      ],
+      "finding_ids": [
+        "Q2-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "graph",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-graph"
+      ],
+      "finding_ids": [
+        "Q2-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "network",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-network"
+      ],
+      "finding_ids": [
+        "Q2-F-network"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "path",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-path"
+      ],
+      "finding_ids": [
+        "Q2-F-path"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "control",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-control"
+      ],
+      "finding_ids": [
+        "Q2-F-control"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-combinatorial"
+      ],
+      "finding_ids": [
+        "Q2-F-combinatorial"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "symmetry",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-symmetry"
+      ],
+      "finding_ids": [
+        "Q2-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-monotonicity"
+      ],
+      "finding_ids": [
+        "Q2-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "convexity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-convexity"
+      ],
+      "finding_ids": [
+        "Q2-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-low_rank"
+      ],
+      "finding_ids": [
+        "Q2-F-low_rank"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-sparsity"
+      ],
+      "finding_ids": [
+        "Q2-F-sparsity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-periodicity"
+      ],
+      "finding_ids": [
+        "Q2-F-periodicity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-decomposability"
+      ],
+      "finding_ids": [
+        "Q2-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-reachable_domain"
+      ],
+      "finding_ids": [
+        "Q2-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "conservation",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-conservation"
+      ],
+      "finding_ids": [
+        "Q2-F-conservation"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "special_boundary",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-special_boundary"
+      ],
+      "finding_ids": [
+        "Q2-F-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "elimination",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-elimination"
+      ],
+      "finding_ids": [
+        "Q2-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-dimensionality_reduction"
+      ],
+      "finding_ids": [
+        "Q2-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-analytical_special_case"
+      ],
+      "finding_ids": [
+        "Q2-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q2-F-upper_lower_bounds"
+      ],
+      "finding_ids": [
+        "Q2-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "leakage",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-leakage"
+      ],
+      "finding_ids": [
+        "Q2-F-leakage"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-unavailable_variables"
+      ],
+      "finding_ids": [
+        "Q2-F-unavailable_variables"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q2-F-cross_question_shared_state"
+      ],
+      "finding_ids": [
+        "Q2-F-cross_question_shared_state"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "closed_form",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "variable_elimination",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q2-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "dimension_reduction",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "decomposition",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "coordinate_transform",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "convexification",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "relaxation_and_bounds",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q2-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "monotonicity_or_boundary",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "symmetry",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q2-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "dominance_and_pruning",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q2-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "graph_or_flow_reformulation",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "scheduling_or_coverage",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-control"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "dynamic_programming",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q2-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "structure": "reachable_set",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q2-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "sample_size",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-sample_size"
+      ],
+      "finding_ids": [
+        "Q3-F-sample_size"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "variable_type",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-variable_type"
+      ],
+      "finding_ids": [
+        "Q3-F-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "missing",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-missing"
+      ],
+      "finding_ids": [
+        "Q3-F-missing"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-anomaly"
+      ],
+      "finding_ids": [
+        "Q3-F-anomaly"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-duplicate"
+      ],
+      "finding_ids": [
+        "Q3-F-duplicate"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-hierarchy"
+      ],
+      "finding_ids": [
+        "Q3-F-hierarchy"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-repeated_measures"
+      ],
+      "finding_ids": [
+        "Q3-F-repeated_measures"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "temporal",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-temporal"
+      ],
+      "finding_ids": [
+        "Q3-F-temporal"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "spatial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-spatial"
+      ],
+      "finding_ids": [
+        "Q3-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "graph",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-graph"
+      ],
+      "finding_ids": [
+        "Q3-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "network",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-network"
+      ],
+      "finding_ids": [
+        "Q3-F-network"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "path",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-path"
+      ],
+      "finding_ids": [
+        "Q3-F-path"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "control",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-control"
+      ],
+      "finding_ids": [
+        "Q3-F-control"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-combinatorial"
+      ],
+      "finding_ids": [
+        "Q3-F-combinatorial"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "symmetry",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-symmetry"
+      ],
+      "finding_ids": [
+        "Q3-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-monotonicity"
+      ],
+      "finding_ids": [
+        "Q3-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "convexity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-convexity"
+      ],
+      "finding_ids": [
+        "Q3-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-low_rank"
+      ],
+      "finding_ids": [
+        "Q3-F-low_rank"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-sparsity"
+      ],
+      "finding_ids": [
+        "Q3-F-sparsity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-periodicity"
+      ],
+      "finding_ids": [
+        "Q3-F-periodicity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-decomposability"
+      ],
+      "finding_ids": [
+        "Q3-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-reachable_domain"
+      ],
+      "finding_ids": [
+        "Q3-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "conservation",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-conservation"
+      ],
+      "finding_ids": [
+        "Q3-F-conservation"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "special_boundary",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-special_boundary"
+      ],
+      "finding_ids": [
+        "Q3-F-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "elimination",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-elimination"
+      ],
+      "finding_ids": [
+        "Q3-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-dimensionality_reduction"
+      ],
+      "finding_ids": [
+        "Q3-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-analytical_special_case"
+      ],
+      "finding_ids": [
+        "Q3-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q3-F-upper_lower_bounds"
+      ],
+      "finding_ids": [
+        "Q3-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "leakage",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-leakage"
+      ],
+      "finding_ids": [
+        "Q3-F-leakage"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-unavailable_variables"
+      ],
+      "finding_ids": [
+        "Q3-F-unavailable_variables"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q3-F-cross_question_shared_state"
+      ],
+      "finding_ids": [
+        "Q3-F-cross_question_shared_state"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "closed_form",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "variable_elimination",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q3-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "dimension_reduction",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "decomposition",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "coordinate_transform",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "convexification",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "relaxation_and_bounds",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q3-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "monotonicity_or_boundary",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "symmetry",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q3-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "dominance_and_pruning",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q3-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "graph_or_flow_reformulation",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "scheduling_or_coverage",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-control"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "dynamic_programming",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q3-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "structure": "reachable_set",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q3-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "sample_size",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-sample_size"
+      ],
+      "finding_ids": [
+        "Q4-F-sample_size"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "variable_type",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-variable_type"
+      ],
+      "finding_ids": [
+        "Q4-F-variable_type"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "missing",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-missing"
+      ],
+      "finding_ids": [
+        "Q4-F-missing"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "anomaly",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-anomaly"
+      ],
+      "finding_ids": [
+        "Q4-F-anomaly"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "duplicate",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-duplicate"
+      ],
+      "finding_ids": [
+        "Q4-F-duplicate"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "hierarchy",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 hierarchy；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-hierarchy"
+      ],
+      "finding_ids": [
+        "Q4-F-hierarchy"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "repeated_measures",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 repeated_measures；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-repeated_measures"
+      ],
+      "finding_ids": [
+        "Q4-F-repeated_measures"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "temporal",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 temporal 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-temporal"
+      ],
+      "finding_ids": [
+        "Q4-F-temporal"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "spatial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 spatial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-spatial"
+      ],
+      "finding_ids": [
+        "Q4-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "graph",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 graph；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-graph"
+      ],
+      "finding_ids": [
+        "Q4-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "network",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 network；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-network"
+      ],
+      "finding_ids": [
+        "Q4-F-network"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "path",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 path；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-path"
+      ],
+      "finding_ids": [
+        "Q4-F-path"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "control",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 control；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-control"
+      ],
+      "finding_ids": [
+        "Q4-F-control"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "combinatorial",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 combinatorial；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-combinatorial"
+      ],
+      "finding_ids": [
+        "Q4-F-combinatorial"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "symmetry",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 symmetry 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-symmetry"
+      ],
+      "finding_ids": [
+        "Q4-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "monotonicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 monotonicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-monotonicity"
+      ],
+      "finding_ids": [
+        "Q4-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "convexity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 convexity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-convexity"
+      ],
+      "finding_ids": [
+        "Q4-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "low_rank",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 low_rank；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-low_rank"
+      ],
+      "finding_ids": [
+        "Q4-F-low_rank"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "sparsity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 sparsity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-sparsity"
+      ],
+      "finding_ids": [
+        "Q4-F-sparsity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "periodicity",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 periodicity；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-periodicity"
+      ],
+      "finding_ids": [
+        "Q4-F-periodicity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "decomposability",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 decomposability；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-decomposability"
+      ],
+      "finding_ids": [
+        "Q4-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "reachable_domain",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 reachable_domain 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-reachable_domain"
+      ],
+      "finding_ids": [
+        "Q4-F-reachable_domain"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "conservation",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 conservation；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-conservation"
+      ],
+      "finding_ids": [
+        "Q4-F-conservation"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "special_boundary",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 special_boundary 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-special_boundary"
+      ],
+      "finding_ids": [
+        "Q4-F-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "elimination",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 elimination 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-elimination"
+      ],
+      "finding_ids": [
+        "Q4-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "dimensionality_reduction",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 dimensionality_reduction；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-dimensionality_reduction"
+      ],
+      "finding_ids": [
+        "Q4-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "analytical_special_case",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 analytical_special_case；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-analytical_special_case"
+      ],
+      "finding_ids": [
+        "Q4-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "upper_lower_bounds",
+      "status": "observed",
+      "reason": "从题面/登记数据中检测到 upper_lower_bounds 结构，观测摘要已写入可复算 evidence。",
+      "evidence_refs": [
+        "Q4-F-upper_lower_bounds"
+      ],
+      "finding_ids": [
+        "Q4-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "leakage",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 leakage；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-leakage"
+      ],
+      "finding_ids": [
+        "Q4-F-leakage"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "unavailable_variables",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 unavailable_variables；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-unavailable_variables"
+      ],
+      "finding_ids": [
+        "Q4-F-unavailable_variables"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "cross_question_shared_state",
+      "status": "not_observed",
+      "reason": "在允许的题面与当前数据范围内未检测到 cross_question_shared_state；保留该否定结论供后续选路审计。",
+      "evidence_refs": [
+        "Q4-F-cross_question_shared_state"
+      ],
+      "finding_ids": [
+        "Q4-F-cross_question_shared_state"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "closed_form",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-analytical_special_case"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "variable_elimination",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q4-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "dimension_reduction",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-dimensionality_reduction"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "decomposition",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "coordinate_transform",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-spatial"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "convexification",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-convexity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "relaxation_and_bounds",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q4-F-upper_lower_bounds"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "monotonicity_or_boundary",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-monotonicity"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "symmetry",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q4-F-symmetry"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "dominance_and_pruning",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q4-F-elimination"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "graph_or_flow_reformulation",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-graph"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "scheduling_or_coverage",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-control"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "dynamic_programming",
+      "status": "screened_out",
+      "reason": "当前题面与数据未给出足够结构证据，搜索阶段不得凭偏好补入。",
+      "evidence_refs": [
+        "Q4-F-decomposability"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "structure": "reachable_set",
+      "status": "retained",
+      "reason": "先完成结构发现，再决定是否检索该相关模型族/重表达。",
+      "evidence_refs": [
+        "Q4-F-reachable_domain"
+      ]
+    }
+  ],
+  "cross_question_shared_state": [
+    {
+      "state_id": "entity_time_state",
+      "detected": true,
+      "fields": [
+        "用频装备编号",
+        "时间区间"
+      ]
+    }
+  ]
+}

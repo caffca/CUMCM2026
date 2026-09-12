@@ -1,0 +1,31 @@
+{
+ "question_id": "Q3",
+ "idea_id": "Q3-R11",
+ "status": "completed",
+ "feasible": true,
+ "objective": 139,
+ "objective_tuple": [
+  139,
+  139
+ ],
+ "objective_unit": "new_C_plans",
+ "runtime_seconds": 4.3,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q3 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/solution_newc.json --base-actions runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "CP-SAT random_seed=0, workers=8；贪心预筛确定性",
+ "replicates": 1,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/solution_newc.json",
+ "failure_mode": null,
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+ "evaluator_n_violations": 0,
+ "certified_optimal": {
+  "value": true,
+  "scope": "scope: frozen base=Q2-R51 scout solution (tuple [6,121,1996,663]); 基座敏感性 R32→134/R41→136 见评审 CH-REV-A base_sensitivity"
+ },
+ "optimality_evidence": "CP-SAT OPTIMAL (A/B 双模型 incumbent=bound=139) + HiGHS LP 界 139.0 独立复证；scope: frozen base=Q2-R51 scout solution (tuple [6,121,1996,663]); 基座敏感性 R32→134/R41→136 见评审 CH-REV-A base_sensitivity",
+ "upper_bound_certified": 139,
+ "elementary_bound": 332,
+ "elementary_bound_source": "Q3-R51 相位×块双计数（仅作可手核对照，不是本候选认证界）",
+ "revision_note": "评审闭环修订 v2：upper_bound 由 332（finalize 表头统一值）改为自身认证界 139，gap=0.0，332 移入 elementary_bound 对照字段"
+}

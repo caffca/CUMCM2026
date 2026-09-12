@@ -1,0 +1,137 @@
+{
+ "check": "Q1 口径敏感性",
+ "edges_halfopen_mine": 297,
+ "edges_if_closed_intervals": 435,
+ "extra_pairs_only_if_closed": [
+  [
+   "A001",
+   "C001"
+  ],
+  [
+   "A002",
+   "C020"
+  ],
+  [
+   "A003",
+   "B005"
+  ],
+  [
+   "A004",
+   "B013"
+  ],
+  [
+   "A004",
+   "C057"
+  ],
+  [
+   "A005",
+   "C013"
+  ],
+  [
+   "A006",
+   "C015"
+  ],
+  [
+   "A006",
+   "C016"
+  ],
+  [
+   "A007",
+   "B017"
+  ],
+  [
+   "A007",
+   "C012"
+  ],
+  [
+   "A007",
+   "C013"
+  ],
+  [
+   "A007",
+   "C043"
+  ],
+  [
+   "A008",
+   "B019"
+  ],
+  [
+   "A008",
+   "B020"
+  ],
+  [
+   "A008",
+   "C048"
+  ],
+  [
+   "A009",
+   "C024"
+  ],
+  [
+   "A009",
+   "C034"
+  ],
+  [
+   "A010",
+   "B018"
+  ],
+  [
+   "A010",
+   "B029"
+  ],
+  [
+   "A011",
+   "B028"
+  ]
+ ],
+ "n_extra_pairs_only_if_closed": 138,
+ "band_touching_pairs": 350,
+ "band_touching_examples": [
+  [
+   "A001",
+   "B002"
+  ],
+  [
+   "A001",
+   "B022"
+  ],
+  [
+   "A001",
+   "B027"
+  ],
+  [
+   "A001",
+   "C001"
+  ],
+  [
+   "A001",
+   "C041"
+  ]
+ ],
+ "time_endpoint_touching_nonconflict_pairs": 575,
+ "time_touch_examples": [
+  [
+   "A001",
+   "B007"
+  ],
+  [
+   "A001",
+   "C001"
+  ],
+  [
+   "A001",
+   "C006"
+  ],
+  [
+   "A001",
+   "C011"
+  ],
+  [
+   "A001",
+   "C013"
+  ]
+ ],
+ "edges_by_distinct_cells": 297,
+ "cells_agree_with_halfopen": true,
+ "verdict": "PASS"
+}

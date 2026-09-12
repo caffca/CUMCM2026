@@ -1,0 +1,161 @@
+{
+ "question_id": "Q4",
+ "idea_id": "Q4-R11",
+ "status": "completed",
+ "feasible": true,
+ "objective": 6012119960663,
+ "objective_tuple": [
+  6,
+  121,
+  1996,
+  663
+ ],
+ "runtime_seconds": 547.3,
+ "evaluator_invoked": true,
+ "seed": "CP-SAT random_seed=7, workers=4 (deterministic)",
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run_anchor/solution_planted_q2r51.json",
+ "failure_mode": null,
+ "layers": [
+  {
+   "layer": "revoke",
+   "cap_seconds": 230.0,
+   "wall_seconds": 230.5,
+   "status": "FEASIBLE",
+   "ub": 8,
+   "lb": 2,
+   "closed": false
+  },
+  {
+   "layer": "adjusted",
+   "cap_seconds": 120.0,
+   "wall_seconds": 120.4,
+   "status": "FEASIBLE",
+   "ub": 113,
+   "lb": 11,
+   "closed": false
+  },
+  {
+   "layer": "priority_loss",
+   "cap_seconds": 100.0,
+   "wall_seconds": 100.3,
+   "status": "UNKNOWN"
+  },
+  {
+   "layer": "magnitude",
+   "cap_seconds": 90.0,
+   "wall_seconds": 90.1,
+   "status": "UNKNOWN"
+  }
+ ],
+ "inclusion_check_Q2_reduction": {
+  "q2reduction_model": {
+   "edges": 1693,
+   "vars": 4582,
+   "clauses": 270626,
+   "layers": [
+    {
+     "layer": "revoke",
+     "cap_seconds": 150.0,
+     "wall_seconds": 150.1,
+     "status": "FEASIBLE",
+     "ub": 14,
+     "lb": 0,
+     "closed": false
+    },
+    {
+     "layer": "adjusted",
+     "cap_seconds": 60.0,
+     "wall_seconds": 60.1,
+     "status": "FEASIBLE",
+     "ub": 96,
+     "lb": 0,
+     "closed": false
+    },
+    {
+     "layer": "priority_loss",
+     "cap_seconds": 60.0,
+     "wall_seconds": 60.0,
+     "status": "UNKNOWN"
+    },
+    {
+     "layer": "magnitude",
+     "cap_seconds": 60.0,
+     "wall_seconds": 60.1,
+     "status": "UNKNOWN"
+    }
+   ]
+  },
+  "shared_solution_eval_Q2": {
+   "feasible": true,
+   "tuple": [
+    14,
+    96,
+    2383,
+    638
+   ]
+  },
+  "shared_solution_eval_Q4": {
+   "feasible": true,
+   "tuple": [
+    14,
+    96,
+    2383,
+    638
+   ]
+  },
+  "tuples_identical_on_shared_actions": true,
+  "q4_tuple_leq_q2_tuple": true,
+  "q2sol_feasible_in_q4": true,
+  "narrative_correction": "旧『8<14⇒自由度有收益』宣称作废：Q2 侧真实锚为 Q2-R51 植入解 rev=6（自跑退化 14 只是退化模型欠闭合），Q4 自跑 8 亦未支配植入锚；结论冻结至生产热启动结果",
+  "planted_check": {
+   "actions_subset": true,
+   "mask_legal": true,
+   "eval_q4_tuple": [
+    6,
+    121,
+    1996,
+    663
+   ],
+   "residual": 0
+  }
+ },
+ "previous_objective_prior_to_anchor": {
+  "tuple": [
+   8,
+   113,
+   2289,
+   719
+  ],
+  "scalar": 8011322890719,
+  "solution": "scouts/Q4-R11/run/solution_actions.json",
+  "note": "自跑 547.3s 结果，保留为历史，不再作为候选 objective"
+ },
+ "anchored": true,
+ "anchor_ref": {
+  "source_solution": "scouts/Q2-R51/solution_actions.json",
+  "source_sha256": "8266fb689b93ee7795906e553d2f52b33be3082f1fcf9ead3c3360b65ec5e4ac",
+  "copied_solution": "scouts/Q4-R11/run_anchor/solution_planted_q2r51.json",
+  "provenance": "planted_from_Q2-R51",
+  "tuple": [
+   6,
+   121,
+   1996,
+   663
+  ],
+  "dominance_by_self_run": false,
+  "statement": "支配界锚=Q2-R51 植入解 6；Q4 自跑 8 未支配植入锚；改善宣称冻结至生产热启动结果"
+ },
+ "inclusion_artifact": "scouts/Q4-R11/run_anchor/q2_planted_inclusion_check.json",
+ "budget_disclosure": {
+  "solver_caps_seconds": [
+   300,
+   300
+  ],
+  "solver_walls_seconds": [
+   307.2,
+   306.7
+  ],
+  "note": "两跑合计求解预算 600s 上限；工件各含 ~7s 域/模型构建，逐值登记"
+ },
+ "reproducibility_artifact": "scouts/Q4-R11/run_anchor/reproducibility_check.json"
+}

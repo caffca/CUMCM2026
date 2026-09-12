@@ -1,0 +1,25 @@
+{
+ "option_mask_recount_mismatches": 0,
+ "examples": [],
+ "E_edge_table_audit": {
+  "mine_edges": 2117,
+  "candidate_edges": 2117,
+  "missing_edges": 0,
+  "missing_examples": [],
+  "extra_edges": 0,
+  "extra_examples": [],
+  "forbidden_pair_missing_in_candidate": 0,
+  "forbidden_pair_extra_in_candidate": 0,
+  "pair_examples": [],
+  "elapsed_seconds": 23.3,
+  "verdict_zero_missing": true
+ },
+ "E_q2_edge_audit": {
+  "mine": 1693,
+  "candidate": 1693,
+  "subset_of_q4": true,
+  "mine2_subset_of_mine4": true,
+  "mine_q2_count": 1693,
+  "mine_q4_count": 2117
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "question_id": "Q4",
+ "idea_id": "Q4-R22",
+ "status": "completed",
+ "feasible": true,
+ "objective": 66004311110144,
+ "objective_tuple": [
+  66,
+  43,
+  1111,
+  144
+ ],
+ "runtime_seconds": 29.2,
+ "evaluator_invoked": true,
+ "seed": "N/A (deterministic)",
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/solution_actions.json",
+ "failure_mode": null
+}

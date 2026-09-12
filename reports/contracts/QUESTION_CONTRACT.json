@@ -1,0 +1,277 @@
+{
+  "schema_version": 2,
+  "problem_id": "D2026",
+  "questions": [
+    {
+      "question_id": "Q1",
+      "original_request": "对附件1给出的用频计划进行时频冲突检测，将结果保存到 result1.xlsx，并在论文中给出时频冲突的统计结果。",
+      "decision_target": "枚举全部时频冲突计划对",
+      "analysis_unit": "用频计划对 (i,j)",
+      "observation_unit": "计划对×占用时段×频段",
+      "special_data_structure": {
+        "kind": "周期矩形占用",
+        "note": "每计划=频段窗口 × 周期(gap+d)重复 n 个时间窗"
+      },
+      "required_outputs": [
+        "submission/result1.xlsx（每行一对冲突）",
+        "论文冲突统计（总数/按类对/热点）"
+      ],
+      "allowed_information": [
+        "附件1 全部计划参数"
+      ],
+      "forbidden_information": [
+        "调整/撤销决策（Q1 只检测）"
+      ],
+      "evaluation_target": [
+        "冲突对集合完全且无伪"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "Q1-C1",
+          "requirement": "冲突对枚举完整且精确",
+          "mandatory": true,
+          "source_fact_ids": [
+            "F-001",
+            "F-005",
+            "F-006",
+            "F-023"
+          ],
+          "acceptance_rule": "暴力逐时段枚举与区间算术双实现一致；独立checker复核",
+          "required_evidence": [
+            "results/Q1_detect.json",
+            "code/q1_detect.py",
+            "code/q1_verify.py"
+          ]
+        },
+        {
+          "capability_id": "Q1-C2",
+          "requirement": "result1.xlsx 符合模板",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q1-F014",
+            "F-021"
+          ],
+          "acceptance_rule": "列结构与行数与 result 列表一致",
+          "required_evidence": [
+            "submission/result1.xlsx"
+          ]
+        },
+        {
+          "capability_id": "Q1-C3",
+          "requirement": "论文给出统计结果",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q1-F014"
+          ],
+          "acceptance_rule": "统计数字与 results JSON 逐项命中",
+          "required_evidence": [
+            "results/Q1_stats.json"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "original_request": "对问题1检测出的时频冲突进行消解（调整至多一个参数或撤销），保存 result2.xlsx，按表1给出统计。",
+      "decision_target": "每计划动作∈{保持,频段平移,时间平移,撤销}及平移量",
+      "analysis_unit": "用频计划",
+      "observation_unit": "计划×时段×频段",
+      "special_data_structure": "冲突图上顶点操作+带幅重嵌入",
+      "required_outputs": [
+        "submission/result2.xlsx",
+        "论文表1"
+      ],
+      "allowed_information": [
+        "Q1 冲突对集合"
+      ],
+      "forbidden_information": [
+        "调整使用次数",
+        "同时调整频段与时间",
+        "超出 10Δf/5Δt"
+      ],
+      "evaluation_target": [
+        "零冲突",
+        "目标链 revoke<adjusted<priority<magnitude"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "Q2-C1",
+          "requirement": "输出方案零冲突",
+          "mandatory": true,
+          "source_fact_ids": [
+            "F-006",
+            "F-007",
+            "Q2-F015"
+          ],
+          "acceptance_rule": "对调整后全部计划重跑 Q1 检测器返回 0 对",
+          "required_evidence": [
+            "results/Q2_solution.json",
+            "code/check_q2.py"
+          ]
+        },
+        {
+          "capability_id": "Q2-C2",
+          "requirement": "单参数与幅度合规",
+          "mandatory": true,
+          "source_fact_ids": [
+            "F-002",
+            "F-008",
+            "F-009",
+            "F-012"
+          ],
+          "acceptance_rule": "逐行 checker 断言 |Δf|≤10,|Δt|≤5,次数/间隔不变,频段0..99",
+          "required_evidence": [
+            "code/check_q2.py"
+          ]
+        },
+        {
+          "capability_id": "Q2-C3",
+          "requirement": "目标链优化并给出证据",
+          "mandatory": true,
+          "source_fact_ids": [
+            "F-010",
+            "Q2-F011"
+          ],
+          "acceptance_rule": "CP-SAT 最优性状态 + 撤销数下界论证 + 启发式对照",
+          "required_evidence": [
+            "results/Q2_solution.json",
+            "runs/competitive"
+          ]
+        },
+        {
+          "capability_id": "Q2-C4",
+          "requirement": "表1与 result2 一致",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q2-F016",
+            "Q2-F015"
+          ],
+          "acceptance_rule": "按类聚合与逐行一致",
+          "required_evidence": [
+            "results/Q2_table1.json"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "original_request": "基于问题2无冲突方案，不限平移幅度、不增加时频资源，最多还能安排多少C类装备？结果存 result3.xlsx。",
+      "decision_target": "新增C类计划集合（频段区间+时间区间；间隔8/次数12/宽3/时长2 固定）",
+      "analysis_unit": "新增C计划",
+      "observation_unit": "占用单元(频段×时间格)",
+      "special_data_structure": "周期脉冲装箱：3频段×相位×12连续oct",
+      "required_outputs": [
+        "submission/result3.xlsx",
+        "最大数量论证(构造下界+上界)"
+      ],
+      "allowed_information": [
+        "Q2 最终方案"
+      ],
+      "forbidden_information": [
+        "增加时频资源",
+        "改既有计划次数/间隔"
+      ],
+      "evaluation_target": [
+        "新增C数量最大化",
+        "与Q2方案零冲突",
+        "新增内部零冲突"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "Q3-C1",
+          "requirement": "加装方案零冲突",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q3-F017"
+          ],
+          "acceptance_rule": "checker 复验(对Q2方案+内部)",
+          "required_evidence": [
+            "results/Q3_solution.json",
+            "code/check_q3.py"
+          ]
+        },
+        {
+          "capability_id": "Q3-C2",
+          "requirement": "数量最大化论证",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q3-F017"
+          ],
+          "acceptance_rule": "上界可检查,下界=提交行数,报告gap",
+          "required_evidence": [
+            "results/Q3_bound.json"
+          ]
+        },
+        {
+          "capability_id": "Q3-C3",
+          "requirement": "result3 行数=宣称数量且格式合规",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q3-F018"
+          ],
+          "acceptance_rule": "行级断言",
+          "required_evidence": [
+            "submission/result3.xlsx"
+          ]
+        }
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "original_request": "允许部分C类调整间隔(≤10Δt)，消解问题1冲突，存 result4.xlsx 并按表1统计。",
+      "decision_target": "每计划动作∈{保持,频段平移,时间平移,(仅C)间隔调整,撤销}及幅度",
+      "analysis_unit": "用频计划",
+      "observation_unit": "计划×时段×频段",
+      "special_data_structure": "周期结构重定时(retiming)",
+      "required_outputs": [
+        "submission/result4.xlsx",
+        "论文表1+与Q2对比"
+      ],
+      "allowed_information": [
+        "Q1 冲突对集合"
+      ],
+      "forbidden_information": [
+        "A/B调间隔",
+        "C |Δgap|>10或间隔≤0",
+        "调次数",
+        "多参数同调"
+      ],
+      "evaluation_target": [
+        "零冲突",
+        "同Q2目标链",
+        "相对Q2改善证据"
+      ],
+      "capabilities": [
+        {
+          "capability_id": "Q4-C1",
+          "requirement": "零冲突+合规",
+          "mandatory": true,
+          "source_fact_ids": [
+            "F-006",
+            "F-008",
+            "Q4-F019",
+            "Q4-F020"
+          ],
+          "acceptance_rule": "checker 全断言(含间隔规则)",
+          "required_evidence": [
+            "results/Q4_solution.json",
+            "code/check_q4.py"
+          ]
+        },
+        {
+          "capability_id": "Q4-C2",
+          "requirement": "利用间隔自由度不劣于Q2",
+          "mandatory": true,
+          "source_fact_ids": [
+            "Q4-F011"
+          ],
+          "acceptance_rule": "同一 canonical 评价函数下对比",
+          "required_evidence": [
+            "results/Q4_table1.json",
+            "results/Q2_table1.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "figure_id": "fig-q4-dg-dist",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:27+08:00",
+  "source_results": [
+    {
+      "file": "Q4_solution.json",
+      "sha256": "d429868879265b1a5d5fe5f0ee912317758d4593a6f249633d6f81a1af17bb3a",
+      "keys": [
+        "dg_options_dropped_by_horizon",
+        "dg_dropped_infeasible_gap",
+        "dg_dropped_horizon",
+        "objective_tuple"
+      ]
+    }
+  ],
+  "source_hash": "892ee97e20033866625cd04f0ea7edfd493dc2d17f2b19e44076b24dc3a412d9",
+  "panels": {
+    "A": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 21,
+      "text_count": 2,
+      "collection_count": 0
+    }
+  },
+  "annotations": [
+    {
+      "label": "被禁 dg 选项",
+      "value_key": "dg_options_dropped_by_horizon",
+      "raw": 369,
+      "value": 369,
+      "text": "369 项"
+    },
+    {
+      "label": "其中时域越界",
+      "value_key": "dg_dropped_horizon",
+      "raw": 99,
+      "value": 99,
+      "text": "99 项"
+    }
+  ],
+  "axes": [],
+  "caption": "间隔重定时调整分布"
+}

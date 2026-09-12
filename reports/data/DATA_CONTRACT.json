@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cumcm2026D-attachment1-plans-150",
+  "entity_unit": "entity",
+  "observation_unit": "row observation",
+  "group_id": "用频装备编号",
+  "temporal_order": "时间区间",
+  "forbidden_splits": [],
+  "allowed_information": [
+    "problem statement",
+    "official attachments",
+    "registered current data",
+    "verified snapshot",
+    "frozen official authority"
+  ],
+  "unavailable_variables": [],
+  "cross_question_shared_state": [
+    "entity_time_state"
+  ],
+  "no_data": false,
+  "note": "同一实体/时间键是跨问与切分规则的共享状态。"
+}

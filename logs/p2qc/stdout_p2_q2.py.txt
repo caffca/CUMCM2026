@@ -1,0 +1,69 @@
+{
+ "check": "Q2_solution 独立复算",
+ "n_plans": 150,
+ "shape_bad": [],
+ "compliance_violations": [],
+ "horizon_violations_ADR3": [],
+ "revoked": [
+  "B013",
+  "B018",
+  "B019",
+  "B020",
+  "B022",
+  "B028"
+ ],
+ "n_revoked": 6,
+ "n_adjusted": 121,
+ "n_kept": 23,
+ "sum_equals_150": true,
+ "sum_value": 150,
+ "by_class_mine": {
+  "A": {
+   "kept": 5,
+   "adjusted": 15,
+   "revoked": 0
+  },
+  "B": {
+   "kept": 4,
+   "adjusted": 30,
+   "revoked": 6
+  },
+  "C": {
+   "kept": 14,
+   "adjusted": 76,
+   "revoked": 0
+  }
+ },
+ "post_conflict_edges_mine": 0,
+ "post_pairs_checked": 10296,
+ "post_conflict_edges_auth_field": {
+  "residual_pairs": 0,
+  "residual_pairs_second_impl": 0,
+  "compliance_violations": 0
+ },
+ "objective_tuple_mine": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "objective_tuple_auth": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "objective_tuple_equal": true,
+ "objective_scalar_auth": 6012119960661,
+ "objective_scalar_mine": 6012119960661,
+ "original_edges_all_touched": true,
+ "untouched_conflict_pairs": [],
+ "auth_revoke_fields": {
+  "revoke": 6,
+  "objective_tuple[0]": 6,
+  "revocation.upper_incumbent": 6
+ },
+ "hint_source": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "hint_role": "search_hint_only_all_figures_recomputed",
+ "verdict": "PASS"
+}

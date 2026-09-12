@@ -1,0 +1,66 @@
+{
+ "tag": "Q2reduction",
+ "allow_gap": false,
+ "edges": 1693,
+ "clause_pairs": 270626,
+ "vars": 4582,
+ "build_seconds": 2.3,
+ "wall_seconds_total": 336.6,
+ "workers": 2,
+ "seed": 7,
+ "hint_used": false,
+ "layers": [
+  {
+   "layer": "revoke",
+   "cap_seconds": 150.0,
+   "wall_seconds": 150.1,
+   "status": "FEASIBLE",
+   "ub": 14,
+   "lb": 0,
+   "closed": false
+  },
+  {
+   "layer": "adjusted",
+   "cap_seconds": 60.0,
+   "wall_seconds": 60.1,
+   "status": "FEASIBLE",
+   "ub": 96,
+   "lb": 0,
+   "closed": false
+  },
+  {
+   "layer": "priority_loss",
+   "cap_seconds": 60.0,
+   "wall_seconds": 60.0,
+   "status": "UNKNOWN"
+  },
+  {
+   "layer": "magnitude",
+   "cap_seconds": 60.0,
+   "wall_seconds": 60.1,
+   "status": "UNKNOWN"
+  }
+ ],
+ "solve_ok": true,
+ "ladder_certificate": {
+  "revoke_lb": 0,
+  "revoke_ub": 14,
+  "revoke_closed": false,
+  "layers_closed": [],
+  "note": "OPTIMAL 层由 CP-SAT 对偶界证明该层在既定前缀下无更优解；FEASIBLE 层报告 [lb,ub] 不闭合区间；UNKNOWN 层不固定目标继续下一层"
+ },
+ "objective_tuple_evaluator_recheck": [
+  14,
+  96,
+  2383,
+  638
+ ],
+ "objective_tuple_model": [
+  14,
+  96,
+  null,
+  null
+ ],
+ "tuple_match": false,
+ "internal_residual_conflicts": 0
+}

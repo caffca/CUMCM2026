@@ -1,0 +1,5 @@
+{
+  "operations": [],
+  "ml_applicable": false,
+  "notes": "确定性优化/枚举题目：无监督学习、无统计估计、无训练/测试划分。算法随机性（SA/GRASP/LNS 的种子）不是 ML 数据流操作，种子集合 [11,29,47] 全程冻结并复现登记；不存在 outer_test 概念（评价由 canonical evaluator 对同一全量输入复算）。"
+}

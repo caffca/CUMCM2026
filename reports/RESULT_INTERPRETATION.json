@@ -1,0 +1,732 @@
+{
+  "claims": [
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q1-01",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q1_detect.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "symdiff_vs_evaluator"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q1",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q1-01"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q1-02",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q1_detect.json",
+        "results/Q1_verify.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "three_way_max_symdiff"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q1",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q1-02"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q1-03",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q1_stats.json",
+        "results/Q1_detect.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "boundary_cases_failed"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q1",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q1-03"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q1-04",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q1_stats.json",
+        "results/Q1_detect.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "result1_edge_symdiff"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q1",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q1-04"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q1-05",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q1_stats.json",
+        "results/Q1_detect.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "classpair_sum_minus_total"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q1",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q1-05"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-01",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json",
+        "results/Q2_check.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "residual_pairs_second_impl"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-01"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-02",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json",
+        "results/Q2_check.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "compliance_violations"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-02"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-03",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "5 >= 1.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "ladder_proven_revoke_lb"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-03"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-04",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "0.96 >= 0.05",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "degeneracy_ratio"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-04"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-05",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|1 - 1| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "tuple_matches_second_impl"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-05"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q2-07",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q2_solution.json",
+        "results/Q2_table1.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "table_closure_diff"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q2",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q2-07"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q3-01",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q3_solution.json",
+        "results/Q3_check.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "conflict_total_second_impl"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q3",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q3-01"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q3-02",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q3_bound.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "cand_count_second_impl_minus_solver"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q3",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q3-02"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q3-03",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q3_bound.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "0 >= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "ub_min_minus_lb"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q3",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q3-03"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q3-05",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q3_solution.json",
+        "results/Q3_submission_check.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "result3_rows_minus_phi"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q3",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q3-05"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q3-06",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q3_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|1 - 1| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "base_is_production_q2"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q3",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q3-06"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q4-01",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q4_solution.json",
+        "results/Q4_check.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "violations_second_impl"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q4",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q4-01"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q4-02",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q4_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|1 - 1| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "planted_q2_feasible"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q4",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q4-02"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q4-03",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q4_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "delta=2e+08 >= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "scalar"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q4",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q4-03"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q4-05",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q4_solution.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|1 - 1| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "tuple_matches_second_impl"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q4",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q4-05"
+      ],
+      "validation_verdict": "PASS"
+    },
+    {
+      "baseline_delta": null,
+      "claim_id": "claim:V-Q4-06",
+      "claim_status": "SUPPORTED",
+      "confidence": "evaluator-bound",
+      "evidence_refs": [
+        "results/Q4_solution.json",
+        "results/Q4_table1.json"
+      ],
+      "failure_class": null,
+      "failure_event_id": null,
+      "next_action": "允许进入既有 paper_plan；不扩大当前 result-review authority。",
+      "observation": "|0 - 0| <= 0.0",
+      "replacement_claim": null,
+      "resolution_mode": null,
+      "result_keys": [
+        "table_closure_diff"
+      ],
+      "return_to": "paper_plan",
+      "scope": "Q4",
+      "status": "SUPPORTED",
+      "uncertainty": null,
+      "unsupported_extensions": [],
+      "validation_ids": [
+        "V-Q4-06"
+      ],
+      "validation_verdict": "PASS"
+    }
+  ],
+  "generated_at": "2026-09-12T14:04:20+08:00",
+  "model_decision_binding": {
+    "authority_scope": "explanatory_projection_only",
+    "decision_record": {
+      "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+      "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658"
+    },
+    "problem_id": "D2026",
+    "profile_id": "PROFILE-8ADA7763202B25BA",
+    "question_bindings": {
+      "Q1": {
+        "decision_status": "pending_proposal",
+        "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+        "question_id": "Q1",
+        "selected_strategy_id": null,
+        "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+      },
+      "Q2": {
+        "decision_status": "pending_proposal",
+        "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+        "question_id": "Q2",
+        "selected_strategy_id": null,
+        "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+      },
+      "Q3": {
+        "decision_status": "pending_proposal",
+        "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+        "question_id": "Q3",
+        "selected_strategy_id": null,
+        "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+      },
+      "Q4": {
+        "decision_status": "pending_proposal",
+        "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+        "question_id": "Q4",
+        "selected_strategy_id": null,
+        "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+      }
+    },
+    "schema_version": 1,
+    "selection_validation": {
+      "path": "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+      "sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f"
+    },
+    "strategy_matching_id": "MATCH-1504A0480D6D591A"
+  },
+  "producer": "skills/9result-review/scripts/build_result_interpretation.py",
+  "producer_sha256": "83dc5247fbe0c710a89c45b79c61e1c2552b20fb505a6d14f65dfabdaea537f6",
+  "recommended_evaluations": [
+    {
+      "claim_id": "Q1-C1",
+      "evidence_refs": [
+        "results/Q1_stats.json",
+        "results/Q1_detect.json"
+      ],
+      "priority": "recommended",
+      "question_id": "Q1",
+      "validation_id": "V-Q1-06",
+      "verdict": "FAIL"
+    },
+    {
+      "claim_id": "Q2-C3",
+      "evidence_refs": [
+        "results/Q2_solution.json",
+        "results/Q2_solution.json"
+      ],
+      "priority": "recommended",
+      "question_id": "Q2",
+      "validation_id": "V-Q2-06",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "Q2-C3",
+      "evidence_refs": [
+        "results/Q2_solution.json"
+      ],
+      "priority": "recommended",
+      "question_id": "Q2",
+      "validation_id": "V-Q2-08",
+      "verdict": "FAIL"
+    },
+    {
+      "claim_id": "Q3-C2",
+      "evidence_refs": [
+        "results/Q3_bound.json"
+      ],
+      "priority": "recommended",
+      "question_id": "Q3",
+      "validation_id": "V-Q3-04",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "Q3-C2",
+      "evidence_refs": [
+        "results/Q3_solution.json",
+        "results/Q3_sensitivity.json"
+      ],
+      "priority": "optional",
+      "question_id": "Q3",
+      "validation_id": "V-Q3-07",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "Q4-C2",
+      "evidence_refs": [
+        "results/Q4_solution.json"
+      ],
+      "priority": "recommended",
+      "question_id": "Q4",
+      "validation_id": "V-Q4-04",
+      "verdict": "FAIL"
+    }
+  ],
+  "result_registry_ref": {
+    "path": "results/RESULT_REGISTRY.json",
+    "sha256": "6c492846ded2e4fea0a3b43e3fb6828a87ed9c588bfec421e9aa3eb8eb5803b6"
+  },
+  "review_revision": 1,
+  "schema_version": 2,
+  "source_artifact_revisions": {
+    "reports/VALIDATION_EVAL.json": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+    "reports/VALIDATION_PLAN.json": "a91eb809fb6e289082a417ea15314cf1f1b4ca07763484702d048576ac48c304",
+    "reports/methodology/optimization_degeneracy.json": "d9c7e4489c332a20d4c94fcd9a5a552f1682524064eb112d409e3d654158a8fe",
+    "results/Q1_detect.json": "ee58d669ed93996b22fb5b3442ed68b2e0c22b483a467c5d8643e426bcb2b9c1",
+    "results/Q1_stats.json": "7b722d336c94047c2cd53e13727282438be2dff523ac091753b54ab6a719eb32",
+    "results/Q1_verify.json": "806e923f8115b692ce0894bac560f12f12becbcce1bf22b4f480ddf70182fcbc",
+    "results/Q2_check.json": "3d4e5d8aa0533834fa86f6ef1132f6539229f58b595a401aa54c8bf6a1be341f",
+    "results/Q2_main_w4.json": "3378718d8d46a9582b3e8dfb36f233e6b13f917b07c3b1ae0b096807d402f57a",
+    "results/Q2_solution.json": "a4673472f432c7feb527fe8c915783f2593260bbacddf6383212ba2510da5ccd",
+    "results/Q2_table1.json": "1cfc959c67668c17cd77592d4d1d501759e8bcd2d946ea7be379a7bc2bda6778",
+    "results/Q3_bound.json": "de204e854c52340f84704928e0fe42004bdacf006ed39e65fa07a8d1b7970f12",
+    "results/Q3_check.json": "d198957f6cf0b1bae05a18a6de81e310f90de47df110e7087c13aa6cd1cc30b1",
+    "results/Q3_sensitivity.json": "5696dcc456053bcc60affb3ddabbf216edfe0a64d4c56f870af81a5e5018db2d",
+    "results/Q3_solution.json": "2d18695aa573c5a44d902009312860252efd807f49168874a1534602b89304c7",
+    "results/Q3_submission_check.json": "38eecf99fa124dbf63ceabf85606ee701900372efdd5ce6ac17f63d1bb59e1a2",
+    "results/Q4_check.json": "85bf2ecc5ef8cb6ab9d867efc2f0de62c186a318140f23ceedc79e1ea854479e",
+    "results/Q4_solution.json": "9238a8bb70a9cc67d5299f61847cf815ebff0b6d7d0d2304c23491ee9cd8ad8b",
+    "results/Q4_submission_check.json": "805833ce3efd081759a15776286d935f2e541f1685740bd062521dde45d03eca",
+    "results/Q4_table1.json": "096dfc085dc91d8c752fa9f79876176ba8f9027dbdbb08f6ee2c318075ab651f",
+    "results/RESULT_REGISTRY.json": "6c492846ded2e4fea0a3b43e3fb6828a87ed9c588bfec421e9aa3eb8eb5803b6",
+    "results/bundle_view_Q1.json": "3f047eb6c17669b4700aa5cb2266795292bc44d55192b574abe25fea4c221ddb",
+    "results/bundle_view_Q2.json": "4ca7f33f75807492efc08ac38e21d37f39b5b98f81ac2b0f0f91d9fe5dff9852",
+    "results/bundle_view_Q3.json": "554905224f3f1e70207967b33972811ca39dc0d9f6d5875864d8276f4a1112cf",
+    "results/bundle_view_Q4.json": "a7d4e25315623a658d8c1f7be85915d2bff2444aea79e4d9f29fa5b1811c248a",
+    "results/compute_budget.json": "8c078f058f9e7b6750c291da76d6ed883e6ebf55c28d408b5b2cb715897702ac",
+    "results/degeneracy_triangle.json": "78eef949df71111e418acd5faf1358c153360c969a83ffd5db2f73057f799ca6"
+  },
+  "validation_eval_ref": "reports/VALIDATION_EVAL.json",
+  "validation_eval_sha256": "ca637e9c310dec3713335025ca7c34bfb77c018a31fa1878fcd58bcf0ed11d91",
+  "validation_plan_sha256": "a91eb809fb6e289082a417ea15314cf1f1b4ca07763484702d048576ac48c304"
+}

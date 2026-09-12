@@ -1,0 +1,71 @@
+{
+ "question_id": "Q1",
+ "idea_id": "Q1-R41",
+ "status": "completed",
+ "feasible": true,
+ "objective": 0,
+ "objective_tuple": [
+  0
+ ],
+ "objective_unit": "symdiff_vs_canonical_truth（minimize）",
+ "runtime_seconds": 12.8864,
+ "runtime_total_seconds": 13.2648,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q1 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/solution_q1_r41.json --out runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/eval.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "阶段A N/A；阶段B 冻结种子集 [11,29,47]，每种子独立 random.Random(seed)",
+ "replicates": 1,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/solution_q1_r41.json",
+ "solution_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "conflict_pairs": 297,
+ "by_class_pair": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "BB": 10,
+  "CC": 19
+ },
+ "plans_touched": 148,
+ "pairs_evaluated": 11175,
+ "evaluator_counts": {
+  "truth": 297,
+  "submitted": 297,
+  "missing": 0,
+  "spurious": 0
+ },
+ "internal_consistency": {
+  "symdiff_join_vs_bitand": 0,
+  "symdiff_join_vs_oracle_pruned": 0,
+  "symdiff_join_vs_oracle_fullscan": 0,
+  "boundary_cases_all_pass": true,
+  "stress_trials_completed": 996,
+  "stress_injection_recall": 1.0,
+  "stress_deletion_vanish_recall": 1.0,
+  "stress_pair_level_missing": 0,
+  "stress_pair_level_false_positive": 0,
+  "stress_global_symdiff": 0,
+  "per_seed_symdiff": {
+   "11": 0,
+   "29": 0,
+   "47": 0
+  },
+  "per_seed_pair_miss": {
+   "11": 0,
+   "29": 0,
+   "47": 0
+  }
+ },
+ "budget": {
+  "scout_wall_seconds_per_candidate_per_replicate": 600,
+  "used_seconds": 12.8864,
+  "utilization": 0.02148
+ },
+ "adjudication_binding": {
+  "T_MAX": 643,
+  "half_open_intervals": true,
+  "reference": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+ },
+ "failure_mode": null,
+ "finished_at": "2026-09-11T16:34:00+0800",
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。"
+}

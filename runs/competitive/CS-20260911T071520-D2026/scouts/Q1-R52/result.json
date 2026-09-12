@@ -1,0 +1,60 @@
+{
+ "question_id": "Q1",
+ "idea_id": "Q1-R52",
+ "status": "completed",
+ "feasible": true,
+ "objective": 0,
+ "objective_tuple": [
+  0
+ ],
+ "objective_unit": "symdiff_vs_canonical_truth（minimize）",
+ "runtime_seconds": 0.2802,
+ "runtime_total_seconds": 0.2815,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q1 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/solution_q1_r52.json --out runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/eval.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "N/A（确定性路线）",
+ "replicates": 1,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/solution_q1_r52.json",
+ "solution_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "conflict_pairs": 297,
+ "by_class_pair": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "BB": 10,
+  "CC": 19
+ },
+ "plans_touched": null,
+ "pairs_evaluated": 11175,
+ "evaluator_counts": {
+  "truth": 297,
+  "submitted": 297,
+  "missing": 0,
+  "spurious": 0
+ },
+ "internal_consistency": {
+  "class_homogeneity_g_d_n": true,
+  "closed_form_time_predicate_pairs_checked": 4975,
+  "closed_form_vs_enum_time_predicate_mismatches": 0,
+  "closed_form_vs_enum_edge_pair_symdiff": 0,
+  "edge_sets_elementwise_equal": true,
+  "bound_validity_LB_le_enum_le_UB": true,
+  "cross_class_fallback_pairs": 6200,
+  "intra_class_LB": 8,
+  "intra_class_UB": 92
+ },
+ "budget": {
+  "scout_wall_seconds_per_candidate_per_replicate": 600,
+  "used_seconds": 0.2802,
+  "utilization": 0.00047
+ },
+ "adjudication_binding": {
+  "T_MAX": 643,
+  "half_open_intervals": true,
+  "reference": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+ },
+ "failure_mode": null,
+ "finished_at": "2026-09-11T16:34:00+0800",
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。"
+}

@@ -1,0 +1,8 @@
+{
+ "question_id": "Q3",
+ "variant": "bound_elementary",
+ "ub_phase_doublecount": 332,
+ "ub_density": 676,
+ "ub_min": 332,
+ "free_cells": 48700
+}

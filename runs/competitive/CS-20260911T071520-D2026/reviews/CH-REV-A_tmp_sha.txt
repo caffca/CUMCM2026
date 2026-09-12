@@ -1,0 +1,53 @@
+Q1-R21 status=completed feasible=True missing_required=[]
+Q1-R52 status=completed feasible=True missing_required=[]
+Q1-R41 status=completed feasible=True missing_required=[]
+Q2-R51 status=completed feasible=True missing_required=[]
+Q2-R41 status=completed feasible=True missing_required=[]
+Q2-R32 status=completed feasible=True missing_required=[]
+0e015686888f74688547654b... common_input.json
+a8f30bd6473b545d3ac165c3... TOURNAMENT_PROTOCOL.json
+4fef99cb6e0b67415cb24781... ADJUDICATION.json
+8c4db98fa11845ca5492255e... canonical_evaluator.py
+03eb60f390b47e02a966e59e... routes/CH-02.route.json
+2dd737a48479f821da3f9e17... routes/CH-03.route.json
+210ce17cd247307243d660ad... routes/CH-04.route.json
+e72b46e9a52fe1cdffa25cbb... routes/CH-05.route.json
+5c473bd34eaee112c7b69ed4... scouts/Q1-R21/result.json
+469f57653db4804de4767761... scouts/Q1-R21/scout.json
+a96bd58b07da626abfaa743a... scouts/Q1-R21/eval.json
+1a08941b766de6bff7702440... scouts/Q1-R21/solution_q1_r21.json
+0afc7abaf1977db1ff43a14a... scouts/Q1-R21/detect_meta.json
+19878daffe64333a18841c46... scouts/Q1-R52/result.json
+b59b29b70ebcedd921a9993c... scouts/Q1-R52/scout.json
+a96bd58b07da626abfaa743a... scouts/Q1-R52/eval.json
+1a08941b766de6bff7702440... scouts/Q1-R52/solution_q1_r52.json
+3fe9a07bbecd5471683b1504... scouts/Q1-R52/detect_meta.json
+1eaf8f2ec5c35faef7aed821... scouts/Q1-R41/result.json
+17203db6676d043a84f49198... scouts/Q1-R41/scout.json
+a96bd58b07da626abfaa743a... scouts/Q1-R41/eval.json
+1a08941b766de6bff7702440... scouts/Q1-R41/solution_q1_r41.json
+46bc1ac1dc40941d91a47f3b... scouts/Q1-R41/detect_meta.json
+6007b46bde0983a0e7e62f6e... scouts/Q2-R51/result.json
+e61347f6d993f6e06cf911ec... scouts/Q2-R51/scout.json
+51a3f7bc4fd45fb041ea10cf... scouts/Q2-R51/eval.json
+8266fb689b93ee7795906e55... scouts/Q2-R51/solution_actions.json
+628dc26256ed56165a1dd806... scouts/Q2-R51/star_edges.json
+6326de7df7325baf004124a9... scouts/Q2-R51/cpsat_report.json
+8d47cfef9833e65d6533d430... scouts/Q2-R51/r51_certificates.json
+ef9eb598f112f806b1d827b8... scouts/Q2-R51/solution_meta.json
+2d0592ecf05edd76c3076388... scouts/Q2-R41/result.json
+0d341881e2559978b93cb233... scouts/Q2-R41/scout.json
+94ce84454cb8feca722142f2... scouts/Q2-R41/eval_seed11.json
+99f7e03dbdf440a9bab20ecb... scouts/Q2-R41/eval_seed29.json
+5f502f80efcc6354be4ff95a... scouts/Q2-R41/eval_seed47.json
+a47ddfe65295b376a61d1c50... scouts/Q2-R41/solution_actions_seed11.json
+119d7e297c2f2f7d88647e73... scouts/Q2-R41/solution_actions_seed29.json
+e209f3af7613e44a42d1203a... scouts/Q2-R41/solution_actions_seed47.json
+628dc26256ed56165a1dd806... scouts/Q2-R41/code/star_edges.json
+d081a0d23bb0f38853f57199... scouts/Q2-R32/result.json
+6b918fed707708846631d23d... scouts/Q2-R32/scout.json
+1aee511f72ca26e7f57e5319... scouts/Q2-R32/eval.json
+59a0e2a6f1fb448ad842c225... scouts/Q2-R32/solution_actions.json
+628dc26256ed56165a1dd806... scouts/Q2-R32/code/star_edges.json
+c2385b4b906e1c1d48092d64... scouts/Q2-R32/sentinel_tests.json
+6a43aa339d834632f6d6f63d... scouts/Q2-R32/r32_diagnostics.json

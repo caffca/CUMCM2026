@@ -1,0 +1,65 @@
+{
+  "gate": "methodology",
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "engine": "latex",
+  "inputs": {
+    "data_generating_process.json": true,
+    "statistical_assumptions.json": true,
+    "model_necessity.json": true,
+    "sample_sizes.json": true,
+    "optimization_degeneracy.json": true,
+    "censoring_report.json": true
+  },
+  "model_spec_present": true,
+  "missing_inputs": [],
+  "findings": [
+    {
+      "level": "OK",
+      "check": "model_spec",
+      "message": "契约已产出：4 个问题，contract_rev=1"
+    },
+    {
+      "level": "OK",
+      "check": "fms_v4",
+      "message": "v4 polymorphic formulation、hash、Discovery 与 P1-01 route binding 全部通过"
+    },
+    {
+      "level": "OK",
+      "check": "temporal",
+      "message": "时间完整性通过：扫描 1 个时间字段，无未来时间戳"
+    },
+    {
+      "level": "OK",
+      "check": "dgp",
+      "message": "删失结构: 无；截断=False"
+    },
+    {
+      "level": "OK",
+      "check": "degeneracy_design",
+      "message": "已冻结 objective_only/constraint_only/full 定义、指标、场景、阈值与验证方法"
+    },
+    {
+      "level": "OK",
+      "check": "degeneracy",
+      "message": "3 个优化问题完成三角对比，无约束主导退化"
+    },
+    {
+      "level": "OK",
+      "check": "necessity",
+      "message": "模型内容份额 primary=65% baseline=15% robustness=12% 达标"
+    },
+    {
+      "level": "OK",
+      "check": "conclusion",
+      "message": "未发现『最佳时点/精确决定』类强结论词"
+    }
+  ],
+  "summary": {
+    "fails": 0,
+    "warns": 0,
+    "checks": 8
+  },
+  "note": "门禁输入由 7methodology-review skill 生成；FAIL 项先修建模/论文，禁止改判放行。"
+}

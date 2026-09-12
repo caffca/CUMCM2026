@@ -1,0 +1,95 @@
+{
+ "question_id": "Q4",
+ "idea_id": "Q4-R41",
+ "status": "completed",
+ "feasible": true,
+ "objective": 11011723440578,
+ "objective_tuple": [
+  11,
+  117,
+  2344,
+  578
+ ],
+ "runtime_seconds": 567.3,
+ "evaluator_invoked": true,
+ "seed": 29,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed29.json",
+ "failure_mode": null,
+ "replicates": [
+  {
+   "seed": 11,
+   "wall_seconds": 567.2,
+   "moves": 20668505,
+   "first_zero_violation_move": 8205,
+   "projection": {
+    "applied": false
+   },
+   "feasible": true,
+   "objective_tuple": [
+    16,
+    105,
+    2549,
+    556
+   ],
+   "internal_recount_violations": 0,
+   "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed11.json"
+  },
+  {
+   "seed": 29,
+   "wall_seconds": 567.3,
+   "moves": 20526602,
+   "first_zero_violation_move": 12022,
+   "projection": {
+    "applied": false
+   },
+   "feasible": true,
+   "objective_tuple": [
+    11,
+    117,
+    2344,
+    578
+   ],
+   "internal_recount_violations": 0,
+   "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed29.json"
+  },
+  {
+   "seed": 47,
+   "wall_seconds": 567.2,
+   "moves": 20453798,
+   "first_zero_violation_move": 6030,
+   "projection": {
+    "applied": false
+   },
+   "feasible": true,
+   "objective_tuple": [
+    10,
+    112,
+    2229,
+    596
+   ],
+   "internal_recount_violations": 0,
+   "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed47.json"
+  }
+ ],
+ "aggregation": "median over 3 replicates by lexicographic tuple (protocol TP-D2026-01)",
+ "tuple_spread": {
+  "best": [
+   10,
+   112,
+   2229,
+   596
+  ],
+  "median": [
+   11,
+   117,
+   2344,
+   578
+  ],
+  "worst": [
+   16,
+   105,
+   2549,
+   556
+  ]
+ }
+}

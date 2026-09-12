@@ -1,0 +1,99 @@
+{
+  "review_id": "REV-Q3-01",
+  "reviewer_child_run_id": "CH-REV-A",
+  "question_id": "Q3",
+  "input_artifact_sha256s": [
+    {"path": "runs/competitive/CS-20260911T071520-D2026/common_input.json", "sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/TOURNAMENT_PROTOCOL.json", "sha256": "a8f30bd6473b545d3ac165c316fb9a5573f5d380e76e25e6b3b8056e980f5c97"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json", "sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py", "sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"},
+    {"path": "data/canonical_plans.csv（workspace 根；evaluator 数据源）", "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-01.route.json", "sha256": "55b2bbd5da949ca97aa933076654c3195de93c733f86a28dc2615b773208ee06"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-02.route.json", "sha256": "03eb60f390b47e02a966e59ef125d52de81f1c35b0862facf6b4d4a6e07edf19"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-05.route.json", "sha256": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json（三候选共同基座）", "sha256": "8266fb689b93ee7795906e553d2f52b33be3082f1fcf9ead3c3360b65ec5e4ac"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/result.json", "sha256": "88cfaa4dfc79121327c57355783c852f97dce3363f473b654e07780cdc8b9a24"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/scout.json", "sha256": "77760cf3eb8256dd58236e1783710126d594ad20d4e4dc5a25e59ea823800f01"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/eval_q3.json", "sha256": "f0b1498825bd190e6df7945adc329602c00fc4d4522b5855942e4dfa1abfb1b4"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/solution_newc.json", "sha256": "a567ad10ef51e835aebf823875d9c492580ec78fb0faf7600bae747e75c59f33"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/cpsat_r11_report.json", "sha256": "e511dcfbe6fd329296e47682b6691a57ca94bf2a165b4e178c531f7b6d98c491"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/lp_crosscheck_hiGHS.json", "sha256": "4154535288e00afdb54fc5642e3e902bb560aaf7ec42eac06dfbce8eb85a25e1"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/code/common_q3.py", "sha256": "b509b7040a8f75513e22d5ef65c5a18b1fc1b48a992856feb5c5988765f453f2"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/code/run_q3_r11.py", "sha256": "45b685f8454515bd096346d3917cce64d707187509117b059880c8726eab5962"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R11/code/lp_crosscheck.py", "sha256": "bea690f6da32ab5826c637a680742a44760d01369cf592ba244ce226436aad3c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result.json", "sha256": "ee6b5a1d9efb15cfef0906a2d2850dbf840a91ab043f01937b2dc4635d73d227"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/scout.json", "sha256": "4f5de32b44f7863a08cd086596f36d2dae416da0a10001224c37f3738e7830d3"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/eval_q3.json", "sha256": "5f1a5d817dfcf0fd42eaf9061d65c6dc399e449a04445449e3528276b304414c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/solution_newc.json", "sha256": "045baa9afe2b356db6e706aa3a7c6f92e8bad5e39bcced725875cd696505bdaf"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/run_report.json", "sha256": "75c6f18246350caef9beb22c4ca7b197b3951018ef4a158a0d44c4653f0eec83"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/code/run_q3_r23.py", "sha256": "8040776aebe99b77546d5023ad55767788124cbe395a645020ec6578ee0b886f"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/result.json", "sha256": "ab2e6e21b25d32c8a01eb479dc167631de05299d3ea57b436419b8cecc393cd6"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/scout.json", "sha256": "76e6ffec5de985f0f570ddc06cfc8d617628b8363c618833ea0bcfac49ca7abd"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/eval_q3.json", "sha256": "5f1a5d817dfcf0fd42eaf9061d65c6dc399e449a04445449e3528276b304414c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/solution_newc.json", "sha256": "045baa9afe2b356db6e706aa3a7c6f92e8bad5e39bcced725875cd696505bdaf"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/bound_r51.json", "sha256": "5452f40a06ed2ef47ecf64be51ddc45718b31a731bf4571b4bc4a905a9a5d8f5"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/code/q3_bound.py", "sha256": "6410a1b2d265740ff14ac00f11167124c627022d6a912a81d8784338bb4d7dae"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/code/finalize_q3.py", "sha256": "88ad08fa0351ba2e953aeba3fcf5998b7ca868ed171bd12406ced9d00f71daa1"}
+  ],
+  "attacks_by_idea": [
+    {
+      "idea_id": "Q3-R11",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "问单腿（LP 或 CP-SAT 之一）是否已足够；A/B 双模型是否冗余。", "finding": "A+B+LP 不是冗余而是『L3_NEAR_GLOBAL』声明的三腿结构（候选完备性、整数最优、异族求解器复证）；B 单独已给 OPTIMAL=139，A 满足协议『set-packing CP-SAT』路线定义。三腿均被我用独立实现复算成立，结构合理。"},
+        {"type": "identifiability", "severity": "minor", "test": "重点核查3：『N*=139』作用域是否被限定到冻结基座；我另跑基座敏感性探针（同一流水线换 base=Q2-R32 / Q2-R41seed11 重建候选集+CP-SAT 重解）。", "finding": "结果确实随基座变化：Q2-R51 基座 N*=139、Q2-R32 基座 N*=134、Q2-R41(seed11) 基座 N*=136 ⇒ 『最大加装数』只能在给定 Q2 方案下识别。scout.json 的作用域表述诚实（base_ref 字段 + lp 结论逐字『在冻结 base=Q2-R51、模板宽3/时长2/间隔8/次数12、f0∈0..97、t0∈0..531 口径下』；result.json 的 evaluator_command 含 --base-actions 路径），判定：声明成立且限定在案；但 result.json 顶层字段 'certified_optimal: true' 未内联基座限定，且 route CH-01 fc[2] 要求的『Q3 对 Q2 解的敏感性报告』未产出——正式建模阶段须把该条件写进结论句并补一段敏感性登记（本评审的 134/136/139 三点可直接引用）。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "候选放置模型是否与题面/裁定生成机制一致（宽3/时长2/间隔8/次数12、周期10、位置任意、不增资源）。", "finding": "我从 common_input.compact 独立重建 base 占用（T_MAX=643/B_MAX=100 硬编码，不 import evaluator），逐字节级复算候选谓词『3 连续带 ∧ 12 窗全格空闲』⇒ 候选集与 2123 精确相同；无额外自由度、无缺自由度。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "max |S| 在打包多面体上是否退化。", "finding": "非退化：目标为纯计数、整数最优唯一确定值 139（最优解不唯一但目标值唯一）；incumbent=bound=139 会合，gap=0。"},
+        {"type": "sample_dimension", "severity": "info", "test": "确定性宣称 vs CP-SAT 8-worker 抖动（Q2-R51 同类攻击）。", "finding": "本候选的『确定性』不受 worker 抖动威胁：抖动只影响 FEASIBLE incumbent 质量，而 R11 交付的是 OPTIMAL 证明（bound=incumbent）。我用两种异配置独立重建模型 B（w8/seed=7 与 w1/seed=0）均 OPTIMAL=139、bound=139、解自校验 0 内部违例 ⇒ 结论对求解器随机性鲁棒。协议 replicates=1 对确定性路线合规。"},
+        {"type": "task_mismatch", "severity": "info", "test": "对照 question_contract.Q3 + ADJ R5 主口径（Q2 方案不动、新增 C 不限平移、result3 只登记新增、上界可检查下界=行数）。", "finding": "candidate 域 f0∈0..97、t0∈0..531 与 pending P1 及 evaluator 资源盒逐点一致；输出 139 行纯新增放置、无对基座的改动；evaluator 复跑 feasible=true objective=[139] non_conflicting=139。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "求解器族与问题规模匹配：A 边 62071 / B 行 13822 / LP 13822×2123。", "finding": "全部数字与我独立重建逐一相等（倒排索引边数 62071、≥2 覆盖格行数 13822、nnz 151709、解析判据对拍 131254 对 0 不一致——我对全部 |Δf0|≤2∧|Δt0|≤111 候选对做了穷举对拍，非抽样）；<5s 内双模型闭合，规模判断正确。"},
+        {"type": "bound_invalid", "severity": "minor", "test": "重点核查1 三腿逐条：a) 2123 候选完备性；b) OPTIMAL=139 复验；c) HiGHS LP=139.0 复现 + lp_crosscheck_hiGHS.json 内部一致性 + A/B 两松弛关系表述。", "finding": "三腿全部独立成立：a) 我的全枚举 98×532=52136 起点过滤后=2123（精确相等，漏 0 多 0）；b) evaluator --question Q3 --base-actions Q2-R51 复跑=[139] feasible，CP-SAT 双配置复跑 OPTIMAL 139/bound 139；c) 我的 HiGHS LP（自建 CSR 行集）=139.000000<140 ⇒ 整数最优 ≤139，与 incumbent 会合。A/B 关系表述属实：B 每格行强制 A 每条边 ⇒ LP(B) 多面体 ⊆ LP(A)、整数可行集相同（我已验证边集=共享格候选对全等）；LP 行集只含覆盖≥2 候选的格（13822），singleton 格行 x_p≤1 被变量界蕴含——冗余删除合法且与 nnz=151709 内部自洽（文件未逐字解释该剪枝，故降为 minor 表述项）。另一处：scout.json 表头 upper_bound=332/relative_gap=0.581 与其自身已证的 bound=139（gap=0）不自洽——『三候选记录同一 UB 供对照』是装配脚本 finalize_q3.py 的统一字段，但 Manager 做 Pareto 时 R11 的权威界应取 139，332 仅作 R51 初等界对照，否则会系统性低估该候选的证据强度。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查1b：抽样+全量复算 evaluator feasible；eval_q3.json 防篡改对账；跨候选资源共享的公平性。", "finding": "139 解我全量复验（成员资格 ⊆ 我的候选集、逐格位图 0 内部复用）+evaluator 原样复跑与磁盘 eval_q3.json 一致；hint 取自 Q3-R23 解已披露（仅暖启动，界证明不依赖）；common_q3.py 三候选共用且 SHA 一致（b509b704…），资源常数与 evaluator 同源。无不公平评估。台账观察（跨题信息）：截至 wave-3 正式 evaluator 调用累计约 11 次，Q4 波若按计划各候选×seed 复跑将逼近/超出 evaluations_ledger_limit=16，建议 Manager 核点。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q3-R11/solution_newc.json（sha a567ad10…）+ eval_q3.json + 评审复跑/重建证据：reviews/CH-REV-A_verify_q3_report.txt、reviews/CH-REV-A_cpsat_q3_out.txt（w8/seed7 与 w1/seed0 双配置 OPTIMAL=139）",
+        "正式引用时结论句必须带条件：『在 Q2 最终入选冻结方案下新增 C 类最多 139 个（f0∈0..97、t0∈0..531 口径）』，并附基座敏感性登记（评审探针：R51→139 / R32→134 / R41→136；若 Q2 终选方案变更，N* 与三腿证明必须整体重算，禁止沿用 139——CH-05 警示条款）",
+        "scout.json 的 upper_bound/relative_gap 字段在 P1-03 汇总时按『R11 自身证书界=139（gap=0），332 为 R51 初等界对照』口径修正（bound_invalid minor 条款）"
+      ]
+    },
+    {
+      "idea_id": "Q3-R23",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "LNS 相对纯贪心的增量价值。", "finding": "独立复现确定性贪心=133（f0 升序、t0 升序），LNS 571577 迭代仅接受 4 次改进到 137——增量真实存在（+4）但单位算力收益极低；作为 baseline/构造 LB 供应者的角色定位与 CH-02 路线一致，非过度建模。"},
+        {"type": "identifiability", "severity": "info", "test": "目标值是否可识别、与兄弟候选可对照。", "finding": "137 为 evaluator 验证的具体可行解，值唯一可复算（解文件 sha 045baa9a…，我复验 0 内部冲突、全候选成员资格）。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "生成/占用机制。", "finding": "与 R11 同一 common_q3.py（SHA 一致）的位图语义；base 占用 distinct=mult=15600（零冲突终态下两口径必然相等，run_report 双字段如实分列）。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "同 R11。", "finding": "无退化；greedy 133 与 LNS 137 均远离装箱界退化的平凡解。"},
+        {"type": "sample_dimension", "severity": "major", "test": "重点核查4：协议 budget.replicates_stochastic=3（seed_set [11,29,47]）+ CH-02 Q3-R23 route seed_protocol 明写 3 seeds 报告 best/median/worst；核对实际产物。", "finding": "只有 seed=11 单次运行（result.json/scout.json/run_report.json 均 replicates=1；240s 预算下 3 重复完全可行，对比 Q2-R41 合规跑了 3 seed），且无 budget_disclosure/豁免记录——中位数聚合契约对 stochastic 候选不可执行，方差证据缺失。缓解因素：LNS 接受率 4/571577≈0.0007% 且停止时 no_improve_streak=571030，暗示种子敏感度低；其数值已被 R11 的证明（139）与 R51 的界引用封顶，不改判排名——但按『critical/major 未解决不得 retain』规则仍须 revise：补 seeds 29/47（各≤240s）报 best/median/worst，或显式降级为『单重复 LB 证据』并由 Manager 记录豁免。"},
+        {"type": "task_mismatch", "severity": "info", "test": "对照 Q3 契约输出语义。", "finding": "输出 137 行 [[f0,t0]] 纯新增计划，result3 语义合规；『贪心 vs 随机顺序差』route 特检以条带序随机化形式部分覆盖（refill 随机化），未单列报告——信息性。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "启发式与问题匹配度。", "finding": "顺序装箱式插入+LNS 是千级候选打包问题的合法低复杂度基线；无错配。"},
+        {"type": "bound_invalid", "severity": "info", "test": "其 bound 字段：lower=137（=自产可行解）、upper=332（引用 R51，未宣称自产）。", "finding": "无非法界：137 ≤ 真最优 139（已证）方向正确；332 引用如实标注来源。相对差距 0.587 按装配口径计算，与 R11 同源的『应改用已证 139 界』提示见 R11 bound_invalid 条款。"},
+        {"type": "evaluation_unfair", "severity": "minor", "test": "评估公平：与 stochastic 兄弟候选（Q2-R41 三次完整评估）相比的统计口径不对称；全量复算 feasible。", "finding": "可行解验证本身公平无误（evaluator 复跑=[137] feasible、我的全量独立复验 0 违例）；不对称在于其 objective 是单次抽样而协议承诺中位数——随 sample_dimension 的补测一并消除（cross-ref，不重复计重）。"}
+      ],
+      "verdict": "revise",
+      "required_evidence": [
+        "补跑 seeds 29、47（同参数、各 ≤240s）并按协议报告 best/median/worst + 极差；或由 Manager 出具单重复豁免记录并把该候选在 authority 中的角色显式降级为『单次可行下界样本』",
+        "scouts/Q3-R23/solution_newc.json（sha 045baa9a…）+ eval_q3.json + 评审 reviews/CH-REV-A_verify_q3_report.txt（贪心 133、137 可行解、基座 15600 全部独立复算成立）"
+      ]
+    },
+    {
+      "idea_id": "Q3-R51",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "初等双计数界相对 CP-SAT/LP 界（R11 已 139）是否仍有存在必要。", "finding": "必要：332 是全整数、可手核、不依赖求解器的独立界（论文上界节的『结构化推导』素材），与 R11 的计算证明互补；CH-05 路线定义如此，scout 未越位宣称紧致性。"},
+        {"type": "identifiability", "severity": "info", "test": "界论证的每个计数因子是否良定义（尤其 ÷3）。", "finding": "良定义：每放置 (f0,t0) 恰好为其覆盖的 3 个带各贡献 1 个 (b,r) 计数（相位 r=t0 mod 10 唯一）⇒ Σ_b Σ_r count(b,r)=3N 精确成立。我用 R11 的 139 解实证审计：Σ count=417=3×139（精确相等）、同 (b,r) 块区间两两不交违例=0、count(b,r)≤C(b,r) 违例=0 ⇒ ÷3 合法，不存在『同放置被超/欠计』问题。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "块模型（10 周期、(10j+r,10j+r+1) 格对）与真实放置图案的对应。", "finding": "对应成立：每放置在任何被覆盖带上恰为 12 个连续块 [j0,j0+11]，j0=(t0-r)/10，与代码逐位一致（我独立重算 tot=997 与 claim 精确相等）。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "以他人解充当 objective=137 的退化/冒领风险。", "finding": "无冒领：solution_newc.json 与 Q3-R23 逐字节同一（sha 045baa9a…），lb_source 字段与代码注释均显式『Q3-R23 solution (任务明示复用)』；evaluator 对其复验 feasible=true [137]，作为构造下界数值合法。"},
+        {"type": "sample_dimension", "severity": "info", "test": "纯整数计数无抽样。", "finding": "全量 100 带 × 10 相位逐块精确算术，0.19s；无统计宣称。"},
+        {"type": "task_mismatch", "severity": "info", "test": "协议要求『必须做 UB>=LB 自检门（CH-05 警示#3）』与界-构造会合语义。", "finding": "自检门在场且通过：gate_ub_ge_lb{required_min=139（含兄弟候选 R11 已知可行数，非只用自己的 137）,passed=true}；未会合如实记录 meeting=false、stopping_reason『UB 与 LB 未会合（区间陈述）』；route CH-05 的『差距>1.5× 只作区间论证』条款实质满足（其措辞即区间陈述），但未如 Q2 候选那样落 route_failure_flags_triggered 形式化字段——信息性。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "无求解器路线的匹配性。", "finding": "N/A（纯算术）；对照密度界 676 与双计数界 332 的取小逻辑正确（min(332,676)=332）。"},
+        {"type": "bound_invalid", "severity": "minor", "test": "重点核查2：332 推导链逐行复算——Σ_b Σ_r Σ_runs ⌊run/12⌋ = 997 → ⌊997/3⌋=332；并审 J(r) 块索引边界。", "finding": "链复算全部成立（我的独立实现 tot=997、332、676、free=48700 与磁盘逐项相等；LB137≤139≤UB332 有效）。发现一处推导瑕疵：q3_bound.py 的 J(r)=(642-r)//10 在 r=2 时把『尾幽灵块』(cell 642,643) 计入——cell 643 ∉ [0,643) 资源盒且真实放置永不触及该块，幽灵块只可能拉长 run 使 ⌊run/12⌋ 虚增。本实例中我做了『剔除出界格』的严格版重算，tot 仍=997（幽灵块未产生实际虚增）⇒ 报告值 332 恰好无恙；且方向为『界更松』（UB 变大），合法性/安全性不破——但正式界代码必须改用『块两格均在盒内』的 J(r)=(641-r)//10 定义，否则在尾窗贴边数据上可能给出被高估的界（同一 bug 类曾以 UB=79<构造 84 的形式在 CH-05 探针期反向爆发过，警示#3 的历史教训方向相反但根源同类：界代码与资源盒定义不一致）。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "evaluator 对账 + 共用内核一致性。", "finding": "eval_q3.json 与我复跑一致（[137] feasible）；common_q3.py 与兄弟候选 SHA 一致；界计算用与 evaluator 同一资源常数（643/100，import 自冻结件——与其 route『上界计算代码必须与 evaluator 同一资源常数』的 P1 要求自洽）。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q3-R51/bound_r51.json（sha 5452f40a…）+ 评审 reviews/CH-REV-A_verify_q3_report.txt（997/332/676/48700、Σcount=3N 实证、0 违例）",
+        "正式建模阶段界代码修正：块索引改为两格均落于 [0,643)（J(r)=(641-r)//10），并保留『剔幽灵块前后 tot 对照』作为一次性自检（bound_invalid minor 条款）",
+        "论文上界叙述顺序：以 R11 的 139 计算证书为主证、332 为初等可手核对照界；禁止以 332 作最终『最多』宣称（该候选自身 stopping_reason 已如实写『区间陈述』）"
+      ]
+    }
+  ]
+}

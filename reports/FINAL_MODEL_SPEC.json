@@ -1,0 +1,1456 @@
+{
+ "schema_version": 4,
+ "contract_rev": 1,
+ "project": "2026 CUMCM D",
+ "generated_at": "2026-09-12T02:20:14+08:00",
+ "generated_by": "code/fms_build.py (methodology_review)",
+ "unit_registry_sha256": "e776019ed0027404f2a7e15730590f9c9f0f44f4b07e4d858efd268dc301d1ef",
+ "problems": [
+  {
+   "problem_id": "Q1",
+   "formulation_kind": "analytical",
+   "analysis_unit": "用频计划对 (i,j), i<j",
+   "assumption_ids": [
+    "A1-half-open",
+    "A2-periodic-slots",
+    "A3-horizon-643"
+   ],
+   "parameters": [
+    {
+     "id": "N_PLANS",
+     "value": 150,
+     "unit": "count",
+     "source": "附件1（题面 F-013）",
+     "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+     "source_path": "附件/附件1.xlsx"
+    },
+    {
+     "id": "B_MAX",
+     "value": 100,
+     "unit": "band_index",
+     "source": "题面 F-001",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "T_MAX",
+     "value": 643,
+     "unit": "time_index",
+     "source": "ADJUDICATION R1",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json",
+     "derivation": "max_i max_k (t0+k*(g+d)+d)，A001 例证钉死"
+    },
+    {
+     "id": "N_PAIRS",
+     "value": 11175,
+     "unit": "count",
+     "source": "组合数 C(150,2)",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    }
+   ],
+   "states": [],
+   "governing_relations": [
+    {
+     "id": "slot-formula",
+     "relation_kind": "definition",
+     "expression": "slot_i(k)=[t0_i+k*(g_i+d_i), t0_i+k*(g_i+d_i)+d_i), k=0..n_i-1",
+     "units": "time_index",
+     "variables": [
+      "t0",
+      "g",
+      "d",
+      "n"
+     ],
+     "evidence_refs": [
+      "F-005"
+     ]
+    },
+    {
+     "id": "cells-def",
+     "relation_kind": "definition",
+     "expression": "U(i)={(f,tau): f∈[f0_i,f1_i), tau∈∪_k slot_i(k)}（整数格半开）",
+     "units": "band_index*time_index",
+     "variables": [
+      "f0",
+      "f1"
+     ],
+     "evidence_refs": [
+      "F-001",
+      "F-006"
+     ]
+    },
+    {
+     "id": "conflict-pred",
+     "relation_kind": "theorem",
+     "expression": "(i,j)∈E ⟺ U(i)∩U(j)≠∅ ⟺ 频段半开交叠>0 ∧ ∃k,m: slot_i(k)∩slot_j(m)≠∅",
+     "units": "bool",
+     "variables": [
+      "U"
+     ],
+     "evidence_refs": [
+      "F-006",
+      "F-023"
+     ]
+    },
+    {
+     "id": "result-card",
+     "relation_kind": "derived",
+     "expression": "|E|=297；AB21/AC66/BC181/BB10/CC19；involved=148/150（C007、C060 孤立）",
+     "units": "count",
+     "variables": [
+      "E"
+     ],
+     "evidence_refs": [
+      "三实现对账"
+     ]
+    }
+   ],
+   "transformations": [
+    {
+     "id": "T1-normalize",
+     "operation": "xlsx 区间字符串→整数四列（无损）",
+     "input_refs": [
+      "附件/附件1.xlsx"
+     ],
+     "output_refs": [
+      "data/canonical_plans.csv"
+     ],
+     "unit_effect": "→整数格"
+    },
+    {
+     "id": "T2-bitmap",
+     "operation": "U(i) 编码为 64300-bit 大整数",
+     "input_refs": [
+      "cells-def"
+     ],
+     "output_refs": [
+      "conflict-pred"
+     ],
+     "unit_effect": "交叠→位与"
+    }
+   ],
+   "outputs": [
+    {
+     "id": "out-E",
+     "type": "edge_set",
+     "unit": "count",
+     "expression": "E（297 对，(id_a,id_b) 升序）",
+     "source_state_ids": [
+      "conflict-pred"
+     ]
+    },
+    {
+     "id": "out-stats",
+     "type": "stat_bundle",
+     "unit": "count",
+     "expression": "总数/按类对/冲突度分布/孤立集",
+     "source_state_ids": [
+      "result-card"
+     ]
+    }
+   ],
+   "evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "interface": "python canonical_evaluator.py --question Q1 --solution pairs.json"
+   },
+   "computation_contract": {
+    "component_type": "analytical_verifier",
+    "implementation": "code/prod/q1_solve.py",
+    "implementation_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+    "version": "prod-v1",
+    "method_family": "exact_enumerative",
+    "algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+    "deterministic": true,
+    "execution_mode": "single_pass",
+    "stopping_rule": "全部 11175 对完成",
+    "budget": {},
+    "seed_policy": "N/A",
+    "bounds": null,
+    "resampling": null,
+    "integrator": null,
+    "verification_method": "三实现两两对称差=0；独立第二实现 checker；半开边界用例"
+   },
+   "numerical_precision": {
+    "policy": "symbolic_exact",
+    "absolute_tolerance": null,
+    "relative_tolerance": null,
+    "rounding": "无浮点"
+   },
+   "route_binding": {
+    "question_id": "Q1",
+    "search_id": "CS-20260911T071520Z-1A9D30",
+    "idea_id": "Q1-R21",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+   },
+   "discovery_binding": {
+    "question_id": "Q1",
+    "opportunity_ids": [
+     "Q1-OP-special_boundary"
+    ],
+    "finding_ids": [
+     "Q1-F-special_boundary"
+    ],
+    "affected_question_ids": [
+     "Q1"
+    ],
+    "material_decision_impacts": [
+     "constraint_added_or_changed"
+    ],
+    "formulation_paths": [
+     "/constraints",
+     "/numerical_precision"
+    ],
+    "selected_candidate_ids": [
+     "Q1-R21"
+    ],
+    "rejected_candidate_ids": [],
+    "evidence_refs": [
+     "reports/discovery/MODEL_OPPORTUNITIES.json",
+     "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    ]
+   },
+   "formulation_sha256": "4cb9dfc411287049da46af7db3d85069da490af3ec4d301cf677de66395c0c49",
+   "variables_domains": [
+    {
+     "id": "f",
+     "type": "integer",
+     "domain": "0..99",
+     "unit": "band_index",
+     "role": "频段格"
+    },
+    {
+     "id": "tau",
+     "type": "integer",
+     "domain": "0..642",
+     "unit": "time_index",
+     "role": "时间格"
+    },
+    {
+     "id": "E",
+     "type": "set",
+     "domain": "150 计划的两两组合",
+     "unit": "count",
+     "role": "冲突对集（待判定输出）"
+    }
+   ],
+   "identities_theorems": [
+    {
+     "id": "thm-congruence",
+     "relation_kind": "theorem",
+     "expression": "同类 (g,d,n) 齐次，P=g+d：时间交叠 ⟺ Δt1 mod P ∈ S_d 且 |Δt1|≤(n-1)P+(d-1)",
+     "units": "bool",
+     "variables": [
+      "P"
+     ],
+     "evidence_refs": [
+      "L2",
+      "L7"
+     ]
+    },
+    {
+     "id": "thm-exhaustive",
+     "relation_kind": "theorem",
+     "expression": "E 由有限判定式（半开区间交非空）完全决定，11175 对穷举⇒完备且可复算",
+     "units": "bool",
+     "variables": [
+      "E"
+     ],
+     "evidence_refs": [
+      "F-006"
+     ]
+    }
+   ],
+   "derivation_target": {
+    "target": "冲突对集合 E 及其统计量",
+    "quantity": "|E| 与按类分布",
+    "unit": "count"
+   },
+   "closed_form_solution": {
+    "expression": "E = {(i,j): [f0_i,f1_i)∩[f0_j,f1_j)≠∅ ∧ ∃k,m slot_i(k)∩slot_j(m)≠∅}",
+    "evaluation": "|E|=297（三独立实现同结果）"
+   },
+   "applicability_conditions": [
+    {
+     "id": "cond-halfopen",
+     "relation_kind": "assumption",
+     "expression": "所有区间半开 [a,b)，端点相接不算交叠",
+     "units": "bool",
+     "evidence_refs": [
+      "A1-half-open"
+     ]
+    },
+    {
+     "id": "cond-horizon",
+     "relation_kind": "assumption",
+     "expression": "时间格限于 [0,643)",
+     "units": "time_index",
+     "evidence_refs": [
+      "ADJ R1"
+     ]
+    }
+   ],
+   "verification_special_case": {
+    "case": "A001 第三次占用窗 [165,170)：与起点 [170,175) 相接计划不应判冲突；与 [167,..) 交叠计划必须判冲突",
+    "expected": "相接不交叠=0 冲突、交叠>0=冲突（R21/R41 边界用例通过）"
+   },
+   "result_keys": [
+    "results/Q1_detect.json",
+    "results/Q1_stats.json"
+   ],
+   "figure_ids": [
+    "fig-q1-grid-conflict",
+    "fig-q1-degree-dist",
+    "fig-q1-classpairs"
+   ],
+   "paper_section": "问题一",
+   "input_bindings": [
+    {
+     "path": "data/canonical_plans.csv",
+     "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+    }
+   ],
+   "notes": "三实现同结果=答案唯一性证据；错误口径(g=周期)复算 237 仅诊断不入结论。"
+  },
+  {
+   "problem_id": "Q2",
+   "formulation_kind": "optimization",
+   "analysis_unit": "用频计划动作向量 a=(a_1..a_150)",
+   "assumption_ids": [
+    "A1-half-open",
+    "A2-periodic-slots",
+    "A3-horizon-643",
+    "A4-one-param",
+    "A5-lex-chain",
+    "A6-boundary-box"
+   ],
+   "parameters": [
+    {
+     "id": "E-SET",
+     "value": 297,
+     "unit": "count",
+     "source": "Q1 冻结边集",
+     "source_sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+     "source_path": "data/canonical_plans.csv",
+     "derivation": "Q1 三实现对账"
+    },
+    {
+     "id": "GSTAR",
+     "value": 1693,
+     "unit": "count",
+     "source": "star_edges.json（评审独立重算 0 差）",
+     "source_sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json"
+    },
+    {
+     "id": "T_MAX",
+     "value": 643,
+     "unit": "time_index",
+     "source": "ADJUDICATION R1",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    },
+    {
+     "id": "DFMAX",
+     "value": 10,
+     "unit": "band_index",
+     "source": "题面 F-012",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "DTMAX",
+     "value": 5,
+     "unit": "time_index",
+     "source": "题面 F-012",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "W-PRIO",
+     "value": "A100/B10/C1(revoke x2)",
+     "unit": "priority_loss",
+     "source": "ADJUDICATION R4",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    }
+   ],
+   "states": [
+    {
+     "id": "a",
+     "type": "action_vector",
+     "unit": "无量纲",
+     "domain": "A_i={identity}∪{df:1≤|df|≤10}∪{dt:1≤|dt|≤5}∪{revoke}",
+     "description": "各计划终态动作（或候选选择向量 x）"
+    }
+   ],
+   "governing_relations": [
+    {
+     "id": "mask-form",
+     "relation_kind": "definition",
+     "expression": "U(i;a_i)：平移/重定时后占用格集，越出 [0,100)×[0,643) 者非法",
+     "units": "band_index*time_index",
+     "variables": [
+      "a"
+     ],
+     "evidence_refs": [
+      "F-005",
+      "ADJ R3"
+     ]
+    },
+    {
+     "id": "pair-incompat",
+     "relation_kind": "constraint",
+     "expression": "∀(i,j)∈G*,∀(α,β): U(i;α)∩U(j;β)=∅ 才可行（AllowedAssignments/二元子句）",
+     "units": "bool",
+     "variables": [
+      "U"
+     ],
+     "evidence_refs": [
+      "F-006",
+      "CH-05警示2a"
+     ]
+    },
+    {
+     "id": "single-choice",
+     "relation_kind": "constraint",
+     "expression": "∀i Σ_α x_iα=1（Q3：x_p∈{0,1} 且 Σ_{p∋cell}x_p≤1）",
+     "units": "count",
+     "variables": [
+      "x"
+     ],
+     "evidence_refs": [
+      "F-008"
+     ]
+    },
+    {
+     "id": "lex-obj",
+     "relation_kind": "objective",
+     "expression": "lex_min(rev,adj,Σw·changed,Σ|δ|)，标量 Φ=1e12·rev+1e8·adj+1e4·ploss+mag",
+     "units": "scalar_objective",
+     "variables": [
+      "r",
+      "adj",
+      "ploss",
+      "mag"
+     ],
+     "evidence_refs": [
+      "ADJ R4"
+     ]
+    }
+   ],
+   "transformations": [
+    {
+     "id": "T-lex",
+     "operation": "词典序四级→逐级锁定",
+     "input_refs": [
+      "lex-obj"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "多目标→单目标序列"
+    },
+    {
+     "id": "T-table",
+     "operation": "禁元组表→CP-SAT 子句/AllowedAssignments",
+     "input_refs": [
+      "pair-incompat"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "组合约束→子句库"
+    }
+   ],
+   "outputs": [
+    {
+     "id": "out-actions",
+     "type": "assignment",
+     "unit": "无量纲",
+     "expression": "a*（result2 行：编号+调整后频段/时间+撤销标记）",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-obj",
+     "type": "scalar",
+     "unit": "scalar_objective",
+     "expression": "Φ(a*) 与元组",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-bounds",
+     "type": "bound_cert",
+     "unit": "count",
+     "expression": "各层 (UB,LB,status,证书)",
+     "source_state_ids": []
+    }
+   ],
+   "evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "interface": "python canonical_evaluator.py --question Q2 --solution <sol>.json"
+   },
+   "computation_contract": {
+    "component_type": "optimization_solver",
+    "implementation": "code/prod/q2_solve.py",
+    "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+    "version": "prod-v1",
+    "method_family": "deterministic_global",
+    "algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+    "deterministic": true,
+    "execution_mode": "background_long_budget",
+    "stopping_rule": "四层 OPTIMAL 或各级预算耗尽记录 incumbent+bound",
+    "budget": {
+     "wall_clock_seconds": 1700,
+     "timeout_seconds": 1700,
+     "planner_task_expansion": {
+      "scenarios": [
+       "main"
+      ],
+      "parameter_cases": [
+       {
+        "variant": "cpsat_lex",
+        "workers": 4,
+        "stage_budget": {
+         "l1": 800,
+         "ladder": 250,
+         "l2": 300,
+         "l3": 100,
+         "l4": 50
+        },
+        "hint": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json"
+       },
+       {
+        "variant": "cpsat_lex",
+        "workers": 1,
+        "stage_budget": {
+         "l1": 800,
+         "ladder": 250,
+         "l2": 300,
+         "l3": 100,
+         "l4": 50
+        },
+        "hint": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json"
+       },
+       {
+        "variant": "grasp",
+        "grasp_seed": 11,
+        "budget": 240
+       },
+       {
+        "variant": "grasp",
+        "grasp_seed": 29,
+        "budget": 240
+       },
+       {
+        "variant": "grasp",
+        "grasp_seed": 47,
+        "budget": 240
+       },
+       {
+        "variant": "check",
+        "solution": "@Q2MAIN"
+       },
+       {
+        "variant": "synth",
+        "question": "Q2"
+       }
+      ]
+     }
+    },
+    "seed_policy": "N/A",
+    "bounds": null,
+    "resampling": null,
+    "integrator": null,
+    "verification_method": "canonical evaluator + 独立第二实现 checker；workers=1 复现对照（TF-5）"
+   },
+   "numerical_precision": {
+    "policy": "symbolic_exact",
+    "absolute_tolerance": null,
+    "relative_tolerance": null,
+    "rounding": "整数域"
+   },
+   "route_binding": {
+    "question_id": "Q2",
+    "search_id": "CS-20260911T071520Z-1A9D30",
+    "idea_id": "Q2-R51",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+   },
+   "discovery_binding": {
+    "question_id": "Q2",
+    "opportunity_ids": [
+     "Q2-OP-special_boundary"
+    ],
+    "finding_ids": [
+     "Q2-F-special_boundary"
+    ],
+    "affected_question_ids": [
+     "Q2"
+    ],
+    "material_decision_impacts": [
+     "constraint_added_or_changed"
+    ],
+    "formulation_paths": [
+     "/constraints",
+     "/numerical_precision"
+    ],
+    "selected_candidate_ids": [
+     "Q2-R51"
+    ],
+    "rejected_candidate_ids": [],
+    "evidence_refs": [
+     "reports/discovery/MODEL_OPPORTUNITIES.json",
+     "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    ]
+   },
+   "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+   "decision_variables": [
+    {
+     "id": "x_ia",
+     "type": "binary",
+     "domain": "{0,1}",
+     "unit": "无量纲",
+     "role": "计划 i 选动作 α（Q3：候选 p 是否选用）"
+    }
+   ],
+   "objective": {
+    "id": "obj-Q2",
+    "direction": "minimize",
+    "expression": "lex_min(rev,adj,Σw·changed,Σ|δ|)，标量 Φ=1e12·rev+1e8·adj+1e4·ploss+mag",
+    "unit": "scalar_objective"
+   },
+   "constraints": [
+    {
+     "id": "c-single",
+     "expression": "∀i Σ_α x_iα=1（每计划恰一个终态）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "structural"
+    },
+    {
+     "id": "c-incompat",
+     "expression": "G* 上任意两终态占用不交（表格/子句）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    },
+    {
+     "id": "c-bound",
+     "expression": "|df|≤10,|dt|≤5",
+     "tolerance": 0,
+     "unit": "band_index/time_index",
+     "kind": "hard"
+    },
+    {
+     "id": "c-box",
+     "expression": "所有占用窗 ⊆ [0,643)×[0,100)",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    }
+   ],
+   "feasibility_evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "checks": [
+     "零冲突（Q1 检测器复跑=0 对）",
+     "每计划至多调一项",
+     "|df|≤10/|dt|≤5",
+     "次数/间隔不变",
+     "频段0..99 & 时间[0,643)",
+     "表1聚合与 result2 行一致"
+    ]
+   },
+   "bounds": {
+    "lower": "撤销阶梯（Σr≤k INFEASIBLE）",
+    "upper": "各层 CP-SAT incumbent",
+    "method": "阶梯 INFEASIBLE 证书 + CP/LP 传播界",
+    "gap_definition": "层内 UB−LB"
+   },
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "词典序逐级锁定 + 撤销阶梯证书（详见 computation_contract.algorithm）"
+   },
+   "result_keys": [
+    "results/Q2_solution.json",
+    "results/Q2_table1.json"
+   ],
+   "figure_ids": [
+    "fig-q2-hero-lex",
+    "fig-q2-table1",
+    "fig-q2-ladder"
+   ],
+   "paper_section": "问题二",
+   "input_bindings": [
+    {
+     "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+     "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+    }
+   ],
+   "notes": "单参数 F-008、禁调次数/间隔 F-009、幅度 F-012、边界 ADJ R3、优先级 ADJ R4；G* 全势边防假 0 撤销。侦察 incumbent [6,121,1996,663]，撤销层界 [2,6] 开放。"
+  },
+  {
+   "problem_id": "Q3",
+   "formulation_kind": "optimization",
+   "analysis_unit": "新增 C 放置子集 x⊆候选集",
+   "assumption_ids": [
+    "A1-half-open",
+    "A2-periodic-slots",
+    "A3-horizon-643",
+    "A7-main-interpretation",
+    "A8-template-C"
+   ],
+   "parameters": [
+    {
+     "id": "E-SET",
+     "value": 297,
+     "unit": "count",
+     "source": "Q1 冻结边集",
+     "source_sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+     "source_path": "data/canonical_plans.csv",
+     "derivation": "Q1 三实现对账"
+    },
+    {
+     "id": "GSTAR",
+     "value": 1693,
+     "unit": "count",
+     "source": "star_edges.json（评审独立重算 0 差）",
+     "source_sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json"
+    },
+    {
+     "id": "T_MAX",
+     "value": 643,
+     "unit": "time_index",
+     "source": "ADJUDICATION R1",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    },
+    {
+     "id": "CW",
+     "value": 3,
+     "unit": "band_index",
+     "source": "附件1 C 模板",
+     "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+     "source_path": "附件/附件1.xlsx"
+    },
+    {
+     "id": "CD",
+     "value": 2,
+     "unit": "time_index",
+     "source": "附件1 C 模板",
+     "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+     "source_path": "附件/附件1.xlsx"
+    },
+    {
+     "id": "CG",
+     "value": 8,
+     "unit": "time_index",
+     "source": "附件1 C 模板",
+     "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+     "source_path": "附件/附件1.xlsx"
+    },
+    {
+     "id": "CN",
+     "value": 12,
+     "unit": "count",
+     "source": "附件1 C 模板",
+     "source_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+     "source_path": "附件/附件1.xlsx"
+    },
+    {
+     "id": "SPAN",
+     "value": 112,
+     "unit": "time_index",
+     "source": "11*10+2 末窗跨度",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    }
+   ],
+   "states": [
+    {
+     "id": "a",
+     "type": "action_vector",
+     "unit": "无量纲",
+     "domain": "x_p∈{0,1}, p∈候选放置（侦察基座 |P|=2123；全枚举 52136 预筛）",
+     "description": "各计划终态动作（或候选选择向量 x）"
+    }
+   ],
+   "governing_relations": [
+    {
+     "id": "mask-form",
+     "relation_kind": "definition",
+     "expression": "U(i;a_i)：平移/重定时后占用格集，越出 [0,100)×[0,643) 者非法",
+     "units": "band_index*time_index",
+     "variables": [
+      "a"
+     ],
+     "evidence_refs": [
+      "F-005",
+      "ADJ R3"
+     ]
+    },
+    {
+     "id": "pair-incompat",
+     "relation_kind": "constraint",
+     "expression": "∀(i,j)∈G*,∀(α,β): U(i;α)∩U(j;β)=∅ 才可行（AllowedAssignments/二元子句）",
+     "units": "bool",
+     "variables": [
+      "U"
+     ],
+     "evidence_refs": [
+      "F-006",
+      "CH-05警示2a"
+     ]
+    },
+    {
+     "id": "single-choice",
+     "relation_kind": "constraint",
+     "expression": "∀i Σ_α x_iα=1（Q3：x_p∈{0,1} 且 Σ_{p∋cell}x_p≤1）",
+     "units": "count",
+     "variables": [
+      "x"
+     ],
+     "evidence_refs": [
+      "F-008"
+     ]
+    },
+    {
+     "id": "lex-obj",
+     "relation_kind": "objective",
+     "expression": "max Φ=Σ_p x_p（s.t. 干扰对不共存 / 逐格容量≤1）",
+     "units": "count",
+     "variables": [
+      "r",
+      "adj",
+      "ploss",
+      "mag"
+     ],
+     "evidence_refs": [
+      "ADJ R4"
+     ]
+    }
+   ],
+   "transformations": [
+    {
+     "id": "T-lex",
+     "operation": "词典序四级→逐级锁定",
+     "input_refs": [
+      "lex-obj"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "多目标→单目标序列"
+    },
+    {
+     "id": "T-table",
+     "operation": "禁元组表→CP-SAT 子句/AllowedAssignments",
+     "input_refs": [
+      "pair-incompat"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "组合约束→子句库"
+    }
+   ],
+   "outputs": [
+    {
+     "id": "out-actions",
+     "type": "assignment",
+     "unit": "无量纲",
+     "expression": "selected placements（result3 行：序号/频段区间/时间区间）",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-obj",
+     "type": "scalar",
+     "unit": "count",
+     "expression": "Φ(a*) 与元组",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-bounds",
+     "type": "bound_cert",
+     "unit": "count",
+     "expression": "各层 (UB,LB,status,证书)",
+     "source_state_ids": []
+    }
+   ],
+   "evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "interface": "python canonical_evaluator.py --question Q3 --solution <sol>.json"
+   },
+   "computation_contract": {
+    "component_type": "optimization_solver",
+    "implementation": "code/prod/q3_solve.py",
+    "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+    "version": "prod-v1",
+    "method_family": "deterministic_global",
+    "algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+    "deterministic": true,
+    "execution_mode": "background_long_budget",
+    "stopping_rule": "OPTIMAL 且 LB=UB 会合，否则记区间降格表述",
+    "budget": {
+     "wall_clock_seconds": 1500,
+     "timeout_seconds": 1500,
+     "planner_task_expansion": {
+      "scenarios": [
+       "main"
+      ],
+      "parameter_cases": [
+       {
+        "variant": "enum",
+        "base": "@Q2MAIN"
+       },
+       {
+        "variant": "cpsat_a",
+        "base": "@Q2MAIN",
+        "limit": 600
+       },
+       {
+        "variant": "cpsat_b",
+        "base": "@Q2MAIN",
+        "limit": 600
+       },
+       {
+        "variant": "lp_hiGHS",
+        "base": "@Q2MAIN"
+       },
+       {
+        "variant": "bound_elementary",
+        "base": "@Q2MAIN"
+       },
+       {
+        "variant": "check",
+        "solution": "@Q3MAIN",
+        "base": "@Q2MAIN"
+       },
+       {
+        "variant": "synth",
+        "question": "Q3"
+       }
+      ]
+     }
+    },
+    "seed_policy": "N/A",
+    "bounds": null,
+    "resampling": null,
+    "integrator": null,
+    "verification_method": "canonical evaluator + 独立 checker；界码自检门（UB≥已知构造）"
+   },
+   "numerical_precision": {
+    "policy": "symbolic_exact",
+    "absolute_tolerance": null,
+    "relative_tolerance": null,
+    "rounding": "整数域"
+   },
+   "route_binding": {
+    "question_id": "Q3",
+    "search_id": "CS-20260911T071520Z-1A9D30",
+    "idea_id": "Q3-R11",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+   },
+   "discovery_binding": {
+    "question_id": "Q3",
+    "opportunity_ids": [
+     "Q3-OP-special_boundary"
+    ],
+    "finding_ids": [
+     "Q3-F-special_boundary"
+    ],
+    "affected_question_ids": [
+     "Q3"
+    ],
+    "material_decision_impacts": [
+     "constraint_added_or_changed"
+    ],
+    "formulation_paths": [
+     "/constraints",
+     "/numerical_precision"
+    ],
+    "selected_candidate_ids": [
+     "Q3-R11"
+    ],
+    "rejected_candidate_ids": [],
+    "evidence_refs": [
+     "reports/discovery/MODEL_OPPORTUNITIES.json",
+     "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    ]
+   },
+   "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+   "decision_variables": [
+    {
+     "id": "x_ia",
+     "type": "binary",
+     "domain": "{0,1}",
+     "unit": "无量纲",
+     "role": "计划 i 选动作 α（Q3：候选 p 是否选用）"
+    }
+   ],
+   "objective": {
+    "id": "obj-Q3",
+    "direction": "maximize",
+    "expression": "max Φ=Σ_p x_p（s.t. 干扰对不共存 / 逐格容量≤1）",
+    "unit": "count"
+   },
+   "constraints": [
+    {
+     "id": "c-single",
+     "expression": "∀i Σ_α x_iα=1（每计划恰一个终态）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "structural"
+    },
+    {
+     "id": "c-incompat",
+     "expression": "G* 上任意两终态占用不交（表格/子句）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    },
+    {
+     "id": "c-bound",
+     "expression": "|df|≤10,|dt|≤5",
+     "tolerance": 0,
+     "unit": "band_index/time_index",
+     "kind": "hard"
+    },
+    {
+     "id": "c-box",
+     "expression": "所有占用窗 ⊆ [0,643)×[0,100)",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    }
+   ],
+   "feasibility_evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "checks": [
+     "候选与基座零冲突",
+     "放置间零冲突",
+     "行数=Φ",
+     "末窗≤643 & 频段≤99",
+     "界≥构造断言"
+    ]
+   },
+   "bounds": {
+    "lower": "构造解 + CP-SAT incumbent",
+    "upper": "CP-SAT best bound / HiGHS LP / 双计数 332",
+    "method": "阶梯 INFEASIBLE 证书 + CP/LP 传播界",
+    "gap_definition": "层内 UB−LB"
+   },
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "词典序逐级锁定 + 撤销阶梯证书（详见 computation_contract.algorithm）"
+   },
+   "result_keys": [
+    "results/Q3_solution.json",
+    "results/Q3_bound.json"
+   ],
+   "figure_ids": [
+    "fig-q3-utilization",
+    "fig-q3-bound-meet"
+   ],
+   "paper_section": "问题三",
+   "input_bindings": [
+    {
+     "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+     "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+    }
+   ],
+   "notes": "加装=空闲时频格带冲突集包装；作用域限定：侦察基座(=Q2-R51 解)认证 N*=139（三腿：CP-SAT 双模型 OPTIMAL=bound + HiGHS LP=139.0 + 候选穷举完备）；生产随 Q2 解重算。初等界 332 宽松可手核（界码用 (641-r)//10 防尾幽灵）。备查口径 2B 仅灵敏度。"
+  },
+  {
+   "problem_id": "Q4",
+   "formulation_kind": "optimization",
+   "analysis_unit": "用频计划动作向量 a=(a_1..a_150)",
+   "assumption_ids": [
+    "A1-half-open",
+    "A2-periodic-slots",
+    "A3-horizon-643",
+    "A4-one-param",
+    "A5-lex-chain",
+    "A6-boundary-box"
+   ],
+   "parameters": [
+    {
+     "id": "E-SET",
+     "value": 297,
+     "unit": "count",
+     "source": "Q1 冻结边集",
+     "source_sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+     "source_path": "data/canonical_plans.csv",
+     "derivation": "Q1 三实现对账"
+    },
+    {
+     "id": "GSTAR",
+     "value": 1693,
+     "unit": "count",
+     "source": "star_edges.json（评审独立重算 0 差）",
+     "source_sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json"
+    },
+    {
+     "id": "T_MAX",
+     "value": 643,
+     "unit": "time_index",
+     "source": "ADJUDICATION R1",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    },
+    {
+     "id": "DFMAX",
+     "value": 10,
+     "unit": "band_index",
+     "source": "题面 F-012",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "DTMAX",
+     "value": 5,
+     "unit": "time_index",
+     "source": "题面 F-012",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "DGMAX",
+     "value": 10,
+     "unit": "time_index",
+     "source": "题面 Q4-F019",
+     "source_sha256": "83b18d90db5b561d468a070df4e3c4427e05eaaf3135046773409078f52ae5fc",
+     "source_path": "reports/contracts/PROBLEM_FACTS.json"
+    },
+    {
+     "id": "GPRIME-MIN",
+     "value": 1,
+     "unit": "time_index",
+     "source": "ADJUDICATION R6",
+     "source_sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+     "source_path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    }
+   ],
+   "states": [
+    {
+     "id": "a",
+     "type": "action_vector",
+     "unit": "无量纲",
+     "domain": "A_i=Q2域∪{dg(仅C):1≤|dg|≤10}",
+     "description": "各计划终态动作（或候选选择向量 x）"
+    }
+   ],
+   "governing_relations": [
+    {
+     "id": "mask-form",
+     "relation_kind": "definition",
+     "expression": "U(i;a_i)：平移/重定时后占用格集，越出 [0,100)×[0,643) 者非法",
+     "units": "band_index*time_index",
+     "variables": [
+      "a"
+     ],
+     "evidence_refs": [
+      "F-005",
+      "ADJ R3"
+     ]
+    },
+    {
+     "id": "pair-incompat",
+     "relation_kind": "constraint",
+     "expression": "∀(i,j)∈G*,∀(α,β): U(i;α)∩U(j;β)=∅ 才可行（AllowedAssignments/二元子句）",
+     "units": "bool",
+     "variables": [
+      "U"
+     ],
+     "evidence_refs": [
+      "F-006",
+      "CH-05警示2a"
+     ]
+    },
+    {
+     "id": "single-choice",
+     "relation_kind": "constraint",
+     "expression": "∀i Σ_α x_iα=1（Q3：x_p∈{0,1} 且 Σ_{p∋cell}x_p≤1）",
+     "units": "count",
+     "variables": [
+      "x"
+     ],
+     "evidence_refs": [
+      "F-008"
+     ]
+    },
+    {
+     "id": "lex-obj",
+     "relation_kind": "objective",
+     "expression": "lex_min(rev,adj,Σw·changed,Σ|δ|+Σ|dg|)，标量同 Q2（含 dg 入幅度层）",
+     "units": "scalar_objective",
+     "variables": [
+      "r",
+      "adj",
+      "ploss",
+      "mag"
+     ],
+     "evidence_refs": [
+      "ADJ R4"
+     ]
+    }
+   ],
+   "transformations": [
+    {
+     "id": "T-lex",
+     "operation": "词典序四级→逐级锁定",
+     "input_refs": [
+      "lex-obj"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "多目标→单目标序列"
+    },
+    {
+     "id": "T-table",
+     "operation": "禁元组表→CP-SAT 子句/AllowedAssignments",
+     "input_refs": [
+      "pair-incompat"
+     ],
+     "output_refs": [
+      "cc"
+     ],
+     "unit_effect": "组合约束→子句库"
+    }
+   ],
+   "outputs": [
+    {
+     "id": "out-actions",
+     "type": "assignment",
+     "unit": "无量纲",
+     "expression": "a*（result4 行：编号+频段/时间/间隔+撤销标记）",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-obj",
+     "type": "scalar",
+     "unit": "scalar_objective",
+     "expression": "Φ(a*) 与元组",
+     "source_state_ids": [
+      "a"
+     ]
+    },
+    {
+     "id": "out-bounds",
+     "type": "bound_cert",
+     "unit": "count",
+     "expression": "各层 (UB,LB,status,证书)",
+     "source_state_ids": []
+    }
+   ],
+   "evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "interface": "python canonical_evaluator.py --question Q4 --solution <sol>.json"
+   },
+   "computation_contract": {
+    "component_type": "optimization_solver",
+    "implementation": "code/prod/q4_solve.py",
+    "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+    "version": "prod-v1",
+    "method_family": "deterministic_global",
+    "algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+    "deterministic": true,
+    "execution_mode": "background_long_budget",
+    "stopping_rule": "四层 OPTIMAL 或记录 incumbent+bound",
+    "budget": {
+     "wall_clock_seconds": 1700,
+     "timeout_seconds": 1700,
+     "planner_task_expansion": {
+      "scenarios": [
+       "main"
+      ],
+      "parameter_cases": [
+       {
+        "variant": "cpsat_lex",
+        "workers": 4,
+        "stage_budget": {
+         "l1": 800,
+         "ladder": 250,
+         "l2": 300,
+         "l3": 100,
+         "l4": 50
+        },
+        "q2_solution": "@Q2MAIN",
+        "anchor": true
+       },
+       {
+        "variant": "cpsat_lex",
+        "workers": 1,
+        "stage_budget": {
+         "l1": 800,
+         "ladder": 250,
+         "l2": 300,
+         "l3": 100,
+         "l4": 50
+        },
+        "q2_solution": "@Q2MAIN",
+        "anchor": true
+       },
+       {
+        "variant": "check",
+        "solution": "@Q4MAIN"
+       },
+       {
+        "variant": "synth",
+        "question": "Q4"
+       }
+      ]
+     }
+    },
+    "seed_policy": "N/A",
+    "bounds": null,
+    "resampling": null,
+    "integrator": null,
+    "verification_method": "canonical evaluator + 独立第二实现 checker（先判 g'≥1）；workers=1 复现"
+   },
+   "numerical_precision": {
+    "policy": "symbolic_exact",
+    "absolute_tolerance": null,
+    "relative_tolerance": null,
+    "rounding": "整数域"
+   },
+   "route_binding": {
+    "question_id": "Q4",
+    "search_id": "CS-20260911T071520Z-1A9D30",
+    "idea_id": "Q4-R11",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+   },
+   "discovery_binding": {
+    "question_id": "Q4",
+    "opportunity_ids": [
+     "Q4-OP-special_boundary"
+    ],
+    "finding_ids": [
+     "Q4-F-special_boundary"
+    ],
+    "affected_question_ids": [
+     "Q4"
+    ],
+    "material_decision_impacts": [
+     "constraint_added_or_changed"
+    ],
+    "formulation_paths": [
+     "/constraints",
+     "/numerical_precision"
+    ],
+    "selected_candidate_ids": [
+     "Q4-R11"
+    ],
+    "rejected_candidate_ids": [],
+    "evidence_refs": [
+     "reports/discovery/MODEL_OPPORTUNITIES.json",
+     "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json"
+    ]
+   },
+   "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+   "decision_variables": [
+    {
+     "id": "x_ia",
+     "type": "binary",
+     "domain": "{0,1}",
+     "unit": "无量纲",
+     "role": "计划 i 选动作 α（Q3：候选 p 是否选用）"
+    }
+   ],
+   "objective": {
+    "id": "obj-Q4",
+    "direction": "minimize",
+    "expression": "lex_min(rev,adj,Σw·changed,Σ|δ|+Σ|dg|)，标量同 Q2（含 dg 入幅度层）",
+    "unit": "scalar_objective"
+   },
+   "constraints": [
+    {
+     "id": "c-single",
+     "expression": "∀i Σ_α x_iα=1（每计划恰一个终态）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "structural"
+    },
+    {
+     "id": "c-incompat",
+     "expression": "G* 上任意两终态占用不交（表格/子句）",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    },
+    {
+     "id": "c-bound",
+     "expression": "|df|≤10,|dt|≤5, |dg|≤10∧g'≥1（仅C）",
+     "tolerance": 0,
+     "unit": "band_index/time_index",
+     "kind": "hard"
+    },
+    {
+     "id": "c-box",
+     "expression": "所有占用窗 ⊆ [0,643)×[0,100)",
+     "tolerance": 0,
+     "unit": "无量纲",
+     "kind": "hard"
+    }
+   ],
+   "feasibility_evaluator": {
+    "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "checks": [
+     "零冲突",
+     "单参数",
+     "幅度含 |dg|≤10 且 g'≥1",
+     "仅 C 调 g",
+     "次数不变",
+     "边界盒",
+     "表1一致"
+    ]
+   },
+   "bounds": {
+    "lower": "支配界（Q2 生产解逐字植入=上界）+ 撤销阶梯",
+    "upper": "CP-SAT incumbent",
+    "method": "阶梯 INFEASIBLE 证书 + CP/LP 传播界",
+    "gap_definition": "层内 UB−LB"
+   },
+   "solver": {
+    "family": "deterministic_global",
+    "algorithm": "词典序逐级锁定 + 撤销阶梯证书（详见 computation_contract.algorithm）"
+   },
+   "result_keys": [
+    "results/Q4_solution.json",
+    "results/Q4_table1.json"
+   ],
+   "figure_ids": [
+    "fig-q4-vs-q2",
+    "fig-q4-dg-dist"
+   ],
+   "paper_section": "问题四",
+   "input_bindings": [
+    {
+     "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+     "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+    }
+   ],
+   "notes": "仅 C 可 dg(Q4-F019)，g'=8+dg≥1，R3 截断剔除 99/1530 dg 选项；支配界：域⊇Q2⇒opt 不劣（可证，植入锚 [6,121,1996,663] 已实测）。生产=Q2 解热启动+不劣锚定。"
+  }
+ ]
+}

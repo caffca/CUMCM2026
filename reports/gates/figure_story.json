@@ -1,0 +1,18 @@
+{
+  "gate": "figure_story",
+  "schema_version": 2,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "engine": "latex",
+  "manifest": "figures/figure_manifest.json",
+  "legacy_used": false,
+  "n_manifest": 10,
+  "n_primary": 6,
+  "n_used": 0,
+  "findings": [],
+  "summary": {
+    "fails": 0,
+    "warns": 0
+  },
+  "note": "v4：多余/被取代/空 panel/annotation 无来源/caption 不一致均硬 FAIL；meta.json 缺失 WARN（新图强制）"
+}

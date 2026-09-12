@@ -1,0 +1,18 @@
+{
+ "check": "Q3 最优性独立第三实现（自建候选+自建边+自写 CP-SAT）",
+ "n_cand_mine": 2270,
+ "n_edges_mine": 69678,
+ "solver_status": "OPTIMAL",
+ "phi_mine": 140,
+ "phi_auth": 140,
+ "best_bound_mine": 140.0,
+ "bound_auth": 140.0,
+ "proven_optimal_mine": true,
+ "proven_optimal_auth": true,
+ "mine_is_also_optimal_value": true,
+ "selected_set_equal_auth": false,
+ "selected_size_intersection": 139,
+ "note": "解不要求唯一：只要独立实现同样证明上界=下界=140，即认证 phi 的最大性；多重解属正常简并。",
+ "limit_seconds": 500.0,
+ "verdict": "PASS"
+}

@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "problem_id": "D2026",
+ "question_ids": [
+  "Q1",
+  "Q2",
+  "Q3",
+  "Q4"
+ ],
+ "inputs": {
+  "discovery": [
+   {
+    "path": "reports/discovery/MODEL_OPPORTUNITIES.json",
+    "sha256": "38cfc767a9f456ed08fd9618a10faf797baa951828b71368c0f674f69fd7c5ef",
+    "role": "problem_structure",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   },
+   {
+    "path": "reports/discovery/PROBLEM_STRUCTURE.json",
+    "sha256": "f0a9cedc0bb419ef34e2e17446115af833241759f7f9b3f392b440c526d22d26",
+    "role": "structure",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   }
+  ],
+  "fms": [
+   {
+    "path": "reports/FINAL_MODEL_SPEC.json",
+    "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "role": "formulation_authority",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   }
+  ],
+  "validation_claims": [
+   {
+    "path": "reports/contracts/QUESTION_CONTRACT.json",
+    "sha256": "a72afdaa4bb4186d829a4ef49940ba0209f1b79843ca70bec0942f42576e7a88",
+    "role": "claim_type_source",
+    "question_ids": [
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4"
+    ]
+   }
+  ]
+ },
+ "provenance": {
+  "run_id": "CS-20260911T071520Z-1A9D30",
+  "model": "qwen3.8-flash",
+  "resource_profile": "standard",
+  "producer": "methodology_review",
+  "source_commit": "9c402786095256583c0f86ca965af99c846ab055",
+  "preset_bundle_sha256": "836e9a20d43559014e7bb2b361771ceca36d3acff539adffdc85cbac8fc6e72f",
+  "preset_manifest_ref": {
+   "path": "PRESET_BUILD_MANIFEST.json",
+   "sha256": "d92f24ba77d0388e031fedcce85b02d72b3be3860a87a4b9c8fa7941bd5ecd32",
+   "role": "preset_provenance"
+  },
+  "prompt_model_resource": {
+   "model": "qwen3.8-flash",
+   "resource_profile": "standard"
+  },
+  "generated_at": "2026-09-12T02:20:16+08:00"
+ }
+}

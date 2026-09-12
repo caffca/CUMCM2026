@@ -1,0 +1,67 @@
+{
+  "artifact": "compute_budget",
+  "remaining_budget_hours": 27.95,
+  "question_ids": [
+    "__budget__"
+  ],
+  "basis": "竞赛窗口保守估计（至次日 18:00 提交截止）；供 whole-problem bundle 预算契约使用",
+  "generated_at": "2026-09-12T14:03:02+08:00",
+  "_meta": {
+    "metadata_writer": "v7-p2-02/result_writer",
+    "metadata_writer_schema_version": 1,
+    "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+    "role": "support",
+    "authority": false,
+    "problem_ids": [
+      "Q2"
+    ],
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "contract_rev": 1,
+    "generator_path": "code/prod/make_compute_budget.py",
+    "generator_sha256": "4d6824dea78c7f6d341a262bafe19a87ef5965a126573097e488e43ba8125fc2",
+    "input_hashes": {
+      "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+    },
+    "input_sha256": "4680ec4066f0616395bf6f5011759b6b6069adc13172ddb68c878f7b4963a35c",
+    "output_hashes": {
+      "__result_payload__": "3c54d8c0b9507dce8f3976e30237c5d546e6a69f77dbcfcb1f0ff3def9042ba4"
+    },
+    "output_sha256": "cf763f6404347583820665b007d990c129fa2f1084dd59f8ee3b02279784984e",
+    "coverage": {
+      "status": "not_applicable",
+      "coverage_id": null,
+      "plan_path": null,
+      "plan_sha256": null,
+      "observed": null,
+      "observed_sha256": null
+    },
+    "coverage_id": null,
+    "coverage_plan": null,
+    "coverage_plan_sha256": null,
+    "observed_coverage_sha256": null,
+    "generated_at": "2026-09-12T14:03:02+08:00",
+    "problem_id": "Q2",
+    "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+    "route_id": "Q2-R51",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "deterministic_global",
+    "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "implementation": "code/prod/q2_solve.py",
+    "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+    "formulation_kind": "optimization",
+    "seed_policy": "N/A",
+    "model_decision_binding": {
+      "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+      "profile_id": "PROFILE-8ADA7763202B25BA",
+      "strategy_matching_id": "MATCH-1504A0480D6D591A",
+      "question_id": "Q2",
+      "decision_status": "pending_proposal",
+      "selected_strategy_id": null,
+      "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+      "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+    }
+  }
+}

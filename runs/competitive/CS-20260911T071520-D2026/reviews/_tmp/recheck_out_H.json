@@ -1,0 +1,174 @@
+{
+ "R11": {
+  "original_tuple": [
+   8,
+   113,
+   2289,
+   719
+  ],
+  "saturated": {
+   "df10": 28,
+   "dt5": 9,
+   "dg10": 1,
+   "n_adj": 113
+  },
+  "polished_tuple": [
+   8,
+   113,
+   2289,
+   657
+  ],
+  "n_mag_reductions": 54,
+  "mag_drop": 62,
+  "frozen_before": {
+   "feasible": true,
+   "tuple": [
+    8,
+    113,
+    2289,
+    719
+   ],
+   "n_violations": 0
+  },
+  "frozen_after": {
+   "feasible": true,
+   "tuple": [
+    8,
+    113,
+    2289,
+    657
+   ],
+   "n_violations": 0
+  },
+  "lexicographic_improvement": true
+ },
+ "R41_seed29": {
+  "original_tuple": [
+   11,
+   117,
+   2344,
+   578
+  ],
+  "saturated": {
+   "df10": 11,
+   "dt5": 3,
+   "dg10": 0,
+   "n_adj": 117
+  },
+  "polished_tuple": [
+   11,
+   117,
+   2344,
+   578
+  ],
+  "n_mag_reductions": 0,
+  "mag_drop": 0,
+  "frozen_before": {
+   "feasible": true,
+   "tuple": [
+    11,
+    117,
+    2344,
+    578
+   ],
+   "n_violations": 0
+  },
+  "frozen_after": {
+   "feasible": true,
+   "tuple": [
+    11,
+    117,
+    2344,
+    578
+   ],
+   "n_violations": 0
+  },
+  "lexicographic_improvement": false
+ },
+ "R41_seed47": {
+  "original_tuple": [
+   10,
+   112,
+   2229,
+   596
+  ],
+  "saturated": {
+   "df10": 14,
+   "dt5": 2,
+   "dg10": 0,
+   "n_adj": 112
+  },
+  "polished_tuple": [
+   10,
+   112,
+   2229,
+   596
+  ],
+  "n_mag_reductions": 0,
+  "mag_drop": 0,
+  "frozen_before": {
+   "feasible": true,
+   "tuple": [
+    10,
+    112,
+    2229,
+    596
+   ],
+   "n_violations": 0
+  },
+  "frozen_after": {
+   "feasible": true,
+   "tuple": [
+    10,
+    112,
+    2229,
+    596
+   ],
+   "n_violations": 0
+  },
+  "lexicographic_improvement": false
+ },
+ "R22": {
+  "original_tuple": [
+   66,
+   43,
+   1111,
+   144
+  ],
+  "saturated": {
+   "df10": 0,
+   "dt5": 1,
+   "dg10": 0,
+   "n_adj": 43
+  },
+  "polished_tuple": [
+   66,
+   43,
+   1111,
+   144
+  ],
+  "n_mag_reductions": 0,
+  "mag_drop": 0,
+  "frozen_before": {
+   "feasible": true,
+   "tuple": [
+    66,
+    43,
+    1111,
+    144
+   ],
+   "n_violations": 0
+  },
+  "frozen_after": {
+   "feasible": true,
+   "tuple": [
+    66,
+    43,
+    1111,
+    144
+   ],
+   "n_violations": 0
+  },
+  "lexicographic_improvement": false
+ }
+}

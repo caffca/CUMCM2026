@@ -1,0 +1,101 @@
+{
+ "evaluator_sha": {
+  "on_disk": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "protocol_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "adjudication_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "matches_all": true
+ },
+ "input_artifact_sha256s": {
+  "common_input.json": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86",
+  "TOURNAMENT_PROTOCOL.json": "a8f30bd6473b545d3ac165c316fb9a5573f5d380e76e25e6b3b8056e980f5c97",
+  "ADJUDICATION.json": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9",
+  "canonical_evaluator.py": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+  "routes/CH-01.route.json": "55b2bbd5da949ca97aa933076654c3195de93c733f86a28dc2615b773208ee06",
+  "routes/CH-02.route.json": "03eb60f390b47e02a966e59ef125d52de81f1c35b0862facf6b4d4a6e07edf19",
+  "routes/CH-04.route.json": "210ce17cd247307243d660adcd0ddecf3938c2d76177f5ac2279cab9fcd3ad5a",
+  "routes/CH-05.route.json": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685",
+  "scouts/Q4-R11/result.json": "e06f0abe659474c3ea44dc9dde6a65dd6ac3d853fe83de531f5e0e916b19994d",
+  "scouts/Q4-R11/scout.json": "987aca3421b9371b798d559dcc8124a70f3b48a294744d7fce820aff563f5a9f",
+  "scouts/Q4-R11/run/q2_inclusion_check.json": "ea8faabcfa455e8a908ec7b5b0df2c316afaddfe605ffcd7e016561d6c474856",
+  "scouts/Q4-R11/run/r11_layers.json": "81088e080d9e688a089d5755108af7fab2c7acd155301417d7c63937248b4d60",
+  "scouts/Q4-R11/run/solution_actions.json": "9d44c112561ef5bb595cac729b56788e5ffd7049d249ac66054fc9cbccd0d958",
+  "scouts/Q4-R11/run/eval_q4.json": "d1150bcfe48a01d34fe5cbcb57280e63d3645419970f358d612f26b7c4dfe110",
+  "scouts/Q4-R11/run_q2reduction/solution_q2reduction.json": "564d15fa5c795e869e4625de5fe940d06b80017dfb0916ec68ff65852bcd2efe",
+  "scouts/Q4-R11/code/q4common.py": "798b32df8b25bf548bad50fe8c136b80453bd624eb322a451be639ca121bc0fd",
+  "scouts/Q4-R11/code/solve_r11.py": "9d592e6ab87b315501be9ae4c8120655c42af4fe8b6d9af6590bb2646d213bfa",
+  "scouts/Q4-R41/result.json": "d400f9bfac6c128f814d2cdebc856e8c449a29125b53f9d02069e106c3292136",
+  "scouts/Q4-R41/scout.json": "809e315e043f513060c14dc6dee42213d4e3da2e9d6623634665443ee7d7d232",
+  "scouts/Q4-R41/run/solution_seed11.json": "7841215bfeb33116f571a4179bd9a91465fe2bff33b46cd9849951cdfe7e1e2a",
+  "scouts/Q4-R41/run/solution_seed29.json": "6db34ad2f585fca132286b1f1df05d95e3b6d8e9577641f1b6de9a3311105b5b",
+  "scouts/Q4-R41/run/solution_seed47.json": "a078bf2f5f47fbbd0ea9697896a9de27547e522c8fa447f374e1895ea5f71754",
+  "scouts/Q4-R41/run/eval_seed11.json": "ab470e87720a3d7c26f8dc1f8fc4d31b56b65de8093254af73b3d6772febdb9d",
+  "scouts/Q4-R41/run/eval_seed29.json": "2322a2583642d9267df2ab16426b7b71277be7485e7987686368f0f146cf5dd6",
+  "scouts/Q4-R41/run/eval_seed47.json": "0fc3e5882a900c9813c6cbd4bb8765b0ef2075e234bc69c70c5ada07add22896",
+  "scouts/Q4-R41/run/sa_record_seed11.json": "2bf9212350037c51b0c3b58449440f554f1e7f4c57bba3d28d55fd49cda98037",
+  "scouts/Q4-R41/run/sa_record_seed29.json": "dabf86bc1cf6974c527c003e005be6613e4b9d96abd1756b3d0dd233d36bd73e",
+  "scouts/Q4-R41/run/sa_record_seed47.json": "fd268154c37b0f68283b17d1bf3ca3b2d47f5ac5e9d37b485007cb4bfdfcc7e4",
+  "scouts/Q4-R41/code/solve_sa.py": "50854d018bcf5ed5e2266eb3269e3cf7fa65778a0c0687a362a94fca0c22b889",
+  "scouts/Q4-R41/code/q4common.py": "798b32df8b25bf548bad50fe8c136b80453bd624eb322a451be639ca121bc0fd",
+  "scouts/Q4-R22/result.json": "ef94b337240a207ff0c2639ce22e92ccb534a372a0e97df4fa3040fb0b16b625",
+  "scouts/Q4-R22/scout.json": "aac7ebdacdb16d303adc26f47b56ff253bdc88345e5edd3c8dc753733acf2f78",
+  "scouts/Q4-R22/run/solution_actions.json": "2107a7ed9739b12e65c8c7b9102a7e78f05b26204341f98e436a6595bb43d657",
+  "scouts/Q4-R22/run/eval_q4.json": "7dae8fca9d3ae8fd4ec004a0f5d20e02f4a93ff4e77ceecab85c0a20e8e86fdc",
+  "scouts/Q4-R22/run/r22_log.json": "f0d04bb4500c5eddb47283260d81de051909194c60a2fee40dafbf1877781a31",
+  "scouts/Q4-R22/code/solve_r22.py": "b8bd262c7403bf64a2bd38d453df219e3e76d94d8a045ca11e52bc17deb446cf",
+  "scouts/Q4-R22/code/q4common.py": "798b32df8b25bf548bad50fe8c136b80453bd624eb322a451be639ca121bc0fd",
+  "scouts/Q2-R51/solution_actions.json": "8266fb689b93ee7795906e553d2f52b33be3082f1fcf9ead3c3360b65ec5e4ac",
+  "scouts/Q2-R51/eval.json": "51a3f7bc4fd45fb041ea10cf08359da7cf5d0ec840f28b961d37280504fd68d8",
+  "data/canonical_plans.csv": "MISSING"
+ },
+ "q4common_identical_across_scouts": true,
+ "scout_evaluator_binding": {
+  "Q4-R11": {
+   "bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "matches": true
+  },
+  "Q4-R41": {
+   "bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "matches": true
+  },
+  "Q4-R22": {
+   "bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "matches": true
+  }
+ },
+ "scalar_literals_in_code": {
+  "scouts/Q4-R11/code/q4common.py": [
+   "10**12",
+   "10**4",
+   "10**8",
+   "1e12",
+   "1e4",
+   "1e8"
+  ],
+  "scouts/Q4-R11/code/solve_r11.py": [],
+  "scouts/Q4-R41/code/solve_sa.py": [
+   "10 ** 15",
+   "10**12",
+   "10**4",
+   "10**8",
+   "1e12",
+   "1e4",
+   "1e8"
+  ],
+  "scouts/Q4-R22/code/solve_r22.py": []
+ },
+ "horizon_fact": {
+  "max_base_last_end": 643,
+  "argmax": "C083",
+  "evaluator_T_MAX": 643,
+  "c083": {
+   "t0": 531,
+   "t1": 533,
+   "g": 8,
+   "n": 12,
+   "d": 2,
+   "last_end": 643
+  },
+  "adjudication_R1_consistent": true,
+  "base_plans_beyond_643": []
+ }
+}

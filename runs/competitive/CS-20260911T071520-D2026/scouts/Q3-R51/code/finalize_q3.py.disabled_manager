@@ -1,0 +1,132 @@
+# -*- coding: utf-8 -*-
+"""Q3 组收尾：读取三候选 run 产物与 R51 界 → 写各目录 result.json + scout.json。
+契约字段按 TOURNAMENT_PROTOCOL.result_artifact_contract；scout.json 的
+objective=count、upper_bound=Q3-R51 的 UB（三候选记录同一 UB 供对照）、
+relative_gap=(UB-LB)/UB。失败也必须写盘。"""
+import io
+import json
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SCOUTS = os.path.dirname(os.path.dirname(HERE))
+CS_DIR = os.path.dirname(SCOUTS)
+REL = "runs/competitive/CS-20260911T071520-D2026"
+
+bound = json.load(io.open(os.path.join(CS_DIR, "scouts", "Q3-R51", "bound_r51.json"), encoding="utf-8"))
+UB = bound["ub_reported"]
+
+ROUTE_SRC = {"Q3-R23": "CH-02 (baseline, 贪心+LNS)", "Q3-R11": "CH-01 (recommended, set-packing CP-SAT)",
+             "Q3-R51": "CH-05 (bound scout, 相位×块双计数+构造下界)"}
+
+
+def load(p):
+    return json.load(io.open(p, encoding="utf-8")) if os.path.isfile(p) else None
+
+
+def write_pair(idea, status, feasible, count, runtime, seed, fail_mode, stopping, extras, eval_report):
+    d = os.path.join(CS_DIR, "scouts", idea)
+    sol_rel = f"{REL}/scouts/{idea}/solution_newc.json" if count is not None and count >= 0 else None
+    result = {
+        "question_id": "Q3", "idea_id": idea, "status": status,
+        "feasible": bool(feasible),
+        "objective": count, "objective_tuple": [count, UB],
+        "objective_unit": "new_C_plans",
+        "runtime_seconds": runtime,
+        "evaluator_invoked": True,
+        "evaluator_command": f"python {REL}/canonical_evaluator.py --question Q3 --solution {sol_rel} --base-actions {REL}/scouts/Q2-R51/solution_actions.json" if sol_rel else None,
+        "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+        "seed": seed, "replicates": 1,
+        "solution_path": sol_rel,
+        "failure_mode": fail_mode,
+        "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+    }
+    if eval_report:
+        result["evaluator_n_violations"] = eval_report.get("n_violations")
+    scout = {
+        "idea_id": idea, "question_id": "Q3", "route_source": ROUTE_SRC[idea],
+        "objective": count, "objective_unit": "new_C_plans", "direction": "maximize",
+        "lower_bound": count, "upper_bound": UB,
+        "upper_bound_source": "Q3-R51 相位×块双计数 UB（密度界对照，取小），三候选记录同一 UB 供对照",
+        "relative_gap": (None if (count is None or UB is None or UB == 0) else (UB - count) / UB),
+        "base_ref": "Q2-R51 冻结方案（revoke 6→资源释放 ADJ R8；evaluator Q2 feasible=true, tuple=[6,121,1996,663]）",
+        "zero_conflict_with_base": bool(feasible),
+        "stopping_reason": stopping,
+        "failure_mode": fail_mode,
+    }
+    scout.update(extras)
+    json.dump(result, io.open(os.path.join(d, "result.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    json.dump(scout, io.open(os.path.join(d, "scout.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return result, scout
+
+
+summ = {}
+
+# ---- R23 ----
+r23 = load(os.path.join(CS_DIR, "scouts", "Q3-R23", "run_report.json"))
+if r23:
+    ev = load(os.path.join(CS_DIR, "scouts", "Q3-R23", "eval_q3.json"))
+    feas = ev["feasible"] if ev else False
+    cnt = ev["objective"][0] if (ev and ev["feasible"]) else r23["best_count"]
+    res, sc = write_pair("Q3-R23", "completed" if feas else "failed", feas, cnt,
+                         r23["solve_wall_seconds"], "seed=11（协议 seed_set 首元；LNS 随机源仅此）", None,
+                         "LNS 预算 240s 耗尽（贪心构造毫秒级；无改进 streak 兜底未触发）",
+                         {"greedy_count": r23["greedy_count"], "lns": r23["lns"],
+                          "n_candidates_base_free": r23["n_candidates_base_free"]}, ev)
+    summ["Q3-R23"] = (cnt, feas)
+
+# ---- R11 ----
+r11 = load(os.path.join(CS_DIR, "scouts", "Q3-R11", "cpsat_r11_report.json"))
+if r11:
+    ev = load(os.path.join(CS_DIR, "scouts", "Q3-R11", "eval_q3.json"))
+    feas = ev["feasible"] if ev else False
+    cnt = ev["objective"][0] if (ev and ev["feasible"]) else None
+    certified = None
+    if r11["model_A"].get("best_bound") is not None and r11["model_B"].get("best_bound") is not None and cnt is not None:
+        bb = min(r11["model_A"]["best_bound"], r11["model_B"]["best_bound"])
+        certified = (cnt == bb)
+    fail = None if (feas and cnt is not None) else "no_incumbent_or_eval_failed"
+    stop = ("CP-SAT 双模型限时（A 340s + B 170s）耗尽，报告 incumbent+bound"
+            if r11["model_A"]["status"] != "OPTIMAL" else "CP-SAT OPTIMAL，界闭合")
+    res, sc = write_pair("Q3-R11", "completed" if feas else "failed", feas, cnt,
+                         r11["runtime_seconds_total"],
+                         f'CP-SAT random_seed={r11["solver_params"]["random_seed"]}, workers={r11["solver_params"]["num_search_workers"]}；贪心预筛确定性',
+                         fail, stop,
+                         {"model_A": r11["model_A"], "model_B": r11["model_B"],
+                          "incumbent_used": r11["incumbent_used"],
+                          "cp_best_bound_min": (None if not r11["model_A"].get("best_bound") and not r11["model_B"].get("best_bound")
+                                                else min(r11["model_A"].get("best_bound", 10**9), r11["model_B"].get("best_bound", 10**9))),
+                          "cp_bound_certifies_optimum": certified,
+                          "model_equivalence_note": r11["equivalence_note"],
+                          "edge_equivalence_audit": r11["edge_equivalence_audit"],
+                          "n_edges": r11["n_edges"],
+                          "n_candidates_base_free": r11["n_candidates_base_free"]}, ev)
+    summ["Q3-R11"] = (cnt, feas)
+else:
+    res, sc = write_pair("Q3-R11", "failed", False, None, None, None,
+                         "run_crashed_or_not_executed", "未运行/崩溃",
+                         {}, None)
+    summ["Q3-R11"] = (None, False)
+
+# ---- R51 ----
+if bound.get("gate_ub_ge_lb", {}).get("passed"):
+    ev51 = load(os.path.join(CS_DIR, "scouts", "Q3-R51", "eval_q3.json"))
+    feas = ev51["feasible"] if ev51 else False
+    cnt = bound["constructive_lb"]["count"]
+    stop = ("界推导+构造下界完成；UB 与 LB 未会合（区间陈述）"
+            if bound["ub_reported"] > cnt else "UB=LB 会合：最大数量证明")
+    res, sc = write_pair("Q3-R51", "completed" if feas else "failed", feas, cnt,
+                         bound["runtime_seconds"], "确定性（纯整数计数，无随机）", None, stop,
+                         {"ub_phase_block": bound["ub_phase_block"], "ub_density": bound["ub_density"],
+                          "ub_sum_cells": bound["ub_sum_cells"], "free_cells": bound["free_cells"],
+                          "gate": bound["gate_ub_ge_lb"],
+                          "lb_source": bound["constructive_lb"]["source"],
+                          "density_note": "密度界=floor(free/72)（ADJ R2 distinct 口径），远松于双计数界，仅作对照",
+                          "meeting": bound["ub_reported"] == cnt}, ev51)
+    summ["Q3-R51"] = (cnt, feas)
+else:
+    res, sc = write_pair("Q3-R51", "failed", False, bound["constructive_lb"]["count"],
+                         bound["runtime_seconds"], "确定性", "bound_gate_violation: UB < 已知可行解 ⇒ 界推导 bug（CH-05 警示#3）",
+                         "自检门失败", {"gate": bound["gate_ub_ge_lb"]}, None)
+    summ["Q3-R51"] = (bound["constructive_lb"]["count"], False)
+
+print(json.dumps({"UB": UB, "summary": summ}, ensure_ascii=False, indent=1))

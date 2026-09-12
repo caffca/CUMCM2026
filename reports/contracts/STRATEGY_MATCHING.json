@@ -1,0 +1,1253 @@
+{
+  "schema_version": 1,
+  "matching_id": "MATCH-1504A0480D6D591A",
+  "problem_id": "D2026",
+  "profile_id": "PROFILE-8ADA7763202B25BA",
+  "library_id": "mathmodel-strategy-library",
+  "library_version": "1.0.0",
+  "matching_policy": {
+    "deterministic": true,
+    "question_isolation": true,
+    "all_predicates_required": true,
+    "unknown_is_not_matched": true,
+    "selection_performed": false,
+    "ranking_performed": false,
+    "rule_version": 1
+  },
+  "source_bindings": [
+    {
+      "artifact_id": "problem_profile",
+      "path": "reports/contracts/PROBLEM_PROFILE.json",
+      "sha256": "a6dc243515bfe4d19da595982b66829fce13247a2533fb8f8902ddfcc84df89a",
+      "role": "Discovery-derived question-local profile"
+    },
+    {
+      "artifact_id": "modeling_strategy_library",
+      "path": "reports/contracts/MODELING_STRATEGY_LIBRARY.json",
+      "sha256": "a347988c470dd67f452444f703bfaa841e21abeafb07becd01c51b48c3d379c3",
+      "role": "versioned strategy card library snapshot"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "Q1",
+      "profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+      "strategy_evaluations": [
+        {
+          "question_id": "Q1",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "explicit_decision_variables",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q1-FE-task_type",
+                "Q1-FE-control",
+                "Q1-FE-combinatorial"
+              ],
+              "reason": "未观察到显式决策变量、控制或组合结构。"
+            },
+            {
+              "predicate": "objective_direction_known",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q1-F014"
+              ],
+              "reason": "Profile 有目标证据，但没有足够方向词可确认 maximize/minimize 语义。"
+            },
+            {
+              "predicate": "constraint_domain_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-special_boundary",
+                "Q1-FE-reachable_domain",
+                "Q1-FE-upper_lower_bounds"
+              ],
+              "reason": "约束事实或可达域/边界证据存在。"
+            }
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q1-FE-task_type",
+            "Q1-FE-control",
+            "Q1-FE-combinatorial",
+            "Q1-F014",
+            "Q1-FE-special_boundary",
+            "Q1-FE-reachable_domain",
+            "Q1-FE-upper_lower_bounds"
+          ],
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "ordered_observations",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-temporal",
+                "Q1-FE-repeated_measures"
+              ],
+              "reason": "时间列或时间/重复观测 feature 已观察到。"
+            },
+            {
+              "predicate": "forecast_target_defined",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q1-FE-task_type",
+                "Q1-FE-decision_target"
+              ],
+              "reason": "decision target 没有预测目标语义。"
+            },
+            {
+              "predicate": "future_information_boundary",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q1-FE-unavailable_variables",
+                "Q1-FE-leakage"
+              ],
+              "reason": "Profile 没有足够证据确认未来信息边界。"
+            }
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q1-FE-temporal",
+            "Q1-FE-repeated_measures",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-FE-unavailable_variables",
+            "Q1-FE-leakage"
+          ],
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "multiple_alternatives",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q1-FE-task_type",
+                "Q1-FE-decision_target"
+              ],
+              "reason": "Profile 没有确认多个可比较方案的证据。"
+            },
+            {
+              "predicate": "multiple_criteria",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q1-F014"
+              ],
+              "reason": "Profile 没有确认多个评价准则。"
+            },
+            {
+              "predicate": "criterion_direction_available",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q1-F014"
+              ],
+              "reason": "没有明确的评价准则方向证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q1-FE-task_type",
+            "Q1-FE-decision_target",
+            "Q1-F014"
+          ],
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, multiple_criteria, criterion_direction_available"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "sample_unit_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-analysis_unit",
+                "Q1-FE-observation_unit"
+              ],
+              "reason": "分析单位和观测单位均已登记。"
+            },
+            {
+              "predicate": "estimand_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-F014"
+              ],
+              "reason": "目标证据可以表述统计 estimand。"
+            },
+            {
+              "predicate": "observation_mechanism_present",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-observation_unit",
+                "Q1-FE-sample_size",
+                "Q1-FE-repeated_measures"
+              ],
+              "reason": "数据存在且观测单位/样本摘要可用。"
+            }
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q1-FE-analysis_unit",
+            "Q1-FE-observation_unit",
+            "Q1-F014",
+            "Q1-FE-sample_size",
+            "Q1-FE-repeated_measures"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "nodes_and_edges_available",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q1-FE-graph",
+                "Q1-FE-network",
+                "Q1-FE-path"
+              ],
+              "reason": "未观察到节点/边/路径结构。"
+            },
+            {
+              "predicate": "connectivity_or_flow_semantics",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q1-FE-graph",
+                "Q1-FE-network",
+                "Q1-FE-path"
+              ],
+              "reason": "没有可复核的连通、流或路径语义。"
+            },
+            {
+              "predicate": "edge_weight_meaningful",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q1-FE-graph"
+              ],
+              "reason": "没有明确的边权或容量语义证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q1-FE-graph",
+            "Q1-FE-network",
+            "Q1-FE-path"
+          ],
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q1",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "target_or_unsupervised_goal_defined",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-decision_target",
+                "Q1-FE-task_type"
+              ],
+              "reason": "Profile 已登记非空 decision target。"
+            },
+            {
+              "predicate": "feature_scope_known",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-variable_type",
+                "Q1-FE-sample_size"
+              ],
+              "reason": "数据变量摘要或 variable type evidence 可用。"
+            },
+            {
+              "predicate": "evaluation_split_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q1-FE-sample_size",
+                "Q1-FE-leakage",
+                "Q1-FE-unavailable_variables"
+              ],
+              "reason": "样本摘要足以登记后续 split 可行性，但不代表已完成验证。"
+            }
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q1-FE-decision_target",
+            "Q1-FE-task_type",
+            "Q1-FE-variable_type",
+            "Q1-FE-sample_size",
+            "Q1-FE-leakage",
+            "Q1-FE-unavailable_variables"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        }
+      ],
+      "candidate_strategy_ids": [
+        "statistics-observation-mechanism-first",
+        "machine-learning-scope-first"
+      ],
+      "rejected_strategy_ids": [
+        "optimization-structure-first",
+        "prediction-temporal-holdout",
+        "evaluation-multi-criteria-audited",
+        "graph-theory-feasibility-first"
+      ],
+      "undercoverage": {
+        "status": "covered",
+        "reason": "至少一张 card 的全部 predicates 有证据满足；下游仍需独立决策。"
+      }
+    },
+    {
+      "question_id": "Q2",
+      "profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+      "strategy_evaluations": [
+        {
+          "question_id": "Q2",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "explicit_decision_variables",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q2-FE-task_type",
+                "Q2-FE-control",
+                "Q2-FE-combinatorial"
+              ],
+              "reason": "未观察到显式决策变量、控制或组合结构。"
+            },
+            {
+              "predicate": "objective_direction_known",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q2-F011",
+                "Q2-F015"
+              ],
+              "reason": "Profile 有目标证据，但没有足够方向词可确认 maximize/minimize 语义。"
+            },
+            {
+              "predicate": "constraint_domain_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-special_boundary",
+                "Q2-FE-reachable_domain",
+                "Q2-FE-upper_lower_bounds"
+              ],
+              "reason": "约束事实或可达域/边界证据存在。"
+            }
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q2-FE-task_type",
+            "Q2-FE-control",
+            "Q2-FE-combinatorial",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-special_boundary",
+            "Q2-FE-reachable_domain",
+            "Q2-FE-upper_lower_bounds"
+          ],
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "ordered_observations",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-temporal",
+                "Q2-FE-repeated_measures"
+              ],
+              "reason": "时间列或时间/重复观测 feature 已观察到。"
+            },
+            {
+              "predicate": "forecast_target_defined",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q2-FE-task_type",
+                "Q2-FE-decision_target"
+              ],
+              "reason": "decision target 没有预测目标语义。"
+            },
+            {
+              "predicate": "future_information_boundary",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q2-FE-unavailable_variables",
+                "Q2-FE-leakage"
+              ],
+              "reason": "Profile 没有足够证据确认未来信息边界。"
+            }
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q2-FE-temporal",
+            "Q2-FE-repeated_measures",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-FE-unavailable_variables",
+            "Q2-FE-leakage"
+          ],
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "multiple_alternatives",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q2-FE-task_type",
+                "Q2-FE-decision_target"
+              ],
+              "reason": "Profile 没有确认多个可比较方案的证据。"
+            },
+            {
+              "predicate": "multiple_criteria",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-F011",
+                "Q2-F015"
+              ],
+              "reason": "Profile 提供多个目标/指标线索。"
+            },
+            {
+              "predicate": "criterion_direction_available",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q2-F011",
+                "Q2-F015"
+              ],
+              "reason": "没有明确的评价准则方向证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q2-FE-task_type",
+            "Q2-FE-decision_target",
+            "Q2-F011",
+            "Q2-F015"
+          ],
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "sample_unit_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-analysis_unit",
+                "Q2-FE-observation_unit"
+              ],
+              "reason": "分析单位和观测单位均已登记。"
+            },
+            {
+              "predicate": "estimand_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-F011",
+                "Q2-F015"
+              ],
+              "reason": "目标证据可以表述统计 estimand。"
+            },
+            {
+              "predicate": "observation_mechanism_present",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-observation_unit",
+                "Q2-FE-sample_size",
+                "Q2-FE-repeated_measures"
+              ],
+              "reason": "数据存在且观测单位/样本摘要可用。"
+            }
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q2-FE-analysis_unit",
+            "Q2-FE-observation_unit",
+            "Q2-F011",
+            "Q2-F015",
+            "Q2-FE-sample_size",
+            "Q2-FE-repeated_measures"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "nodes_and_edges_available",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q2-FE-graph",
+                "Q2-FE-network",
+                "Q2-FE-path"
+              ],
+              "reason": "未观察到节点/边/路径结构。"
+            },
+            {
+              "predicate": "connectivity_or_flow_semantics",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q2-FE-graph",
+                "Q2-FE-network",
+                "Q2-FE-path"
+              ],
+              "reason": "没有可复核的连通、流或路径语义。"
+            },
+            {
+              "predicate": "edge_weight_meaningful",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q2-FE-graph"
+              ],
+              "reason": "没有明确的边权或容量语义证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q2-FE-graph",
+            "Q2-FE-network",
+            "Q2-FE-path"
+          ],
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q2",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "target_or_unsupervised_goal_defined",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-decision_target",
+                "Q2-FE-task_type"
+              ],
+              "reason": "Profile 已登记非空 decision target。"
+            },
+            {
+              "predicate": "feature_scope_known",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-variable_type",
+                "Q2-FE-sample_size"
+              ],
+              "reason": "数据变量摘要或 variable type evidence 可用。"
+            },
+            {
+              "predicate": "evaluation_split_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q2-FE-sample_size",
+                "Q2-FE-leakage",
+                "Q2-FE-unavailable_variables"
+              ],
+              "reason": "样本摘要足以登记后续 split 可行性，但不代表已完成验证。"
+            }
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q2-FE-decision_target",
+            "Q2-FE-task_type",
+            "Q2-FE-variable_type",
+            "Q2-FE-sample_size",
+            "Q2-FE-leakage",
+            "Q2-FE-unavailable_variables"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        }
+      ],
+      "candidate_strategy_ids": [
+        "statistics-observation-mechanism-first",
+        "machine-learning-scope-first"
+      ],
+      "rejected_strategy_ids": [
+        "optimization-structure-first",
+        "prediction-temporal-holdout",
+        "evaluation-multi-criteria-audited",
+        "graph-theory-feasibility-first"
+      ],
+      "undercoverage": {
+        "status": "covered",
+        "reason": "至少一张 card 的全部 predicates 有证据满足；下游仍需独立决策。"
+      }
+    },
+    {
+      "question_id": "Q3",
+      "profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+      "strategy_evaluations": [
+        {
+          "question_id": "Q3",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "explicit_decision_variables",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q3-FE-task_type",
+                "Q3-FE-control",
+                "Q3-FE-combinatorial"
+              ],
+              "reason": "未观察到显式决策变量、控制或组合结构。"
+            },
+            {
+              "predicate": "objective_direction_known",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q3-F017",
+                "Q3-F018"
+              ],
+              "reason": "Profile 有目标证据，但没有足够方向词可确认 maximize/minimize 语义。"
+            },
+            {
+              "predicate": "constraint_domain_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-special_boundary",
+                "Q3-FE-reachable_domain",
+                "Q3-FE-upper_lower_bounds"
+              ],
+              "reason": "约束事实或可达域/边界证据存在。"
+            }
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q3-FE-task_type",
+            "Q3-FE-control",
+            "Q3-FE-combinatorial",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-special_boundary",
+            "Q3-FE-reachable_domain",
+            "Q3-FE-upper_lower_bounds"
+          ],
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables, objective_direction_known"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "ordered_observations",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-temporal",
+                "Q3-FE-repeated_measures"
+              ],
+              "reason": "时间列或时间/重复观测 feature 已观察到。"
+            },
+            {
+              "predicate": "forecast_target_defined",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q3-FE-task_type",
+                "Q3-FE-decision_target"
+              ],
+              "reason": "decision target 没有预测目标语义。"
+            },
+            {
+              "predicate": "future_information_boundary",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q3-FE-unavailable_variables",
+                "Q3-FE-leakage"
+              ],
+              "reason": "Profile 没有足够证据确认未来信息边界。"
+            }
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q3-FE-temporal",
+            "Q3-FE-repeated_measures",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-FE-unavailable_variables",
+            "Q3-FE-leakage"
+          ],
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "multiple_alternatives",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q3-FE-task_type",
+                "Q3-FE-decision_target"
+              ],
+              "reason": "Profile 没有确认多个可比较方案的证据。"
+            },
+            {
+              "predicate": "multiple_criteria",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-F017",
+                "Q3-F018"
+              ],
+              "reason": "Profile 提供多个目标/指标线索。"
+            },
+            {
+              "predicate": "criterion_direction_available",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q3-F017",
+                "Q3-F018"
+              ],
+              "reason": "没有明确的评价准则方向证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q3-FE-task_type",
+            "Q3-FE-decision_target",
+            "Q3-F017",
+            "Q3-F018"
+          ],
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "sample_unit_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-analysis_unit",
+                "Q3-FE-observation_unit"
+              ],
+              "reason": "分析单位和观测单位均已登记。"
+            },
+            {
+              "predicate": "estimand_identified",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q3-F017",
+                "Q3-F018"
+              ],
+              "reason": "Profile 没有足够证据确认 estimand。"
+            },
+            {
+              "predicate": "observation_mechanism_present",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-observation_unit",
+                "Q3-FE-sample_size",
+                "Q3-FE-repeated_measures"
+              ],
+              "reason": "数据存在且观测单位/样本摘要可用。"
+            }
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q3-FE-analysis_unit",
+            "Q3-FE-observation_unit",
+            "Q3-F017",
+            "Q3-F018",
+            "Q3-FE-sample_size",
+            "Q3-FE-repeated_measures"
+          ],
+          "rejection_reason": "required predicates not all satisfied: estimand_identified"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "nodes_and_edges_available",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q3-FE-graph",
+                "Q3-FE-network",
+                "Q3-FE-path"
+              ],
+              "reason": "未观察到节点/边/路径结构。"
+            },
+            {
+              "predicate": "connectivity_or_flow_semantics",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q3-FE-graph",
+                "Q3-FE-network",
+                "Q3-FE-path"
+              ],
+              "reason": "没有可复核的连通、流或路径语义。"
+            },
+            {
+              "predicate": "edge_weight_meaningful",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q3-FE-graph"
+              ],
+              "reason": "没有明确的边权或容量语义证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q3-FE-graph",
+            "Q3-FE-network",
+            "Q3-FE-path"
+          ],
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q3",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "target_or_unsupervised_goal_defined",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-decision_target",
+                "Q3-FE-task_type"
+              ],
+              "reason": "Profile 已登记非空 decision target。"
+            },
+            {
+              "predicate": "feature_scope_known",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-variable_type",
+                "Q3-FE-sample_size"
+              ],
+              "reason": "数据变量摘要或 variable type evidence 可用。"
+            },
+            {
+              "predicate": "evaluation_split_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q3-FE-sample_size",
+                "Q3-FE-leakage",
+                "Q3-FE-unavailable_variables"
+              ],
+              "reason": "样本摘要足以登记后续 split 可行性，但不代表已完成验证。"
+            }
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q3-FE-decision_target",
+            "Q3-FE-task_type",
+            "Q3-FE-variable_type",
+            "Q3-FE-sample_size",
+            "Q3-FE-leakage",
+            "Q3-FE-unavailable_variables"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        }
+      ],
+      "candidate_strategy_ids": [
+        "machine-learning-scope-first"
+      ],
+      "rejected_strategy_ids": [
+        "optimization-structure-first",
+        "prediction-temporal-holdout",
+        "evaluation-multi-criteria-audited",
+        "statistics-observation-mechanism-first",
+        "graph-theory-feasibility-first"
+      ],
+      "undercoverage": {
+        "status": "covered",
+        "reason": "至少一张 card 的全部 predicates 有证据满足；下游仍需独立决策。"
+      }
+    },
+    {
+      "question_id": "Q4",
+      "profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+      "strategy_evaluations": [
+        {
+          "question_id": "Q4",
+          "strategy_id": "optimization-structure-first",
+          "family": "optimization",
+          "card_version": "1.0.0",
+          "card_sha256": "8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "explicit_decision_variables",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q4-FE-task_type",
+                "Q4-FE-control",
+                "Q4-FE-combinatorial"
+              ],
+              "reason": "未观察到显式决策变量、控制或组合结构。"
+            },
+            {
+              "predicate": "objective_direction_known",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-F011",
+                "Q4-F020"
+              ],
+              "reason": "目标或题意证据包含可识别的方向语义。"
+            },
+            {
+              "predicate": "constraint_domain_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-special_boundary",
+                "Q4-FE-reachable_domain",
+                "Q4-FE-upper_lower_bounds"
+              ],
+              "reason": "约束事实或可达域/边界证据存在。"
+            }
+          ],
+          "evidence_refs": [
+            "library:optimization-structure-first:8b448ef482bfc940cc4a50df7e2b0a9bb26a0ea597c134ca0f0624b82c8fb24c",
+            "Q4-FE-task_type",
+            "Q4-FE-control",
+            "Q4-FE-combinatorial",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-special_boundary",
+            "Q4-FE-reachable_domain",
+            "Q4-FE-upper_lower_bounds"
+          ],
+          "rejection_reason": "required predicates not all satisfied: explicit_decision_variables"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "prediction-temporal-holdout",
+          "family": "prediction",
+          "card_version": "1.0.0",
+          "card_sha256": "5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "ordered_observations",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-temporal",
+                "Q4-FE-repeated_measures"
+              ],
+              "reason": "时间列或时间/重复观测 feature 已观察到。"
+            },
+            {
+              "predicate": "forecast_target_defined",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q4-FE-task_type",
+                "Q4-FE-decision_target"
+              ],
+              "reason": "decision target 没有预测目标语义。"
+            },
+            {
+              "predicate": "future_information_boundary",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q4-FE-unavailable_variables",
+                "Q4-FE-leakage"
+              ],
+              "reason": "Profile 没有足够证据确认未来信息边界。"
+            }
+          ],
+          "evidence_refs": [
+            "library:prediction-temporal-holdout:5b335031bc0c473b19a34e9754a46c0a4368d0857d03b9ab3a5839e6128c05cc",
+            "Q4-FE-temporal",
+            "Q4-FE-repeated_measures",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-FE-unavailable_variables",
+            "Q4-FE-leakage"
+          ],
+          "rejection_reason": "required predicates not all satisfied: forecast_target_defined, future_information_boundary"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "evaluation-multi-criteria-audited",
+          "family": "evaluation",
+          "card_version": "1.0.0",
+          "card_sha256": "ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "multiple_alternatives",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q4-FE-task_type",
+                "Q4-FE-decision_target"
+              ],
+              "reason": "Profile 没有确认多个可比较方案的证据。"
+            },
+            {
+              "predicate": "multiple_criteria",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-F011",
+                "Q4-F020"
+              ],
+              "reason": "Profile 提供多个目标/指标线索。"
+            },
+            {
+              "predicate": "criterion_direction_available",
+              "status": "unknown",
+              "evidence_refs": [
+                "Q4-F011",
+                "Q4-F020"
+              ],
+              "reason": "没有明确的评价准则方向证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:evaluation-multi-criteria-audited:ecae5ff91bbcd2a8612e582165b12cb7274be4529dae2ae01f58d55c4e706bc1",
+            "Q4-FE-task_type",
+            "Q4-FE-decision_target",
+            "Q4-F011",
+            "Q4-F020"
+          ],
+          "rejection_reason": "required predicates not all satisfied: multiple_alternatives, criterion_direction_available"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "statistics-observation-mechanism-first",
+          "family": "statistics",
+          "card_version": "1.0.0",
+          "card_sha256": "7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "sample_unit_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-analysis_unit",
+                "Q4-FE-observation_unit"
+              ],
+              "reason": "分析单位和观测单位均已登记。"
+            },
+            {
+              "predicate": "estimand_identified",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-F011",
+                "Q4-F020"
+              ],
+              "reason": "目标证据可以表述统计 estimand。"
+            },
+            {
+              "predicate": "observation_mechanism_present",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-observation_unit",
+                "Q4-FE-sample_size",
+                "Q4-FE-repeated_measures"
+              ],
+              "reason": "数据存在且观测单位/样本摘要可用。"
+            }
+          ],
+          "evidence_refs": [
+            "library:statistics-observation-mechanism-first:7d79ecde88683f48ec27ad37dadfd2c772768277b3d4c317c8d6c2b90721f61c",
+            "Q4-FE-analysis_unit",
+            "Q4-FE-observation_unit",
+            "Q4-F011",
+            "Q4-F020",
+            "Q4-FE-sample_size",
+            "Q4-FE-repeated_measures"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "graph-theory-feasibility-first",
+          "family": "graph_theory",
+          "card_version": "1.0.0",
+          "card_sha256": "95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+          "match_status": "not_matched",
+          "predicate_results": [
+            {
+              "predicate": "nodes_and_edges_available",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q4-FE-graph",
+                "Q4-FE-network",
+                "Q4-FE-path"
+              ],
+              "reason": "未观察到节点/边/路径结构。"
+            },
+            {
+              "predicate": "connectivity_or_flow_semantics",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q4-FE-graph",
+                "Q4-FE-network",
+                "Q4-FE-path"
+              ],
+              "reason": "没有可复核的连通、流或路径语义。"
+            },
+            {
+              "predicate": "edge_weight_meaningful",
+              "status": "unsatisfied",
+              "evidence_refs": [
+                "Q4-FE-graph"
+              ],
+              "reason": "没有明确的边权或容量语义证据。"
+            }
+          ],
+          "evidence_refs": [
+            "library:graph-theory-feasibility-first:95ab9c77c6b17d7a3456396362cab057e150dee32d1eb3c432c2241fb039bf05",
+            "Q4-FE-graph",
+            "Q4-FE-network",
+            "Q4-FE-path"
+          ],
+          "rejection_reason": "required predicates not all satisfied: nodes_and_edges_available, connectivity_or_flow_semantics, edge_weight_meaningful"
+        },
+        {
+          "question_id": "Q4",
+          "strategy_id": "machine-learning-scope-first",
+          "family": "machine_learning",
+          "card_version": "1.0.0",
+          "card_sha256": "bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+          "match_status": "matched",
+          "predicate_results": [
+            {
+              "predicate": "target_or_unsupervised_goal_defined",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-decision_target",
+                "Q4-FE-task_type"
+              ],
+              "reason": "Profile 已登记非空 decision target。"
+            },
+            {
+              "predicate": "feature_scope_known",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-variable_type",
+                "Q4-FE-sample_size"
+              ],
+              "reason": "数据变量摘要或 variable type evidence 可用。"
+            },
+            {
+              "predicate": "evaluation_split_available",
+              "status": "satisfied",
+              "evidence_refs": [
+                "Q4-FE-sample_size",
+                "Q4-FE-leakage",
+                "Q4-FE-unavailable_variables"
+              ],
+              "reason": "样本摘要足以登记后续 split 可行性，但不代表已完成验证。"
+            }
+          ],
+          "evidence_refs": [
+            "library:machine-learning-scope-first:bc6f8035686f2ebe4a85f882d8655bb9b8fc392e4de5227dedd6859b9081e54f",
+            "Q4-FE-decision_target",
+            "Q4-FE-task_type",
+            "Q4-FE-variable_type",
+            "Q4-FE-sample_size",
+            "Q4-FE-leakage",
+            "Q4-FE-unavailable_variables"
+          ],
+          "rejection_reason": "not rejected; retained as a candidate only"
+        }
+      ],
+      "candidate_strategy_ids": [
+        "statistics-observation-mechanism-first",
+        "machine-learning-scope-first"
+      ],
+      "rejected_strategy_ids": [
+        "optimization-structure-first",
+        "prediction-temporal-holdout",
+        "evaluation-multi-criteria-audited",
+        "graph-theory-feasibility-first"
+      ],
+      "undercoverage": {
+        "status": "covered",
+        "reason": "至少一张 card 的全部 predicates 有证据满足；下游仍需独立决策。"
+      }
+    }
+  ],
+  "provenance": {
+    "generator_path": "skills/brainstorm-mathmodel/scripts/strategy_matching.py",
+    "generator_sha256": "9dbed72d0b41a4b3b0fc659328988d6b7c4f927def2eba3fbba54390073fffb3",
+    "source_commit": null,
+    "input_artifact_ids": [
+      "problem_profile",
+      "modeling_strategy_library"
+    ],
+    "input_bindings_sha256": "78e06d3c89443d664400596b275e2c16fc43120a79b37a8b676e308733e498ce",
+    "generated_at": "2026-09-11T20:43:00+08:00"
+  }
+}

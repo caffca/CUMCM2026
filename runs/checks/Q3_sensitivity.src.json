@@ -1,0 +1,1 @@
+{"question_id": "Q3", "variant": "sensitivity_diag", "alt2B_ran": 1, "main_phi_production_base": 136, "scout_alt_bases": [{"file": "result.json", "note": "侦察期历史运行（非权威链）", "keys": {}}], "statement": "生产权威口径=问题二交付解冻结基座（result3 三列模板语义）；备查口径（可重排基座/2B）在侦察链实测存在，数值层级为历史诊断，不并入权威。"}

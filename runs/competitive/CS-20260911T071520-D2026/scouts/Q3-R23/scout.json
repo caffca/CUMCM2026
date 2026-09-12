@@ -1,0 +1,77 @@
+{
+ "idea_id": "Q3-R23",
+ "question_id": "Q3",
+ "route_source": "CH-02 (baseline, 贪心+LNS)",
+ "objective": 137,
+ "objective_unit": "new_C_plans",
+ "direction": "maximize",
+ "lower_bound": 137,
+ "upper_bound": 332,
+ "upper_bound_source": "Q3-R51 相位×块双计数 UB（密度界对照，取小），三候选记录同一 UB 供对照",
+ "relative_gap": 0.5873493975903614,
+ "base_ref": "Q2-R51 冻结方案（revoke 6→资源释放 ADJ R8；evaluator Q2 feasible=true, tuple=[6,121,1996,663]）",
+ "zero_conflict_with_base": true,
+ "stopping_reason": "3 重复（seed 11/29/47）各 240s LNS 预算耗尽；聚合=median；评审闭环要求 stochastic 候选 3 重复已补齐",
+ "failure_mode": null,
+ "greedy_count": 133,
+ "lns": {
+  "seed": 11,
+  "iterations": 571577,
+  "accepted": 4,
+  "removal_sizes_k": [
+   5,
+   10,
+   20,
+   40
+  ],
+  "refill": "同扫描贪心、条带访问序随机化",
+  "no_improve_streak_at_stop": 571030,
+  "budget_s": 240.0,
+  "stopped_by": "budget"
+ },
+ "n_candidates_base_free": 2123,
+ "replicates": 3,
+ "replicate_values": [
+  137,
+  137,
+  137
+ ],
+ "median": 137,
+ "stability_metric": 0.0,
+ "stability_kind": "极差/中位数（range/median）",
+ "selected_replicate_seed": 11,
+ "solution_replaced_from_replicate": false,
+ "replicate_detail": {
+  "11": {
+   "status": "completed",
+   "count": 137,
+   "wall_s": 240.0,
+   "iterations": 571577,
+   "accepted": 4,
+   "stopped_by": "budget",
+   "failure_mode": null,
+   "report_file": "run_report.json"
+  },
+  "29": {
+   "status": "completed",
+   "count": 137,
+   "wall_s": 240.0,
+   "iterations": 591690,
+   "accepted": 4,
+   "stopped_by": "budget",
+   "failure_mode": null,
+   "report_file": "run_report_seed29.json"
+  },
+  "47": {
+   "status": "completed",
+   "count": 137,
+   "wall_s": 240.0,
+   "iterations": 580478,
+   "accepted": 4,
+   "stopped_by": "budget",
+   "failure_mode": null,
+   "report_file": "run_report_seed47.json"
+  }
+ },
+ "revision_note": "评审闭环修订 v2：由 1 重复补至 3 重复（seed=29/47 各 ≤240s 同流水线）；聚合与稳定性字段新增"
+}

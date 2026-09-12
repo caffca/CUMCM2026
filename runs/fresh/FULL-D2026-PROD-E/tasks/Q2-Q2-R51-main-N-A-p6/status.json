@@ -1,0 +1,230 @@
+{
+  "schema_version": 2,
+  "run_id": "FULL-D2026-PROD-E",
+  "task_id": "Q2-Q2-R51-main-N-A-p6",
+  "shard_id": "shard-f7a5d1157745388ba7a2acc6",
+  "identity_sha256": "f7a5d1157745388ba7a2acc6f9abf95c39dadfe309848ef99b24daaf5b667e08",
+  "question_id": "Q2",
+  "stage": "production_question_local",
+  "state": "complete",
+  "complete": true,
+  "budget_class": "full",
+  "authoritative": true,
+  "command": [
+    "python",
+    "code/prod/q2_solve.py",
+    "--run-id",
+    "FULL-D2026-PROD-E",
+    "--stage",
+    "production_question_local",
+    "--seed",
+    "N/A",
+    "--scenario",
+    "main",
+    "--parameter",
+    "{\"question\":\"Q2\",\"variant\":\"synth\"}",
+    "--output-dir",
+    "F:\\2026 数模\\D题重跑\\D题\\runs\\fresh\\FULL-D2026-PROD-E\\tasks\\Q2-Q2-R51-main-N-A-p6\\attempts\\001",
+    "--budget-class",
+    "full"
+  ],
+  "cwd": "F:\\2026 数模\\D题重跑\\D题",
+  "started_at": "2026-09-12T07:39:58+08:00",
+  "finished_at": "2026-09-12T07:39:58+08:00",
+  "exit_code": 0,
+  "pid": 21556,
+  "seed": "N/A",
+  "parameter": {
+    "variant": "synth",
+    "question": "Q2"
+  },
+  "scenario": "main",
+  "priority": 10,
+  "dependency_ids": [],
+  "replicate_index": 0,
+  "coverage_case_id": "Q2-Q2-R51-main-N-A-p6",
+  "coverage_coordinates": {
+    "question_id": "Q2",
+    "route": "Q2-R51",
+    "scenario": "main",
+    "seed": "N/A",
+    "parameter_index": 6
+  },
+  "coverage_plan_id": "P2-01-FULL-D2026-PROD-E-required-subset",
+  "coverage_plan_sha256": "5aa8409f6069598144b1aecd3d193d34be24d14382dbb97f8bfc84f1db92ca9b",
+  "input_bindings": [
+    {
+      "path": "reports/FINAL_MODEL_SPEC.json",
+      "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+    },
+    {
+      "path": "reports/contracts/IDEA_DECISION.json",
+      "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+    },
+    {
+      "path": "reports/VALIDATION_PLAN.json",
+      "sha256": "2166c4c85eb0eb9db3c87e9806c6af67c71d14123d7576dfa19030540d043159"
+    },
+    {
+      "path": "reports/data/DATA_PROFILE.json",
+      "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+    },
+    {
+      "path": "reports/data/DATASET_SNAPSHOT.json",
+      "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+    },
+    {
+      "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+      "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+    }
+  ],
+  "output_identity": {
+    "paths": [
+      "{task_dir}/payload.json",
+      "{task_dir}/execution_metrics.json"
+    ],
+    "scope": "task_attempt_directory",
+    "hashes": "recomputed_after_execution"
+  },
+  "model_binding": {
+    "question_id": "Q2",
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+    "route_id": "Q2-R51",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "deterministic_global",
+    "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+    "implementation": "code/prod/q2_solve.py",
+    "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+  },
+  "stratum_id": "",
+  "coverage_sample_index": 7,
+  "coverage_round": 0,
+  "resource": {
+    "slots": 1
+  },
+  "preemptible": false,
+  "plan_sha256": "92d067e1acdc94ddd88a55f7c5250b780628c6aad0c08f24c745051c6999ec7a",
+  "input_hashes": {
+    "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+    "reports/FINAL_MODEL_SPEC.json": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "reports/VALIDATION_PLAN.json": "2166c4c85eb0eb9db3c87e9806c6af67c71d14123d7576dfa19030540d043159",
+    "reports/contracts/IDEA_DECISION.json": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "reports/data/DATASET_SNAPSHOT.json": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e",
+    "reports/data/DATA_PROFILE.json": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536",
+    "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7",
+    "附件/附件1.xlsx": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+  },
+  "output_hashes": {
+    "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/payload.json": "65dbbbc9ca8952b7c31b107b458c1c2f1b267f0b65d652b0d8e53d289e9cbc4e",
+    "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/execution_metrics.json": "7c3b6597942a54e9a30a74dbb62ffd30a82cc2fea711a72b3d2bdea62fcea1b1"
+  },
+  "attempts": [
+    {
+      "attempt_index": 1,
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_seconds": 0.2161467999976594,
+      "failure_class": null,
+      "error": null,
+      "attempt_dir": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001",
+      "log": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/task.log",
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/payload.json": "65dbbbc9ca8952b7c31b107b458c1c2f1b267f0b65d652b0d8e53d289e9cbc4e",
+        "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/execution_metrics.json": "7c3b6597942a54e9a30a74dbb62ffd30a82cc2fea711a72b3d2bdea62fcea1b1"
+      },
+      "execution_metrics": {
+        "path": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/execution_metrics.json",
+        "sha256": "7c3b6597942a54e9a30a74dbb62ffd30a82cc2fea711a72b3d2bdea62fcea1b1",
+        "values": {
+          "elapsed_seconds": 0.003,
+          "status": "completed",
+          "stopping_reason": "assembled",
+          "evaluator_calls": 0,
+          "budget_class": "full",
+          "seed": "N/A",
+          "scenario": "main",
+          "parameter": {
+            "question": "Q2",
+            "variant": "synth"
+          }
+        }
+      }
+    }
+  ],
+  "failure_class": null,
+  "error": null,
+  "execution_isolation": {
+    "mode": "task_attempt_directory",
+    "shard_dir": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6",
+    "attempt_dir": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001",
+    "attempt_log": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/task.log",
+    "preexisting_output_policy": "reject"
+  },
+  "model_decision_binding": {
+    "schema_version": 1,
+    "authority_scope": "explanatory_projection_only",
+    "decision_record": {
+      "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+      "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658"
+    },
+    "selection_validation": {
+      "path": "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+      "sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f"
+    },
+    "problem_id": "D2026",
+    "profile_id": "PROFILE-8ADA7763202B25BA",
+    "strategy_matching_id": "MATCH-1504A0480D6D591A",
+    "question_bindings": {
+      "Q1": {
+        "question_id": "Q1",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+        "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+      },
+      "Q2": {
+        "question_id": "Q2",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+        "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+      },
+      "Q3": {
+        "question_id": "Q3",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+        "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+      },
+      "Q4": {
+        "question_id": "Q4",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+        "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+      }
+    }
+  },
+  "attempt_index": 1,
+  "elapsed_seconds": 0.2161467999976594,
+  "execution_metrics": {
+    "path": "runs/fresh/FULL-D2026-PROD-E/tasks/Q2-Q2-R51-main-N-A-p6/attempts/001/execution_metrics.json",
+    "sha256": "7c3b6597942a54e9a30a74dbb62ffd30a82cc2fea711a72b3d2bdea62fcea1b1",
+    "values": {
+      "elapsed_seconds": 0.003,
+      "status": "completed",
+      "stopping_reason": "assembled",
+      "evaluator_calls": 0,
+      "budget_class": "full",
+      "seed": "N/A",
+      "scenario": "main",
+      "parameter": {
+        "question": "Q2",
+        "variant": "synth"
+      }
+    }
+  }
+}

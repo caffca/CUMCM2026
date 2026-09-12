@@ -1,0 +1,30 @@
+{
+ "tag": "Q4",
+ "allow_gap": true,
+ "edges": 2117,
+ "clause_pairs": 437962,
+ "vars": 6013,
+ "build_seconds": 2.2,
+ "wall_seconds_total": 26.5,
+ "workers": 4,
+ "seed": 7,
+ "hint_used": false,
+ "layers": [
+  {
+   "layer": "revoke",
+   "cap_seconds": 12.0,
+   "wall_seconds": 12.2,
+   "status": "FEASIBLE",
+   "ub": 54,
+   "lb": 0,
+   "closed": false
+  },
+  {
+   "layer": "adjusted",
+   "cap_seconds": 8.0,
+   "wall_seconds": 8.5,
+   "status": "UNKNOWN"
+  }
+ ],
+ "solve_ok": false
+}

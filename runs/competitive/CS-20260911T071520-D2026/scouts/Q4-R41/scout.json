@@ -1,0 +1,52 @@
+{
+ "idea_id": "Q4-R41",
+ "question_id": "Q4",
+ "route_source": "routes/CH-04.route.json (idea_id_suggested=Q4-R41, tier=baseline)",
+ "protocol_ref": "TP-D2026-01",
+ "adjudication_ref": "ADJ-CS-20260911T071520-D2026-01 (R3/R4/R6/R7)",
+ "evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "paradigm": "周期重定时模拟退火：状态=每计划恰一个动作 {恒等,df,dt,C 类 dg,撤销}；能量=词典序标量化 V·1e15 + (1e12·rev + 1e8·adj + 1e4·ploss + mag)（违例前置层，因不可行状态在协议单位下无目标定义）；邻域=冲突加权破坏-修复（90% 从违例端点抽计划、均匀换动作）；几何降温 4e14→5e7；末尾 1-opt 抛光 + 撤销修复投影（本组未触发）",
+ "determinism": "stochastic；seeds=[11,29,47]（协议 seed_set），提案流/温度表侦察前冻结",
+ "implementation_incident_log": [
+  "开发期缺陷登记：delta 能量曾用无符号计数（翻转边一律 +1），致违例永不下降（297→295/1.9e6 移动）；修复为有符号差后，首次零冲突出现在 ~5e3 移动内。此缺陷在 result 落盘前已消除并经独立整点重算（independent_recount_violations）验证"
+ ],
+ "replicates": [
+  {"seed": 11, "wall_seconds": 567, "moves": 20668505, "first_zero_violation_move": 8205,
+   "objective_tuple": [16, 105, 2549, 556], "projection_applied": false, "feasible": true},
+  {"seed": 29, "wall_seconds": 567, "moves": 20526602, "first_zero_violation_move": 12022,
+   "objective_tuple": [11, 117, 2344, 578], "projection_applied": false, "feasible": true},
+  {"seed": 47, "wall_seconds": 567, "moves": 20453798, "first_zero_violation_move": 6030,
+   "objective_tuple": [10, 112, 2229, 596], "projection_applied": false, "feasible": true}
+ ],
+ "aggregation": "median over replicates（协议）：按词典序元组排序取中位 = seed29 [11,117,2344,578]；三链元组全部不同（撤销层极差 6）",
+ "metrics": {
+  "feasible": true,
+  "objective_tuple": [11, 117, 2344, 578],
+  "objective_scalar": 11011723440578,
+  "runtime_seconds": 567,
+  "stability": "撤销层 10..16（链间波动大，符合 CH-04 弱点预告：扩域后方差上升）；首达可行移动序号 6.0e3..1.2e4（稳定）",
+  "gap": "vs Q2 退化锚 [14,96,2383,638]：seed29/47 第一级支配（10/11 < 14），seed11 被第一级支配（16>14）；vs 同组精确 incumbent [8,113,...] 差 2~3 个撤销，撤销层无界可报（启发式无证书）",
+  "throughput": "~3.6e4 moves/s/seed，600s 预算内 2.0e7 移动（>>CH-04 失败判据 1e4）"
+ },
+ "interval_rule_assertions": {
+  "仅 C 可 dg": "域生成按 cls==C，通过", "|dg|≤10 ∧ g'≥1": "域生成断言，通过",
+  "单参数互斥": "每选项恰一个动作键（evaluator multi_param 检查 0 命中），通过",
+  "次数不动": "掩码展开恒用原 n，通过",
+  "周期重定时抽样复算": "开发期全量断言：全部 6013 选项掩码逐格来自 CE.mask_of（evaluator 同源），非抽样；SA 增量违例每 4096 移动整点重算校验 0 失配"
+ },
+ "special_checks_from_route": {
+  "三链元组极差与首达序号": "已记录（replicates/metrics.stability）",
+  "anytime 保持可行": "未达成——本实现从恒等态（297 违例）起步，先以违例前置层压入可行域（协议任务书口径）；CH-04 原文的 Q2 解暖启动因读白名单不含 results/ 未采用，已登记为口径偏差",
+  "Q2 方案自动可行锚": "以本组 Q2 退化模型解 [14,96,2383,638] 充当对照锚（evaluator Q4 复算 feasible=true）"
+ },
+ "failure_conditions_realized": [],
+ "deviations": [
+  "初态=恒等（非 CH-04 的 Q2 解暖启动）：读白名单限制；且任务书冻结了『状态+标量化能量+随机换动作邻域』口径",
+  "违例前置能量层（1e15×残留对数）为任务书词典序标量化在不可行域的自然延拓，可行解上退化为协议公式原值",
+  "收尾撤销修复投影按路线实现但三链均未触发（抛光后已零冲突）"
+ ],
+ "failure_mode": null,
+ "status": "completed",
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed29.json",
+ "eval_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/eval_seed29.json"
+}

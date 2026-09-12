@@ -1,0 +1,19 @@
+{
+ "elapsed_seconds": 158.242,
+ "status": "completed",
+ "stopping_reason": "stages_complete_or_budget",
+ "evaluator_calls": 5,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "workers": 1,
+  "stage_budget": {
+   "l1": 100,
+   "ladder": 20,
+   "l2": 20,
+   "l3": 12,
+   "l4": 12
+  }
+ }
+}

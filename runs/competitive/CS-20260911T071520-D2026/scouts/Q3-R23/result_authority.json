@@ -1,0 +1,28 @@
+{
+ "question_id": "Q3",
+ "idea_id": "Q3-R23",
+ "status": "completed",
+ "feasible": true,
+ "objective": 137,
+ "objective_key": "objective",
+ "objective_tuple": [
+  137,
+  332
+ ],
+ "runtime_seconds": 240.0,
+ "canonical_evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+ "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "objective_direction": "maximize",
+ "unit": "new_C_plans",
+ "budget_rule": "wall_clock",
+ "budget": 600,
+ "stopping_reason": "3 重复（seed 11/29/47）各 240s LNS 预算耗尽；聚合=median；评审闭环要求 stochastic 候选 3 重复已补齐",
+ "failure_mode": null,
+ "derived_from": {
+  "result_json": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/result.json",
+  "result_json_sha256": "e46122d38c8d2ea1a044a012c0510597b6c6e6ce32bf3b8dfe22994accc22896",
+  "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R23/solution_newc.json",
+  "solution_sha256": null
+ },
+ "note": "Manager 装配的 P1-03 result authority 绑定视图；数值逐字复制自 child result.json，未重算未修改"
+}

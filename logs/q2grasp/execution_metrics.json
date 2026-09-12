@@ -1,0 +1,14 @@
+{
+ "elapsed_seconds": 31.212,
+ "status": "completed",
+ "stopping_reason": "time_budget",
+ "evaluator_calls": 14,
+ "budget_class": "full",
+ "seed": 11,
+ "scenario": "main",
+ "parameter": {
+  "variant": "grasp",
+  "grasp_seed": 11,
+  "budget": 30
+ }
+}

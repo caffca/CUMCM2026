@@ -1,0 +1,21 @@
+{
+ "elapsed_seconds": 1330.193,
+ "status": "completed",
+ "stopping_reason": "stages_complete_or_budget",
+ "evaluator_calls": 6,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "hint": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+  "stage_budget": {
+   "l1": 800,
+   "l2": 300,
+   "l3": 100,
+   "l4": 50,
+   "ladder": 250
+  },
+  "variant": "cpsat_lex",
+  "workers": 4
+ }
+}

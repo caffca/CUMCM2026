@@ -1,0 +1,62 @@
+{
+  "design": {
+    "definition": "对 Q2/Q3/Q4 三个优化问题比较三种冻结场景的词典序第一级读数（撤销数 rev，Q3 为加装数 Φ）：objective_only=删除冲突/硬约束只保留变量域时的目标端点；constraint_only=只满足硬约束（零冲突）忽略最小化目标时的平凡可行端点；full=完整词典序模型的可认证解。",
+    "metrics": ["objective_only", "constraint_only", "full", "relative_gap"],
+    "scenarios": ["objective_only", "constraint_only", "full"],
+    "threshold": {"relative_gap_lt": 0.05},
+    "validation_method": "三端点均由冻结输入（G* 边表 SHA、候选域、ADJ 边界）解析或认证得出，可独立复算；full 值来自 canonical evaluator 认证解。",
+    "frozen_inputs": {
+      "plans_source": "data/canonical_plans.csv",
+      "gstar_source": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json",
+      "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+    }
+  },
+  "problems": [
+    {
+      "id": "Q2",
+      "objective_only": 0,
+      "objective_only_note": "删去成对不相容约束后 min Σr 的退化解=全保持（rev=0, adj=0）——证明『撤销需求 100% 由冲突/预防性 G* 约束逼出，而非目标本身』（与 CH-05 警示2a 一致）",
+      "constraint_only": 150,
+      "constraint_only_note": "只要求零冲突、忽略最小化的平凡可行端=全撤销（rev=150）",
+      "full": 6,
+      "full_note": "词典序完整模型认证 incumbent [6,121,1996,663]（evaluator feasible=true；撤销层界 [2,6]）",
+      "eps": 0.05,
+      "active_constraints": ["G*成对不相容(1693边)", "单参数 F-008", "幅度上限 F-012", "R3 资源盒边界"],
+      "constraint_dominance_ratio": 0.96,
+      "constraint_dominance_note": "(constraint_only - full)/constraint_only = (150-6)/150 = 0.96 ⇒ 目标函数把平凡可行端大幅收紧，贡献显著，非约束决定的退化",
+      "objective_sensitivity": 0.96,
+      "verdict": "非退化：|full − objective_only|=6 且 |full − constraint_only|=144 均远大于 eps ⇒ 目标函数与硬约束各起独立决定作用，词典序四级是本问核心，允许进入创新表述"
+    },
+    {
+      "id": "Q3",
+      "objective_only": 2123,
+      "objective_only_note": "删去干扰约束后 max Σx 的退化端=取全部候选放置（Φ=2123，彼此允许冲突）",
+      "constraint_only": 1,
+      "constraint_only_note": "只要求放置间零冲突、忽略最大化的任一可行端（Φ=1）",
+      "full": 139,
+      "full_note": "三腿认证 N*=139（侦察基座；CP-SAT 双模型 OPTIMAL=bound + HiGHS LP=139.0 + 候选穷举完备）",
+      "eps": 0.05,
+      "active_constraints": ["候选与基座零冲突", "干扰边62071", "643/100边界"],
+      "constraint_dominance_ratio": 0.935,
+      "constraint_dominance_note": "1 - (full - constraint_only)/(objective_only - constraint_only) = 1 - 138/2122 = 0.935 ⇒ 约束结构（互斥/联合）是主要瓶颈，界远小于裸和；这正是需要『会合证明』而非贪心的原因",
+      "objective_sensitivity": 0.065,
+      "verdict": "非退化但强约束受限：目标把 Φ 从 1 提到认证 139（最大化有效），而裸目标 2123 被约束压到 139（约束有效）；二者均不可删。332 初等界与 139 认证界差距量化了跨相位互斥+三带联合约束的紧化作用"
+    },
+    {
+      "id": "Q4",
+      "objective_only": 0,
+      "objective_only_note": "同 Q2（去冲突约束退化端 rev=0）",
+      "constraint_only": 150,
+      "constraint_only_note": "同 Q2 平凡可行端全撤销",
+      "full": 6,
+      "full_note": "植入锚认证 [6,121,1996,663]（Q2-R51 解逐字可行于 Q4，run_anchor 四断言 ALL_PASS）；自跑 8 未支配之。真实 full 待生产热启动结果更新",
+      "eps": 0.05,
+      "active_constraints": ["同 Q2 全部", "C 类 dg 域(Q4-F019)", "g'≥1(R6)", "R3 截断(99/1530 dg 选项无效)"],
+      "constraint_dominance_ratio": 0.96,
+      "constraint_dominance_note": "同 Q2 结构；关键退化检查=Q4 关掉 dg 维逐字退回 Q2（包含性实测），故 objective_sensitivity 与 Q2 一致",
+      "objective_sensitivity": 0.96,
+      "verdict": "非退化；间隔自由度的边际收益判定冻结至生产热启动（若生产 full_Q4.rev<full_Q2.rev 则收益为正，如实报告；若相等则收益=0，不得宣称改进）"
+    }
+  ],
+  "notes": "三端点为解析/认证值（非求解器计划）；full 值绑定 canonical evaluator 认证解 SHA。生产 Q2/Q4 解更新后，本表 full 与 verdict 由 result_review 基于当前 aggregate 重算（D-BUDGET-001）。"
+}

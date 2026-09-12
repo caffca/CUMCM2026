@@ -1,0 +1,547 @@
+{
+ "check": "溯源 + 冗余动作",
+ "isolated_by_auth_q1": [
+  "C007",
+  "C060"
+ ],
+ "Q2_adjusted_isolated_plans": {
+  "C007": {
+   "dt": -1
+  },
+  "C060": {
+   "dt": 1
+  }
+ },
+ "Q2_revoked_isolated_plans": [],
+ "Q2_revoked_conflict_degree": {
+  "B013": 7,
+  "B018": 7,
+  "B019": 3,
+  "B020": 5,
+  "B022": 6,
+  "B028": 7
+ },
+ "Q4_adjusted_isolated_plans": {
+  "C007": {
+   "df": 2
+  }
+ },
+ "Q4_revoked_isolated_plans": [],
+ "Q4_revoked_conflict_degree": {
+  "B013": 7,
+  "B018": 7,
+  "B019": 3,
+  "B020": 5,
+  "B022": 6,
+  "B028": 7
+ },
+ "data_csv_sha256_actual": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+ "results_meta": {
+  "Q1_detect.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "exact_enumerative",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q1_stats.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "exact_enumerative",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q1_verify.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "exact_enumerative",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q2_check.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q2_main_w4.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind",
+    "formulation_sha256"
+   ],
+   "role": "model_output",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q2_solution.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q2_table1.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q3_bound.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q3_check.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q3_sensitivity.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q3_solution.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q3_submission_check.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q4_check.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q4_solution.json": {
+   "meta_keys": [
+    "authority",
+    "budget_class",
+    "cache_hits",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_observed",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "elapsed_seconds",
+    "evaluator",
+    "evaluator_sha256",
+    "execution_aggregate",
+    "formulation_kind"
+   ],
+   "role": "paper_authority",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": [],
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 6,
+   "n_hash_ok": 5,
+   "input_hash_mismatch": [
+    {
+     "path": "reports/VALIDATION_PLAN.json",
+     "recorded": "2166c4c85eb0eb9d",
+     "actual": "f00b19480a65631c"
+    }
+   ]
+  },
+  "Q4_submission_check.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "Q4_table1.json": {
+   "meta_keys": [
+    "authority",
+    "contract_rev",
+    "coverage",
+    "coverage_id",
+    "coverage_plan",
+    "coverage_plan_sha256",
+    "evaluator",
+    "evaluator_sha256",
+    "formulation_kind",
+    "formulation_sha256",
+    "generated_at",
+    "generator_path",
+    "generator_sha256",
+    "idea_decision_sha256"
+   ],
+   "role": "support",
+   "n_inputs": 0,
+   "seed_policy": "N/A",
+   "seeds": null,
+   "solver_family": "deterministic_global",
+   "n_input_hashes": 1,
+   "n_hash_ok": 1
+  },
+  "RESULT_REGISTRY.json": {
+   "meta_keys": [],
+   "role": null,
+   "n_inputs": 0,
+   "seed_policy": null,
+   "seeds": null,
+   "solver_family": null,
+   "n_input_hashes": 0
+  }
+ },
+ "fms_contract_impl_sha": [
+  {
+   "problem": "Q1",
+   "impl": "code/prod/q1_solve.py",
+   "recorded": "ab7cf78d25bcecd6",
+   "actual": "ab7cf78d25bcecd6",
+   "match": true
+  },
+  {
+   "problem": "Q2",
+   "impl": "code/prod/q2_solve.py",
+   "recorded": "18593e05279328a1",
+   "actual": "18593e05279328a1",
+   "match": true
+  },
+  {
+   "problem": "Q3",
+   "impl": "code/prod/q3_solve.py",
+   "recorded": "427956b850c253b4",
+   "actual": "427956b850c253b4",
+   "match": true
+  },
+  {
+   "problem": "Q4",
+   "impl": "code/prod/q4_solve.py",
+   "recorded": "31d44dc7085e42d5",
+   "actual": "31d44dc7085e42d5",
+   "match": true
+  }
+ ],
+ "all_impl_sha_ok": true,
+ "q1_sha_of_stored_edges_list": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+ "q1_sha_selfconsistent": true,
+ "verdict": "FAIL"
+}

@@ -1,0 +1,14 @@
+{
+ "elapsed_seconds": 27.619,
+ "status": "completed",
+ "stopping_reason": "enumerated",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "enum",
+  "base": "@Q2MAIN",
+  "base_resolved": "runs\\fresh\\SMOKE-R1\\tasks\\q2-Q2-R51-main-N-A-p0\\attempts\\1\\payload.json"
+ }
+}

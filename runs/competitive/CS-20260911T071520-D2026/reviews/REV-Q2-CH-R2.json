@@ -1,0 +1,104 @@
+{
+  "review_id": "REV-Q2-01",
+  "reviewer_child_run_id": "CH-REV-A",
+  "question_id": "Q2",
+  "input_artifact_sha256s": [
+    {"path": "runs/competitive/CS-20260911T071520-D2026/common_input.json", "sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/TOURNAMENT_PROTOCOL.json", "sha256": "a8f30bd6473b545d3ac165c316fb9a5573f5d380e76e25e6b3b8056e980f5c97"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json", "sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py", "sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-03.route.json", "sha256": "2dd737a48479f821da3f9e1785c8be51982ea75e1abfbbb5e6d4655a982bc99c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-04.route.json", "sha256": "210ce17cd247307243d660adcd0ddecf3938c2d76177f5ac2279cab9fcd3ad5a"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-05.route.json", "sha256": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685"},
+    {"path": "data/canonical_plans.csv（workspace 根；canonical_evaluator.load_plans 同文件）", "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/result.json", "sha256": "6007b46bde0983a0e7e62f6e6254e679a6848249b003b84dd86b252ed5b5663a"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/scout.json", "sha256": "e61347f6d993f6e06cf911ec1eaaa87814c3c1814d50bdf01c4392baf2a17730"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/eval.json", "sha256": "51a3f7bc4fd45fb041ea10cf08359da7cf5d0ec840f28b961d37280504fd68d8"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json", "sha256": "8266fb689b93ee7795906e553d2f52b33be3082f1fcf9ead3c3360b65ec5e4ac"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json", "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/cpsat_report.json", "sha256": "6326de7df7325baf004124a9c193384ce257e618c1a2da966b2493faacba697c"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/r51_certificates.json", "sha256": "8d47cfef9833e65d6533d43078a7d1099a506e01789d9cbab9930f228eb8694b"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_meta.json", "sha256": "ef9eb598f112f806b1d827b86b51d448828c751d90e39921371f7e53c6426624"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/result.json", "sha256": "2d0592ecf05edd76c3076388564fb2aaffe1a9e770178f0e01ea1ce8abd43023"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/scout.json", "sha256": "0d341881e2559978b93cb23352b11d9dda0a5d19b219cc2ae044fd8f6f7d59bc"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/eval_seed11.json", "sha256": "94ce84454cb8feca722142f2c5bea4a4ec30d95f797cd8e97bd172060b1f9eca"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/eval_seed29.json", "sha256": "99f7e03dbdf440a9bab20ecb515772861e2f51957e736040cad76a83902d189d"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/eval_seed47.json", "sha256": "5f502f80efcc6354be4ff95a5c5e86a5b7836491ef6090be984a654f39bd4dd2"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/solution_actions_seed11.json", "sha256": "a47ddfe65295b376a61d1c50ad8876255b0295aece004d9550a8652cb1a16f3b"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/solution_actions_seed29.json", "sha256": "119d7e297c2f2f7d88647e738d56b2fb97c6665f2cdeed7be113ad7dd1244c4e"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/solution_actions_seed47.json", "sha256": "e209f3af7613e44a42d1203a996d367210b004854e300260dfa289727c4f5145"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R41/code/star_edges.json", "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/result.json", "sha256": "d081a0d23bb0f38853f571998c35ced7cec54b707bc0a2a1d325ec9d4d4e0bc1"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/scout.json", "sha256": "6b918fed707708846631d23d2c3c8b0d33d31eb5e0a891ca9a3d85ef1d441049"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/eval.json", "sha256": "1aee511f72ca26e7f57e53199f2d7c8e802939c503d5781e70126e5db508d4bb"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/solution_actions.json", "sha256": "59a0e2a6f1fb448ad842c2253dd7e651d586435863a99b7ed269dc855b4fd66a"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/code/star_edges.json", "sha256": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/sentinel_tests.json", "sha256": "c2385b4b906e1c1d48092d644e40853921e8ce5ba46b40f9a66ffc5e3ad879ac"},
+    {"path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R32/r32_diagnostics.json", "sha256": "6a43aa339d834632f6d6f63d3ac545c5453b2769e1ec662ad8e7c698456d544a"}
+  ],
+  "attacks_by_idea": [
+    {
+      "idea_id": "Q2-R51",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "问是否存在给出同强度 incumbent+证书证据的更简模型（LP/MILP/覆盖启发式）。", "finding": "本路线的不可替代产出是『G* 完整成对不相容模型 + 阶梯证书链』：LP 分数界实测=0（CH-05 Q2-R52/R53 探针），NoOverlap 列编码 253s 仅 FEASIBLE，均弱于子句编码；R32 的修复层最终也回落到同一 G* CP-SAT 模型。无更简且证据更强的模型。"},
+        {"type": "identifiability", "severity": "minor", "test": "检查『最优性』宣称是否与未闭合层级兼容：撤销层 LB=2<UB=6、层2-4 条件界（adjusted 84≤·≤121 等）。", "finding": "未冒领：result.json/scout.json 的 certificate_status='OPEN'、revoke_layer_certified_optimal=false、layers_locked_unproven 全量登记，route_failure_flags 明示『论文只能写撤销数在[2,6]，禁止写最优』。但『层间锁定在上层未证明时进行』意味着 incumbent 是合法上界样本而非 lex 最优解——正式建模引用时必须保留该限定。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "模型动作域是否恰好等于题面 F-008/F-012/R3 定义（不扩张、不缺失）。", "finding": "我独立重算动作域（keep + 合法 df∈±1..±10 + 合法 dt∈±1..±5 + revoke，越界动作剔除）得每计划 22..32 列、总计 4582，与其 model_facts.n_bool=4582 精确一致；无列剪枝（其探针+我的复核确认 base 297⊆G*）。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "检查标量化 1e12/1e8/1e4 是否在该实例域上保持严格词典序（层级溢出倒序风险）。", "finding": "界内最坏值：adjusted≤150、ploss≤4980（全 A 撤销=4000 上界）、mag≤1500 ⇒ 各低层贡献严格小于高层单位（4980×1e4=4.98e7<1e8，1500<1e4）；且四级实现用逐级锁定而非大 M，标量仅作展示映射。无退化。"},
+        {"type": "sample_dimension", "severity": "minor", "test": "『确定性路线 replicates=1』标签 vs CP-SAT num_search_workers=8 的 run-to-run 抖动（DEV_LOG 自述同预算下撤销数 7/8/6 摆动）。", "finding": "多 worker 并行组合使该路线实为『准确定性』：同一实现换时序可能给出不同 incumbent。DEV_LOG 如实登记抖动量级 ±1~2，未做第二重复。登记要求：正式建模阶段对入选解至少做 1 次 num_search_workers=1（或重复 8-worker）复跑证明 incumbent 可复现，或按随机路线补 3 重复。"},
+        {"type": "task_mismatch", "severity": "info", "test": "输出方案是否只含 Q2 允许的动作（df/dt/revoke，禁 dg），零残留冲突+全部资源盒内。", "finding": "solution_actions.json 127 条（121 df/dt + 6 revoke，无 dg、无 0 值动作）；我的独立全量合规重算 violations=[]、11175 对全量残留冲突重算=0；evaluator 复跑 feasible=true objective=[6,121,1996,663] 与磁盘 eval.json 一致。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "求解器与模型族匹配：成对不相容子句 + 可行性阶梯（CH-05 探针教训）；核对 cpsat_report 全部 stage/ladder 状态与 bound。", "finding": "编码选择有探针依据且全部状态如实落盘；ladder 中『Σr≤6 deep_certificate status=OPTIMAL』是可行性模式判定（objective_used=false，即 SAT+找到 r=6 的解，found_tuple(6,142,…) 不是 adjusted 层最优），与 stage2 的 121 不矛盾——我核对代码 solve_r51.py Capped/test() 语义确认。提示：论文引用 ladder 时须解释 feasibility-mode 的 OPTIMAL 语义，防误读。"},
+        {"type": "bound_invalid", "severity": "info", "test": "重点核查2（CH-05 警示2a）：独立重算全部 11175 对×动作组合的冲突组合表，与磁盘 star_edges.json(sha 628dc262…) 做双向精确比对；核对 297 基础边 ⊆ G*；核对撤销层界来源合法性。", "finding": "我的独立重算：边集 1693=1693（only_in_star=0、only_in_mine=0），每对组合索引集合逐一相等（mismatch=0），组合总数 270626=270626；base297⊆G* 成立；另做掩码暴力抽查（300 个 G* 对逐组合 + 200 个非 G* 对必须全空）零不一致 ⇒ G* 既无漏边（不会假 OPTIMAL）也无伪边（INFEASIBLE 证书方向安全）。LB=2 的构成（min Σr 的 CP BestObjectiveBound=2，地板证书 k=0 给 ≥1；relaxation(base-only)=0 如实标注无信息）合法且被如实登记为未闭合，绝非冒领 OPTIMAL。"},
+        {"type": "evaluation_unfair", "severity": "minor", "test": "重点核查1+2：独立实现抽样复算 evaluator feasible 判定（每解抽 20 计划对纯区间法复核）；预算条款（600s/候选/重复）；DEV_LOG 冒烟产物清理。", "finding": "20 对抽样独立复算与掩码全量重算 0 不一致，evaluator 原样复跑与其 eval.json 一致（无篡改）。不利事实：候选合计墙钟 667.7s>600s（incumbent 求解 547.3s 在预算内，其后 120.4s 仅用于界证书进程、未替换目标值），已在 budget_disclosure.within_limit=false 显式申报——属诚实披露的协议越界，需 Manager 显式裁定（豁免登记或把证书算作 bound_scout 职责另行计预算），不得默认放行。开发期冒烟 json 产物被清理但数值完整登记于 DEV_LOG（含一次崩溃），权威 result 未被触碰，符合『失败亦登记』精神，登记为信息性偏差。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q2-R51/solution_actions.json（evaluator 复跑 feasible=true，[6,121,1996,663]）+ 本评审 reviews/CH-REV-A_verify_report.txt（G* 双向精确复核 1693/270626 零差异；base297⊆G*）",
+        "撤销层界按『[2,6] 未闭合』口径携带进正式建模：r51_certificates.json + cpsat_report.json + cert_r51.py 证书脚本",
+        "Manager 对 budget_disclosure（667.7s>600s）的显式裁定记录（豁免或计别册）",
+        "incumbent 复现性证据：num_search_workers=1 复跑或第二重复（sample_dimension minor 条款）"
+      ]
+    },
+    {
+      "idea_id": "Q2-R41",
+      "attacks": [
+        {"type": "simpler_model", "severity": "info", "test": "GRASP+LS 是否比必要更复杂；其契约角色是什么。", "finding": "协议指定其为 Q2 baseline（候选集首位），CH-04 route 的 tier=baseline 定位为『启发式对照』产出器（Q2-C3 验收规则的启发式对照要求）；实现复杂度与角色相称，且其 DEV_LOG 证明简化版（错误权重）会退化为狂撤销——复杂度是功能性的。"},
+        {"type": "identifiability", "severity": "info", "test": "元组在解文件上是否唯一确定（无内部指标口径漂移）。", "finding": "三 seed 的 evaluator 元组与我的独立重算逐一相等（[19,96,1853,491]/[28,75,2012,379]/[19,95,1915,466]），无内部/权威分叉。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "邻域/动作生成是否引入题面外自由度。", "finding": "动作域=合法 df/dt/revoke（越界剔除），无改次数/间隔/g；我的合规重算 violations=[]。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "标量化与聚合规则退化检查。", "finding": "协议『median over replicates』：三标量 {19.0095e12, 19.0096e12, 28.0075e12} 中位=seed11，result/scout/solution_path 三者指向同一定义，无取优冒称中位。"},
+        {"type": "sample_dimension", "severity": "minor", "test": "3 个冻结种子的重复数是否足以稳定刻画该启发式。", "finding": "不足：seed29 陷在 [28,75,…]，撤销极差 9 ⇒ stability=0.4733（已如实计算并触发 route 预设失败条件）。作为『对照』够用（协议预算如此），作为『基线质量』不可靠——登记：正文只引用其『启发式 vs 精确差距』（19→6）这一区间性结论，不引用单点为基线能力。"},
+        {"type": "task_mismatch", "severity": "info", "test": "输出契约（只列被改者、每计划至多一参数）与 result2 语义。", "finding": "三文件均只列被改/撤销计划、单参数；115/103/114 条与 evaluator stats 一致。"},
+        {"type": "solver_mismatch", "severity": "info", "test": "每重复 185s×3=555s ≤600s/重复；18 起点/重复的预算分配。", "finding": "墙钟合规（每重复 185s<600s，ledger：3 evaluator 调用≤16）；起点数与停滞参数按 route 冻结，未见为出结果追加预算。"},
+        {"type": "bound_invalid", "severity": "minor", "test": "route bound_plan 承诺的『冲突图极大匹配下界 61..63（CH-02 复算 ν=71）』是否兑现。", "finding": "未实现（bound_detail.route_plan 自认『本次侦察未实现为正式界』，lower/upper_bound=null）。无假界（安全方向），但承诺未兑现 ⇒ 对照证据不完整：若保留该候选，须补一个可机检的 |adjusted|+|revoke| 匹配下界脚本（nu=71 与 ≤63 的关系亦须复核统一——CH-02 用 Edmonds 最大匹配 71，CH-04 用贪心极大匹配 61-63，后者是前者合法但更松的下界）。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查1：独立抽样复算 evaluator feasible（每 seed 20 对区间法复核）+ 全量残留重算 + evaluator 复跑对账。", "finding": "三 seed 全部 feasible 独立证实（全量 11175 对残留=0；20 对抽样 0 不一致；磁盘 eval_seed*.json 与复跑一致）。route_failure_flags 两条如实登记（撤销高于精确路线、种子敏感），无隐瞒。"}
+      ],
+      "verdict": "retain",
+      "required_evidence": [
+        "scouts/Q2-R41/solution_actions_seed{11,29,47}.json + 三个 eval_seed*.json（与评审独立重算及 evaluator 复跑一致）",
+        "grasp_record_seed*.json（参数冻结+轨迹，未看结果调参）",
+        "正文使用限定：仅作 Q2-C3『启发式对照』；单点数字不作质量基准（sample_dimension minor 条款）",
+        "若正式保留：补匹配下界脚本并与 ν=71/61-63 口径统一（bound_invalid minor 条款）"
+      ]
+    },
+    {
+      "idea_id": "Q2-R32",
+      "attacks": [
+        {"type": "simpler_model", "severity": "minor", "test": "对照 route 预设降级条款：连续引导层的实际贡献 vs『直接 CP-SAT 整模型』这一更简路径。", "finding": "取整后残留冲突图巨分量（130/150 顶点）⇒ 首个修复子问题 free=150/clauses=270626=完整 G* 模型，touch_fraction=1.0——命中 CH-03 failure_conditions[1]『修复退化为全量重解⇒连续层贡献为零』且已如实登记。最终解 [6,123,2205,762] 严格支配于 R51 [6,121,1996,663]（同撤销层、逐层高）⇒ 该 incumbent 本身可由更简路径（R51 模型换 hint）复现。其保留价值=『连续化在离散题上的量化负结果』+热启动素材，非独立产能。"},
+        {"type": "identifiability", "severity": "info", "test": "是否存在被冒领的最优/证书宣称。", "finding": "lower/upper_bound=null、certificate_LB_if_any=null、去撤销阶梯 Σr≤5 仅 UNKNOWN 且明示『不构成证书』（free=147/150 接近全量也不冒称）；Φ 轨迹含 10 次上升步如实计数。无冒领。"},
+        {"type": "dgp_mismatch", "severity": "info", "test": "连续松弛是否越出题面定义域（人为扩张盒）。", "finding": "盒=题面 10Δf/5Δt ∩ R3 逐计划收紧界（notes §1），Φ=Σ重叠体积乘积+λΣw|δ| 为纯诊断罚，不承载可行性宣称（route 原文『Φ>0 无解可判』）。"},
+        {"type": "objective_degenerate", "severity": "info", "test": "大权重修复目标 W=(1e15,1e10,1e4,1) 的词典序合法性。", "finding": "代码在子问题上现场断言 W1>(|F|+1)W2、W2>400(|F|+1)W3、W3>15(|F|+1)W4（notes §3），方向正确；且最终 objective 一律回 evaluator 权威口径（我的重算 [6,123,2205,762] 一致），内部标量未进主链。"},
+        {"type": "sample_dimension", "severity": "minor", "test": "『确定性』标签 vs 修复层 CP-SAT num_search_workers=4 的抖动；replicates=1 是否足够。", "finding": "DEV_LOG 自认『确定性只覆盖连续层；修复层不保证逐位一致；未做二次重跑』——则按协议它应按随机路线做 3 重复，现只有 1 次权威运行。单次可行解的偶然性（如 incumbent=6 撤销）可能不可复现。登记要求：补 2-3 次重复（随机路线口径）或做 workers=1 复现性验证，否则结论强度上限=『单次可行样本』。"},
+        {"type": "task_mismatch", "severity": "minor", "test": "协议逐字条款：TOURNAMENT_PROTOCOL Q2.note 要求 R32『确定性版+随机版各测』。", "finding": "仅测了确定性版：solve_r32.py 两处 random_seed=0、无任何随机版产物（sentinel/diagnostics 亦无随机变体记录）⇒ 协议要求的第二测量缺失。属可补救的执行缺口，不改判正确性。"},
+        {"type": "solver_mismatch", "severity": "minor", "test": "申报范式（连续罚场+取整修复）与实际产出解的归因求解器是否一致。", "finding": "与 simpler_model 同源：实际给出零冲突方案的求解器是 CP-SAT（全量 G* 重解+去撤销阶梯），连续次梯度只完成 297→175 的预处理。范式归因需按『混合：CP-SAT 为主、连续引导为辅』改写，否则高估异范式产能（其 route_gates 与降级 flag 已自证这一点）。"},
+        {"type": "bound_invalid", "severity": "info", "test": "重点核查2（假 OPTIMAL 攻击）：修复子模型是否同样建在全势边 G* 上（其首个子问题 clauses=270626 与 R51 完整模型相同）；star_edges 副本 sha 对账。", "finding": "code/star_edges.json 与 Q2-R51 版逐字节同一（628dc262…），我已对该内容做过全量双向精确复核（1693 边/270626 组合、base297⊆G* 零差异）⇒ R32 的修复/阶梯同样不会因漏边产生假 OPTIMAL；其对『分量局部修复』的退化描述与我看到的 free=150 一致，无界宣称。"},
+        {"type": "evaluation_unfair", "severity": "info", "test": "重点核查1：抽样复算 feasible；sentinel 抓出的历史假可行 bug 是否影响最终工件。", "finding": "我的全量残留重算=0、20 对区间法抽样 0 不一致、evaluator 复跑与 eval.json 一致 ⇒ 最终方案可行属实。DEV_LOG 登记的『violated() 恒 0 ⇒ 假可行』开发期 bug 已被哨兵2 抓到并修复，且该教训支持『必须独立谓词复核』的评审立场——对权威工件无残留影响。391.07s≤600s，ledger 内。"}
+      ],
+      "verdict": "revise",
+      "required_evidence": [
+        "补测协议要求的『随机版』（TOURNAMENT_PROTOCOL Q2.note 逐字条款），或 Manager 记录明确豁免",
+        "补 2-3 重复或 num_search_workers=1 复现性验证（修复层非逐位确定的自认）",
+        "路线定位改写为『CP-SAT 主导的混合范式 + 连续引导的量化负结果（297→175）』，正文禁止以其单次运行 incumbent 宣称范式产能",
+        "scouts/Q2-R32/solution_actions.json（sha 59a0e2a6…）+ eval.json + 评审 reviews/CH-REV-A_verify_report.txt（feasible 独立证实）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+search_id: "CS-20260911T071520-D2026"
+problem_id: "D2026"
+profile: "standard"
+frozen_at: "2026-09-11T15:15:20+08:00"
+budget: (dict, len=8)
+  max_wall_minutes: 60
+  max_generator_children: 4
+  bound_children: 1
+  top_k: 3
+  scout_budget_seconds_per_route: 600
+  replicates: 3
+  frozen_before_scouts: true
+  note: "标准档冻结预算；看到结果后禁止调整（用户未另给预算）"
+user_preferences: (dict, len=4)
+  language: "zh-CN"
+  engine: "latex"
+  hil: "auto"
+  priority_rule: "题面 A>B>C；正确性>可行性>最优性证据>目标值>稳定性>运行时>可解释性"
+solver_environment: (dict, len=3)
+  ortools_cpsat: "9.15 @ F:/dsh_envlibs/mathmodel（PYTHONPATH 指向该目录可 import）"
+  python: "3.14"
+  other: (list, len=4)
+    [0]: "numpy"
+    [1]: "pandas"
+    [2]: "networkx"
+    [3]: "scipy"
+question_contract: (dict, len=3)
+  schema_version: 2
+  problem_id: "D2026"
+  questions: (list, len=4)
+    [0] (dict, len=11)
+      question_id: "Q1"
+      original_request: "对附件1给出的用频计划进行时频冲突检测，将结果保存到 result1.xlsx，并在论文中给出时频冲突的统计结果。"
+      decision_target: "枚举全部时频冲突计划对"
+      analysis_unit: "用频计划对 (i,j)"
+      observation_unit: "计划对×占用时段×频段"
+      special_data_structure: {"kind": "周期矩形占用", "note": "每计划=频段窗口 × 周期(gap+d)重复 n 个时间窗"}
+      required_outputs: ["submission/result1.xlsx（每行一对冲突）", "论文冲突统计（总数/按类对/热点）"]
+      allowed_information: ["附件1 全部计划参数"]
+      forbidden_information: ["调整/撤销决策（Q1 只检测）"]
+      evaluation_target: ["冲突对集合完全且无伪"]
+      capabilities: [{"capability_id": "Q1-C1", "requirement": "冲突对枚举完整且精确", "mandatory": true, "source_fact_ids": ["F-001", "F-005", "F-006", "F-023"], "acceptance_rule": "暴力逐时段枚举与区间算术双实现一致；独立checker复核", "required_evidence": ["results/Q1_detect.json", "code/q1_detect.py", "code/q1_verify.py"]}, {"capability_id": "Q1-C...<+392 chars>
+    [1] (dict, len=11)
+      question_id: "Q2"
+      original_request: "对问题1检测出的时频冲突进行消解（调整至多一个参数或撤销），保存 result2.xlsx，按表1给出统计。"
+      decision_target: "每计划动作∈{保持,频段平移,时间平移,撤销}及平移量"
+      analysis_unit: "用频计划"
+      observation_unit: "计划×时段×频段"
+      special_data_structure: "冲突图上顶点操作+带幅重嵌入"
+      required_outputs: ["submission/result2.xlsx", "论文表1"]
+      allowed_information: ["Q1 冲突对集合"]
+      forbidden_information: ["调整使用次数", "同时调整频段与时间", "超出 10Δf/5Δt"]
+      evaluation_target: ["零冲突", "目标链 revoke<adjusted<priority<magnitude"]
+      capabilities: [{"capability_id": "Q2-C1", "requirement": "输出方案零冲突", "mandatory": true, "source_fact_ids": ["F-006", "F-007", "Q2-F015"], "acceptance_rule": "对调整后全部计划重跑 Q1 检测器返回 0 对", "required_evidence": ["results/Q2_solution.json", "code/check_q2.py"]}, {"capability_id": "Q2-C2", "requirement": "单参数与幅度合规", "mand...<+626 chars>
+    [2] (dict, len=11)
+      question_id: "Q3"
+      original_request: "基于问题2无冲突方案，不限平移幅度、不增加时频资源，最多还能安排多少C类装备？结果存 result3.xlsx。"
+      decision_target: "新增C类计划集合（频段区间+时间区间；间隔8/次数12/宽3/时长2 固定）"
+      analysis_unit: "新增C计划"
+      observation_unit: "占用单元(频段×时间格)"
+      special_data_structure: "周期脉冲装箱：3频段×相位×12连续oct"
+      required_outputs: ["submission/result3.xlsx", "最大数量论证(构造下界+上界)"]
+      allowed_information: ["Q2 最终方案"]
+      forbidden_information: ["增加时频资源", "改既有计划次数/间隔"]
+      evaluation_target: ["新增C数量最大化", "与Q2方案零冲突", "新增内部零冲突"]
+      capabilities: [{"capability_id": "Q3-C1", "requirement": "加装方案零冲突", "mandatory": true, "source_fact_ids": ["Q3-F017"], "acceptance_rule": "checker 复验(对Q2方案+内部)", "required_evidence": ["results/Q3_solution.json", "code/check_q3.py"]}, {"capability_id": "Q3-C2", "requirement": "数量最大化论证", "mandatory": true, "source_...<+309 chars>
+    [3] (dict, len=11)
+      question_id: "Q4"
+      original_request: "允许部分C类调整间隔(≤10Δt)，消解问题1冲突，存 result4.xlsx 并按表1统计。"
+      decision_target: "每计划动作∈{保持,频段平移,时间平移,(仅C)间隔调整,撤销}及幅度"
+      analysis_unit: "用频计划"
+      observation_unit: "计划×时段×频段"
+      special_data_structure: "周期结构重定时(retiming)"
+      required_outputs: ["submission/result4.xlsx", "论文表1+与Q2对比"]
+      allowed_information: ["Q1 冲突对集合"]
+      forbidden_information: ["A/B调间隔", "C |Δgap|>10或间隔≤0", "调次数", "多参数同调"]
+      evaluation_target: ["零冲突", "同Q2目标链", "相对Q2改善证据"]
+      capabilities: [{"capability_id": "Q4-C1", "requirement": "零冲突+合规", "mandatory": true, "source_fact_ids": ["F-006", "F-008", "Q4-F019", "Q4-F020"], "acceptance_rule": "checker 全断言(含间隔规则)", "required_evidence": ["results/Q4_solution.json", "code/check_q4.py"]}, {"capability_id": "Q4-C2", "requirement": "利用间隔自由度不劣于Q...<+173 chars>
+problem_facts: (dict, len=5)
+  schema_version: 1
+  source_asset: "A-D题.pdf"
+  extracted_at: "brainstorm-intake"
+  source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+  facts: (list, len=24)
+    [0] (dict, len=10)
+      fact_id: "F-001"
+      source_asset_id: "A-D题.pdf"
+      source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+      source_span: "频域离散化"
+      raw_text: "以固定的频带宽度Δf将系统可提供的有限带宽频率资源离散化为100个宽度相同的频段"
+      normalized_value: 100
+      unit: "频段"
+      fact_type: "parameter"
+      confidence: "high"
+      note: "频段索引 0..99，区间左闭右开 [a,b)"
+    [1] (dict, len=11)
+      fact_id: "F-002"
+      source_asset_id: "A-D题.pdf"
+      source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+      source_span: "频段占用"
+      raw_text: "每一个用频计划可以占用连续的多个频段，并且占用的频段数量保持不变"
+      normalized_value: "contiguous_fixed_width"
+      unit: null
+      fact_type: "rule"
+      confidence: "high"
+      affected_question_ids: ["Q2", "Q4"]
+      note: "调整（平移）后频段数量（宽度）不变"
+    [2] (dict, len=10)
+      fact_id: "F-003"
+      source_asset_id: "A-D题.pdf"
+      source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+      source_span: "时域离散化"
+      raw_text: "用固定的时间长度Δt作为时间资源的基本单位……所占用的时间长度必须是Δt的整数倍"
+      normalized_value: "integer_multiples_of_dt"
+      unit: null
+      fact_type: "rule"
+      confidence: "high"
+      note: "所有时间参数为整数（以Δt计）"
+    [3] (dict, len=9)
+      fact_id: "F-004"
+      source_asset_id: "A-D题.pdf"
+      source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+      source_span: "计划四参数"
+      raw_text: "每个用频计划包含四个参数：频段区间、首次使用的时间区间、相邻两次使用该频段的间隔时长以及使用次数"
+      normalized_value: "4_params"
+      unit: null
+      fact_type: "definition"
+      confidence: "high"
+    [4] (dict, len=10)
+      fact_id: "F-005"
+      source_asset_id: "A-D题.pdf"
+      source_sha256: "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+      source_span: "周期使用规则"
+      raw_text: "间隔时长60表示相隔60Δt的时间再次以相同长度的时间区间占用该频段，即第二次占用……[40Δt+60Δt,45Δt+60Δt)"
+      normalized_value: "slot_k=[t1+(k-1)*(g+d), t1+(k-1)*(g+d)+d), k=1..n"
+      unit: null
+      fact_type: "definition"
+      confidence: "high"
+      note: "间隔 g 为两次占用之间的空闲时长；d=时间区间长度。例：A001 首次[35,40),g=60→第二次[100,105),第三次[165,170)"
+    ... (19 more items)
+problem_structure: (dict, len=9)
+  schema_version: 1
+  discovery_id: "DISC-E9D8A97BC71B91CD"
+  problem_id: "D2026"
+  generated_at: "2026-09-11T15:04:41+08:00"
+  source_assets: (list, len=5)
+    [0] (dict, len=4)
+      path: "logs/D题.txt"
+      sha256: "4033298a406cb22f9ec5282bf281a0912b434e5164088d10e222cb04b434aaf1"
+      role: "problem_statement"
+      authority: "primary_official"
+    [1] (dict, len=4)
+      path: "reports/intake/ASSET_REGISTRY.json"
+      sha256: "ca24407b2ca58a4336c823a582f06911387e3cbd26581cd19ef7fd0effa46243"
+      role: "intake_asset_registry"
+      authority: "verified"
+    [2] (dict, len=4)
+      path: "reports/data/DATASET_SNAPSHOT.json"
+      sha256: "318fc8dc39bfc5f6711f4a8054c9bbc88f2befc8687e7454f6d3b570070b9186"
+      role: "verified_dataset_snapshot"
+      authority: "verified"
+    [3] (dict, len=4)
+      path: "附件/附件1.xlsx"
+      sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      role: "current_problem_local_data"
+      authority: "primary_official"
+    [4] (dict, len=4)
+      path: "C:/Users/Administrator/.dsh/.agent-presets/mathmodel-v7/skills/6verity/official_rules.json"
+      sha256: "cdea16171e0ccb6366c8dbce5fe1edc3fa18ba9598c557857c7fe4000e7d7c57"
+      role: "frozen_official_authority"
+      authority: "frozen"
+  discovery_order: (dict, len=7)
+    first_round_only: true
+    allowed_input_classes: (list, len=6)
+      [0]: "problem_statement"
+      [1]: "official_attachment"
+      [2]: "intake_asset_registry"
+      [3]: "verified_dataset_snapshot"
+      [4]: "frozen_official_authority"
+      ... (1 more items)
+    blocked_input_classes: (list, len=7)
+      [0]: "problem_discussion"
+      [1]: "solution_or_answer_search"
+      [2]: "competition_code_repository"
+      [3]: "model_recommendation_search"
+      [4]: "old_paper_or_replay"
+      ... (2 more items)
+    discovery_started_at: "2026-09-11T15:04:41+08:00"
+    discovery_completed_at: "2026-09-11T15:04:41+08:00"
+    search_started_at: null
+    read_allowlist_sha256: "b4d5d4d21010cf973a1e94a9b8ea745b9e071b3f6bea8bdfb3ab6efc7b21699c"
+  questions: (list, len=4)
+    [0] (dict, len=4)
+      question_id: "Q1"
+      source_basis: ["logs/D题.txt", "附件/附件1.xlsx"]
+      structure_summary: {"data": {"rows": 150, "cols": 5, "headers": ["用频装备编号", "频段区间", "时间区间", "间隔时长", "使用次数"], "variable_types": {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}, "numeric_columns": ["使用次数", "间隔时长"], "missingness": {"total_cells": 750, "missing_cells": 0, "by_column...<+1606 chars>
+      shared_state_ids: ["entity_time_state"]
+    [1] (dict, len=4)
+      question_id: "Q2"
+      source_basis: ["logs/D题.txt", "附件/附件1.xlsx"]
+      structure_summary: {"data": {"rows": 150, "cols": 5, "headers": ["用频装备编号", "频段区间", "时间区间", "间隔时长", "使用次数"], "variable_types": {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}, "numeric_columns": ["使用次数", "间隔时长"], "missingness": {"total_cells": 750, "missing_cells": 0, "by_column...<+1606 chars>
+      shared_state_ids: ["entity_time_state"]
+    [2] (dict, len=4)
+      question_id: "Q3"
+      source_basis: ["logs/D题.txt", "附件/附件1.xlsx"]
+      structure_summary: {"data": {"rows": 150, "cols": 5, "headers": ["用频装备编号", "频段区间", "时间区间", "间隔时长", "使用次数"], "variable_types": {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}, "numeric_columns": ["使用次数", "间隔时长"], "missingness": {"total_cells": 750, "missing_cells": 0, "by_column...<+1606 chars>
+      shared_state_ids: ["entity_time_state"]
+    [3] (dict, len=4)
+      question_id: "Q4"
+      source_basis: ["logs/D题.txt", "附件/附件1.xlsx"]
+      structure_summary: {"data": {"rows": 150, "cols": 5, "headers": ["用频装备编号", "频段区间", "时间区间", "间隔时长", "使用次数"], "variable_types": {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}, "numeric_columns": ["使用次数", "间隔时长"], "missingness": {"total_cells": 750, "missing_cells": 0, "by_column...<+1606 chars>
+      shared_state_ids: ["entity_time_state"]
+  structural_checks: (list, len=180)
+    [0] (dict, len=6)
+      question_id: "Q1"
+      structure: "sample_size"
+      status: "observed"
+      reason: "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。"
+      evidence_refs: ["Q1-F-sample_size"]
+      finding_ids: ["Q1-F-sample_size"]
+    [1] (dict, len=6)
+      question_id: "Q1"
+      structure: "variable_type"
+      status: "observed"
+      reason: "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。"
+      evidence_refs: ["Q1-F-variable_type"]
+      finding_ids: ["Q1-F-variable_type"]
+    [2] (dict, len=6)
+      question_id: "Q1"
+      structure: "missing"
+      status: "not_observed"
+      reason: "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。"
+      evidence_refs: ["Q1-F-missing"]
+      finding_ids: ["Q1-F-missing"]
+    [3] (dict, len=6)
+      question_id: "Q1"
+      structure: "anomaly"
+      status: "not_observed"
+      reason: "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。"
+      evidence_refs: ["Q1-F-anomaly"]
+      finding_ids: ["Q1-F-anomaly"]
+    [4] (dict, len=6)
+      question_id: "Q1"
+      structure: "duplicate"
+      status: "not_observed"
+      reason: "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。"
+      evidence_refs: ["Q1-F-duplicate"]
+      finding_ids: ["Q1-F-duplicate"]
+    ... (175 more items)
+  cross_question_shared_state: (list, len=1)
+    [0] (dict, len=3)
+      state_id: "entity_time_state"
+      detected: true
+      fields: ["用频装备编号", "时间区间"]
+eda_findings: (dict, len=5)
+  schema_version: 1
+  discovery_id: "DISC-E9D8A97BC71B91CD"
+  generated_at: "2026-09-11T15:04:41+08:00"
+  finding_policy: (dict, len=3)
+    required_fields: (list, len=7)
+      [0]: "source_asset"
+      [1]: "source_sha256"
+      [2]: "reproducible_evidence"
+      [3]: "model_implication"
+      [4]: "confidence"
+      ... (2 more items)
+    allowed_impacts: (list, len=10)
+      [0]: "route_added_and_selected"
+      [1]: "route_added_but_rejected"
+      [2]: "model_family_removed"
+      [3]: "variable_space_reduced"
+      [4]: "constraint_added_or_changed"
+      ... (5 more items)
+    no_data_rule: "无数据/纯解析题只登记 not_applicable 与题面证据，不填造样本统计。"
+  findings: (list, len=124)
+    [0] (dict, len=14)
+      finding_id: "Q1-F-sample_size"
+      question_id: "Q1"
+      structure: "sample_size"
+      status: "observed"
+      source_asset: "附件/附件1.xlsx"
+      source_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      reproducible_evidence: {"method": "deterministic local structural scan (no search input)", "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>", "observed": {"rows": 150, "cols": 5}, "evidence_sha256": "ea38bbabb179a1b429bc2eb84b7b7d89da01caedad65bfdfde1323253e070dba"}
+      model_implication: "从题面/登记数据中检测到 sample_size 结构，观测摘要已写入可复算 evidence。"
+      confidence: "high"
+      affected_question_ids: ["Q1"]
+      material_decision_impact: "no_material_impact"
+      decision_before: {}
+      decision_after: {}
+      changed_paths: []
+    [1] (dict, len=14)
+      finding_id: "Q1-F-variable_type"
+      question_id: "Q1"
+      structure: "variable_type"
+      status: "observed"
+      source_asset: "附件/附件1.xlsx"
+      source_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      reproducible_evidence: {"method": "deterministic local structural scan (no search input)", "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>", "observed": {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}, "evidence_sha256": "706e2aff7d0939f3...<+50 chars>
+      model_implication: "从题面/登记数据中检测到 variable_type 结构，观测摘要已写入可复算 evidence。"
+      confidence: "high"
+      affected_question_ids: ["Q1"]
+      material_decision_impact: "no_material_impact"
+      decision_before: {}
+      decision_after: {}
+      changed_paths: []
+    [2] (dict, len=14)
+      finding_id: "Q1-F-missing"
+      question_id: "Q1"
+      structure: "missing"
+      status: "not_observed"
+      source_asset: "附件/附件1.xlsx"
+      source_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      reproducible_evidence: {"method": "deterministic local structural scan (no search input)", "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>", "observed": {"total_cells": 750, "missing_cells": 0, "by_column": [{"column": "用频装备编号", "missing": 0, "fraction": 0.0}, {"column": "频段区间",...<+274 chars>
+      model_implication: "在允许的题面与当前数据范围内未检测到 missing；保留该否定结论供后续选路审计。"
+      confidence: "medium"
+      affected_question_ids: ["Q1"]
+      material_decision_impact: "no_material_impact"
+      decision_before: {}
+      decision_after: {}
+      changed_paths: []
+    [3] (dict, len=14)
+      finding_id: "Q1-F-anomaly"
+      question_id: "Q1"
+      structure: "anomaly"
+      status: "not_observed"
+      source_asset: "附件/附件1.xlsx"
+      source_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      reproducible_evidence: {"method": "deterministic local structural scan (no search input)", "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>", "observed": [], "evidence_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"}
+      model_implication: "在允许的题面与当前数据范围内未检测到 anomaly；保留该否定结论供后续选路审计。"
+      confidence: "medium"
+      affected_question_ids: ["Q1"]
+      material_decision_impact: "no_material_impact"
+      decision_before: {}
+      decision_after: {}
+      changed_paths: []
+    [4] (dict, len=14)
+      finding_id: "Q1-F-duplicate"
+      question_id: "Q1"
+      structure: "duplicate"
+      status: "not_observed"
+      source_asset: "附件/附件1.xlsx"
+      source_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      reproducible_evidence: {"method": "deterministic local structural scan (no search input)", "command": "python skills/brainstorm-mathmodel/scripts/discovery.py --workspace <workspace>", "observed": {"duplicates": 0}, "evidence_sha256": "93149add2ac2890b19814b9da8689414af135ea11eea96c4bffeb49329931baf"}
+      model_implication: "在允许的题面与当前数据范围内未检测到 duplicate；保留该否定结论供后续选路审计。"
+      confidence: "medium"
+      affected_question_ids: ["Q1"]
+      material_decision_impact: "no_material_impact"
+      decision_before: {}
+      decision_after: {}
+      changed_paths: []
+    ... (119 more items)
+model_opportunities: (dict, len=6)
+  schema_version: 1
+  discovery_id: "DISC-E9D8A97BC71B91CD"
+  generated_at: "2026-09-11T15:04:41+08:00"
+  search_gate: (dict, len=7)
+    status: "READY_FOR_ACADEMIC_SEARCH"
+    opens_after: "2026-09-11T15:04:41+08:00"
+    purpose: "仅检索 model family/formulation/solver prior；不得检索本届赛题讨论、题解、代码或答案。"
+    allowed_source_classes: (list, len=4)
+      [0]: "official"
+      [1]: "textbook"
+      [2]: "peer_reviewed_paper"
+      [3]: "academic_documentation"
+    blocked_source_classes: (list, len=7)
+      [0]: "problem_discussion"
+      [1]: "solution_or_answer_search"
+      [2]: "competition_code_repository"
+      [3]: "model_recommendation_search"
+      [4]: "old_paper_or_replay"
+      ... (2 more items)
+    blocked_query_patterns: (list, len=10)
+      [0]: "本届赛题讨论"
+      [1]: "赛题讨论"
+      [2]: "题解"
+      [3]: "现成解答"
+      [4]: "比赛代码"
+      ... (5 more items)
+    search_started_at: null
+  opportunities: (list, len=4)
+    [0] (dict, len=9)
+      opportunity_id: "Q1-OP-special_boundary"
+      question_id: "Q1"
+      finding_ids: ["Q1-F-special_boundary"]
+      proposal: {"kind": "constraint", "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"}
+      material_decision_impact: "constraint_added_or_changed"
+      decision_before: {"question_id": "Q1", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": [], "solver": "baseline_estimator", "validation_strategy": "row_level_validation", "shared_state": [], "rejected_routes...<+6 chars>
+      decision_after: {"question_id": "Q1", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": ["observed_domain_bounds"], "solver": "baseline_estimator", "validation_strategy": "interior_and_boundary_cases", "shar...<+37 chars>
+      changed_paths: ["/constraints", "/validation_strategy"]
+      evidence_refs: ["EDA_FINDINGS.findings[Q1-F-special_boundary]"]
+    [1] (dict, len=9)
+      opportunity_id: "Q2-OP-special_boundary"
+      question_id: "Q2"
+      finding_ids: ["Q2-F-special_boundary"]
+      proposal: {"kind": "constraint", "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"}
+      material_decision_impact: "constraint_added_or_changed"
+      decision_before: {"question_id": "Q2", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": [], "solver": "baseline_estimator", "validation_strategy": "row_level_validation", "shared_state": [], "rejected_routes...<+6 chars>
+      decision_after: {"question_id": "Q2", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": ["observed_domain_bounds"], "solver": "baseline_estimator", "validation_strategy": "interior_and_boundary_cases", "shar...<+37 chars>
+      changed_paths: ["/constraints", "/validation_strategy"]
+      evidence_refs: ["EDA_FINDINGS.findings[Q2-F-special_boundary]"]
+    [2] (dict, len=9)
+      opportunity_id: "Q3-OP-special_boundary"
+      question_id: "Q3"
+      finding_ids: ["Q3-F-special_boundary"]
+      proposal: {"kind": "constraint", "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"}
+      material_decision_impact: "constraint_added_or_changed"
+      decision_before: {"question_id": "Q3", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": [], "solver": "baseline_estimator", "validation_strategy": "row_level_validation", "shared_state": [], "rejected_routes...<+6 chars>
+      decision_after: {"question_id": "Q3", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": ["observed_domain_bounds"], "solver": "baseline_estimator", "validation_strategy": "interior_and_boundary_cases", "shar...<+37 chars>
+      changed_paths: ["/constraints", "/validation_strategy"]
+      evidence_refs: ["EDA_FINDINGS.findings[Q3-F-special_boundary]"]
+    [3] (dict, len=9)
+      opportunity_id: "Q4-OP-special_boundary"
+      question_id: "Q4"
+      finding_ids: ["Q4-F-special_boundary"]
+      proposal: {"kind": "constraint", "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"}
+      material_decision_impact: "constraint_added_or_changed"
+      decision_before: {"question_id": "Q4", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": [], "solver": "baseline_estimator", "validation_strategy": "row_level_validation", "shared_state": [], "rejected_routes...<+6 chars>
+      decision_after: {"question_id": "Q4", "selected_route": "incumbent_tabular", "model_family": "baseline_tabular", "representation": "row_observations", "variables": ["使用次数", "间隔时长"], "constraints": ["observed_domain_bounds"], "solver": "baseline_estimator", "validation_strategy": "interior_and_boundary_cases", "shar...<+37 chars>
+      changed_paths: ["/constraints", "/validation_strategy"]
+      evidence_refs: ["EDA_FINDINGS.findings[Q4-F-special_boundary]"]
+  decision_transitions: (list, len=4)
+    [0] (dict, len=6)
+      question_id: "Q1"
+      before_sha256: "e7fb62e749cb8d0a37e94672b8018821e9dec3a89a318add34ecda72d0c9904b"
+      after_sha256: "cc8623740f423b9f41b953678991d1df4e1a16ec9322503c7482c3df3ff9d225"
+      material_change: true
+      selected_route_unchanged_allowed: false
+      changed_opportunity_ids: ["Q1-OP-special_boundary"]
+    [1] (dict, len=6)
+      question_id: "Q2"
+      before_sha256: "6932b551c5d36b6008e4666d8717271af23a458b2095bb0bca0ecc66302c8689"
+      after_sha256: "c16bb8b9a0224dfc463e0f43886e54b2a08850157adfc053797406e62bac8e0c"
+      material_change: true
+      selected_route_unchanged_allowed: false
+      changed_opportunity_ids: ["Q2-OP-special_boundary"]
+    [2] (dict, len=6)
+      question_id: "Q3"
+      before_sha256: "34d00430eea040fa371a0b0919d6819e2864cc080cf93069535946f99ded7026"
+      after_sha256: "c0a491886b1329d86b4f707b898f23d3e4e41983762c965e03f86b9a7dcaa6e4"
+      material_change: true
+      selected_route_unchanged_allowed: false
+      changed_opportunity_ids: ["Q3-OP-special_boundary"]
+    [3] (dict, len=6)
+      question_id: "Q4"
+      before_sha256: "580d1ec716e6474883806253a4cd9bd3de4f376d3955fea12d9aa162e4a6a393"
+      after_sha256: "9351e01169f226e61cde8997c86d280760d051351ceaaa90d574b98b4be0ee5e"
+      material_change: true
+      selected_route_unchanged_allowed: false
+      changed_opportunity_ids: ["Q4-OP-special_boundary"]
+data_profile: (dict, len=17)
+  schema_version: 1
+  dataset_id: "cumcm2026D-attachment1-plans-150"
+  source_file: "附件/附件1.xlsx"
+  rows: 150
+  cols: 5
+  entity_id: "用频装备编号"
+  observation_unit: "row observation"
+  sheet: "附件/附件1.xlsx"
+  missingness: (dict, len=3)
+    total_cells: 750
+    missing_cells: 0
+    by_column: (list, len=5)
+      [0]: {"column": "用频装备编号", "missing": 0, "fraction": 0.0}
+      [1]: {"column": "频段区间", "missing": 0, "fraction": 0.0}
+      [2]: {"column": "时间区间", "missing": 0, "fraction": 0.0}
+      [3]: {"column": "间隔时长", "missing": 0, "fraction": 0.0}
+      [4]: {"column": "使用次数", "missing": 0, "fraction": 0.0}
+  duplicates: 0
+  units: (dict, len=0)
+  candidate_anomalies: (list, len=0)
+  no_data: false
+  source_assets: (list, len=1)
+    [0] (dict, len=3)
+      path: "附件/附件1.xlsx"
+      sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      size: 16067
+  tables: (list, len=1)
+    [0] (dict, len=8)
+      path: "附件/附件1.xlsx"
+      sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+      rows: 150
+      cols: 5
+      headers: ["用频装备编号", "频段区间", "时间区间", "间隔时长", "使用次数"]
+      variable_types: {"用频装备编号": "text", "频段区间": "text", "时间区间": "text", "间隔时长": "numeric", "使用次数": "numeric"}
+      numeric_bounds: {"间隔时长": {"min": 8.0, "max": 60.0}, "使用次数": {"min": 3.0, "max": 12.0}}
+      anomalies: []
+  structure_summary: (dict, len=7)
+    entity_id: "用频装备编号"
+    time_column: "时间区间"
+    spatial: (dict, len=5)
+      has_2d: false
+      has_3d: false
+      x: null
+      y: null
+      z: null
+    graph: (dict, len=4)
+      has_edge_endpoints: false
+      source: null
+      target: null
+      edge_tokens: false
+    numeric_columns: (list, len=2)
+      [0]: "使用次数"
+      [1]: "间隔时长"
+    approx_rank: 2
+    zero_fraction: 0.0
+  generated_at: "2026-09-11T15:04:41+08:00"
+data_contract: (dict, len=12)
+  schema_version: 1
+  dataset_id: "cumcm2026D-attachment1-plans-150"
+  entity_unit: "entity"
+  observation_unit: "row observation"
+  group_id: "用频装备编号"
+  temporal_order: "时间区间"
+  forbidden_splits: (list, len=0)
+  allowed_information: (list, len=5)
+    [0]: "problem statement"
+    [1]: "official attachments"
+    [2]: "registered current data"
+    [3]: "verified snapshot"
+    [4]: "frozen official authority"
+  unavailable_variables: (list, len=0)
+  cross_question_shared_state: (list, len=1)
+    [0]: "entity_time_state"
+  no_data: false
+  note: "同一实体/时间键是跨问与切分规则的共享状态。"
+dataset_snapshot: (dict, len=3)
+  dataset_id: "cumcm2026D-attachment1-plans-150"
+  raw_input_sha256: "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+  class_profile: (dict, len=3)
+    A: (dict, len=8)
+      n: 20
+      band_width: [10]
+      time_width: [5]
+      gap: [60]
+      use_count: [3]
+      f_lo_range: [2, 82]
+      t_first_lo_range: [0, 485]
+      last_slot_end_max: 610
+    B: (dict, len=8)
+      n: 40
+      band_width: [15]
+      time_width: [3]
+      gap: [40]
+      use_count: [4]
+      f_lo_range: [0, 85]
+      t_first_lo_range: [15, 495]
+      last_slot_end_max: 618
+    C: (dict, len=8)
+      n: 90
+      band_width: [3]
+      time_width: [2]
+      gap: [8]
+      use_count: [12]
+      f_lo_range: [0, 96]
+      t_first_lo_range: [2, 531]
+      last_slot_end_max: 621
+computed_data_facts: (dict, len=5)
+  horizon_note: "时间视界 T_MAX=621Δt（既有150计划占用的最晚结束点）；频段 0..99"
+  T_MAX_delta_t: 643
+  q1_conflict_pairs_reference_check: (dict, len=5)
+    method: "半开区间 [a,b) 交叠 => max(0,min(b1,b2)-max(a1,a2))>0；两计划的占用时段集合（n 次周期重复，slot_k=[t1+(k-1)(g+d),+d)）任一交叠且频段交叠 => 冲突对"
+    total_conflict_pairs: 297
+    by_class_pair: (dict, len=5)
+      AB: 21
+      AC: 66
+      BC: 181
+      BB: 10
+      CC: 19
+    plans_involved: 148
+    caveat: "此为 Manager 用区间算术算出的基础数据事实（与题面口径一致），供 scout 理解问题规模；scout 可复核但不得据此编造实验结论"
+  occupancy_cells_total: 64300
+  occupancy_cells_used: 16680
+plans_table_compact: (list, len=150)
+  [0] (list, len=7)
+    [0]: "A001"
+    [1]: 80
+    [2]: 90
+    [3]: 35
+    [4]: 40
+    ... (2 more items)
+  [1] (list, len=7)
+    [0]: "A002"
+    [1]: 5
+    [2]: 15
+    [3]: 45
+    [4]: 50
+    ... (2 more items)
+  [2] (list, len=7)
+    [0]: "A003"
+    [1]: 20
+    [2]: 30
+    [3]: 75
+    [4]: 80
+    ... (2 more items)
+  [3] (list, len=7)
+    [0]: "A004"
+    [1]: 35
+    [2]: 45
+    [3]: 95
+    [4]: 100
+    ... (2 more items)
+  [4] (list, len=7)
+    [0]: "A005"
+    [1]: 60
+    [2]: 70
+    [3]: 125
+    [4]: 130
+    ... (2 more items)
+  ... (145 more items)
+route_fragment_contract: "每个 child 输出一个 JSON：{\"child_run_id\",\"role\",\"question_ids\",\n \"routes\":[...], \"coverage_notes\":{\"structural_opportunities_checked\":[...],\n \"families_not_applicable\":[{\"family\",\"reason(引用题目结构)\"}]}}。\nroutes[] 每项 = 完整候选路线（一条 route = 问题重表达+模型/表示+结构变换+求解器族与算法+可行性路径+\n上下界/最优性证据计划+侦察实验计划...<+1455 chars>
+output_rules: (dict, len=3)
+  allowed_read: "仅本文件（common_input.json）"
+  allowed_write: "仅自己的 runs/competitive/CS-20260911T071520-D2026/routes/<child_run_id>.route.json"
+  forbidden: (list, len=4)
+    [0]: "读取 routes/ 下其他 child 文件"
+    [1]: "读取 Manager 排序/旧论文/旧结果"
+    [2]: "浏览任何本届赛题讨论或现成答案（竞赛合规红线）"
+    [3]: "把侦察数字写进 results/ 或论文"

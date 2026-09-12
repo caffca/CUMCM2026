@@ -1,0 +1,38 @@
+{
+ "11": {
+  "tuple": [
+   19,
+   96,
+   1853,
+   491
+  ],
+  "wall_s": 185.0,
+  "starts": 18,
+  "residual": 0,
+  "failure": null
+ },
+ "29": {
+  "tuple": [
+   28,
+   75,
+   2012,
+   379
+  ],
+  "wall_s": 185.0,
+  "starts": 16,
+  "residual": 0,
+  "failure": null
+ },
+ "47": {
+  "tuple": [
+   19,
+   95,
+   1915,
+   466
+  ],
+  "wall_s": 185.0,
+  "starts": 18,
+  "residual": 0,
+  "failure": null
+ }
+}

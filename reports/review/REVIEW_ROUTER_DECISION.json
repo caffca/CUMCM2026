@@ -1,0 +1,939 @@
+{
+  "schema_version": 1,
+  "artifact_id": "review_router_decision",
+  "router_decision_id": "RR-333550026f707aeae9c0228f",
+  "problem_id": "D2026",
+  "question_ids": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "authority_inputs": {
+    "discovery_refs": [
+      {
+        "path": "reports/discovery/MODEL_OPPORTUNITIES.json",
+        "sha256": "38cfc767a9f456ed08fd9618a10faf797baa951828b71368c0f674f69fd7c5ef",
+        "role": "discovery",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      },
+      {
+        "path": "reports/discovery/PROBLEM_STRUCTURE.json",
+        "sha256": "f0a9cedc0bb419ef34e2e17446115af833241759f7f9b3f392b440c526d22d26",
+        "role": "discovery",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      }
+    ],
+    "fms_refs": [
+      {
+        "path": "reports/FINAL_MODEL_SPEC.json",
+        "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "role": "fms",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      }
+    ],
+    "validation_claim_refs": [
+      {
+        "path": "reports/contracts/QUESTION_CONTRACT.json",
+        "sha256": "a72afdaa4bb4186d829a4ef49940ba0209f1b79843ca70bec0942f42576e7a88",
+        "role": "validation_claims",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      }
+    ]
+  },
+  "authority_precedence": [
+    "fms_formulation_kind_domain",
+    "discovery_structure",
+    "validation_claim_type"
+  ],
+  "routes_by_question": {
+    "Q1": {
+      "question_id": "Q1",
+      "route_status": "routed",
+      "reviewer_slot": "B",
+      "classification": "primary_only",
+      "primary_specialist": "graph_network",
+      "secondary_checklist": null,
+      "basis": [
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].parameters[0].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].parameters[0].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].parameters[1].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].parameters[1].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].parameters[2].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].parameters[2].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].parameters[3].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].parameters[3].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].outputs[0].type",
+          "structural_signal": "edge",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].outputs[0].type matched profile signal edge"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[0].input_bindings[0].path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[0].input_bindings[0].path matched profile signal path"
+        }
+      ],
+      "authority_conflicts": [],
+      "fallback_action": "none",
+      "reason": "primary selected by FMS then Discovery then claim precedence",
+      "input_snapshot_sha256": "3dccdb9c38039a215516e94635b133199c89631a3b7f9e0daa350923c84277b3"
+    },
+    "Q2": {
+      "question_id": "Q2",
+      "route_status": "routed",
+      "reviewer_slot": "B",
+      "classification": "ambiguous",
+      "primary_specialist": "graph_network",
+      "secondary_checklist": {
+        "specialist": "operations_research",
+        "checklist_id": "operations_research.narrow",
+        "checks": [
+          "feasible-domain and constraint coverage",
+          "objective necessity and stopping rule",
+          "optimality or bound claim ceiling"
+        ]
+      },
+      "basis": [
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[0].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[0].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[1].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[1].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[2].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[2].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[3].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[3].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[4].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[4].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].parameters[5].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].parameters[5].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].input_bindings[0].path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[1].input_bindings[0].path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].formulation_kind",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[1].formulation_kind matched profile signal optimization"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[1].computation_contract.component_type",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[1].computation_contract.component_type matched profile signal optimization"
+        }
+      ],
+      "authority_conflicts": [],
+      "fallback_action": "one_primary_plus_one_narrow_secondary",
+      "reason": "primary selected by FMS then Discovery then claim precedence; second structural signal retained as one narrow checklist",
+      "input_snapshot_sha256": "06ff3ec3ab1a9e0cde3b0cab5f30f67321c6fa0c8a1e9c76d634e3f1a3c62310"
+    },
+    "Q3": {
+      "question_id": "Q3",
+      "route_status": "routed",
+      "reviewer_slot": "B",
+      "classification": "ambiguous",
+      "primary_specialist": "graph_network",
+      "secondary_checklist": {
+        "specialist": "operations_research",
+        "checklist_id": "operations_research.narrow",
+        "checks": [
+          "feasible-domain and constraint coverage",
+          "objective necessity and stopping rule",
+          "optimality or bound claim ceiling"
+        ]
+      },
+      "basis": [
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[0].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[0].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[1].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[1].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[2].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[2].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[3].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[3].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[4].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[4].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[5].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[5].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[6].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[6].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].parameters[7].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].parameters[7].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].input_bindings[0].path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[2].input_bindings[0].path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].formulation_kind",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[2].formulation_kind matched profile signal optimization"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[2].computation_contract.component_type",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[2].computation_contract.component_type matched profile signal optimization"
+        }
+      ],
+      "authority_conflicts": [],
+      "fallback_action": "one_primary_plus_one_narrow_secondary",
+      "reason": "primary selected by FMS then Discovery then claim precedence; second structural signal retained as one narrow checklist",
+      "input_snapshot_sha256": "a8c4fc969ce29669dc4fab7884aa12b8af32c88a931477b0eedc71fd4f0500fd"
+    },
+    "Q4": {
+      "question_id": "Q4",
+      "route_status": "routed",
+      "reviewer_slot": "B",
+      "classification": "ambiguous",
+      "primary_specialist": "graph_network",
+      "secondary_checklist": {
+        "specialist": "operations_research",
+        "checklist_id": "operations_research.narrow",
+        "checks": [
+          "feasible-domain and constraint coverage",
+          "objective necessity and stopping rule",
+          "optimality or bound claim ceiling"
+        ]
+      },
+      "basis": [
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[0].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[0].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[1].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[1].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[2].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[2].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[3].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[3].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[4].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[4].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[5].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[5].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].parameters[6].source_path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].parameters[6].source_path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].input_bindings[0].path",
+          "structural_signal": "path",
+          "precedence_level": "fms",
+          "specialist": "graph_network",
+          "reason": "fms structural field problems[3].input_bindings[0].path matched profile signal path"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].formulation_kind",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[3].formulation_kind matched profile signal optimization"
+        },
+        {
+          "source_ref": {
+            "path": "reports/FINAL_MODEL_SPEC.json",
+            "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+            "role": "fms",
+            "question_ids": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ]
+          },
+          "field_path": "problems[3].computation_contract.component_type",
+          "structural_signal": "optimization",
+          "precedence_level": "fms",
+          "specialist": "operations_research",
+          "reason": "fms structural field problems[3].computation_contract.component_type matched profile signal optimization"
+        }
+      ],
+      "authority_conflicts": [],
+      "fallback_action": "one_primary_plus_one_narrow_secondary",
+      "reason": "primary selected by FMS then Discovery then claim precedence; second structural signal retained as one narrow checklist",
+      "input_snapshot_sha256": "ec6aec4a21202883664bce9d6436d85b6f868c80991b5b31cb53dc0c88e0e924"
+    }
+  },
+  "reviewer_roster": [
+    {
+      "seat_id": "A",
+      "identity": "Competition Modeling Generalist",
+      "count": 1,
+      "fixed": true
+    },
+    {
+      "seat_id": "B",
+      "identity": "Dynamic Specialist",
+      "count": 1,
+      "primary_per_question": 1,
+      "secondary_max_per_question": 1,
+      "finite_seat": true
+    },
+    {
+      "seat_id": "C",
+      "identity": "Scientific Paper & Visual Editor",
+      "count": 1,
+      "fixed": true
+    }
+  ],
+  "fallback": {
+    "ambiguous": "one_primary_plus_one_narrow_secondary",
+    "missing_or_invalid_structured_input": "fail_closed_return_to_methodology_review",
+    "unknown_domain": "reject_without_fanout",
+    "invalid_provenance": "fail_closed",
+    "max_reviewer_seats": 3,
+    "all_specialist_fanout": false
+  },
+  "failure_routes": {
+    "figure_data_render_error": "figure_editorial",
+    "figure_type_selection": "editorial_plan",
+    "figure_text_order_explanation": "writing",
+    "float_pagination_whitespace": "compile_package",
+    "claim_without_evidence": "result_review",
+    "model_structure_error": "methodology_review",
+    "statistical_protocol_error": "validation_plan",
+    "coding_visual_error": "coding_visual",
+    "unknown": "compile_package"
+  },
+  "review_policy": {
+    "finding_only": true,
+    "self_repair": false,
+    "self_close": false,
+    "repair_owner": "existing_final_review_repair_editorial",
+    "same_reviewer_re_review": true,
+    "new_trip_required": true,
+    "original_verdict_immutable": true,
+    "verification_read_only": true,
+    "verification_dispatches_reviewer": false,
+    "verification_closes_finding": false,
+    "independence_basis": "role_and_context_isolation_only",
+    "same_model_is_not_statistical_independence": true,
+    "forbidden_route_inputs": [
+      "paper_wording",
+      "gate_status",
+      "other_reviewer_score",
+      "other_reviewer_conclusion",
+      "review_order",
+      "repair_result"
+    ]
+  },
+  "provenance": {
+    "source_commit": "9c402786095256583c0f86ca965af99c846ab055",
+    "preset_bundle_sha256": "836e9a20d43559014e7bb2b361771ceca36d3acff539adffdc85cbac8fc6e72f",
+    "producer": "methodology_review",
+    "run_id": "CS-20260911T071520Z-1A9D30",
+    "input_refs": [
+      {
+        "path": "reports/discovery/MODEL_OPPORTUNITIES.json",
+        "sha256": "38cfc767a9f456ed08fd9618a10faf797baa951828b71368c0f674f69fd7c5ef",
+        "role": "discovery",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      },
+      {
+        "path": "reports/discovery/PROBLEM_STRUCTURE.json",
+        "sha256": "f0a9cedc0bb419ef34e2e17446115af833241759f7f9b3f392b440c526d22d26",
+        "role": "discovery",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      },
+      {
+        "path": "reports/FINAL_MODEL_SPEC.json",
+        "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+        "role": "fms",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      },
+      {
+        "path": "reports/contracts/QUESTION_CONTRACT.json",
+        "sha256": "a72afdaa4bb4186d829a4ef49940ba0209f1b79843ca70bec0942f42576e7a88",
+        "role": "validation_claims",
+        "question_ids": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4"
+        ]
+      }
+    ],
+    "preset_manifest_ref": {
+      "path": "PRESET_BUILD_MANIFEST.json",
+      "sha256": "d92f24ba77d0388e031fedcce85b02d72b3be3860a87a4b9c8fa7941bd5ecd32",
+      "role": "preset_provenance"
+    },
+    "prompt_model_resource": {
+      "prompt_sha256": "9dd3ae7e56b79a3ff75093b6b93b8f0cb74492259d051145639ad868a4f9f3e3",
+      "model": "qwen3.8-flash",
+      "resource_profile": "standard"
+    },
+    "generated_at": "2026-09-12T02:20:16+08:00"
+  },
+  "invalidation": {
+    "changed_input_refs": [],
+    "invalidated_question_ids": [],
+    "invalidated_artifacts": [],
+    "invalidated_stages": []
+  },
+  "authority_boundary": {
+    "explanatory_routing_only": true,
+    "can_modify_idea": false,
+    "can_modify_fms": false,
+    "can_modify_solver": false,
+    "can_modify_result_registry": false,
+    "can_close_own_finding": false
+  }
+}

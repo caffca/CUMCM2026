@@ -1,0 +1,230 @@
+{
+ "idea_id": "Q1-R52",
+ "question_id": "Q1",
+ "started_at": "2026-09-11T16:19:26+0800",
+ "protocol": "TP-D2026-01",
+ "criterion": "conflict ⇔ band_overlap ∧ [Δt1 mod P ∈ S_d ∧ |Δt1| ≤ (n-1)P + d-1]（同组）；异组回退逐对枚举",
+ "applicability": {
+  "2(d-1)<P_all_classes": true,
+  "class_homogeneity_g_d_n": {
+   "A": {
+    "count": 20,
+    "signatures": [
+     [
+      60,
+      5,
+      3,
+      65
+     ]
+    ],
+    "homogeneous": true
+   },
+   "B": {
+    "count": 40,
+    "signatures": [
+     [
+      40,
+      3,
+      4,
+      43
+     ]
+    ],
+    "homogeneous": true
+   },
+   "C": {
+    "count": 90,
+    "signatures": [
+     [
+      8,
+      2,
+      12,
+      10
+     ]
+    ],
+    "homogeneous": true
+   }
+  },
+  "homogeneous": true
+ },
+ "horizon": {
+  "T_MAX": 643,
+  "all_slots_within_horizon": true,
+  "all_bands_within_0_99": true
+ },
+ "pairs": {
+  "pairs_total": 11175,
+  "pairs_evaluated": 11175,
+  "closed_form_branch_used": 4975,
+  "fallback_enum_branch_used": 6200,
+  "time_predicate_pairs_checked_by_closed_form": 4975,
+  "time_predicate_positives": 479,
+  "time_predicate_mismatches": 0,
+  "fallback_class_pairs": [
+   "AB",
+   "AC",
+   "BC"
+  ],
+  "cf_edges": 297,
+  "enum_edges": 297,
+  "pair_symdiff": 0,
+  "elementwise_equal": true,
+  "first_mismatches": []
+ },
+ "by_class_pair": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "BB": 10,
+  "CC": 19
+ },
+ "gcd_structure": {
+  "A-B": 1,
+  "A-C": 5,
+  "B-C": 1,
+  "note": "gcd(65,43)=1、gcd(65,10)=5、gcd(43,10)=1 ⇒ 仅 A-C 可按 5 陪集压缩，其余跨类无残差压缩空间（本原型按路线说明回退枚举）"
+ },
+ "residual_histogram": {
+  "A": {
+   "P": 65,
+   "d": 5,
+   "n": 3,
+   "nonzero_buckets": 16,
+   "max_bucket": 3,
+   "residual_set_S_d": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    61,
+    62,
+    63,
+    64
+   ],
+   "histogram": {
+    "0": 1,
+    "5": 1,
+    "10": 1,
+    "13": 1,
+    "16": 1,
+    "23": 1,
+    "25": 1,
+    "30": 2,
+    "33": 1,
+    "35": 1,
+    "40": 1,
+    "42": 1,
+    "45": 2,
+    "50": 1,
+    "60": 3,
+    "61": 1
+   },
+   "sum_C2_same_residual": 5
+  },
+  "B": {
+   "P": 43,
+   "d": 3,
+   "n": 4,
+   "nonzero_buckets": 30,
+   "max_bucket": 2,
+   "residual_set_S_d": [
+    0,
+    1,
+    2,
+    41,
+    42
+   ],
+   "histogram": {
+    "0": 1,
+    "2": 2,
+    "4": 2,
+    "6": 1,
+    "8": 1,
+    "9": 2,
+    "10": 1,
+    "12": 1,
+    "13": 2,
+    "14": 1,
+    "15": 2,
+    "19": 1,
+    "20": 1,
+    "21": 1,
+    "22": 1,
+    "24": 1,
+    "25": 1,
+    "26": 1,
+    "27": 2,
+    "28": 1,
+    "30": 2,
+    "31": 1,
+    "32": 1,
+    "34": 1,
+    "36": 1,
+    "37": 2,
+    "38": 2,
+    "40": 2,
+    "41": 1,
+    "42": 1
+   },
+   "sum_C2_same_residual": 10
+  },
+  "C": {
+   "P": 10,
+   "d": 2,
+   "n": 12,
+   "nonzero_buckets": 10,
+   "max_bucket": 17,
+   "residual_set_S_d": [
+    0,
+    1,
+    9
+   ],
+   "histogram": {
+    "0": 9,
+    "1": 12,
+    "2": 11,
+    "3": 7,
+    "4": 5,
+    "5": 17,
+    "6": 8,
+    "7": 8,
+    "8": 10,
+    "9": 3
+   },
+   "sum_C2_same_residual": 428
+  }
+ },
+ "analytic_bounds_intra_class": {
+  "per_class": {
+   "A": {
+    "UB_relaxed": 1,
+    "LB_forced": 0,
+    "C2_same_residual_bandfree": 5
+   },
+   "B": {
+    "UB_relaxed": 30,
+    "LB_forced": 0,
+    "C2_same_residual_bandfree": 10
+   },
+   "C": {
+    "UB_relaxed": 61,
+    "LB_forced": 8,
+    "C2_same_residual_bandfree": 428
+   }
+  },
+  "UB_intra": 92,
+  "LB_intra": 8
+ },
+ "bound_validity_selfcheck": {
+  "LB_intra": 8,
+  "UB_intra": 92,
+  "intra_enum_total": 29,
+  "LB_le_enum_le_UB": true
+ },
+ "runtime_seconds": 0.2802,
+ "runtime_total_seconds": 0.2815,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R52/solution_q1_r52.json",
+ "determinism": "deterministic (no RNG)",
+ "status": "completed",
+ "failure_mode": null
+}

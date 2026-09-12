@@ -1,0 +1,23 @@
+instance: star_edges=1693 combos=270626
+seed=11 start=1 tuple=[24, 84, 1680, 450]
+seed=11 start=6 tuple=[23, 88, 2042, 452]
+seed=11 LNS tuple=[21, 93, 1935, 472]
+seed=11 LNS tuple=[21, 93, 1935, 469]
+seed=11 LNS tuple=[19, 96, 1853, 491]
+seed 11 -> tuple=[19, 96, 1853, 491] wall=185.0s starts=18 residual=0
+seed=29 start=1 tuple=[33, 76, 1780, 409]
+seed=29 LNS tuple=[32, 77, 1752, 416]
+seed=29 start=2 tuple=[31, 72, 1934, 350]
+seed=29 LNS tuple=[29, 74, 1932, 361]
+seed=29 LNS tuple=[28, 75, 2021, 367]
+seed=29 LNS tuple=[28, 75, 2012, 379]
+seed 29 -> tuple=[28, 75, 2012, 379] wall=185.0s starts=16 residual=0
+seed=47 start=1 tuple=[27, 75, 1839, 372]
+seed=47 start=5 tuple=[25, 83, 2113, 398]
+seed=47 LNS tuple=[24, 85, 2014, 409]
+seed=47 LNS tuple=[23, 86, 1914, 422]
+seed=47 LNS tuple=[22, 90, 1916, 444]
+seed=47 LNS tuple=[22, 90, 1916, 442]
+seed=47 LNS tuple=[20, 93, 1915, 460]
+seed=47 LNS tuple=[19, 95, 1915, 466]
+seed 47 -> tuple=[19, 95, 1915, 466] wall=185.0s starts=18 residual=0

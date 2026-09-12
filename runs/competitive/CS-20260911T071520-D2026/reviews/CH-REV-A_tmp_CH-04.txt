@@ -1,0 +1,148 @@
+child_run_id: "CH-04"
+role: "alternative_paradigm_scout"
+question_ids: (list, len=4)
+  [0]: "Q1"
+  [1]: "Q2"
+  [2]: "Q3"
+  [3]: "Q4"
+input_binding: (dict, len=4)
+  common_input_path: "runs/competitive/CS-20260911T071520-D2026/common_input.json"
+  common_input_sha256: "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86"
+  sha256_recomputed_by_child: true
+  read_scope_note: "仅读 common_input.json（含内嵌 plans_table_compact 150 行）。未读取 routes/ 下其他 child 文件、未读取 Manager 排序、未浏览任何赛题讨论。"
+self_recomputed_scale_facts: (dict, len=3)
+  disclaimer: "以下为本人从 common_input.json 内嵌 plans_table_compact 用区间算术复算的规模/结构事实，用于路线可行性与预算判断；不是侦察实验结论，不得写入 results/ 或论文。"
+  facts: (list, len=10)
+    [0]: "按 F-005 口径 slot_k=[t1+(k-1)(g+d), t1+(k-1)(g+d)+d)（g 为空闲间隔）+ F-006 频段与时间半开交叠，复得冲突对 297，按类 AB21/AC66/BC181/BB10/CC19，涉及计划 148——与 computed_data_facts 逐项一致（双实现一致性的前置证据）。"
+    [1]: "占用单元：incidence=16680（=20*3*5*10+40*4*3*15+90*12*2*3）、去重单元 14698、单格最多 4 个计划同时占用、自由单元 47620（=64300-16680）。"
+    [2]: "冲突图极稀疏：顶点 148、边 297、平均度 4.01、最大度 8（度分布 1:9, 2:24, 3:25, 4:38, 5:23, 6:14, 7:9, 8:6）、触及 C 的边 266/297=89.6%、仅 2 个计划完全无冲突；贪心极大匹配 61、200 个随机序下最大 63（→被触碰计划数的一个可行下界）。"
+    [3]: "冲突图为单一 148 顶点连通分量（不可按连通分量分解求解）→ LNS/退火的价值恰在于“无分解可用时仍能给出可行解与改进证据”；邻域只能按 BFS 冲突簇/频段带/时隙带构造。"
+    [4]: "倒排索引连接（按 (band,time) 单元分组，同格计划对取并集）产生的候选对恰为 297，与真冲突集全等（因 F-006 冲突 ⟺ 存在共占单元，故无伪阳性），实测 0.211 s，相对 C(150,2)=11175 全对扫描减少约 37 倍。"
+    ... (5 more items)
+  input_inconsistency_flags_for_manager: (list, len=3)
+    [0]: "computed_data_facts.horizon_note 写 T_MAX=621，而字段 T_MAX_delta_t=643 且 occupancy_cells_total=64300=100*643；本人复算与 643 一致（621 对应把 g 当作周期起算的错误口径，错误口径下冲突对为 237 且出现 1 个 AA 冲突）。路线一律按 F-005 例算式与 643 视界实现，侦察阶段必须显式声明口径。"
+    [1]: "dataset_snapshot.class_profile 的 last_slot_end_max（A610/B618/C621）与 F-005 口径下的复算结果不符（同源于把 g 当周期）；不影响本片段路线设计，但会影响 Q3 视界约束的写法。"
+    [2]: "若规定平移后占用跨度不得超出 [0,T_MAX)，则 2 个 C 计划在 +5Δt 方向越界（其余为 0）；题面 F-012 只给幅度上限，未给视界上限，属需在 Manager 层统一冻结的口径歧义。"
+routes: (list, len=9)
+  [0] (dict, len=20)
+    idea_id_suggested: "Q1-R41"
+    question_id: "Q1"
+    tier: "baseline"
+    method_family: "simulation"
+    problem_reformulation: "把冲突检测改写成 150 个周期脉冲梳在 (100 频段 × T_MAX 时隙) 离散占用张量上的“单元格共现连接”问题：先物化占用位图，再用 (band,time) 倒排索引/位并行 AND 生成冲突对集，并用植入已知冲突的随机化压力测试为“完全且无伪”提供召回率证据。"
+    model: {"family": "离散占用张量 + 倒排连接（位并行集合求交）", "representation": "每计划 i 的占用集合 O_i ⊆ [0,100)×[0,643)（按 F-005 周期重复、F-001/F-023 半开频段、F-003 整数时隙）；冲突判据 C(i,j)=1 ⇔ O_i ∩ O_j ≠ ∅（与 F-006 等价，因二者都是“存在同格共占”）", "decision_variables": ["无优化决策；输出量 y_ij=1[O_i∩O_j≠∅]"], "objective_id": "Q1-C1", "constraint_ids": ["F-001", "F...<+229 chars>
+    transformations: ["discretization_to_grid", "set_join_via_inverted_index", "bit_parallel_representation", "randomized_stress_testing_with_planted_truth"]
+    solver: {"family": "structure_specific", "algorithm": "阶段A 占用位图 + 倒排索引 join 精确枚举；阶段B 植入式随机压力测试：在冻结种子下对 150 计划参数做受控扰动/复制平移，生成带植入真值的实例，测两条独立实现（位图 join 与区间算术）的对称差与召回率", "fit_reason": "题面结构 F-001(100 个离散频段)+F-003(整数 Δt 时隙)+F-005(周期重复)+F-006(冲突=频段交叠且任一占用时段交叠) 使冲突等价于“存在同格共占”；本人复算 incidence=16680、去重单元 14698、单格最多 4...<+357 chars>
+    bound_plan: {"lower_bound_method": "植入真值召回：每个合成实例植入 K 个已知冲突对，要求 100% 检出，得“完全性”的随机化下界证据（漏检率 ≤ 1/(200K) 的经验界）", "upper_bound_method": "伪阳性率：位图结果与区间算术结果的对称差必须为空集；非空即 FAIL（两实现互为上界校验）", "gap_metric": "两套实现冲突对集合的对称差 / |冲突对|", "gap_threshold": 0.0, "proof_possible": true}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["边界用例：Δt 邻接（[40,45) 与 [45,50) 不算冲突）、频段 [80,90) 与 [90,95) 不算冲突、末格 t=T_MAX-1 截断（F-023 半开口径）", "口径双向复算：同时输出 g 为空闲间隔（F-005，297 对）与 g 为周期（237 对）两种口径的计数，供 Manager 冻结口径并解释差异来源", "与 computed_data_facts...<+126 chars>
+    required_assumptions: ["时间视界取 [0, T_MAX)，T_MAX 由数据复算为 643（与 occupancy_cells_total=64300 自洽），不使用 horizon_note 的 621", "冲突判定按 F-005 的“间隔=两次占用之间的空闲时长”口径（题面例算式）", "Q1 只检测不决策（question_contract.forbidden_information）"]
+    failure_conditions: ["两实现对称差非空，且定位后仍存在口径分歧", "任一体现方案在 600s×3 重复内无法完成全部 11175 对判定", "植入真值测试出现漏检（召回 <1）→ 直接淘汰该实现", "实现把冲突记成“时段对”而非“计划对”，导致 result1.xlsx 行语义与模板不符（Q1-C2）"]
+    strengths: ["表示层与区间算术完全独立，直接满足 Q1-C1 的双实现一致性验收", "植入式压力测试给出可量化召回证据，而不是“看起来对”", "运行时余量大（全扫描 <0.1s 量级），600s 预算几乎不构成约束"]
+    weaknesses: ["随机压力测试只能给概率性完全性证据，最终完全性仍需精确枚举的确定性论证", "不产生最优性或上界证书（Q1 也不需要）", "对 n=150 这种小规模，位图相对暴力枚举的优势主要是表示独立性而非速度"]
+    evidence_against_minimal: "若暴力逐对枚举在 600s 内即可完成且与区间算术实现零对称差，则本路线的增量价值仅为第二条表示的独立性与植入测试的召回证据；若二者均无法产出，则记为证据缺口而非路线优势。"
+    validation_plan: ["独立 checker：重跑位图实现并与提交对集比对（Q1-C1）", "行级断言：result1.xlsx 每对出现一次、无重复、列结构与附件2 模板一致（Q1-C2）", "统计口径：结果按类对/频段/时隙聚合，与 results JSON 绑定（Q1-C3 前置）"]
+    complexity: "low"
+    interpretability: "high"
+    implementation_risk: "low"
+    status: "proposed"
+  [1] (dict, len=20)
+    idea_id_suggested: "Q1-R42"
+    question_id: "Q1"
+    tier: "advanced_alternative"
+    method_family: "statistical_probabilistic"
+    problem_reformulation: "把用频占用看成 100×643 网格上的多类“确定性点过程”，冲突集为一张稀疏图（本人复算 148 顶点 / 297 边 / 平均度 4.0）；问题重表达为“按类对×频段×时隙的分层计数 + 随机化显著性热点排序”。"
+    model: {"family": "点过程式随机占位描述 + 随机图零模型", "representation": "单元随机化模型：f_i = P(任意单元被计划 i 占用) = n_i*d_i*w_i/(100*643)；零模型 E[N_pairs] = Σ_{i<j} P_band(i,j)*P_time(i,j)，其中 P_band 由 F-001/F-002 均匀位置假设、P_time 由 F-005 周期脉冲占空比给出", "decision_variables": ["无；输出每类对/每频段/每时隙的冲突计数与其零模型偏离量"], "objective_id": "Q1-C3", "cons...<+193 chars>
+    transformations: ["stratified_contingency_decomposition", "randomized_null_model_calibration", "multiple_testing_ranking"]
+    solver: {"family": "structure_specific", "algorithm": "前置阶段（精确）：复用 Q1-R41 位图/区间两实现的冲突对集；统计阶段：分层计数 + 均匀随机重排（置换检验，1000 次）给出热点 p 值与 FDR 校正排序", "fit_reason": "引用结构事实：F-001（100 离散频段）、F-002（连续定宽占用）、F-005（周期重复产生占空比）、F-006（冲突 = 频段交叠 AND 时段交叠）给出可解析计算的两两交叠概率，使零模型无需外部数据即可复算；本人复算的 incidence=16680 与去重单元 14698 说明占用率约 25....<+284 chars>
+    bound_plan: {"lower_bound_method": "零模型 E[N_pairs] 作为“随机解释可产生的冲突量”下界参考（仅作合理性对照，不作为真值下界）", "upper_bound_method": "泊松/切比雪夫型上尾 + 1000 次置换的经验上分位，给出各频段/时隙热点计数的 95% 随机上界", "gap_metric": "实测冲突对总数 / 零模型预测总数（倍数偏离）与各层 p 值 FDR", "gap_threshold": "分层 p 值经 BH 校正后 ≤0.05 才允许被叙述为“热点”；否则只报计数不报显著性", "proof_possible": false}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["样本量诚实性：n_pairs=1 实例、11175 个计划对、297 个事件（本人复算）→ 禁止把统计显著性写成“最优/必然”，只允许描述性计数 + 相对零模型的偏离", "与 Q1-R41 的零对称差一致性（本路线不得自己重算一套对集，必须复用精确对集）", "置换稳定性：3 个种子下热点排序的秩相关 ≥0.9 才登记热点结论", "论文可叙述性检查：热点维度必须能落到表/图（频...<+15 chars>
+    required_assumptions: ["冲突对集来自 Q1-R41（或任一通过 Q1-C1 的精确路线）；本路线自身不产出 result1.xlsx", "频段/时间位置视为均匀随机是“零模型”而非题面生成假设（题面无随机生成机制声明）", "所有统计量可由冻结种子+冻结置换次数复算"]
+    failure_conditions: ["被误当作 Q1-C1 检测实现提交（覆盖不了完全性）→ 硬淘汰", "分层单元过稀（大量层期望计数 <5）导致近似失效，只能降级为纯计数描述", "3 个种子下热点排序秩相关 <0.9（结论不稳定）", "论文把显著性写成因果或最优性结论（竞赛合规/方法学风险）"]
+    strengths: ["为 Q1-C3 提供超越“报总数”的分层与显著性证据，形成可核查的统计叙事", "置换检验完全可复算，不引入外部数据", "能识别冲突的空间聚集（本人复算单格最多 4 计划共占、平均度 4.0），为 Q2 的邻域设计提供输入"]
+    weaknesses: ["不产出必需的枚举集合，必须与精确检测路线串联", "零模型的均匀假设与题面真实生成机制无关，偏离倍数只能作描述性解释", "多重比较后可能出现“显著热点”假象，需谨慎叙述"]
+    evidence_against_minimal: "反证判据（侦察前预登记）：若纯计数分层（不加零模型与置换）已满足 Q1-C3 验收（“统计数字与 results JSON 逐项命中”），则本路线的随机化层只保留为可选诊断，不进正文；若置换结果使全部热点 p>0.05，则不得保留“热点”表述。"
+    validation_plan: ["统计数字逐项落 results JSON，与论文表格一一对应（Q1-C3 验收）", "独立复算：换随机数库/换置换顺序，热点集合须一致", "禁止把侦察阶段数字写入 results/（本阶段仅登记 evidence 结构）"]
+    complexity: "medium"
+    interpretability: "medium"
+    implementation_risk: "low"
+    status: "proposed"
+  [2] (dict, len=19)
+    idea_id_suggested: "Q2-R41"
+    question_id: "Q2"
+    tier: "baseline"
+    method_family: "graph_combinatorial"
+    problem_reformulation: "消解 = 在冲突图上为每个顶点选一个“重嵌入动作”（保持/频段平移/时间平移/撤销），使边集清空；用随机化多起点贪心按“每动作边际消解边数”构造，再用交换+重定位局部搜索改进。"
+    model: {"family": "冲突图顶点操作（加权顶点覆盖 + 着色式重嵌入）", "representation": "图 G=([150], E)，E 为 Q1 冲突对；每顶点动作 a_i ∈ A_i（|A_i|=22..32，本人复算），a_i=重嵌入后占用集重算；约束：所有动作执行后 E' = ∅", "decision_variables": ["a_i ∈ {keep, band_shift(δf), time_shift(δt), revoke}, i=1..150", "δf ∈ [-10,10], δt ∈ [-5,5]（整数，F-012）"], "objective_id": "...<+215 chars>
+    transformations: ["graph_reformulation", "randomized_greedy_construction", "local_search_improvement", "incremental_conflict_delta_evaluation"]
+    solver: {"family": "stochastic_population", "algorithm": "多起点随机贪心 + 局部搜索（RCL 排序：优先保护 A>B>C、边际消解边数最大）→ 局部最优后做 1-交换/2-交换（换动作类型、换平移量）与撤销↔调整互换；每起点用位图增量评估", "fit_reason": "引用本人复算的结构事实：冲突图仅 297 条边、平均度 4.01、最大度 8，且 148 个涉事顶点构成单一主分量（不可按连通分量整体分解）→ 分解式精确法受限，边际改进型局部搜索是预算内可完成的范式；“边际消解边数”的贪心打分因最大度仅 8 而高度局部化。平移交互图 1244 边...<+372 chars>
+    bound_plan: {"lower_bound_method": "被触碰计划数下界 = 冲突图极大匹配（本人复算贪心 61、随机序最大 63，因每条边至少需一端被调整或撤销）；撤销数下界 = 仅靠“不撤销”能否清空边的可行性证书（把该约束交 CP-SAT 或图搜索判定）", "upper_bound_method": "本路线自身产出的最优可行解（|revoke|, |adjusted|, 优先级代价, 幅度）元组即上界；与精确路线（CP-SAT）结果比对", "gap_metric": "字典序逐层差（revoke 差、adjusted 差、幅度差）；相对匹配下界的 |adjusted|+|revoke| g...<+89 chars>
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["每个起点解必须过 Q1 检测器复验为 0 对（Q2-C1）", "逐行合规断言 |Δf|≤10、|Δt|≤5、次数与间隔不变、频段落 0..99（Q2-C2）", "稳定性：3 个种子各自的最优元组极差；报告 500 起点的元组分布（不只报最好）", "增量评估正确性：随机抽 200 个中间态，用全量位图重算冲突数，差异必须为 0", "选择数据范围声明：本路线不消费任何留出测试集...<+31 chars>
+    required_assumptions: ["动作幅度为整数 Δf/Δt 格点（F-003、F-012）", "“调整次数”=被调整计划数（题面表1 口径），幅度为 |Δf|+|Δt| 之和", "平移后是否允许超出 [0,T_MAX) 采用与主路线一致的冻结口径（本人复算：2 个 C 计划在 +5Δt 方向越界）"]
+    failure_conditions: ["任一重复在 600s 内得不到零冲突可行解（贪心易陷入冲突残余 → 直接 FAIL，不得靠撤销兜底刷可行）", "增量评估与全量重算不一致（正确性缺陷，整条路线作废）", "结果对 α/起点数极端敏感（3 种子元组极差 >1 个撤销）", "撤销数明显高于精确路线且无下界说明 → 作为“对照失败”登记，不用于正文结论"]
+    strengths: ["与 CP-SAT 精确路线范式不同，满足 Q2-C3 的“启发式对照”硬要求", "匹配下界给出可核查的 |adjusted|+|revoke| 证书，纯图论、不依赖求解器状态", "实现小、可解释、秒级可得首解，便于快速定位口径错误"]
+    weaknesses: ["无最优性证书，字典序第 3/4 层（优先级、幅度）只被近似优化", "贪心易过早撤销：需显式“先试调整再撤销”的次序，否则撤销数虚高", "邻域设计经验性强，参数（RCL α）影响结果稳定性"]
+    validation_plan: ["对调整后计划集重跑 Q1 检测器返回 0 对（Q2-C1）", "check_q2 逐行断言（Q2-C2）", "表1 三类保留/调整/撤销与逐行动作聚合一致（Q2-C4）", "与精确路线在同一 canonical evaluator 下比对字典序元组"]
+    complexity: "medium"
+    interpretability: "high"
+    implementation_risk: "low"
+    status: "proposed"
+  [3] (dict, len=20)
+    idea_id_suggested: "Q2-R42"
+    question_id: "Q2"
+    tier: "advanced_alternative"
+    method_family: "hybrid_decomposition"
+    problem_reformulation: "把全局消解拆成“外层大邻域破坏/修复 + 内层被破坏子图的精确 CP-SAT 重优化”：外层决定哪些计划进入待重排子集，内层在该子集上给出带最优性状态的字典序最优解。"
+    model: {"family": "ALNS 外层 + CP-SAT 局部精确内核（破坏-修复分解）", "representation": "状态 = 全 150 顶点的动作向量；destroy 选择规模 ≤15 的顶点子集 S（按冲突簇/时间窗/频段窗/随机四种算子），其余固定，子问题 = 对 S 上的诱导冲突子图求字典序最优重嵌入", "decision_variables": ["S ⊆ [150]（每迭代选定）", "对 i∈S：动作类型 + δf_i/δt_i（内层 CP-SAT 整数变量）"], "objective_id": "Q2-C3", "constraint_ids": ["F-0...<+234 chars>
+    transformations: ["decomposition", "destroy_and_repair", "exact_subproblem_oracle", "lexicographic_constraint_fixing", "operator_self_adaptation"]
+    solver: {"family": "structure_specific", "algorithm": "ALNS：destroy 算子 {随机-移除、BFS 冲突簇移除（自一顶点出发取冲突图 1~2 跳邻域，因主分量为单一 148 顶点团块，不能整分量分解）、最坏边际移除、频段带移除、时隙带移除}；repair = CP-SAT 在 |S|≤15 子问题上求字典序最优（外层用固定权重 1, 10^3, 10^6, 10^9 逐层约束锁定）；接受 = 字典序改进接受 + 受限劣化重启", "fit_reason": "引用结构事实：F-008（单参数）+F-012（|δf|≤10,|δt|≤5）把每顶点动...<+465 chars>
+    bound_plan: {"lower_bound_method": "①冲突图极大匹配（≥63，本人复算）给出被触碰计划数下界；②在“只允许撤销、不允许调整”受限族上用 CP-SAT 求最小撤销数 LB；③内层子问题的局部最优性状态（子问题 OPTIMAL）作为“该邻域内不可改进”的证据", "upper_bound_method": "外层历史最优可行解的字典序元组（任何时刻都可行，因为有可行性修复兜底：撤销 S 中冲突端点）", "gap_metric": "元组逐层差 + 与匹配下界的 |adjusted|+|revoke| 相对差", "gap_threshold": "登记为侦察前阈值：外层解与内层“整图...<+65 chars>
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["内层子问题最优性状态逐次记录（OPTIMAL/FEASIBLE/INFEASIBLE 计数），不得只报最终解", "可行性修复路径必须始终维持零冲突（ALNS 全程可行解），否则违反 Q2-C1 的 anytime 要求", "算子使用率与改进率表（自适应权重收敛性证据）", "与 Q2-R41、以及纯 CP-SAT 整体模型在同一 canonical evaluator 下比对字...<+73 chars>
+    required_assumptions: ["内层固定顶点集不变（外层的“固定”即对全局决策的承诺）", "字典序用大权重法实现时必须验证权重比超过最大可能代价（150*32 幅度上界），否则可能倒序", "平移幅度与视界口径与主路线一致（见 Manager 待冻结口径）"]
+    failure_conditions: ["内层子问题在预算内频繁（>30% 次数）不返回可行/最优状态 → 分解失效", "自适应权重退化成单一算子（探索丧失），3 种子结果离散度大", "整程不如 Q2-R41 多起点贪心（则本路线作为复杂度反例登记）", "为凑可行而滥用撤销，使 revoke 层劣于精确解且无解释"]
+    strengths: ["把全局组合难度切到可精确求解的小块，兼顾可行性 anytime 与局部最优证书", "与“单一整图 CP-SAT”和“纯启发式”都不同，构成第三范式，便于 Pareto 上多样化", "字典序逐层锁定的实现细节可写成可复核证据（约束文件 + 状态日志）"]
+    weaknesses: ["工程复杂度与调试成本最高（双层控制 + 状态解析）", "无全局最优证书；内层最优不代表全局最优", "参数多（|S| 分布、算子权重、接受准则），有过拟合侦察结果的风险"]
+    evidence_against_minimal: "反证判据（侦察前预登记）：若整图 CP-SAT 在 600s 内给出 OPTIMAL 状态，则本路线在最优性证据维度上严格被支配，仅保留“解结构解释”价值；若本路线字典序元组与多起点贪心（Q2-R41）在 3 种子下全部相同，则按 CS09 判定为无实质差异，不作独立候选保留。"
+    validation_plan: ["零冲突复验 + 逐行合规断言（Q2-C1/C2）", "内层求解日志与 canonical evaluator 双记录（Q2-C3 证据链）", "表1 聚合一致（Q2-C4）"]
+    complexity: "high"
+    interpretability: "medium"
+    implementation_risk: "medium"
+    status: "proposed"
+  [4] (dict, len=20)
+    idea_id_suggested: "Q2-R43"
+    question_id: "Q2"
+    tier: "recommended_solution"
+    method_family: "simulation"
+    problem_reformulation: "把消解看成离散格上的能量最小化：能量 = 冲突边数 + 分层惩罚（撤销/调整/优先级/幅度），用模拟退火在 10^222 量级的动作空间上随机游走，末尾用精确可行性修复把残余冲突投影到零冲突解。"
+    model: {"family": "模拟退火 + 确定性投影修复（马尔可夫链局部搜索）", "representation": "状态 x ∈ Π A_i（|A_i|=22..32，本人复算）；能量 E(x)=λ1*|E(x)| + λ2*revoke + λ3*adjusted + λ4*优先级 + λ5*幅度，其中 |E(x)| 由位图 AND 增量计算；提案分布偏向当前冲突端点（加权 1/|E(x)|）", "decision_variables": ["每计划动作与平移量（含撤销 0/1）"], "objective_id": "Q2-C3", "constraint_ids": ["F-006"...<+226 chars>
+    transformations: ["stochastic_local_search", "energy_scalarization_of_lexicographic_objective", "incremental_bitset_delta", "feasibility_projection_repair", "reverse_annealing_upgrade"]
+    solver: {"family": "derivative_free_local", "algorithm": "并行链退火（3 条独立链 = 3 个冻结种子）+ 每链 4×10^5 移动预算 + 收尾两级修复（撤销修复 → 撤销转调整恢复）", "fit_reason": "引用结构事实：联合动作空间约 10^222（本人由 |A_i|=22..32 复算）说明穷举不可行、而邻域高度局部化（平移交互图最大度 30）→ 适合局部随机搜索；F-005 让“移动一个计划”只改变其 ≤n*d 行占用，位图 AND 支持 O(deg) 增量评估（实测朴素实现 767 移动/秒，行级实现可再高一个量级）；本人复算冲突...<+297 chars>
+    bound_plan: {"lower_bound_method": "冲突图极大匹配下界（本人复算 61..63）用于被触碰计划数；撤销数另用“受限族 CP-SAT 最小撤销”作参考下界", "upper_bound_method": "修复投影后的可行解元组；并给出“若不做恢复阶段”的元组以显示修复贡献", "gap_metric": "字典序逐层差 + 到匹配下界的相对差 + 三链元组极差（稳定性）", "gap_threshold": "revoke 层与精确/ALNS 解差 0 且 adjusted 差 ≤1 视为有效对照（侦察前登记）", "proof_possible": false}
+    scout_plan: {"required": true, "metrics": ["feasible", "objective", "runtime", "stability", "gap"], "special_checks": ["标量化忠实性：字典序被加权近似替代可能倒序，必须逐解复核 lex 元组而非只看能量值（关键失效模式）", "修复投影统计：记录残余边数分布、恢复阶段把 revoke→adjust 的成功率", "三链稳定性：元组极差、达零冲突的移动数极差", "与 Q2-R41/Q2-R42 在同一 canonical evaluator 下比对（不得各用内部能量值比较）", "选择数据范围：无训...<+35 chars>
+    required_assumptions: ["能量权重 λ 的层级比大于最大可能代价（150 计划 × 幅度 ≤15）以保证“可行性优先于惩罚项”", "撤销修复投影始终能得到零冲突（撤销每残余簇所有顶点即无冲突，故该假设结构性成立）", "幅度代价定义为 |δf|+|δt|（题面未给跨维加权口径，需 Manager 冻结）"]
+    failure_conditions: ["三链中出现任一链 600s 内未达零冲突（鲁棒性不足，违反 anytime 要求）", "加权标量化导致“撤销换幅度”的字典序倒序（复核发现即 FAIL）", "结果对 T0/α 敏感：3 种子元组极差 >1 个撤销", "持续劣于多起点贪心（Q2-R41）→ 说明 annealing 开销浪费，登记为复杂度反例"]
+    strengths: ["实现比 ALNS 轻，且天然 anytime（任何时刻都可投影回可行）", "对 Q2-C3 的“启发式对照”给出第二种独立随机算法，稳定性可直接量化", "不依赖求解器状态，跨环境可复现（仅需 numpy）"]
+    weaknesses: ["无任何最优证书", "字典序靠加权近似，与方法学要求（目标链严格）存在张力，必须额外复核", "降温表调参经验性强，侦察结果对参数敏感"]
+    evidence_against_minimal: "反证判据（侦察前预登记）：若 Q2-R41 多起点贪心在 3 种子下已达到与精确解相同的 revoke/adjusted 元组，则本退火路线在结果上不产生增量证据，仅可作为“解空间粗糙度/可达性”诊断；若本路线元组劣于贪心，则不进入 Top-K。"
+    validation_plan: ["零冲突复验 + 逐行合规（Q2-C1/C2）", "字典序元组由 canonical evaluator 独立重算（不采信内部能量）", "表1 与逐行动作聚合一致（Q2-C4）", "三链原始记录与停止原因完整落 scout.json（失败亦记录）"]
+    complexity: "medium"
+    interpretability: "medium"
+    implementation_risk: "medium"
+    status: "proposed"
+  ... (4 more items)
+coverage_notes: (dict, len=4)
+  structural_opportunities_checked: (list, len=4)
+    [0]: "Q1: closed_form（不适用：需枚举集合，无解析式输出）; variable_elimination（不适用：无待消元决策变量）; decomposition（已用于 Q1-R41 的两阶段“表示层双实现”）; dimension_reduction（screened_out：题面无降维结构，approx_rank=2 指参数列秩而非状态降维）; reachable_set（Q1-R41 的空闲/占用可达格）; relaxation_and_bounds（Q1-R42 零模型）; graph_or_flow_reformulation（Q1-R42 冲突图视角）; symmetry...<+122 chars>
+    [1]: "Q2: decomposition（Q2-R42 大邻域分解）; relaxation_and_bounds（冲突图匹配/顶点覆盖下界，本人复算 61..63）; dominance_and_pruning（RCL 限制候选列表）; scheduling_or_coverage（NoOverlap 重嵌入，主要归 exact 角色）; graph_or_flow_reformulation（Q2-R41 冲突图顶点操作）; symmetry（同相位类平移等价 → 用于移动提案去重）; reachable_domain（每计划动作域 22..32，本人复算）; dynamic_programm...<+107 chars>
+    [2]: "Q3: reachable_set/可达空闲掩码（残差空闲集）; decomposition（Q3-R42 按频段列分块）; relaxation_and_bounds（体积界 661 + 列容量界，均为松散可检查界，非最优证书）; dominance_and_pruning（相位类互斥支配）; periodicity（Δφ mod 10 时间不相交，已复算）; monotonicity_or_boundary（T_MAX 截断与 a≤97 边界）; closed_form（screened_out：装箱无解析式）; dynamic_programming（screened_out：三维争用...<+9 chars>
+    [3]: "Q4: periodicity + coordinate_transform（g→p 的格点重定时）; decomposition（Q4-R42 子集释放）; relaxation_and_bounds（扩张交互图匹配下界 + Q2 上界锚）; symmetry（相位等价类扩大，因 p 可变而减弱）; reachable_domain（g'∈[1,18] → p'∈[3,20] 与 t1+11p'+d 的视界截断可达集）; dominance_and_pruning（先 C 后 B、不动 A 的边际支配）; scheduling_or_coverage（NoOverlap 主归 exact ...<+4 chars>
+  families_not_applicable: (list, len=5)
+    [0]: {"family": "machine_learning（监督/代理模型/贝叶斯优化/Q-learning 调参）", "reason": "本题是单一确定性实例、零观测噪声、零标签（题面 F-001..F-013 全为确定参数，DATASET_SNAPSHOT 无缺失/无异常/重复 0）；不存在训练/验证/测试划分（data_contract.forbidden_splits 为空且无外部留出数据），任何“学习”都是在唯一实例上自拟合，构成方法学泄漏与样本量谬误。"}
+    [1]: {"family": "queueing / Markov 稳态与随机几何（作为 Q1 主检测或 Q2/Q3/Q4 的结果产出路线）", "reason": "占用时刻与频段是确定性周期梳（F-005），无到达过程、无服务台排队动态（question_contract.special_data_structure 记为“周期矩形占用”，structural_checks 的 temporal/graph/control 均无随机生成机制证据）；以 M/M/c 或 Poisson 到达描述用频占用无法产出任何契约要求的必需输出（Q1-C1 枚举完全性、Q2-C1 零冲突、Q3-C2 数量最大、Q...<+61 chars>
+    [2]: {"family": "dynamic_control / 连续凸化（含 MILP→LP 松弛求界）", "reason": "全部变量为整数格点（F-003 时间必为 Δt 整数倍、F-001 频段 0..99、F-012 整数幅度），F-006 的“交叠即冲突”非凸；凸松弛给出的界对整数解无有效约束力，且连续化会破坏 F-005 的周期梳语义。"}
+    [3]: {"family": "deterministic_global / surrogate_bayesian 全局优化", "reason": "评估函数已近乎免费（本人标定 11175 对位图全扫描 0.079s、放置判定约 1.9×10^5 次/秒），不存在“昂贵黑箱评估”这一使用前提；代理模型收益为负。"}
+    [4]: {"family": "operations_research 整图精确 CP-SAT/MILP 主路线", "reason": "按角色边界留给 exact_or_scout；本 child 仅把 CP-SAT 用作 Q2-R42/Q4-R42 内层的局部精确修复神谕，不作为整图主路线重复提交。"}
+  budget_screening_summary: "所有 9 条候选均通过 600s×3 重复的预算筛查（依据本人本机标定：位图全对扫描 0.079s；朴素移动 767/s、行级增量可再高一个量级；小 S 子图 CP-SAT 秒级）。已按“预算不可完成”标准主动排除的候选族：整图分支定价/Benders、52136 顶点上的精确最大独立集、MCMC/粒子群/差分进化等超大种群（在 10^222 空间与 600s 下方差不可控）、GNN/RL 学习式消解（无训练数据）。"
+  role_discipline_notes: (list, len=3)
+    [0]: "本片段只提候选，不含任何排序/赢家判断，也未读取其他 child 产物或 Manager 排序。"
+    [1]: "self_recomputed_scale_facts 与 budget_screening_summary 为输入数据的复算与吞吐标定，不是路线侦察结果，禁止写入 results/、figures/ 或论文。"
+    [2]: "三处口径歧义（T_MAX 621 vs 643、平移后是否可越出视界、跨动作类型幅度可比性）需 Manager 在派发侦察前统一冻结，否则 Q2/Q3/Q4 的界与对照结论不可比。"

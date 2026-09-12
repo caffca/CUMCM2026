@@ -1,0 +1,367 @@
+{
+  "problem": "D题 时频冲突检测与消解（2026 CUMCM，附件1=150个用频计划，4问）",
+  "current_stage": "9result-review",
+  "stages": {
+    "1start-mathmodel": {
+      "status": "done"
+    },
+    "0intake-assets": {
+      "status": "done",
+      "closed_at": "2026-09-11T15:02:27+08:00",
+      "transaction_id": "SC-AA89E515427C"
+    },
+    "brainstorm-mathmodel": {
+      "status": "done",
+      "closed_at": "2026-09-11T20:46:03+08:00",
+      "transaction_id": "SC-A71EA16E7E60"
+    },
+    "2analysis-modeling": {
+      "status": "done",
+      "closed_at": "2026-09-11T20:50:34+08:00",
+      "transaction_id": "SC-6797B89785F1"
+    },
+    "7methodology-review": {
+      "status": "done",
+      "closed_at": "2026-09-12T02:20:34+08:00",
+      "transaction_id": "SC-A4A38A5FD89A"
+    },
+    "8validation-plan": {
+      "status": "done",
+      "closed_at": "2026-09-12T11:55:21+08:00",
+      "transaction_id": "SC-11E5D7383F6B"
+    },
+    "3coding-visual": {
+      "status": "done",
+      "closed_at": "2026-09-12T13:52:17+08:00",
+      "transaction_id": "SC-A75CDF413FB8"
+    },
+    "9result-review": {
+      "status": "pending"
+    },
+    "10paper-plan": {
+      "status": "pending"
+    },
+    "13editorial-plan": {
+      "status": "pending"
+    },
+    "4drawio": {
+      "status": "pending"
+    },
+    "14figure-editorial": {
+      "status": "pending"
+    },
+    "5writing": {
+      "status": "pending"
+    },
+    "11compile-package": {
+      "status": "pending"
+    },
+    "12final-review": {
+      "status": "pending"
+    },
+    "6verity": {
+      "status": "pending"
+    }
+  },
+  "decisions": [
+    {
+      "id": "D-CLOSE-intake",
+      "stage": "0intake-assets",
+      "decision": "阶段 intake 收口（tx=SC-AA89E515427C）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-AA89E515427C",
+      "recorded_at": "2026-09-11T15:02:27+08:00"
+    },
+    {
+      "id": "D-ENV-001",
+      "stage": "1start",
+      "decision": "排版引擎=latex（entry=paper/main.tex，模板 zh/cumcm-latex）",
+      "reason": "MiKTeX 25.12 xelatex 实测可用；国赛主流程惯例；用户未指定，HIL=auto 自决"
+    },
+    {
+      "id": "D-ENV-002",
+      "stage": "1start",
+      "decision": "HIL=auto：普通问题自决，仅真 BLOCKER 问用户",
+      "reason": "用户明示；且会话审批提示已禁用"
+    },
+    {
+      "id": "D-ENV-003",
+      "stage": "1start",
+      "decision": "求解器=OR-Tools CP-SAT 9.15，安装于 F:\\dsh_envlibs\\mathmodel（工作区外），运行脚本须设 PYTHONPATH",
+      "reason": "Python3.14 cp314 wheel；site-packages 只读故 --target；工作区保持干净（xlsx 登记红线）"
+    },
+    {
+      "id": "D-INTAKE-001",
+      "stage": "intake",
+      "decision": "missing_coverage(data) MEDIUM 人工确认放行→补 data/canonical_plans.csv 后自动消除（现 0 冲突）",
+      "reason": "intake 时点 results 本不存在；规则：MEDIUM 收口前刷新或人工确认"
+    },
+    {
+      "id": "D-Q3-001",
+      "stage": "planned-analysis",
+      "decision": "问题3 主口径：Q2 方案保持不动，新增 C 装备全视界自由落位（不限位置即题面 不限平移幅度）；新C装备参数沿用附件C模板（宽3/时长2/间隔8/次数12），另做口径灵敏度讨论",
+      "reason": "result3 模板只记录新增装备的频段/时间区间，与主口径自洽；歧义在假设与灵敏度中透明披露"
+    },
+    {
+      "id": "D-HORIZON-001",
+      "stage": "brainstorm-mathmodel",
+      "decision": "时间视界裁定：T_MAX=643Δt（slot 起点公式 t1+k*(g+d)，与题面 A001 例证一致）。DATASET_SNAPSHOT.class_profile.last_slot_end_max=621 系公式漏 d 的陈旧字段，判定 stale：以附件1（primary_official，哈希不变）运行时复算为准；脚本 code/intake_dataset_snapshot.py 已修正，coding 阶段重生成快照并 project_manifest --refresh。common_input.json 按冻结契约不再改动（643 字段本就正确，仅其 horizon_note 文本笔误 621）",
+      "reason": "双独立实现（区间算术/位图）+ CH-03 探针三方一致=643；621 无法复现任何计划的最晚结束（C083: 531+11*10+2=643）。已分发的 scout 输入 SHA 链不可中途更换（CS11 完整性），故不改 common_input，登记裁决供下游引用"
+    },
+    {
+      "id": "D-BUDGET-001",
+      "stage": "brainstorm-mathmodel",
+      "decision": "两级预算正式分离：①brainstorm 侦察预算 600s/候选（standard 档协议冻结件，仅用于路线间公平比较，其 incumbent/证书不作生产结果）；②coding_visual 生产求解预算=长时后台运行（Q2/Q4 词典序分层+撤销阶梯计划 1-2 小时，允许分批续跑），最终数字只能来自生产运行并经独立 checker 复验",
+      "reason": "用户指示：Q2 复杂不设时限；brainstorm 冻结预算属于协议公平装置而非问题本身的时间限制。两级预算在 VALIDATION_PLAN 与 FINAL_MODEL_SPEC 中分别显式登记（budget_type/数值），互不冒充"
+    },
+    {
+      "id": "D-BUDGET-R51",
+      "stage": "brainstorm-mathmodel",
+      "decision": "CH-REV-A 对 Q2-R51 预算越界申报的 Manager 裁定=有条件豁免：incumbent 求解 547.3s 在 600s 协议内；超出的 120.4s 为独立「界证书」进程（r=6 incumbent 未变、不替换解、仅收紧/开放界），属 bound 证据不属搜索预算。公平性成立（其余候选 incumbent 均 ≤600s 达成，超出部分未改善其 objective）。豁免登记于 IDEA_DECISION；生产阶段界加强按 D-BUDGET-001 走长预算，不适用侦察预算。",
+      "reason": "评审要求显式裁定不得默认放行；证书与 incumbent 可分离计量（cpsat_report/r51_certificates 分列）"
+    },
+    {
+      "id": "D-R32-REVISE",
+      "stage": "brainstorm-mathmodel",
+      "decision": "Q2-R32 verdict=revise 的处置：R32 不作 primary（被 R51 支配），revise 三项中「随机版补测」与「workers=1 复现」记为豁免（理由：其结论已被定位为负结果证据+热启动源，随机性不影响该定位）；「范式重定位」采纳——IDEA_DECISION 中 R32 定位改写为『CP-SAT 主导混合范式，连续引导贡献量化为 297→175 的负结果证据』。R32 侦察结果保留为对比证据不作质量基准。",
+      "reason": "critical 未解决不得选 primary 的规则只约束 winner 选择；R32 非 winner；豁免与重定位均入账可复核"
+    },
+    {
+      "id": "D-PROD-REPRO",
+      "stage": "brainstorm-mathmodel",
+      "decision": "评审遗留要求转生产验证：①Q2/Q4 生产 CP-SAT 运行必须做 workers=1 与多 worker 的 incumbent 一致性验证（复现性）；②撤销层 Σr≤5 判定在生产以 ≥1e4s 级预算或专用下界机制攻闭合，闭合前论文只写区间；③Q1 论文引用 R41 压力测试须措辞为『随机化召回诊断证据（n≈500，±4%量级）』，R52 类内界称『错误探测界』。转 VALIDATION_PLAN 条目。",
+      "reason": "评审意见闭环管理，minor 不阻断但在生产/写作阶段强制兑现"
+    },
+    {
+      "id": "D-Q3-WIN",
+      "stage": "brainstorm-mathmodel",
+      "decision": "Q3 侦察关键结果：Q3-R11 集包装 CP-SAT 双模型 OPTIMAL incumbent=bound=139 + HiGHS LP 分数上界=139.0 + 候选放置 98×532 穷举完备（三路对拍 131254 干扰边 0 失配）⇒ 在 R5 主口径（Q2-R51 基座+模板参数+643 视界）下 N*=139 可证。R51 初等双计数界 332 合法但松 2.39×，仅作可手核对照。生产阶段将在新 Q2 生产解上重算（基座变化则 N* 变化，需重证）。",
+      "reason": "Q3 最优性等级证据冻结在 scout 工件（cpsat_r11_report.json/lp_crosscheck_hiGHS.json）"
+    },
+    {
+      "id": "D-CLOSE-brainstorm",
+      "stage": "brainstorm-mathmodel",
+      "decision": "阶段 brainstorm 收口（tx=SC-A71EA16E7E60）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-A71EA16E7E60",
+      "recorded_at": "2026-09-11T20:46:03+08:00"
+    },
+    {
+      "id": "D-BS-CLOSE",
+      "stage": "brainstorm-mathmodel",
+      "decision": "brainstorm 收口：winner Q1-R21/Q2-R51/Q3-R11/Q4-R11；等级 L2/L2/L3_NEAR_GLOBAL/L2。评审闭环完成：Q4-R11 锚定植入 Q2-R51 解（run_anchor 四断言 ALL_PASS，自跑8未支配植入6→生产热启动冻结收益判定）、Q4-R22 作为求解路线 rejected、Q2-R51 预算豁免 D-BUDGET-R51、R23 补 3-seed、R11 upper_bound 修订 139、协议 AMD-01 对齐。生产交接 6 条见 BRAINSTORM_REPORT §6",
+      "reason": "idea_gate --strict 0 FAIL/0 WARN；candidate_coverage PASS；v3 每问独立；schema 全过；stage_close tx=SC-A71EA16E7E60"
+    },
+    {
+      "id": "D-CLOSE-analysis",
+      "stage": "2analysis-modeling",
+      "decision": "阶段 analysis 收口（tx=SC-6797B89785F1）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-6797B89785F1",
+      "recorded_at": "2026-09-11T20:50:34+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-81920836DD07）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-81920836DD07",
+      "recorded_at": "2026-09-11T21:26:40+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-494D6C15B5F2）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-494D6C15B5F2",
+      "recorded_at": "2026-09-11T21:58:37+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-12DEA893DA33）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-12DEA893DA33",
+      "recorded_at": "2026-09-11T22:42:11+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-DF553EF5396C）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-DF553EF5396C",
+      "recorded_at": "2026-09-11T23:42:40+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-154752A0AF92）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-154752A0AF92",
+      "recorded_at": "2026-09-11T23:42:48+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-3AFA1BF6CEDC）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-3AFA1BF6CEDC",
+      "recorded_at": "2026-09-12T00:36:03+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-D85F20C330E3）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-D85F20C330E3",
+      "recorded_at": "2026-09-12T00:36:22+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-8A367BDC576B）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-8A367BDC576B",
+      "recorded_at": "2026-09-12T01:42:37+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-FD836AEE4E78）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-FD836AEE4E78",
+      "recorded_at": "2026-09-12T01:42:42+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-2BEE481447D1）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-2BEE481447D1",
+      "recorded_at": "2026-09-12T01:43:22+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-D2A8512CEF71）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-D2A8512CEF71",
+      "recorded_at": "2026-09-12T01:43:27+08:00"
+    },
+    {
+      "id": "D-CLOSE-methodology_review",
+      "stage": "7methodology-review",
+      "decision": "阶段 methodology_review 收口（tx=SC-A4A38A5FD89A）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-A4A38A5FD89A",
+      "recorded_at": "2026-09-12T02:20:34+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-77189EB5AC6F）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-77189EB5AC6F",
+      "recorded_at": "2026-09-12T02:20:40+08:00"
+    },
+    {
+      "id": "D-HINT-001",
+      "stage": "coding_visual",
+      "decision": "生产 Q2 cpsat 任务以侦察 incumbent（runs/competitive/.../Q2-R51/solution_actions.json）仅作 AddHint 搜索提示：hint 不进入任何权威数值——incumbent 由生产 CP-SAT 重新求解、生产 evaluator 与独立第二实现 checker 全量重算复验；payload 登记 hint_source/hint_role=search_hint_only。依据：侦察教训（rev=6 需 hint+深度）；不违反 'scout 数字不入 results' 红线（该红线禁止复制 scout 数值为权威；此处仅复用解的结构作为起点，数值全部生产重算）。",
+      "reason": "run-B 无 hint 生产 rev=10 显著劣于侦察证明可达的 6；生产质量直接影响 Q3 基座与 Q4 锚定"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-CE076B5887F9）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-CE076B5887F9",
+      "recorded_at": "2026-09-12T05:13:14+08:00"
+    },
+    {
+      "id": "D-REV4-RERUN",
+      "stage": "coding_visual",
+      "decision": "判据 revision 4（EV-CRIT-001 criterion_invalid：worker 交叉一致→解级第二实现重算一致；权威解=verified_best）使 VALIDATION_PLAN sha 变化 → sharded_run 的 source plan 绑定失配 → 按规则以新 run-id FULL-D2026-PROD-D 全链重跑 19 任务（FMS/IDEA sha 不变；hint 生效+Q2 权威 rev 预期 6；Q3/Q4 基座随之增强）。run-C 的 18 个 attempt 保留在盘上作为修订前证据（不进权威链）。",
+      "reason": "revision 纪律：计划绑定 hash 变化即重跑，禁止新旧混用；同时质量收益大",
+      "recorded_at": "2026-09-12T05:16:57+08:00"
+    },
+    {
+      "id": "D-BASE-BEST-E",
+      "stage": "coding_visual",
+      "decision": "run-D 装配后发现 q_synth/resolve_base 的 main 解析仍是 w1-优先旧逻辑（fixchain1 补丁因锚文本失配静默未生效，执行器无输出被误读为成功）：导致 Q2 权威误取 w1[20,...]、Q3/Q4 基座绑弱解。修正=verified_best（词典序最优+全候选过独立checker，w1/w4 完整记录），并以 run-E 全链重跑（Q3/Q4 数字必须基于唯一权威 Q2 解）。过程教训：变体文件补丁必须 grep 验证落盘。",
+      "reason": "正确性优先；variant 文件不在 plan sha 绑定内，重跑即可收敛",
+      "recorded_at": "2026-09-12T06:49:44+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-C76D450C3DEC）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-C76D450C3DEC",
+      "recorded_at": "2026-09-12T08:23:07+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-A9A85195A427）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-A9A85195A427",
+      "recorded_at": "2026-09-12T08:25:59+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-6D9C782A52E9）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-6D9C782A52E9",
+      "recorded_at": "2026-09-12T08:26:58+08:00"
+    },
+    {
+      "id": "D-P2-CLOSE",
+      "stage": "coding_visual",
+      "decision": "P2 独立对抗终检（第三实现路径：解析半开区间+整数格集合，自写 CP-SAT 独立认证 Q3 OPTIMAL=140；全链独立重算 Q1-Q4 数字全对、hint 链确认非抄录、随机源全带定种子）判『数值链可信』。7 项发现处置：F-1 dg 369=270(间隔非法)+99(时域截断) → 报告措辞改分解表述并引 logs/p2qc 留痕；F-2 报告陈旧 → make_report v2 已修（run-F 尾部自动重出）；F-3 计划-结果指纹时序 → run-F 以 rev6 计划重跑后自证（结果晚于当前计划）；论文仍统一用『验证计划先于本轮生产运行冻结』的事实表述，不写泛化『预注册』；F-4 图表面板硬编码 → make_figures 改读 Q1_detect.counts.edges/Q2 residual 字段；F-5 q1_solve pairs_checked 字面量 → 值正确（C(150,2)=11175 已独立确认）但分派器被 plan 绑定，run-F 期间禁改；列入下一轮代码卫生清理，不影响任何论文数字；F-6 措辞边界 → Q2/Q4 全部『达成值+证书区间』表述，Q4 撤销 6 注明锚定域内达成；唯 Q3 可称『该基座下可证明最大（独立实现认证）』，且方案不唯一（P2 最优解交集 139/140 简并证据）；F-7 result2/4 登记口径 → 表注/正文写明『仅登记被调整或被撤销计划，不变者不列』。",
+      "reason": "P2 报告 eda74c6c + logs/p2qc/P2QC_SUMMARY.md",
+      "recorded_at": "2026-09-12T09:09:19+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-0AF6E1726154）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-0AF6E1726154",
+      "recorded_at": "2026-09-12T10:20:52+08:00"
+    },
+    {
+      "id": "D-REV7-G",
+      "stage": "result_review",
+      "decision": "evaluator 在 run-F 上暴露 VP 自身两处缺陷：①model_decision_binding 手写形状与 decision_handoff 权威 binding 不等（全局 ERROR）；②V-Q3-06/V-Q4-03 evidence 误引跨问 Q2_solution（评估器要求 evidence 绑定本问 question_id）。rev7 修复（binding 直读 handoff、evidence 局域化），VP sha 变化迫使以 run-G 完成第三次全链生产。数值语义零改动（判据/阈值/路由不变），Q3/Q4 简并解可能微移（证书体系保证口径一致）。",
+      "reason": "validation_evaluator rev6 全 27 ERROR 定位",
+      "recorded_at": "2026-09-12T10:20:54+08:00"
+    },
+    {
+      "id": "D-G-FREEZE",
+      "stage": "coding_visual",
+      "decision": "run-G 生产窗口冻结清单（P1 风险①）：PIPELINE-OK 之前不得改动 reports/VALIDATION_PLAN.json、reports/FINAL_MODEL_SPEC.json、reports/contracts/IDEA_DECISION.json、reports/data/DATA_PROFILE.json、reports/data/DATASET_SNAPSHOT.json、runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json（均为 task input_bindings 绑定件，改动即触发 verify_all 漂移 FAIL + pipeline fail-fast）。论文/报告数值一律引用 run-G 产物（简并位移 E→F→G 已确认存在）。",
+      "reason": "P1 复核报告 pwsh-49 watcher 风险条款",
+      "recorded_at": "2026-09-12T10:36:12+08:00"
+    },
+    {
+      "id": "D-CLOSE-validation_plan",
+      "stage": "8validation-plan",
+      "decision": "阶段 validation_plan 收口（tx=SC-11E5D7383F6B）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-11E5D7383F6B",
+      "recorded_at": "2026-09-12T11:55:21+08:00"
+    },
+    {
+      "id": "D-CLOSE-coding_visual",
+      "stage": "3coding-visual",
+      "decision": "阶段 coding_visual 收口（tx=SC-A75CDF413FB8）：outputs/gate/schema 全部通过",
+      "reason": "stage_close 原子事务——done 必然意味着 outputs、Schema、gate 与 binding 全部合格",
+      "transaction_id": "SC-A75CDF413FB8",
+      "recorded_at": "2026-09-12T13:52:17+08:00"
+    }
+  ],
+  "open_issues": [],
+  "last_updated": "2026-09-12T13:52:17+08:00"
+}

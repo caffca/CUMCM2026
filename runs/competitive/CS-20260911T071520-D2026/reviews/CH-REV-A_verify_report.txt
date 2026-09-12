@@ -1,0 +1,45 @@
+data: common_input.compact vs canonical_plans.csv mismatches = 0
+Q1 truth: |E_M1|=297 |E_M2|=297 symdiff(M1,M2)=0 strata={"AB": 21, "AC": 66, "BB": 10, "BC": 181, "CC": 19} touched=148  (0.0s)
+
+== Q1 candidates ==
+Q1-R21: disk_sha=1a08941b766de6bf... claimed_sha=1a08941b766de6bf... sha_match=True n_rows=297 n_unique=297 symdiff_vs_indep_truth=0 vs_eval_counts(truth=297 submitted=297 missing=0 spurious=0)
+Q1-R52: disk_sha=1a08941b766de6bf... claimed_sha=1a08941b766de6bf... sha_match=True n_rows=297 n_unique=297 symdiff_vs_indep_truth=0 vs_eval_counts(truth=297 submitted=297 missing=0 spurious=0)
+Q1-R41: disk_sha=1a08941b766de6bf... claimed_sha=1a08941b766de6bf... sha_match=True n_rows=297 n_unique=297 symdiff_vs_indep_truth=0 vs_eval_counts(truth=297 submitted=297 missing=0 spurious=0)
+Q1 pairwise file equality: R21==R52 True ; R21==R41 True
+
+== Q2 independent feasibility/objective ==
+Q2-R51 [solution_actions.json]: indep_tuple=[6, 121, 1996, 663] eval_tuple=[6, 121, 1996, 663] match=True | my_violations=[] | residual_pairs(full-recount)=0 | 20-pair-interval-recheck mismatches=0 | disk_sha=8266fb689b93ee77... claimed_sha_match=True
+Q2-R32 [solution_actions.json]: indep_tuple=[6, 123, 2205, 762] eval_tuple=[6, 123, 2205, 762] match=True | my_violations=[] | residual_pairs(full-recount)=0 | 20-pair-interval-recheck mismatches=0 | disk_sha=59a0e2a6f1fb448a... claimed_sha_match=True
+Q2-R41 [solution_actions_seed11.json]: indep_tuple=[19, 96, 1853, 491] eval_tuple=[19, 96, 1853, 491] match=True | my_violations=[] | residual_pairs(full-recount)=0 | 20-pair-interval-recheck mismatches=0 | disk_sha=a47ddfe65295b376... claimed_sha_match=True
+Q2-R41 [solution_actions_seed29.json]: indep_tuple=[28, 75, 2012, 379] eval_tuple=[28, 75, 2012, 379] match=True | my_violations=[] | residual_pairs(full-recount)=0 | 20-pair-interval-recheck mismatches=0 | disk_sha=119d7e297c2f2f7d... claimed_sha_match=n/a(per-seed)
+Q2-R41 [solution_actions_seed47.json]: indep_tuple=[19, 95, 1915, 466] eval_tuple=[19, 95, 1915, 466] match=True | my_violations=[] | residual_pairs(full-recount)=0 | 20-pair-interval-recheck mismatches=0 | disk_sha=e209f3af7613e44a... claimed_sha_match=n/a(per-seed)
+
+== Q2-R51 star_edges.json full independent recount ==
+action table: total=4582 min=22 max=32 ident_all=True  (0.2s)
+recount: my_edges=1693 star_edges=1693 only_in_star=0 only_in_mine=0 combo_set_mismatch_pairs=0  (0.7s)
+base297 subset of star_edges: True ; total combos mine=270626 disk=270626
+mask-brute recheck: mismatches=0 (300 star pairs exact + 200 non-star pairs must be empty)  (0.7s)
+
+copies sha:
+  628dc26256ed5616...  scouts/Q2-R51/star_edges.json
+  MISSING  scouts/Q2-R51/code/star_edges.json
+  628dc26256ed5616...  scouts/Q2-R32/code/star_edges.json
+  628dc26256ed5616...  scouts/Q2-R41/code/star_edges.json
+
+== canonical evaluator re-run (stdout only) ==
+Q1-R21 [solution_q1_r21.json]: feasible=True objective=[0] n_viol={'truth': 297, 'submitted': 297, 'missing': 0, 'spurious': 0}
+Q1-R52 [solution_q1_r52.json]: feasible=True objective=[0] n_viol={'truth': 297, 'submitted': 297, 'missing': 0, 'spurious': 0}
+Q1-R41 [solution_q1_r41.json]: feasible=True objective=[0] n_viol={'truth': 297, 'submitted': 297, 'missing': 0, 'spurious': 0}
+Q2-R51 [solution_actions.json]: feasible=True objective=[6, 121, 1996, 663] n_viol=0
+Q2-R32 [solution_actions.json]: feasible=True objective=[6, 123, 2205, 762] n_viol=0
+Q2-R41 [solution_actions_seed11.json]: feasible=True objective=[19, 96, 1853, 491] n_viol=0
+Q2-R41 [solution_actions_seed29.json]: feasible=True objective=[28, 75, 2012, 379] n_viol=0
+Q2-R41 [solution_actions_seed47.json]: feasible=True objective=[19, 95, 1915, 466] n_viol=0
+
+== unit-basis scan (621 / 643 / 14698 / 16680) in candidate artifacts ==
+Q1-R21: {"643": ["PROTOTYPE_NOTES.md", "detect_meta.json", "result.json"]}
+Q1-R52: {"643": ["PROTOTYPE_NOTES.md", "detect_meta.json", "result.json"]}
+Q1-R41: {"14698": ["PROTOTYPE_NOTES.md", "detect_meta.json"], "16680": ["PROTOTYPE_NOTES.md", "detect_meta.json"], "643": ["PROTOTYPE_NOTES.md", "detect_meta.json", "result.json"]}
+Q2-R51: {"643": ["PROTOTYPE_NOTES.md", "result.json"]}
+Q2-R41: {"643": ["PROTOTYPE_NOTES.md", "result.json", "scout.json"]}
+Q2-R32: {"643": ["DEV_LOG.md", "PROTOTYPE_NOTES.md", "result.json"]}

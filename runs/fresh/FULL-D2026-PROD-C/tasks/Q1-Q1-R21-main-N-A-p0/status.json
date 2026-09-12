@@ -1,0 +1,221 @@
+{
+  "schema_version": 2,
+  "run_id": "FULL-D2026-PROD-C",
+  "task_id": "Q1-Q1-R21-main-N-A-p0",
+  "shard_id": "shard-cbfd84fd0966b3ec28572f4e",
+  "identity_sha256": "cbfd84fd0966b3ec28572f4e9d98b9e6bd4fc2c2413c092d5c20a0c059c29a65",
+  "question_id": "Q1",
+  "stage": "production_question_local",
+  "state": "complete",
+  "complete": true,
+  "budget_class": "full",
+  "authoritative": true,
+  "command": [
+    "python",
+    "code/prod/q1_solve.py",
+    "--run-id",
+    "FULL-D2026-PROD-C",
+    "--stage",
+    "production_question_local",
+    "--seed",
+    "N/A",
+    "--scenario",
+    "main",
+    "--parameter",
+    "{}",
+    "--output-dir",
+    "F:\\2026 数模\\D题重跑\\D题\\runs\\fresh\\FULL-D2026-PROD-C\\tasks\\Q1-Q1-R21-main-N-A-p0\\attempts\\001",
+    "--budget-class",
+    "full"
+  ],
+  "cwd": "F:\\2026 数模\\D题重跑\\D题",
+  "started_at": "2026-09-12T02:54:20+08:00",
+  "finished_at": "2026-09-12T02:54:21+08:00",
+  "exit_code": 0,
+  "pid": 7720,
+  "seed": "N/A",
+  "parameter": {},
+  "scenario": "main",
+  "priority": 10,
+  "dependency_ids": [],
+  "replicate_index": 0,
+  "coverage_case_id": "Q1-Q1-R21-main-N-A-p0",
+  "coverage_coordinates": {
+    "question_id": "Q1",
+    "route": "Q1-R21",
+    "scenario": "main",
+    "seed": "N/A",
+    "parameter_index": 0
+  },
+  "coverage_plan_id": "P2-01-FULL-D2026-PROD-C-required-subset",
+  "coverage_plan_sha256": "098f8de3902282f7095d0d454ba14fbddd02ecb13b2c8a77b3845ece7c853dd9",
+  "input_bindings": [
+    {
+      "path": "reports/FINAL_MODEL_SPEC.json",
+      "sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39"
+    },
+    {
+      "path": "reports/contracts/IDEA_DECISION.json",
+      "sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9"
+    },
+    {
+      "path": "reports/VALIDATION_PLAN.json",
+      "sha256": "25d2ef99cf3c50b972d202ec58a36f50bac438cae3de0564fd9927702367ba9a"
+    },
+    {
+      "path": "reports/data/DATA_PROFILE.json",
+      "sha256": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+    },
+    {
+      "path": "reports/data/DATASET_SNAPSHOT.json",
+      "sha256": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e"
+    },
+    {
+      "path": "data/canonical_plans.csv",
+      "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+    }
+  ],
+  "output_identity": {
+    "paths": [
+      "{task_dir}/payload.json",
+      "{task_dir}/execution_metrics.json"
+    ],
+    "scope": "task_attempt_directory",
+    "hashes": "recomputed_after_execution"
+  },
+  "model_binding": {
+    "question_id": "Q1",
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "formulation_sha256": "4cb9dfc411287049da46af7db3d85069da490af3ec4d301cf677de66395c0c49",
+    "route_id": "Q1-R21",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "exact_enumerative",
+    "solver_algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+    "implementation": "code/prod/q1_solve.py",
+    "implementation_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+  },
+  "stratum_id": "",
+  "coverage_sample_index": 0,
+  "coverage_round": 0,
+  "resource": {
+    "slots": 1
+  },
+  "preemptible": false,
+  "plan_sha256": "25e3c6a081d2902f4c9122149f2e2279fdf9b2c9cb5110c7a05f42af9951fb6e",
+  "input_hashes": {
+    "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+    "reports/FINAL_MODEL_SPEC.json": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "reports/VALIDATION_PLAN.json": "25d2ef99cf3c50b972d202ec58a36f50bac438cae3de0564fd9927702367ba9a",
+    "reports/contracts/IDEA_DECISION.json": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "reports/data/DATASET_SNAPSHOT.json": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e",
+    "reports/data/DATA_PROFILE.json": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536",
+    "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7",
+    "附件/附件1.xlsx": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+  },
+  "output_hashes": {
+    "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/payload.json": "fc22bbfacfbc15b62e61d306e4af1c4a7be6d52dfbc1c4c2e119e5068d5bad04",
+    "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json": "0040d8aa393f0fabb6c9bcd4b59705e041986f4c019b251465740443f2a08e5f"
+  },
+  "attempts": [
+    {
+      "attempt_index": 1,
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_seconds": 0.8025925000110874,
+      "failure_class": null,
+      "error": null,
+      "attempt_dir": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001",
+      "log": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/task.log",
+      "output_hashes": {
+        "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/payload.json": "fc22bbfacfbc15b62e61d306e4af1c4a7be6d52dfbc1c4c2e119e5068d5bad04",
+        "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json": "0040d8aa393f0fabb6c9bcd4b59705e041986f4c019b251465740443f2a08e5f"
+      },
+      "execution_metrics": {
+        "path": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json",
+        "sha256": "0040d8aa393f0fabb6c9bcd4b59705e041986f4c019b251465740443f2a08e5f",
+        "values": {
+          "elapsed_seconds": 0.669,
+          "status": "completed",
+          "stopping_reason": "all_pairs_enumerated_and_crosschecked",
+          "evaluator_calls": 1,
+          "budget_class": "full",
+          "seed": "N/A",
+          "scenario": "main",
+          "parameter": {}
+        }
+      }
+    }
+  ],
+  "failure_class": null,
+  "error": null,
+  "execution_isolation": {
+    "mode": "task_attempt_directory",
+    "shard_dir": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0",
+    "attempt_dir": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001",
+    "attempt_log": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/task.log",
+    "preexisting_output_policy": "reject"
+  },
+  "model_decision_binding": {
+    "schema_version": 1,
+    "authority_scope": "explanatory_projection_only",
+    "decision_record": {
+      "path": "reports/contracts/MODEL_DECISION_RECORD.json",
+      "sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658"
+    },
+    "selection_validation": {
+      "path": "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+      "sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f"
+    },
+    "problem_id": "D2026",
+    "profile_id": "PROFILE-8ADA7763202B25BA",
+    "strategy_matching_id": "MATCH-1504A0480D6D591A",
+    "question_bindings": {
+      "Q1": {
+        "question_id": "Q1",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+        "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+      },
+      "Q2": {
+        "question_id": "Q2",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+        "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+      },
+      "Q3": {
+        "question_id": "Q3",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+        "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+      },
+      "Q4": {
+        "question_id": "Q4",
+        "decision_status": "pending_proposal",
+        "selected_strategy_id": null,
+        "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+        "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+      }
+    }
+  },
+  "attempt_index": 1,
+  "elapsed_seconds": 0.8025925000110874,
+  "execution_metrics": {
+    "path": "runs/fresh/FULL-D2026-PROD-C/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/execution_metrics.json",
+    "sha256": "0040d8aa393f0fabb6c9bcd4b59705e041986f4c019b251465740443f2a08e5f",
+    "values": {
+      "elapsed_seconds": 0.669,
+      "status": "completed",
+      "stopping_reason": "all_pairs_enumerated_and_crosschecked",
+      "evaluator_calls": 1,
+      "budget_class": "full",
+      "seed": "N/A",
+      "scenario": "main",
+      "parameter": {}
+    }
+  }
+}

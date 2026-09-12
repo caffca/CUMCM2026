@@ -1,0 +1,248 @@
+[
+ {
+  "id": "fig-q1-classpairs",
+  "question_id": "Q1",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q1-classpairs.pdf"
+  ],
+  "meta": "figures/drafts/fig-q1-classpairs.meta.json",
+  "story": {
+   "main_message": "按类对冲突构成（BC181 占 61%，CC19、AB21、AC66、BB10；无 AA），B 类宽带×C 类高频重复是冲突主因",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "panels": [
+   "类对堆叠柱/矩阵热图"
+  ],
+  "data_source": "results/Q1_stats.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "2a4bff6eefcece547bb41a9943798002a7099ecd2535296e755c0eda01331fa3",
+  "caption": "冲突对类别构成"
+ },
+ {
+  "id": "fig-q1-degree-dist",
+  "question_id": "Q1",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q1-degree-dist.pdf"
+  ],
+  "meta": "figures/drafts/fig-q1-degree-dist.meta.json",
+  "story": {
+   "main_message": "冲突度分布（中位 4、最大 8、2 个孤立计划）表明冲突图稀疏且无支配性瓶颈节点",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "panels": [
+   "冲突度直方图（按类分面）"
+  ],
+  "data_source": "results/Q1_stats.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "d8567f4436986faef8bfce294973072dc0555c83f725e2ca4d94f6aa7ff4791d",
+  "caption": "冲突度分布"
+ },
+ {
+  "id": "fig-q1-grid-conflict",
+  "question_id": "Q1",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q1-grid-conflict.pdf"
+  ],
+  "meta": "figures/drafts/fig-q1-grid-conflict.meta.json",
+  "story": {
+   "main_message": "150 个计划在 100 频段×643 时间格资源盒上的占用与 297 处时频冲突热点的空间分布",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "panels": [
+   "占用栅格（按类着色）",
+   "冲突单元放大带（频段×时间）"
+  ],
+  "data_source": "results/Q1_detect.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "deaa5e2fd0a468e8e7e08348f3d07eeab82d8559cf888bc3a588181dd14c8de8",
+  "caption": "时频占用栅格与冲突单元"
+ },
+ {
+  "id": "fig-q2-hero-lex",
+  "question_id": "Q2",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q2-hero-lex.pdf"
+  ],
+  "meta": "figures/drafts/fig-q2-hero-lex.meta.json",
+  "story": {
+   "main_message": "词典序四级目标逐级锁定的达成值与撤销层证书区间 [2,6]（incumbent=6），消解后冲突对=0",
+   "claim_bind": [
+    "C-Q2-1",
+    "C-Q2-2"
+   ]
+  },
+  "panels": [
+   "四层阶梯条（rev/adj/ploss/mag 的 LB-UB 区间带）",
+   "消解前后冲突数对比"
+  ],
+  "data_source": "results/Q2_solution.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "ed3a92779a033b076b8cf1cca5ea07b2828c1fb347353d9a66b2beefc237d87d",
+  "caption": "四级目标证书与消解效果"
+ },
+ {
+  "id": "fig-q2-ladder",
+  "question_id": "Q2",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q2-ladder.pdf"
+  ],
+  "meta": "figures/drafts/fig-q2-ladder.meta.json",
+  "story": {
+   "main_message": "撤销阶梯 Σr≤k 的可满足性证书序列（k=0 INFEASIBLE⇒撤销≥1），G* 全势边约束是防『假 0 撤销』的关键",
+   "claim_bind": [
+    "C-Q2-2"
+   ]
+  },
+  "panels": [
+   "阶梯状态条形（OPTIMAL/INFEASIBLE/UNKNOWN）+ 原边松弛对照"
+  ],
+  "data_source": "results/Q2_solution.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "a00364abd758c16e6165f4d0f9690e5a053b10bccb1ae1ecacc7a93559422509",
+  "caption": "撤销阶梯证书序列"
+ },
+ {
+  "id": "fig-q2-table1",
+  "question_id": "Q2",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q2-table1.pdf"
+  ],
+  "meta": "figures/drafts/fig-q2-table1.meta.json",
+  "story": {
+   "main_message": "表1 可视化：按类 {保留,调整,撤销} 结构（优先级保护程度）",
+   "claim_bind": [
+    "C-Q2-1"
+   ]
+  },
+  "panels": [
+   "分组堆叠柱 A/B/C"
+  ],
+  "data_source": "results/Q2_table1.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "2075120b8c67ec6f163054150dbb7c119158ac3a8a12e32708bba0420621a395",
+  "caption": "问题二按类统计（表1）"
+ },
+ {
+  "id": "fig-q3-bound-meet",
+  "question_id": "Q3",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q3-bound-meet.pdf"
+  ],
+  "meta": "figures/drafts/fig-q3-bound-meet.meta.json",
+  "story": {
+   "main_message": "三腿会合：构造/CP-SAT/LP 认证上下界=139（gap=0），初等双计数界 332 为宽松可手核对照",
+   "claim_bind": [
+    "C-Q3-1"
+   ]
+  },
+  "panels": [
+   "水平区间条（LB构造, LB认证=UB认证 | UB初等=332）"
+  ],
+  "data_source": "results/Q3_bound.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "d7e4f7baa9aea0d4dc25801999003d910700c3834d34abf1ece078560b5fce7c",
+  "caption": "加装数量上下界会合"
+ },
+ {
+  "id": "fig-q3-utilization",
+  "question_id": "Q3",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q3-utilization.pdf"
+  ],
+  "meta": "figures/drafts/fig-q3-utilization.meta.json",
+  "story": {
+   "main_message": "Q2 方案基座上加装 139 个 C 计划后的资源栅格：空闲单元 49600 级中可认证利用上限",
+   "claim_bind": [
+    "C-Q3-1"
+   ]
+  },
+  "panels": [
+   "基座占用+加装放置叠加栅格",
+   "按频段带加装数剖面"
+  ],
+  "data_source": "results/Q3_solution.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "39934deaeb2512bc47eac60f161d9a9381a0c13aade01471869e9cf11d595d25",
+  "caption": "问题三加装后的资源利用"
+ },
+ {
+  "id": "fig-q4-dg-dist",
+  "question_id": "Q4",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q4-dg-dist.pdf"
+  ],
+  "meta": "figures/drafts/fig-q4-dg-dist.meta.json",
+  "story": {
+   "main_message": "被调 C 计划的间隔调整量 dg 分布与 R3 视界截断效应（大 t0 计划正 dg 不可用）",
+   "claim_bind": [
+    "C-Q4-1"
+   ]
+  },
+  "panels": [
+   "dg 直方图（分正负）",
+   "t0×dg' 可行域条带示意"
+  ],
+  "data_source": "results/Q4_solution.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "892ee97e20033866625cd04f0ea7edfd493dc2d17f2b19e44076b24dc3a412d9",
+  "caption": "间隔重定时调整分布"
+ },
+ {
+  "id": "fig-q4-vs-q2",
+  "question_id": "Q4",
+  "status": "drafted",
+  "files": [
+   "figures/drafts/fig-q4-vs-q2.pdf"
+  ],
+  "meta": "figures/drafts/fig-q4-vs-q2.meta.json",
+  "story": {
+   "main_message": "Q4（允许 C 调间隔）与 Q2 的四级目标对比与表1 差异：支配界『不劣于 Q2』的实测化（热启动后各层改善量）",
+   "claim_bind": [
+    "C-Q4-1"
+   ]
+  },
+  "panels": [
+   "成对条形（Q2 vs Q4 各类 保留/调整/撤销）",
+   "四级元组差"
+  ],
+  "data_source": "results/Q4_table1.json",
+  "source": {
+   "generator": "code/prod/make_figures.py"
+  },
+  "source_hash": "bf0a5e74b00013f85d31a27dafb9be8e74418723ec0a7a263b65b9a1c6376924",
+  "caption": "问题四与问题二对比"
+ }
+]

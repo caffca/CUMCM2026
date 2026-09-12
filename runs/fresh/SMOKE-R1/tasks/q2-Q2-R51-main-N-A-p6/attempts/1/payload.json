@@ -1,0 +1,506 @@
+{
+ "question_id": "Q2",
+ "variant": "cpsat_lex",
+ "workers": 4,
+ "gstar_edges": 1693,
+ "forced_edges": 0,
+ "options_total": 4582,
+ "actions": {
+  "A003": {
+   "df": 6
+  },
+  "A004": {
+   "df": -9
+  },
+  "A005": {
+   "dt": -5
+  },
+  "A006": {
+   "df": -9
+  },
+  "A007": {
+   "df": 7
+  },
+  "A008": {
+   "df": 10
+  },
+  "A009": {
+   "df": -5
+  },
+  "A010": {
+   "dt": 2
+  },
+  "A012": {
+   "df": -9
+  },
+  "A014": {
+   "revoke": true
+  },
+  "A015": {
+   "df": 5
+  },
+  "A017": {
+   "df": 4
+  },
+  "A018": {
+   "df": 10
+  },
+  "A020": {
+   "revoke": true
+  },
+  "B001": {
+   "dt": 5
+  },
+  "B002": {
+   "df": -10
+  },
+  "B004": {
+   "dt": -4
+  },
+  "B006": {
+   "df": -5
+  },
+  "B007": {
+   "df": -5
+  },
+  "B008": {
+   "revoke": true
+  },
+  "B009": {
+   "revoke": true
+  },
+  "B010": {
+   "dt": 5
+  },
+  "B011": {
+   "revoke": true
+  },
+  "B012": {
+   "dt": 3
+  },
+  "B013": {
+   "df": 10
+  },
+  "B014": {
+   "revoke": true
+  },
+  "B015": {
+   "df": 10
+  },
+  "B016": {
+   "revoke": true
+  },
+  "B017": {
+   "df": -8
+  },
+  "B018": {
+   "revoke": true
+  },
+  "B019": {
+   "dt": 2
+  },
+  "B020": {
+   "revoke": true
+  },
+  "B021": {
+   "dt": -3
+  },
+  "B022": {
+   "revoke": true
+  },
+  "B023": {
+   "revoke": true
+  },
+  "B024": {
+   "dt": 3
+  },
+  "B025": {
+   "df": 10
+  },
+  "B026": {
+   "df": -3
+  },
+  "B027": {
+   "revoke": true
+  },
+  "B028": {
+   "revoke": true
+  },
+  "B029": {
+   "revoke": true
+  },
+  "B030": {
+   "revoke": true
+  },
+  "B031": {
+   "df": -6
+  },
+  "B032": {
+   "df": 10
+  },
+  "B033": {
+   "revoke": true
+  },
+  "B035": {
+   "revoke": true
+  },
+  "B036": {
+   "revoke": true
+  },
+  "B038": {
+   "df": -10
+  },
+  "B039": {
+   "df": 10
+  },
+  "B040": {
+   "df": 1
+  },
+  "C001": {
+   "df": 7
+  },
+  "C002": {
+   "df": -10
+  },
+  "C004": {
+   "df": 10
+  },
+  "C005": {
+   "df": -10
+  },
+  "C007": {
+   "df": -8
+  },
+  "C009": {
+   "df": 8
+  },
+  "C010": {
+   "df": -4
+  },
+  "C011": {
+   "dt": 3
+  },
+  "C012": {
+   "df": -10
+  },
+  "C014": {
+   "df": 10
+  },
+  "C015": {
+   "df": -3
+  },
+  "C016": {
+   "df": 5
+  },
+  "C018": {
+   "dt": -4
+  },
+  "C019": {
+   "df": 8
+  },
+  "C021": {
+   "dt": 1
+  },
+  "C022": {
+   "df": -10
+  },
+  "C023": {
+   "dt": -2
+  },
+  "C024": {
+   "df": 8
+  },
+  "C025": {
+   "df": -5
+  },
+  "C027": {
+   "df": 10
+  },
+  "C028": {
+   "df": -4
+  },
+  "C029": {
+   "dt": 4
+  },
+  "C030": {
+   "df": -6
+  },
+  "C031": {
+   "dt": -5
+  },
+  "C032": {
+   "df": 10
+  },
+  "C034": {
+   "df": -7
+  },
+  "C035": {
+   "df": -8
+  },
+  "C037": {
+   "df": -10
+  },
+  "C038": {
+   "dt": 3
+  },
+  "C041": {
+   "df": 3
+  },
+  "C042": {
+   "df": -9
+  },
+  "C043": {
+   "df": 5
+  },
+  "C044": {
+   "df": 4
+  },
+  "C046": {
+   "df": 8
+  },
+  "C047": {
+   "df": 9
+  },
+  "C049": {
+   "dt": -4
+  },
+  "C051": {
+   "dt": 3
+  },
+  "C052": {
+   "df": 10
+  },
+  "C054": {
+   "df": 9
+  },
+  "C057": {
+   "df": 8
+  },
+  "C058": {
+   "df": -10
+  },
+  "C061": {
+   "df": 2
+  },
+  "C062": {
+   "df": 10
+  },
+  "C064": {
+   "df": -10
+  },
+  "C065": {
+   "df": -9
+  },
+  "C066": {
+   "dt": 1
+  },
+  "C067": {
+   "df": -9
+  },
+  "C069": {
+   "df": 6
+  },
+  "C070": {
+   "df": -6
+  },
+  "C071": {
+   "dt": -2
+  },
+  "C072": {
+   "df": 6
+  },
+  "C073": {
+   "df": -9
+  },
+  "C074": {
+   "dt": 2
+  },
+  "C075": {
+   "df": -9
+  },
+  "C076": {
+   "df": 5
+  },
+  "C077": {
+   "df": 10
+  },
+  "C082": {
+   "df": 10
+  },
+  "C083": {
+   "dt": -5
+  },
+  "C084": {
+   "dt": 4
+  },
+  "C086": {
+   "df": 3
+  },
+  "C087": {
+   "df": -10
+  }
+ },
+ "objective_tuple": [
+  18,
+  93,
+  2181,
+  607
+ ],
+ "objective_scalar": 18009321810607,
+ "revocation": {
+  "upper_incumbent": 18,
+  "proven_lb": 2,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": null,
+    "source": "cpsat_bound_L1",
+    "status": "FEASIBLE",
+    "lb": 2
+   },
+   {
+    "cap": 0,
+    "status": "INFEASIBLE",
+    "source": "infeasibility_probe"
+   }
+  ],
+  "ladder_log": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "locks": {},
+    "min": "R",
+    "cap_R": null,
+    "wall_cum": 117.1,
+    "objective": 18.0,
+    "best_bound": 2.0,
+    "solution_tuple": [
+     18,
+     125,
+     2906,
+     741
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "locks": {},
+    "min": null,
+    "cap_R": 0,
+    "wall_cum": 144.0
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 18
+    },
+    "min": "A",
+    "cap_R": null,
+    "wall_cum": 169.5,
+    "objective": 93.0,
+    "best_bound": 2.0,
+    "solution_tuple": [
+     18,
+     93,
+     2181,
+     607
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "UNKNOWN",
+    "locks": {
+     "R": 18,
+     "A": 93
+    },
+    "min": "PL",
+    "cap_R": null,
+    "wall_cum": 183.7
+   }
+  ]
+ },
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "FEASIBLE",
+   "locks": {},
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 117.1,
+   "objective": 18.0,
+   "best_bound": 2.0,
+   "solution_tuple": [
+    18,
+    125,
+    2906,
+    741
+   ]
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "INFEASIBLE",
+   "locks": {},
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 144.0
+  },
+  {
+   "layer": "L2_minA",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 18
+   },
+   "min": "A",
+   "cap_R": null,
+   "wall_cum": 169.5,
+   "objective": 93.0,
+   "best_bound": 2.0,
+   "solution_tuple": [
+    18,
+    93,
+    2181,
+    607
+   ]
+  },
+  {
+   "layer": "L3_minPL",
+   "status": "UNKNOWN",
+   "locks": {
+    "R": 18,
+    "A": 93
+   },
+   "min": "PL",
+   "cap_R": null,
+   "wall_cum": 183.7
+  }
+ ],
+ "_path": "runs\\fresh\\SMOKE-R1\\tasks\\q2-Q2-R51-main-N-A-p0\\attempts\\1\\payload.json",
+ "assembled": true,
+ "revoke": 18,
+ "grasp_revoke_median": 54.0,
+ "grasp_runs": 3,
+ "residual_pairs_second_impl": 0,
+ "compliance_violations": 0,
+ "tuple_matches_second_impl": 1,
+ "residual_pairs": 0,
+ "ladder_proven_revoke_lb": 2,
+ "gap_revoke": 16,
+ "degeneracy_ratio": 0.88,
+ "repro_first_layer_match": 0,
+ "repro_w1_eq_w8": 0,
+ "best_is_w1": 0,
+ "w1_tuple": [
+  41,
+  101,
+  3252,
+  538
+ ],
+ "w4_tuple": [
+  18,
+  93,
+  2181,
+  607
+ ],
+ "run_id_ref": "SMOKE-R1"
+}

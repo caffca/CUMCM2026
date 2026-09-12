@@ -1,0 +1,15 @@
+{
+ "elapsed_seconds": 32.415,
+ "status": "completed",
+ "stopping_reason": "solved",
+ "evaluator_calls": 1,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "variant": "cpsat_a",
+  "base": "@Q2MAIN",
+  "limit": 90,
+  "base_resolved": "runs\\fresh\\SMOKE-R1\\tasks\\q2-Q2-R51-main-N-A-p0\\attempts\\1\\payload.json"
+ }
+}

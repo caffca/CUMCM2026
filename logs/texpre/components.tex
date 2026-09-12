@@ -1,0 +1,73 @@
+% =============================================================================
+% components.tex — CUMCM Semantic Components（v4.5 模板 v2 §15/§36）
+% 纯文字式语义组件（黑体标签 + 正文 + 上下间距，无底色/无边框/无彩框）。
+% 内容一律由 Agent 契约（RESULT_REGISTRY / FIGURE_SPEC / CLAIM_PROVENANCE /
+% SUBMISSION_MANIFEST / AI_USE_PROVENANCE）驱动；模板不预置任何模型名/结果值。
+% =============================================================================
+
+% ---------- \resultkey{...} 摘要结果强调（v4.5 §8.6）：只用于最终答案/关键结论/最重要性能，
+% 每问 ≤ 1 个；禁止普通 \textbf 直接承担语义。 ----------
+\newcommand{\resultkey}[1]{{\heiti\bfseries #1}}
+
+% ---------- 结果陈述框（纯文本组件）：\resultstatement{结论} ----------
+\newcommand{\resultstatement}[1]{%
+  \par\vspace{0.6em}%
+  {\heiti\bfseries 结果陈述：}#1\par\vspace{0.6em}%
+}
+% ---------- 假设条目：\assumptionnote{中文序号及短名}{具体假设}{依据与建模作用} ----------
+% 三部分在最终正文中合并为一个自然段，不重复显示“依据与作用”等审计字段标签。
+% 例：\assumptionnote{一（短时稳定性）}{无人机保持匀速直线飞行。}{任务时长较短，短时扰动对可达域影响有限。}
+\newcommand{\assumptionnote}[3]{%
+  \par\vspace{0.35em}%
+  \noindent{\heiti\bfseries 假设#1：}#2#3\par\vspace{0.35em}%
+}
+% ---------- 限制注释：\limitationnote{...} ----------
+\newcommand{\limitationnote}[1]{%
+  \par\vspace{0.5em}%
+  {\heiti\bfseries 局限与适用范围：}#1\par\vspace{0.5em}%
+}
+% ---------- 决策注释：\decisionnote{...} ----------
+\newcommand{\decisionnote}[1]{%
+  \par\vspace{0.5em}%
+  {\heiti\bfseries 决策依据：}#1\par\vspace{0.5em}%
+}
+
+% ---------- \PaperFigure[id=...,width=...]{文件}{caption 正文}：图宽度语义化 ----------
+% 用法：\PaperFigure[width=\figmedium]{figures/fig_x.pdf}{图 N 说明……}
+% 每张图前必须至少 1 句引用句、图后至少 1 句解释句（模板 lint 检查）。
+% v2：可选参 #1 = 宽度语义档；#2 = 图文件；#3 = caption。
+\newcommand{\PaperFigure}[3][]{%
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=#1]{#2}
+    \caption{#3}
+  \end{figure}%
+}
+
+% ---------- \SupportManifestTable{...}：附录 A 由 SUBMISSION_MANIFEST 生成（不硬编码） ----------
+% 用法：生成器读 SUBMISSION_MANIFEST.json 渲染行（类别 | 路径 | 说明 | 角色），填入正文；
+% 模板层只提供三线表结构，不预置 code/*.py 五行清单。
+\newcommand{\SupportManifestTable}[1]{%
+  \begin{center}
+    {\fontsize{\CaptionFontSize}{\CaptionLineHeight}\heiti\bfseries 支撑材料文件清单}\par
+    \vspace{0.6em}
+    #1
+  \end{center}
+}
+
+% ---------- \aideclaration{...}：AI 使用声明（内容必须由 AI_USE_PROVENANCE 生成候选、
+% 经参赛队确认；未确认时以"（待参赛队确认，详见 AI 工具使用详情.pdf）"占位） ----------
+\newcommand{\aideclaration}[1]{%
+  \section*{AI 工具使用声明}%
+  #1\par
+}
+
+% ---------- 关键决策公式（视觉：上下留白区分，黑白学术风） ----------
+\newcommand{\decisioneq}[1]{%
+  \begin{equation}#1\end{equation}%
+}
+
+% ---------- \questiontask{问题一}{...}：问题重述的任务条目（1_restatement 使用） ----------
+\newcommand{\questiontask}[2]{%
+  \textbf{#1：}#2\par
+}

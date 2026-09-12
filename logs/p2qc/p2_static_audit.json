@@ -1,0 +1,179 @@
+{
+ "check": "code/prod 静态审计",
+ "hardcoded_result_number_hits": [
+  {
+   "file": "make_figures.py",
+   "line": 156,
+   "numbers": [
+    "297"
+   ],
+   "code": "ax2.bar([\"消解前\", \"消解后\"], [297, 0], color=[\"#e53e3e\", \"#38a169\"], width=.55)"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 88,
+   "numbers": [
+    "11175"
+   ],
+   "code": "\"edges\": edges, \"pairs_checked\": 11175,"
+  }
+ ],
+ "n_hits": 2,
+ "random_usage_hits": [
+  {
+   "file": "q1_solve.py",
+   "line": 4,
+   "code": "import glob, json, os, subprocess, sys, tempfile, random, itertools"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 54,
+   "code": "rng = random.Random(2026)"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 58,
+   "code": "pid = rng.choice(ids)"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 59,
+   "code": "f0 = rng.randrange(0, 97); t0 = rng.randrange(0, 641)"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 71,
+   "code": "x = rng.choice(others)"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 5,
+   "code": "import glob, os, sys, json, hashlib, random"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 45,
+   "code": "rng = random.Random(2026)"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 50,
+   "code": "pid = rng.choice(ids)"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 52,
+   "code": "f0 = rng.randrange(0, B_MAX - 3)"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 53,
+   "code": "t0 = rng.randrange(0, T_MAX - 12)"
+  },
+  {
+   "file": "q1v_check.py",
+   "line": 65,
+   "code": "x = rng.choice(others)"
+  },
+  {
+   "file": "q2v_grasp.py",
+   "line": 3,
+   "code": "import os, sys, json, random"
+  },
+  {
+   "file": "q2v_grasp.py",
+   "line": 31,
+   "code": "rng = random.Random(seed)"
+  },
+  {
+   "file": "q2v_grasp.py",
+   "line": 85,
+   "code": "rng.shuffle(frontier)"
+  },
+  {
+   "file": "q2v_grasp.py",
+   "line": 95,
+   "code": "x, y = rng.choice(dirty)"
+  },
+  {
+   "file": "q2v_grasp.py",
+   "line": 112,
+   "code": "pick = pool[0] if rng.random() < 0.6 else pool[min(len(pool) - 1, rng.randrange(min(rcl + 1, len(pool))))]"
+  }
+ ],
+ "random_governance": {
+  "q1_solve.py": {
+   "constructors": [
+    "2026"
+   ],
+   "seed_tokens": [
+    "--seed",
+    "a.seed"
+   ],
+   "module_level_random_calls": false,
+   "np_random": false
+  },
+  "q1v_check.py": {
+   "constructors": [
+    "2026"
+   ],
+   "seed_tokens": [
+    "a.seed"
+   ],
+   "module_level_random_calls": false,
+   "np_random": false
+  },
+  "q2v_grasp.py": {
+   "constructors": [
+    "seed"
+   ],
+   "seed_tokens": [
+    "a.seed",
+    "grasp_seed",
+    "seed ="
+   ],
+   "module_level_random_calls": false,
+   "np_random": false
+  }
+ },
+ "unseeded_random_files": [],
+ "RESULT_NUMS_watchlist": [
+  "6011818940661",
+  "6012119960661",
+  "11175",
+  "14698",
+  "15600",
+  "48700",
+  "1693",
+  "1894",
+  "1907",
+  "1996",
+  "2117",
+  "2176",
+  "2270",
+  "2301",
+  "4582",
+  "6013",
+  "103",
+  "118",
+  "121",
+  "129",
+  "140",
+  "144",
+  "148",
+  "297",
+  "335",
+  "369",
+  "607",
+  "657",
+  "660",
+  "661",
+  "663",
+  "676",
+  "739",
+  "751",
+  "99"
+ ],
+ "verdict_hardcode": "FLAG",
+ "verdict_random": "PASS"
+}

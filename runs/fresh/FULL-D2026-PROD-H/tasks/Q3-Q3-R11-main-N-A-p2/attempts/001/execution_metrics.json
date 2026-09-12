@@ -1,0 +1,15 @@
+{
+ "elapsed_seconds": 9.997,
+ "status": "completed",
+ "stopping_reason": "solved",
+ "evaluator_calls": 1,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "base": "@Q2MAIN",
+  "limit": 600,
+  "variant": "cpsat_b",
+  "base_resolved": "runs\\fresh\\FULL-D2026-PROD-H\\tasks\\Q2-Q2-R51-main-N-A-p0\\attempts\\001\\payload.json"
+ }
+}

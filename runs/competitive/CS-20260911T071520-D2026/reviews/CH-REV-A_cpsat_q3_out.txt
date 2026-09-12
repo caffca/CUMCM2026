@@ -1,0 +1,18 @@
+{
+ "B_w8_s7": {
+  "status": "OPTIMAL",
+  "value": 139,
+  "best_bound": 139,
+  "wall_s": 0.35,
+  "n_selected": 139,
+  "internal_viol": 0
+ },
+ "B_w1_s0": {
+  "status": "OPTIMAL",
+  "value": 139,
+  "best_bound": 139,
+  "wall_s": 0.33,
+  "n_selected": 139,
+  "internal_viol": 0
+ }
+}

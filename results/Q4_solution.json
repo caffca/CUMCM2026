@@ -1,0 +1,656 @@
+{
+  "question_id": "Q4",
+  "variant": "synth",
+  "workers": 4,
+  "gstar_edges": 2117,
+  "options_total": 6013,
+  "dg_options_dropped_by_horizon": 369,
+  "actions": {
+    "A003": {
+      "df": -10
+    },
+    "A004": {
+      "dt": -2
+    },
+    "A005": {
+      "dt": 4
+    },
+    "A006": {
+      "df": 5
+    },
+    "A007": {
+      "df": -10
+    },
+    "A008": {
+      "df": -9
+    },
+    "A009": {
+      "df": -5
+    },
+    "A010": {
+      "dt": -5
+    },
+    "A011": {
+      "dt": -1
+    },
+    "A012": {
+      "df": -9
+    },
+    "A013": {
+      "dt": -4
+    },
+    "A014": {
+      "df": 4
+    },
+    "A015": {
+      "df": 5
+    },
+    "A017": {
+      "df": 2
+    },
+    "A018": {
+      "df": 7
+    },
+    "B001": {
+      "dt": 4
+    },
+    "B002": {
+      "df": -7
+    },
+    "B003": {
+      "df": 8
+    },
+    "B005": {
+      "dt": 2
+    },
+    "B006": {
+      "df": -5
+    },
+    "B007": {
+      "df": -2
+    },
+    "B008": {
+      "df": -10
+    },
+    "B009": {
+      "df": 8
+    },
+    "B010": {
+      "dt": -3
+    },
+    "B011": {
+      "df": 9
+    },
+    "B012": {
+      "dt": 3
+    },
+    "B013": {
+      "revoke": true
+    },
+    "B015": {
+      "df": -9
+    },
+    "B016": {
+      "df": -6
+    },
+    "B017": {
+      "df": -5
+    },
+    "B018": {
+      "revoke": true
+    },
+    "B019": {
+      "revoke": true
+    },
+    "B020": {
+      "revoke": true
+    },
+    "B022": {
+      "revoke": true
+    },
+    "B023": {
+      "df": 5
+    },
+    "B024": {
+      "dt": 4
+    },
+    "B025": {
+      "df": 10
+    },
+    "B026": {
+      "df": -3
+    },
+    "B027": {
+      "df": -10
+    },
+    "B028": {
+      "revoke": true
+    },
+    "B029": {
+      "df": -4
+    },
+    "B030": {
+      "df": -9
+    },
+    "B031": {
+      "df": -6
+    },
+    "B032": {
+      "df": 9
+    },
+    "B033": {
+      "dt": -5
+    },
+    "B034": {
+      "dt": 2
+    },
+    "B035": {
+      "df": -9
+    },
+    "B036": {
+      "dt": 2
+    },
+    "B037": {
+      "df": -6
+    },
+    "B038": {
+      "df": 10
+    },
+    "B039": {
+      "df": 10
+    },
+    "C001": {
+      "dg": 7
+    },
+    "C002": {
+      "df": -5
+    },
+    "C004": {
+      "df": -5
+    },
+    "C006": {
+      "dg": -7
+    },
+    "C007": {
+      "dt": -1
+    },
+    "C009": {
+      "df": 7
+    },
+    "C010": {
+      "df": -2
+    },
+    "C012": {
+      "df": -7
+    },
+    "C013": {
+      "df": 3
+    },
+    "C014": {
+      "df": 8
+    },
+    "C015": {
+      "dt": -2
+    },
+    "C016": {
+      "df": 5
+    },
+    "C017": {
+      "df": 9
+    },
+    "C018": {
+      "dt": -3
+    },
+    "C019": {
+      "df": 9
+    },
+    "C022": {
+      "df": 9
+    },
+    "C024": {
+      "df": -10
+    },
+    "C025": {
+      "dt": -4
+    },
+    "C026": {
+      "df": 2
+    },
+    "C027": {
+      "df": -9
+    },
+    "C028": {
+      "df": 3
+    },
+    "C029": {
+      "dg": 6
+    },
+    "C030": {
+      "df": -4
+    },
+    "C031": {
+      "df": 1
+    },
+    "C032": {
+      "df": -10
+    },
+    "C033": {
+      "df": -4
+    },
+    "C034": {
+      "df": -10
+    },
+    "C035": {
+      "df": -5
+    },
+    "C036": {
+      "dt": -2
+    },
+    "C037": {
+      "df": -10
+    },
+    "C039": {
+      "dt": -4
+    },
+    "C040": {
+      "df": -2
+    },
+    "C041": {
+      "df": 5
+    },
+    "C042": {
+      "df": -10
+    },
+    "C043": {
+      "dt": -3
+    },
+    "C044": {
+      "df": 4
+    },
+    "C045": {
+      "df": -4
+    },
+    "C046": {
+      "df": 3
+    },
+    "C047": {
+      "df": 9
+    },
+    "C048": {
+      "dt": -3
+    },
+    "C049": {
+      "dt": -1
+    },
+    "C050": {
+      "df": -2
+    },
+    "C051": {
+      "dt": -4
+    },
+    "C052": {
+      "df": -10
+    },
+    "C053": {
+      "df": 2
+    },
+    "C054": {
+      "df": 9
+    },
+    "C055": {
+      "dt": 3
+    },
+    "C056": {
+      "df": 4
+    },
+    "C057": {
+      "df": -5
+    },
+    "C059": {
+      "df": 8
+    },
+    "C061": {
+      "df": 2
+    },
+    "C062": {
+      "df": 9
+    },
+    "C064": {
+      "df": 6
+    },
+    "C065": {
+      "df": -7
+    },
+    "C066": {
+      "dt": 3
+    },
+    "C067": {
+      "df": -6
+    },
+    "C068": {
+      "dt": 2
+    },
+    "C069": {
+      "df": 9
+    },
+    "C070": {
+      "df": -6
+    },
+    "C071": {
+      "dt": 2
+    },
+    "C072": {
+      "df": 9
+    },
+    "C073": {
+      "df": -5
+    },
+    "C074": {
+      "df": 6
+    },
+    "C075": {
+      "df": -8
+    },
+    "C076": {
+      "dt": -1
+    },
+    "C077": {
+      "df": 10
+    },
+    "C078": {
+      "df": -3
+    },
+    "C079": {
+      "df": 4
+    },
+    "C081": {
+      "dt": -1
+    },
+    "C082": {
+      "df": 9
+    },
+    "C085": {
+      "df": -5
+    },
+    "C087": {
+      "dt": 5
+    },
+    "C089": {
+      "df": 9
+    },
+    "C090": {
+      "dg": 1
+    }
+  },
+  "objective_tuple": [
+    6,
+    119,
+    1994,
+    659
+  ],
+  "objective_scalar": 6011919940659,
+  "planted_q2_tuple": [
+    6,
+    121,
+    1996,
+    661
+  ],
+  "planted_q2_residual": 0,
+  "planted_q2_feasible": 1,
+  "planted_reject_reason": null,
+  "revocation": {
+    "upper_incumbent": 6,
+    "proven_lb": 3,
+    "lb_closed": false,
+    "certificates": [
+      {
+        "cap": 0,
+        "status": "INFEASIBLE"
+      },
+      {
+        "cap": 5,
+        "status": "UNKNOWN"
+      }
+    ]
+  },
+  "anchor_requested": true,
+  "layers": [
+    {
+      "layer": "L1_minR",
+      "status": "FEASIBLE",
+      "min": "R",
+      "cap_R": null,
+      "wall_cum": 809.1,
+      "objective": 6.0,
+      "best_bound": 3.0,
+      "solution_tuple": [
+        6,
+        121,
+        1996,
+        660
+      ]
+    },
+    {
+      "layer": "ladder_Rle0",
+      "status": "INFEASIBLE",
+      "min": null,
+      "cap_R": 0,
+      "wall_cum": 826.6
+    },
+    {
+      "layer": "ladder_desc",
+      "status": "UNKNOWN",
+      "min": "R",
+      "cap_R": 5,
+      "wall_cum": 1081.7
+    },
+    {
+      "layer": "L2_minA",
+      "status": "FEASIBLE",
+      "min": "A",
+      "cap_R": null,
+      "wall_cum": 1385.7,
+      "objective": 119.0,
+      "best_bound": 21.0,
+      "solution_tuple": [
+        6,
+        119,
+        1994,
+        659
+      ]
+    },
+    {
+      "layer": "L3_minPL",
+      "status": "UNKNOWN",
+      "min": "PL",
+      "cap_R": null,
+      "wall_cum": 1489.2
+    }
+  ],
+  "_path": "runs\\fresh\\FULL-D2026-PROD-H\\tasks\\Q4-Q4-R11-main-N-A-p0\\attempts\\001\\payload.json",
+  "assembled": true,
+  "dg_dropped_infeasible_gap": 270,
+  "dg_dropped_horizon": 99,
+  "scalar": 6011919940659,
+  "scalar_q2_ref": 6012119960661,
+  "revoke_gain_vs_q2": 0,
+  "violations_second_impl": 0,
+  "residual_pairs_second_impl": 0,
+  "tuple_matches_second_impl": 1,
+  "residual_pairs": 0,
+  "violations": 0,
+  "repro_first_layer_match": 1,
+  "repro_w1_eq_w8": 0,
+  "best_is_w1": 0,
+  "best_tuple_seen_across_runs": [
+    6,
+    119,
+    1994,
+    659
+  ],
+  "w1_tuple": [
+    6,
+    120,
+    1995,
+    661
+  ],
+  "w4_tuple": [
+    6,
+    119,
+    1994,
+    659
+  ],
+  "by_class": {
+    "A": {
+      "kept": 5,
+      "adjusted": 15,
+      "revoked": 0
+    },
+    "B": {
+      "kept": 4,
+      "adjusted": 30,
+      "revoked": 6
+    },
+    "C": {
+      "kept": 16,
+      "adjusted": 74,
+      "revoked": 0
+    }
+  },
+  "run_id_ref": "FULL-D2026-PROD-H",
+  "_meta": {
+    "metadata_writer": "v7-p2-02/result_writer",
+    "metadata_writer_schema_version": 1,
+    "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+    "role": "paper_authority",
+    "authority": true,
+    "problem_ids": [
+      "Q4"
+    ],
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "contract_rev": 1,
+    "generator_path": "code/prod/q4_solve.py",
+    "generator_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+    "input_hashes": {
+      "reports/FINAL_MODEL_SPEC.json": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+      "reports/VALIDATION_PLAN.json": "a91eb809fb6e289082a417ea15314cf1f1b4ca07763484702d048576ac48c304",
+      "reports/contracts/IDEA_DECISION.json": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+      "reports/data/DATASET_SNAPSHOT.json": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e",
+      "reports/data/DATA_PROFILE.json": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536",
+      "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/star_edges.json": "628dc26256ed56165a1dd806070e40374899ae2e176a7c05aa6bfb2173a2eba7"
+    },
+    "input_sha256": "9e80dc69fc06d89792eea257c97701aca1ab877ab924bd87f37e58bf3e8230a1",
+    "output_hashes": {
+      "__result_payload__": "32d55e006cb4440116597c7a684da3dfb9bf27624bfb0e8a11875bd11f96393f"
+    },
+    "output_sha256": "1e579937fd837e1af8ccdee4725999514d23987ae971a0eb02c9703c9f8382c5",
+    "coverage": {
+      "coverage_id": "P2-01-FULL-D2026-PROD-H-required-subset",
+      "status": "observed",
+      "plan_path": "runs/fresh/FULL-D2026-PROD-H/COVERAGE_PLAN.json",
+      "plan_sha256": "09a0753aa0173f783017a0369d01e11bbdc18e64b83d1062b920cc74fa64c882",
+      "observed": {
+        "cases_complete": [
+          "Q1-Q1-R21-main-N-A-p0",
+          "Q2-Q2-R51-main-N-A-p0",
+          "Q2-Q2-R51-main-N-A-p1",
+          "Q2-Q2-R51-main-N-A-p2",
+          "Q2-Q2-R51-main-N-A-p3",
+          "Q2-Q2-R51-main-N-A-p4",
+          "Q2-Q2-R51-main-N-A-p5",
+          "Q2-Q2-R51-main-N-A-p6",
+          "Q3-Q3-R11-main-N-A-p0",
+          "Q3-Q3-R11-main-N-A-p1",
+          "Q3-Q3-R11-main-N-A-p2",
+          "Q3-Q3-R11-main-N-A-p3",
+          "Q3-Q3-R11-main-N-A-p4",
+          "Q3-Q3-R11-main-N-A-p5",
+          "Q3-Q3-R11-main-N-A-p6",
+          "Q4-Q4-R11-main-N-A-p0",
+          "Q4-Q4-R11-main-N-A-p1",
+          "Q4-Q4-R11-main-N-A-p2",
+          "Q4-Q4-R11-main-N-A-p3"
+        ],
+        "total_cases": 19,
+        "run_id": "FULL-D2026-PROD-H"
+      },
+      "observed_sha256": "2eb7d10faf5b69d0d35685f538894b8a9746c84258667978d7db65c4f9674885"
+    },
+    "coverage_id": "P2-01-FULL-D2026-PROD-H-required-subset",
+    "coverage_plan": "runs/fresh/FULL-D2026-PROD-H/COVERAGE_PLAN.json",
+    "coverage_plan_sha256": "09a0753aa0173f783017a0369d01e11bbdc18e64b83d1062b920cc74fa64c882",
+    "observed_coverage_sha256": "2eb7d10faf5b69d0d35685f538894b8a9746c84258667978d7db65c4f9674885",
+    "generated_at": "2026-09-12T13:39:09+08:00",
+    "result_source": {
+      "mode": "direct_shard_payload",
+      "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q4-Q4-R11-main-N-A-p3/attempts/001/payload.json",
+      "sha256": "6e6f6368ee0c7582fd74189503032e0b43a4154c6f1b97378c05ffcab6ea2cfb",
+      "task_id": "Q4-Q4-R11-main-N-A-p3",
+      "question_id": "Q4",
+      "aggregate_path": "runs/fresh/FULL-D2026-PROD-H/SHARD_AGGREGATE.json",
+      "aggregate_sha256": "0aebf79c76943acbb5e464d2e4cf5ee9e600aaf8186afec6b5ce667319e725fa",
+      "transformation": null
+    },
+    "coverage_observed": {
+      "cases_complete": [
+        "Q1-Q1-R21-main-N-A-p0",
+        "Q2-Q2-R51-main-N-A-p0",
+        "Q2-Q2-R51-main-N-A-p1",
+        "Q2-Q2-R51-main-N-A-p2",
+        "Q2-Q2-R51-main-N-A-p3",
+        "Q2-Q2-R51-main-N-A-p4",
+        "Q2-Q2-R51-main-N-A-p5",
+        "Q2-Q2-R51-main-N-A-p6",
+        "Q3-Q3-R11-main-N-A-p0",
+        "Q3-Q3-R11-main-N-A-p1",
+        "Q3-Q3-R11-main-N-A-p2",
+        "Q3-Q3-R11-main-N-A-p3",
+        "Q3-Q3-R11-main-N-A-p4",
+        "Q3-Q3-R11-main-N-A-p5",
+        "Q3-Q3-R11-main-N-A-p6",
+        "Q4-Q4-R11-main-N-A-p0",
+        "Q4-Q4-R11-main-N-A-p1",
+        "Q4-Q4-R11-main-N-A-p2",
+        "Q4-Q4-R11-main-N-A-p3"
+      ],
+      "total_cases": 19,
+      "run_id": "FULL-D2026-PROD-H"
+    },
+    "problem_id": "Q4",
+    "formulation_sha256": "3eb6cad3c9892f647ca9808c9d39d7dcb75b69a88798a172c385a05fc36a328e",
+    "route_id": "Q4-R11",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "deterministic_global",
+    "solver_algorithm": "同 Q2-R11 四层；第 1 层用 Q2-R12 的基数序列给 LB；对每层用 Q2 最优解做 AddHint 并以其目标值为初始上界",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "implementation": "code/prod/q4_solve.py",
+    "implementation_sha256": "31d44dc7085e42d5176c85c4487805fd4b537f4cf5d77282c5f806c19ce889ea",
+    "formulation_kind": "optimization",
+    "seed_policy": "N/A",
+    "run_id": "FULL-D2026-PROD-H",
+    "budget_class": "full",
+    "execution_aggregate": "runs/fresh/FULL-D2026-PROD-H/SHARD_AGGREGATE.json",
+    "shard_aggregate_sha256": "0aebf79c76943acbb5e464d2e4cf5ee9e600aaf8186afec6b5ce667319e725fa",
+    "plan_file": "runs/fresh/FULL-D2026-PROD-H/SHARD_PLAN.json",
+    "plan_sha256": "b2b678369c8662319605dffffac60e59611741e0c100b09314e0c962059529cd",
+    "function_evaluations": 1,
+    "unique_function_evaluations": 1,
+    "cache_hits": 0,
+    "elapsed_seconds": 0.008,
+    "seeds": [],
+    "scenario": "main",
+    "stopping_reason": "assembled",
+    "model_decision_binding": {
+      "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+      "profile_id": "PROFILE-8ADA7763202B25BA",
+      "strategy_matching_id": "MATCH-1504A0480D6D591A",
+      "question_id": "Q4",
+      "decision_status": "pending_proposal",
+      "selected_strategy_id": null,
+      "problem_profile_question_sha256": "73f770695978032ed3c9765bcbe8713415b972f601327cc335887b21cd058834",
+      "strategy_matching_question_sha256": "cc446dc9b4320cb6bcad7cbb009c205ccebdd4b9aa0f7007865b0bbf1078c257"
+    }
+  }
+}

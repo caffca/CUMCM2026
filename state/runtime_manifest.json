@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "engine": "unknown",
+  "gates": {},
+  "last_run": null,
+  "snapshot": {},
+  "stage_closures": {
+    "intake": {
+      "status": "DONE",
+      "transaction_id": "SC-AA89E515427C",
+      "closed_at": "2026-09-11T15:02:27+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    },
+    "brainstorm": {
+      "status": "DONE",
+      "transaction_id": "SC-A71EA16E7E60",
+      "closed_at": "2026-09-11T20:46:03+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    },
+    "analysis": {
+      "status": "DONE",
+      "transaction_id": "SC-6797B89785F1",
+      "closed_at": "2026-09-11T20:50:34+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    },
+    "methodology_review": {
+      "status": "DONE",
+      "transaction_id": "SC-A4A38A5FD89A",
+      "closed_at": "2026-09-12T02:20:35+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    },
+    "validation_plan": {
+      "status": "DONE",
+      "transaction_id": "SC-11E5D7383F6B",
+      "closed_at": "2026-09-12T11:55:21+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    },
+    "coding_visual": {
+      "status": "DONE",
+      "transaction_id": "SC-A75CDF413FB8",
+      "closed_at": "2026-09-12T13:52:18+08:00",
+      "detail": {
+        "decision_log": true,
+        "binding": true
+      }
+    }
+  },
+  "last_close": {
+    "stage": "coding_visual",
+    "status": "DONE",
+    "transaction_id": "SC-A75CDF413FB8",
+    "closed_at": "2026-09-12T13:52:18+08:00"
+  }
+}

@@ -1,0 +1,639 @@
+{
+ "question_id": "Q2",
+ "variant": "synth",
+ "workers": 4,
+ "hint_source": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "hint_role": "search_hint_only_all_figures_recomputed",
+ "gstar_edges": 1693,
+ "forced_edges": 0,
+ "options_total": 4582,
+ "actions": {
+  "A003": {
+   "df": -10
+  },
+  "A004": {
+   "dt": -2
+  },
+  "A005": {
+   "dt": 4
+  },
+  "A006": {
+   "df": 5
+  },
+  "A007": {
+   "df": -10
+  },
+  "A008": {
+   "df": -9
+  },
+  "A009": {
+   "df": -5
+  },
+  "A010": {
+   "dt": -5
+  },
+  "A011": {
+   "dt": -1
+  },
+  "A012": {
+   "df": -9
+  },
+  "A013": {
+   "dt": -4
+  },
+  "A014": {
+   "df": 4
+  },
+  "A015": {
+   "df": 5
+  },
+  "A017": {
+   "df": 2
+  },
+  "A018": {
+   "df": 7
+  },
+  "B001": {
+   "dt": 5
+  },
+  "B002": {
+   "df": -7
+  },
+  "B003": {
+   "df": 8
+  },
+  "B005": {
+   "dt": 2
+  },
+  "B006": {
+   "df": -5
+  },
+  "B007": {
+   "df": -2
+  },
+  "B008": {
+   "df": -10
+  },
+  "B009": {
+   "df": 8
+  },
+  "B010": {
+   "dt": -3
+  },
+  "B011": {
+   "df": 9
+  },
+  "B012": {
+   "dt": 3
+  },
+  "B013": {
+   "revoke": true
+  },
+  "B015": {
+   "df": -9
+  },
+  "B016": {
+   "df": -6
+  },
+  "B017": {
+   "df": -5
+  },
+  "B018": {
+   "revoke": true
+  },
+  "B019": {
+   "revoke": true
+  },
+  "B020": {
+   "revoke": true
+  },
+  "B022": {
+   "revoke": true
+  },
+  "B023": {
+   "df": 5
+  },
+  "B024": {
+   "dt": 4
+  },
+  "B025": {
+   "df": 9
+  },
+  "B026": {
+   "df": -3
+  },
+  "B027": {
+   "df": -10
+  },
+  "B028": {
+   "revoke": true
+  },
+  "B029": {
+   "df": -4
+  },
+  "B030": {
+   "df": -9
+  },
+  "B031": {
+   "df": -6
+  },
+  "B032": {
+   "df": 9
+  },
+  "B033": {
+   "dt": -5
+  },
+  "B034": {
+   "dt": 2
+  },
+  "B035": {
+   "df": -9
+  },
+  "B036": {
+   "df": 4
+  },
+  "B037": {
+   "df": -6
+  },
+  "B038": {
+   "df": 10
+  },
+  "B039": {
+   "df": 10
+  },
+  "C001": {
+   "df": 5
+  },
+  "C002": {
+   "df": -5
+  },
+  "C004": {
+   "df": -5
+  },
+  "C006": {
+   "df": 8
+  },
+  "C007": {
+   "dt": -1
+  },
+  "C009": {
+   "df": 7
+  },
+  "C010": {
+   "df": -2
+  },
+  "C011": {
+   "dt": 2
+  },
+  "C012": {
+   "df": -7
+  },
+  "C013": {
+   "df": 3
+  },
+  "C014": {
+   "df": 8
+  },
+  "C015": {
+   "dt": -2
+  },
+  "C016": {
+   "df": 3
+  },
+  "C017": {
+   "df": 9
+  },
+  "C018": {
+   "dt": -3
+  },
+  "C019": {
+   "df": 9
+  },
+  "C022": {
+   "df": 8
+  },
+  "C024": {
+   "df": -10
+  },
+  "C025": {
+   "dt": -4
+  },
+  "C026": {
+   "df": 2
+  },
+  "C027": {
+   "df": -9
+  },
+  "C029": {
+   "df": -9
+  },
+  "C030": {
+   "df": -4
+  },
+  "C031": {
+   "df": 1
+  },
+  "C032": {
+   "df": -10
+  },
+  "C033": {
+   "df": -4
+  },
+  "C034": {
+   "df": -10
+  },
+  "C035": {
+   "df": -5
+  },
+  "C036": {
+   "dt": -1
+  },
+  "C037": {
+   "df": -10
+  },
+  "C038": {
+   "dt": -1
+  },
+  "C039": {
+   "dt": -4
+  },
+  "C040": {
+   "df": -2
+  },
+  "C041": {
+   "df": 5
+  },
+  "C042": {
+   "df": -10
+  },
+  "C043": {
+   "dt": -3
+  },
+  "C044": {
+   "df": 4
+  },
+  "C045": {
+   "df": -4
+  },
+  "C046": {
+   "df": 3
+  },
+  "C047": {
+   "df": 9
+  },
+  "C049": {
+   "dt": -1
+  },
+  "C050": {
+   "df": -2
+  },
+  "C051": {
+   "dt": -4
+  },
+  "C052": {
+   "df": -10
+  },
+  "C053": {
+   "df": 2
+  },
+  "C054": {
+   "df": 9
+  },
+  "C055": {
+   "df": -3
+  },
+  "C056": {
+   "df": 4
+  },
+  "C057": {
+   "df": -5
+  },
+  "C058": {
+   "df": -3
+  },
+  "C059": {
+   "df": 8
+  },
+  "C060": {
+   "dt": 1
+  },
+  "C061": {
+   "df": 5
+  },
+  "C062": {
+   "df": 6
+  },
+  "C064": {
+   "df": 6
+  },
+  "C065": {
+   "df": -7
+  },
+  "C066": {
+   "dt": 3
+  },
+  "C067": {
+   "df": -6
+  },
+  "C068": {
+   "dt": 2
+  },
+  "C069": {
+   "df": 9
+  },
+  "C070": {
+   "df": -6
+  },
+  "C071": {
+   "dt": -2
+  },
+  "C072": {
+   "df": 9
+  },
+  "C073": {
+   "df": -5
+  },
+  "C074": {
+   "df": 6
+  },
+  "C075": {
+   "df": -8
+  },
+  "C076": {
+   "dt": -1
+  },
+  "C077": {
+   "df": 10
+  },
+  "C078": {
+   "df": -3
+  },
+  "C079": {
+   "df": 4
+  },
+  "C081": {
+   "dt": -1
+  },
+  "C082": {
+   "df": 9
+  },
+  "C085": {
+   "df": -5
+  },
+  "C087": {
+   "dt": 5
+  },
+  "C089": {
+   "df": 9
+  },
+  "C090": {
+   "df": -2
+  }
+ },
+ "objective_tuple": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "objective_scalar": 6012119960661,
+ "revocation": {
+  "upper_incumbent": 6,
+  "proven_lb": 5,
+  "lb_closed": false,
+  "certificates": [
+   {
+    "cap": null,
+    "source": "cpsat_bound_L1",
+    "status": "FEASIBLE",
+    "lb": 5
+   },
+   {
+    "cap": 0,
+    "status": "INFEASIBLE",
+    "source": "infeasibility_probe"
+   },
+   {
+    "cap": 5,
+    "status": "UNKNOWN",
+    "source": "probe_timeout"
+   }
+  ],
+  "ladder_log": [
+   {
+    "layer": "L1_minR",
+    "status": "FEASIBLE",
+    "locks": {},
+    "min": "R",
+    "cap_R": null,
+    "wall_cum": 805.4,
+    "objective": 6.0,
+    "best_bound": 5.0,
+    "solution_tuple": [
+     6,
+     134,
+     2324,
+     795
+    ]
+   },
+   {
+    "layer": "ladder_Rle0",
+    "status": "INFEASIBLE",
+    "locks": {},
+    "min": null,
+    "cap_R": 0,
+    "wall_cum": 811.6
+   },
+   {
+    "layer": "ladder_Rle5",
+    "status": "UNKNOWN",
+    "locks": {},
+    "min": "R",
+    "cap_R": 5,
+    "wall_cum": 873.7
+   },
+   {
+    "layer": "L2_minA",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 6
+    },
+    "min": "A",
+    "cap_R": null,
+    "wall_cum": 1175.8,
+    "objective": 121.0,
+    "best_bound": 22.0,
+    "solution_tuple": [
+     6,
+     121,
+     2275,
+     725
+    ]
+   },
+   {
+    "layer": "L3_minPL",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 6,
+     "A": 121
+    },
+    "min": "PL",
+    "cap_R": null,
+    "wall_cum": 1278.1,
+    "objective": 1996.0,
+    "best_bound": 744.0,
+    "solution_tuple": [
+     6,
+     121,
+     1996,
+     753
+    ]
+   },
+   {
+    "layer": "L4_minMG",
+    "status": "FEASIBLE",
+    "locks": {
+     "R": 6,
+     "A": 121,
+     "PL": 1996
+    },
+    "min": "MG",
+    "cap_R": null,
+    "wall_cum": 1330.2,
+    "objective": 661.0,
+    "best_bound": 176.0,
+    "solution_tuple": [
+     6,
+     121,
+     1996,
+     661
+    ]
+   }
+  ]
+ },
+ "layers": [
+  {
+   "layer": "L1_minR",
+   "status": "FEASIBLE",
+   "locks": {},
+   "min": "R",
+   "cap_R": null,
+   "wall_cum": 805.4,
+   "objective": 6.0,
+   "best_bound": 5.0,
+   "solution_tuple": [
+    6,
+    134,
+    2324,
+    795
+   ]
+  },
+  {
+   "layer": "ladder_Rle0",
+   "status": "INFEASIBLE",
+   "locks": {},
+   "min": null,
+   "cap_R": 0,
+   "wall_cum": 811.6
+  },
+  {
+   "layer": "ladder_Rle5",
+   "status": "UNKNOWN",
+   "locks": {},
+   "min": "R",
+   "cap_R": 5,
+   "wall_cum": 873.7
+  },
+  {
+   "layer": "L2_minA",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 6
+   },
+   "min": "A",
+   "cap_R": null,
+   "wall_cum": 1175.8,
+   "objective": 121.0,
+   "best_bound": 22.0,
+   "solution_tuple": [
+    6,
+    121,
+    2275,
+    725
+   ]
+  },
+  {
+   "layer": "L3_minPL",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 6,
+    "A": 121
+   },
+   "min": "PL",
+   "cap_R": null,
+   "wall_cum": 1278.1,
+   "objective": 1996.0,
+   "best_bound": 744.0,
+   "solution_tuple": [
+    6,
+    121,
+    1996,
+    753
+   ]
+  },
+  {
+   "layer": "L4_minMG",
+   "status": "FEASIBLE",
+   "locks": {
+    "R": 6,
+    "A": 121,
+    "PL": 1996
+   },
+   "min": "MG",
+   "cap_R": null,
+   "wall_cum": 1330.2,
+   "objective": 661.0,
+   "best_bound": 176.0,
+   "solution_tuple": [
+    6,
+    121,
+    1996,
+    661
+   ]
+  }
+ ],
+ "_path": "runs\\fresh\\FULL-D2026-PROD-F\\tasks\\Q2-Q2-R51-main-N-A-p0\\attempts\\001\\payload.json",
+ "assembled": true,
+ "revoke": 6,
+ "grasp_revoke_median": 49.0,
+ "grasp_runs": 3,
+ "residual_pairs_second_impl": 0,
+ "compliance_violations": 0,
+ "tuple_matches_second_impl": 1,
+ "residual_pairs": 0,
+ "ladder_proven_revoke_lb": 5,
+ "gap_revoke": 1,
+ "degeneracy_ratio": 0.96,
+ "repro_first_layer_match": 0,
+ "repro_w1_eq_w8": 0,
+ "best_is_w1": 0,
+ "best_tuple_seen_across_runs": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "w1_tuple": [
+  20,
+  103,
+  1907,
+  607
+ ],
+ "w4_tuple": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "run_id_ref": "FULL-D2026-PROD-F"
+}

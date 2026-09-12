@@ -1,0 +1,82 @@
+{
+ "idea_id": "Q1-R21",
+ "question_id": "Q1",
+ "started_at": "2026-09-11T16:16:23+0800",
+ "protocol": "TP-D2026-01",
+ "horizon": {
+  "T_MAX": 643,
+  "B_MAX": 100,
+  "half_open": true,
+  "all_slots_within_horizon": true,
+  "all_bands_within_0_99": true
+ },
+ "data_source": {
+  "csv": "data/canonical_plans.csv",
+  "common_input_equivalence": {
+   "available": true,
+   "rows_compact": 150,
+   "rows_csv": 150,
+   "mismatches": [],
+   "equivalent": true
+  }
+ },
+ "evaluation": {
+  "pairs_total": 11175,
+  "pairs_evaluated": 11175,
+  "band_candidate_pairs": 1352,
+  "slot_pair_comparisons_worst_case": 1609200,
+  "impl_A_edges": 297,
+  "impl_B_edges": 297,
+  "symdiff_AB": 0,
+  "impl_A_equals_impl_B": true,
+  "impl_A_equals_impl_B_sorted_lists": true
+ },
+ "conflict_pairs": 297,
+ "by_class_pair": {
+  "AB": 21,
+  "AC": 66,
+  "BC": 181,
+  "BB": 10,
+  "CC": 19
+ },
+ "plans_touched": 148,
+ "boundary_cases": [
+  [
+   "band_[80,90)vs[90,95)",
+   0,
+   0,
+   true
+  ],
+  [
+   "time_[40,45)vs[45,50)",
+   0,
+   0,
+   true
+  ],
+  [
+   "time_[40,45)vs[44,50)",
+   1,
+   1,
+   true
+  ],
+  [
+   "third_slot_hit_[165,170)",
+   1,
+   1,
+   true
+  ],
+  [
+   "third_slot_touch_[170,175)",
+   0,
+   0,
+   true
+  ]
+ ],
+ "boundary_case_failures": [],
+ "runtime_seconds": 0.0165,
+ "runtime_total_seconds": 0.0227,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R21/solution_q1_r21.json",
+ "determinism": "deterministic (no RNG)",
+ "status": "completed",
+ "failure_mode": null
+}

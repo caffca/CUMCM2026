@@ -1,0 +1,1 @@
+{"result1_edge_symdiff": 0, "result1_rows": 297, "boundary_cases_failed": 0, "classpair_sum_minus_total": 0, "stress_min_recall": 0.7177, "involved_plans": 148, "isolated_plans": ["C007", "C060"], "counts": {"edges": 297, "AB": 21, "AC": 66, "AA": 0, "BC": 181, "BB": 10, "CC": 19}}

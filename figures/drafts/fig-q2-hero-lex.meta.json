@@ -1,0 +1,37 @@
+{
+  "figure_id": "fig-q2-hero-lex",
+  "generator": "code/prod/make_figures.py",
+  "generator_sha256": "",
+  "generated_at": "2026-09-12T13:34:25+08:00",
+  "source_results": [
+    {
+      "file": "Q2_solution.json",
+      "sha256": "127d153f865ae3ba0b21783b3e03dd75932008a37b29f73a7cd9c4afca60ef46",
+      "keys": [
+        "revoke",
+        "ladder_proven_revoke_lb",
+        "gap_revoke"
+      ]
+    }
+  ],
+  "source_hash": "ed3a92779a033b076b8cf1cca5ea07b2828c1fb347353d9a66b2beefc237d87d",
+  "panels": {
+    "A": {
+      "line_count": 4,
+      "scatter_count": 0,
+      "patch_count": 0,
+      "text_count": 8,
+      "collection_count": 0
+    },
+    "B": {
+      "line_count": 0,
+      "scatter_count": 0,
+      "patch_count": 2,
+      "text_count": 2,
+      "collection_count": 0
+    }
+  },
+  "annotations": [],
+  "axes": [],
+  "caption": "四级目标证书与消解效果"
+}

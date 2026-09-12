@@ -1,0 +1,38 @@
+{
+ "check": "FORCED 边 + 文档新鲜度",
+ "Q2": {
+  "pairs_with_union_overlap_mine": 1693,
+  "forced_edges_mine": 0,
+  "forced_edges_auth": 0,
+  "forced_examples": [],
+  "match": true
+ },
+ "Q4": {
+  "pairs_with_union_overlap_mine": 2117,
+  "forced_edges_mine": 0,
+  "forced_edges_auth": null,
+  "forced_examples": [],
+  "match": true
+ },
+ "freshness": {
+  "RESULTS_REPORT.md_mtime": 1789172298.2065115,
+  "make_report.py_mtime": 1789173798.9008508,
+  "report_stale_vs_generator": true
+ },
+ "stale_strings_found": {
+  "权威解（workers=1 确定性）": true,
+  "w8=": true,
+  "视界截断 dg 选项=369": true
+ },
+ "validation_plan_binding": {
+  "files_binding_plan": 9,
+  "files_with_matching_hash": 0,
+  "plan_revision": 6,
+  "plan_frozen_at": "2026-09-12T08:26:57+08:00",
+  "plan_frozen_before_production_runs_claim": true,
+  "plan_mtime": "2026-09-12 08:26:57",
+  "newest_result_mtime": "2026-09-12 08:26:22",
+  "plan_actually_written_after_results": true
+ },
+ "verdict": "FAIL"
+}

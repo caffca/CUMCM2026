@@ -1,0 +1,13 @@
+{
+ "elapsed_seconds": 0.006,
+ "status": "completed",
+ "stopping_reason": "assembled",
+ "evaluator_calls": 0,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "question": "Q4",
+  "variant": "synth"
+ }
+}

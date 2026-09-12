@@ -1,0 +1,14 @@
+{
+ "elapsed_seconds": 8.684,
+ "status": "completed",
+ "stopping_reason": "solved",
+ "evaluator_calls": 1,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "base": "@Q2MAIN",
+  "variant": "lp_hiGHS",
+  "base_resolved": "runs\\fresh\\FULL-D2026-PROD-E\\tasks\\Q2-Q2-R51-main-N-A-p0\\attempts\\001\\payload.json"
+ }
+}

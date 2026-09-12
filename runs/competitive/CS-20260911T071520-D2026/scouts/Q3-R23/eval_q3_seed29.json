@@ -1,0 +1,15 @@
+{
+ "question": "Q3",
+ "feasible": true,
+ "objective": [
+  137
+ ],
+ "direction": "maximize",
+ "unit": "new_C_plans",
+ "counts": {
+  "submitted": 137,
+  "non_conflicting": 137
+ },
+ "violations": [],
+ "n_violations": 0
+}

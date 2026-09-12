@@ -1,0 +1,2 @@
+top keys: ['child_run_id', 'role', 'question_ids', 'routes', 'coverage_notes']
+/routes[2]/scout_plan/special_checks[2] => 禁止列剪枝破坏完备性：只保留『至少修好一条原边』的动作列会给出虚假更优解（探针：列剪枝模型 79s 报 OPTIMAL=(0,98,585) 但残留 121 对冲突）

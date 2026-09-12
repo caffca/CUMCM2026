@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "discovery_id": "DISC-E9D8A97BC71B91CD",
+  "generated_at": "2026-09-11T15:04:41+08:00",
+  "search_gate": {
+    "status": "READY_FOR_ACADEMIC_SEARCH",
+    "opens_after": "2026-09-11T15:04:41+08:00",
+    "purpose": "仅检索 model family/formulation/solver prior；不得检索本届赛题讨论、题解、代码或答案。",
+    "allowed_source_classes": [
+      "official",
+      "textbook",
+      "peer_reviewed_paper",
+      "academic_documentation"
+    ],
+    "blocked_source_classes": [
+      "problem_discussion",
+      "solution_or_answer_search",
+      "competition_code_repository",
+      "model_recommendation_search",
+      "old_paper_or_replay",
+      "old_brainstorm_or_route",
+      "unregistered_workspace_file"
+    ],
+    "blocked_query_patterns": [
+      "本届赛题讨论",
+      "赛题讨论",
+      "题解",
+      "现成解答",
+      "比赛代码",
+      "代码仓",
+      "这道题用什么模型",
+      "答案搜索",
+      "problem solution",
+      "competition code"
+    ],
+    "search_started_at": null
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "Q1-OP-special_boundary",
+      "question_id": "Q1",
+      "finding_ids": [
+        "Q1-F-special_boundary"
+      ],
+      "proposal": {
+        "kind": "constraint",
+        "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"
+      },
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q1",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q1",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ],
+      "evidence_refs": [
+        "EDA_FINDINGS.findings[Q1-F-special_boundary]"
+      ]
+    },
+    {
+      "opportunity_id": "Q2-OP-special_boundary",
+      "question_id": "Q2",
+      "finding_ids": [
+        "Q2-F-special_boundary"
+      ],
+      "proposal": {
+        "kind": "constraint",
+        "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"
+      },
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q2",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q2",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ],
+      "evidence_refs": [
+        "EDA_FINDINGS.findings[Q2-F-special_boundary]"
+      ]
+    },
+    {
+      "opportunity_id": "Q3-OP-special_boundary",
+      "question_id": "Q3",
+      "finding_ids": [
+        "Q3-F-special_boundary"
+      ],
+      "proposal": {
+        "kind": "constraint",
+        "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"
+      },
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q3",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q3",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ],
+      "evidence_refs": [
+        "EDA_FINDINGS.findings[Q3-F-special_boundary]"
+      ]
+    },
+    {
+      "opportunity_id": "Q4-OP-special_boundary",
+      "question_id": "Q4",
+      "finding_ids": [
+        "Q4-F-special_boundary"
+      ],
+      "proposal": {
+        "kind": "constraint",
+        "description": "将观测到的边界/可达域作为显式约束，并把边界内外案例分开验证。"
+      },
+      "material_decision_impact": "constraint_added_or_changed",
+      "decision_before": {
+        "question_id": "Q4",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [],
+        "solver": "baseline_estimator",
+        "validation_strategy": "row_level_validation",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "decision_after": {
+        "question_id": "Q4",
+        "selected_route": "incumbent_tabular",
+        "model_family": "baseline_tabular",
+        "representation": "row_observations",
+        "variables": [
+          "使用次数",
+          "间隔时长"
+        ],
+        "constraints": [
+          "observed_domain_bounds"
+        ],
+        "solver": "baseline_estimator",
+        "validation_strategy": "interior_and_boundary_cases",
+        "shared_state": [],
+        "rejected_routes": []
+      },
+      "changed_paths": [
+        "/constraints",
+        "/validation_strategy"
+      ],
+      "evidence_refs": [
+        "EDA_FINDINGS.findings[Q4-F-special_boundary]"
+      ]
+    }
+  ],
+  "decision_transitions": [
+    {
+      "question_id": "Q1",
+      "before_sha256": "e7fb62e749cb8d0a37e94672b8018821e9dec3a89a318add34ecda72d0c9904b",
+      "after_sha256": "cc8623740f423b9f41b953678991d1df4e1a16ec9322503c7482c3df3ff9d225",
+      "material_change": true,
+      "selected_route_unchanged_allowed": false,
+      "changed_opportunity_ids": [
+        "Q1-OP-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "before_sha256": "6932b551c5d36b6008e4666d8717271af23a458b2095bb0bca0ecc66302c8689",
+      "after_sha256": "c16bb8b9a0224dfc463e0f43886e54b2a08850157adfc053797406e62bac8e0c",
+      "material_change": true,
+      "selected_route_unchanged_allowed": false,
+      "changed_opportunity_ids": [
+        "Q2-OP-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "before_sha256": "34d00430eea040fa371a0b0919d6819e2864cc080cf93069535946f99ded7026",
+      "after_sha256": "c0a491886b1329d86b4f707b898f23d3e4e41983762c965e03f86b9a7dcaa6e4",
+      "material_change": true,
+      "selected_route_unchanged_allowed": false,
+      "changed_opportunity_ids": [
+        "Q3-OP-special_boundary"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "before_sha256": "580d1ec716e6474883806253a4cd9bd3de4f376d3955fea12d9aa162e4a6a393",
+      "after_sha256": "9351e01169f226e61cde8997c86d280760d051351ceaaa90d574b98b4be0ee5e",
+      "material_change": true,
+      "selected_route_unchanged_allowed": false,
+      "changed_opportunity_ids": [
+        "Q4-OP-special_boundary"
+      ]
+    }
+  ]
+}

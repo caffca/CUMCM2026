@@ -1,0 +1,23 @@
+base(Q2-R51): kept=144 revoked=6 incidence=15600 distinct=15600 equal=True free_cells=48700
+candidates: N=2123 (claim 2123) match=True  (0.01s)
+coverage: distinct_cells=14969 sum_cells=152856 (=72*2123=152856) singleton_cells=1147 rows>=2=13822 nnz_rows>=2=151709
+  vs lp_crosscheck_hiGHS.json claims: rows=13822 nnz=151709 vars=2123 -> match=True
+edges (inverted-index): 62071 (claim 62071) match=True
+edge audit (full, band-dist<=2, |dt|<=111): checked=131254 (claim 131254) mismatches=0  (0.3s)
+ortools unavailable: No module named 'ortools'
+HiGHS LP (my build): status=0 bound=139.000000 floor=139 confirms_no_140=True  (0.2s)
+Q3-R11 sol: n=139 unique=139 subset_of_my_cands=True internal_cell_reuse_violations=0 sha=a567ad10ef51e835... eval_obj=[139]
+Q3-R23 sol: n=137 unique=137 subset_of_my_cands=True internal_cell_reuse_violations=0 sha=045baa9afe2b356d... eval_obj=[137]
+Q3-R51 sol: n=137 unique=137 subset_of_my_cands=True internal_cell_reuse_violations=0 sha=045baa9afe2b356d... eval_obj=[137]
+evaluator re-run Q3-R11: feasible=True objective=[139] n_viol=0
+evaluator re-run Q3-R23: feasible=True objective=[137] n_viol=0
+evaluator re-run Q3-R51: feasible=True objective=[137] n_viol=0
+phase-block bound: my tot=997 (claim 997) UB_pb=floor(tot/3)=332 (claim 332) | no-phantom tot=997 UB=332
+density bound: free=48700 (claim 48700) UB_dens=676 (claim 676) ; min=332 (claim 332)
+/3 audit on R11 solution: Σ count(b,r)=417 (=3*139=417) ; overlapping-interval violations=0 ; cap violations C(b,r)=0
+greedy (f0 asc, t0 asc) independent recount = 133 (claim 133)
+
+unit-basis scan Q3 artifacts:
+Q3-R11: {"332": ["result.json", "scout.json"], "531": ["scout.json", "solution_newc.json"]}
+Q3-R23: {"15600": ["run_report.json"], "332": ["result.json", "scout.json"], "509": ["solution_newc.json"], "531": ["solution_newc.json"], "643": ["run_report.json"]}
+Q3-R51: {"15600": ["bound_r51.json"], "332": ["bound_r51.json", "result.json", "scout.json"], "48700": ["bound_r51.json", "scout.json"], "509": ["solution_newc.json"], "531": ["solution_newc.json"], "643": ["bound_r51.json"]}

@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cumcm2026D-attachment1-plans-150",
+  "source_file": "附件/附件1.xlsx",
+  "rows": 150,
+  "cols": 5,
+  "entity_id": "用频装备编号",
+  "observation_unit": "row observation",
+  "sheet": "附件/附件1.xlsx",
+  "missingness": {
+    "total_cells": 750,
+    "missing_cells": 0,
+    "by_column": [
+      {
+        "column": "用频装备编号",
+        "missing": 0,
+        "fraction": 0.0
+      },
+      {
+        "column": "频段区间",
+        "missing": 0,
+        "fraction": 0.0
+      },
+      {
+        "column": "时间区间",
+        "missing": 0,
+        "fraction": 0.0
+      },
+      {
+        "column": "间隔时长",
+        "missing": 0,
+        "fraction": 0.0
+      },
+      {
+        "column": "使用次数",
+        "missing": 0,
+        "fraction": 0.0
+      }
+    ]
+  },
+  "duplicates": 0,
+  "units": {},
+  "candidate_anomalies": [],
+  "no_data": false,
+  "source_assets": [
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "size": 16067
+    }
+  ],
+  "tables": [
+    {
+      "path": "附件/附件1.xlsx",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "rows": 150,
+      "cols": 5,
+      "headers": [
+        "用频装备编号",
+        "频段区间",
+        "时间区间",
+        "间隔时长",
+        "使用次数"
+      ],
+      "variable_types": {
+        "用频装备编号": "text",
+        "频段区间": "text",
+        "时间区间": "text",
+        "间隔时长": "numeric",
+        "使用次数": "numeric"
+      },
+      "numeric_bounds": {
+        "间隔时长": {
+          "min": 8.0,
+          "max": 60.0
+        },
+        "使用次数": {
+          "min": 3.0,
+          "max": 12.0
+        }
+      },
+      "anomalies": []
+    }
+  ],
+  "structure_summary": {
+    "entity_id": "用频装备编号",
+    "time_column": "时间区间",
+    "spatial": {
+      "has_2d": false,
+      "has_3d": false,
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "graph": {
+      "has_edge_endpoints": false,
+      "source": null,
+      "target": null,
+      "edge_tokens": false
+    },
+    "numeric_columns": [
+      "使用次数",
+      "间隔时长"
+    ],
+    "approx_rank": 2,
+    "zero_fraction": 0.0
+  },
+  "generated_at": "2026-09-11T15:04:41+08:00"
+}

@@ -1,0 +1,154 @@
+{
+ "check": "Q2_solution 独立复算",
+ "n_plans": 150,
+ "shape_bad": [],
+ "compliance_violations": [],
+ "horizon_violations_ADR3": [],
+ "revoked": [
+  "B013",
+  "B018",
+  "B019",
+  "B020",
+  "B022",
+  "B028"
+ ],
+ "n_revoked": 6,
+ "n_adjusted": 121,
+ "n_kept": 23,
+ "sum_equals_150": true,
+ "sum_value": 150,
+ "by_class_mine": {
+  "A": {
+   "kept": 5,
+   "adjusted": 15,
+   "revoked": 0
+  },
+  "B": {
+   "kept": 4,
+   "adjusted": 30,
+   "revoked": 6
+  },
+  "C": {
+   "kept": 14,
+   "adjusted": 76,
+   "revoked": 0
+  }
+ },
+ "post_conflict_edges_mine": 0,
+ "post_pairs_checked": 10296,
+ "post_conflict_edges_auth_field": {
+  "residual_pairs": 0,
+  "residual_pairs_second_impl": 0,
+  "compliance_violations": 0
+ },
+ "objective_tuple_mine": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "objective_tuple_auth": [
+  6,
+  121,
+  1996,
+  661
+ ],
+ "objective_tuple_equal": true,
+ "objective_scalar_auth": 6012119960661,
+ "objective_scalar_mine": 6012119960661,
+ "original_edges_all_touched": true,
+ "untouched_conflict_pairs": [],
+ "auth_revoke_fields": {
+  "revoke": 6,
+  "objective_tuple[0]": 6,
+  "revocation.upper_incumbent": 6
+ },
+ "table1_auth": {
+  "by_class": {
+   "A": {
+    "kept": 5,
+    "adjusted": 15,
+    "revoked": 0
+   },
+   "B": {
+    "kept": 4,
+    "adjusted": 30,
+    "revoked": 6
+   },
+   "C": {
+    "kept": 14,
+    "adjusted": 76,
+    "revoked": 0
+   }
+  },
+  "table_closure_diff": 0,
+  "result2_rows": 127,
+  "objective_tuple": [
+   6,
+   121,
+   1996,
+   661
+  ],
+  "_meta": {
+   "metadata_writer": "v7-p2-02/result_writer",
+   "metadata_writer_schema_version": 1,
+   "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+   "role": "support",
+   "authority": false,
+   "problem_ids": [
+    "Q2"
+   ],
+   "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+   "contract_rev": 1,
+   "generator_path": "code/prod/submission_checks.py",
+   "generator_sha256": "5481ceb1f2fc01dd0af9402fc687ca49183b932cb5a00df30aeff658ea3f272d",
+   "input_hashes": {
+    "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+   },
+   "input_sha256": "4680ec4066f0616395bf6f5011759b6b6069adc13172ddb68c878f7b4963a35c",
+   "output_hashes": {
+    "__result_payload__": "68104b39bf28abf732dc7ffd42d8b314899b986915886d1cefa038f5f0e837cf"
+   },
+   "output_sha256": "d7b29260e15507886f55ac3dff6cc740ed13ab709004f15ed635c58f6877323a",
+   "coverage": {
+    "status": "not_applicable",
+    "coverage_id": null,
+    "plan_path": null,
+    "plan_sha256": null,
+    "observed": null,
+    "observed_sha256": null
+   },
+   "coverage_id": null,
+   "coverage_plan": null,
+   "coverage_plan_sha256": null,
+   "observed_coverage_sha256": null,
+   "generated_at": "2026-09-12T08:18:12+08:00",
+   "problem_id": "Q2",
+   "formulation_sha256": "667a57f01d7d3b11ecafccf495b53df912b3ef5a501b595f47b78e921557c333",
+   "route_id": "Q2-R51",
+   "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+   "solver_family": "deterministic_global",
+   "solver_algorithm": "阶段1：强制 Σr ≤ k（k=0,1,2,…）只保留成对不相容子句，求可行性；首个 INFEASIBLE 的前一个 k 即撤销数下界证书。阶段2：以 W=(W1,W2,W3,W4) 大权重标量化，min 之，记录 status、ObjectiveValue、BestObjectiveBound。阶段3：对 incumbent 用独立 checker 复算 0 冲突 + 逐行合规（F-008/F-012/频段 0..99）。",
+   "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+   "implementation": "code/prod/q2_solve.py",
+   "implementation_sha256": "18593e05279328a19da3269264f2eb8e25b7985b9715e8a37e733d40673c2550",
+   "formulation_kind": "optimization",
+   "seed_policy": "N/A",
+   "model_decision_binding": {
+    "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+    "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+    "profile_id": "PROFILE-8ADA7763202B25BA",
+    "strategy_matching_id": "MATCH-1504A0480D6D591A",
+    "question_id": "Q2",
+    "decision_status": "pending_proposal",
+    "selected_strategy_id": null,
+    "problem_profile_question_sha256": "a00acee8ff19ee722d3753edf6c0fa906e4dc14e4beb8a2a7ca3e9292a4d3900",
+    "strategy_matching_question_sha256": "fe3a37d328a343e89dac31a00cf71bb9deeed7e91ed59e42c534997d9eefcfa8"
+   }
+  }
+ },
+ "hint_source": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "hint_role": "search_hint_only_all_figures_recomputed",
+ "verdict": "PASS"
+}

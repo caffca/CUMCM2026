@@ -1,0 +1,22 @@
+{
+ "question_id": "Q3",
+ "idea_id": "Q3-R51",
+ "status": "completed",
+ "feasible": true,
+ "objective": 137,
+ "objective_tuple": [
+  137,
+  332
+ ],
+ "objective_unit": "new_C_plans",
+ "runtime_seconds": 0.19,
+ "evaluator_invoked": true,
+ "evaluator_command": "python runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py --question Q3 --solution runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/solution_newc.json --base-actions runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+ "canonical_evaluator_sha256_bound": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+ "seed": "确定性（纯整数计数，无随机）",
+ "replicates": 1,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q3-R51/solution_newc.json",
+ "failure_mode": null,
+ "note": "最小可运行原型（侦察证据），非正式论文结果；未写 results/figures/paper。",
+ "evaluator_n_violations": 0
+}

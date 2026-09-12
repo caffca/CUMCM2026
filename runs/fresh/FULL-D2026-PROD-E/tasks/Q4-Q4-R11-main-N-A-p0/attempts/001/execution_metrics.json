@@ -1,0 +1,23 @@
+{
+ "elapsed_seconds": 1482.446,
+ "status": "completed",
+ "stopping_reason": "stages_complete_or_budget",
+ "evaluator_calls": 5,
+ "budget_class": "full",
+ "seed": "N/A",
+ "scenario": "main",
+ "parameter": {
+  "anchor": true,
+  "q2_solution": "@Q2MAIN",
+  "stage_budget": {
+   "l1": 800,
+   "l2": 300,
+   "l3": 100,
+   "l4": 50,
+   "ladder": 250
+  },
+  "variant": "cpsat_lex",
+  "workers": 4,
+  "_q2_src": "shard:runs\\fresh\\FULL-D2026-PROD-E\\tasks\\Q2-Q2-R51-main-N-A-p0\\attempts\\001\\payload.json"
+ }
+}

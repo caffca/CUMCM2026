@@ -1,0 +1,288 @@
+[
+ {
+  "id": "fig-q1-grid-conflict",
+  "question_id": "Q1",
+  "kind": "data",
+  "role": "hero",
+  "visual_priority": "primary",
+  "unique_information": "冲突热点的空间位置（其余 Q1 图只给计数/分布）",
+  "story": {
+   "main_message": "150 个计划在 100 频段×643 时间格资源盒上的占用与 297 处时频冲突热点的空间分布",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "caption": "图X 用频计划时频占用栅格与冲突热点分布（冲突对 297，涉及 148/150 计划）",
+  "panels": [
+   "占用栅格（按类着色）",
+   "冲突单元放大带（频段×时间）"
+  ],
+  "data_source": "results/Q1_detect.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q1_detect.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q1-degree-dist",
+  "question_id": "Q1",
+  "kind": "data",
+  "role": "secondary",
+  "visual_priority": "secondary",
+  "unique_information": "稀疏性画像（max=8）⇒ Q2 精确可行域规模的直接依据",
+  "story": {
+   "main_message": "冲突度分布（中位 4、最大 8、2 个孤立计划）表明冲突图稀疏且无支配性瓶颈节点",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "caption": "图X 计划冲突度分布",
+  "panels": [
+   "冲突度直方图（按类分面）"
+  ],
+  "data_source": "results/Q1_stats.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q1_stats.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q1-classpairs",
+  "question_id": "Q1",
+  "kind": "data",
+  "role": "secondary",
+  "visual_priority": "secondary",
+  "unique_information": "冲突来源的类别归因（BC 主导 ⇒ B 带与 C 周期为设计矛盾）",
+  "story": {
+   "main_message": "按类对冲突构成（BC181 占 61%，CC19、AB21、AC66、BB10；无 AA），B 类宽带×C 类高频重复是冲突主因",
+   "claim_bind": [
+    "C-Q1-1"
+   ]
+  },
+  "caption": "图X 冲突对类别构成",
+  "panels": [
+   "类对堆叠柱/矩阵热图"
+  ],
+  "data_source": "results/Q1_stats.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q1_stats.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q2-hero-lex",
+  "question_id": "Q2",
+  "kind": "data",
+  "role": "hero",
+  "visual_priority": "primary",
+  "unique_information": "四级目标各自的 LB-UB 区间（表1 与 ladder 图均不含层级区间）",
+  "story": {
+   "main_message": "词典序四级目标逐级锁定的达成值与撤销层证书区间 [2,6]（incumbent=6），消解后冲突对=0",
+   "claim_bind": [
+    "C-Q2-1",
+    "C-Q2-2"
+   ]
+  },
+  "caption": "图X 问题2 消解的四级目标层级达成与撤销数证书区间",
+  "panels": [
+   "四层阶梯条（rev/adj/ploss/mag 的 LB-UB 区间带）",
+   "消解前后冲突数对比"
+  ],
+  "data_source": "results/Q2_solution.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q2_solution.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q2-table1",
+  "question_id": "Q2",
+  "kind": "data",
+  "role": "primary",
+  "visual_priority": "primary",
+  "unique_information": "按类保留/调整/撤销的官方口径读数（对应论文表1）",
+  "story": {
+   "main_message": "表1 可视化：按类 {保留,调整,撤销} 结构（优先级保护程度）",
+   "claim_bind": [
+    "C-Q2-1"
+   ]
+  },
+  "caption": "图X 问题2 消解统计（对应表1）",
+  "panels": [
+   "分组堆叠柱 A/B/C"
+  ],
+  "data_source": "results/Q2_table1.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q2_table1.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q2-ladder",
+  "question_id": "Q2",
+  "kind": "data",
+  "role": "secondary",
+  "visual_priority": "secondary",
+  "unique_information": "Σr≤k 可满足性序列（证书链独有）",
+  "story": {
+   "main_message": "撤销阶梯 Σr≤k 的可满足性证书序列（k=0 INFEASIBLE⇒撤销≥1），G* 全势边约束是防『假 0 撤销』的关键",
+   "claim_bind": [
+    "C-Q2-2"
+   ]
+  },
+  "caption": "图X 撤销数下界证书阶梯",
+  "panels": [
+   "阶梯状态条形（OPTIMAL/INFEASIBLE/UNKNOWN）+ 原边松弛对照"
+  ],
+  "data_source": "results/Q2_solution.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q2_solution.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q3-utilization",
+  "question_id": "Q3",
+  "kind": "data",
+  "role": "hero",
+  "visual_priority": "primary",
+  "unique_information": "加装后资源栅格全貌（放置位置级信息）",
+  "story": {
+   "main_message": "Q2 方案基座上加装 139 个 C 计划后的资源栅格：空闲单元 49600 级中可认证利用上限",
+   "claim_bind": [
+    "C-Q3-1"
+   ]
+  },
+  "caption": "图X 问题3 最大加装方案资源视图（新增 139 台，基座=Q2 生产解）",
+  "panels": [
+   "基座占用+加装放置叠加栅格",
+   "按频段带加装数剖面"
+  ],
+  "data_source": "results/Q3_solution.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q3_solution.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q3-bound-meet",
+  "question_id": "Q3",
+  "kind": "data",
+  "role": "primary",
+  "visual_priority": "primary",
+  "unique_information": "三腿上界会合与初等界的松紧对比（认证逻辑独有）",
+  "story": {
+   "main_message": "三腿会合：构造/CP-SAT/LP 认证上下界=139（gap=0），初等双计数界 332 为宽松可手核对照",
+   "claim_bind": [
+    "C-Q3-1"
+   ]
+  },
+  "caption": "图X 加装数量的上下界会合",
+  "panels": [
+   "水平区间条（LB构造, LB认证=UB认证 | UB初等=332）"
+  ],
+  "data_source": "results/Q3_bound.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q3_bound.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q4-vs-q2",
+  "question_id": "Q4",
+  "kind": "data",
+  "role": "hero",
+  "visual_priority": "primary",
+  "unique_information": "两问四级元组差（间隔自由度收益的呈现位）",
+  "story": {
+   "main_message": "Q4（允许 C 调间隔）与 Q2 的四级目标对比与表1 差异：支配界『不劣于 Q2』的实测化（热启动后各层改善量）",
+   "claim_bind": [
+    "C-Q4-1"
+   ]
+  },
+  "caption": "图X 问题4 与问题2 消解结果对比",
+  "panels": [
+   "成对条形（Q2 vs Q4 各类 保留/调整/撤销）",
+   "四级元组差"
+  ],
+  "data_source": "results/Q4_table1.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q4_table1.json"
+   ]
+  }
+ },
+ {
+  "id": "fig-q4-dg-dist",
+  "question_id": "Q4",
+  "kind": "data",
+  "role": "secondary",
+  "visual_priority": "secondary",
+  "unique_information": "dg 分布与视界截断效应（重定时机理解释独有）",
+  "story": {
+   "main_message": "被调 C 计划的间隔调整量 dg 分布与 R3 视界截断效应（大 t0 计划正 dg 不可用）",
+   "claim_bind": [
+    "C-Q4-1"
+   ]
+  },
+  "caption": "图X 间隔重定时调整分布",
+  "panels": [
+   "dg 直方图（分正负）",
+   "t0×dg' 可行域条带示意"
+  ],
+  "data_source": "results/Q4_solution.json",
+  "status": "proposed",
+  "artifact": null,
+  "meta": null,
+  "renderer": "matplotlib",
+  "provenance": {
+   "source_results": [
+    "results/Q4_solution.json"
+   ]
+  }
+ }
+]

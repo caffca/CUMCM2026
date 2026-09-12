@@ -1,0 +1,16 @@
+[    0.7s] G* {"pairs_envelope_checked": 2266, "star_edges": 1693, "infeasible_combos": 270626, "build_seconds": 0.4, "source": "cache", "mask_recheck": "PASS(sample=250)", "mask_recheck_seconds": 0.4, "base_conflicts": 297, "star_covers_base": true}
+[    3.0s] model {"n_bool": 4582, "n_clauses": 270626, "n_star_edges": 1693, "n_plans": 150, "build_seconds": 2.22}
+[   51.1s] L1(min Σr) {"stage": 1, "layer": "revoke", "mode": "min_sum_revoke", "status": "FEASIBLE", "budget_s": 48.0, "wall_s": 48.2, "n_conflicts": 0, "n_branches": 0, "n_solutions_logged": 21, "value": 21, "best_bound": 2, "proven_optimal": false, "trajectory_min_revoke": 21}
+[   57.4s] ladder[floor] Σr<=0 -> INFEASIBLE (6.2s) found_r=None
+[   64.8s] ladder[lapse8_try1] Σr<=13 -> OPTIMAL (7.3s) found_r=13
+[   75.6s] ladder[lapse4_try1] Σr<=9 -> OPTIMAL (10.8s) found_r=9
+[   81.3s] ladder[lapse2_try1] Σr<=7 -> OPTIMAL (5.6s) found_r=7
+[   95.9s] ladder[lapse1_try1] Σr<=6 -> UNKNOWN (14.5s) found_r=None
+[  124.1s] ladder[lapse1_try2] Σr<=6 -> UNKNOWN (28.1s) found_r=None
+[  180.3s] ladder[lapse1_try3] Σr<=6 -> UNKNOWN (56.1s) found_r=None
+[  262.9s] ladder[deep_certificate] Σr<=6 -> OPTIMAL (82.5s) found_r=6
+[  262.9s] revoke locked at 6 (LB=2, certified=False)
+[  394.5s] L2 {"stage": 2, "layer": "adjusted", "mode": "min_adjusted", "status": "FEASIBLE", "budget_s": 131.5, "wall_s": 131.5, "n_conflicts": 0, "n_branches": 0, "value": 121, "best_bound": 84, "proven_optimal": false, "tuple_of_solution": [6, 121, 2185, 760]}
+[  451.4s] L3 {"stage": 3, "layer": "priority_loss", "mode": "min_priority_loss", "status": "FEASIBLE", "budget_s": 56.2, "wall_s": 56.7, "n_conflicts": 0, "n_branches": 0, "value": 1996, "best_bound": 422, "proven_optimal": false, "tuple_of_solution": [6, 121, 1996, 755]}
+[  547.2s] L4 {"stage": 4, "layer": "magnitude_sum", "mode": "min_magnitude_sum", "status": "FEASIBLE", "budget_s": 95.6, "wall_s": 95.7, "n_conflicts": 0, "n_branches": 0, "value": 663, "best_bound": 321, "proven_optimal": false, "tuple_of_solution": [6, 121, 1996, 663]}
+[  547.3s] solution tuple(internal)=[6, 121, 1996, 663] residual=0 listed=127

@@ -1,0 +1,69 @@
+{
+  "question_id": "Q3",
+  "candidate_id": "Q3-R11",
+  "run_id": "FULL-D2026-PROD-H",
+  "feasible": true,
+  "derived_from_authority": true,
+  "phi": 136,
+  "ub_cp": 136.0,
+  "gap_certified": 0.0,
+  "note": "bundle 视图：字段镜像自本问权威结果件（无新增数值）",
+  "_meta": {
+    "metadata_writer": "v7-p2-02/result_writer",
+    "metadata_writer_schema_version": 1,
+    "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+    "role": "support",
+    "authority": false,
+    "problem_ids": [
+      "Q3"
+    ],
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "contract_rev": 1,
+    "generator_path": "code/prod/make_bundle_views.py",
+    "generator_sha256": "3857d04f293da9862a2bddc906ba5188447e7c14d3d3b0df27d75b61f21db0b9",
+    "input_hashes": {
+      "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+    },
+    "input_sha256": "4680ec4066f0616395bf6f5011759b6b6069adc13172ddb68c878f7b4963a35c",
+    "output_hashes": {
+      "__result_payload__": "8ab3ea93b4c980b00ce039cb91de81b0fdc5a914e884b814453d41604359331f"
+    },
+    "output_sha256": "1931d57e6fe2d4892263f318fb216da17fd7d9529474e071b419da5e7a03d9ff",
+    "coverage": {
+      "status": "not_applicable",
+      "coverage_id": null,
+      "plan_path": null,
+      "plan_sha256": null,
+      "observed": null,
+      "observed_sha256": null
+    },
+    "coverage_id": null,
+    "coverage_plan": null,
+    "coverage_plan_sha256": null,
+    "observed_coverage_sha256": null,
+    "generated_at": "2026-09-12T14:04:06+08:00",
+    "problem_id": "Q3",
+    "formulation_sha256": "460f7fd45b23a68312d0409803af96659eee5a5fed77bf93249b56669aeb496c",
+    "route_id": "Q3-R11",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "deterministic_global",
+    "solver_algorithm": "空闲掩码 → 候选枚举（按条带）→ 干扰图（位掩码 AND）→ max Σz s.t. 干扰边 z_p+z_p' ≤ 1（或每格 Σ_{p∋cell} z_p ≤ 1 的打包约束，更紧）",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "implementation": "code/prod/q3_solve.py",
+    "implementation_sha256": "427956b850c253b48453cbcc4099c34166996f05f0c7d4325868720e0f52749e",
+    "formulation_kind": "optimization",
+    "seed_policy": "N/A",
+    "model_decision_binding": {
+      "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+      "profile_id": "PROFILE-8ADA7763202B25BA",
+      "strategy_matching_id": "MATCH-1504A0480D6D591A",
+      "question_id": "Q3",
+      "decision_status": "pending_proposal",
+      "selected_strategy_id": null,
+      "problem_profile_question_sha256": "8f0ac6544d1d95ee54ffca6aee181fd9d61ef62ee38ea4e772c850fb3b439733",
+      "strategy_matching_question_sha256": "3e5748a900556fa3dc4127698e5ce7f04ee45dedbfcd13fe2e3492e24796cf2a"
+    }
+  }
+}

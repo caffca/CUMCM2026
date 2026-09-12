@@ -1,0 +1,57 @@
+{
+  "gate": "schema_validation",
+  "schema_version": 1,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "engine": "latex",
+  "presence_scope": {
+    "stage": "coding_visual",
+    "frontier": null,
+    "required_paths": [
+      "code/*.py",
+      "figures/draft_figure_manifest.json",
+      "figures/drafts/*.meta.json",
+      "figures/drafts/*.pdf",
+      "reports/ANALYSIS_MODELING_REPORT.md",
+      "reports/BRAINSTORM_REPORT.md",
+      "reports/FIGURE_REQUIREMENTS.json",
+      "reports/FINAL_MODEL_SPEC.json",
+      "reports/VALIDATION_PLAN.json",
+      "reports/VALIDATION_PLAN.md",
+      "reports/contracts/IDEA_CANDIDATES.json",
+      "reports/contracts/IDEA_DECISION.json",
+      "reports/contracts/MODELING_STRATEGY_LIBRARY.json",
+      "reports/contracts/MODEL_DECISION_RECORD.json",
+      "reports/contracts/MODEL_SELECTION_VALIDATION.json",
+      "reports/contracts/PROBLEM_FACTS.json",
+      "reports/contracts/PROBLEM_PROFILE.json",
+      "reports/contracts/QUESTION_CONTRACT.json",
+      "reports/contracts/STRATEGY_MATCHING.json",
+      "reports/data/DATA_CONTRACT.json",
+      "reports/data/DATA_PROFILE.json",
+      "reports/discovery/EDA_FINDINGS.json",
+      "reports/discovery/MODEL_OPPORTUNITIES.json",
+      "reports/discovery/PROBLEM_STRUCTURE.json",
+      "reports/intake/ASSET_CONFLICTS.json",
+      "reports/intake/ASSET_REGISTRY.json",
+      "reports/intake/INTAKE_REPORT.md",
+      "reports/methodology/*.json",
+      "reports/review/REVIEW_ROUTER_DECISION.json",
+      "results/*.json",
+      "results/RESULT_REGISTRY.json"
+    ]
+  },
+  "findings": [
+    {
+      "level": "OK",
+      "check": "schema",
+      "message": "JSON Schema 校验通过：141 个契约文档"
+    }
+  ],
+  "summary": {
+    "fails": 0,
+    "warns": 0,
+    "checks": 1
+  },
+  "note": "docs/schemas/*.schema.json（draft-07）为机器约束；Markdown schema 文档只作解释（P1-19）。"
+}

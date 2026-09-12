@@ -1,0 +1,12 @@
+{
+  "gate": "result_review",
+  "schema_version": 2,
+  "workspace": "F:\\2026 数模\\D题重跑\\D题",
+  "strict": true,
+  "require_v2": true,
+  "findings": [],
+  "summary": {
+    "fails": 0,
+    "warns": 0
+  }
+}

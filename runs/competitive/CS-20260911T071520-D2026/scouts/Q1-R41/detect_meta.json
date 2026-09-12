@@ -1,0 +1,182 @@
+{
+ "idea_id": "Q1-R41",
+ "question_id": "Q1",
+ "started_at": "2026-09-11T16:32:01+0800",
+ "protocol": "TP-D2026-01",
+ "horizon": {
+  "T_MAX": 643,
+  "B_MAX": 100,
+  "half_open": true,
+  "all_cells_within_horizon": true,
+  "cells_total": 64300,
+  "incidence_sum": 16680,
+  "distinct_cells": 14698,
+  "max_shared_per_cell": 4,
+  "wrong_g_as_period_pairs_diagnostic": 237
+ },
+ "phaseA": {
+  "pairs_total": 11175,
+  "pairs_evaluated_bitand": 11175,
+  "pairs_evaluated_oracle_band_pruned": 1352,
+  "edges_D1_inverted_join": 297,
+  "edges_D2_bitand_fullscan": 297,
+  "edges_D3_oracle_pruned": 297,
+  "edges_D3_oracle_fullscan": 297,
+  "symdiff_D1_D2": 0,
+  "symdiff_D1_D3_pruned": 0,
+  "symdiff_D1_D3_full": 0,
+  "by_class_pair": {
+   "AB": 21,
+   "AC": 66,
+   "BC": 181,
+   "BB": 10,
+   "CC": 19
+  },
+  "plans_touched": 148,
+  "runtime_join_s": 0.0094,
+  "runtime_bitand_s": 0.1974,
+  "runtime_oracle_s": 0.3924
+ },
+ "boundary_cases": [
+  [
+   "band_[80,90)x[90,95)_no_hit",
+   0,
+   0,
+   true
+  ],
+  [
+   "time_[40,45)x[45,50)_no_hit",
+   0,
+   0,
+   true
+  ],
+  [
+   "time_[40,45)x[44,50)_hit",
+   1,
+   1,
+   true
+  ],
+  [
+   "band_[80,90)x[89,95)_hit",
+   1,
+   1,
+   true
+  ],
+  [
+   "last_cell_t642_reachable",
+   1,
+   1,
+   true
+  ],
+  [
+   "cell_t643_clipped_away",
+   1,
+   1,
+   true
+  ],
+  [
+   "subtract_block_splits_correctly",
+   1,
+   1,
+   true
+  ],
+  [
+   "empty_intersection_deletes_nothing",
+   1,
+   1,
+   true
+  ]
+ ],
+ "boundary_case_failures": [],
+ "phaseB_stress": {
+  "seed_set": [
+   11,
+   29,
+   47
+  ],
+  "trials_requested": 1000,
+  "trials_completed": 996,
+  "injections": 497,
+  "deletions": 499,
+  "skipped_setup": 4,
+  "injection_recall": 1.0,
+  "deletion_vanish_recall": 1.0,
+  "planted_missed": 0,
+  "vanish_fail": 0,
+  "pair_level_checks": 4326,
+  "pair_level_missing": 0,
+  "pair_level_false_positive": 0,
+  "global_fullscans": 18,
+  "global_symdiff": 0,
+  "cells_injected": 1507,
+  "cells_deleted": 2817,
+  "runtime_seconds": 12.2872,
+  "per_seed": {
+   "11": {
+    "trials": 332,
+    "injected": 165,
+    "deleted": 167,
+    "skipped": 2,
+    "planted_hit": 165,
+    "planted_miss": 0,
+    "planted_new_edges": 161,
+    "vanish_ok": 167,
+    "vanish_fail": 0,
+    "pair_checks": 1459,
+    "pair_miss": 0,
+    "pair_fp": 0,
+    "global_checks": 6,
+    "global_symdiff": 0,
+    "injected_cells": 482,
+    "deleted_cells": 973,
+    "deleted_blocks": 217
+   },
+   "29": {
+    "trials": 333,
+    "injected": 167,
+    "deleted": 166,
+    "skipped": 0,
+    "planted_hit": 167,
+    "planted_miss": 0,
+    "planted_new_edges": 157,
+    "vanish_ok": 166,
+    "vanish_fail": 0,
+    "pair_checks": 1491,
+    "pair_miss": 0,
+    "pair_fp": 0,
+    "global_checks": 6,
+    "global_symdiff": 0,
+    "injected_cells": 510,
+    "deleted_cells": 998,
+    "deleted_blocks": 233
+   },
+   "47": {
+    "trials": 331,
+    "injected": 165,
+    "deleted": 166,
+    "skipped": 2,
+    "planted_hit": 165,
+    "planted_miss": 0,
+    "planted_new_edges": 164,
+    "vanish_ok": 166,
+    "vanish_fail": 0,
+    "pair_checks": 1376,
+    "pair_miss": 0,
+    "pair_fp": 0,
+    "global_checks": 6,
+    "global_symdiff": 0,
+    "injected_cells": 515,
+    "deleted_cells": 846,
+    "deleted_blocks": 199
+   }
+  }
+ },
+ "conflict_pairs": 297,
+ "runtime_seconds": 12.8864,
+ "runtime_total_seconds": 13.2648,
+ "solution_path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q1-R41/solution_q1_r41.json",
+ "determinism": "阶段A 无随机；阶段B 使用冻结种子集 [11,29,47]（同码同种子逐位可复现）",
+ "seed": "阶段A N/A；阶段B 冻结种子集 [11,29,47]，每种子独立 random.Random(seed)",
+ "status": "completed",
+ "failure_mode": null
+}

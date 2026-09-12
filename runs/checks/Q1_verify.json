@@ -1,0 +1,1 @@
+{"counts": {"edges": 297, "AB": 21, "AC": 66, "AA": 0, "BC": 181, "BB": 10, "CC": 19}, "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20", "counts_agree_with_primary": 1, "derived_from": "results/Q1_detect.json:per_variant.bitmap"}

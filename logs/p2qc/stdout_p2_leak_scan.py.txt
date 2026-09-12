@@ -1,0 +1,44 @@
+{
+ "check": "结果数字泄漏检测（tokenize 级）",
+ "n_distinct_result_values": 116,
+ "n_hits": 4,
+ "hits": [
+  {
+   "file": "make_figures.py",
+   "line": 156,
+   "value": 297,
+   "code": "ax2.bar([\"消解前\", \"消解后\"], [297, 0], color=[\"#e53e3e\", \"#38a169\"], width=.55)"
+  },
+  {
+   "file": "make_figures.py",
+   "line": 157,
+   "value": 303,
+   "code": "ax2.text(0, 303, \"297\", ha=\"center\", fontsize=9); ax2.text(1, 6, \"0\", ha=\"center\", fontsize=9)"
+  },
+  {
+   "file": "make_report.py",
+   "line": 73,
+   "value": 120,
+   "code": "A(f\"- verify_all 输出：{(va.stdout or '').strip()[:120]}；失败明细 {(va.stderr or '').strip()[:400]}\")"
+  },
+  {
+   "file": "q1_solve.py",
+   "line": 88,
+   "value": 11175,
+   "code": "\"edges\": edges, \"pairs_checked\": 11175,"
+  }
+ ],
+ "per_file_summary": {
+  "make_figures.py": [
+   297,
+   303
+  ],
+  "make_report.py": [
+   120
+  ],
+  "q1_solve.py": [
+   11175
+  ]
+ },
+ "verdict": "FLAG"
+}

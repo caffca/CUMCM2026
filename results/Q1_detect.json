@@ -1,0 +1,1397 @@
+{
+  "question_id": "Q1",
+  "variant": "full_triple",
+  "edges": [
+    [
+      "A001",
+      "B001"
+    ],
+    [
+      "A001",
+      "C002"
+    ],
+    [
+      "A001",
+      "C012"
+    ],
+    [
+      "A001",
+      "C022"
+    ],
+    [
+      "A002",
+      "B010"
+    ],
+    [
+      "A002",
+      "C009"
+    ],
+    [
+      "A002",
+      "C010"
+    ],
+    [
+      "A002",
+      "C019"
+    ],
+    [
+      "A002",
+      "C029"
+    ],
+    [
+      "A003",
+      "B009"
+    ],
+    [
+      "A003",
+      "C008"
+    ],
+    [
+      "A003",
+      "C018"
+    ],
+    [
+      "A003",
+      "C028"
+    ],
+    [
+      "A004",
+      "B009"
+    ],
+    [
+      "A004",
+      "B014"
+    ],
+    [
+      "A004",
+      "B018"
+    ],
+    [
+      "A004",
+      "C016"
+    ],
+    [
+      "A004",
+      "C017"
+    ],
+    [
+      "A004",
+      "C027"
+    ],
+    [
+      "A005",
+      "B007"
+    ],
+    [
+      "A005",
+      "B012"
+    ],
+    [
+      "A005",
+      "C014"
+    ],
+    [
+      "A005",
+      "C024"
+    ],
+    [
+      "A005",
+      "C054"
+    ],
+    [
+      "A006",
+      "B004"
+    ],
+    [
+      "A006",
+      "B008"
+    ],
+    [
+      "A006",
+      "C006"
+    ],
+    [
+      "A007",
+      "B011"
+    ],
+    [
+      "A007",
+      "B022"
+    ],
+    [
+      "A007",
+      "C023"
+    ],
+    [
+      "A007",
+      "C053"
+    ],
+    [
+      "A008",
+      "C028"
+    ],
+    [
+      "A008",
+      "C038"
+    ],
+    [
+      "A008",
+      "C039"
+    ],
+    [
+      "A008",
+      "C049"
+    ],
+    [
+      "A008",
+      "C058"
+    ],
+    [
+      "A008",
+      "C059"
+    ],
+    [
+      "A009",
+      "B012"
+    ],
+    [
+      "A009",
+      "C033"
+    ],
+    [
+      "A009",
+      "C043"
+    ],
+    [
+      "A009",
+      "C053"
+    ],
+    [
+      "A009",
+      "C054"
+    ],
+    [
+      "A010",
+      "C027"
+    ],
+    [
+      "A010",
+      "C037"
+    ],
+    [
+      "A010",
+      "C057"
+    ],
+    [
+      "A011",
+      "B027"
+    ],
+    [
+      "A011",
+      "C034"
+    ],
+    [
+      "A011",
+      "C044"
+    ],
+    [
+      "A011",
+      "C074"
+    ],
+    [
+      "A012",
+      "B024"
+    ],
+    [
+      "A012",
+      "B028"
+    ],
+    [
+      "A012",
+      "C036"
+    ],
+    [
+      "A012",
+      "C046"
+    ],
+    [
+      "A012",
+      "C056"
+    ],
+    [
+      "A012",
+      "C076"
+    ],
+    [
+      "A013",
+      "B016"
+    ],
+    [
+      "A013",
+      "C022"
+    ],
+    [
+      "A013",
+      "C032"
+    ],
+    [
+      "A013",
+      "C041"
+    ],
+    [
+      "A013",
+      "C052"
+    ],
+    [
+      "A014",
+      "C040"
+    ],
+    [
+      "A014",
+      "C050"
+    ],
+    [
+      "A014",
+      "C070"
+    ],
+    [
+      "A014",
+      "C080"
+    ],
+    [
+      "A014",
+      "C090"
+    ],
+    [
+      "A015",
+      "B030"
+    ],
+    [
+      "A015",
+      "C067"
+    ],
+    [
+      "A015",
+      "C077"
+    ],
+    [
+      "A015",
+      "C078"
+    ],
+    [
+      "A016",
+      "C067"
+    ],
+    [
+      "A016",
+      "C087"
+    ],
+    [
+      "A017",
+      "B033"
+    ],
+    [
+      "A017",
+      "C065"
+    ],
+    [
+      "A017",
+      "C075"
+    ],
+    [
+      "A017",
+      "C085"
+    ],
+    [
+      "A018",
+      "B028"
+    ],
+    [
+      "A018",
+      "B033"
+    ],
+    [
+      "A018",
+      "C065"
+    ],
+    [
+      "A018",
+      "C066"
+    ],
+    [
+      "A018",
+      "C076"
+    ],
+    [
+      "A018",
+      "C085"
+    ],
+    [
+      "A019",
+      "C073"
+    ],
+    [
+      "A019",
+      "C082"
+    ],
+    [
+      "A020",
+      "C039"
+    ],
+    [
+      "A020",
+      "C069"
+    ],
+    [
+      "A020",
+      "C079"
+    ],
+    [
+      "A020",
+      "C089"
+    ],
+    [
+      "B001",
+      "C001"
+    ],
+    [
+      "B001",
+      "C002"
+    ],
+    [
+      "B001",
+      "C012"
+    ],
+    [
+      "B002",
+      "B011"
+    ],
+    [
+      "B002",
+      "C003"
+    ],
+    [
+      "B002",
+      "C013"
+    ],
+    [
+      "B002",
+      "C014"
+    ],
+    [
+      "B003",
+      "C004"
+    ],
+    [
+      "B003",
+      "C005"
+    ],
+    [
+      "B003",
+      "C015"
+    ],
+    [
+      "B003",
+      "C024"
+    ],
+    [
+      "B004",
+      "C016"
+    ],
+    [
+      "B004",
+      "C017"
+    ],
+    [
+      "B004",
+      "C027"
+    ],
+    [
+      "B005",
+      "C009"
+    ],
+    [
+      "B005",
+      "C010"
+    ],
+    [
+      "B005",
+      "C019"
+    ],
+    [
+      "B005",
+      "C029"
+    ],
+    [
+      "B005",
+      "C030"
+    ],
+    [
+      "B006",
+      "C001"
+    ],
+    [
+      "B006",
+      "C011"
+    ],
+    [
+      "B006",
+      "C012"
+    ],
+    [
+      "B006",
+      "C021"
+    ],
+    [
+      "B006",
+      "C051"
+    ],
+    [
+      "B006",
+      "C052"
+    ],
+    [
+      "B007",
+      "C004"
+    ],
+    [
+      "B007",
+      "C013"
+    ],
+    [
+      "B007",
+      "C014"
+    ],
+    [
+      "B007",
+      "C024"
+    ],
+    [
+      "B008",
+      "C006"
+    ],
+    [
+      "B008",
+      "C015"
+    ],
+    [
+      "B008",
+      "C016"
+    ],
+    [
+      "B008",
+      "C025"
+    ],
+    [
+      "B008",
+      "C026"
+    ],
+    [
+      "B008",
+      "C055"
+    ],
+    [
+      "B009",
+      "C008"
+    ],
+    [
+      "B009",
+      "C017"
+    ],
+    [
+      "B009",
+      "C018"
+    ],
+    [
+      "B009",
+      "C027"
+    ],
+    [
+      "B009",
+      "C028"
+    ],
+    [
+      "B009",
+      "C057"
+    ],
+    [
+      "B010",
+      "C009"
+    ],
+    [
+      "B010",
+      "C010"
+    ],
+    [
+      "B010",
+      "C030"
+    ],
+    [
+      "B011",
+      "C012"
+    ],
+    [
+      "B011",
+      "C013"
+    ],
+    [
+      "B011",
+      "C023"
+    ],
+    [
+      "B011",
+      "C043"
+    ],
+    [
+      "B011",
+      "C053"
+    ],
+    [
+      "B012",
+      "C024"
+    ],
+    [
+      "B012",
+      "C025"
+    ],
+    [
+      "B012",
+      "C054"
+    ],
+    [
+      "B013",
+      "B018"
+    ],
+    [
+      "B013",
+      "B023"
+    ],
+    [
+      "B013",
+      "C015"
+    ],
+    [
+      "B013",
+      "C025"
+    ],
+    [
+      "B013",
+      "C026"
+    ],
+    [
+      "B013",
+      "C036"
+    ],
+    [
+      "B013",
+      "C055"
+    ],
+    [
+      "B014",
+      "C017"
+    ],
+    [
+      "B014",
+      "C027"
+    ],
+    [
+      "B014",
+      "C037"
+    ],
+    [
+      "B014",
+      "C056"
+    ],
+    [
+      "B014",
+      "C057"
+    ],
+    [
+      "B015",
+      "C018"
+    ],
+    [
+      "B015",
+      "C028"
+    ],
+    [
+      "B015",
+      "C038"
+    ],
+    [
+      "B015",
+      "C039"
+    ],
+    [
+      "B015",
+      "C058"
+    ],
+    [
+      "B015",
+      "C059"
+    ],
+    [
+      "B016",
+      "C021"
+    ],
+    [
+      "B016",
+      "C022"
+    ],
+    [
+      "B016",
+      "C031"
+    ],
+    [
+      "B016",
+      "C041"
+    ],
+    [
+      "B016",
+      "C042"
+    ],
+    [
+      "B016",
+      "C051"
+    ],
+    [
+      "B016",
+      "C052"
+    ],
+    [
+      "B017",
+      "C014"
+    ],
+    [
+      "B017",
+      "C033"
+    ],
+    [
+      "B017",
+      "C043"
+    ],
+    [
+      "B017",
+      "C054"
+    ],
+    [
+      "B018",
+      "B023"
+    ],
+    [
+      "B018",
+      "C026"
+    ],
+    [
+      "B018",
+      "C036"
+    ],
+    [
+      "B018",
+      "C055"
+    ],
+    [
+      "B018",
+      "C056"
+    ],
+    [
+      "B019",
+      "B024"
+    ],
+    [
+      "B019",
+      "C028"
+    ],
+    [
+      "B019",
+      "C058"
+    ],
+    [
+      "B020",
+      "C019"
+    ],
+    [
+      "B020",
+      "C020"
+    ],
+    [
+      "B020",
+      "C029"
+    ],
+    [
+      "B020",
+      "C030"
+    ],
+    [
+      "B020",
+      "C040"
+    ],
+    [
+      "B021",
+      "C031"
+    ],
+    [
+      "B021",
+      "C032"
+    ],
+    [
+      "B021",
+      "C041"
+    ],
+    [
+      "B021",
+      "C042"
+    ],
+    [
+      "B021",
+      "C051"
+    ],
+    [
+      "B021",
+      "C052"
+    ],
+    [
+      "B021",
+      "C072"
+    ],
+    [
+      "B022",
+      "C033"
+    ],
+    [
+      "B022",
+      "C044"
+    ],
+    [
+      "B022",
+      "C054"
+    ],
+    [
+      "B022",
+      "C073"
+    ],
+    [
+      "B022",
+      "C074"
+    ],
+    [
+      "B023",
+      "C034"
+    ],
+    [
+      "B023",
+      "C035"
+    ],
+    [
+      "B023",
+      "C045"
+    ],
+    [
+      "B023",
+      "C074"
+    ],
+    [
+      "B023",
+      "C075"
+    ],
+    [
+      "B024",
+      "C037"
+    ],
+    [
+      "B024",
+      "C046"
+    ],
+    [
+      "B024",
+      "C047"
+    ],
+    [
+      "B024",
+      "C076"
+    ],
+    [
+      "B024",
+      "C077"
+    ],
+    [
+      "B024",
+      "C086"
+    ],
+    [
+      "B025",
+      "B040"
+    ],
+    [
+      "B025",
+      "C049"
+    ],
+    [
+      "B026",
+      "C031"
+    ],
+    [
+      "B026",
+      "C042"
+    ],
+    [
+      "B026",
+      "C061"
+    ],
+    [
+      "B026",
+      "C062"
+    ],
+    [
+      "B026",
+      "C071"
+    ],
+    [
+      "B027",
+      "B032"
+    ],
+    [
+      "B027",
+      "B033"
+    ],
+    [
+      "B027",
+      "C033"
+    ],
+    [
+      "B027",
+      "C043"
+    ],
+    [
+      "B027",
+      "C044"
+    ],
+    [
+      "B027",
+      "C063"
+    ],
+    [
+      "B027",
+      "C073"
+    ],
+    [
+      "B028",
+      "C036"
+    ],
+    [
+      "B028",
+      "C045"
+    ],
+    [
+      "B028",
+      "C066"
+    ],
+    [
+      "B028",
+      "C075"
+    ],
+    [
+      "B028",
+      "C076"
+    ],
+    [
+      "B029",
+      "B034"
+    ],
+    [
+      "B029",
+      "B038"
+    ],
+    [
+      "B029",
+      "C046"
+    ],
+    [
+      "B029",
+      "C047"
+    ],
+    [
+      "B029",
+      "C076"
+    ],
+    [
+      "B029",
+      "C077"
+    ],
+    [
+      "B029",
+      "C086"
+    ],
+    [
+      "B030",
+      "C038"
+    ],
+    [
+      "B030",
+      "C048"
+    ],
+    [
+      "B030",
+      "C049"
+    ],
+    [
+      "B030",
+      "C068"
+    ],
+    [
+      "B030",
+      "C069"
+    ],
+    [
+      "B030",
+      "C078"
+    ],
+    [
+      "B030",
+      "C079"
+    ],
+    [
+      "B031",
+      "C042"
+    ],
+    [
+      "B031",
+      "C061"
+    ],
+    [
+      "B031",
+      "C062"
+    ],
+    [
+      "B031",
+      "C071"
+    ],
+    [
+      "B031",
+      "C072"
+    ],
+    [
+      "B031",
+      "C081"
+    ],
+    [
+      "B032",
+      "C063"
+    ],
+    [
+      "B032",
+      "C073"
+    ],
+    [
+      "B033",
+      "C064"
+    ],
+    [
+      "B033",
+      "C065"
+    ],
+    [
+      "B033",
+      "C075"
+    ],
+    [
+      "B034",
+      "C067"
+    ],
+    [
+      "B034",
+      "C076"
+    ],
+    [
+      "B034",
+      "C086"
+    ],
+    [
+      "B034",
+      "C087"
+    ],
+    [
+      "B035",
+      "C048"
+    ],
+    [
+      "B035",
+      "C068"
+    ],
+    [
+      "B035",
+      "C069"
+    ],
+    [
+      "B035",
+      "C078"
+    ],
+    [
+      "B035",
+      "C079"
+    ],
+    [
+      "B035",
+      "C088"
+    ],
+    [
+      "B035",
+      "C089"
+    ],
+    [
+      "B036",
+      "C070"
+    ],
+    [
+      "B036",
+      "C090"
+    ],
+    [
+      "B037",
+      "C064"
+    ],
+    [
+      "B037",
+      "C074"
+    ],
+    [
+      "B037",
+      "C075"
+    ],
+    [
+      "B037",
+      "C083"
+    ],
+    [
+      "B037",
+      "C084"
+    ],
+    [
+      "B038",
+      "C065"
+    ],
+    [
+      "B038",
+      "C076"
+    ],
+    [
+      "B038",
+      "C085"
+    ],
+    [
+      "B038",
+      "C086"
+    ],
+    [
+      "B039",
+      "C067"
+    ],
+    [
+      "B039",
+      "C068"
+    ],
+    [
+      "B039",
+      "C078"
+    ],
+    [
+      "B039",
+      "C088"
+    ],
+    [
+      "B040",
+      "C049"
+    ],
+    [
+      "B040",
+      "C069"
+    ],
+    [
+      "B040",
+      "C070"
+    ],
+    [
+      "B040",
+      "C090"
+    ],
+    [
+      "C005",
+      "C025"
+    ],
+    [
+      "C019",
+      "C029"
+    ],
+    [
+      "C021",
+      "C051"
+    ],
+    [
+      "C022",
+      "C032"
+    ],
+    [
+      "C023",
+      "C033"
+    ],
+    [
+      "C025",
+      "C055"
+    ],
+    [
+      "C027",
+      "C057"
+    ],
+    [
+      "C028",
+      "C058"
+    ],
+    [
+      "C031",
+      "C051"
+    ],
+    [
+      "C033",
+      "C043"
+    ],
+    [
+      "C037",
+      "C077"
+    ],
+    [
+      "C038",
+      "C048"
+    ],
+    [
+      "C039",
+      "C049"
+    ],
+    [
+      "C043",
+      "C053"
+    ],
+    [
+      "C050",
+      "C070"
+    ],
+    [
+      "C061",
+      "C071"
+    ],
+    [
+      "C067",
+      "C077"
+    ],
+    [
+      "C069",
+      "C079"
+    ],
+    [
+      "C076",
+      "C086"
+    ]
+  ],
+  "pairs_checked": 11175,
+  "counts": {
+    "edges": 297,
+    "AB": 21,
+    "AC": 66,
+    "AA": 0,
+    "BC": 181,
+    "BB": 10,
+    "CC": 19
+  },
+  "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20",
+  "three_way_max_symdiff": 0,
+  "all_three_sha_equal": 1,
+  "per_variant": {
+    "interval": {
+      "counts": {
+        "edges": 297,
+        "AB": 21,
+        "AC": 66,
+        "AA": 0,
+        "BC": 181,
+        "BB": 10,
+        "CC": 19
+      },
+      "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+    },
+    "bitmap": {
+      "counts": {
+        "edges": 297,
+        "AB": 21,
+        "AC": 66,
+        "AA": 0,
+        "BC": 181,
+        "BB": 10,
+        "CC": 19
+      },
+      "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+    },
+    "congruence": {
+      "counts": {
+        "edges": 297,
+        "AB": 21,
+        "AC": 66,
+        "AA": 0,
+        "BC": 181,
+        "BB": 10,
+        "CC": 19
+      },
+      "edges_sha256": "1a08941b766de6bff77024402d2d26fa641e9a3c7c19a6097678df9fe4c92b20"
+    }
+  },
+  "symdiff_vs_evaluator": 0,
+  "evaluator_counts": {
+    "truth": 297,
+    "submitted": 297,
+    "missing": 0,
+    "spurious": 0
+  },
+  "boundary_cases_failed": 0,
+  "classpair_sum_minus_total": 0,
+  "involved_plans": 148,
+  "isolated_plans": [
+    "C007",
+    "C060"
+  ],
+  "stress_min_recall": 0.7177,
+  "stress_effective": 124,
+  "T_MAX": 643,
+  "_meta": {
+    "metadata_writer": "v7-p2-02/result_writer",
+    "metadata_writer_schema_version": 1,
+    "metadata_writer_sha256": "737904d415f4671ae02094d79b8b54baada7da7bfcf2829708156ec1f40d7dfb",
+    "role": "paper_authority",
+    "authority": true,
+    "problem_ids": [
+      "Q1"
+    ],
+    "model_spec_sha256": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+    "contract_rev": 1,
+    "generator_path": "code/prod/q1_solve.py",
+    "generator_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+    "input_hashes": {
+      "data/canonical_plans.csv": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+      "reports/FINAL_MODEL_SPEC.json": "c09f6e9a39a3f87229999b78f9f3ae1e3e969b2bf1f81e616beaafa2b43d2b39",
+      "reports/VALIDATION_PLAN.json": "a91eb809fb6e289082a417ea15314cf1f1b4ca07763484702d048576ac48c304",
+      "reports/contracts/IDEA_DECISION.json": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+      "reports/data/DATASET_SNAPSHOT.json": "7aa6d8c21f6212d23a91bfb3834436e8601cb6ee1f63771e72b2b3e9c81b490e",
+      "reports/data/DATA_PROFILE.json": "a0b4946eb31c5c575afbe68bc92ea0605bcdd5cbb8f939f1ef057289e229e536"
+    },
+    "input_sha256": "4a9e2ec1cdeff809ef4a5b57e8b34b158e4ce3eb163b6121bfde699fd2ed79ef",
+    "output_hashes": {
+      "__result_payload__": "7709961d9932088ef19282d9e9032daf7461e350c2cde03cb85568051bcf1703"
+    },
+    "output_sha256": "73372c5461819bceea69f8e3c11fae5f03a6b3a131a5ceb3df6045595ee86e51",
+    "coverage": {
+      "coverage_id": "P2-01-FULL-D2026-PROD-H-required-subset",
+      "status": "observed",
+      "plan_path": "runs/fresh/FULL-D2026-PROD-H/COVERAGE_PLAN.json",
+      "plan_sha256": "09a0753aa0173f783017a0369d01e11bbdc18e64b83d1062b920cc74fa64c882",
+      "observed": {
+        "cases_complete": [
+          "Q1-Q1-R21-main-N-A-p0",
+          "Q2-Q2-R51-main-N-A-p0",
+          "Q2-Q2-R51-main-N-A-p1",
+          "Q2-Q2-R51-main-N-A-p2",
+          "Q2-Q2-R51-main-N-A-p3",
+          "Q2-Q2-R51-main-N-A-p4",
+          "Q2-Q2-R51-main-N-A-p5",
+          "Q2-Q2-R51-main-N-A-p6",
+          "Q3-Q3-R11-main-N-A-p0",
+          "Q3-Q3-R11-main-N-A-p1",
+          "Q3-Q3-R11-main-N-A-p2",
+          "Q3-Q3-R11-main-N-A-p3",
+          "Q3-Q3-R11-main-N-A-p4",
+          "Q3-Q3-R11-main-N-A-p5",
+          "Q3-Q3-R11-main-N-A-p6",
+          "Q4-Q4-R11-main-N-A-p0",
+          "Q4-Q4-R11-main-N-A-p1",
+          "Q4-Q4-R11-main-N-A-p2",
+          "Q4-Q4-R11-main-N-A-p3"
+        ],
+        "total_cases": 19,
+        "run_id": "FULL-D2026-PROD-H"
+      },
+      "observed_sha256": "2eb7d10faf5b69d0d35685f538894b8a9746c84258667978d7db65c4f9674885"
+    },
+    "coverage_id": "P2-01-FULL-D2026-PROD-H-required-subset",
+    "coverage_plan": "runs/fresh/FULL-D2026-PROD-H/COVERAGE_PLAN.json",
+    "coverage_plan_sha256": "09a0753aa0173f783017a0369d01e11bbdc18e64b83d1062b920cc74fa64c882",
+    "observed_coverage_sha256": "2eb7d10faf5b69d0d35685f538894b8a9746c84258667978d7db65c4f9674885",
+    "generated_at": "2026-09-12T13:38:53+08:00",
+    "result_source": {
+      "mode": "direct_shard_payload",
+      "path": "runs/fresh/FULL-D2026-PROD-H/tasks/Q1-Q1-R21-main-N-A-p0/attempts/001/payload.json",
+      "sha256": "fc22bbfacfbc15b62e61d306e4af1c4a7be6d52dfbc1c4c2e119e5068d5bad04",
+      "task_id": "Q1-Q1-R21-main-N-A-p0",
+      "question_id": "Q1",
+      "aggregate_path": "runs/fresh/FULL-D2026-PROD-H/SHARD_AGGREGATE.json",
+      "aggregate_sha256": "0aebf79c76943acbb5e464d2e4cf5ee9e600aaf8186afec6b5ce667319e725fa",
+      "transformation": null
+    },
+    "coverage_observed": {
+      "cases_complete": [
+        "Q1-Q1-R21-main-N-A-p0",
+        "Q2-Q2-R51-main-N-A-p0",
+        "Q2-Q2-R51-main-N-A-p1",
+        "Q2-Q2-R51-main-N-A-p2",
+        "Q2-Q2-R51-main-N-A-p3",
+        "Q2-Q2-R51-main-N-A-p4",
+        "Q2-Q2-R51-main-N-A-p5",
+        "Q2-Q2-R51-main-N-A-p6",
+        "Q3-Q3-R11-main-N-A-p0",
+        "Q3-Q3-R11-main-N-A-p1",
+        "Q3-Q3-R11-main-N-A-p2",
+        "Q3-Q3-R11-main-N-A-p3",
+        "Q3-Q3-R11-main-N-A-p4",
+        "Q3-Q3-R11-main-N-A-p5",
+        "Q3-Q3-R11-main-N-A-p6",
+        "Q4-Q4-R11-main-N-A-p0",
+        "Q4-Q4-R11-main-N-A-p1",
+        "Q4-Q4-R11-main-N-A-p2",
+        "Q4-Q4-R11-main-N-A-p3"
+      ],
+      "total_cases": 19,
+      "run_id": "FULL-D2026-PROD-H"
+    },
+    "problem_id": "Q1",
+    "formulation_sha256": "4cb9dfc411287049da46af7db3d85069da490af3ec4d301cf677de66395c0c49",
+    "route_id": "Q1-R21",
+    "idea_decision_sha256": "7d24efc34814c20a93384d11e0a6af13ad00f73956913b91a2f0bef8c0f691d9",
+    "solver_family": "exact_enumerative",
+    "solver_algorithm": "双重实现：A=逐 (k,m) 时段对枚举；B=先把每个计划的 n 个时段做区间并集压缩再做两指针相交；两者结果做集合相等断言",
+    "evaluator": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+    "evaluator_sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32",
+    "implementation": "code/prod/q1_solve.py",
+    "implementation_sha256": "ab7cf78d25bcecd6b100de43a0ad05aa5b466a993895f514a0b4879ee7e26c3b",
+    "formulation_kind": "analytical",
+    "seed_policy": "N/A",
+    "run_id": "FULL-D2026-PROD-H",
+    "budget_class": "full",
+    "execution_aggregate": "runs/fresh/FULL-D2026-PROD-H/SHARD_AGGREGATE.json",
+    "shard_aggregate_sha256": "0aebf79c76943acbb5e464d2e4cf5ee9e600aaf8186afec6b5ce667319e725fa",
+    "plan_file": "runs/fresh/FULL-D2026-PROD-H/SHARD_PLAN.json",
+    "plan_sha256": "b2b678369c8662319605dffffac60e59611741e0c100b09314e0c962059529cd",
+    "function_evaluations": 1,
+    "unique_function_evaluations": 1,
+    "cache_hits": 0,
+    "elapsed_seconds": 0.6,
+    "seeds": [],
+    "scenario": "main",
+    "stopping_reason": "all_pairs_enumerated_and_crosschecked",
+    "model_decision_binding": {
+      "decision_record_sha256": "ebe81d94ac6c920b91f695f03a25887f7aca444275989b7f98e96d6f93d5e658",
+      "selection_validation_sha256": "ed7e5d3a406e384023932783b7f094885fea54cf1999d6f368b5c6e13932840f",
+      "profile_id": "PROFILE-8ADA7763202B25BA",
+      "strategy_matching_id": "MATCH-1504A0480D6D591A",
+      "question_id": "Q1",
+      "decision_status": "pending_proposal",
+      "selected_strategy_id": null,
+      "problem_profile_question_sha256": "e6323abd33323ebe773c0f0e8476255648764410288c9fc4253175d1533ac01a",
+      "strategy_matching_question_sha256": "d952fae507f4885b6b0e49c2cd8eaa842f6dac36341f1690e40abfce174b54e9"
+    }
+  }
+}

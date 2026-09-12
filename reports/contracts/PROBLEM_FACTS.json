@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "source_asset": "A-D题.pdf",
+  "extracted_at": "brainstorm-intake",
+  "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+  "facts": [
+    {
+      "fact_id": "F-001",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "频域离散化",
+      "raw_text": "以固定的频带宽度Δf将系统可提供的有限带宽频率资源离散化为100个宽度相同的频段",
+      "normalized_value": 100,
+      "unit": "频段",
+      "fact_type": "parameter",
+      "confidence": "high",
+      "note": "频段索引 0..99，区间左闭右开 [a,b)"
+    },
+    {
+      "fact_id": "F-002",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "频段占用",
+      "raw_text": "每一个用频计划可以占用连续的多个频段，并且占用的频段数量保持不变",
+      "normalized_value": "contiguous_fixed_width",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2",
+        "Q4"
+      ],
+      "note": "调整（平移）后频段数量（宽度）不变"
+    },
+    {
+      "fact_id": "F-003",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "时域离散化",
+      "raw_text": "用固定的时间长度Δt作为时间资源的基本单位……所占用的时间长度必须是Δt的整数倍",
+      "normalized_value": "integer_multiples_of_dt",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high",
+      "note": "所有时间参数为整数（以Δt计）"
+    },
+    {
+      "fact_id": "F-004",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "计划四参数",
+      "raw_text": "每个用频计划包含四个参数：频段区间、首次使用的时间区间、相邻两次使用该频段的间隔时长以及使用次数",
+      "normalized_value": "4_params",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high"
+    },
+    {
+      "fact_id": "F-005",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "周期使用规则",
+      "raw_text": "间隔时长60表示相隔60Δt的时间再次以相同长度的时间区间占用该频段，即第二次占用……[40Δt+60Δt,45Δt+60Δt)",
+      "normalized_value": "slot_k=[t1+(k-1)*(g+d), t1+(k-1)*(g+d)+d), k=1..n",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high",
+      "note": "间隔 g 为两次占用之间的空闲时长；d=时间区间长度。例：A001 首次[35,40),g=60→第二次[100,105),第三次[165,170)"
+    },
+    {
+      "fact_id": "F-006",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "冲突判定",
+      "raw_text": "当两个用频计划的时间区间和频段区间都存在交叠时，则判定它们之间存在时频冲突",
+      "normalized_value": "pair_conflict=band_overlap AND any_slot_time_overlap",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high",
+      "note": "时间交叠按全部使用次数占用时段集合判定（半开区间交叠），频段按 [a,b) 半开交叠"
+    },
+    {
+      "fact_id": "F-007",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "消解定义",
+      "raw_text": "通过调整某些用频计划的参数（比如平移频段区间或者时间区间等），甚至撤销某些用频计划，使得消解后的用频计划不存在时频冲突",
+      "normalized_value": "adjust_or_revoke_to_zero_conflict",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high"
+    },
+    {
+      "fact_id": "F-008",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "单参数规则",
+      "raw_text": "一个用频计划只能调整其中一个参数或撤销",
+      "normalized_value": "one_param_or_revoke",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2",
+        "Q4"
+      ],
+      "note": "Q2/Q4 通用；Q4 特别说明允许 C 类调间隔（仍只能调一个）"
+    },
+    {
+      "fact_id": "F-009",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "常规禁调项",
+      "raw_text": "一般不调整使用次数和使用间隔时长",
+      "normalized_value": "gap_count_frozen_unless_stated",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ],
+      "note": "使用次数在任何问均不得调整"
+    },
+    {
+      "fact_id": "F-010",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "优先级",
+      "raw_text": "A类优先级最高，B类其次，C类最低，高优先级用频装备的用频计划应尽量保持",
+      "normalized_value": "A_gt_B_gt_C",
+      "unit": null,
+      "fact_type": "rule",
+      "confidence": "high"
+    },
+    {
+      "fact_id": "F-012",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "平移幅度上限",
+      "raw_text": "规定频段、时间调整的最大平移幅度分别为10Δf、5Δt",
+      "normalized_value": "df<=10 AND dt<=5",
+      "unit": null,
+      "fact_type": "constraint",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2",
+        "Q4"
+      ],
+      "note": "平移幅度=|新起点-旧起点|；频段/时间各自上限 10/5；Q3 明确解除此限"
+    },
+    {
+      "fact_id": "F-013",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "数据规模",
+      "raw_text": "附件1给出了3类共150个用频装备提报的用频计划",
+      "normalized_value": 150,
+      "unit": "部",
+      "fact_type": "parameter",
+      "confidence": "high",
+      "note": "A001-A020, B001-B040, C001-C090"
+    },
+    {
+      "fact_id": "F-021",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "result2模板列",
+      "raw_text": "A列装备编号；B列调整后频段范围；C列调整后时间区间；D列是否撤销(是)",
+      "normalized_value": "4cols",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ]
+    },
+    {
+      "fact_id": "F-022",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "result4模板列",
+      "raw_text": "A装备编号；B频段范围；C时间区间；D间隔时长；E是否撤销",
+      "normalized_value": "5cols",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ]
+    },
+    {
+      "fact_id": "F-023",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "频段区间记法",
+      "raw_text": "频段区间[80,90)表示占用 [f0+80Δf, f0+90Δf)",
+      "normalized_value": "half_open_[a,b)",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high"
+    },
+    {
+      "fact_id": "Q1-F014",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题1输出",
+      "raw_text": "将结果保存到文件result1.xlsx中（模板文件见附件2），并在论文中给出时频冲突的统计结果",
+      "normalized_value": "result1.xlsx+stats",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q1"
+      ]
+    },
+    {
+      "fact_id": "Q2-F011",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "目标层级(Q2)",
+      "raw_text": "对问题1中检测出的时频冲突进行消解……应尽可能减少撤销；尽量减少被调整数量；高优先级尽量保持；尽量减少调整幅度",
+      "normalized_value": "lex(revoke,adjusted,priority,magnitude)",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ]
+    },
+    {
+      "fact_id": "Q2-F015",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题2输出",
+      "raw_text": "将消解方案保存到文件result2.xlsx中……按表1的格式给出时频冲突消解的统计结果",
+      "normalized_value": "result2.xlsx+Table1",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2"
+      ]
+    },
+    {
+      "fact_id": "Q2-F016",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "表1格式",
+      "raw_text": "表1：类别/保留数量/调整数量/撤销数量（A、B、C三行）",
+      "normalized_value": "Table1",
+      "unit": null,
+      "fact_type": "definition",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q2",
+        "Q4"
+      ]
+    },
+    {
+      "fact_id": "Q3-F017",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题3条件",
+      "raw_text": "基于问题2无冲突方案，如果不限制频段和时间的平移幅度，在不增加时频资源的前提下，最多还能安排多少C类用频装备",
+      "normalized_value": "max_addC_unbounded_shift_no_extra_resource",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "note": "口径假设：既有计划保持问题2方案不变；不增加时频资源=仍 100频段×同一时间视界；新C沿用附件C模板(宽3/时长2/间隔8/次数12)"
+    },
+    {
+      "fact_id": "Q3-F018",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题3输出",
+      "raw_text": "给出相应的用频计划，将结果保存到文件result3.xlsx",
+      "normalized_value": "result3.xlsx(序号,频段区间,时间区间)",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q3"
+      ],
+      "note": "模板仅3列→间隔8/次数12/宽3/时长2为隐含固定参数"
+    },
+    {
+      "fact_id": "Q4-F019",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题4条件",
+      "raw_text": "若允许部分C类用频装备对用频间隔时长进行调整，但要求与原间隔时长的差异不超过10Δt",
+      "normalized_value": "abs(dg)<=10 AND g_prime>=1",
+      "unit": "Δt",
+      "fact_type": "constraint",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ],
+      "note": "仅 C 类可调整间隔；|新间隔-原间隔|≤10；间隔为正整数Δt；其余同 Q2"
+    },
+    {
+      "fact_id": "Q4-F011",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "目标层级(Q4)",
+      "raw_text": "允许调整间隔后对问题1冲突消解，仍按题面目标层级链优化",
+      "normalized_value": "lex(revoke,adjusted,priority,magnitude)",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ]
+    },
+    {
+      "fact_id": "Q4-F020",
+      "source_asset_id": "A-D题.pdf",
+      "source_sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "source_span": "问题4输出",
+      "raw_text": "将消解方案保存到文件result4.xlsx中……按表1的格式给出统计结果",
+      "normalized_value": "result4.xlsx+Table1",
+      "unit": null,
+      "fact_type": "target",
+      "confidence": "high",
+      "affected_question_ids": [
+        "Q4"
+      ]
+    }
+  ]
+}

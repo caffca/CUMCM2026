@@ -1,0 +1,18 @@
+{
+  "analysis_unit": "用频计划（150 个提报计划；观测对象=计划参数四元组）",
+  "repeated_measurement": false,
+  "group_id_field": null,
+  "within_group_dependence": false,
+  "outcome_directly_observed": true,
+  "censoring": {
+    "left": false,
+    "interval": false,
+    "right": false,
+    "truncation": false
+  },
+  "missingness": false,
+  "measurement_error": false,
+  "class_imbalance": true,
+  "time_dependence": false,
+  "notes": "数据为组委会构造的静态提报（非抽样/非观测实验）：频段区间/时间区间/间隔/次数四参数精确给定，无观测噪声、无删失、无缺失。类内参数完全同质（A:10/5/60/3，B:15/3/40/4，C:3/2/8/12）——这是题目设计结构（DGP=确定性栅格铺设+受控冲突植入），非采样巧合；类计数 20/40/90 不均衡属题面设定，影响仅体现在 Q2 优先级损失的类内分布。占用窗由确定性公式生成（F-005），冲突关系可完全判定。"
+}

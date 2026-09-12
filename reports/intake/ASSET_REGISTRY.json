@@ -1,0 +1,150 @@
+{
+  "schema_version": 3,
+  "generated_at": "intake",
+  "assets": [
+    {
+      "asset_id": "A-D题.pdf",
+      "path": "D题.pdf",
+      "type": "problem",
+      "sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9",
+      "size": 442550,
+      "mtime_ns": 1788698609000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "2026 高教社杯 D 题《时频冲突检测与消解》题面（含附件说明）"
+    },
+    {
+      "asset_id": "A-附件_附件1.xlsx",
+      "path": "附件/附件1.xlsx",
+      "type": "data",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c",
+      "size": 16067,
+      "mtime_ns": 1786885098000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "150 个用频计划：A001-A020 / B001-B040 / C001-C090，列=编号,频段区间,时间区间,间隔时长,使用次数"
+    },
+    {
+      "asset_id": "A-附件_附件2_result1.xlsx",
+      "path": "附件/附件2/result1.xlsx",
+      "type": "template",
+      "sha256": "6657970f5ead42a0ddaacc29f6d3f0e25538661446a1b6672491a2d83fdd664c",
+      "size": 10135,
+      "mtime_ns": 1787457939000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "result1.xlsx 官方结果模板（问题1提交表结构）"
+    },
+    {
+      "asset_id": "A-附件_附件2_result2.xlsx",
+      "path": "附件/附件2/result2.xlsx",
+      "type": "template",
+      "sha256": "53f6feb7bbf0bdfb8fbe15af35e0759a45933120928a05231fc8fe3569fefb8e",
+      "size": 9832,
+      "mtime_ns": 1787458003000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "result2.xlsx 官方结果模板（问题2提交表结构）"
+    },
+    {
+      "asset_id": "A-附件_附件2_result3.xlsx",
+      "path": "附件/附件2/result3.xlsx",
+      "type": "template",
+      "sha256": "6e7072651e204fa07e0dad2b6ddd1ceb72d74f41905e5d2ba44deea0456feead",
+      "size": 8362,
+      "mtime_ns": 1788400519000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "result3.xlsx 官方结果模板（问题3提交表结构）"
+    },
+    {
+      "asset_id": "A-附件_附件2_result4.xlsx",
+      "path": "附件/附件2/result4.xlsx",
+      "type": "template",
+      "sha256": "95e45e755e9fc9e30d45fa0cd4c4cc638a94e4d5c7201f09828ed7fdcaef75b9",
+      "size": 9854,
+      "mtime_ns": 1787883522000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "result4.xlsx 官方结果模板（问题4提交表结构）"
+    },
+    {
+      "asset_id": "A-cQMeL0YY905244c8bd4b9af832f1699446d8385e.pdf",
+      "path": "cQMeL0YY905244c8bd4b9af832f1699446d8385e.pdf",
+      "type": "format_spec",
+      "sha256": "cece4bb3a900a0435160032b98ea26e03b0f2d7eca58424b0d023e26085aed26",
+      "size": 168354,
+      "mtime_ns": 1789037816545496900,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "全国大学生数学建模竞赛论文格式规范（2026 年修订稿）"
+    },
+    {
+      "asset_id": "A-FlQt6kJV6f5d5b4603e06c3c60acf89b72d7f298.pdf",
+      "path": "FlQt6kJV6f5d5b4603e06c3c60acf89b72d7f298.pdf",
+      "type": "rules",
+      "sha256": "46d3837906bfd7049eb04c40cfc8b8436912d7edae98462ba064abfa381a8d3a",
+      "size": 123600,
+      "mtime_ns": 1789037927050824600,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "参赛规则（2026 年修订稿）"
+    },
+    {
+      "asset_id": "A-Glps6mBh6563c55c45300fede72ddbf6eb33d3a8.pdf",
+      "path": "Glps6mBh6563c55c45300fede72ddbf6eb33d3a8.pdf",
+      "type": "rules",
+      "sha256": "4cf6f30cdd37d6ef2cdb3439c5dba4d9f207c12d6aafe24419e81f3c69acf59a",
+      "size": 97121,
+      "mtime_ns": 1789037792399872900,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "人工智能工具使用规定（2026 年试行）"
+    },
+    {
+      "asset_id": "A-format2026.doc",
+      "path": "format2026.doc",
+      "type": "format_spec",
+      "sha256": "d77de49534649b46ca195d32bd9c56a1fbe06dc96fdcf3e1199e6dd7d9831f4a",
+      "size": 71168,
+      "mtime_ns": 1788860313000000000,
+      "source": "official",
+      "authority": "primary_official",
+      "basis": "官方赛题材料（组委会随题发布），用户原样提供，内容未改动；哈希为登记时点真实 SHA256",
+      "notes": "官方 Word 格式模板（本项目按 manifest engine=latex 采用 cumcm-latex 模板，此件仅作格式口径核对，不作编译输入）"
+    },
+    {
+      "asset_id": "A-data_canonical_plans.csv",
+      "path": "data/canonical_plans.csv",
+      "type": "data",
+      "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8",
+      "size": 4552,
+      "mtime_ns": 1789110281083503300,
+      "source": "generated",
+      "authority": "verified_legacy",
+      "basis": "intake 由附件1.xlsx（primary_official）无损规范化派生：区间字符串->整数列，未删改任何记录；frozen=登记时点冻结，若与后续 canonical 校验冲突按 V7-P0-06 降级 conflicting",
+      "frozen": true,
+      "notes": "canonical_plans.csv：150 行清洗后计划表，全下游唯一机读口径"
+    }
+  ],
+  "missing_assets": [
+    "submission/result1.xlsx（问题1输出，待 coding_visual 产出后登记）",
+    "submission/result2.xlsx（问题2输出）",
+    "submission/result3.xlsx（问题3输出）",
+    "submission/result4.xlsx（问题4输出）",
+    "results/*.json（各问计算结果权威）",
+    "figures/*.pdf + *.meta.json（数据图/概念图）",
+    "paper/main.tex + main.pdf（LaTeX 论文）",
+    "AI工具使用详情.pdf（支撑材料，AI 规定第4条）"
+  ],
+  "high_severity_count": 0
+}

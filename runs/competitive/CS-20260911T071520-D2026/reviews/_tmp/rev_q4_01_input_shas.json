@@ -1,0 +1,292 @@
+{
+ "inputs": [
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/common_input.json",
+   "sha256": "0e015686888f74688547654b8372d6ad6376ac450234459af9499c575536df86"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/TOURNAMENT_PROTOCOL.json",
+   "sha256": "a8f30bd6473b545d3ac165c316fb9a5573f5d380e76e25e6b3b8056e980f5c97"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/ADJUDICATION.json",
+   "sha256": "4fef99cb6e0b67415cb247814aa7da1e3c4178f0e1e749231fceb826c78619c9"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/canonical_evaluator.py",
+   "sha256": "8c4db98fa11845ca5492255e4da6c4b2e92e040ee30556fa9156993c06fcbb32"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-01.route.json",
+   "sha256": "55b2bbd5da949ca97aa933076654c3195de93c733f86a28dc2615b773208ee06"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-02.route.json",
+   "sha256": "03eb60f390b47e02a966e59ef125d52de81f1c35b0862facf6b4d4a6e07edf19"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-04.route.json",
+   "sha256": "210ce17cd247307243d660adcd0ddecf3938c2d76177f5ac2279cab9fcd3ad5a"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/routes/CH-05.route.json",
+   "sha256": "e72b46e9a52fe1cdffa25cbbea79c532cf3e87cc87ecdcc75bc11fe113e5f685"
+  },
+  {
+   "path": "data/canonical_plans.csv",
+   "sha256": "b6a280b2dac7fa1fb50a64438d325ad2d5a6840aef5302ce339f082c8e030ef8"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/result.json",
+   "sha256": "e06f0abe659474c3ea44dc9dde6a65dd6ac3d853fe83de531f5e0e916b19994d"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/scout.json",
+   "sha256": "987aca3421b9371b798d559dcc8124a70f3b48a294744d7fce820aff563f5a9f"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run/solution_actions.json",
+   "sha256": "9d44c112561ef5bb595cac729b56788e5ffd7049d249ac66054fc9cbccd0d958"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run/eval_q4.json",
+   "sha256": "d1150bcfe48a01d34fe5cbcb57280e63d3645419970f358d612f26b7c4dfe110"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run/r11_layers.json",
+   "sha256": "81088e080d9e688a089d5755108af7fab2c7acd155301417d7c63937248b4d60"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run/q2_inclusion_check.json",
+   "sha256": "ea8faabcfa455e8a908ec7b5b0df2c316afaddfe605ffcd7e016561d6c474856"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run_q2reduction/solution_q2reduction.json",
+   "sha256": "564d15fa5c795e869e4625de5fe940d06b80017dfb0916ec68ff65852bcd2efe"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/run_q2reduction/r11_layers.json",
+   "sha256": "f5e31399a6d506139edfdcfd2851a372c6e7469ce9a412746111958821465acf"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/code/q4common.py",
+   "sha256": "798b32df8b25bf548bad50fe8c136b80453bd624eb322a451be639ca121bc0fd"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R11/code/solve_r11.py",
+   "sha256": "9d592e6ab87b315501be9ae4c8120655c42af4fe8b6d9af6590bb2646d213bfa"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/result.json",
+   "sha256": "d400f9bfac6c128f814d2cdebc856e8c449a29125b53f9d02069e106c3292136"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/scout.json",
+   "sha256": "809e315e043f513060c14dc6dee42213d4e3da2e9d6623634665443ee7d7d232"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed11.json",
+   "sha256": "7841215bfeb33116f571a4179bd9a91465fe2bff33b46cd9849951cdfe7e1e2a"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed29.json",
+   "sha256": "6db34ad2f585fca132286b1f1df05d95e3b6d8e9577641f1b6de9a3311105b5b"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/solution_seed47.json",
+   "sha256": "a078bf2f5f47fbbd0ea9697896a9de27547e522c8fa447f374e1895ea5f71754"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/eval_seed11.json",
+   "sha256": "ab470e87720a3d7c26f8dc1f8fc4d31b56b65de8093254af73b3d6772febdb9d"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/eval_seed29.json",
+   "sha256": "2322a2583642d9267df2ab16426b7b71277be7485e7987686368f0f146cf5dd6"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/eval_seed47.json",
+   "sha256": "0fc3e5882a900c9813c6cbd4bb8765b0ef2075e234bc69c70c5ada07add22896"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/sa_record_seed11.json",
+   "sha256": "2bf9212350037c51b0c3b58449440f554f1e7f4c57bba3d28d55fd49cda98037"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/sa_record_seed29.json",
+   "sha256": "dabf86bc1cf6974c527c003e005be6613e4b9d96abd1756b3d0dd233d36bd73e"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/run/sa_record_seed47.json",
+   "sha256": "fd268154c37b0f68283b17d1bf3ca3b2d47f5ac5e9d37b485007cb4bfdfcc7e4"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/code/solve_sa.py",
+   "sha256": "50854d018bcf5ed5e2266eb3269e3cf7fa65778a0c0687a362a94fca0c22b889"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R41/code/finalize_q4.py",
+   "sha256": "13fe91e2275de2f7724c0965ab0a92cbe6d7706b10f0ee80f1f96393e8f174d8"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/result.json",
+   "sha256": "ef94b337240a207ff0c2639ce22e92ccb534a372a0e97df4fa3040fb0b16b625"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/scout.json",
+   "sha256": "aac7ebdacdb16d303adc26f47b56ff253bdc88345e5edd3c8dc753733acf2f78"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/solution_actions.json",
+   "sha256": "2107a7ed9739b12e65c8c7b9102a7e78f05b26204341f98e436a6595bb43d657"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/eval_q4.json",
+   "sha256": "7dae8fca9d3ae8fd4ec004a0f5d20e02f4a93ff4e77ceecab85c0a20e8e86fdc"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/run/r22_log.json",
+   "sha256": "f0d04bb4500c5eddb47283260d81de051909194c60a2fee40dafbf1877781a31"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q4-R22/code/solve_r22.py",
+   "sha256": "b8bd262c7403bf64a2bd38d453df219e3e76d94d8a045ca11e52bc17deb446cf"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/result.json",
+   "sha256": "6007b46bde0983a0e7e62f6e6254e679a6848249b003b84dd86b252ed5b5663a"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/eval.json",
+   "sha256": "51a3f7bc4fd45fb041ea10cf08359da7cf5d0ec840f28b961d37280504fd68d8"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/scouts/Q2-R51/solution_actions.json",
+   "sha256": "8266fb689b93ee7795906e553d2f52b33be3082f1fcf9ead3c3360b65ec5e4ac"
+  }
+ ],
+ "evidence": [
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_recheck.py",
+   "sha256": "f3c4b9a64a0c72efb7d0ec3f5cd89215855ba763a3736b3b435eb9f76d303eeb"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_inclusion.py",
+   "sha256": "05c1e78c51c830d2091da59d87b9ae1f8840ac17b4748f0fbc01f5ca1bd65cf6"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_extra.py",
+   "sha256": "2e27404d8d8046afa1b391c9e63448b23f140b06c441de3c6117ac2f6bc11fdf"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_caliber.py",
+   "sha256": "c6c39490c8dd0f9c77b039dc6132ce4eca609adc2d1ca07c62a17cc8b8aaae68"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_edgeaudit.py",
+   "sha256": "58d66356194d01a6f7b47d38e400589d3d9bc5329ea5681ca9181ab23395d1aa"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_detail.py",
+   "sha256": "0b14e64a711973747dde7a884444b3efba0062ef11e68e5ea93ac7ebecc6f3f7"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_attribution.py",
+   "sha256": "37b19c7f887c187a7e5d227063657c1137fbee508dc5cbb010e8f7546d0942a8"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_polish.py",
+   "sha256": "da0b78ee5ae62084018b49d22e764db30891e2bf2d5cc4adace953a3202d17ab"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_sentinels.py",
+   "sha256": "447a270c5374c157247feee58a6cf1cedc826b4eb7d262e7f046297bae124739"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/rev_q4_01_shas.py",
+   "sha256": "4bbe742271288698351a5602023eeb66508e760c9b39d020109b93f3560e7264"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out.json",
+   "sha256": "7545cfecae48c6d53a8ef4324e72157f7013cdfc0c73f9ef9d0a0d8cecdc226a"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_B.json",
+   "sha256": "fce85b453a3b42b9849cb2908b154fe2b0472be280ec9b0ad34f336a68ecb275"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_C.json",
+   "sha256": "7e83154741cb8d20a3c75744dff95a87e131da38782ae191b5373847ab87f753"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_D.json",
+   "sha256": "796dab9a93f579668546334a045a68a4f3fa32322415057bf74828ce5cd7bbde"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_E.json",
+   "sha256": "8911f8918bd4bde637f3528ad8788b90bdaa75b8c7f8d5e41f0bc04753165af0"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_F.json",
+   "sha256": "b92403d025d78b19d4c969cec96d84ea917ead2532f6393294da8ff1f4f5874c"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_G.json",
+   "sha256": "f3f197cfa8fbec613ae342af095cef33ac8ee41a4414d00ea18378bd00f6c6d0"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_H.json",
+   "sha256": "0bb6af8e60b1d46d8bbf9b591102b4413ca58070912dedaa29dbc7d0639791a9"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/recheck_out_I.json",
+   "sha256": "bb73023b095a079e06af9372702ef523f343b96ce4b67321f22e66184c47645c"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/B2_greedy_solution.json",
+   "sha256": "e7d6dc3258524d320e018ccaf13fdd6b51a48c1570bad44d27cdd29f7387c7ee"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/B2_eval.json",
+   "sha256": "8b0fb879ef1eecdad42e32b655675390b84594961f1941f046ae5001b9cea661"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/R22_unrevoked.json",
+   "sha256": "b50950292fd99ff2f8ed57a34a3b9ca29e712225c6a248cfb6bab6ff8c534557"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/R22_unrevoked_eval.json",
+   "sha256": "968a853d6e09ac2f4e5ae51c1684848197eff013538a039f058b09c8ff95f08e"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/polished_R11.json",
+   "sha256": "7a887bd47c1c44c3a4e384c2c0782a3dbdedbaeee477a92e189c39ad7d294440"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/polished_R11.json.eval.json",
+   "sha256": "2a3500b15682c6cb810d1fd5eafbdbed9f10beaf0a4cfe91fe7a763c12011bfb"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/sentinel_q4_dg_nonpositive_gap.json",
+   "sha256": "4532443e6ff12093d5031e48f0c709b6be5d40da2ecf70ae1089afc51bf9d56a"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/sentinel_q4_unknown_plan.json",
+   "sha256": "babfd8360b95e2fda9ea7a496dd393464cea3cbb967ecbbc8ef02ab1b73e5613"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/neg_gap_over10.json.out",
+   "sha256": "b82a52308b7da0c969afb25acb5ba459f04f71e3d9279b307f66a49f982a2d41"
+  },
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/neg_dg_under_q2.out",
+   "sha256": "b9c1364f051e16c2181ce740571b39d17ee827d267c7903fb16813678389eb25"
+  }
+ ],
+ "missing": [
+  {
+   "path": "runs/competitive/CS-20260911T071520-D2026/reviews/_tmp/neg_gap_nonpositive.json.out",
+   "note": "evidence not found on disk"
+  }
+ ]
+}
