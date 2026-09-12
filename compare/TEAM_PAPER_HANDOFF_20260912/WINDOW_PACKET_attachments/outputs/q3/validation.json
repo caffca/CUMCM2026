@@ -1,0 +1,59 @@
+{
+  "question": "D-Q3",
+  "status": "PASS",
+  "result_status": "OPTIMAL",
+  "result_optimality": "PROVED",
+  "horizon": 643,
+  "template": {
+    "frequency_width": 3,
+    "duration": 2,
+    "gap": 8,
+    "uses": 12,
+    "step": 10,
+    "resource_cells_per_plan": 72
+  },
+  "counts": {
+    "raw_plan_count": 150,
+    "fixed_q2_active_plan_count": 144,
+    "fixed_q2_occupied_cell_count": 15816,
+    "new_plan_count": 141,
+    "new_occupied_cell_count": 10152,
+    "combined_occupied_cell_count": 25968,
+    "combined_active_plan_count": 285,
+    "free_cell_area_upper_bound": 673
+  },
+  "checks": {
+    "fixed_q2_action_reconstruction": true,
+    "fixed_q2_boundary_errors": [],
+    "fixed_q2_continuous_conflict_pairs": [],
+    "new_plan_sequence": true,
+    "new_template_errors": [],
+    "new_boundary_errors": [],
+    "new_vs_q2_continuous_conflict_pairs": [],
+    "new_new_continuous_conflict_pairs": [],
+    "all_continuous_conflict_pairs": [],
+    "all_discrete_conflict_pairs": [],
+    "continuous_equals_discrete": true,
+    "duplicate_occupied_cells": [],
+    "workbook": {
+      "passed": true,
+      "errors": [],
+      "sheet_names": [
+        "Sheet1"
+      ],
+      "headers": [
+        "新增用频装备序号",
+        "调整后频段区间",
+        "调整后时间区间"
+      ],
+      "nonempty_row_count": 141,
+      "max_row": null
+    },
+    "solver_optimality_reported": true
+  },
+  "errors": [],
+  "claim_boundary": "固定当前 Q2 主方案和 [0,643)×[0,100) 资源域时，求解器状态与上下界均支持最多新增 141 台。",
+  "result_status_label": "CONDITIONAL_OPTIMAL_UNDER_APPROVED_Q2",
+  "optimality_scope": "固定 Q2 接口和 H=643；141 与独立成对模型上下界、142 阈值不可行一致。",
+  "claim_scope": "D-Q3 固定 approved Q2 背景下的新增 C 类数量"
+}

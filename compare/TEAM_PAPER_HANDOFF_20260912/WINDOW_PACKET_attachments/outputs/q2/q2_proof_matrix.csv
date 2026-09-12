@@ -1,0 +1,10 @@
+层级,固定条件,待证阈值,证明结果,对应结论,上界/见证,证据
+主目标,H=643,最小化R,CP-SAT对R<=6返回OPTIMAL且目标/最好界均为6,最少撤销R*=6,6台可行且目标下界为6,revocation_bound.json
+A类撤销,R=6,最小化A类撤销数,CP-SAT返回OPTIMAL且目标/最好界均为0,条件最小A类撤销数=0,当前候选A类撤销=0,priority_prefix_run.json
+B类撤销,R=6且A类撤销=0,B类撤销<=3,UNSAT,条件最小B类撤销数=4,当前候选B类撤销=4,proof/sat_b_le_3.json
+总调整数,R=6且A类撤销=0且B类撤销=4,M<=125,UNSAT,条件最小调整计划数M=126,当前候选M=126,proof/sat_adjust_le_125.json
+A类调整,R=6且A类撤销=0且B类撤销=4且M=126,A类调整数<=15,UNSAT,条件最小A类调整数=16,当前候选A类调整数=16,proof/sat_adjust_a_le_15.json
+B类调整,R=6且A类撤销=0且B类撤销=4且M=126且A类调整数<=16,B类调整数<=33,UNSAT,条件最小B类调整数=34,当前候选B类调整数=34,proof/sat_adjust_b_le_33.json
+边界敏感性,H=638,R<=5,INFEASIBLE,结合R=6修复见证得到R*=6,R=6修复见证验证PASS,proof/cp_sat_H638_Rle5.json; q2_cp_sat_feas6_H638_repair_hint_validation.json
+边界敏感性,H=648,R<=5,INFEASIBLE,结合R=6候选验证得到R*=6,H=643候选在H=648验证PASS,proof/cp_sat_H648_Rle5.json; q2_review_formal_H648_validation.json
+末级平移,R=6且前述优先级前缀固定,S10<=774,UNSAT（全候选）,末级条件最优S10=775,S10=775,sat_shift_le_774_full.json; six_revocation_candidate.json

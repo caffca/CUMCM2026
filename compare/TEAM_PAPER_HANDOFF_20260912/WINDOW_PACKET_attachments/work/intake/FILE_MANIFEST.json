@@ -1,0 +1,56 @@
+{
+  "status": "COMPLETE",
+  "source_root": "data/raw/D题",
+  "generated_on": "2026-09-10",
+  "files": [
+    {
+      "relative_path": "D题.pdf",
+      "type": "pdf",
+      "bytes": 442550,
+      "modified": "2026-09-06T20:43:29",
+      "sha256": "04945c2db24cd6cb659de55e6a23ddd43553ec61bc1c7741010a7eac220712a9"
+    },
+    {
+      "relative_path": "D题_1.3题面对照边界核查.md",
+      "type": "user-provided-markdown-reconciliation",
+      "bytes": 15381,
+      "modified": "2026-09-10T22:09:58",
+      "sha256": "de1d68414fc2166642adcb67b761f2e29cab3a635bac5388538b7c23ca7798f1"
+    },
+    {
+      "relative_path": "附件/附件1.xlsx",
+      "type": "xlsx",
+      "bytes": 16067,
+      "modified": "2026-08-16T20:58:18",
+      "sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+    },
+    {
+      "relative_path": "附件/附件2/result1.xlsx",
+      "type": "xlsx-template",
+      "bytes": 10135,
+      "modified": "2026-08-23T12:05:39",
+      "sha256": "6657970f5ead42a0ddaacc29f6d3f0e25538661446a1b6672491a2d83fdd664c"
+    },
+    {
+      "relative_path": "附件/附件2/result2.xlsx",
+      "type": "xlsx-template",
+      "bytes": 9832,
+      "modified": "2026-08-23T12:06:43",
+      "sha256": "53f6feb7bbf0bdfb8fbe15af35e0759a45933120928a05231fc8fe3569fefb8e"
+    },
+    {
+      "relative_path": "附件/附件2/result3.xlsx",
+      "type": "xlsx-template",
+      "bytes": 8362,
+      "modified": "2026-09-03T09:55:19",
+      "sha256": "6e7072651e204fa07e0dad2b6ddd1ceb72d74f41905e5d2ba44deea0456feead"
+    },
+    {
+      "relative_path": "附件/附件2/result4.xlsx",
+      "type": "xlsx-template",
+      "bytes": 9854,
+      "modified": "2026-08-28T10:18:42",
+      "sha256": "95e45e755e9fc9e30d45fa0cd4c4cc638a94e4d5c7201f09828ed7fdcaef75b9"
+    }
+  ]
+}

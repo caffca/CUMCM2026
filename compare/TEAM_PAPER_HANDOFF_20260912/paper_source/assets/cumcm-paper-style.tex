@@ -1,0 +1,44 @@
+% CUMCM 2026 default paper typography and spacing.
+% Requires XeLaTeX, ctex, geometry, fontspec, and booktabs.
+% Recommended class option for the current template profile:
+% \documentclass[UTF8,a4paper,zihao=-4]{ctexart}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+% The 2026 format does not require a running header. Keep the required page
+% number in the centered footer instead of inheriting ctexart's headings style.
+\pagestyle{plain}
+\setmainfont{Times New Roman}
+\setCJKmainfont[BoldFont=SimHei]{SimSun}
+% Keep mathematics in XeLaTeX's single Computer Modern family; do not mix a
+% second math-font package into the manuscript unless the entire paper is
+% rechecked for consistent glyph metrics.
+\AtBeginDocument{\zihao{-4}}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\ctexset{
+  section={name={,、},number=\chinese{section},format=\centering\zihao{3}\bfseries,afterindent=true},
+  subsection={format=\zihao{4}\bfseries,afterindent=true},
+  subsubsection={format=\zihao{-4}\bfseries,afterindent=true}
+}
+% Keep a figure-only page aligned to the top instead of vertically centering it.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+
+% Abstract/body emphasis policy: headings and short question leads may be bold;
+% ordinary scientific prose, assumptions, derivations, and table discussion
+% remain regular weight.  Keep \CUMCMAbstractKey for short, selective anchors
+% only; never wrap a full sentence or paragraph in it.
+% Abstract-page semantics. These avoid the implicit \small used by many
+% standard abstract environments.
+\newcommand{\CUMCMTitle}[1]{%
+  \begin{center}{\zihao{3}\bfseries #1\par}\end{center}%
+}
+\newcommand{\CUMCMAbstractHeading}{%
+  \begin{center}{\zihao{4}\bfseries 摘\quad 要\par}\end{center}%
+}
+\newcommand{\CUMCMAbstractParagraph}{\par\indent}
+\newcommand{\CUMCMAbstractLead}[1]{\par\indent\textbf{针对问题#1，}}
+\newcommand{\CUMCMAbstractKey}[1]{{\bfseries\boldmath #1}}
+\newcommand{\CUMCMKeywords}[1]{\par\noindent\textbf{关键词：}#1}
+\newcommand{\CUMCMQuestionLead}[1]{\par\indent\textbf{问题#1：}}
+\newcommand{\CUMCMAnalysisLead}[1]{\par\indent\textbf{问题#1：}}

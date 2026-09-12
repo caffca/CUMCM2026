@@ -1,0 +1,110 @@
+\documentclass[UTF8,a4paper,zihao=-4]{ctexart}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{geometry}
+
+\input{assets/cumcm-paper-style.tex}
+
+\hypersetup{
+  hidelinks,
+  pdftitle={时频资源离散化与字典序整数优化的装备用频冲突检测与消解}
+}
+
+\begin{document}
+
+\CUMCMTitle{时频资源离散化与字典序整数优化的装备用频冲突检测与消解}
+\CUMCMAbstractHeading
+\begingroup
+\zihao{-4}
+\CUMCMAbstractParagraph
+面向 150 条具有重复占用结构的装备用频计划，需要依次完成冲突检测、冲突消解、固定方案下的新增容量评估，以及允许改变重复间隔后的再优化。统一采用“计划—重复事件—时频资源格”三层表示：先按半开区间展开全部使用事件，再把二维几何相交转化为离散资源互斥。四问由精确检测、条件字典序优化、集合装填和间隔扩展依次衔接，并用独立编码和阈值不可行证据核验关键结论。
+
+\CUMCMAbstractLead{一}建立\CUMCMAbstractKey{半开区间二维相交模型}，采用“频段预筛—完整事件枚举”算法：只有两个计划的频段相交，且至少一对重复事件的时间区间相交时，才记录一条计划层冲突边；另以离散资源格倒排索引独立重建冲突图。150 条计划展开为 1\,300 个事件，枚举 11\,175 个候选计划对，得到 297 对冲突装备和 431 次事件级重叠；其中 B--C 类有 181 对，类别内冲突率为 5.03\%。
+
+\CUMCMAbstractLead{二}把保留、频移、时移和撤销统一为互斥候选动作，建立\CUMCMAbstractKey{候选动作资源格互斥 0--1 模型}；采用 CP-SAT 求解主模型，再用独立 CNF 编码和 CaDiCaL 对“更优一档”进行阈值不可行检验。4\,582 个合法动作由 52\,939 条资源格团约束控制，并按\CUMCMAbstractKey{条件字典序}逐层固定目标，闭合前缀为 \CUMCMAbstractKey{$(R,R_A,R_B,M,M_A,M_B)=(6,0,4,126,16,34)$}，即撤销 6 条、调整 126 条。末级平移量 $S_{10}=775$ 仅是该前缀下的可行上界。
+
+\CUMCMAbstractLead{三}固定问题二验证后的 144 条活动计划，完整枚举 52\,136 个 C 类整数起点，筛得 2\,334 个与既有占用不冲突的候选；随后建立\CUMCMAbstractKey{0--1 集合装填模型}，用 HiGHS 最大化新增数量。资源格装填编码与独立的候选两两冲突编码均得到 \CUMCMAbstractKey{最多新增 141 台}，且加入“至少 142 台”约束后模型不可行。该最大值只适用于当前 Q2 方案、资源域 \([0,643)\times[0,100)\) 和给定 C 类模板。
+
+\CUMCMAbstractLead{四}从原始 150 条计划独立起算，为 C 类加入整数间隔动作，构建\CUMCMAbstractKey{间隔扩展资源格模型}。基准域生成 6\,103 个合法动作，经外部冲突集合支配消元后，对 \(R=2\) 的六种类别分拆分别建立 SAT 判定模型；CP-SAT 给出 3 台撤销可行见证，CaDiCaL 证明六个两撤销分支均不可行，由上下界闭合得到 \CUMCMAbstractKey{最少撤销 3 台}。该结论限于 \(H=643\) 和当前有限整数动作集合；142 个调整及末级变化量 943 仍是条件候选。
+
+连续半开区间检查与离散资源格检查在四问中一致，调整方案均满足零冲突、零越界和资源格单占用；\(H=638,643,648\) 的复核表明 Q2 最小撤销数均为 6，并支持 Q4 三撤销可行上界对边界扰动稳定。上述模型链把重复事件的几何关系转化为可复核的整数约束，同时明确保留 Q2 末级平移量和 Q4 次级目标尚未闭合的证据边界。
+\CUMCMKeywords{时频资源；冲突检测；条件字典序；0--1 整数优化；集合装填}
+\endgroup
+\clearpage
+
+\section{问题重述}
+\input{sections/problem_restatement.tex}
+\clearpage
+
+\section{问题分析}
+\input{sections/problem_analysis.tex}
+
+\section{模型假设与符号说明}
+\subsection{模型基本假设}
+\input{sections/model_assumptions.tex}
+
+\clearpage
+\subsection{符号说明}
+\input{sections/symbols.tex}
+
+\section{数据预处理}
+\input{sections/data_preprocessing.tex}
+
+\section{模型建立与求解}
+\subsection{问题一模型的建立与求解}
+\input{sections/q1.tex}
+
+\subsection{问题二模型的建立与求解}
+\input{sections/q2.tex}
+
+\subsection{问题三模型的建立与求解}
+\input{sections/q3.tex}
+
+\subsection{问题四模型的建立与求解}
+\input{sections/q4.tex}
+
+\section{模型检验}
+\input{sections/model_checks.tex}
+
+\section{模型优缺点评价}
+\input{sections/model_evaluation.tex}
+
+\section*{AI 工具使用声明}
+本参赛队在竞赛过程中使用了 AI 工具，主要用于论文语言与版式整理、代码调试辅助、结果证据核对和图表/排版检查，详细使用情况见支撑材料中的“AI 工具使用详情.pdf”。
+
+\clearpage
+\section*{参考文献}
+\renewcommand{\refname}{}
+\begin{thebibliography}{99}
+\bibitem{ortools}
+Google OR-Tools. CP-SAT Solver[EB/OL]. Google for Developers, 2026-09-12.\
+\url{https://developers.google.com/optimization/cp/cp_solver}.
+
+\bibitem{highs}
+Huangfu Q, Hall J A J. Parallelizing the dual revised simplex method[J]. Mathematical Programming Computation, 2018, 10(1): 119--142. DOI:10.1007/s12532-017-0130-5.
+
+\bibitem{cadical}
+Biere A, Faller T, Fazekas K, Fleury M, Froleyks N, Pollitt F. CaDiCaL 2.0[C]//Gurfinkel A, Ganesh V, eds. Computer Aided Verification. Lecture Notes in Computer Science, vol. 14681. Cham: Springer, 2024: 133--152. DOI:10.1007/978-3-031-65627-9\_7.
+\end{thebibliography}
+
+\clearpage
+\section*{附录}
+\begin{itemize}
+  \item 支撑材料压缩包：\texttt{支撑材料\_Q4完整稿\_20260912.zip}，其中包含可运行源程序、结果文件、验证证据、版本与复核说明。
+  \item AI 工具使用详情：支撑包根目录下的\texttt{AI 工具使用详情.pdf}，记录工具名称、使用目的、提示方式、人工修改和核验情况。
+  \item 问题一：冲突清单、结果工作簿、独立复核输出和绘图数据位于支撑包的 Q1 输出目录 \texttt{outputs/q1/}。
+  \item 问题二：正式动作表、前缀证明矩阵、SAT 阈值证据和验证输出位于\texttt{outputs/q2/}；\(S_{10}=775\) 只标记为已闭合前缀下的可行上界。
+  \item 问题三：批准 Q2 接口、候选结果、141 台最大性审计和验证输出位于\texttt{outputs/q3/}；结论范围为固定 Q2 背景。
+  \item 问题四：三撤销可行见证、六分支 \texttt{UNSAT} 证据、支配替换核验、当前条件候选和\texttt{result4.xlsx} 位于\texttt{outputs/q4/}；\(R=3\) 已证明为最小撤销层，次级层仍按状态标注。
+  \item 题目提供的原始附件不在支撑包中重复分发；程序 README 记录了文件名、期望路径和 SHA-256 核对方式。
+\end{itemize}
+
+\end{document}

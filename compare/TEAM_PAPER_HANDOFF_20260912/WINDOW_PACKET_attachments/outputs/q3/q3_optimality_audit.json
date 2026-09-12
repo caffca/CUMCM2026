@@ -1,0 +1,49 @@
+{
+  "question": "D-Q3",
+  "scope": {
+    "q2_input": "outputs\\q3\\q2_input_from_result2.json",
+    "q2_source_workbook": "approved result2.xlsx",
+    "horizon": 643,
+    "frequency_domain": [
+      0,
+      100
+    ],
+    "q2_interface_status": "APPROVED_BY_USER"
+  },
+  "candidate_enumeration": {
+    "total_integer_starts": 52136,
+    "q2_compatible_starts": 2334,
+    "fixed_q2_occupied_cells": 15816
+  },
+  "independent_pairwise_model": {
+    "formulation": "max sum(y_p), y_p+y_q<=1 for every pair with overlapping resource cells",
+    "candidate_variables": 2334,
+    "pairwise_conflict_constraints": 66472,
+    "resource_cells_indexed": 15521,
+    "status_code": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "selected_count": 141,
+    "upper_bound": 141,
+    "mip_gap": 0.0,
+    "mip_node_count": 1
+  },
+  "independent_threshold_test": {
+    "constraint": "sum(y_p) >= 142",
+    "status_code": 2,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "infeasible_proved": true
+  },
+  "comparison_with_formal_q3": {
+    "formal_selected_count": 141,
+    "formal_status": "OPTIMAL",
+    "formal_upper_bound": 141,
+    "counts_match": true,
+    "both_bounds_close": true
+  },
+  "claim": "在固定批准 Q2 和当前资源域下，独立成对冲突模型得到上下界均为 141，且 142 台阈值不可行；因此最大新增数量为 141。",
+  "status": "PASS",
+  "optimality": "PROVED_CONDITIONAL",
+  "status_label": "CONDITIONAL_OPTIMAL_UNDER_APPROVED_Q2",
+  "claim_scope": "固定 approved Q2、H=643、资源域 [0,643)×[0,100)",
+  "proof_type": "independent_pairwise_OPTIMAL_plus_142_INFEASIBLE"
+}
