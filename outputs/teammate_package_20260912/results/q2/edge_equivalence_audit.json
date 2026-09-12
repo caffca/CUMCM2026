@@ -1,0 +1,11 @@
+{
+  "horizon": 643,
+  "candidate_states": 4582,
+  "state_conflict_edges": 270626,
+  "cell_clique_cross_plan_edges": 270626,
+  "cell_clique_edge_set_equal": true,
+  "canonical_detector_edges_checked": 270626,
+  "canonical_detector_mismatches": 0,
+  "seconds": 6.429,
+  "interpretation": "整数频率/时间半开区间下，资源单元团编码与全状态冲突边逐边一致；位集判定与统一周期检测器全量边复核一致。"
+}

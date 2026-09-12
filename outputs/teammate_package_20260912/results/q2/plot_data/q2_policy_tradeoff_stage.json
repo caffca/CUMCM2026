@@ -1,0 +1,47 @@
+{
+  "figure_id": "fig_q2_policy_tradeoff_stage",
+  "question": "Q2",
+  "purpose": "比较题面顺序 T、优先级优先 P 与有界 E 情景在撤销/调整和类别保护上的代价",
+  "source": "outputs/q2/policy_comparison.csv",
+  "horizon": 643,
+  "status_note": "T 与 E 为阶段性 incumbent；P 的八层词典序均为 OPTIMAL。",
+  "scenarios": [
+    {
+      "id": "T",
+      "label": "T：题面顺序（incumbent）",
+      "status": "FEASIBLE / M 未证",
+      "C": 6,
+      "M": 120,
+      "A": {"keep": 5, "adjust": 14, "cancel": 1},
+      "B": {"keep": 2, "adjust": 33, "cancel": 5},
+      "C_category": {"keep": 17, "adjust": 73, "cancel": 0}
+    },
+    {
+      "id": "P",
+      "label": "P：优先级优先（optimal）",
+      "status": "OPTIMAL",
+      "C": 78,
+      "M": 30,
+      "A": {"keep": 20, "adjust": 0, "cancel": 0},
+      "B": {"keep": 20, "adjust": 17, "cancel": 3},
+      "C_category": {"keep": 2, "adjust": 13, "cancel": 75}
+    },
+    {
+      "id": "E",
+      "label": "E：预算扩展（incumbent）",
+      "status": "FEASIBLE / 首层未证",
+      "C": 7,
+      "M": 121,
+      "A": {"keep": 7, "adjust": 12, "cancel": 1},
+      "B": {"keep": 2, "adjust": 32, "cancel": 6},
+      "C_category": {"keep": 13, "adjust": 77, "cancel": 0}
+    }
+  ],
+  "metrics": {
+    "T": {"S_sum": 847, "Df_sum": 619, "Dt_sum": 114, "conflicts": 0},
+    "P": {"S_sum": 192, "Df_sum": 82, "Dt_sum": 55, "conflicts": 0},
+    "E": {"S_sum": 846, "Df_sum": 636, "Dt_sum": 105, "conflicts": 0}
+  },
+  "required_comparison": ["scenario:T", "scenario:P", "scenario:E"],
+  "forbidden_inference": "图中 P 的较少调整不表示它优于 T；P 允许更多撤销且仅为政策敏感性对照。"
+}

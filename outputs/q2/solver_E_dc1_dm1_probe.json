@@ -1,0 +1,64 @@
+{
+  "policy": "P",
+  "mode": "full",
+  "horizon": 643,
+  "budgets": {
+    "C": 7,
+    "M": 121
+  },
+  "fixed_initial": {},
+  "objective_names": [
+    "P_A",
+    "C_A",
+    "P_B",
+    "C_B",
+    "C",
+    "M",
+    "S_sum",
+    "S_max"
+  ],
+  "solver_config": {
+    "time_limit_seconds_per_layer": 120.0,
+    "num_search_workers": 16,
+    "random_seed": 20260911
+  },
+  "metrics": {
+    "C": 7,
+    "M": 121,
+    "P_A": 13,
+    "C_A": 1,
+    "P_B": 38,
+    "C_B": 6,
+    "P_C": 77,
+    "C_C": 0,
+    "M_A": 12,
+    "M_B": 32,
+    "M_C": 77,
+    "S_sum": 846,
+    "S_max": 10,
+    "P_total": 128
+  },
+  "edge_count": 270626,
+  "cut_count": 0,
+  "iterations": 1,
+  "proven_optimal": false,
+  "layers": [
+    {
+      "name": "P_A",
+      "status": "FEASIBLE",
+      "objective_value": 13,
+      "best_bound": 6.0,
+      "gap": 0.5384615384615384,
+      "seconds": 120.35576799999399,
+      "cuts_added": 0,
+      "num_conflicts": 0,
+      "num_branches": 1136
+    }
+  ],
+  "canonical_validation": {
+    "plan_count": 150,
+    "occurrence_count": 1273,
+    "conflict_count": 0,
+    "ok": true
+  }
+}

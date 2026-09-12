@@ -1,0 +1,54 @@
+{
+  "policy": "T",
+  "mode": "full",
+  "horizon": 643,
+  "objective_names": [
+    "C",
+    "M",
+    "P_A",
+    "C_A",
+    "P_B",
+    "C_B",
+    "S_sum",
+    "S_max"
+  ],
+  "metrics": {
+    "C": 11,
+    "M": 137,
+    "P_A": 19,
+    "C_A": 3,
+    "P_B": 40,
+    "C_B": 8,
+    "P_C": 89,
+    "C_C": 0,
+    "M_A": 16,
+    "M_B": 32,
+    "M_C": 89,
+    "S_sum": 900,
+    "S_max": 10,
+    "P_total": 148
+  },
+  "edge_count": 270626,
+  "cut_count": 0,
+  "iterations": 1,
+  "proven_optimal": false,
+  "layers": [
+    {
+      "name": "C",
+      "status": "FEASIBLE",
+      "objective_value": 11,
+      "best_bound": 4.0,
+      "gap": 0.6363636363636364,
+      "seconds": 60.258984100000816,
+      "cuts_added": 0,
+      "num_conflicts": 0,
+      "num_branches": 10690
+    }
+  ],
+  "canonical_validation": {
+    "plan_count": 150,
+    "occurrence_count": 1259,
+    "conflict_count": 0,
+    "ok": true
+  }
+}

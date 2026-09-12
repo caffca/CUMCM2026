@@ -1,0 +1,10 @@
+{
+  "horizon": 643,
+  "candidate_state_count": 6103,
+  "state_conflict_edges": 444561,
+  "cell_clique_count": 53679,
+  "cross_plan_cell_pairs": 444561,
+  "missing_edge_count": 0,
+  "extra_pair_count": 0,
+  "ok": true
+}

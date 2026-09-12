@@ -1,0 +1,1094 @@
+{
+  "source": "C:\\Users\\l\\Desktop\\CUMCM2026\\outputs\\q2\\selected_T_cells_tiebreak120_300.json",
+  "fixed_cancelled": [
+    "A007",
+    "B018",
+    "B019",
+    "B020",
+    "B027",
+    "B028"
+  ],
+  "status": "OPTIMAL",
+  "seconds": 2.3765355000068666,
+  "objective_value": 120,
+  "best_bound": 120.0,
+  "conflicts": 0,
+  "branches": 0,
+  "metrics": {
+    "C": 6,
+    "M": 120,
+    "P_A": 15,
+    "C_A": 1,
+    "P_B": 38,
+    "C_B": 5,
+    "P_C": 73,
+    "C_C": 0,
+    "M_A": 14,
+    "M_B": 33,
+    "M_C": 73,
+    "Df_sum": 629,
+    "Dt_sum": 111,
+    "Df_max": 10,
+    "Dt_max": 5,
+    "S_sum": 851,
+    "S_max": 10,
+    "P_total": 126
+  },
+  "canonical_validation": {
+    "conflict_count": 0,
+    "ok": true,
+    "occurrence_count": 1277
+  },
+  "selected": [
+    {
+      "index": 0,
+      "plan_id": "A001",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 32,
+      "plan_id": "A002",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 60,
+      "plan_id": "A003",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 113,
+      "plan_id": "A004",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -4
+    },
+    {
+      "index": 153,
+      "plan_id": "A005",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 180,
+      "plan_id": "A006",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 213,
+      "plan_id": "A007",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 220,
+      "plan_id": "A008",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 249,
+      "plan_id": "A009",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 299,
+      "plan_id": "A010",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -5
+    },
+    {
+      "index": 317,
+      "plan_id": "A011",
+      "action": "frequency",
+      "f_shift": -4,
+      "t_shift": 0
+    },
+    {
+      "index": 343,
+      "plan_id": "A012",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 393,
+      "plan_id": "A013",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -5
+    },
+    {
+      "index": 412,
+      "plan_id": "A014",
+      "action": "frequency",
+      "f_shift": 6,
+      "t_shift": 0
+    },
+    {
+      "index": 443,
+      "plan_id": "A015",
+      "action": "frequency",
+      "f_shift": 5,
+      "t_shift": 0
+    },
+    {
+      "index": 460,
+      "plan_id": "A016",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 516,
+      "plan_id": "A017",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -2
+    },
+    {
+      "index": 544,
+      "plan_id": "A018",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 556,
+      "plan_id": "A019",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 588,
+      "plan_id": "A020",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 645,
+      "plan_id": "B001",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 650,
+      "plan_id": "B002",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 696,
+      "plan_id": "B003",
+      "action": "frequency",
+      "f_shift": 7,
+      "t_shift": 0
+    },
+    {
+      "index": 711,
+      "plan_id": "B004",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 765,
+      "plan_id": "B005",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 2
+    },
+    {
+      "index": 776,
+      "plan_id": "B006",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 800,
+      "plan_id": "B007",
+      "action": "frequency",
+      "f_shift": -3,
+      "t_shift": 0
+    },
+    {
+      "index": 827,
+      "plan_id": "B008",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 876,
+      "plan_id": "B009",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 913,
+      "plan_id": "B010",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 933,
+      "plan_id": "B011",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 975,
+      "plan_id": "B012",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 3
+    },
+    {
+      "index": 999,
+      "plan_id": "B013",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 1023,
+      "plan_id": "B014",
+      "action": "frequency",
+      "f_shift": 2,
+      "t_shift": 0
+    },
+    {
+      "index": 1044,
+      "plan_id": "B015",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 1076,
+      "plan_id": "B016",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 1100,
+      "plan_id": "B017",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 1160,
+      "plan_id": "B018",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1192,
+      "plan_id": "B019",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1214,
+      "plan_id": "B020",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1221,
+      "plan_id": "B021",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 1262,
+      "plan_id": "B022",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 1296,
+      "plan_id": "B023",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -4
+    },
+    {
+      "index": 1335,
+      "plan_id": "B024",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 4
+    },
+    {
+      "index": 1358,
+      "plan_id": "B025",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 1376,
+      "plan_id": "B026",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 1428,
+      "plan_id": "B027",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1460,
+      "plan_id": "B028",
+      "action": "cancel",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1468,
+      "plan_id": "B029",
+      "action": "frequency",
+      "f_shift": -4,
+      "t_shift": 0
+    },
+    {
+      "index": 1494,
+      "plan_id": "B030",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 1528,
+      "plan_id": "B031",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 1567,
+      "plan_id": "B032",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 1604,
+      "plan_id": "B033",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -3
+    },
+    {
+      "index": 1640,
+      "plan_id": "B034",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 2
+    },
+    {
+      "index": 1646,
+      "plan_id": "B035",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 1683,
+      "plan_id": "B036",
+      "action": "frequency",
+      "f_shift": 6,
+      "t_shift": 0
+    },
+    {
+      "index": 1704,
+      "plan_id": "B037",
+      "action": "frequency",
+      "f_shift": -6,
+      "t_shift": 0
+    },
+    {
+      "index": 1751,
+      "plan_id": "B038",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 1783,
+      "plan_id": "B039",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 1795,
+      "plan_id": "B040",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1839,
+      "plan_id": "C001",
+      "action": "frequency",
+      "f_shift": 7,
+      "t_shift": 0
+    },
+    {
+      "index": 1852,
+      "plan_id": "C002",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 1883,
+      "plan_id": "C003",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 1919,
+      "plan_id": "C004",
+      "action": "frequency",
+      "f_shift": -7,
+      "t_shift": 0
+    },
+    {
+      "index": 1957,
+      "plan_id": "C005",
+      "action": "frequency",
+      "f_shift": -1,
+      "t_shift": 0
+    },
+    {
+      "index": 1995,
+      "plan_id": "C006",
+      "action": "frequency",
+      "f_shift": 6,
+      "t_shift": 0
+    },
+    {
+      "index": 2019,
+      "plan_id": "C007",
+      "action": "frequency",
+      "f_shift": -3,
+      "t_shift": 0
+    },
+    {
+      "index": 2040,
+      "plan_id": "C008",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 2092,
+      "plan_id": "C009",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 2105,
+      "plan_id": "C010",
+      "action": "frequency",
+      "f_shift": -4,
+      "t_shift": 0
+    },
+    {
+      "index": 2151,
+      "plan_id": "C011",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 2156,
+      "plan_id": "C012",
+      "action": "frequency",
+      "f_shift": -8,
+      "t_shift": 0
+    },
+    {
+      "index": 2197,
+      "plan_id": "C013",
+      "action": "frequency",
+      "f_shift": 2,
+      "t_shift": 0
+    },
+    {
+      "index": 2234,
+      "plan_id": "C014",
+      "action": "frequency",
+      "f_shift": 7,
+      "t_shift": 0
+    },
+    {
+      "index": 2249,
+      "plan_id": "C015",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 2300,
+      "plan_id": "C016",
+      "action": "frequency",
+      "f_shift": 9,
+      "t_shift": 0
+    },
+    {
+      "index": 2314,
+      "plan_id": "C017",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 2375,
+      "plan_id": "C018",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 2378,
+      "plan_id": "C019",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 2431,
+      "plan_id": "C020",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 2448,
+      "plan_id": "C021",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -3
+    },
+    {
+      "index": 2474,
+      "plan_id": "C022",
+      "action": "frequency",
+      "f_shift": 7,
+      "t_shift": 0
+    },
+    {
+      "index": 2499,
+      "plan_id": "C023",
+      "action": "frequency",
+      "f_shift": -1,
+      "t_shift": 0
+    },
+    {
+      "index": 2541,
+      "plan_id": "C024",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 2574,
+      "plan_id": "C025",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -5
+    },
+    {
+      "index": 2598,
+      "plan_id": "C026",
+      "action": "frequency",
+      "f_shift": 3,
+      "t_shift": 0
+    },
+    {
+      "index": 2618,
+      "plan_id": "C027",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 2662,
+      "plan_id": "C028",
+      "action": "frequency",
+      "f_shift": 3,
+      "t_shift": 0
+    },
+    {
+      "index": 2700,
+      "plan_id": "C029",
+      "action": "frequency",
+      "f_shift": 9,
+      "t_shift": 0
+    },
+    {
+      "index": 2713,
+      "plan_id": "C030",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 2762,
+      "plan_id": "C031",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 3
+    },
+    {
+      "index": 2786,
+      "plan_id": "C032",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 2807,
+      "plan_id": "C033",
+      "action": "frequency",
+      "f_shift": -2,
+      "t_shift": 0
+    },
+    {
+      "index": 2847,
+      "plan_id": "C034",
+      "action": "frequency",
+      "f_shift": 7,
+      "t_shift": 0
+    },
+    {
+      "index": 2882,
+      "plan_id": "C035",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 2922,
+      "plan_id": "C036",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 3
+    },
+    {
+      "index": 2927,
+      "plan_id": "C037",
+      "action": "frequency",
+      "f_shift": -10,
+      "t_shift": 0
+    },
+    {
+      "index": 2958,
+      "plan_id": "C038",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3010,
+      "plan_id": "C039",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 3023,
+      "plan_id": "C040",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 3049,
+      "plan_id": "C041",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3098,
+      "plan_id": "C042",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 3136,
+      "plan_id": "C043",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 1
+    },
+    {
+      "index": 3142,
+      "plan_id": "C044",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3198,
+      "plan_id": "C045",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -2
+    },
+    {
+      "index": 3219,
+      "plan_id": "C046",
+      "action": "frequency",
+      "f_shift": 3,
+      "t_shift": 0
+    },
+    {
+      "index": 3257,
+      "plan_id": "C047",
+      "action": "frequency",
+      "f_shift": 9,
+      "t_shift": 0
+    },
+    {
+      "index": 3296,
+      "plan_id": "C048",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 1
+    },
+    {
+      "index": 3315,
+      "plan_id": "C049",
+      "action": "frequency",
+      "f_shift": 3,
+      "t_shift": 0
+    },
+    {
+      "index": 3357,
+      "plan_id": "C050",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 3
+    },
+    {
+      "index": 3375,
+      "plan_id": "C051",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -5
+    },
+    {
+      "index": 3406,
+      "plan_id": "C052",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 3446,
+      "plan_id": "C053",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 3
+    },
+    {
+      "index": 3468,
+      "plan_id": "C054",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 3482,
+      "plan_id": "C055",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3532,
+      "plan_id": "C056",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 3554,
+      "plan_id": "C057",
+      "action": "frequency",
+      "f_shift": -3,
+      "t_shift": 0
+    },
+    {
+      "index": 3578,
+      "plan_id": "C058",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3630,
+      "plan_id": "C059",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 3642,
+      "plan_id": "C060",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3666,
+      "plan_id": "C061",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 3715,
+      "plan_id": "C062",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 3737,
+      "plan_id": "C063",
+      "action": "frequency",
+      "f_shift": -1,
+      "t_shift": 0
+    },
+    {
+      "index": 3777,
+      "plan_id": "C064",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 3793,
+      "plan_id": "C065",
+      "action": "frequency",
+      "f_shift": -9,
+      "t_shift": 0
+    },
+    {
+      "index": 3852,
+      "plan_id": "C066",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 4
+    },
+    {
+      "index": 3860,
+      "plan_id": "C067",
+      "action": "frequency",
+      "f_shift": -6,
+      "t_shift": 0
+    },
+    {
+      "index": 3914,
+      "plan_id": "C068",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 2
+    },
+    {
+      "index": 3938,
+      "plan_id": "C069",
+      "action": "frequency",
+      "f_shift": 9,
+      "t_shift": 0
+    },
+    {
+      "index": 3952,
+      "plan_id": "C070",
+      "action": "frequency",
+      "f_shift": -6,
+      "t_shift": 0
+    },
+    {
+      "index": 3998,
+      "plan_id": "C071",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": -2
+    },
+    {
+      "index": 4020,
+      "plan_id": "C072",
+      "action": "frequency",
+      "f_shift": 4,
+      "t_shift": 0
+    },
+    {
+      "index": 4044,
+      "plan_id": "C073",
+      "action": "frequency",
+      "f_shift": -5,
+      "t_shift": 0
+    },
+    {
+      "index": 4088,
+      "plan_id": "C074",
+      "action": "frequency",
+      "f_shift": 8,
+      "t_shift": 0
+    },
+    {
+      "index": 4122,
+      "plan_id": "C075",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 4148,
+      "plan_id": "C076",
+      "action": "frequency",
+      "f_shift": 4,
+      "t_shift": 0
+    },
+    {
+      "index": 4186,
+      "plan_id": "C077",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 4206,
+      "plan_id": "C078",
+      "action": "frequency",
+      "f_shift": -3,
+      "t_shift": 0
+    },
+    {
+      "index": 4244,
+      "plan_id": "C079",
+      "action": "frequency",
+      "f_shift": 4,
+      "t_shift": 0
+    },
+    {
+      "index": 4262,
+      "plan_id": "C080",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4284,
+      "plan_id": "C081",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4328,
+      "plan_id": "C082",
+      "action": "frequency",
+      "f_shift": 10,
+      "t_shift": 0
+    },
+    {
+      "index": 4340,
+      "plan_id": "C083",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4367,
+      "plan_id": "C084",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4404,
+      "plan_id": "C085",
+      "action": "frequency",
+      "f_shift": -6,
+      "t_shift": 0
+    },
+    {
+      "index": 4431,
+      "plan_id": "C086",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4493,
+      "plan_id": "C087",
+      "action": "time",
+      "f_shift": 0,
+      "t_shift": 5
+    },
+    {
+      "index": 4495,
+      "plan_id": "C088",
+      "action": "keep",
+      "f_shift": 0,
+      "t_shift": 0
+    },
+    {
+      "index": 4544,
+      "plan_id": "C089",
+      "action": "frequency",
+      "f_shift": 9,
+      "t_shift": 0
+    },
+    {
+      "index": 4558,
+      "plan_id": "C090",
+      "action": "frequency",
+      "f_shift": -3,
+      "t_shift": 0
+    }
+  ]
+}

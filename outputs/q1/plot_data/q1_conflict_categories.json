@@ -1,0 +1,37 @@
+{
+  "figure_id": "fig_q1_conflict_categories",
+  "question": "Q1",
+  "kind": "category_bar",
+  "unit_and_population": "去重冲突计划对；150 个原始用频计划",
+  "aggregation": "按类别组合统计冲突计划对",
+  "uncertainty": "none",
+  "categories": [
+    {
+      "label": "A-A",
+      "value": 0
+    },
+    {
+      "label": "A-B",
+      "value": 21
+    },
+    {
+      "label": "A-C",
+      "value": 66
+    },
+    {
+      "label": "B-B",
+      "value": 10
+    },
+    {
+      "label": "B-C",
+      "value": 181
+    },
+    {
+      "label": "C-C",
+      "value": 19
+    }
+  ],
+  "total_conflicts": 297,
+  "supported_claim": "B-C 是数量最多的原始冲突类别。",
+  "forbidden_inference": "类别冲突数量不等于 Q2 的撤销或调整优先级。"
+}

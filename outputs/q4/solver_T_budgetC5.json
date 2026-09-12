@@ -1,0 +1,45 @@
+{
+  "question": "Q4",
+  "policy": "T",
+  "horizon": 643,
+  "candidate_summary": {
+    "plan_count": 150,
+    "candidate_state_count": 6103,
+    "candidate_min": 22,
+    "candidate_max": 50,
+    "gap_candidate_count": 1521,
+    "state_conflict_edges": 444561,
+    "cell_clique_count": 53679,
+    "mask_canonical_sample_checked": 1000,
+    "horizon": 643
+  },
+  "budgets": {
+    "C": 5
+  },
+  "fixed_initial": {},
+  "objective_names": [
+    "C",
+    "M",
+    "P_A",
+    "C_A",
+    "P_B",
+    "C_B",
+    "S_sum",
+    "S_max"
+  ],
+  "layers": [
+    {
+      "name": "C",
+      "status": "UNKNOWN",
+      "objective_value": null,
+      "best_bound": null,
+      "gap": null,
+      "seconds": 189.09079720001318,
+      "cuts_added": 0,
+      "num_conflicts": 231,
+      "num_branches": 27507
+    }
+  ],
+  "proven_optimal": false,
+  "status": "NO_FEASIBLE_SELECTION"
+}
