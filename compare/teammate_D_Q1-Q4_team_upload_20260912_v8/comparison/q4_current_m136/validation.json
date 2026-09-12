@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": "outputs/q4/result4_M136_workbook_validation_independent.json",
+  "source_sha256": "50be9d707938feb420ad288de2d5f1f4855cd99747d4b3e4c36346c3fb7eb8d0",
+  "checks": {
+    "active_plan_count": 147,
+    "boundary_errors": [],
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "unique_occupied_cell_count": 16356,
+    "weighted_occupied_cell_count": 16356,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1
+  },
+  "objective_values": {
+    "revoke": 3,
+    "revoke_A": 0,
+    "revoke_B": 1,
+    "adjust": 136,
+    "adjust_A": 19,
+    "adjust_B": 36,
+    "normalized_shift": 924
+  }
+}

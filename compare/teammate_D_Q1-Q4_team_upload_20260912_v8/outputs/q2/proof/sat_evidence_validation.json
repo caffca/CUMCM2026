@@ -1,0 +1,83 @@
+{
+  "question": "D-Q2",
+  "status": "PASS",
+  "audit_type": "SAT_EVIDENCE_METADATA_AND_CROSSLINK",
+  "solver": "cadical195",
+  "horizon": 643,
+  "candidate_universe": 4582,
+  "probes": [
+    {
+      "probe": "b_le_3",
+      "file": "outputs/q2/proof/sat_b_le_3.json",
+      "status": "UNSAT",
+      "optimality": "PROVED_INFEASIBLE",
+      "horizon": 643,
+      "solver": "cadical195",
+      "candidate_count": 4582,
+      "plan_count": 150,
+      "resource_cell_constraint_count": 52939,
+      "threshold": "R=6, R_A=0, R_B<=3",
+      "conclusion": "R_B>=4; with incumbent R_B=4, the conditional optimum is R_B=4."
+    },
+    {
+      "probe": "adjust_le_125",
+      "file": "outputs/q2/proof/sat_adjust_le_125.json",
+      "status": "UNSAT",
+      "optimality": "PROVED_INFEASIBLE",
+      "horizon": 643,
+      "solver": "cadical195",
+      "candidate_count": 4582,
+      "plan_count": 150,
+      "resource_cell_constraint_count": 52939,
+      "threshold": "R=6, R_A=0, R_B=4, M<=125",
+      "conclusion": "M>=126; with incumbent M=126, the conditional optimum is M=126."
+    },
+    {
+      "probe": "adjust_a_le_15",
+      "file": "outputs/q2/proof/sat_adjust_a_le_15.json",
+      "status": "UNSAT",
+      "optimality": "PROVED_INFEASIBLE",
+      "horizon": 643,
+      "solver": "cadical195",
+      "candidate_count": 4582,
+      "plan_count": 150,
+      "resource_cell_constraint_count": 52939,
+      "threshold": "R=6, R_A=0, R_B=4, M=126, M_A<=15",
+      "conclusion": "M_A>=16; with incumbent M_A=16, the conditional optimum is M_A=16."
+    },
+    {
+      "probe": "adjust_b_le_33",
+      "file": "outputs/q2/proof/sat_adjust_b_le_33.json",
+      "status": "UNSAT",
+      "optimality": "PROVED_INFEASIBLE",
+      "horizon": 643,
+      "solver": "cadical195",
+      "candidate_count": 4582,
+      "plan_count": 150,
+      "resource_cell_constraint_count": 52939,
+      "threshold": "R=6, R_A=0, R_B=4, M=126, M_A=16, M_B<=33",
+      "conclusion": "M_B>=34; with incumbent M_B=34, the conditional optimum is M_B=34."
+    },
+    {
+      "probe": "shift_le_774",
+      "file": "outputs/q2/proof/sat_shift_le_774_full.json",
+      "status": "UNSAT",
+      "optimality": "PROVED_INFEASIBLE",
+      "horizon": 643,
+      "solver": "cadical195",
+      "candidate_count": 4582,
+      "plan_count": 150,
+      "resource_cell_constraint_count": 52939,
+      "threshold": "R=6, R_A=0, R_B=4, M=126, M_A=16, M_B=34, S10<=774",
+      "conclusion": "S10>=775; with the validated S10=775 scheme, the terminal conditional optimum is S10=775."
+    }
+  ],
+  "claims_supported": {
+    "all_five_unsat_files_present": true,
+    "all_statuses_match": true,
+    "same_candidate_universe": true,
+    "same_horizon": true,
+    "canonical_paths_self_contained": true
+  },
+  "note": "本文件核对现有五份正式阈值证据的字段、阈值、候选全集和正式路径；末级阈值另有完整候选证书与当前层指示器编码复核。"
+}

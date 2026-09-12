@@ -1,0 +1,8 @@
+﻿label,R,N3,total_active_after_Q3,A_keep_adjust_revoke,B_keep_adjust_revoke,A_active,B_active,M,q2_status,q2_optimality,q3_status,q3_optimality,q3_upper_bound,q3_candidate_count,sample_nondominated_with_AB,sample_nondominated_R_N3,source
+6（统一链）,6,141,285,4/16/0,2/34/4,20,36,126,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,141,2300,True,True,current exact-R conditional scan
+8（统一链）,8,139,281,4/16/0,2/35/3,20,37,124,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,139,2237,True,False,current exact-R conditional scan
+10（统一链）,10,127,267,5/15/0,3/34/3,20,37,120,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,127,2246,False,False,current exact-R conditional scan
+12（统一链）,12,132,270,5/15/0,2/36/2,20,38,119,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,132,1963,True,False,current exact-R conditional scan
+15（统一链）,15,108,243,2/18/0,5/35/0,20,40,119,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,108,1461,True,False,current exact-R conditional scan
+19（统一链）,19,106,237,3/17/0,4/36/0,20,40,114,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,106,1929,False,False,current exact-R conditional scan
+19（历史首轮）,19,203,334,5/11/4,1/24/15,16,25,113,FEASIBLE_INCUMBENT,NOT_PROVED,OPTIMAL,PROVED,203,3555,True,True,git:001bb85 + current Q3 solver

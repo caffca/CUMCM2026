@@ -1,0 +1,48 @@
+{
+  "question": "D-Q4",
+  "mode": "independent_active_sat_threshold",
+  "method": "PySAT + deduplicated candidate conflict edges + plan at-most-one + active-cardinality lower bound",
+  "status": "UNSAT",
+  "proof": "PROVED_INFEASIBLE",
+  "time_domain": [
+    0,
+    643
+  ],
+  "frequency_domain": [
+    0,
+    100
+  ],
+  "target_active": 148,
+  "exact_revokes": 2,
+  "revoke_category_counts": {
+    "A": 1,
+    "B": 1,
+    "C": 0
+  },
+  "dominance_pruning": {
+    "enabled": true,
+    "input_active_candidate_count": 5953,
+    "removed_active_candidate_count": 420,
+    "kept_active_candidate_count": 5533,
+    "plans_with_removed_actions": 106,
+    "equal_conflict_set_representatives_removed": 14,
+    "rule": "within one plan, remove a when external_conflicts(b) is a subset of external_conflicts(a)"
+  },
+  "plan_count": 150,
+  "candidate_count": 5533,
+  "plan_activation_variable_count": 150,
+  "base_variable_count": 5683,
+  "resource_cell_count": 55884,
+  "conflict_edge_count": 406960,
+  "encoded_variable_count": 8175,
+  "clause_count": 543553,
+  "solver": "cadical195",
+  "build_seconds": 1.8946424000023399,
+  "solve_seconds": 446.5507755000144,
+  "solver_stats": {
+    "restarts": 103438,
+    "conflicts": 3995131,
+    "decisions": 12184138,
+    "propagations": 1102633857
+  }
+}

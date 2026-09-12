@@ -1,0 +1,52 @@
+{
+  "question": "D-Q4",
+  "status": "PASS",
+  "horizon": 643,
+  "errors": [],
+  "recomputed_objectives": {
+    "revoke": 3,
+    "revoke_A": 0,
+    "revoke_B": 1,
+    "adjust": 136,
+    "adjust_A": 19,
+    "adjust_B": 36,
+    "normalized_shift": 924
+  },
+  "reported_objectives": {
+    "revoke": 3,
+    "revoke_A": 0,
+    "revoke_B": 1,
+    "adjust": 136,
+    "adjust_A": 19,
+    "adjust_B": 36,
+    "normalized_shift": 924
+  },
+  "objective_values_match": true,
+  "counts_by_category": {
+    "A": {
+      "保留数量": 1,
+      "调整数量": 19,
+      "撤销数量": 0
+    },
+    "B": {
+      "保留数量": 3,
+      "调整数量": 36,
+      "撤销数量": 1
+    },
+    "C": {
+      "保留数量": 7,
+      "调整数量": 81,
+      "撤销数量": 2
+    }
+  },
+  "checks": {
+    "active_plan_count": 147,
+    "boundary_errors": [],
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "unique_occupied_cell_count": 16356,
+    "weighted_occupied_cell_count": 16356,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "question": "D-Q2",
+  "mode": "independent_sat_shift_threshold",
+  "description": "R=6, R_A=0, R_B=4, M=126, M_A=16, M_B=34, S10<=774",
+  "status": "UNSAT",
+  "proof": "PROVED_INFEASIBLE",
+  "horizon": 643,
+  "solver": "cadical195",
+  "time_limit_seconds": 900.0,
+  "build_seconds": 0.9432181000011042,
+  "solve_seconds": 263.5851478000113,
+  "dominance": {
+    "enabled": false,
+    "input_candidate_count": 4582,
+    "kept_candidate_count": 4582,
+    "removed_candidate_count": 0
+  },
+  "formula": {
+    "plan_count": 150,
+    "candidate_count": 4582,
+    "resource_cell_count": 54691,
+    "resource_cell_constraint_count": 52939,
+    "conflict_edge_count": 270626,
+    "base_variable_count": 4582,
+    "encoded_variable_count": 11903,
+    "clause_count": 409222,
+    "weighted_encoding": {
+      "encoding": "plan-cost-bits+ripple-adder+lexicographic-comparator",
+      "width_bits": 11,
+      "plan_count": 150,
+      "adder_count": 1650,
+      "maximum_feasible_weight_sum": 1500,
+      "bound": 774
+    },
+    "plan_cost_bit_count": 600,
+    "fixed_features": [
+      {
+        "feature": "revoke",
+        "value": 6
+      },
+      {
+        "feature": "revoke_A",
+        "value": 0
+      },
+      {
+        "feature": "revoke_B",
+        "value": 4
+      },
+      {
+        "feature": "adjust",
+        "value": 126
+      },
+      {
+        "feature": "adjust_A",
+        "value": 16
+      },
+      {
+        "feature": "adjust_B",
+        "value": 34
+      }
+    ],
+    "compact_equivalent_constraints": [
+      {
+        "feature": "revoke_A",
+        "value": 0
+      },
+      {
+        "feature": "revoke_B",
+        "value": 4
+      },
+      {
+        "feature": "revoke_C",
+        "value": 2
+      },
+      {
+        "feature": "keep_A",
+        "value": 4
+      },
+      {
+        "feature": "keep_B",
+        "value": 2
+      },
+      {
+        "feature": "keep_C",
+        "value": 12
+      }
+    ],
+    "threshold": {
+      "feature": "normalized_shift",
+      "value": 774
+    }
+  },
+  "solver_stats": {
+    "restarts": 103187,
+    "conflicts": 2596525,
+    "decisions": 8070624,
+    "propagations": 878554742
+  },
+  "evidence_metadata": {
+    "fixed_prefix": {
+      "R": 6,
+      "R_A": 0,
+      "R_B": 4,
+      "M": 126,
+      "M_A": 16,
+      "M_B": 34
+    },
+    "threshold": {
+      "feature": "S10",
+      "sense": "<=",
+      "value": 774
+    },
+    "solver": {
+      "requested_alias": "cadical195",
+      "family": "CaDiCaL",
+      "version": "1.9.5",
+      "python_sat_version": "1.9.dev15",
+      "version_evidence": "CaDiCaL 1.9.5 SAT solver."
+    },
+    "solver_status": "UNSAT",
+    "proof_status": "PROVED_INFEASIBLE",
+    "runtime": {
+      "build_seconds": 0.9432181000011042,
+      "solve_seconds": 263.5851478000113,
+      "time_limit_seconds": 900.0,
+      "time_limit_recorded": true,
+      "solver_stats": {
+        "restarts": 103187,
+        "conflicts": 2596525,
+        "decisions": 8070624,
+        "propagations": 878554742
+      }
+    },
+    "formula_counts": {
+      "plan_count": 150,
+      "candidate_count": 4582,
+      "resource_cell_count": 54691,
+      "resource_cell_constraint_count": 52939,
+      "conflict_edge_count": 270626,
+      "base_variable_count": 4582,
+      "encoded_variable_count": 11903,
+      "clause_count": 409222
+    },
+    "provenance": {
+      "generator_script": "scripts/prove_q2_shift_sat.py",
+      "reproduction_command": "python -m scripts.prove_q2_shift_sat --input data/raw/D题/附件/附件1.xlsx --horizon 643 --solver cadical195 --time-limit 900 --no-dominance --output outputs/q2/proof/sat_shift_le_774_full.json",
+      "historical_command_verified": false,
+      "source_run": null,
+      "corresponding_feasible_witness": [
+        "outputs/q2/six_revocation_candidate.json",
+        "outputs/q2/six_revocation_validation.json",
+        "outputs/q2/result2.xlsx"
+      ],
+      "raw_input": "data/raw/D题/附件/附件1.xlsx",
+      "raw_input_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+    },
+    "interpretation": "UNSAT 在该固定前缀和阈值下给出不可行下界；与对应已验证可行见证合并后，形成该字典序层的 LB=UB 闭合。"
+  },
+  "optimality": "PROVED_INFEASIBLE",
+  "solver_version": "1.9.5",
+  "evidence_type": "UNSAT_THRESHOLD_CERTIFICATE"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "expected_action_count": 132,
+  "actual_action_count": 132,
+  "errors": [],
+  "question": "D-Q2",
+  "source_workbook": "outputs/q2/result2.xlsx",
+  "source_workbook_sha256": "78a50fd7d053bf85ea427cfde2430bc9ace2514bd5c18da15216e2e3d28ef05a",
+  "source_candidate_json": "outputs/q2/six_revocation_candidate.json",
+  "source_candidate_json_sha256": "7ccf2b878c845b766fe10e87b2c1141847cdef072a1a1878ca71b6ce9a41dd9e",
+  "objective_values": {
+    "revocations": 6,
+    "revoke_A": 0,
+    "revoke_B": 4,
+    "adjusted_plans": 126,
+    "adjust_A": 16,
+    "adjust_B": 34,
+    "frequency_shift_sum": 595,
+    "time_shift_sum": 90,
+    "normalized_shift_score_x10": 775
+  },
+  "objective_order": [
+    "revocations",
+    "revoke_A",
+    "revoke_B",
+    "adjusted_plans",
+    "adjust_A",
+    "adjust_B",
+    "normalized_shift_score_x10"
+  ],
+  "objective_vector": [
+    6,
+    0,
+    4,
+    126,
+    16,
+    34,
+    775
+  ],
+  "horizon": 643,
+  "active_plan_count": 144,
+  "occupied_resource_cell_count": 15816,
+  "checks": {
+    "active_plan_count": 144,
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "boundary_errors": [],
+    "occupied_cell_count": 15816,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1,
+    "weighted_occupied_cell_count": 15816
+  },
+  "canonical_status": "FULL_LEXICOGRAPHIC_PROVED",
+  "canonical_optimality": "LEXICOGRAPHIC_FULLY_PROVED",
+  "proof_chain_reference": "outputs/q2/results.json"
+}

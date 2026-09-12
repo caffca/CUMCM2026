@@ -1,0 +1,52 @@
+{
+  "name": "q4_intermediate_m139",
+  "question": "Q4",
+  "source_result": "outputs/q4/proof_R3_RA0_RB1_M139_witness.json",
+  "source_validation": "outputs/q4/proof_R3_RA0_RB1_M139_validation.json",
+  "source_selected_or_workbook": "outputs/q4/proof_R3_RA0_RB1_M139_witness.json",
+  "source_sha256": "47a3ee6314592c9c14648460489f12c8a5dc7d59d93e277bae5ccd099817abd0",
+  "validation_sha256": "c300e37c028bd90b667c0b54b8cf98ffd3bd6f80c5f11170a3c650296a5da07b",
+  "time_domain": [
+    0,
+    643
+  ],
+  "action_set": "keep / frequency-shift / time-shift / revoke; C additionally gap-shift",
+  "objective_order": [
+    "R",
+    "R_A",
+    "R_B",
+    "M",
+    "M_A",
+    "M_B",
+    "S10^(4)"
+  ],
+  "objective_vector": [
+    3,
+    0,
+    1,
+    139,
+    19,
+    37,
+    943
+  ],
+  "solver_status": "SAT",
+  "optimality": "FEASIBLE_WITNESS",
+  "bounds": {
+    "R": [
+      3,
+      3
+    ],
+    "M": [
+      null,
+      139
+    ]
+  },
+  "final_conflict_count": 0,
+  "boundary_error_count": 0,
+  "q3_capacity": null,
+  "why_not_main": "已验证的中间 SAT 见证；被 M=136 严格支配，保留用于审计链。",
+  "current_formal": false,
+  "branch": "main",
+  "commit": "c5d1b3baa55a72f211abfdf794acd415644aef21",
+  "workspace_dirty": true
+}

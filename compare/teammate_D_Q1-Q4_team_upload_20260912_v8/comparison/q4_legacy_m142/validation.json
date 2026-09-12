@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": "outputs/q4/conditional_R3_RB1_validation_legacy_20260912.json",
+  "source_sha256": "0b56f45942384a7cf297083b064dd1b2fc20bd8e14ebb9cf41c5c66233708940",
+  "checks": {
+    "active_plan_count": 147,
+    "boundary_errors": [],
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "unique_occupied_cell_count": 16356,
+    "weighted_occupied_cell_count": 16356,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1
+  },
+  "objective_values": {
+    "revoke": 3,
+    "revoke_A": 0,
+    "revoke_B": 1,
+    "adjust": 142,
+    "adjust_A": 20,
+    "adjust_B": 39,
+    "normalized_shift": 943
+  }
+}

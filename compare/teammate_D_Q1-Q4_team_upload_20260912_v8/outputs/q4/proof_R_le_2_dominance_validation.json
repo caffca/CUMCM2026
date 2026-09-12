@@ -1,0 +1,8026 @@
+{
+  "question": "D-Q4",
+  "mode": "dominance_reduction_certificate_validation",
+  "status": "PASS",
+  "proof": "DOMINANCE_REPLACEMENT_COVERAGE_CONFIRMED",
+  "time_domain": [
+    0,
+    643
+  ],
+  "frequency_domain": [
+    0,
+    100
+  ],
+  "input_candidate_count": 6103,
+  "input_active_candidate_count": 5953,
+  "removed_active_candidate_count": 420,
+  "kept_active_candidate_count": 5533,
+  "plan_count": 150,
+  "category_plan_counts": {
+    "A": 20,
+    "B": 40,
+    "C": 90
+  },
+  "checks": {
+    "every_removed_action_has_retained_same_plan_dominator": true,
+    "every_plan_retains_active_action": true,
+    "all_dominators_are_retained": true,
+    "category_revoke_partition_is_unchanged": true
+  },
+  "witness_summary": {
+    "witness_count": 420,
+    "final_witness_strict_subset_count": 407,
+    "final_witness_equal_set_count": 13,
+    "direct_equal_set_representative_removals": 14,
+    "missing_count": 0
+  },
+  "witnesses": [
+    {
+      "removed": [
+        "A001",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "dominator": [
+        "A001",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 156,
+      "dominator_external_conflict_degree": 125,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A001",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "A001",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 132,
+      "dominator_external_conflict_degree": 125,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A002",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "A002",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 129,
+      "dominator_external_conflict_degree": 121,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A002",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "A002",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 151,
+      "dominator_external_conflict_degree": 121,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A013",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "A013",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 233,
+      "dominator_external_conflict_degree": 159,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A013",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "dominator": [
+        "A013",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 166,
+      "dominator_external_conflict_degree": 159,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A014",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "A014",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 184,
+      "dominator_external_conflict_degree": 166,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A014",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "A014",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 175,
+      "dominator_external_conflict_degree": 166,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A020",
+        "freq",
+        -9,
+        0,
+        0
+      ],
+      "dominator": [
+        "A020",
+        "freq",
+        -10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 148,
+      "dominator_external_conflict_degree": 141,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "A020",
+        "freq",
+        -8,
+        0,
+        0
+      ],
+      "dominator": [
+        "A020",
+        "freq",
+        -10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 155,
+      "dominator_external_conflict_degree": 141,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B001",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B001",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 194,
+      "dominator_external_conflict_degree": 166,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B001",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B001",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 189,
+      "dominator_external_conflict_degree": 166,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B005",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B005",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 225,
+      "dominator_external_conflict_degree": 217,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B005",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B005",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 233,
+      "dominator_external_conflict_degree": 217,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B006",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "B006",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 266,
+      "dominator_external_conflict_degree": 241,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B006",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "B006",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 259,
+      "dominator_external_conflict_degree": 241,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B010",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B010",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 192,
+      "dominator_external_conflict_degree": 188,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B010",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B010",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 195,
+      "dominator_external_conflict_degree": 188,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B016",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "B016",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 281,
+      "dominator_external_conflict_degree": 263,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B016",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "B016",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 273,
+      "dominator_external_conflict_degree": 263,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B020",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "B020",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 227,
+      "dominator_external_conflict_degree": 213,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B020",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "B020",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 251,
+      "dominator_external_conflict_degree": 213,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B021",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B021",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 258,
+      "dominator_external_conflict_degree": 246,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B021",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B021",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 252,
+      "dominator_external_conflict_degree": 246,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B026",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B026",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 253,
+      "dominator_external_conflict_degree": 238,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B026",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B026",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 248,
+      "dominator_external_conflict_degree": 238,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B031",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "B031",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 243,
+      "dominator_external_conflict_degree": 219,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B031",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "B031",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 237,
+      "dominator_external_conflict_degree": 219,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B036",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "B036",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 125,
+      "dominator_external_conflict_degree": 80,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B036",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "B036",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 128,
+      "dominator_external_conflict_degree": 80,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B040",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "B040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 195,
+      "dominator_external_conflict_degree": 144,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "B040",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "B040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 204,
+      "dominator_external_conflict_degree": 144,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "dominator": [
+        "C001",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "C001",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 59,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "time",
+        0,
+        -4,
+        0
+      ],
+      "dominator": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 66,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "time",
+        0,
+        -3,
+        0
+      ],
+      "dominator": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 56,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 56,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 30,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C001",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 35,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 78,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 58,
+      "dominator_external_conflict_degree": 55,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C002",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 76,
+      "dominator_external_conflict_degree": 73,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 65,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 82,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 93,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 87,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C002",
+        "gap",
+        0,
+        0,
+        4
+      ],
+      "dominator": [
+        "C002",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 104,
+      "dominator_external_conflict_degree": 40,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "removed_external_conflict_degree": 49,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        -4,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        -3,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 66,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        -1,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "removed_external_conflict_degree": 53,
+      "dominator_external_conflict_degree": 51,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C003",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "removed_external_conflict_degree": 52,
+      "dominator_external_conflict_degree": 51,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 51,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 69,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 79,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 152,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C003",
+        "gap",
+        0,
+        0,
+        9
+      ],
+      "dominator": [
+        "C003",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "removed_external_conflict_degree": 130,
+      "dominator_external_conflict_degree": 56,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 85,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 47,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 76,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 69,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 114,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 104,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C004",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C004",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 166,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 71,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 81,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "time",
+        0,
+        -1,
+        0
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 76,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 28,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 53,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 74,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 110,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 117,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "removed_external_conflict_degree": 136,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C005",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C005",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 124,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 69,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        -4,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        -3,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        -1,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 74,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 66,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 24,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 62,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 51,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 116,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 107,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 101,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 147,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C006",
+        "gap",
+        0,
+        0,
+        9
+      ],
+      "dominator": [
+        "C006",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 100,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -10,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -8,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 23,
+      "dominator_external_conflict_degree": 18,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -8,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 20,
+      "dominator_external_conflict_degree": 18,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 17,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 18,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 26,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 40,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 42,
+      "dominator_external_conflict_degree": 16,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 50,
+      "dominator_external_conflict_degree": 38,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 93,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 104,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 9,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 33,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 32,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 53,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 51,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 62,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 99,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        4
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 91,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 132,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        7
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 115,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 141,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C007",
+        "gap",
+        0,
+        0,
+        9
+      ],
+      "dominator": [
+        "C007",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 144,
+      "dominator_external_conflict_degree": 9,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 87,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 90,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 23,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 67,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 88,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 90,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 104,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 109,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        7
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 113,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C008",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C008",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 136,
+      "dominator_external_conflict_degree": 13,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C009",
+        "time",
+        0,
+        -3,
+        0
+      ],
+      "dominator": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 139,
+      "dominator_external_conflict_degree": 35,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C009",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 116,
+      "dominator_external_conflict_degree": 35,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 35,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 91,
+      "dominator_external_conflict_degree": 35,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C009",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 105,
+      "dominator_external_conflict_degree": 35,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 68,
+      "dominator_external_conflict_degree": 27,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 30,
+      "dominator_external_conflict_degree": 27,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 33,
+      "dominator_external_conflict_degree": 27,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 62,
+      "dominator_external_conflict_degree": 27,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 57,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 60,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 66,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 102,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C010",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 59,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 24,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 40,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 124,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C010",
+        "gap",
+        0,
+        0,
+        8
+      ],
+      "dominator": [
+        "C010",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 136,
+      "dominator_external_conflict_degree": 21,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C011",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 50,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C011",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 55,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C011",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 51,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C011",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C011",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 46,
+      "dominator_external_conflict_degree": 46,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 26,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 52,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C011",
+        "gap",
+        0,
+        0,
+        10
+      ],
+      "dominator": [
+        "C011",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 93,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C012",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C012",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 78,
+      "dominator_external_conflict_degree": 49,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 56,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 87,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 47,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 76,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 141,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        4
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 105,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 148,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C013",
+        "gap",
+        0,
+        0,
+        7
+      ],
+      "dominator": [
+        "C013",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 169,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C014",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C014",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 118,
+      "dominator_external_conflict_degree": 112,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C014",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C014",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 63,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C014",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C014",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 100,
+      "dominator_external_conflict_degree": 63,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C015",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C015",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 89,
+      "dominator_external_conflict_degree": 89,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C015",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C015",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 89,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C016",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C016",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 67,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C016",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C016",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 116,
+      "dominator_external_conflict_degree": 67,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C017",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C017",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 86,
+      "dominator_external_conflict_degree": 56,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C018",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C018",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 120,
+      "dominator_external_conflict_degree": 118,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C018",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C018",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 104,
+      "dominator_external_conflict_degree": 79,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C019",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C019",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 125,
+      "dominator_external_conflict_degree": 83,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C019",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C019",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 149,
+      "dominator_external_conflict_degree": 83,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C020",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 43,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C020",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 24,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C020",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C020",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 97,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C020",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 49,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C020",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 65,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C021",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C021",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 82,
+      "dominator_external_conflict_degree": 49,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C021",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C021",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 49,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C021",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C021",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C021",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C021",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 66,
+      "dominator_external_conflict_degree": 57,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C022",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "dominator": [
+        "C022",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 84,
+      "dominator_external_conflict_degree": 71,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C022",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C022",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 75,
+      "dominator_external_conflict_degree": 71,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C022",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C022",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 83,
+      "dominator_external_conflict_degree": 57,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C022",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C022",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 107,
+      "dominator_external_conflict_degree": 57,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C023",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C023",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 71,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C024",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C024",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 146,
+      "dominator_external_conflict_degree": 140,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C024",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C024",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 124,
+      "dominator_external_conflict_degree": 114,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C025",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C025",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 74,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C026",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C026",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C026",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C026",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 120,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C027",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C027",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 161,
+      "dominator_external_conflict_degree": 144,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C027",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C027",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 142,
+      "dominator_external_conflict_degree": 131,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 41,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 137,
+      "dominator_external_conflict_degree": 41,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C028",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 160,
+      "dominator_external_conflict_degree": 41,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C029",
+        "freq",
+        -9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C029",
+        "freq",
+        -10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 71,
+      "dominator_external_conflict_degree": 58,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C029",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C029",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 148,
+      "dominator_external_conflict_degree": 124,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C030",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "dominator": [
+        "C030",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 54,
+      "dominator_external_conflict_degree": 50,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C030",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C030",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 68,
+      "dominator_external_conflict_degree": 50,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C030",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C030",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 90,
+      "dominator_external_conflict_degree": 50,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C030",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C030",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 96,
+      "dominator_external_conflict_degree": 50,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C030",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C030",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 87,
+      "dominator_external_conflict_degree": 67,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C031",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C031",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C031",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C031",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 56,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C031",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C031",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 85,
+      "dominator_external_conflict_degree": 70,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C032",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C032",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 85,
+      "dominator_external_conflict_degree": 79,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C032",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C032",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 111,
+      "dominator_external_conflict_degree": 93,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C033",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C033",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 170,
+      "dominator_external_conflict_degree": 162,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C033",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C033",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 126,
+      "dominator_external_conflict_degree": 96,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C033",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C033",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 172,
+      "dominator_external_conflict_degree": 96,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C034",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C034",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 143,
+      "dominator_external_conflict_degree": 140,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C035",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C035",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 49,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C035",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C035",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 138,
+      "dominator_external_conflict_degree": 49,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C036",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C036",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 118,
+      "dominator_external_conflict_degree": 110,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C036",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C036",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 103,
+      "dominator_external_conflict_degree": 82,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C036",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C036",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 134,
+      "dominator_external_conflict_degree": 82,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C037",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C037",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 145,
+      "dominator_external_conflict_degree": 113,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C038",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C038",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 98,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C039",
+        "freq",
+        -9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C039",
+        "freq",
+        -10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 69,
+      "dominator_external_conflict_degree": 65,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C039",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C039",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 91,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C039",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C039",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 91,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 78,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 68,
+      "dominator_external_conflict_degree": 62,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C040",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 74,
+      "dominator_external_conflict_degree": 62,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C040",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 48,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C040",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C040",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 48,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C041",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C041",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 89,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C041",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "dominator": [
+        "C041",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 60,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C041",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "C041",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 56,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C041",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C041",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 73,
+      "dominator_external_conflict_degree": 68,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C041",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C041",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 88,
+      "dominator_external_conflict_degree": 64,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C042",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C042",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 105,
+      "dominator_external_conflict_degree": 75,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C042",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C042",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 73,
+      "dominator_external_conflict_degree": 62,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C042",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C042",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 91,
+      "dominator_external_conflict_degree": 62,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C043",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C043",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 173,
+      "dominator_external_conflict_degree": 169,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C043",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C043",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 136,
+      "dominator_external_conflict_degree": 108,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C044",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C044",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 140,
+      "dominator_external_conflict_degree": 119,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C044",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C044",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 140,
+      "dominator_external_conflict_degree": 119,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C045",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C045",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 73,
+      "dominator_external_conflict_degree": 62,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C046",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C046",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 118,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C046",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C046",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 149,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C047",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C047",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 118,
+      "dominator_external_conflict_degree": 105,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C047",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C047",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 140,
+      "dominator_external_conflict_degree": 105,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C048",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C048",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 101,
+      "dominator_external_conflict_degree": 68,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C048",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C048",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 150,
+      "dominator_external_conflict_degree": 68,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C049",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C049",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 139,
+      "dominator_external_conflict_degree": 88,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C049",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C049",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 143,
+      "dominator_external_conflict_degree": 121,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C050",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C050",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 48,
+      "dominator_external_conflict_degree": 45,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C050",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C050",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 51,
+      "dominator_external_conflict_degree": 45,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C050",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C050",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 49,
+      "dominator_external_conflict_degree": 46,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C051",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C051",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 89,
+      "dominator_external_conflict_degree": 52,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C051",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C051",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 80,
+      "dominator_external_conflict_degree": 52,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C051",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C051",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 83,
+      "dominator_external_conflict_degree": 77,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C052",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C052",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 111,
+      "dominator_external_conflict_degree": 103,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C052",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C052",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 81,
+      "dominator_external_conflict_degree": 60,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C052",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C052",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 60,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C053",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C053",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 110,
+      "dominator_external_conflict_degree": 47,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C054",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C054",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 125,
+      "dominator_external_conflict_degree": 89,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C055",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C055",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 145,
+      "dominator_external_conflict_degree": 140,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C056",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C056",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "removed_external_conflict_degree": 156,
+      "dominator_external_conflict_degree": 112,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C057",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C057",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 151,
+      "dominator_external_conflict_degree": 111,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C057",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C057",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 172,
+      "dominator_external_conflict_degree": 111,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C058",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C058",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 105,
+      "dominator_external_conflict_degree": 101,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 79,
+      "dominator_external_conflict_degree": 78,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 100,
+      "dominator_external_conflict_degree": 78,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C059",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 94,
+      "dominator_external_conflict_degree": 78,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C060",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 21,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C060",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 18,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C060",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 50,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C060",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 25,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "dominator": [
+        "C060",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 36,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C060",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 36,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C060",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C060",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C060",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "removed_external_conflict_degree": 37,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C061",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "dominator": [
+        "C061",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 45,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C061",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "C061",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 37,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C061",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C061",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 76,
+      "dominator_external_conflict_degree": 72,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C061",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C061",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 88,
+      "dominator_external_conflict_degree": 88,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C061",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C061",
+        "gap",
+        0,
+        0,
+        5
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 53,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C061",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C061",
+        "gap",
+        0,
+        0,
+        5
+      ],
+      "removed_external_conflict_degree": 91,
+      "dominator_external_conflict_degree": 53,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C062",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 47,
+      "dominator_external_conflict_degree": 43,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C062",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 121,
+      "dominator_external_conflict_degree": 101,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C062",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 119,
+      "dominator_external_conflict_degree": 112,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C062",
+        "gap",
+        0,
+        0,
+        10
+      ],
+      "removed_external_conflict_degree": 135,
+      "dominator_external_conflict_degree": 73,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C062",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "removed_external_conflict_degree": 133,
+      "dominator_external_conflict_degree": 113,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C062",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C062",
+        "gap",
+        0,
+        0,
+        10
+      ],
+      "removed_external_conflict_degree": 123,
+      "dominator_external_conflict_degree": 73,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C063",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C063",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 85,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C064",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C064",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "removed_external_conflict_degree": 95,
+      "dominator_external_conflict_degree": 92,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C064",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C064",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 110,
+      "dominator_external_conflict_degree": 101,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C064",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "dominator": [
+        "C064",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 88,
+      "dominator_external_conflict_degree": 82,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C064",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C064",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 94,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C064",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C064",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 119,
+      "dominator_external_conflict_degree": 82,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C065",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C065",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 118,
+      "dominator_external_conflict_degree": 104,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C065",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C065",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "removed_external_conflict_degree": 157,
+      "dominator_external_conflict_degree": 65,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C066",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C066",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 122,
+      "dominator_external_conflict_degree": 112,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C066",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C066",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 116,
+      "dominator_external_conflict_degree": 110,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C067",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C067",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 157,
+      "dominator_external_conflict_degree": 102,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C068",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C068",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 153,
+      "dominator_external_conflict_degree": 132,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C068",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C068",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 175,
+      "dominator_external_conflict_degree": 132,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C068",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C068",
+        "gap",
+        0,
+        0,
+        6
+      ],
+      "removed_external_conflict_degree": 180,
+      "dominator_external_conflict_degree": 99,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C069",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C069",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 173,
+      "dominator_external_conflict_degree": 109,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C070",
+        "freq",
+        -5,
+        0,
+        0
+      ],
+      "dominator": [
+        "C070",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 60,
+      "dominator_external_conflict_degree": 42,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C070",
+        "freq",
+        -4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C070",
+        "freq",
+        -6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 65,
+      "dominator_external_conflict_degree": 42,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C070",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C070",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 80,
+      "dominator_external_conflict_degree": 76,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C070",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C070",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 92,
+      "dominator_external_conflict_degree": 79,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C071",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C071",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 48,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C071",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C071",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 44,
+      "dominator_external_conflict_degree": 33,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C071",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C071",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 105,
+      "dominator_external_conflict_degree": 56,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C071",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C071",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 110,
+      "dominator_external_conflict_degree": 56,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C072",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C072",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 52,
+      "dominator_external_conflict_degree": 48,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C072",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C072",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 116,
+      "dominator_external_conflict_degree": 42,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 97,
+      "dominator_external_conflict_degree": 38,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 121,
+      "dominator_external_conflict_degree": 38,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 126,
+      "dominator_external_conflict_degree": 38,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C073",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 122,
+      "dominator_external_conflict_degree": 38,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C074",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C074",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 163,
+      "dominator_external_conflict_degree": 116,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C075",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C075",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 95,
+      "dominator_external_conflict_degree": 94,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C076",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C076",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 162,
+      "dominator_external_conflict_degree": 136,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C077",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C077",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 143,
+      "dominator_external_conflict_degree": 80,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C078",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C078",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 109,
+      "dominator_external_conflict_degree": 79,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C079",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C079",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 108,
+      "dominator_external_conflict_degree": 61,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 23,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 29,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 32,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 87,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 98,
+      "dominator_external_conflict_degree": 92,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        -4,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 22,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        -2,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "removed_external_conflict_degree": 27,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        -1,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 26,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 23,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 19,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C080",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 23,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 11,
+      "dominator_external_conflict_degree": 11,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 24,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C080",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 26,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 29,
+      "dominator_external_conflict_degree": 11,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C080",
+        "gap",
+        0,
+        0,
+        4
+      ],
+      "dominator": [
+        "C080",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "removed_external_conflict_degree": 35,
+      "dominator_external_conflict_degree": 17,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "dominator": [
+        "C081",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 22,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C081",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 41,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C081",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 19,
+      "dominator_external_conflict_degree": 15,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 26,
+      "dominator_external_conflict_degree": 26,
+      "strict_subset": false
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 8,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 8,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 39,
+      "dominator_external_conflict_degree": 8,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 38,
+      "dominator_external_conflict_degree": 8,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C081",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "removed_external_conflict_degree": 37,
+      "dominator_external_conflict_degree": 25,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -3
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        3,
+        0
+      ],
+      "removed_external_conflict_degree": 33,
+      "dominator_external_conflict_degree": 8,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "dominator": [
+        "C081",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "removed_external_conflict_degree": 33,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        -1
+      ],
+      "dominator": [
+        "C081",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "removed_external_conflict_degree": 31,
+      "dominator_external_conflict_degree": 22,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C081",
+        "gap",
+        0,
+        0,
+        3
+      ],
+      "dominator": [
+        "C081",
+        "gap",
+        0,
+        0,
+        1
+      ],
+      "removed_external_conflict_degree": 20,
+      "dominator_external_conflict_degree": 19,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C082",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 55,
+      "dominator_external_conflict_degree": 46,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C082",
+        "freq",
+        5,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 49,
+      "dominator_external_conflict_degree": 46,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "freq",
+        6,
+        0,
+        0
+      ],
+      "dominator": [
+        "C082",
+        "freq",
+        7,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 55,
+      "dominator_external_conflict_degree": 31,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "freq",
+        8,
+        0,
+        0
+      ],
+      "dominator": [
+        "C082",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 33,
+      "dominator_external_conflict_degree": 29,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "freq",
+        9,
+        0,
+        0
+      ],
+      "dominator": [
+        "C082",
+        "freq",
+        10,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 31,
+      "dominator_external_conflict_degree": 29,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C082",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 46,
+      "dominator_external_conflict_degree": 41,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C082",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 61,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C082",
+        "gap",
+        0,
+        0,
+        -4
+      ],
+      "dominator": [
+        "C082",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "removed_external_conflict_degree": 79,
+      "dominator_external_conflict_degree": 76,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C083",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C083",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "removed_external_conflict_degree": 99,
+      "dominator_external_conflict_degree": 52,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C083",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C083",
+        "gap",
+        0,
+        0,
+        -2
+      ],
+      "removed_external_conflict_degree": 97,
+      "dominator_external_conflict_degree": 76,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C084",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C084",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 77,
+      "dominator_external_conflict_degree": 53,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C084",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C084",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 58,
+      "dominator_external_conflict_degree": 56,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C084",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C084",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 84,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C084",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C084",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 81,
+      "dominator_external_conflict_degree": 53,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C085",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C085",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 113,
+      "dominator_external_conflict_degree": 101,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C085",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C085",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 135,
+      "dominator_external_conflict_degree": 97,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C085",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C085",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 153,
+      "dominator_external_conflict_degree": 98,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C086",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C086",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 153,
+      "dominator_external_conflict_degree": 97,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C087",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C087",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 65,
+      "dominator_external_conflict_degree": 57,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C087",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C087",
+        "time",
+        0,
+        4,
+        0
+      ],
+      "removed_external_conflict_degree": 79,
+      "dominator_external_conflict_degree": 39,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C087",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C087",
+        "time",
+        0,
+        2,
+        0
+      ],
+      "removed_external_conflict_degree": 86,
+      "dominator_external_conflict_degree": 47,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C087",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C087",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 86,
+      "dominator_external_conflict_degree": 57,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C088",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C088",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "removed_external_conflict_degree": 73,
+      "dominator_external_conflict_degree": 59,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C088",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C088",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "removed_external_conflict_degree": 91,
+      "dominator_external_conflict_degree": 24,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "freq",
+        -8,
+        0,
+        0
+      ],
+      "dominator": [
+        "C089",
+        "freq",
+        -9,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 57,
+      "dominator_external_conflict_degree": 54,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C089",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 127,
+      "dominator_external_conflict_degree": 126,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "gap",
+        0,
+        0,
+        -8
+      ],
+      "dominator": [
+        "C089",
+        "time",
+        0,
+        -1,
+        0
+      ],
+      "removed_external_conflict_degree": 179,
+      "dominator_external_conflict_degree": 105,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C089",
+        "time",
+        0,
+        1,
+        0
+      ],
+      "removed_external_conflict_degree": 184,
+      "dominator_external_conflict_degree": 103,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C089",
+        "gap",
+        0,
+        0,
+        2
+      ],
+      "removed_external_conflict_degree": 176,
+      "dominator_external_conflict_degree": 124,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C089",
+        "gap",
+        0,
+        0,
+        -5
+      ],
+      "dominator": [
+        "C089",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 166,
+      "dominator_external_conflict_degree": 126,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        -2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 37,
+      "dominator_external_conflict_degree": 34,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        -1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "freq",
+        -3,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 40,
+      "dominator_external_conflict_degree": 34,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        1,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 64,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        2,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 71,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        3,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 78,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "freq",
+        4,
+        0,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "keep",
+        0,
+        0,
+        0
+      ],
+      "removed_external_conflict_degree": 85,
+      "dominator_external_conflict_degree": 44,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "time",
+        0,
+        -5,
+        0
+      ],
+      "dominator": [
+        "C090",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 53,
+      "dominator_external_conflict_degree": 36,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "gap",
+        0,
+        0,
+        -7
+      ],
+      "dominator": [
+        "C090",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 36,
+      "strict_subset": true
+    },
+    {
+      "removed": [
+        "C090",
+        "gap",
+        0,
+        0,
+        -6
+      ],
+      "dominator": [
+        "C090",
+        "time",
+        0,
+        5,
+        0
+      ],
+      "removed_external_conflict_degree": 63,
+      "dominator_external_conflict_degree": 36,
+      "strict_subset": true
+    }
+  ],
+  "missing": [],
+  "plans_without_kept_action": [],
+  "logic": {
+    "replacement_rule": "N(b) subseteq N(a) within the same plan",
+    "category_reason": "reduction removes active actions only; revoke category is a property of the original plan"
+  },
+  "errors": []
+}

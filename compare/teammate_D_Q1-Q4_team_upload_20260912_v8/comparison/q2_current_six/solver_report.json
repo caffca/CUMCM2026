@@ -1,0 +1,51 @@
+{
+  "name": "q2_current_six",
+  "question": "Q2",
+  "source_result": "outputs/q2/results.json",
+  "source_validation": "outputs/q2/six_revocation_validation.json",
+  "source_selected_or_workbook": "outputs/q2/result2.xlsx",
+  "source_sha256": "5400b0c0f6e7e445cd0acdb0c746818f3a54b0ffe6c02a1a2d2d7f1deb72ae48",
+  "validation_sha256": "5d644a12acc84b4b363079054b6661be0f93e21c818ddbc0faf5d87718a29952",
+  "time_domain": [
+    0,
+    643
+  ],
+  "action_set": "keep / frequency-shift / time-shift / revoke; complete repeated events",
+  "objective_order": [
+    "R",
+    "R_A",
+    "R_B",
+    "M",
+    "M_A",
+    "M_B",
+    "S10"
+  ],
+  "objective_vector": [
+    6,
+    0,
+    4,
+    126,
+    16,
+    34,
+    775
+  ],
+  "solver_status": "FULL_LEXICOGRAPHIC_PROVED",
+  "optimality": "LEXICOGRAPHIC_FULLY_PROVED",
+  "bounds": {
+    "R": [
+      6,
+      6
+    ],
+    "M": [
+      126,
+      126
+    ]
+  },
+  "final_conflict_count": 0,
+  "boundary_error_count": 0,
+  "q3_capacity": 141,
+  "why_not_main": "主方案：七层 Q2 证据闭合，Q3 在该具体背景下条件最优。",
+  "branch": "main",
+  "commit": "c5d1b3baa55a72f211abfdf794acd415644aef21",
+  "workspace_dirty": true
+}

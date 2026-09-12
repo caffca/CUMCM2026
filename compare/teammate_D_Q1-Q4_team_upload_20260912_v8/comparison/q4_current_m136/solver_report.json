@@ -1,0 +1,52 @@
+{
+  "name": "q4_current_m136",
+  "question": "Q4",
+  "source_result": "outputs/q4/result4_selected.json",
+  "source_validation": "outputs/q4/result4_M136_workbook_validation_independent.json",
+  "source_selected_or_workbook": "outputs/q4/result4.xlsx",
+  "source_sha256": "0ff3cd083b784f890710225a8db948bfcdb722a403c68a76bf1034661d412cfe",
+  "validation_sha256": "50be9d707938feb420ad288de2d5f1f4855cd99747d4b3e4c36346c3fb7eb8d0",
+  "time_domain": [
+    0,
+    643
+  ],
+  "action_set": "keep / frequency-shift / time-shift / revoke; C additionally gap-shift",
+  "objective_order": [
+    "R",
+    "R_A",
+    "R_B",
+    "M",
+    "M_A",
+    "M_B",
+    "S10^(4)"
+  ],
+  "objective_vector": [
+    3,
+    0,
+    1,
+    136,
+    19,
+    36,
+    924
+  ],
+  "solver_status": "CURRENT_FORMAL_FEASIBLE_BEST_KNOWN",
+  "optimality": "FEASIBLE_WITNESS",
+  "bounds": {
+    "R": [
+      3,
+      3
+    ],
+    "M": [
+      null,
+      136
+    ]
+  },
+  "final_conflict_count": 0,
+  "boundary_error_count": 0,
+  "q3_capacity": null,
+  "why_not_main": "当前正式 Q4 接口：M=136 是已验证最好可行上界；R=3 已闭合，次级 M 尚未证明最优。",
+  "current_formal": true,
+  "branch": "main",
+  "commit": "c5d1b3baa55a72f211abfdf794acd415644aef21",
+  "workspace_dirty": true
+}

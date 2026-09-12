@@ -1,0 +1,51 @@
+{
+  "name": "q2_scan_r19_unified",
+  "question": "Q2",
+  "source_result": "outputs/q2_q3_pareto/R19/q2/results.json",
+  "source_validation": "outputs/q2_q3_pareto/R19/q2/validation.json",
+  "source_selected_or_workbook": "outputs/q2_q3_pareto/R19/q2/results.json",
+  "source_sha256": "cb87610d3d7f3b1a82bd341d500cc2cf0e8a11198f2861343cfbd923ab1d54f9",
+  "validation_sha256": "80a7403dfbf4f6deb800af6b363d4812ab1ba9ecdba2728b6d1ef43185d638c4",
+  "time_domain": [
+    0,
+    643
+  ],
+  "action_set": "keep / frequency-shift / time-shift / revoke; complete repeated events",
+  "objective_order": [
+    "R",
+    "R_A",
+    "R_B",
+    "M",
+    "M_A",
+    "M_B",
+    "S10"
+  ],
+  "objective_vector": [
+    19,
+    0,
+    0,
+    114,
+    17,
+    36,
+    733
+  ],
+  "solver_status": "FEASIBLE_INCUMBENT",
+  "optimality": "NOT_PROVED",
+  "bounds": {
+    "R": [
+      null,
+      19
+    ],
+    "M": [
+      null,
+      114
+    ]
+  },
+  "final_conflict_count": 0,
+  "boundary_error_count": 0,
+  "q3_capacity": 106,
+  "why_not_main": "同为 R=19 但保护顺序和占用集合不同；用于说明不能只按撤销数预测 Q3。",
+  "branch": "main",
+  "commit": "c5d1b3baa55a72f211abfdf794acd415644aef21",
+  "workspace_dirty": true
+}

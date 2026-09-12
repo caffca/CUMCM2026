@@ -1,0 +1,98 @@
+{
+  "question": "D-Q4",
+  "mode": "global_R_le_2_proof_coverage_validation",
+  "status": "PASS",
+  "proof": "GLOBAL_BRANCH_COVERAGE_CONFIRMED",
+  "time_domain": [
+    0,
+    643
+  ],
+  "frequency_domain": [
+    0,
+    100
+  ],
+  "independent_dominance_reconstruction": {
+    "input_active_candidate_count": 5953,
+    "removed_active_candidate_count": 420,
+    "kept_active_candidate_count": 5533,
+    "plan_count": 150
+  },
+  "expected_partitions": [
+    [
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "observed_partitions": [
+    [
+      0,
+      0,
+      2
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "proof_files": [
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A0B0C2_pruned120.json",
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A0B1C1_compact600.json",
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A0B2C0_pruned300.json",
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A1B0C1_pruned300.json",
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A1B1C0_pruned300.json",
+    "outputs\\q4\\proof_R_le_2_active_sat_r2_A2B0C0_pruned300.json"
+  ],
+  "errors": [],
+  "logic": {
+    "exact_two_revocations_equivalent_to_R_le_2": true,
+    "partition_identity": "R_A+R_B+R_C=2, R_A,R_B,R_C>=0",
+    "dominance_reduction_equivalence": true
+  }
+}

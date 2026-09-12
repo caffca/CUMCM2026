@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": "outputs/q2_q3_pareto/R19_history/q2/validation.json",
+  "source_sha256": "3421e7092f13053d9457865be032791c62911c52585a97a3ea4fb395d375c8b9",
+  "checks": {
+    "active_plan_count": 131,
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "boundary_errors": [],
+    "occupied_cell_count": 13380,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1,
+    "weighted_occupied_cell_count": 13380
+  },
+  "objective_values": [
+    19,
+    null,
+    null,
+    113,
+    null,
+    null,
+    null
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "question": "D-Q2",
+  "probe": "adjust_le_125",
+  "horizon": 643,
+  "solver": "cadical195",
+  "status": "UNSAT",
+  "optimality": "PROVED_INFEASIBLE",
+  "build_seconds": 1.3420707000041148,
+  "solve_seconds": 522.4135174999974,
+  "formula": {
+    "description": "R=6, A类撤销=0, B类撤销=4, 调整计划数<=125（等价于保留数>=19）",
+    "candidate_count": 4582,
+    "plan_count": 150,
+    "resource_cell_count": 54691,
+    "resource_cell_constraint_count": 52939,
+    "base_variable_count": 4582,
+    "encoded_variable_count": 444734,
+    "candidate_cells_nonzero_count": 4432,
+    "clause_count": 1304605
+  },
+  "solver_stats": {
+    "restarts": 100738,
+    "conflicts": 3028736,
+    "decisions": 10895235,
+    "propagations": 4310731162
+  },
+  "source_run": "tmp/q2_proof_sat_adjust_le_125.json",
+  "evidence_type": "UNSAT_THRESHOLD_CERTIFICATE",
+  "claim_status": "THRESHOLD_INFEASIBILITY_PROVED",
+  "canonical_path": "outputs\\q2\\proof\\sat_adjust_le_125.json",
+  "source_run_role": "local_generation_log_only",
+  "threshold_claim": "R=6, R_A=0, R_B=4, M<=125",
+  "threshold_conclusion": "M>=126; with incumbent M=126, the conditional optimum is M=126.",
+  "evidence_metadata": {
+    "fixed_prefix": {
+      "R": 6,
+      "R_A": 0,
+      "R_B": 4
+    },
+    "threshold": {
+      "feature": "M",
+      "sense": "<=",
+      "value": 125
+    },
+    "solver": {
+      "requested_alias": "cadical195",
+      "family": "CaDiCaL",
+      "version": "1.9.5",
+      "python_sat_version": "1.9.dev15",
+      "version_evidence": "CaDiCaL 1.9.5 SAT solver."
+    },
+    "solver_status": "UNSAT",
+    "proof_status": "PROVED_INFEASIBLE",
+    "runtime": {
+      "build_seconds": 1.3420707000041148,
+      "solve_seconds": 522.4135174999974,
+      "time_limit_seconds": null,
+      "time_limit_recorded": false,
+      "solver_stats": {
+        "restarts": 100738,
+        "conflicts": 3028736,
+        "decisions": 10895235,
+        "propagations": 4310731162
+      }
+    },
+    "formula_counts": {
+      "plan_count": 150,
+      "candidate_count": 4582,
+      "resource_cell_count": 54691,
+      "resource_cell_constraint_count": 52939,
+      "conflict_edge_count": null,
+      "base_variable_count": 4582,
+      "encoded_variable_count": 444734,
+      "clause_count": 1304605
+    },
+    "provenance": {
+      "generator_script": "scripts/prove_q2_sat.py",
+      "reproduction_command": "python -m scripts.prove_q2_sat --input data/raw/D题/附件/附件1.xlsx --horizon 643 --probe adjust_le_125 --solver cadical195 --output outputs/q2/proof/sat_adjust_le_125.json",
+      "historical_command_verified": false,
+      "source_run": "tmp/q2_proof_sat_adjust_le_125.json",
+      "corresponding_feasible_witness": [
+        "outputs/q2/six_revocation_candidate.json",
+        "outputs/q2/six_revocation_validation.json",
+        "outputs/q2/result2.xlsx"
+      ],
+      "raw_input": "data/raw/D题/附件/附件1.xlsx",
+      "raw_input_sha256": "b7f905cd2629f9a85b47db352be503404a0cd5b8f70b9209aafdf7e262f3449c"
+    },
+    "interpretation": "UNSAT 在该固定前缀和阈值下给出不可行下界；与对应已验证可行见证合并后，形成该字典序层的 LB=UB 闭合。"
+  },
+  "solver_version": "1.9.5"
+}

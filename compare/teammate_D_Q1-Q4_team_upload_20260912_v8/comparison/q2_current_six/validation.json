@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": "outputs/q2/six_revocation_validation.json",
+  "source_sha256": "5d644a12acc84b4b363079054b6661be0f93e21c818ddbc0faf5d87718a29952",
+  "checks": {
+    "active_plan_count": 144,
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "boundary_errors": [],
+    "occupied_cell_count": 15816,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1,
+    "weighted_occupied_cell_count": 15816
+  },
+  "objective_values": [
+    6,
+    0,
+    4,
+    126,
+    16,
+    34,
+    775
+  ]
+}

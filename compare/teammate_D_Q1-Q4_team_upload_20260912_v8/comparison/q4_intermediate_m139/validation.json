@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "source": "outputs/q4/proof_R3_RA0_RB1_M139_validation.json",
+  "source_sha256": "c300e37c028bd90b667c0b54b8cf98ffd3bd6f80c5f11170a3c650296a5da07b",
+  "checks": {
+    "active_plan_count": 147,
+    "boundary_errors": [],
+    "continuous_conflict_pairs": [],
+    "discrete_conflict_pairs": [],
+    "unique_occupied_cell_count": 16356,
+    "weighted_occupied_cell_count": 16356,
+    "duplicate_occupied_cell_count": 0,
+    "max_cell_occupancy": 1
+  },
+  "objective_values": {
+    "revoke": 3,
+    "revoke_A": 0,
+    "revoke_B": 1,
+    "adjust": 139,
+    "adjust_A": 19,
+    "adjust_B": 37,
+    "normalized_shift": 943
+  }
+}
